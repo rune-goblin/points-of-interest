@@ -27,4 +27,6 @@ export const ids = {
   /** `mapSlug` is the map file name without extension, e.g. `09-iron-juggernaut-cargo-hold`. */
   scene: (mapSlug: string) => stableId(`scene:${mapSlug}`),
   folder: (pack: string, encounter: number) => stableId(`folder:${pack}:${pad(encounter)}`),
+  /** `slug` is the macro's source file name without extension, e.g. `place-map-notes`. */
+  macro: (slug: string) => stableId(`macro:${slug}`),
 };

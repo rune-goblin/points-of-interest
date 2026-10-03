@@ -48,6 +48,12 @@
       "label": "Points of Interest: Scenes",
       "path": "packs/scenes",
       "type": "Scene"
+    },
+    {
+      "name": "macros",
+      "label": "Points of Interest: Macros",
+      "path": "packs/macros",
+      "type": "Macro"
     }
   ],
   "relationships": {
@@ -84,7 +90,8 @@
         "irovettis-map",
         "journals",
         "scenes",
-        "actors"
+        "actors",
+        "macros"
       ]
     }
   ]

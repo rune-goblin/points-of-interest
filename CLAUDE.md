@@ -125,9 +125,12 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 ## Status and next steps
 
 - Done: module scaffold, art in `assets/`, encounter docs, generated journal pack, scenes pack
-  (22, actors placed in a centre block, no walls/lights), Adventure `irovettis-map`, actors pack (86, including 2 hazards and 8 loot remains; one folder per encounter).
-- Map notes: with the Stolen Lands region map open, a GM runs
-  `game.modules.get('points-of-interest').api.placeMapNotes()`. It imports or refreshes the journal
+  (22, actors placed in a centre block, no walls/lights), Adventure `irovettis-map`, actors pack (86, including 2 hazards and 8 loot remains; one folder per encounter),
+  macros pack (hand-authored `packs/_source/macros/`, ids from `ids.macro`; the Adventure bundles it too).
+- Map notes: a GM runs the "Place Irovetti's Map Notes" macro, which calls
+  `game.modules.get('points-of-interest').api.placeMapNotes(scene?)`. It targets the given scene, else
+  the viewed region map, else the world's only one (several and none viewed → asks the GM to view one).
+  It imports or refreshes the journal
   entries into an "Irovetti's Map" world folder (same ids as the pack), then creates or moves one note
   per site (160 px icon, linked to the site's entry, flagged `site`). Re-run it after journal edits.
   The module hides Foundry's dark backing square and idle border on these notes (`refreshNote` hook).

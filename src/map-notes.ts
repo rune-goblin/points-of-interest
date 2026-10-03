@@ -86,19 +86,31 @@ export async function importJournal(): Promise<JournalEntry[]> {
   return sources.map((s) => game.journal.get(s.id)).filter((e): e is JournalEntry => !!e);
 }
 
+// The viewed scene wins, so a GM with several copies of the region map picks one by opening it.
+function findRegionMap(): Scene | null {
+  if (canvas.scene && isRegionMap(canvas.scene)) return canvas.scene;
+  const maps = game.scenes.filter(isRegionMap);
+  if (maps.length === 1) return maps[0];
+  ui.notifications.error(maps.length ? t('ManyScenes', { count: String(maps.length) }) : t('NoScene'));
+  return null;
+}
+
 /**
  * Import the site journal entries, then pin each site's map note to its hex on the Stolen Lands
- * region map. Re-running moves existing notes back to their hexes instead of duplicating them.
+ * region map: the given scene, else the viewed one, else the world's only region map. Re-running
+ * moves existing notes back to their hexes instead of duplicating them.
  */
-export async function placeMapNotes(scene: Scene | null = canvas.scene): Promise<void> {
+export async function placeMapNotes(target?: Scene): Promise<void> {
   if (!game.user.isGM) {
     ui.notifications.warn(t('GMOnly'));
     return;
   }
-  if (!scene || !isRegionMap(scene)) {
-    ui.notifications.error(t('WrongScene'));
+  if (target && !isRegionMap(target)) {
+    ui.notifications.error(t('WrongScene', { scene: target.name }));
     return;
   }
+  const scene = target ?? findRegionMap();
+  if (!scene) return;
   const entries = await importJournal();
   const placed = new Map(
     scene.notes.contents
