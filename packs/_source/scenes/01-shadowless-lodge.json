@@ -76,7 +76,132 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "The Ankou",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/01-ankou-shadow-double-first.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "DVlYqcFiGYhWG75V",
+      "_key": "!scenes.tokens!rAFfkFAKtfvBTeBP.DVlYqcFiGYhWG75V",
+      "actorId": "CBPw4ICfGbiAvo8D",
+      "x": 1200,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "The Ankou",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/01-ankou-shadow-double-second.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "vRUBB0C75xBcjcbr",
+      "_key": "!scenes.tokens!rAFfkFAKtfvBTeBP.vRUBB0C75xBcjcbr",
+      "actorId": "4zdV2Elb4UUMt1Uo",
+      "x": 1560,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "The Ankou",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/01-ankou.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "sfvFYaXWUYawFZPj",
+      "_key": "!scenes.tokens!rAFfkFAKtfvBTeBP.sfvFYaXWUYawFZPj",
+      "actorId": "CpWTlRKcBWDQ3FWW",
+      "x": 1920,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Felgo",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/01-felgo.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "wnrV2AKfSHnFphTK",
+      "_key": "!scenes.tokens!rAFfkFAKtfvBTeBP.wnrV2AKfSHnFphTK",
+      "actorId": "fQaCjludOjyecS33",
+      "x": 2280,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 3
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

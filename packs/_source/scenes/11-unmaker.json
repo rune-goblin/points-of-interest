@@ -76,7 +76,163 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Apprentice Hessa",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/11-apprentice-hessa.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "cINiTcRS33n81f34",
+      "_key": "!scenes.tokens!lGlcY0t6BlRVA3t5.cINiTcRS33n81f34",
+      "actorId": "wwg4dJohWV2cDj6z",
+      "x": 1380,
+      "y": 1620,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Apprentice Marro",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/11-apprentice-marro.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "GbG50EvnVJA6ZSLI",
+      "_key": "!scenes.tokens!lGlcY0t6BlRVA3t5.GbG50EvnVJA6ZSLI",
+      "actorId": "B0GQWGPLku4fBdoE",
+      "x": 1500,
+      "y": 1620,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "Apprentice Tobin",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/11-apprentice-tobin.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "G7iArv78LzONDVhw",
+      "_key": "!scenes.tokens!lGlcY0t6BlRVA3t5.G7iArv78LzONDVhw",
+      "actorId": "1nVYYsagS8z4HkQe",
+      "x": 1620,
+      "y": 1620,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Master Engineer Odalric Vane",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/11-master-engineer-odalric-vane.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "oGFp7kyg6CxHicGZ",
+      "_key": "!scenes.tokens!lGlcY0t6BlRVA3t5.oGFp7kyg6CxHicGZ",
+      "actorId": "hkNJdp1LjiD4Sqx5",
+      "x": 1740,
+      "y": 1620,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 3
+    },
+    {
+      "name": "Numerian Guthallath (the Colossus)",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/11-numerian-guthallath.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "7QhjCtwSMerNZORk",
+      "_key": "!scenes.tokens!lGlcY0t6BlRVA3t5.7QhjCtwSMerNZORk",
+      "actorId": "2nALYXdjjK1B0aCo",
+      "x": 1860,
+      "y": 1620,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 4
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

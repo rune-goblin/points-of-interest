@@ -87,7 +87,11 @@ function imagePage(entryId: string, pageId: string, name: string, src: string, c
   };
 }
 
-function entry(id: string, name: string, pages: unknown[], sort: number, flags: Record<string, unknown> = {}) {
+const NONE = 0;
+// Limited lets players see a site's map note on the region map without opening its entry.
+const LIMITED = 1;
+
+function entry(id: string, name: string, pages: unknown[], sort: number, ownership = NONE, flags: Record<string, unknown> = {}) {
   return {
     _id: id,
     _key: `!journal!${id}`,
@@ -95,7 +99,7 @@ function entry(id: string, name: string, pages: unknown[], sort: number, flags: 
     pages,
     folder: null,
     sort,
-    ownership: { default: 0 },
+    ownership: { default: ownership },
     flags,
   };
 }
@@ -143,8 +147,7 @@ const overview = entry(overviewId, "Irovetti's Map: Overview", [
   textPage(overviewId, stableId('page:overview'), 'Overview', render(overviewMd), 0),
 ], 0);
 
-// The handout page comes first: map notes link to it, so its ownership decides when players see
-// the note on the map.
+// The handout page comes first, so a GM opening the site from its map note lands on Irovetti's sketch.
 function siteEntry(s: Section) {
   const id = ids.siteJournal(s.slug);
   const note = artPath('map-notes', s.number);
@@ -153,7 +156,7 @@ function siteEntry(s: Section) {
     : [];
   const encounter = textPage(id, ids.encounterPage(s.slug), 'Encounter', contentLinks(s.number) + render(s.body), 2000);
   const icon = artPath('map-icons', s.number) ?? note;
-  return entry(id, `${pad(s.number)}. ${s.title}`, [...handout, encounter], s.number * 1000, {
+  return entry(id, `${pad(s.number)}. ${s.title}`, [...handout, encounter], s.number * 1000, LIMITED, {
     [MODULE_ID]: { site: s.number, hex: s.hex, ...(icon ? { icon } : {}) },
   });
 }

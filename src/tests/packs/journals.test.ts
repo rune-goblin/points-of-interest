@@ -6,10 +6,11 @@ const ROOT = process.cwd();
 const MODULE_ID = 'points-of-interest';
 const SERVED = `modules/${MODULE_ID}/`;
 
-interface Page { _id: string; name: string; type: string; src?: string; sort: number; text?: { content: string } }
+interface Page { _id: string; name: string; type: string; src?: string; sort: number; ownership: { default: number }; text?: { content: string } }
 interface Entry {
   _id: string;
   name: string;
+  ownership: { default: number };
   pages: Page[];
   flags: Record<string, { site?: number; hex?: string; icon?: string }>;
 }
@@ -35,6 +36,11 @@ describe('journals pack sources', () => {
       expect(existsSync(servedFile(handout.src!))).toBe(true);
       expect(encounter.type).toBe('text');
     }
+  });
+
+  it('lets players see site map notes but keeps every entry closed to them', () => {
+    for (const entry of entries) expect(entry.ownership.default).toBe(entry.flags[MODULE_ID]?.site === undefined ? 0 : 1);
+    for (const page of entries.flatMap((e) => e.pages)) expect(page.ownership.default).toBe(-1);
   });
 
   it('places each site on its own hex of the Kingmaker region map', () => {

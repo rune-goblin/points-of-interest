@@ -24,6 +24,13 @@
   ],
   "packs": [
     {
+      "name": "irovettis-map",
+      "label": "Irovetti's Map",
+      "path": "packs/irovettis-map",
+      "type": "Adventure",
+      "system": "pf2e"
+    },
+    {
       "name": "journals",
       "label": "Points of Interest: Journals",
       "path": "packs/journals",
@@ -74,6 +81,7 @@
       "sorting": "m",
       "color": "#3b2a1a",
       "packs": [
+        "irovettis-map",
         "journals",
         "scenes",
         "actors"

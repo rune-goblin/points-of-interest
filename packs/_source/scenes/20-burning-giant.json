@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Elder Maren",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/20-elder-maren.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "CirxwCGxk151dvff",
+      "_key": "!scenes.tokens!1woE8vDxl14ltD9K.CirxwCGxk151dvff",
+      "actorId": "6IiUReIrCb7lJVLa",
+      "x": 1520,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Kaldurok",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/20-kaldurok.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "leGT1U9tX6TtzJe5",
+      "_key": "!scenes.tokens!1woE8vDxl14ltD9K.leGT1U9tX6TtzJe5",
+      "actorId": "V9BYDTHtwTLr4Zyi",
+      "x": 1680,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

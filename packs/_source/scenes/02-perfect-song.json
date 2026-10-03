@@ -76,7 +76,225 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Cauthooj (Lead Singer)",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/02-cauthooj-first.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "79TtFB2Vd9Q4zVmd",
+      "_key": "!scenes.tokens!23qPDzi4CvQ7CGXY.79TtFB2Vd9Q4zVmd",
+      "actorId": "Hh7nuLH4QovNEzXS",
+      "x": 1320,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Cauthooj (Second)",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/02-cauthooj-second.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "q1BNWteVmj0KNaBP",
+      "_key": "!scenes.tokens!23qPDzi4CvQ7CGXY.q1BNWteVmj0KNaBP",
+      "actorId": "GNyBwGWtZl285dJk",
+      "x": 1440,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "Cauthooj (Third)",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/02-cauthooj-third.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "8WwqRNCg7Hioafhc",
+      "_key": "!scenes.tokens!23qPDzi4CvQ7CGXY.8WwqRNCg7Hioafhc",
+      "actorId": "qodhpAr2Fa34qgtR",
+      "x": 1560,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Daro Vesk",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/02-daro-vesk.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "lmgbEoDxOwRHMLhh",
+      "_key": "!scenes.tokens!23qPDzi4CvQ7CGXY.lmgbEoDxOwRHMLhh",
+      "actorId": "UMsYU0nqCTrgKuBx",
+      "x": 1680,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 3
+    },
+    {
+      "name": "Maestra Ilsabet Rova",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/02-maestra-ilsabet-rova.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "HQtTJ8IJr5Cg4GD3",
+      "_key": "!scenes.tokens!23qPDzi4CvQ7CGXY.HQtTJ8IJr5Cg4GD3",
+      "actorId": "j0ZWlH7EbyK3HpRr",
+      "x": 1800,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 4
+    },
+    {
+      "name": "Olenna Fair",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/02-olenna-fair.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "UK8TtBcJSUmGYpSp",
+      "_key": "!scenes.tokens!23qPDzi4CvQ7CGXY.UK8TtBcJSUmGYpSp",
+      "actorId": "X3nv6SFVtCyHQTR8",
+      "x": 1920,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 5
+    },
+    {
+      "name": "Pell",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/02-pell-composer.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "c88ONEq61Lkfnu2U",
+      "_key": "!scenes.tokens!23qPDzi4CvQ7CGXY.c88ONEq61Lkfnu2U",
+      "actorId": "8U9XM4aV5DzR9skl",
+      "x": 2040,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 6
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

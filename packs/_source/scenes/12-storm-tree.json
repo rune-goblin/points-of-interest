@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Foreman Brannock",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/12-foreman-brannock.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "K3HAjn4ZeJvShdo6",
+      "_key": "!scenes.tokens!c4haAgleYQUr66t7.K3HAjn4ZeJvShdo6",
+      "actorId": "qGA8OoCDisvgZESm",
+      "x": 1440,
+      "y": 1560,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "The Sard",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/12-sard.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "RmOxrjm9MGswiT19",
+      "_key": "!scenes.tokens!c4haAgleYQUr66t7.RmOxrjm9MGswiT19",
+      "actorId": "rzUPwTm5szT9wcAW",
+      "x": 1680,
+      "y": 1560,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

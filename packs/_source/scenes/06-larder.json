@@ -76,7 +76,225 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Ederis Pallo",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/06-ederis-pallo.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "mzZAzzdmOKIHP6gO",
+      "_key": "!scenes.tokens!oIgh6u5KGdnDooXj.mzZAzzdmOKIHP6gO",
+      "actorId": "TYSmugwnxgYrf9qb",
+      "x": 960,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Grosh",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/06-grosh.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "M3AYEeBcWImrOaWQ",
+      "_key": "!scenes.tokens!oIgh6u5KGdnDooXj.M3AYEeBcWImrOaWQ",
+      "actorId": "FiEFewrlYzAAAUIF",
+      "x": 1200,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "Hesk Varro",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/06-hesk-varro.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "DA3UgQEehFN3YGaH",
+      "_key": "!scenes.tokens!oIgh6u5KGdnDooXj.DA3UgQEehFN3YGaH",
+      "actorId": "DcvETdEAHymNfxt7",
+      "x": 1560,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Hobb",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/06-hobb.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "3tHdPb7RC4xX9T5U",
+      "_key": "!scenes.tokens!oIgh6u5KGdnDooXj.3tHdPb7RC4xX9T5U",
+      "actorId": "TROjOnSMvg9JYgXL",
+      "x": 1800,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 3
+    },
+    {
+      "name": "Kael",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/06-kael.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "aBZNPsZ1FLpDz5kF",
+      "_key": "!scenes.tokens!oIgh6u5KGdnDooXj.aBZNPsZ1FLpDz5kF",
+      "actorId": "SHBByparJ2GCf14G",
+      "x": 2160,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 4
+    },
+    {
+      "name": "Murla",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/06-murla.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "Z6LZfmlnrxVPNnbK",
+      "_key": "!scenes.tokens!oIgh6u5KGdnDooXj.Z6LZfmlnrxVPNnbK",
+      "actorId": "yMmKCxlS3tfoQoNF",
+      "x": 2400,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 5
+    },
+    {
+      "name": "Tuk",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/06-tuk.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "uAiufrvoDtsPe598",
+      "_key": "!scenes.tokens!oIgh6u5KGdnDooXj.uAiufrvoDtsPe598",
+      "actorId": "MaFhW4hkMqtpTKCu",
+      "x": 1680,
+      "y": 1800,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

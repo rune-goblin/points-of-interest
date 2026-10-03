@@ -12,10 +12,14 @@ interface SiteFlags {
   icon?: string;
 }
 
-// The typedefs omit Note#controlIcon; these are the members the draw hook touches.
+// The typedefs omit Note#controlIcon; these are the members the refresh hook touches.
 interface DrawnNote {
   document: NoteDocument<Scene | null>;
-  controlIcon: { bg: { visible: boolean } };
+  controlIcon: { bg: { visible: boolean }; border: { visible: boolean } };
+  hover: boolean;
+  controlled: boolean;
+  isPreview: boolean;
+  layer: { highlightObjects: boolean };
 }
 
 const t = (key: string, data?: Record<string, string>): string =>
@@ -45,7 +49,7 @@ async function journalFolder(): Promise<Folder> {
 
 // World copies keep the compendium ids, so links between entries can point at the world copies.
 function toWorld(source: JournalEntry): JournalEntry['_source'] {
-  const data = game.journal.fromCompendium(source, { keepId: true, clearSort: false });
+  const data = game.journal.fromCompendium(source, { keepId: true, clearSort: false, clearOwnership: false });
   const compendiumRef = `Compendium.${JOURNAL_PACK}.JournalEntry.`;
   for (const page of data.pages) {
     if (page.text?.content) page.text.content = page.text.content.replaceAll(compendiumRef, 'JournalEntry.');
@@ -55,9 +59,8 @@ function toWorld(source: JournalEntry): JournalEntry['_source'] {
 
 /**
  * Create every pack entry missing from the world and refresh the text, images and flags of the ones
- * already there. Ownership and folder placement of existing entries stay as the GM left them.
- * New site entries give players Limited ownership: Foundry then shows them the site's map note but
- * keeps the entry closed, and the GM shares a handout with Show Players.
+ * already there. New entries keep the pack's ownership (Limited for sites, so players see the map
+ * note but can't open the entry); existing entries keep whatever ownership and folder the GM gave them.
  */
 export async function importJournal(): Promise<JournalEntry[]> {
   const pack = game.packs.get(JOURNAL_PACK);
@@ -69,8 +72,7 @@ export async function importJournal(): Promise<JournalEntry[]> {
     const data = toWorld(source);
     const existing = game.journal.get(source.id);
     if (!existing) {
-      const ownership = siteFlags(source) ? { ...data.ownership, default: CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED } : data.ownership;
-      missing.push({ ...data, ownership, folder: folder.id });
+      missing.push({ ...data, folder: folder.id });
       continue;
     }
     const pages = data.pages.map(({ ownership: _ownership, _stats, ...page }) => ({ ...page, _id: page._id! }));
@@ -132,9 +134,12 @@ export async function placeMapNotes(scene: Scene | null = canvas.scene): Promise
   ui.notifications.info(t('Placed', { count: String(creates.length + updates.length), scene: scene.name }));
 }
 
-// The sketches carry their own parchment halo; Foundry's dark backing square would hide the map.
+// The sketches carry their own parchment halo, so Foundry's dark backing square and idle border would
+// only box them in. The border still shows whenever Foundry would tint it.
 export function registerMapNoteHooks(): void {
-  Hooks.on('drawNote', (note: DrawnNote) => {
-    if (note.document.getFlag(MODULE_ID, 'site') !== undefined) note.controlIcon.bg.visible = false;
+  Hooks.on('refreshNote', (note: DrawnNote) => {
+    if (note.document.getFlag(MODULE_ID, 'site') === undefined) return;
+    note.controlIcon.bg.visible = false;
+    note.controlIcon.border.visible = note.hover || note.controlled || note.layer.highlightObjects || note.isPreview;
   });
 }

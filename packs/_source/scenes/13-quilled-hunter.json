@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Primal Bandersnatch",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/13-primal-bandersnatch.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "4k4FS2CCcbVAc3pp",
+      "_key": "!scenes.tokens!EDX8rTES0UZMbzvk.4k4FS2CCcbVAc3pp",
+      "actorId": "Kdd28WIx0rFfHUHu",
+      "x": 1520,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Wren Ashby",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/13-wren-ashby.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "WCP2MV3rdFTOkLv0",
+      "_key": "!scenes.tokens!EDX8rTES0UZMbzvk.WCP2MV3rdFTOkLv0",
+      "actorId": "xfaDabys6fdAbYtr",
+      "x": 1920,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

@@ -21,6 +21,8 @@ compendium packs from `packs/_source/`).
   with links to its scene and actors, so `build-scenes.ts` runs before it in `npm run build`.
 - `scripts/build-scenes.ts` → `packs/_source/scenes/` (generated on build). One scene per map, native
   v14 (one level holds the background). Grid sizes are judged per map and recorded in its table.
+  It seeds each scene's actors as tokens; placeables edited in Foundry and unpacked over
+  `packs/_source/scenes/` survive regeneration (a scene reseeds only when it has no tokens).
 - `scripts/build-actors.ts` → `packs/_source/actors/` (**committed, not part of `npm run build`**: it
   needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`). The mapping
   table at its top names each actor's source stat block. Copy only from PF2e **system** packs
@@ -123,18 +125,21 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 ## Status and next steps
 
 - Done: module scaffold, art in `assets/`, encounter docs, generated journal pack, scenes pack
-  (22, no walls/lights/tokens), actors pack (86, including 2 hazards and 8 loot remains; one folder per encounter).
+  (22, actors placed in a centre block, no walls/lights), Adventure `irovettis-map`, actors pack (86, including 2 hazards and 8 loot remains; one folder per encounter).
 - Map notes: with the Stolen Lands region map open, a GM runs
   `game.modules.get('points-of-interest').api.placeMapNotes()`. It imports or refreshes the journal
   entries into an "Irovetti's Map" world folder (same ids as the pack), then creates or moves one note
-  per site (160 px icon, linked to the handout page, flagged `site`). Re-run it after journal edits.
-  A note shows to players once they can see its handout page.
-- Next: check the actor sheets and scene grids in a live world, trace walls and lights, then place
-  tokens.
+  per site (160 px icon, linked to the site's entry, flagged `site`). Re-run it after journal edits.
+  The module hides Foundry's dark backing square and idle border on these notes (`refreshNote` hook).
+- The desktop install links the module as `npm run setup` would (`Data/modules/points-of-interest`
+  symlinks into the repo). The stolen-lands world already holds the journal folder and the 21 notes;
+  enable the module there after a Foundry restart to get the hook and the API.
+  New site entries give players Limited ownership: they see each pin and its name but can't open the
+  entry. Share a handout with Show Players. Don't link a note to the image page: Foundry lets Limited
+  players open an image page straight from its pin.
+- Next: check the actor sheets and scene grids in a live world, reposition tokens, trace walls and lights.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;
   its stat block lives in `docs/encounters.md`. #9 uses the Kingmaker Elite Numerian Adamantine Golem.
 - Art is stored in **Git LFS** (`assets/**` in `.gitattributes`); `release.yml` checks out with
   `lfs: true` so the zip ships the real files. Tactical maps are lossy WebP at quality 75
   (`cwebp -q 75 -m 6`); convert new maps the same way before adding them.
-- Open decisions: run `npm run setup` to link into Foundry; ship as an Adventure once scenes have
-  placed tokens.

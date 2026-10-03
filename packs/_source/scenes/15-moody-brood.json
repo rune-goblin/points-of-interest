@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Gloamsy",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/15-gloamsy.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "R8SZ9bmo1GPaObTq",
+      "_key": "!scenes.tokens!lfZuFNikK6ZqDZif.R8SZ9bmo1GPaObTq",
+      "actorId": "0Y4KZTNlrHBcFopp",
+      "x": 1560,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Pippet",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/15-pippet.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "kNQegdvqrAPbDOB0",
+      "_key": "!scenes.tokens!lfZuFNikK6ZqDZif.kNQegdvqrAPbDOB0",
+      "actorId": "kbE9DB9k8ppr28Uh",
+      "x": 1800,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

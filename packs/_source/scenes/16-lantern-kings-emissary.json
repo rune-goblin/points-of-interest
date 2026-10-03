@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "The Vilderavn Herald",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/16-vilderavn-herald.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "eQCVZHf5eRDdyz3A",
+      "_key": "!scenes.tokens!wxjOACWNjR1EJITW.eQCVZHf5eRDdyz3A",
+      "actorId": "tc3faa6OpuFN6QEy",
+      "x": 1440,
+      "y": 1560,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "The Zomok",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/16-zomok.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "s3JcDl8VP9HCwUh1",
+      "_key": "!scenes.tokens!wxjOACWNjR1EJITW.s3JcDl8VP9HCwUh1",
+      "actorId": "V8vMERRn6fsKdllI",
+      "x": 1680,
+      "y": 1560,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

@@ -76,15 +76,15 @@ export function buildAdventure(opts: { dry?: boolean } = {}): boolean {
   }
 
   // Scenes ship with their encounter tokens placed. Keep only tokens whose actor travels in this
-  // adventure and link those to the imported actor; drop the rest (world party placeholders, NPCs
-  // whose actor isn't bundled) — they would otherwise import as broken, actorless tokens.
+  // adventure (keepId makes their actorId resolve to the imported actor); drop the rest (world party
+  // placeholders, NPCs whose actor isn't bundled) — they would otherwise import as broken, actorless
+  // tokens. Unlinked tokens stay unlinked so copies of one actor (three pylons) keep separate HP.
   const actorIds = new Set((adventure.actors as Doc[]).map((a) => a._id as string));
   for (const scene of adventure.scenes as Doc[]) {
     const tokens = (scene.tokens as Doc[] | undefined) ?? [];
     const kept = tokens.filter((t) => actorIds.has(t.actorId as string));
     for (const t of kept) {
-      t.actorLink = true;
-      delete t.delta; // a linked token derives from the world actor; the unlinked snapshot is dead weight
+      if (t.actorLink) delete t.delta; // a linked token derives from the world actor; the snapshot is dead weight
     }
     scene.tokens = kept;
     if (tokens.length !== kept.length) {

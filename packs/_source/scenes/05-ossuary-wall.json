@@ -76,7 +76,101 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Lament of the Wall",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/map-notes/05-ossuary-wall.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "YHycGpMEpytXON9q",
+      "_key": "!scenes.tokens!FSfsMVJvX9TaZ1wT.YHycGpMEpytXON9q",
+      "actorId": "aVr0ASvDmRLZQK9E",
+      "x": 1368,
+      "y": 1584,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Skeletal Champion",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/05-skeletal-champion.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "GrN1JwhkYL7dRIgg",
+      "_key": "!scenes.tokens!FSfsMVJvX9TaZ1wT.GrN1JwhkYL7dRIgg",
+      "actorId": "sE4RZxUrlyN2PONV",
+      "x": 1728,
+      "y": 1584,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "The Skulltaker",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 3,
+      "height": 3,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/05-skulltaker.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "kggPUAJFPxT9jNko",
+      "_key": "!scenes.tokens!FSfsMVJvX9TaZ1wT.kggPUAJFPxT9jNko",
+      "actorId": "zbwePkV41U5cWcZC",
+      "x": 1872,
+      "y": 1584,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

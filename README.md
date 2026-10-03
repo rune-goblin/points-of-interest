@@ -5,7 +5,8 @@ A Pathfinder 2e Foundry VTT module for **Kingmaker, Chapter 8 onward**. When the
 ## Contents
 
 - **Journals:** an overview entry with assumptions and a running order, then one entry per site. Each site entry holds Irovetti's note as a handout image page and the encounter text, which opens with links to the site's scene and actors.
-- **Scenes:** one per tactical map, 22 in all (#9 adds the Juggernaut's cargo hold), filed by zone. Each sets a grid sized to the art and links to its encounter page. They carry no walls, lights or tokens yet.
+- **Adventure: Irovetti's Map** bundles the journals, scenes and actors for a one-click import that keeps every id, so placed tokens and links resolve. The GM is prompted to import it once.
+- **Scenes:** one per tactical map, 22 in all (#9 adds the Juggernaut's cargo hold), filed by zone. Each sets a grid sized to the art, links to its encounter page and has its actors placed in a block at the centre for the GM to reposition. Later states and optional extras start hidden. They carry no walls or lights yet.
 - **Actors:** every creature and NPC with art, 86 in one folder per encounter. Combatants copy PF2e system stat blocks (Kingmaker Bestiary, Monster Core, Bestiary 2 and others), with elite adjustments where the encounter calls for them. Noncombatants copy NPC Core stat blocks, remains are loot actors, and the annihilator robot and two hazards are built from `docs/encounters.md`.
 
 ## Layout

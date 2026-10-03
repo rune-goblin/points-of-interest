@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Minognos-Ushad",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 3,
+      "height": 3,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/07-minognos-ushad-diving.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "0reo5TNrO7uGtiEg",
+      "_key": "!scenes.tokens!W5FperevvbySnQZ2.0reo5TNrO7uGtiEg",
+      "actorId": "HvVlEj4RSm5Wk5qa",
+      "x": 1344,
+      "y": 1536,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Minognos-Ushad",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 3,
+      "height": 3,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/07-minognos-ushad.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "Ig8nAUobAw9GB2UF",
+      "_key": "!scenes.tokens!W5FperevvbySnQZ2.Ig8nAUobAw9GB2UF",
+      "actorId": "rmgU6F2RnT5w85Ug",
+      "x": 1728,
+      "y": 1536,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

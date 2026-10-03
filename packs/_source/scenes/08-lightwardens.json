@@ -76,7 +76,163 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Hull Defence Grid",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/08-defence-pylon.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "GYtmaoeNMiUK9noB",
+      "_key": "!scenes.tokens!KhyQ0Kbn9XnUi9U6.GYtmaoeNMiUK9noB",
+      "actorId": "sRc0hJQFnVsUfYos",
+      "x": 1200,
+      "y": 1200,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Hull Defence Grid",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/08-defence-pylon.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "8MxEq0DhnG6vHZME",
+      "_key": "!scenes.tokens!KhyQ0Kbn9XnUi9U6.8MxEq0DhnG6vHZME",
+      "actorId": "sRc0hJQFnVsUfYos",
+      "x": 1440,
+      "y": 1200,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "Hull Defence Grid",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/08-defence-pylon.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "tP8sdLMgn4ajOIMN",
+      "_key": "!scenes.tokens!KhyQ0Kbn9XnUi9U6.tP8sdLMgn4ajOIMN",
+      "actorId": "sRc0hJQFnVsUfYos",
+      "x": 1680,
+      "y": 1200,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Radiant Warden",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/08-radiant-warden-active.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "G8ux01sT6vZkeP8y",
+      "_key": "!scenes.tokens!KhyQ0Kbn9XnUi9U6.G8ux01sT6vZkeP8y",
+      "actorId": "Wh0UoANuOMtToLgL",
+      "x": 1920,
+      "y": 1200,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 3
+    },
+    {
+      "name": "Orrery",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/08-radiant-warden-dormant.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "vWvLZolPmKSxPA57",
+      "_key": "!scenes.tokens!KhyQ0Kbn9XnUi9U6.vWvLZolPmKSxPA57",
+      "actorId": "rA5OyJGxJB0eSNpV",
+      "x": 1560,
+      "y": 1800,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

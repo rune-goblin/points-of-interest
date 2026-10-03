@@ -1,5 +1,6 @@
 import './styles.css';
 import { MODULE_ID } from './constants';
+import { promptAdventureImport } from './adventure';
 import { importJournal, placeMapNotes, registerMapNoteHooks } from './map-notes';
 
 interface ModuleApi {
@@ -20,4 +21,5 @@ Hooks.once('ready', () => {
   // `api` is the Foundry convention for a public API, but isn't a typed field on Module.
   if (module) (module as { api?: ModuleApi }).api = api;
   console.log(`${MODULE_ID} | ready (v${version})`);
+  void promptAdventureImport();
 });

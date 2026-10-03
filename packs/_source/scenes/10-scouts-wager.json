@@ -76,7 +76,132 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Ash-Tongue",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/10-ash-tongue.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "yS7AMViIyVcZmp5I",
+      "_key": "!scenes.tokens!u2pINL2HTqwEerNv.yS7AMViIyVcZmp5I",
+      "actorId": "Xxay8zvwPv7OvESD",
+      "x": 1320,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Sileth",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/10-sileth.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "tHumC8YWbRSaQsKl",
+      "_key": "!scenes.tokens!u2pINL2HTqwEerNv.tHumC8YWbRSaQsKl",
+      "actorId": "Ht24NSLDYimUiEkU",
+      "x": 1560,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "Thornfoot",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/10-thornfoot.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "d1sYWWivgFRl3MsN",
+      "_key": "!scenes.tokens!u2pINL2HTqwEerNv.d1sYWWivgFRl3MsN",
+      "actorId": "MKCbnXOG5dHbDZrD",
+      "x": 1800,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Varga Tess",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/10-varga-tess.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "EC7qZ7UX14cHaRSe",
+      "_key": "!scenes.tokens!u2pINL2HTqwEerNv.EC7qZ7UX14cHaRSe",
+      "actorId": "veXlsEz83sEuiLk8",
+      "x": 2040,
+      "y": 1680,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 3
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

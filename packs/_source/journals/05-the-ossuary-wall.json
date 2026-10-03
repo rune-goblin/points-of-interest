@@ -45,7 +45,7 @@
   "folder": null,
   "sort": 5000,
   "ownership": {
-    "default": 0
+    "default": 1
   },
   "flags": {
     "points-of-interest": {

@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Ilthuliak",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/19-ilthuliak-ambush.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "5ETpO1QFZqouGBDl",
+      "_key": "!scenes.tokens!NVgVH9EvkL8qhFF6.5ETpO1QFZqouGBDl",
+      "actorId": "piSaUnyJLjaaeCN7",
+      "x": 1360,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Ilthuliak",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/19-ilthuliak-sighting.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "9UfdRGBAjZAniyNp",
+      "_key": "!scenes.tokens!NVgVH9EvkL8qhFF6.9UfdRGBAjZAniyNp",
+      "actorId": "mhegWCVYQ4D4pOyS",
+      "x": 1760,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

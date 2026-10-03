@@ -76,7 +76,39 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "The Iron Juggernaut",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 3,
+      "height": 3,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/09-iron-juggernaut.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "j8dds83p0ItiB4HY",
+      "_key": "!scenes.tokens!CGaXwOUUH59BdUGA.j8dds83p0ItiB4HY",
+      "actorId": "BQTJqMAzpuhW85xk",
+      "x": 1620,
+      "y": 1620,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

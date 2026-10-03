@@ -15,13 +15,19 @@ const SOURCE = join(ROOT, 'packs', '_source', 'scenes');
 const SERVED = `modules/${MODULE_ID}/`;
 
 interface Level { _id: string; _key: string; background: { src: string } }
+interface Token { _id: string; _key: string; actorId: string; level: string; x: number; y: number; width: number; height: number }
 interface SceneSource {
   _id: string;
   _key: string;
   name: string;
   thumb: string;
   initialLevel: string;
+  width: number;
+  height: number;
+  padding: number;
+  grid: { size: number };
   levels: Level[];
+  tokens: Token[];
   journal: string;
   journalEntryPage: string;
   folder: string | null;
@@ -34,6 +40,14 @@ const scenes = docs.filter((d) => d._key.startsWith('!scenes!')) as unknown as S
 const folders = docs.filter((d) => d._key.startsWith('!folders!')) as unknown as FolderSource[];
 
 const servedFile = (path: string) => join(ROOT, path.slice(SERVED.length));
+
+const ACTORS = join(ROOT, 'packs', '_source', 'actors');
+const actorIds = new Set(
+  readdirSync(ACTORS)
+    .map((f) => JSON.parse(readFileSync(join(ACTORS, f), 'utf8')) as { _id: string; _key: string })
+    .filter((d) => d._key.startsWith('!actors!'))
+    .map((d) => d._id),
+);
 
 const headings = new Map(
   [...readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8').matchAll(/^### (\d+)\. (.+)$/gm)].map((m) => [Number(m[1]), `${m[1]}. ${m[2].trim()}`]),
@@ -70,6 +84,21 @@ describe('scenes pack source', () => {
         expect(existsSync(servedFile(path)), path).toBe(true);
       }
     }
+  });
+
+  it('places tokens of packed actors on the map, on the scene\'s level', () => {
+    for (const s of scenes) {
+      const g = s.grid.size;
+      const pad = { x: Math.ceil((s.padding * s.width) / g) * g, y: Math.ceil((s.padding * s.height) / g) * g };
+      for (const t of s.tokens) {
+        expect(t._key, s.name).toBe(`!scenes.tokens!${s._id}.${t._id}`);
+        expect(actorIds.has(t.actorId), `${s.name}: ${t._id}`).toBe(true);
+        expect(t.level).toBe(s.initialLevel);
+        expect(t.x >= pad.x && t.x + t.width * g <= pad.x + s.width, `${s.name}: ${t._id} x`).toBe(true);
+        expect(t.y >= pad.y && t.y + t.height * g <= pad.y + s.height, `${s.name}: ${t._id} y`).toBe(true);
+      }
+    }
+    expect(scenes.every((s) => s.tokens.length > 0)).toBe(true);
   });
 
   it('links each scene to its encounter page and a zone folder', () => {

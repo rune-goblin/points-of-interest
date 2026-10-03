@@ -1,9 +1,12 @@
 // Generate the scene pack sources: one scene per tactical map in assets/maps/, each linked to its
-// encounter's journal page. Run by `npm run build` before packing:
+// encounter's journal page, with the encounter's actors placed as tokens. Run by `npm run build`
+// before packing:
 //   node scripts/build-scenes.ts
 // Thumbnails are committed art; cwebp runs only to make a missing one, so CI never needs it.
+// Placeables (tokens, walls, lights, …) edited in Foundry and unpacked over packs/_source/scenes
+// survive regeneration; only a scene with no tokens yet gets the seeded layout below.
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { MODULE_ID, ids, pad, slugify, stableId } from './stable-id.ts';
 
@@ -13,6 +16,7 @@ const OUT = join(ROOT, 'packs', '_source', PACK);
 const MAPS_DIR = join(ROOT, 'assets', 'maps');
 const THUMBS_DIR = join(MAPS_DIR, 'thumbs');
 const THUMB = { width: 300, height: 100 }; // Foundry's own Scene#createThumbnail size
+const PADDING = 0.1;
 
 // Foundry's id for a scene's only level; its v13→v14 migration uses the same one.
 const LEVEL_ID = 'defaultLevel0000';
@@ -86,6 +90,117 @@ function ensureThumb(mapFile: string, slug: string, size: { width: number; heigh
   return `modules/${MODULE_ID}/assets/maps/thumbs/${slug}.webp`;
 }
 
+const ACTORS_DIR = join(ROOT, 'packs', '_source', 'actors');
+const TOKENS_DIR = join(ROOT, 'assets', 'tokens');
+
+// Keyed by actor slug (the shared portrait/token file name).
+const VOICE_ONLY = new Set(['03-envoy-troll-head', '03-old-heads', '05-magister-corwen-ash', '05-dalia-sorn', '05-hemmet-brask', '05-lio-venn']);
+/** Tokens for later states, optional extras and unnoticed hazards start hidden from players. */
+const HIDDEN = new Set([
+  '01-ankou-shadow-double-first', '01-ankou-shadow-double-second', '05-skeletal-champion', '05-lament-of-the-wall',
+  '07-minognos-ushad-diving', '08-radiant-warden-active', '14-spared-ankou', '19-ilthuliak-ambush',
+]);
+const COPIES: Record<string, number> = { '08-defence-pylon': 3 };
+/** Scenes that hold only part of their encounter's cast; every other scene takes the whole encounter. */
+const SCENE_CAST: Record<string, string[]> = {
+  '09-iron-juggernaut': ['09-iron-juggernaut'],
+  '09-iron-juggernaut-cargo-hold': ['09-brann-kesk', '09-ottilie-kesk', '09-tarku'],
+};
+
+interface ActorSource {
+  _id: string;
+  _key: string;
+  name: string;
+  sort?: number;
+  flags: Record<string, { encounter?: number }>;
+  prototypeToken: Record<string, unknown> & { width: number; height: number };
+}
+interface CastMember { slug: string; actor: ActorSource }
+
+function readCast(): Map<number, CastMember[]> {
+  const slugById = new Map(
+    // The haunt is the one actor without token art of its own.
+    [...readdirSync(TOKENS_DIR).map((f) => f.replace(/\.webp$/, '')), '05-lament-of-the-wall'].map((slug) => [ids.actor(slug), slug]),
+  );
+  const cast = new Map<number, CastMember[]>();
+  if (!existsSync(ACTORS_DIR)) return cast;
+  for (const file of readdirSync(ACTORS_DIR).filter((f) => f.endsWith('.json')).sort()) {
+    const actor = JSON.parse(readFileSync(join(ACTORS_DIR, file), 'utf8')) as ActorSource;
+    if (!actor._key.startsWith('!actors!')) continue;
+    const slug = slugById.get(actor._id);
+    const encounter = actor.flags[MODULE_ID]?.encounter;
+    if (!slug || encounter === undefined) throw new Error(`${file}: no art slug or encounter flag for actor ${actor.name}`);
+    if (VOICE_ONLY.has(slug)) continue;
+    cast.set(encounter, [...(cast.get(encounter) ?? []), { slug, actor }]);
+  }
+  return cast;
+}
+
+// Rows of tokens centred on the map, one empty square apart, for the GM to drag into place.
+function seedTokens(sceneId: string, slug: string, members: CastMember[], size: { width: number; height: number }, grid: number) {
+  const pieces = members.flatMap((m) => Array.from({ length: COPIES[m.slug] ?? 1 }, (_, copy) => ({ ...m, copy })));
+  const across = Math.floor(size.width / grid);
+  const maxRow = Math.max(4, Math.floor(across * 0.6));
+  const rows: (typeof pieces)[] = [[]];
+  let rowWidth = 0;
+  for (const piece of pieces) {
+    const w = piece.actor.prototypeToken.width;
+    if (rows.at(-1)!.length && rowWidth + 1 + w > maxRow) {
+      rows.push([]);
+      rowWidth = 0;
+    }
+    rowWidth += (rows.at(-1)!.length ? 1 : 0) + w;
+    rows.at(-1)!.push(piece);
+  }
+  const rowHeights = rows.map((r) => Math.max(1, ...r.map((p) => p.actor.prototypeToken.height)));
+  const total = rowHeights.reduce((a, b) => a + b, 0) + rows.length - 1;
+  // Token x/y are canvas coordinates, which start at the padding Foundry adds around the map.
+  const padX = Math.ceil((PADDING * size.width) / grid) * grid;
+  const padY = Math.ceil((PADDING * size.height) / grid) * grid;
+  let top = Math.floor((size.height / grid - total) / 2);
+  return rows.flatMap((row, r) => {
+    const width = row.reduce((a, p) => a + p.actor.prototypeToken.width, 0) + row.length - 1;
+    let left = Math.floor((across - width) / 2);
+    const placed = row.map((piece, i) => {
+      const token = piece.actor.prototypeToken;
+      const id = stableId(`token:${slug}:${piece.slug}:${piece.copy}`);
+      const doc = {
+        ...token,
+        _id: id,
+        _key: `!scenes.tokens!${sceneId}.${id}`,
+        actorId: piece.actor._id,
+        x: padX + Math.round(left * grid),
+        y: padY + Math.round(top * grid),
+        elevation: 0,
+        level: LEVEL_ID,
+        hidden: HIDDEN.has(piece.slug),
+        locked: false,
+        sort: i,
+      };
+      left += token.width + 1;
+      return doc;
+    });
+    top += rowHeights[r] + 1;
+    return placed;
+  });
+}
+
+const PLACEABLES = ['drawings', 'tokens', 'lights', 'notes', 'sounds', 'regions', 'tiles', 'walls'] as const;
+type Placeables = Partial<Record<(typeof PLACEABLES)[number], unknown[]>>;
+
+// Newest file wins, so a fresh `fvtt package unpack` beats the generator's previous output.
+function readPrevious(): Map<string, Placeables> {
+  const previous = new Map<string, Placeables>();
+  if (!existsSync(OUT)) return previous;
+  const files = readdirSync(OUT).filter((f) => f.endsWith('.json')).map((f) => join(OUT, f));
+  files.sort((a, b) => statSync(a).mtimeMs - statSync(b).mtimeMs);
+  for (const file of files) {
+    const doc = JSON.parse(readFileSync(file, 'utf8')) as Placeables & { _id: string; _key?: string };
+    if (doc._key?.startsWith('!scenes!')) previous.set(doc._id, doc);
+  }
+  return previous;
+}
+
 interface Encounter { number: number; title: string; zone: string }
 function readEncounters(): Map<number, Encounter> {
   const encounters = new Map<number, Encounter>();
@@ -107,10 +222,12 @@ const environmentData = (tint?: Tint) => ({
   shadows: 0,
 });
 
-function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string, sort: number) {
+function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string, sort: number, cast: CastMember[], previous?: Placeables) {
   const mapFile = join(MAPS_DIR, `${slug}.webp`);
   const size = webpSize(mapFile);
   const id = ids.scene(slug);
+  const kept = (key: (typeof PLACEABLES)[number]) => (previous?.[key]?.length ? previous[key] : []);
+  const members = SCENE_CAST[slug] ? cast.filter((m) => SCENE_CAST[slug].includes(m.slug)) : cast;
   const name = `${pad(encounter.number)}. ${encounter.title}${meta.label ? `: ${meta.label}` : ''}`;
   const fixedLight = meta.darkness !== undefined;
   return {
@@ -124,7 +241,7 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
     thumb: ensureThumb(mapFile, slug, size),
     width: size.width,
     height: size.height,
-    padding: 0.1,
+    padding: PADDING,
     shiftX: 0,
     shiftY: 0,
     initial: { x: null, y: null, scale: null },
@@ -152,8 +269,8 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
       dark: { hue: 257 / 360, intensity: 0, luminosity: -0.25, saturation: 0, shadows: 0 },
     },
     transition: { type: null, duration: 1500, activeOnly: false },
-    drawings: [],
-    tokens: [],
+    drawings: kept('drawings'),
+    tokens: previous?.tokens?.length ? previous.tokens : seedTokens(id, slug, members, size, meta.grid),
     levels: [
       {
         _id: LEVEL_ID,
@@ -169,12 +286,12 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
         flags: {},
       },
     ],
-    lights: [],
-    notes: [],
-    sounds: [],
-    regions: [],
-    tiles: [],
-    walls: [],
+    lights: kept('lights'),
+    notes: kept('notes'),
+    sounds: kept('sounds'),
+    regions: kept('regions'),
+    tiles: kept('tiles'),
+    walls: kept('walls'),
     playlist: null,
     playlistSound: null,
     journal: ids.siteJournal(slugify(`${encounter.number}. ${encounter.title}`)),
@@ -209,6 +326,8 @@ function folder(name: string, sort: number) {
 }
 
 const encounters = readEncounters();
+const casts = readCast();
+const previous = readPrevious();
 const slugs = readdirSync(MAPS_DIR).filter((f) => f.endsWith('.webp')).map((f) => f.replace(/\.webp$/, '')).sort();
 const unlisted = slugs.filter((s) => !MAPS[s]);
 if (unlisted.length) throw new Error(`Add a grid size to MAPS in build-scenes.ts for: ${unlisted.join(', ')}`);
@@ -220,11 +339,14 @@ const scenes = slugs.map((slug) => {
   if (!encounter) throw new Error(`${slug}: no "### ${number}." heading in docs/encounters.md`);
   if (!folders.has(encounter.zone)) folders.set(encounter.zone, folder(encounter.zone, (folders.size + 1) * 1000));
   const meta = MAPS[slug];
-  return { slug, doc: scene(slug, meta, encounter, folders.get(encounter.zone)!._id, number * 1000 + (meta.label ? 1 : 0)) };
+  const sort = number * 1000 + (meta.label ? 1 : 0);
+  const doc = scene(slug, meta, encounter, folders.get(encounter.zone)!._id, sort, casts.get(number) ?? [], previous.get(ids.scene(slug)));
+  return { slug, doc };
 });
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 for (const f of folders.values()) writeFileSync(join(OUT, `folder-${slugify(f.name)}.json`), `${JSON.stringify(f, null, 2)}\n`);
 for (const { slug, doc } of scenes) writeFileSync(join(OUT, `${slug}.json`), `${JSON.stringify(doc, null, 2)}\n`);
-console.log(`scenes: ${scenes.length} scenes in ${folders.size} zone folders → packs/_source/${PACK}`);
+const tokens = scenes.reduce((n, { doc }) => n + doc.tokens.length, 0);
+console.log(`scenes: ${scenes.length} scenes, ${tokens} tokens, ${folders.size} zone folders → packs/_source/${PACK}`);

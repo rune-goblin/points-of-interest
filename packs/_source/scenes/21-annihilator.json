@@ -76,7 +76,194 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "Aldo Corl",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/21-aldo-corl.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "PcvMhiFSVxETChIy",
+      "_key": "!scenes.tokens!h8TZha8IN306iKgb.PcvMhiFSVxETChIy",
+      "actorId": "d9y6zW4QK6337ZUt",
+      "x": 1200,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Annihilator Robot",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 4,
+      "height": 4,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/21-annihilator-robot.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "zdEbrjq2KahlLfV5",
+      "_key": "!scenes.tokens!h8TZha8IN306iKgb.zdEbrjq2KahlLfV5",
+      "actorId": "XMgYnpFjFh4GKSSS",
+      "x": 1360,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "Hesk Corl",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/21-hesk-corl.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "DanVsedczQnyXJEp",
+      "_key": "!scenes.tokens!h8TZha8IN306iKgb.DanVsedczQnyXJEp",
+      "actorId": "DU5F1jbT8XqE5aga",
+      "x": 1760,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Mira Corl",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/21-mira-corl.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "mQMpXchyh6Y4U6ti",
+      "_key": "!scenes.tokens!h8TZha8IN306iKgb.mQMpXchyh6Y4U6ti",
+      "actorId": "6NAmANYhFVN6vNrC",
+      "x": 1920,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 3
+    },
+    {
+      "name": "Pell Corl",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/21-pell-corl.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "Pun1sbXOZP2IiCe5",
+      "_key": "!scenes.tokens!h8TZha8IN306iKgb.Pun1sbXOZP2IiCe5",
+      "actorId": "9sHAFAiO7wD1odSL",
+      "x": 2080,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 4
+    },
+    {
+      "name": "Wenna Corl",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/21-wenna-corl.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "84BK3nUCbdtnKvs0",
+      "_key": "!scenes.tokens!h8TZha8IN306iKgb.84BK3nUCbdtnKvs0",
+      "actorId": "ZP0Iqu3WEWEeHYhF",
+      "x": 2240,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 5
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

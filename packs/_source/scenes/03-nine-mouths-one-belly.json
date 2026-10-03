@@ -76,7 +76,70 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "The Jotund Troll",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 3,
+      "height": 3,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/03-jotund-troll.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "6eb23mHDV5VT7xkJ",
+      "_key": "!scenes.tokens!apUviv73qyki46ON.6eb23mHDV5VT7xkJ",
+      "actorId": "6uMTgCyo8g7lohCM",
+      "x": 1520,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Ser Halward Toll",
+      "actorLink": true,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/03-ser-halward-toll.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "5bbqhOafyAEl4feU",
+      "_key": "!scenes.tokens!apUviv73qyki46ON.5bbqhOafyAEl4feU",
+      "actorId": "n0zcaN7GHRAXWmSp",
+      "x": 1840,
+      "y": 1600,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",

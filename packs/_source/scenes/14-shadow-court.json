@@ -76,7 +76,194 @@
     "activeOnly": false
   },
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "name": "First Ankou",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/14-first-ankou.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "RMU2TycHFcmC5Oxp",
+      "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.RMU2TycHFcmC5Oxp",
+      "actorId": "zoVBW5kGVZPRzEil",
+      "x": 960,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Fourth Ankou",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/14-fourth-ankou.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "lqGNwBiziUlCKecc",
+      "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.lqGNwBiziUlCKecc",
+      "actorId": "yhpF1cCeoKCs3m1x",
+      "x": 1320,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 1
+    },
+    {
+      "name": "Second Ankou",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/14-second-ankou.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "YJXKhOZK5SuUzv9B",
+      "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.YJXKhOZK5SuUzv9B",
+      "actorId": "I4vkTUYHQOBFYyIk",
+      "x": 1680,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 2
+    },
+    {
+      "name": "Spared Ankou",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/14-spared-ankou.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "qeT1bFP8cbjWC0OH",
+      "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.qeT1bFP8cbjWC0OH",
+      "actorId": "3dXFS236T6qdmn1F",
+      "x": 2040,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 3
+    },
+    {
+      "name": "The Speaker",
+      "actorLink": true,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/14-speaker.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "ZrSgirUrX7JwH6RD",
+      "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.ZrSgirUrX7JwH6RD",
+      "actorId": "gcuPKkoNXiQODqmB",
+      "x": 2400,
+      "y": 1440,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 4
+    },
+    {
+      "name": "Third Ankou",
+      "actorLink": false,
+      "disposition": -1,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "modules/points-of-interest/assets/tokens/14-third-ankou.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "JbsARNzHyAqlpxUH",
+      "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.JbsARNzHyAqlpxUH",
+      "actorId": "MNomD0F9znxZWEhs",
+      "x": 1680,
+      "y": 1800,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": false,
+      "locked": false,
+      "sort": 0
+    }
+  ],
   "levels": [
     {
       "_id": "defaultLevel0000",
