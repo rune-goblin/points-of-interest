@@ -28,6 +28,19 @@
       "label": "Points of Interest: Journals",
       "path": "packs/journals",
       "type": "JournalEntry"
+    },
+    {
+      "name": "actors",
+      "label": "Points of Interest: Actors",
+      "path": "packs/actors",
+      "type": "Actor",
+      "system": "pf2e"
+    },
+    {
+      "name": "scenes",
+      "label": "Points of Interest: Scenes",
+      "path": "packs/scenes",
+      "type": "Scene"
     }
   ],
   "relationships": {
@@ -61,7 +74,9 @@
       "sorting": "m",
       "color": "#3b2a1a",
       "packs": [
-        "journals"
+        "journals",
+        "scenes",
+        "actors"
       ]
     }
   ]

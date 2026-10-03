@@ -1,0 +1,57 @@
+{
+  "_id": "uSrkiqeHgOGRKDcS",
+  "_key": "!journal!uSrkiqeHgOGRKDcS",
+  "name": "05. The Ossuary Wall",
+  "pages": [
+    {
+      "_id": "aSGtE9fLDaZS7E0V",
+      "_key": "!journal.pages!uSrkiqeHgOGRKDcS.aSGtE9fLDaZS7E0V",
+      "name": "Irovetti's Note",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/05-ossuary-wall.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Ossuary Wall"
+      },
+      "sort": 1000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "94wLkbfz0zc6czXz",
+      "_key": "!journal.pages!uSrkiqeHgOGRKDcS.94wLkbfz0zc6czXz",
+      "name": "Encounter",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Scene:</strong> @UUID[Compendium.points-of-interest.scenes.Scene.FSfsMVJvX9TaZ1wT]{05. The Ossuary Wall}</p>\n<p><strong>Actors:</strong> @UUID[Compendium.points-of-interest.actors.Actor.zbwePkV41U5cWcZC]{The Skulltaker}, @UUID[Compendium.points-of-interest.actors.Actor.CBV6RYabrL4SZm6P]{Magister Corwen Ash}, @UUID[Compendium.points-of-interest.actors.Actor.fofPOOzx3qU1sSFq]{Dalia Sorn}, @UUID[Compendium.points-of-interest.actors.Actor.dkXDnzulTONnV1rh]{Hemmet Brask}, @UUID[Compendium.points-of-interest.actors.Actor.Zr65ujrGoNbm12t4]{Lio Venn}, @UUID[Compendium.points-of-interest.actors.Actor.sE4RZxUrlyN2PONV]{Skeletal Champion}, @UUID[Compendium.points-of-interest.actors.Actor.aVr0ASvDmRLZQK9E]{Lament of the Wall}</p>\n<table>\n<tbody><tr>\n<td><strong>Zone</strong></td>\n<td>Zone 16: Glenebon Uplands (hill-fort on a high ridge)</td>\n</tr>\n<tr>\n<td><strong>Hex</strong></td>\n<td>3.5 on the Stolen Lands map</td>\n</tr>\n<tr>\n<td><strong>Type</strong></td>\n<td>Combat with a haunt</td>\n</tr>\n<tr>\n<td><strong>Threat</strong></td>\n<td>Moderate to Severe (about 110 XP) at party level 16</td>\n</tr>\n<tr>\n<td><strong>Creatures</strong></td>\n<td>Skulltaker (level 18, <em>Monster Core</em>); the Lament of the Wall (level 15 complex haunt)</td>\n</tr>\n</tbody></table>\n<p><strong>Irovetti&#39;s map note.</strong> A ring of small circles drawn like stacked skulls, with &quot;curiosity for the Academy — 4 antiquarians sent&quot; and later, in different ink, a single X through the ring.</p>\n<p><strong>Background.</strong> A Kellid chieftain built this hill-fort&#39;s inner wall from the skulls of her enemies, long before Pitax existed. The bones remember. Irovetti sent four antiquarians from the Academy to sketch and catalogue the wall; the skulltaker that coils within the ruins killed them, and Bonetaker added their skulls to the top course of the wall. The skulltaker&#39;s Skeletal Lore draws on every mind in its bones, including the antiquarians. It can speak in their voices and answer questions with their scholarship.</p>\n<p><strong>Arrival.</strong></p>\n<blockquote>\n<p>A ring of grey stone crowns the ridge. The inner wall is made of skulls: thousands of them, packed tight and weathered smooth. Near the top, four are white and new, one still wearing wire spectacles. As you approach, the wind through the eye sockets rises into a moan. Then the wall speaks, in a reedy academic voice: &quot;Do mind the third course. It&#39;s load-bearing.&quot;</p>\n</blockquote>\n<p><strong>Features.</strong></p>\n<ul>\n<li><strong>Skull wall.</strong> A 20-foot-high ring wall with three breaches. Worked stone at its base resists Splintered Ground; everywhere else in the fort is open earth and bone, where Splintered Ground works fully.</li>\n<li><strong>Inner court.</strong> An open circle 80 feet across with a fallen standing stone at its centre (standard cover).</li>\n<li><strong>Antiquarians&#39; camp.</strong> Outside the wall: tents, sketchbooks, a surveyor&#39;s chain. Their notes describe the chieftain&#39;s burial chamber beneath the standing stone (the treasure cache).</li>\n</ul>\n<p><strong>Running the encounter.</strong></p>\n<p><em>Parley (optional).</em> The skulltaker opens by talking. Through the antiquarians&#39; voices, it offers the PCs knowledge: any Recall Knowledge check about the Kellid history of the region or the giants of Glenebon, answered with its Skeletal Lore. It wants something in return: a new skull for the wall. It suggests a prisoner, an enemy, &quot;even one of Irovetti&#39;s men.&quot; The PCs can extract up to three answers with DC 39 Diplomacy or Deception checks before it loses patience. Any refusal of its price ends the parley.</p>\n<p><em>The fight.</em> The skulltaker rises from the wall in a storm of bone and opens with Splintered Ground across the court. It keeps Shard Storm active and targets the PC who refused its bargain most loudly. It uses its fly speed to stay above melee PCs and throw bone javelins.</p>\n<p><em>The haunt.</em> The wall itself joins the fight.</p>\n<p><strong>LAMENT OF THE WALL</strong> — HAZARD 15\nComplex, Haunt\n<strong>Stealth</strong> +29 (expert) to notice the whispering begin before it rises\n<strong>Description</strong> Thousands of skulls scream their old grievances in unison.\n<strong>Disable</strong> DC 36 Religion to recite the funeral rites of the Kellid dead (three successes required), or DC 39 Diplomacy or Kellid Lore to promise the bones their chieftain will be honoured (two successes). Destroying the skulltaker also ends the haunt.\n<strong>Routine</strong> (1 action) The wall screams. Each living creature within the ring attempts a DC 36 Will save. <strong>Critical Success</strong> No effect. <strong>Success</strong> Frightened 1. <strong>Failure</strong> Frightened 2, and the creature can&#39;t reduce its frightened value below 1 while inside the ring. <strong>Critical Failure</strong> As failure, and the creature is fleeing for 1 round.\n<strong>Reset</strong> The haunt resets at the next dusk.</p>\n<p><em>Bonetaker threat.</em> Any creature that dies within 60 feet risks rising as a skeletal champion under the skulltaker&#39;s control. Keep this in mind for PC allies and companions.</p>\n<p><strong>Outcomes.</strong></p>\n<ul>\n<li><strong>Skulltaker destroyed, haunt laid to rest.</strong> The fort becomes quiet. The chieftain&#39;s chamber opens.</li>\n<li><strong>Bargain struck.</strong> If the PCs give the skulltaker a skull, it lets them leave with their answers. Note this; a good-aligned church in the PCs&#39; kingdom will not approve.</li>\n<li><strong>The antiquarians.</strong> Their four skulls can be removed and returned to the Academy for burial.</li>\n</ul>\n<p><strong>Rewards.</strong> 110 XP. Treasure: the chieftain&#39;s chamber holds a gold torc and grave goods worth 2,400 gp, a level 17 permanent item (a Kellid war-axe or a primal amulet fits), and two <em>major healing potions</em> taken from the antiquarians&#39; packs. The antiquarians&#39; sketchbooks are worth 300 gp to any scholar. Kingdom: returning the antiquarians&#39; remains and notes to the Academy earns +1 to the kingdom&#39;s next Culture check after Pitax falls.</p>\n<p><strong>Scaling.</strong> Drop the haunt for a Moderate threat (80 XP). At party level 18, raise the haunt to level 17 (DCs +3) and let the skulltaker&#39;s Bonetaker raise any of the four antiquarians as skeletal champions on round 2.</p>\n"
+      },
+      "sort": 2000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "site": 5,
+      "hex": "3.5",
+      "icon": "modules/points-of-interest/assets/map-icons/05-ossuary-wall.webp"
+    }
+  }
+}

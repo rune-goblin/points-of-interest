@@ -1,0 +1,18 @@
+{
+  "_id": "nwrPs146dBdSNjlL",
+  "_key": "!folders!nwrPs146dBdSNjlL",
+  "name": "14. The Shadow Court",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 14000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

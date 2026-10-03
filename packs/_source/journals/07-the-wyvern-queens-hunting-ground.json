@@ -1,0 +1,57 @@
+{
+  "_id": "cfWCOoRyR3MwqSxP",
+  "_key": "!journal!cfWCOoRyR3MwqSxP",
+  "name": "07. The Wyvern Queen's Hunting Ground",
+  "pages": [
+    {
+      "_id": "11VoO7c6YB09FBev",
+      "_key": "!journal.pages!cfWCOoRyR3MwqSxP.11VoO7c6YB09FBev",
+      "name": "Irovetti's Note",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/07-wyvern-queens-hunting-ground.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Wyvern Queen's Hunting Ground"
+      },
+      "sort": 1000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ehfB89bZocdpzaAr",
+      "_key": "!journal.pages!cfWCOoRyR3MwqSxP.ehfB89bZocdpzaAr",
+      "name": "Encounter",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Scene:</strong> @UUID[Compendium.points-of-interest.scenes.Scene.W5FperevvbySnQZ2]{07. The Wyvern Queen's Hunting Ground}</p>\n<p><strong>Actors:</strong> @UUID[Compendium.points-of-interest.actors.Actor.rmgU6F2RnT5w85Ug]{Minognos-Ushad}, @UUID[Compendium.points-of-interest.actors.Actor.HvVlEj4RSm5Wk5qa]{Minognos-Ushad (Diving)}</p>\n<table>\n<tbody><tr>\n<td><strong>Zone</strong></td>\n<td>Zone 16: Glenebon Uplands (collapsed ridge; also usable in Zone 17)</td>\n</tr>\n<tr>\n<td><strong>Hex</strong></td>\n<td>1.5 on the Stolen Lands map</td>\n</tr>\n<tr>\n<td><strong>Type</strong></td>\n<td>Combat, two-part (flyover, then a return grudge match)</td>\n</tr>\n<tr>\n<td><strong>Threat</strong></td>\n<td>Severe 120 XP at party level 16</td>\n</tr>\n<tr>\n<td><strong>Creatures</strong></td>\n<td>Minognos-Ushad (level 19, <em>Kingmaker</em>)</td>\n</tr>\n</tbody></table>\n<p><strong>Irovetti&#39;s map note.</strong> A crude sketch of a winged shape with a long barbed tail, scratched so hard the nib tore the vellum, with &quot;do NOT&quot; written beneath.</p>\n<p><strong>Background.</strong> Irovetti once rode this ridge with a hunting party to bag a wyvern head for his palace. Minognos-Ushad killed eleven of them; he fled on foot. The ridge is her hunting ground: a collapsed shelf of shale and broken pines where she drops prey from height. A mammoth carcass hangs in the crown of a dead pine, and below it lies the half-buried shield of Irovetti&#39;s huntmaster.</p>\n<p><strong>Arrival.</strong></p>\n<blockquote>\n<p>The ridge looks broken, as though a giant fist struck it. Pines lie snapped and splintered across a slope of loose shale, and high in one dead tree hangs a mammoth, its hide stripped by talons. A shadow slides over the stones. Then the wind from her wings flattens the grass.</p>\n</blockquote>\n<p><strong>Features.</strong></p>\n<ul>\n<li><strong>Shale slope.</strong> Difficult terrain. A creature that critically fails a Reflex save or is knocked prone here slides 10 feet downslope.</li>\n<li><strong>Snapped pines.</strong> Fallen trunks provide standard cover against ground attacks and none against a diving wyvern.</li>\n<li><strong>Hanging carcass.</strong> The mammoth carcass is a food store and a lure. A creature that cuts it down (DC 30 Athletics or 40 slashing damage to the branch) drops it into a 15-foot burst below, dealing 8d6 bludgeoning (DC 36 basic Reflex).</li>\n<li><strong>Drop-off.</strong> The ridge&#39;s north edge falls 80 feet into a gorge. <strong>Punishing Momentum</strong> drops grabbed creatures here.</li>\n<li><strong>Huntmaster&#39;s shield.</strong> Buried in shale near the cliff. It bears Irovetti&#39;s household crest.</li>\n</ul>\n<p><strong>Running the encounter.</strong></p>\n<ul>\n<li><strong>Part one: the flyover.</strong> Minognos-Ushad passes low to test the PCs. She does not attack unless attacked or unless a PC takes the mammoth carcass. If the PCs stay still and show no threat, she circles twice and leaves. If attacked, she fights from the air: <strong>Powerful Dive</strong> to grab a target, <strong>Punishing Momentum</strong> to carry them over the drop-off, <strong>Breath Weapon</strong> on clustered PCs, and stinger Strikes to apply <strong>Wyvern Venom</strong>. At 100 HP or fewer she flees to her lair (area BR3).</li>\n<li><strong>Part two: the grudge.</strong> If she fled, she returns 1d4 days later while the PCs travel or camp. She attacks first with a <strong>Powerful Dive</strong> out of the sun (PCs must succeed at a DC 41 Perception check or be off-guard during the first round). She fights to the death this time and focuses the PC who wounded her most.</li>\n<li><strong>Complexity.</strong> The PCs can lure her with the carcass and set an ambush on the ridge. A successful ambush (party chooses ground, DC 39 Survival or Nature to read her approach) lets the PCs act before her and fight her on the ground for the first round; she must spend an action to take off.</li>\n</ul>\n<p><strong>Outcomes.</strong></p>\n<ul>\n<li><strong>Leave her alone.</strong> She marks the PCs as uninteresting. The ridge stays dangerous for caravans.</li>\n<li><strong>Drive her off.</strong> She returns for part two.</li>\n<li><strong>Slay her.</strong> The ridge becomes safe; her lair at BR3 can be looted.</li>\n<li><strong>Recover the shield.</strong> Returning the shield to the huntmaster&#39;s widow in Pitax after liberation earns goodwill among Pitax&#39;s old families.</li>\n</ul>\n<p><strong>Rewards.</strong> 120 XP (once, when she dies or leaves for good). Treasure is in her lair at BR3. Kingdom benefit: claiming the ridge hex opens a safe route through the uplands, and a wyvern trophy in the PCs&#39; capital grants +1 Fame or an equivalent event bonus.</p>\n<p><strong>Scaling.</strong> At party level 18 she is Moderate; give her a mate (an elite wyvern) for part two. For a weaker party, run part one as a scripted flyover only.</p>\n"
+      },
+      "sort": 2000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "site": 7,
+      "hex": "1.5",
+      "icon": "modules/points-of-interest/assets/map-icons/07-wyvern-queens-hunting-ground.webp"
+    }
+  }
+}

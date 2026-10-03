@@ -1,0 +1,220 @@
+{
+  "type": "hazard",
+  "items": [
+    {
+      "_id": "wz5Tc6cCY6TsTZzk",
+      "_key": "!actors.items!sRc0hJQFnVsUfYos.wz5Tc6cCY6TsTZzk",
+      "img": "systems/pf2e/icons/actions/Reaction.webp",
+      "name": "Lock-On",
+      "type": "action",
+      "sort": 100000,
+      "system": {
+        "actionType": {
+          "value": "reaction"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "defensive",
+        "description": {
+          "value": "<p><strong>Trigger</strong> A creature enters the scorched ring.</p><hr /><p><strong>Effect</strong> The grid rolls initiative.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "GwO4gPHDCouPTwwy",
+      "_key": "!actors.items!sRc0hJQFnVsUfYos.GwO4gPHDCouPTwwy",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Laser",
+      "type": "melee",
+      "sort": 200000,
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 31
+        },
+        "damageRolls": {
+          "gocslioxjf6fl4uw": {
+            "damage": "4d10+14",
+            "damageType": "fire"
+          }
+        },
+        "description": {
+          "value": "<p>Ranged. Each working pylon fires once per round at a random creature in the scorched ring. On a critical hit the target is also @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the end of its next turn.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "subjectToMAP": false,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    }
+  ],
+  "system": {
+    "attributes": {
+      "ac": {
+        "value": 39
+      },
+      "emitsSound": "encounter",
+      "hardness": 20,
+      "hasHealth": true,
+      "hp": {
+        "details": "per pylon (BT 40)",
+        "max": 80,
+        "temp": 0,
+        "tempmax": 0,
+        "value": 80
+      },
+      "immunities": [
+        {
+          "type": "critical-hits"
+        },
+        {
+          "type": "object-immunities"
+        },
+        {
+          "type": "precision"
+        }
+      ],
+      "stealth": {
+        "details": "<p>(expert); @Check[perception|dc:38] to notice the pylons' tracking lenses before entering the scorched ring</p>",
+        "value": 30
+      }
+    },
+    "details": {
+      "description": "<p>Three pylons fire laser bursts at intruders inside the scorched ring.</p>\n<h2>Appearance</h2>\n<p>A tall, slim metal pylon topped by a rotating cluster of lenses, scorched at the base, humming with light.</p>\n<section class=\"secret\" id=\"secret-KW82bunZNDXyiqNW\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.GUEIiKvIYJHJLfDw.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Complex hazard 16 (40 XP). Place one token per pylon (three); each unlinked token tracks its own pylon HP. Disabling all three opens the hatch, which powers down the warden.</p>\n</section>",
+      "disable": "<p>@Check[thievery|dc:38|traits:action:disable-a-device] or @Check[crafting|dc:40] to disable one pylon; a @Check[society|dc:36] or @Check[crafting|dc:36] check to read the hull's glyphs reduces the remaining pylons' Disable DCs by 2.</p>",
+      "isComplex": true,
+      "level": {
+        "value": 16
+      },
+      "publication": {
+        "license": "ORC",
+        "remaster": true,
+        "title": "Points of Interest"
+      },
+      "reset": "<p>The grid resets 1 hour after no creatures remain in the ring.</p>",
+      "routine": "<p>(one action per working pylon) Each working pylon fires a laser at a random creature in the ring.</p>"
+    },
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 30
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 24
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 0
+      }
+    },
+    "statusEffects": [],
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": [
+        "electricity",
+        "fire",
+        "mechanical",
+        "trap"
+      ]
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "sRc0hJQFnVsUfYos",
+  "_key": "!actors!sRc0hJQFnVsUfYos",
+  "name": "Hull Defence Grid",
+  "img": "modules/points-of-interest/assets/portraits/08-defence-pylon.webp",
+  "prototypeToken": {
+    "name": "Hull Defence Grid",
+    "actorLink": false,
+    "disposition": -1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/08-defence-pylon.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "1we6S7b8pBDs2xhX",
+  "sort": 3000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 8
+    }
+  },
+  "effects": []
+}

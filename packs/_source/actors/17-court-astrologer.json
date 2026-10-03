@@ -1,0 +1,60 @@
+{
+  "type": "loot",
+  "items": [],
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A thin older man in faded star-patterned robes, a brass astrolabe hanging from his neck, ink-stained fingers clutching a notebook. His face is gaunt and worried.</p>\n<section class=\"secret\" id=\"secret-Lx5HaECp18HEyusD\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.xKHOQLQGJ3INdRC0.JournalEntryPage.edGXn37wYpivMJIH]{17. Spore-Dawn}.</strong> Irovetti's astrologer, dead in the hunting blind. The notebook records that \"thunder made it shudder\" (DC 38 Society or Occultism); the satchel holds 2,500 gp and a major healing potion.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "cZ0OV7ivFsKFwk9u",
+  "_key": "!actors!cZ0OV7ivFsKFwk9u",
+  "name": "The Court Astrologer",
+  "img": "modules/points-of-interest/assets/portraits/17-court-astrologer.webp",
+  "prototypeToken": {
+    "name": "The Court Astrologer",
+    "actorLink": true,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/17-court-astrologer.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "3nyNUtK6UN8olHY1",
+  "sort": 2000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 17
+    }
+  },
+  "effects": []
+}

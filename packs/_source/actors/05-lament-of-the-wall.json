@@ -1,0 +1,111 @@
+{
+  "type": "hazard",
+  "items": [],
+  "system": {
+    "attributes": {
+      "ac": {
+        "value": 10
+      },
+      "emitsSound": "encounter",
+      "hardness": 0,
+      "hasHealth": false,
+      "hp": {
+        "details": "",
+        "max": 0,
+        "temp": 0,
+        "tempmax": 0,
+        "value": 0
+      },
+      "immunities": [],
+      "stealth": {
+        "details": "<p>(expert) to notice the whispering begin before it rises</p>",
+        "value": 29
+      }
+    },
+    "details": {
+      "description": "<p>Thousands of skulls scream their old grievances in unison.</p>\n<section class=\"secret\" id=\"secret-8YWZo7u3FFTZ6M49\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.uSrkiqeHgOGRKDcS.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Level 15 complex haunt that joins the skulltaker fight. Drop it for a Moderate threat (80 XP); at party level 18 raise it to level 17 (DCs +3).</p>\n</section>",
+      "disable": "<p>@Check[religion|dc:36] to recite the funeral rites of the Kellid dead (three successes required), or @Check[diplomacy|dc:39] or Kellid Lore to promise the bones their chieftain will be honoured (two successes). Destroying the skulltaker also ends the haunt.</p>",
+      "isComplex": true,
+      "level": {
+        "value": 15
+      },
+      "publication": {
+        "license": "ORC",
+        "remaster": true,
+        "title": "Points of Interest"
+      },
+      "reset": "<p>The haunt resets at the next dusk.</p>",
+      "routine": "<p>(1 action) The wall screams. Each living creature within the ring attempts a @Check[will|dc:36] save.</p><p><strong>Critical Success</strong> No effect.</p><p><strong>Success</strong> @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p><p><strong>Failure</strong> @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}, and the creature can't reduce its frightened value below 1 while inside the ring.</p><p><strong>Critical Failure</strong> As failure, and the creature is @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+    },
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 0
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 0
+      }
+    },
+    "statusEffects": [],
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "grg"
+      },
+      "value": [
+        "haunt"
+      ]
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "aVr0ASvDmRLZQK9E",
+  "_key": "!actors!aVr0ASvDmRLZQK9E",
+  "name": "Lament of the Wall",
+  "img": "modules/points-of-interest/assets/map-notes/05-ossuary-wall.webp",
+  "prototypeToken": {
+    "name": "Lament of the Wall",
+    "actorLink": true,
+    "disposition": -1,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "modules/points-of-interest/assets/map-notes/05-ossuary-wall.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "ZUm9dPvBiSPLGreQ",
+  "sort": 7000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 5
+    }
+  },
+  "effects": []
+}

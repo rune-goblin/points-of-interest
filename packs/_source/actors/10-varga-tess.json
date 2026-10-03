@@ -1,0 +1,60 @@
+{
+  "type": "loot",
+  "items": [],
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A skeleton in worn leather armour with a Pitaxian dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.</p>\n<section class=\"secret\" id=\"secret-f39whxE5Bax8XxnV\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.l8yVtAsdwxM19hvZ.JournalEntryPage.oZ23BnjhOFOnIP6B]{10. The Scout's Wager}.</strong> Irovetti's agent who poached the white stag; her skeleton lies in the pod with her satchel (900 gp, a level 16 consumable, the stag's last antler tine).</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "veXlsEz83sEuiLk8",
+  "_key": "!actors!veXlsEz83sEuiLk8",
+  "name": "Varga Tess",
+  "img": "modules/points-of-interest/assets/portraits/10-varga-tess.webp",
+  "prototypeToken": {
+    "name": "Varga Tess",
+    "actorLink": true,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/10-varga-tess.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "M6xw5ONtHuzmZgwU",
+  "sort": 4000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 10
+    }
+  },
+  "effects": []
+}

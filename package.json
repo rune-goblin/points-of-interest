@@ -9,7 +9,7 @@
     "node": ">=22.18.0"
   },
   "scripts": {
-    "build": "node scripts/build-journal.ts && node scripts/pack.ts && vite build",
+    "build": "node scripts/build-scenes.ts && node scripts/build-journal.ts && node scripts/pack.ts && vite build",
     "dev": "vite",
     "watch": "vite build --watch",
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
@@ -30,7 +30,10 @@
     "unpack": "fvtt package unpack",
     "build:adventure": "node scripts/build-adventure.ts",
     "normalize": "node scripts/normalize-refs.ts",
-    "build:journal": "node scripts/build-journal.ts"
+    "build:journal": "node scripts/build-journal.ts",
+    "build:scenes": "node scripts/build-scenes.ts",
+    "build:actors": "node scripts/build-actors.ts",
+    "build:icons": "node scripts/build-map-icons.ts"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.3",

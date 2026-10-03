@@ -1,0 +1,18 @@
+{
+  "_id": "1we6S7b8pBDs2xhX",
+  "_key": "!folders!1we6S7b8pBDs2xhX",
+  "name": "08. The Lightwardens",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 8000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

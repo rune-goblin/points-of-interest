@@ -1,0 +1,18 @@
+{
+  "_id": "v3GA8FHpHVzawDyP",
+  "_key": "!folders!v3GA8FHpHVzawDyP",
+  "name": "07. The Wyvern Queen's Hunting Ground",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 7000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

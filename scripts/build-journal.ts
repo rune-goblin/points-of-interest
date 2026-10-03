@@ -1,30 +1,19 @@
 // Generate the journal pack sources from docs/encounters.md, so the markdown stays the single
 // source of truth for encounter text. Run by `npm run build` before packing:
 //   node scripts/build-journal.ts
-// Ids derive from a hash of each page's slug, so rebuilding keeps every @UUID link stable.
-import { createHash } from 'node:crypto';
+// Each site gets its own entry (map-note handout + encounter text) beside one overview entry.
+// Ids derive from a hash of each heading's slug, so rebuilding keeps every @UUID link and every
+// placed map note stable.
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { marked } from 'marked';
+import { MODULE_ID, ids, pad, slugify, stableId } from './stable-id.ts';
 
 const ROOT = process.cwd();
-const MODULE_ID = 'points-of-interest';
 const PACK = 'journals';
 const OUT = join(ROOT, 'packs', '_source', PACK);
-const NOTES_DIR = join(ROOT, 'assets', 'map-notes');
 
-const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-function stableId(key: string): string {
-  const hash = createHash('sha256').update(`${MODULE_ID}:${key}`).digest();
-  return Array.from(hash.subarray(0, 16), (b) => ALPHABET[b % ALPHABET.length]).join('');
-}
-
-// GitHub's heading-anchor rule, which the markdown links were written against.
-function slugify(heading: string): string {
-  return heading.trim().toLowerCase().replace(/[^\w\- ]/g, '').replace(/ /g, '-');
-}
-
-interface Section { number: number; title: string; slug: string; body: string }
+interface Section { number: number; title: string; slug: string; hex: string; body: string }
 
 const source = readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8');
 const firstZone = source.search(/^## Zone /m);
@@ -42,31 +31,31 @@ headings.forEach((match, i) => {
     .replace(/\n---\s*$/, '\n')
     .trim();
   const number = Number(match[1]);
-  sections.push({ number, title: match[2].trim(), slug: slugify(`${match[1]}. ${match[2]}`), body });
+  // The placement key the Kingmaker module uses for region-map hexes: "row.column".
+  const hex = body.match(/^\| \*\*Hex\*\* \| (\d+\.\d+)\b/m)?.[1];
+  if (!hex) throw new Error(`docs/encounters.md: "${match[0]}" has no | **Hex** | row in its header table`);
+  sections.push({ number, title: match[2].trim(), slug: slugify(`${match[1]}. ${match[2]}`), hex, body });
 });
 sections.sort((a, b) => a.number - b.number);
 
-const encountersId = stableId('journal:encounters');
-const overviewPageId = stableId('page:overview');
-const pageIds = new Map(sections.map((s) => [s.slug, stableId(`page:${s.slug}`)]));
+const slugs = new Set(sections.map((s) => s.slug));
 
-function pageUuid(pageId: string): string {
-  return `Compendium.${MODULE_ID}.${PACK}.JournalEntry.${encountersId}.JournalEntryPage.${pageId}`;
+function pageUuid(entryId: string, pageId: string): string {
+  return `Compendium.${MODULE_ID}.${PACK}.JournalEntry.${entryId}.JournalEntryPage.${pageId}`;
 }
 
-// Markdown anchor links become Foundry content links to the matching page.
+// Markdown anchor links become Foundry content links to the matching site's encounter page.
 function linkify(md: string): string {
-  return md.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, (whole, text: string, slug: string) => {
-    const id = pageIds.get(slug);
-    return id ? `@UUID[${pageUuid(id)}]{${text}}` : whole;
-  });
+  return md.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, (whole, text: string, slug: string) =>
+    slugs.has(slug) ? `@UUID[${pageUuid(ids.siteJournal(slug), ids.encounterPage(slug))}]{${text}}` : whole,
+  );
 }
 
-const pad = (n: number): string => String(n).padStart(2, '0');
-function mapNotePath(number: number): string | undefined {
-  if (!existsSync(NOTES_DIR)) return undefined;
-  const file = readdirSync(NOTES_DIR).find((f) => f.startsWith(`${pad(number)}-`));
-  return file ? `modules/${MODULE_ID}/assets/map-notes/${file}` : undefined;
+function artPath(dir: string, number: number): string | undefined {
+  const path = join(ROOT, 'assets', dir);
+  if (!existsSync(path)) return undefined;
+  const file = readdirSync(path).find((f) => f.startsWith(`${pad(number)}-`));
+  return file ? `modules/${MODULE_ID}/assets/${dir}/${file}` : undefined;
 }
 
 function textPage(entryId: string, pageId: string, name: string, html: string, sort: number) {
@@ -98,7 +87,7 @@ function imagePage(entryId: string, pageId: string, name: string, src: string, c
   };
 }
 
-function entry(id: string, name: string, pages: unknown[], sort: number) {
+function entry(id: string, name: string, pages: unknown[], sort: number, flags: Record<string, unknown> = {}) {
   return {
     _id: id,
     _key: `!journal!${id}`,
@@ -107,36 +96,73 @@ function entry(id: string, name: string, pages: unknown[], sort: number) {
     folder: null,
     sort,
     ownership: { default: 0 },
-    flags: {},
+    flags,
   };
+}
+
+interface PackDoc { _id: string; _key: string; name: string; sort?: number; flags?: Record<string, Record<string, unknown>> }
+
+// Scenes and actors carry their encounter number in a module flag, so each page can link its own.
+function byEncounter(pack: string, collection: string): Map<number, PackDoc[]> {
+  const dir = join(ROOT, 'packs', '_source', pack);
+  const groups = new Map<number, PackDoc[]>();
+  if (!existsSync(dir)) return groups;
+  for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+    const doc = JSON.parse(readFileSync(join(dir, file), 'utf8')) as PackDoc;
+    const encounter = doc.flags?.[MODULE_ID]?.encounter;
+    if (!doc._key.startsWith(`!${collection}!`) || typeof encounter !== 'number') continue;
+    groups.set(encounter, [...(groups.get(encounter) ?? []), doc]);
+  }
+  for (const docs of groups.values()) docs.sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0) || a.name.localeCompare(b.name));
+  return groups;
+}
+
+const scenesByEncounter = byEncounter('scenes', 'scenes');
+const actorsByEncounter = byEncounter('actors', 'actors');
+
+function contentLinks(number: number): string {
+  const groups = [
+    { label: ['Scene', 'Scenes'], pack: 'scenes', type: 'Scene', docs: scenesByEncounter.get(number) ?? [] },
+    { label: ['Actor', 'Actors'], pack: 'actors', type: 'Actor', docs: actorsByEncounter.get(number) ?? [] },
+  ];
+  return groups
+    .filter((g) => g.docs.length)
+    .map((g) => {
+      const links = g.docs.map((d) => `@UUID[Compendium.${MODULE_ID}.${g.pack}.${g.type}.${d._id}]{${d.name}}`);
+      return `<p><strong>${g.label[g.docs.length > 1 ? 1 : 0]}:</strong> ${links.join(', ')}</p>\n`;
+    })
+    .join('');
 }
 
 // The encounter header tables are key/value pairs with a blank header row; drop it.
 const render = (md: string): string =>
   (marked.parse(linkify(md), { async: false }) as string).replace(/<thead>\s*<tr>\s*(<th><\/th>\s*)+<\/tr>\s*<\/thead>\s*/g, '');
 
-const encounterPages = [
-  textPage(encountersId, overviewPageId, 'Overview', render(overviewMd), 0),
-  ...sections.map((s) => {
-    const note = mapNotePath(s.number);
-    const img = note ? `<p><img src="${note}" alt="Irovetti's map note: ${s.title}"></p>\n` : '';
-    return textPage(encountersId, pageIds.get(s.slug)!, `${pad(s.number)}. ${s.title}`, img + render(s.body), s.number * 1000);
-  }),
-];
+const overviewId = ids.overviewJournal();
+const overview = entry(overviewId, "Irovetti's Map: Overview", [
+  textPage(overviewId, stableId('page:overview'), 'Overview', render(overviewMd), 0),
+], 0);
 
-const notesId = stableId('journal:map-notes');
-const notePages = sections.flatMap((s) => {
-  const note = mapNotePath(s.number);
-  if (!note) return [];
-  const caption = `Irovetti's note on the map: ${s.title}`;
-  return [imagePage(notesId, stableId(`note:${s.slug}`), `${pad(s.number)}. ${s.title}`, note, caption, s.number * 1000)];
-});
+// The handout page comes first: map notes link to it, so its ownership decides when players see
+// the note on the map.
+function siteEntry(s: Section) {
+  const id = ids.siteJournal(s.slug);
+  const note = artPath('map-notes', s.number);
+  const handout = note
+    ? [imagePage(id, ids.handoutPage(s.slug), "Irovetti's Note", note, `Irovetti's note on the map: ${s.title}`, 1000)]
+    : [];
+  const encounter = textPage(id, ids.encounterPage(s.slug), 'Encounter', contentLinks(s.number) + render(s.body), 2000);
+  const icon = artPath('map-icons', s.number) ?? note;
+  return entry(id, `${pad(s.number)}. ${s.title}`, [...handout, encounter], s.number * 1000, {
+    [MODULE_ID]: { site: s.number, hex: s.hex, ...(icon ? { icon } : {}) },
+  });
+}
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 const docs = [
-  { file: 'irovettis-map-encounters.json', doc: entry(encountersId, "Irovetti's Map: Encounters", encounterPages, 0) },
-  { file: 'irovettis-map-notes.json', doc: entry(notesId, "Irovetti's Map: Notes (Handouts)", notePages, 1000) },
+  { file: 'irovettis-map-overview.json', doc: overview },
+  ...sections.map((s) => ({ file: `${pad(s.number)}-${slugify(s.title)}.json`, doc: siteEntry(s) })),
 ];
 for (const { file, doc } of docs) writeFileSync(join(OUT, file), `${JSON.stringify(doc, null, 2)}\n`);
-console.log(`journal: ${encounterPages.length} encounter pages, ${notePages.length} map-note handouts → packs/_source/${PACK}`);
+console.log(`journal: overview + ${sections.length} site entries → packs/_source/${PACK}`);

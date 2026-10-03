@@ -1,0 +1,18 @@
+{
+  "_id": "M6xw5ONtHuzmZgwU",
+  "_key": "!folders!M6xw5ONtHuzmZgwU",
+  "name": "10. The Scout's Wager",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 10000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

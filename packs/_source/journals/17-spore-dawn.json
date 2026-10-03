@@ -1,0 +1,57 @@
+{
+  "_id": "xKHOQLQGJ3INdRC0",
+  "_key": "!journal!xKHOQLQGJ3INdRC0",
+  "name": "17. Spore-Dawn",
+  "pages": [
+    {
+      "_id": "DdHJ8QQcxSF6OLNF",
+      "_key": "!journal.pages!xKHOQLQGJ3INdRC0.DdHJ8QQcxSF6OLNF",
+      "name": "Irovetti's Note",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/17-spore-dawn.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: Spore-Dawn"
+      },
+      "sort": 1000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "edGXn37wYpivMJIH",
+      "_key": "!journal.pages!xKHOQLQGJ3INdRC0.edGXn37wYpivMJIH",
+      "name": "Encounter",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Scene:</strong> @UUID[Compendium.points-of-interest.scenes.Scene.af7s3UQFtCthMKsx]{17. Spore-Dawn}</p>\n<p><strong>Actors:</strong> @UUID[Compendium.points-of-interest.actors.Actor.tSeDKf0MnMABet7l]{The Mu Spore}, @UUID[Compendium.points-of-interest.actors.Actor.cZ0OV7ivFsKFwk9u]{The Court Astrologer}</p>\n<table>\n<tbody><tr>\n<td><strong>Zone</strong></td>\n<td>Zone 18: Thousand Voices (a sinkhole hollow in the forest&#39;s heart)</td>\n</tr>\n<tr>\n<td><strong>Hex</strong></td>\n<td>7.2 on the Stolen Lands map</td>\n</tr>\n<tr>\n<td><strong>Type</strong></td>\n<td>Combat set piece with an objective</td>\n</tr>\n<tr>\n<td><strong>Threat</strong></td>\n<td>Beyond Extreme at party level 16; hold this site. Severe 120 at party level 18, Moderate 80 at party level 19.</td>\n</tr>\n<tr>\n<td><strong>Creatures</strong></td>\n<td>Mu spore (L21, Kingmaker)</td>\n</tr>\n</tbody></table>\n<p><strong>Irovetti&#39;s map note.</strong> A circle shaded with tiny dots, an arrow pointing down into it, and the words &quot;omen — of what?&quot; in the court astrologer&#39;s careful hand. Irovetti added underneath in his own scrawl: &quot;burn the astrologer.&quot;</p>\n<p><strong>Background.</strong> Mu spores appear over places on the brink of catastrophe. Nyrissa&#39;s growing hold on the Stolen Lands has drawn one. It has anchored itself above a sinkhole and has started seeding the trees with burrowing spores. In a month the corrupted trees will spread spores on the wind toward the PCs&#39; nearest settlement. The spore has no master; it feeds on the doom it senses. Irovetti&#39;s astrologer charted its drift for a season and left a notebook in a hunting blind on the hollow&#39;s rim.</p>\n<p><strong>Arrival.</strong></p>\n<blockquote>\n<p>The forest goes grey. Bark peels from the trees in pale sheets, and every trunk weeps a fine dust that hangs in the air like smoke. Above the hollow ahead, blotting out half the sky, hangs a shape of flesh and fungus a hundred feet across, its tentacles trailing into the trees below. It breathes, and the whole forest leans toward it.</p>\n</blockquote>\n<p><strong>Features.</strong></p>\n<ul>\n<li><strong>Spore-rotted trees.</strong> Twenty trees around the hollow are corrupted. Each has AC 25, Hardness 5 and 60 HP. While three or more corrupted trees stand, the mu spore&#39;s Spores aura DC rises by 1 and it regains 10 additional HP from regeneration each round.</li>\n<li><strong>The sinkhole.</strong> The hollow drops 60 feet to a spore-carpeted floor. The spore hovers 40 feet above the rim. Climbing the sinkhole walls is a DC 36 Athletics check.</li>\n<li><strong>The astrologer&#39;s blind.</strong> A collapsed wooden blind on the rim holds the notebook and the astrologer&#39;s corpse, overgrown with mould.</li>\n<li><strong>Sound.</strong> The mu spore&#39;s regeneration stops when sonic damage hits it. The astrologer&#39;s notebook records that &quot;thunder made it shudder&quot;, a clue PCs can find with a DC 38 Society or Occultism check while they read it.</li>\n</ul>\n<p><strong>Running the encounter.</strong> The fight has two goals: kill the mu spore and destroy enough corrupted trees to stop the spread. Run a 6-round clock from the moment the spore notices the PCs. At the end of round 6, any surviving corrupted trees release spores on the wind, and the nearest PC settlement suffers a kingdom event (treat as Plague). Killing the mu spore ends the clock at once.</p>\n<p>Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 60-foot Spores aura, then uses Cough Spores on anyone who stays outside. It grabs anyone in melee with Grasping Tendrils and uses Fast Swallow on the first creature it grabs with its jaws. It uses its fly speed to stay above the sinkhole, which forces melee PCs to fly or climb. It fights to the death; it has no concept of retreat.</p>\n<p><strong>Outcomes.</strong></p>\n<ul>\n<li><strong>Spore slain, trees cleared.</strong> The forest heals within the season. The PCs&#39; kingdom gains 1 Fame for ending a known omen of doom.</li>\n<li><strong>Spore slain, trees standing.</strong> The spread still happens at the end of the clock, though at half strength (resolve the Plague event with a +2 circumstance bonus).</li>\n<li><strong>PCs retreat.</strong> The spore stays. The clock keeps running in weeks instead of rounds; each week the PCs delay adds another corrupted tree.</li>\n</ul>\n<p><strong>Rewards.</strong> 120 XP at party level 18. Treasure: the astrologer&#39;s satchel holds 2,500 gp in Pitaxian gold and a <em>major healing potion</em>. The notebook names three more omens the astrologer charted (use as adventure hooks). The mu spore&#39;s core sac, harvested with a DC 40 Crafting or Nature check, is worth 4,000 gp as an alchemical reagent.</p>\n<p><strong>Scaling.</strong> At party level 19, add 10 more corrupted trees. To run it earlier, reduce the mu spore to a weak adjustment (L20) and shorten the clock to 4 rounds; the encounter becomes Extreme at party level 16, so warn the players with the omen.</p>\n"
+      },
+      "sort": 2000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "site": 17,
+      "hex": "7.2",
+      "icon": "modules/points-of-interest/assets/map-icons/17-spore-dawn.webp"
+    }
+  }
+}

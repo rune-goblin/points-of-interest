@@ -1,0 +1,141 @@
+{
+  "type": "npc",
+  "items": [],
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 0
+      },
+      "dex": {
+        "mod": 0
+      },
+      "con": {
+        "mod": 0
+      },
+      "int": {
+        "mod": 0
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": 0
+      }
+    },
+    "attributes": {
+      "ac": {
+        "value": 10,
+        "details": ""
+      },
+      "adjustment": null,
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "value": 1,
+        "max": 1,
+        "temp": 0,
+        "details": ""
+      },
+      "speed": {
+        "value": 0,
+        "otherSpeeds": [],
+        "details": ""
+      }
+    },
+    "details": {
+      "blurb": "Speaking portrait",
+      "languages": {
+        "value": [],
+        "details": ""
+      },
+      "level": {
+        "value": 0
+      },
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.uSrkiqeHgOGRKDcS.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Speaking portrait for a dead antiquarian in the wall. The Skulltaker actor holds the statistics.</p>",
+      "publicNotes": "<h2>Appearance</h2>\n<p>In life: an elderly linguist with a long white beard and a satchel of rubbings. In death: a skull with a scrap of beard still caught in its jaw.</p>",
+      "publication": {
+        "license": "ORC",
+        "remaster": true,
+        "title": "Points of Interest"
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 0,
+      "senses": []
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "value": 0,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 0,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 0,
+        "saveDetail": ""
+      }
+    },
+    "skills": {},
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": []
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "Zr65ujrGoNbm12t4",
+  "_key": "!actors!Zr65ujrGoNbm12t4",
+  "name": "Lio Venn",
+  "img": "modules/points-of-interest/assets/portraits/05-lio-venn.webp",
+  "prototypeToken": {
+    "name": "Lio Venn",
+    "actorLink": true,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/05-lio-venn.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "ZUm9dPvBiSPLGreQ",
+  "sort": 5000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 5
+    }
+  },
+  "effects": []
+}

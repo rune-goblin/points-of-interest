@@ -1,0 +1,18 @@
+{
+  "_id": "Ux1CdY6WNeAEo7MP",
+  "_key": "!folders!Ux1CdY6WNeAEo7MP",
+  "name": "03. Nine Mouths, One Belly",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 3000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

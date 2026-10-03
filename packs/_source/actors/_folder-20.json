@@ -1,0 +1,18 @@
+{
+  "_id": "9Ef3c1YOtqtODHCG",
+  "_key": "!folders!9Ef3c1YOtqtODHCG",
+  "name": "20. The Burning Giant",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 20000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

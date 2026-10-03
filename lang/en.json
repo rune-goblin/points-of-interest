@@ -1,3 +1,11 @@
 {
-  "points-of-interest": {}
+  "points-of-interest": {
+    "MapNotes": {
+      "Folder": "Irovetti's Map",
+      "GMOnly": "Only a GM can place Irovetti's map notes.",
+      "NoPack": "The Points of Interest journal pack is missing. Run npm run build.",
+      "WrongScene": "Open the Kingmaker Stolen Lands map (275 px hex rows) before placing Irovetti's map notes.",
+      "Placed": "Placed {count} of Irovetti's map notes on {scene}."
+    }
+  }
 }

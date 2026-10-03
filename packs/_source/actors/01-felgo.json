@@ -1,0 +1,60 @@
+{
+  "type": "loot",
+  "items": [],
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A young man in Pitaxian green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.wBVTqTEAYkchfjL4.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The dead Pitaxian scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "fQaCjludOjyecS33",
+  "_key": "!actors!fQaCjludOjyecS33",
+  "name": "Felgo",
+  "img": "modules/points-of-interest/assets/portraits/01-felgo.webp",
+  "prototypeToken": {
+    "name": "Felgo",
+    "actorLink": true,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/01-felgo.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "rnHDDXkNTy6gJKC9",
+  "sort": 4000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 1
+    }
+  },
+  "effects": []
+}

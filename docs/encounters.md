@@ -48,6 +48,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 | | |
 |---|---|
 | **Zone** | Zone 13: Rushlight (wooded hills above the Rushlight tourney fields) |
+| **Hex** | 7.7 on the Stolen Lands map |
 | **Type** | Investigation, then combat |
 | **Threat** | Low (60 XP) at party level 16 |
 | **Creatures** | Ankou Assassin (level 17, *Kingmaker Adventure Path*); its Shadow Doubles appear during the fight |
@@ -93,6 +94,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 | | |
 |---|---|
 | **Zone** | Zone 13: Rushlight (high meadow above the tourney fields) |
+| **Hex** | 6.8 on the Stolen Lands map |
 | **Type** | Role-play with an environmental hazard |
 | **Threat** | Trivial (30 XP) if fought at party level 16 |
 | **Creatures** | 3 cauthoojes (level 12, *Monster Core*); 4 Academy of Grand Arts composers (noncombatant NPCs) |
@@ -144,6 +146,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 | | |
 |---|---|
 | **Zone** | Zone 14: Glenebon Lowlands (peat moor and cairnfield) |
+| **Hex** | 5.7 on the Stolen Lands map |
 | **Type** | Role-play (negotiation by head-vote) |
 | **Threat** | Trivial (30 XP) if fought at party level 16 |
 | **Creatures** | Jotund troll (level 15, *Kingmaker Adventure Path*) |
@@ -195,6 +198,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 | | |
 |---|---|
 | **Zone** | Zone 14: Glenebon Lowlands (a ruined noble estate) |
+| **Hex** | 8.5 on the Stolen Lands map |
 | **Type** | Combat with a rescue |
 | **Threat** | Moderate (90 XP) at party level 16 |
 | **Creatures** | 6 elite athaches (level 13, *Pathfinder Bestiary 2*) |
@@ -236,6 +240,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 | | |
 |---|---|
 | **Zone** | Zone 16: Glenebon Uplands (hill-fort on a high ridge) |
+| **Hex** | 3.5 on the Stolen Lands map |
 | **Type** | Combat with a haunt |
 | **Threat** | Moderate to Severe (about 110 XP) at party level 16 |
 | **Creatures** | Skulltaker (level 18, *Monster Core*); the Lament of the Wall (level 15 complex haunt) |
@@ -284,6 +289,7 @@ Complex, Haunt
 | | |
 |---|---|
 | **Zone** | Zone 16: Glenebon Uplands (wooded hollow below a granite shelf) |
+| **Hex** | 4.4 on the Stolen Lands map |
 | **Type** | Combat (massacre) + rescue and evidence |
 | **Threat** | Moderate 80 XP at party level 16 |
 | **Creatures** | 4 hill giant butchers (level 14, *Kingmaker Bestiary*) |
@@ -324,6 +330,7 @@ Complex, Haunt
 | | |
 |---|---|
 | **Zone** | Zone 16: Glenebon Uplands (collapsed ridge; also usable in Zone 17) |
+| **Hex** | 1.5 on the Stolen Lands map |
 | **Type** | Combat, two-part (flyover, then a return grudge match) |
 | **Threat** | Severe 120 XP at party level 16 |
 | **Creatures** | Minognos-Ushad (level 19, *Kingmaker*) |
@@ -366,6 +373,7 @@ Complex, Haunt
 | | |
 |---|---|
 | **Zone** | Zone 17: Numeria (hillside with a buried hull) |
+| **Hex** | 2.2 on the Stolen Lands map |
 | **Type** | Combat + puzzle/hazard |
 | **Threat** | Moderate 100 XP at party level 16 |
 | **Creatures** | 1 Numerian radiant warden (level 17, *Kingmaker*) + hull defence grid (complex hazard 16, 40 XP) |
@@ -414,6 +422,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 | | |
 |---|---|
 | **Zone** | Zone 17: Numeria (grassland scarred by an ancient patrol trench) |
+| **Hex** | 0.4 on the Stolen Lands map |
 | **Type** | Combat + rescue against a starvation clock; linked to [#21 The Annihilator](#21-the-annihilator) |
 | **Threat** | Moderate 80 XP at party level 16 |
 | **Creatures** | Elite Numerian adamantine golem (level 18, Kingmaker), reflavoured as a tracked hauler |
@@ -454,6 +463,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 | | |
 |---|---|
 | **Zone** | Zone 17: Numeria (crater with a crashed escape pod) |
+| **Hex** | 0.1 on the Stolen Lands map |
 | **Type** | Combat (hostile Wild Hunt) |
 | **Threat** | Severe 120 XP at party level 16 |
 | **Creatures** | 1 Wild Hunt scout (level 18, *Kingmaker*) + 2 Wild Hunt hounds (level 14, *Kingmaker*) |
@@ -493,6 +503,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 | | |
 |---|---|
 | **Zone** | Zone 17: Numeria (glassed crater in scrubby hills) |
+| **Hex** | 1.2 on the Stolen Lands map |
 | **Type** | Combat with a clock |
 | **Threat** | Severe (120 XP) at party level 16 |
 | **Creatures** | Numerian guthallath (level 19, Kingmaker; robotic version with weakness 15 to critical hits and electricity); Irovetti's engineers: Master Engineer Odalric Vane and 3 apprentices (level 8 noncombatants, use the Mechanic or Engineer statistics from NPC Core or any level 8 expert) |
@@ -551,6 +562,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 | | |
 |---|---|
 | **Zone** | Zone 18: Thousand Voices (forest edge, lightning-scorched clearing) |
+| **Hex** | 6.3 on the Stolen Lands map |
 | **Type** | Combat and exploration |
 | **Threat** | Severe (120 XP) at party level 16 |
 | **Creatures** | Sard (level 19, Bestiary 2 / Monster Core) |
@@ -592,6 +604,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 | | |
 |---|---|
 | **Zone** | Zone 18: Thousand Voices (a winding canyon under the forest canopy) |
+| **Hex** | 5.2 on the Stolen Lands map |
 | **Type** | Exploration chase, then combat |
 | **Threat** | Severe (120 XP) at party level 16 |
 | **Creatures** | Primal bandersnatch (level 19, Kingmaker) |
@@ -641,6 +654,7 @@ A PC who succeeds at the Trophy Walls check learns that the bandersnatch has wea
 | | |
 |---|---|
 | **Zone** | Zone 18: Thousand Voices (a grove of dead trees deep in the forest) |
+| **Hex** | 7.0 on the Stolen Lands map |
 | **Type** | Role-play (audience) |
 | **Threat** | Severe (140 XP) at party level 16 if it becomes a fight |
 | **Creatures** | Ankou assassin (level 17, Kingmaker), called the Speaker; 4 ankous (level 14, Bestiary 2) |
@@ -697,6 +711,7 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 | | |
 |---|---|
 | **Zone** | Zone 18: Thousand Voices (a grove where the seasons change) |
+| **Hex** | 5.0 on the Stolen Lands map |
 | **Type** | Role-play (whims) |
 | **Threat** | Severe (120 XP) at party level 16 if it becomes a fight |
 | **Creatures** | 2 whimwyrms (level 17, Kingmaker): Pippet and Gloamsy |
@@ -749,6 +764,7 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 | | |
 |---|---|
 | **Zone** | Zone 18: Thousand Voices (old-growth forest, a moss-floored clearing ringed by standing stones) |
+| **Hex** | 8.1 on the Stolen Lands map |
 | **Type** | Role-play (verbal fencing); combat only if the PCs force it |
 | **Threat** | Extreme 160 at party level 16 if fought. The emissary pulls its punches, so a fight plays closer to Severe. |
 | **Creatures** | Vilderavn herald (L19, Kingmaker) riding a zomok (L16, Bestiary 2) |
@@ -797,6 +813,7 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 | | |
 |---|---|
 | **Zone** | Zone 18: Thousand Voices (a sinkhole hollow in the forest's heart) |
+| **Hex** | 7.2 on the Stolen Lands map |
 | **Type** | Combat set piece with an objective |
 | **Threat** | Beyond Extreme at party level 16; hold this site. Severe 120 at party level 18, Moderate 80 at party level 19. |
 | **Creatures** | Mu spore (L21, Kingmaker) |
@@ -836,6 +853,7 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 | | |
 |---|---|
 | **Zone** | Zone 19: Branthlend Mountains (a high pass with an avalanche chute and a lava vent) |
+| **Hex** | 3.0 on the Stolen Lands map |
 | **Type** | Role-play (bargain); combat at party level 18 or later |
 | **Threat** | Bargain at any level. Fight: beyond Extreme at 16, Severe 120 at party level 18, Moderate 80 at party level 19. |
 | **Creatures** | Tor linnorm (L21, Monster Core) |
@@ -882,6 +900,7 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 | | |
 |---|---|
 | **Zone** | Zone 19: Branthlend Mountains (a ruined dragon roost on a black-rock spire above a fen) |
+| **Hex** | 4.1 on the Stolen Lands map |
 | **Type** | Exploration and sighting before Chapter 10; revenge ambush afterwards |
 | **Threat** | Sighting: no combat. Ambush: Severe 120 at party level 18, Moderate 80 at party level 19. |
 | **Creatures** | Ilthuliak (L21, Kingmaker) |
@@ -922,6 +941,7 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 | | |
 |---|---|
 | **Zone** | Zone 19: Branthlend Mountains, burning toward the Glenebon Uplands (a scorched valley with a dying village) |
+| **Hex** | 2.4 on the Stolen Lands map |
 | **Type** | Combat with a kingdom-threat clock |
 | **Threat** | Beyond Extreme at party level 16; hold this site. Base lerritan: Severe 120 at party level 18, Moderate 80 at party level 19. Elite lerritan (L22): Severe 120 at party level 19. |
 | **Creatures** | Lerritan (L21, Bestiary 2); use the elite adjustment at party level 19 |
@@ -959,6 +979,7 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 | | |
 |---|---|
 | **Zone** | Zone 16: Glenebon Uplands, on the Numerian border (hill farms and a burning steading) |
+| **Hex** | 0.6 on the Stolen Lands map |
 | **Type** | Combat + protect the survivors; linked to [#9 The Iron Juggernaut](#9-the-iron-juggernaut) |
 | **Threat** | Moderate 80 XP at party level 16 |
 | **Creatures** | 1 annihilator robot (level 18, custom conversion below) |

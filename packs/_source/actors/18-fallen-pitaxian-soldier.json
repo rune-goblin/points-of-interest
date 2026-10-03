@@ -1,0 +1,60 @@
+{
+  "type": "loot",
+  "items": [],
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.</p>\n<section class=\"secret\" id=\"secret-1cxRcx1dzIL5I6L3\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.AMUikWjn5lrCthLH.JournalEntryPage.2bl199Js092nPA7G]{18. The Linnorm's Pass}.</strong> One of fifty-two Pitaxian soldiers in the pass. Their regimental insignia and Irovetti's orders are evidence of Pitaxian aggression; their gear yields 800 gp.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "UPfDMH5xrS5v1PH9",
+  "_key": "!actors!UPfDMH5xrS5v1PH9",
+  "name": "Fallen Pitaxian Soldier",
+  "img": "modules/points-of-interest/assets/portraits/18-fallen-pitaxian-soldier.webp",
+  "prototypeToken": {
+    "name": "Fallen Pitaxian Soldier",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/18-fallen-pitaxian-soldier.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "jsTXwos06c71kJyo",
+  "sort": 2000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 18
+    }
+  },
+  "effects": []
+}

@@ -1,0 +1,57 @@
+{
+  "_id": "eSsLNw6OwCwMmcdc",
+  "_key": "!journal!eSsLNw6OwCwMmcdc",
+  "name": "03. Nine Mouths, One Belly",
+  "pages": [
+    {
+      "_id": "cBvTTVt8YRTOu2y8",
+      "_key": "!journal.pages!eSsLNw6OwCwMmcdc.cBvTTVt8YRTOu2y8",
+      "name": "Irovetti's Note",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/03-nine-mouths-one-belly.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: Nine Mouths, One Belly"
+      },
+      "sort": 1000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "wdlbFe4qIZDYqrwL",
+      "_key": "!journal.pages!eSsLNw6OwCwMmcdc.wdlbFe4qIZDYqrwL",
+      "name": "Encounter",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Scene:</strong> @UUID[Compendium.points-of-interest.scenes.Scene.apUviv73qyki46ON]{03. Nine Mouths, One Belly}</p>\n<p><strong>Actors:</strong> @UUID[Compendium.points-of-interest.actors.Actor.6uMTgCyo8g7lohCM]{The Jotund Troll}, @UUID[Compendium.points-of-interest.actors.Actor.Y5YWrVuiSckINAaE]{The Envoy (Troll Head)}, @UUID[Compendium.points-of-interest.actors.Actor.lJ3pXX50xYYXfVdB]{The Old Heads (Troll Heads)}, @UUID[Compendium.points-of-interest.actors.Actor.n0zcaN7GHRAXWmSp]{Ser Halward Toll}</p>\n<table>\n<tbody><tr>\n<td><strong>Zone</strong></td>\n<td>Zone 14: Glenebon Lowlands (peat moor and cairnfield)</td>\n</tr>\n<tr>\n<td><strong>Hex</strong></td>\n<td>5.7 on the Stolen Lands map</td>\n</tr>\n<tr>\n<td><strong>Type</strong></td>\n<td>Role-play (negotiation by head-vote)</td>\n</tr>\n<tr>\n<td><strong>Threat</strong></td>\n<td>Trivial (30 XP) if fought at party level 16</td>\n</tr>\n<tr>\n<td><strong>Creatures</strong></td>\n<td>Jotund troll (level 15, <em>Kingmaker Adventure Path</em>)</td>\n</tr>\n</tbody></table>\n<p><strong>Irovetti&#39;s map note.</strong> A crude nine-pointed star with a stick figure inside it, the figure&#39;s head drawn separately on a pole. Beneath: &quot;bargained with it — no.&quot;</p>\n<p><strong>Background.</strong> Irovetti sent an envoy, Ser Halward Toll, to buy the troll&#39;s help against the PCs&#39; kingdom. The heads could not agree on the price. The hungriest head ate Halward mid-negotiation, and his head now sits on a stake outside the cairn. Since then, one of the troll&#39;s heads talks in Halward&#39;s voice and manner; it is the troll&#39;s own head, mimicking a meal it found impressive. The troll knows the PCs outclass it. It wants something from them without dying for it, and each head wants something different.</p>\n<p><strong>Arrival.</strong></p>\n<blockquote>\n<p>A barrow mound rises from the moor, its entrance stones carved with spirals. On a stake beside the entrance, a crow pecks at a head that still wears a courtier&#39;s oiled moustache. From inside the barrow comes an argument in nine voices. One of them says, in a polished Pitaxian accent, &quot;Gentlemen, please. We have guests.&quot;</p>\n</blockquote>\n<p><strong>Features.</strong></p>\n<ul>\n<li><strong>The barrow.</strong> A long chamber 30 feet high, wide enough for the troll to turn. Bones and armour carpet the floor (difficult terrain).</li>\n<li><strong>The stake.</strong> Halward&#39;s head and his envoy&#39;s satchel, which holds Irovetti&#39;s letter of offer (see Rewards).</li>\n<li><strong>Moor outside.</strong> Peat bog patches act as difficult terrain; a creature that critically fails an Athletics check while running through them is immobilised until it Escapes (DC 30).</li>\n</ul>\n<p><strong>Running the encounter.</strong> The troll will not fight unless a head is insulted twice, the vote fails, or the PCs attack. The PCs negotiate with a council of nine heads. Five votes in favour wins the troll&#39;s agreement; five against ends the parley and starts a fight.</p>\n<p><em>The heads.</em> Group them so the scene stays playable. Each group votes as a bloc unless a PC wins over an individual head.</p>\n<ul>\n<li><strong>The Envoy</strong> (1 head). Speaks as Halward. Vain, courtly, wants to be addressed as &quot;Ser&quot; and treated as a diplomat. Votes for any deal that flatters it.</li>\n<li><strong>The Bellies</strong> (3 heads). Want food: a cow per week, a stocked hunting ground, or a meal right now. Votes with whoever feeds them.</li>\n<li><strong>The Grudges</strong> (3 heads). Want revenge on Irovetti for tricking them with &quot;a meal that talked too much.&quot; They vote for any deal that hurts Pitax.</li>\n<li><strong>The Old Heads</strong> (2 heads). Ancient, slow and afraid. They want the barrow left alone; it holds their mother&#39;s bones. They vote against any deal that brings humans to the moor.</li>\n</ul>\n<p><strong>Influence (per bloc).</strong></p>\n<ul>\n<li><strong>Discovery</strong> DC 34 Perception or Society to separate the blocs and learn each one&#39;s want.</li>\n<li><strong>Envoy:</strong> DC 31 Diplomacy, DC 31 Society (court etiquette). Weakness: honorific titles (+2 to the check).</li>\n<li><strong>Bellies:</strong> DC 33 Nature (offering animal husbandry or hunting rights), DC 31 Diplomacy if food is offered on the spot.</li>\n<li><strong>Grudges:</strong> DC 34 Intimidation, DC 33 Deception or Diplomacy if the PCs share news of Irovetti&#39;s defeat or offer them a chance to strike Pitax.</li>\n<li><strong>Old Heads:</strong> DC 36 Diplomacy, DC 33 Religion (honouring the mother&#39;s bones).</li>\n<li><strong>Resistances</strong> Any PC who speaks to only one head offends the others: –2 to the next check against a different bloc. Fire or electricity in sight (a torch, a spell) imposes a –2 penalty on all checks; trolls fear both.</li>\n<li><strong>Penalty</strong> A critical failure flips one head of that bloc to &quot;against.&quot;</li>\n</ul>\n<p><em>The deal.</em> Possible agreements: the troll guards the moor road for the kingdom in exchange for a cow a week; it joins the PCs&#39; army as a mercenary against Pitax; it simply surrenders the satchel and lets the PCs leave in peace.</p>\n<p><em>If it fights.</em> The troll uses Cacophonous Roar first, then Ravenous Jaws against the nearest cluster. It flees into the moor at 120 HP, and the Old Heads berate the others as it goes.</p>\n<p><strong>Outcomes.</strong></p>\n<ul>\n<li><strong>Deal struck (5+ votes).</strong> The troll becomes a moor guardian or mercenary. It keeps its word as long as it is fed.</li>\n<li><strong>Deal fails.</strong> Combat. The troll fights briefly, then flees.</li>\n<li><strong>Halward&#39;s head.</strong> Returning it to his widow in Pitax reveals Irovetti&#39;s habit of sending envoys to monsters, useful evidence in post-war politics.</li>\n</ul>\n<p><strong>Rewards.</strong> 60 XP for a successful deal; 30 XP if fought. Treasure: the satchel holds Irovetti&#39;s letter, 400 gp in Pitaxian gold as the &quot;first payment&quot;, and a <em>greater bottled lightning</em> Irovetti sent as a sweetener. The barrow holds 1,200 gp in ancient Kellid torcs. Kingdom: the troll as a guardian reduces the danger of one moor hex (treat the hex as having a Watchtower for Stability purposes); as a mercenary, add it to the PCs&#39; army as a special unit at your discretion.</p>\n<p><strong>Scaling.</strong> For a tougher fight at party level 18, make the troll elite and add a second, younger jotund troll as its sibling.</p>\n"
+      },
+      "sort": 2000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "site": 3,
+      "hex": "5.7",
+      "icon": "modules/points-of-interest/assets/map-icons/03-nine-mouths-one-belly.webp"
+    }
+  }
+}

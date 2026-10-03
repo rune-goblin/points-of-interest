@@ -1,0 +1,18 @@
+{
+  "_id": "6NdrKiOnwwSscL7y",
+  "_key": "!folders!6NdrKiOnwwSscL7y",
+  "name": "15. The Moody Brood",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 15000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

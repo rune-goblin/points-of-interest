@@ -1,0 +1,18 @@
+{
+  "_id": "rnHDDXkNTy6gJKC9",
+  "_key": "!folders!rnHDDXkNTy6gJKC9",
+  "name": "01. The Shadowless Lodge",
+  "type": "Actor",
+  "folder": null,
+  "sorting": "m",
+  "sort": 1000,
+  "color": null,
+  "description": "",
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
+}

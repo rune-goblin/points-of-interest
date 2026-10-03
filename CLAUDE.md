@@ -10,12 +10,31 @@ compendium packs from `packs/_source/`).
 - `docs/encounters.md` — **canonical encounter text.** `npm run build` regenerates the journal
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
+  The journal holds one overview entry plus one entry per site: an "Irovetti's Note" handout page,
+  then the "Encounter" page.
+- Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the Kingmaker
+  Stolen Lands region map (the key the `pf2e-kingmaker` hex HUD shows). The build copies it into the
+  site entry's `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.
+- Every generated id comes from `scripts/stable-id.ts` (`ids.siteJournal`, `ids.actor`, `ids.scene`, …),
+  so the packs link to each other without a lookup table. Scenes and actors carry
+  `flags['points-of-interest'].encounter`; `build-journal.ts` reads it to head each encounter page
+  with links to its scene and actors, so `build-scenes.ts` runs before it in `npm run build`.
+- `scripts/build-scenes.ts` → `packs/_source/scenes/` (generated on build). One scene per map, native
+  v14 (one level holds the background). Grid sizes are judged per map and recorded in its table.
+- `scripts/build-actors.ts` → `packs/_source/actors/` (**committed, not part of `npm run build`**: it
+  needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`). The mapping
+  table at its top names each actor's source stat block. Copy only from PF2e **system** packs
+  (OGL/ORC), never from the premium `pf2e-kingmaker` module. The remaster renamed the ankou
+  "Ozthoom" (Monster Core 2); the Kingmaker Ankou Assassin keeps its name.
 - `docs/art/NN-slug.md` — art briefs per encounter; `docs/art/by-type/` — the same briefs
   regrouped as map notes, maps and characters.
 - `docs/pitches.md` — the original one-paragraph pitches.
 - `assets/map-notes|maps|portraits|tokens/NN-name.webp` — art, prefixed with the encounter number.
   A character's portrait and token share a file name. Reference art by its served path
   `modules/points-of-interest/assets/…`.
+- `assets/map-icons/NN-name.webp` — 512 px map-pin icons derived from `assets/map-notes/`
+  (trimmed, parchment halo, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
+  after changing map-note art; the icons are committed, not built.
 
 **The Foundry/PF2e API, compendium packs, Svelte-in-ApplicationV2, the Vite build, and
 multi-client sync live in the user-level `foundry-pf2e` skill** — consult it for any of
@@ -103,9 +122,15 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 
 ## Status and next steps
 
-- Done: module scaffold, art in `assets/`, encounter docs, generated journal pack.
-- Next: scenes for each encounter (tactical maps from `assets/maps/`), actors for every character
-  in `docs/art/by-type/characters.md` (portrait + token from `assets/`), then place tokens.
+- Done: module scaffold, art in `assets/`, encounter docs, generated journal pack, scenes pack
+  (22, no walls/lights/tokens), actors pack (86, including 2 hazards and 8 loot remains; one folder per encounter).
+- Map notes: with the Stolen Lands region map open, a GM runs
+  `game.modules.get('points-of-interest').api.placeMapNotes()`. It imports or refreshes the journal
+  entries into an "Irovetti's Map" world folder (same ids as the pack), then creates or moves one note
+  per site (160 px icon, linked to the handout page, flagged `site`). Re-run it after journal edits.
+  A note shows to players once they can see its handout page.
+- Next: check the actor sheets and scene grids in a live world, trace walls and lights, then place
+  tokens.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;
   its stat block lives in `docs/encounters.md`. #9 uses the Kingmaker Elite Numerian Adamantine Golem.
 - Art is stored in **Git LFS** (`assets/**` in `.gitattributes`); `release.yml` checks out with

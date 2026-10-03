@@ -1,0 +1,60 @@
+{
+  "type": "loot",
+  "items": [],
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A Kellid skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.</p>\n<section class=\"secret\" id=\"secret-CVgGvYkOWSblFEjt\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.Alxl4JlFa2HPXcr5.JournalEntryPage.Q5JKNbcFMBLTwObn]{09. The Iron Juggernaut}.</strong> A Kellid hunter delivered a century ago; the longest tally in the hold. His spear is a level 16 permanent item reflavoured as Kellid.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "FWM41aRNbIdGH0jG",
+  "_key": "!actors!FWM41aRNbIdGH0jG",
+  "name": "Tarku",
+  "img": "modules/points-of-interest/assets/portraits/09-tarku.webp",
+  "prototypeToken": {
+    "name": "Tarku",
+    "actorLink": true,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/09-tarku.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "rrwVEp0yfD2nEZ3v",
+  "sort": 4000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 9
+    }
+  },
+  "effects": []
+}

@@ -1,0 +1,679 @@
+{
+  "type": "npc",
+  "items": [
+    {
+      "_id": "5I9ANS2x4FlAxaUm",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.5I9ANS2x4FlAxaUm",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Claw",
+      "type": "melee",
+      "sort": 100000,
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 34
+        },
+        "damageRolls": {
+          "hnguvjunmhj4dxaz": {
+            "damage": "3d12+16",
+            "damageType": "slashing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "reach-20"
+          ]
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "55Ih0bXF9Oy2E6j4",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.55Ih0bXF9Oy2E6j4",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Chain Gun",
+      "type": "melee",
+      "sort": 200000,
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 32
+        },
+        "damageRolls": {
+          "l3r6foeu7ifmo1xo": {
+            "damage": "3d10+12",
+            "damageType": "piercing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "range": {
+          "increment": 200,
+          "max": null
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "deadly-d12"
+          ]
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "hzFPPQUyXXzvtTBr",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.hzFPPQUyXXzvtTBr",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "Force Field",
+      "type": "action",
+      "sort": 300000,
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "defensive",
+        "description": {
+          "value": "<p>The annihilator projects a shimmering field with 60 Hit Points. Damage reduces the field before the robot's HP. At the start of each of its turns, the field regains 15 HP. If the field drops to 0, it collapses and can't recover for [[/gmr 1d4 #rounds]]{1d4 rounds}; then it returns at 15 HP.</p><p>Each electricity hit that deals 15 or more damage also stuns the Force Field: it doesn't regain HP at the start of the annihilator's next turn.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "XnSTrACzUqwwRKVo",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.XnSTrACzUqwwRKVo",
+      "img": "systems/pf2e/icons/actions/Reaction.webp",
+      "name": "Suppressed Response",
+      "type": "action",
+      "sort": 400000,
+      "system": {
+        "actionType": {
+          "value": "reaction"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "defensive",
+        "description": {
+          "value": "<p><strong>Trigger</strong> A creature within 120 feet critically hits the annihilator.</p><hr /><p><strong>Effect</strong> The annihilator makes a chain gun Strike against the triggering creature.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "OmEWgOk2CLkd0qGk",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.OmEWgOk2CLkd0qGk",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "name": "Booster Jets",
+      "type": "action",
+      "sort": 500000,
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "interaction",
+        "description": {
+          "value": "<p>The annihilator gains a fly speed of 60 feet until the end of its next turn. It can't use Booster Jets again for 1 round.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "move"
+          ]
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "fVfghBe5Z4EyhYpd",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.fVfghBe5Z4EyhYpd",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Combined Arms",
+      "type": "action",
+      "sort": 600000,
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>The annihilator makes a claw Strike and a chain gun Strike, each at its current multiple attack penalty; the penalty increases after both.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "uqSBtH1b7FBsLPyj",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.uqSBtH1b7FBsLPyj",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Plasma Lance",
+      "type": "action",
+      "sort": 700000,
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>The tail projects a @Template[line|distance:120] of plasma. Each creature in the line takes @Damage[(9d6)[fire],(9d6)[electricity]] damage (@Check[reflex|dc:40|basic]). The annihilator can't use Plasma Lance again for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "electricity",
+            "fire"
+          ]
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "475nwUrTjbqp499g",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.475nwUrTjbqp499g",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Suppressing Fire",
+      "type": "action",
+      "sort": 800000,
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>The chain guns sweep a @Template[cone|distance:60]. Each creature in the area takes @Damage[6d12[piercing]] damage (@Check[reflex|dc:38|basic]). A creature that fails is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the end of its next turn.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "JYMRfDnarBsw1iMR",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.JYMRfDnarBsw1iMR",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "name": "Collect Specimen",
+      "type": "action",
+      "sort": 900000,
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "interaction",
+        "description": {
+          "value": "<p>The annihilator picks up an unconscious or dying creature within its reach and seals them in a stasis bay. The creature stops making recovery checks and its dying value can't increase while inside. Opening a bay takes two Interact actions and a @Check[thievery|dc:38] check, or destroying the annihilator. A bay holds one creature; the annihilator has four bays.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "manipulate"
+          ]
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    },
+    {
+      "_id": "62r6sg8jatioSmup",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.62r6sg8jatioSmup",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "Deliver Cargo",
+      "type": "action",
+      "sort": 1000000,
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "description": {
+          "value": "<p>When two or more bays are full, or when the annihilator drops below 100 HP, it uses Booster Jets and leaves for the Juggernaut's docking cradle. It reaches the cradle in 8 hours and transfers every captive into the Juggernaut's hold, where stasis ends.</p>"
+        },
+        "publication": {
+          "license": "OGL",
+          "remaster": false,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      }
+    }
+  ],
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 9
+      },
+      "dex": {
+        "mod": 3
+      },
+      "con": {
+        "mod": 7
+      },
+      "int": {
+        "mod": 2
+      },
+      "wis": {
+        "mod": 2
+      },
+      "cha": {
+        "mod": -5
+      }
+    },
+    "attributes": {
+      "ac": {
+        "value": 42,
+        "details": ""
+      },
+      "adjustment": null,
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "value": 300,
+        "max": 300,
+        "temp": 0,
+        "details": ""
+      },
+      "immunities": [
+        {
+          "type": "bleed"
+        },
+        {
+          "type": "cold"
+        },
+        {
+          "type": "death-effects"
+        },
+        {
+          "type": "disease"
+        },
+        {
+          "type": "doomed"
+        },
+        {
+          "type": "drained"
+        },
+        {
+          "type": "fatigued"
+        },
+        {
+          "type": "paralyzed"
+        },
+        {
+          "type": "poison"
+        },
+        {
+          "type": "sickened"
+        },
+        {
+          "type": "unconscious"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "critical-hits",
+          "value": 15
+        },
+        {
+          "type": "electricity",
+          "value": 15
+        }
+      ],
+      "resistances": [
+        {
+          "type": "fire",
+          "value": 15
+        }
+      ],
+      "speed": {
+        "value": 50,
+        "otherSpeeds": [
+          {
+            "type": "climb",
+            "value": 30
+          }
+        ],
+        "details": "booster jets"
+      }
+    },
+    "details": {
+      "blurb": "Numerian war machine",
+      "languages": {
+        "value": [
+          "common"
+        ],
+        "details": "antique Numerian dialect"
+      },
+      "level": {
+        "value": 18
+      },
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.dO1SJTMbMCHcThyz.JournalEntryPage.O5rNFDKxgn9WE38b]{21. The Annihilator}.</strong> Burns structures, then growth, then collects survivors in four stasis bays and delivers them to the Iron Juggernaut (#9). Custom conversion from the stat block in the encounter.</p>",
+      "publicNotes": "<p>An annihilator robot ranges out of Numeria on orders older than any living nation: burn structures, destroy growth, and collect survivors. It carries captives in four stasis bays and brings them to the docking cradle on the Iron Juggernaut's loop, where it transfers them into the Juggernaut's hold.</p>\n<h2>Appearance</h2>\n<p>A massive four-legged war machine of dark grey adamantine plating scarred by ages of use, with clawed legs and a long segmented tail curled over its back, ending in a plasma lance emitter. Twin chain gun barrels on its shoulders. A sensor cluster glows red on its head plate. Four armoured hatches line its flank; one bulges as if struck from inside.</p>",
+      "publication": {
+        "license": "OGL",
+        "remaster": true,
+        "title": "Points of Interest (conversion of the Pathfinder RPG annihilator robot)"
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 32,
+      "senses": [
+        {
+          "type": "darkvision"
+        },
+        {
+          "type": "low-light-vision"
+        },
+        {
+          "type": "tremorsense",
+          "acuity": "imprecise",
+          "range": 60
+        }
+      ]
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "value": 33,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 28,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 27,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "acrobatics": {
+        "base": 30
+      },
+      "athletics": {
+        "base": 36
+      },
+      "intimidation": {
+        "base": 29
+      }
+    },
+    "traits": {
+      "rarity": "rare",
+      "size": {
+        "value": "grg"
+      },
+      "value": [
+        "construct",
+        "robot"
+      ]
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "XMgYnpFjFh4GKSSS",
+  "_key": "!actors!XMgYnpFjFh4GKSSS",
+  "name": "Annihilator Robot",
+  "img": "modules/points-of-interest/assets/portraits/21-annihilator-robot.webp",
+  "prototypeToken": {
+    "name": "Annihilator Robot",
+    "actorLink": true,
+    "disposition": -1,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/21-annihilator-robot.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "HMtLdjbPcu4moQOm",
+  "sort": 1000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 21
+    }
+  },
+  "effects": []
+}

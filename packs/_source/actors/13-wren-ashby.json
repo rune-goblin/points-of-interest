@@ -1,0 +1,60 @@
+{
+  "type": "loot",
+  "items": [],
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A lean ranger with cropped grey hair and a weathered face, wearing a Pitaxian green cloak and a quiver at the hip. This is a sketch from the front of Wren's journal.</p>\n<section class=\"secret\" id=\"secret-KQaIrHtzUhA1Us0G\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.soOcHOYNzraPWxlL.JournalEntryPage.u3owPBswTYDEuJAk]{13. The Quilled Hunter}.</strong> Irovetti's ranger. Only a torn green cloak remains in the den; Wren's bow and pack lie nearby.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "xfaDabys6fdAbYtr",
+  "_key": "!actors!xfaDabys6fdAbYtr",
+  "name": "Wren Ashby",
+  "img": "modules/points-of-interest/assets/portraits/13-wren-ashby.webp",
+  "prototypeToken": {
+    "name": "Wren Ashby",
+    "actorLink": true,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/points-of-interest/assets/tokens/13-wren-ashby.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "zYAJhRsEeA5L70jx",
+  "sort": 2000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 13
+    }
+  },
+  "effects": []
+}
