@@ -1,0 +1,412 @@
+{
+  "_id": "Wo6YQWxzN2kGyyDP",
+  "_key": "!journal!Wo6YQWxzN2kGyyDP",
+  "name": "Irovetti's Map: Notes (Handouts)",
+  "pages": [
+    {
+      "_id": "FNPI5lqG3NALnK3H",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.FNPI5lqG3NALnK3H",
+      "name": "01. The Shadowless Lodge",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/01-shadowless-lodge.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Shadowless Lodge"
+      },
+      "sort": 1000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "vt3THKyBblylkFQT",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.vt3THKyBblylkFQT",
+      "name": "02. The Perfect Song",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/02-perfect-song.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Perfect Song"
+      },
+      "sort": 2000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "cBvTTVt8YRTOu2y8",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.cBvTTVt8YRTOu2y8",
+      "name": "03. Nine Mouths, One Belly",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/03-nine-mouths-one-belly.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: Nine Mouths, One Belly"
+      },
+      "sort": 3000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ug0kWT2DgaGYe4X5",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.ug0kWT2DgaGYe4X5",
+      "name": "04. The Gardeners",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/04-gardeners.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Gardeners"
+      },
+      "sort": 4000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "aSGtE9fLDaZS7E0V",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.aSGtE9fLDaZS7E0V",
+      "name": "05. The Ossuary Wall",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/05-ossuary-wall.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Ossuary Wall"
+      },
+      "sort": 5000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "6MXMA3kX8IAggEPk",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.6MXMA3kX8IAggEPk",
+      "name": "06. The Larder",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/06-larder.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Larder"
+      },
+      "sort": 6000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "11VoO7c6YB09FBev",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.11VoO7c6YB09FBev",
+      "name": "07. The Wyvern Queen's Hunting Ground",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/07-wyvern-queens-hunting-ground.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Wyvern Queen's Hunting Ground"
+      },
+      "sort": 7000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "nt0NRUI0QEAeXm4t",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.nt0NRUI0QEAeXm4t",
+      "name": "08. The Lightwardens",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/08-lightwardens.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Lightwardens"
+      },
+      "sort": 8000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "if8OVTkfaT9dch3W",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.if8OVTkfaT9dch3W",
+      "name": "09. The Iron Juggernaut",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/09-iron-juggernaut.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Iron Juggernaut"
+      },
+      "sort": 9000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "QfTzHssMYr4EJYOG",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.QfTzHssMYr4EJYOG",
+      "name": "10. The Scout's Wager",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/10-scouts-wager.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Scout's Wager"
+      },
+      "sort": 10000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "cTQODkm4IxSn9Fkd",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.cTQODkm4IxSn9Fkd",
+      "name": "11. The Unmaker",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/11-unmaker.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Unmaker"
+      },
+      "sort": 11000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "72W3E1bFUs8NZEAp",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.72W3E1bFUs8NZEAp",
+      "name": "12. The Storm Tree",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/12-storm-tree.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Storm Tree"
+      },
+      "sort": 12000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "b8Woh4ZC28X6qdd7",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.b8Woh4ZC28X6qdd7",
+      "name": "13. The Quilled Hunter",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/13-quilled-hunter.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Quilled Hunter"
+      },
+      "sort": 13000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ndFAWxru4r5Lxt59",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.ndFAWxru4r5Lxt59",
+      "name": "14. The Shadow Court",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/14-shadow-court.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Shadow Court"
+      },
+      "sort": 14000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "PQkEUKHM15UAC99m",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.PQkEUKHM15UAC99m",
+      "name": "15. The Moody Brood",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/15-moody-brood.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Moody Brood"
+      },
+      "sort": 15000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "WADA5ZI9YIGw8PDM",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.WADA5ZI9YIGw8PDM",
+      "name": "16. The Lantern King's Emissary",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/16-lantern-kings-emissary.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Lantern King's Emissary"
+      },
+      "sort": 16000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "DdHJ8QQcxSF6OLNF",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.DdHJ8QQcxSF6OLNF",
+      "name": "17. Spore-Dawn",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/17-spore-dawn.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: Spore-Dawn"
+      },
+      "sort": 17000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "JJuO7zQD5eJCtzFB",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.JJuO7zQD5eJCtzFB",
+      "name": "18. The Linnorm's Pass",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/18-linnorms-pass.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Linnorm's Pass"
+      },
+      "sort": 18000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "2FtEEGaU56lDgMve",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.2FtEEGaU56lDgMve",
+      "name": "19. Shadow on the Peaks",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/19-shadow-on-the-peaks.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: Shadow on the Peaks"
+      },
+      "sort": 19000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "eHAVOI1OXa5n1zrF",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.eHAVOI1OXa5n1zrF",
+      "name": "20. The Burning Giant",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/20-burning-giant.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Burning Giant"
+      },
+      "sort": 20000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "3EVRNMgpt0E4MClT",
+      "_key": "!journal.pages!Wo6YQWxzN2kGyyDP.3EVRNMgpt0E4MClT",
+      "name": "21. The Annihilator",
+      "type": "image",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": "modules/points-of-interest/assets/map-notes/21-annihilator.webp",
+      "image": {
+        "caption": "Irovetti's note on the map: The Annihilator"
+      },
+      "sort": 21000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

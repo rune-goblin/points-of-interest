@@ -1,0 +1,68 @@
+{
+  "id": "points-of-interest",
+  "title": "Points of Interest",
+  "description": "Points of interest from Irovetti's map of the western Stolen Lands: encounters, scenes, actors and art for Pathfinder 2e Kingmaker, Chapter 8 onward.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mark Pearce"
+    }
+  ],
+  "esmodules": [
+    "dist/points-of-interest.js"
+  ],
+  "styles": [
+    "dist/points-of-interest.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "journals",
+      "label": "Points of Interest: Journals",
+      "path": "packs/journals",
+      "type": "JournalEntry"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8.0.0"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "pf2e-kingmaker",
+        "type": "module",
+        "reason": "The encounters cite Kingmaker creatures and zones."
+      }
+    ]
+  },
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "url": "https://github.com/rune-goblin/points-of-interest",
+  "manifest": "https://github.com/rune-goblin/points-of-interest/releases/latest/download/module.json",
+  "download": "https://github.com/rune-goblin/points-of-interest/releases/latest/download/points-of-interest.zip",
+  "packFolders": [
+    {
+      "name": "Points of Interest",
+      "sorting": "m",
+      "color": "#3b2a1a",
+      "packs": [
+        "journals"
+      ]
+    }
+  ]
+}
