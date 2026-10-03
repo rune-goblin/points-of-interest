@@ -40,4 +40,8 @@ cwebp -q 75 -m 6 input.png -o assets/maps/NN-name.webp
 
 ## License
 
-MIT for code. Encounter text and art are for personal campaign use.
+MIT for code. All art in `assets/` is original to this project.
+
+## Community Use
+
+This module uses trademarks and/or copyrights owned by Paizo Inc., used under Paizo's Community Use Policy ([paizo.com/licenses/communityuse](https://paizo.com/licenses/communityuse)). We are expressly prohibited from charging you to use or access this content. This module is not published, endorsed, or specifically approved by Paizo. For more information about Paizo Inc. and Paizo products, visit [paizo.com](https://paizo.com).
