@@ -3,7 +3,7 @@
   "items": [],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A Kellid skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.</p>\n<section class=\"secret\" id=\"secret-CVgGvYkOWSblFEjt\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.Alxl4JlFa2HPXcr5.JournalEntryPage.Q5JKNbcFMBLTwObn]{09. The Iron Juggernaut}.</strong> A Kellid hunter delivered a century ago; the longest tally in the hold. His spear is a level 16 permanent item reflavoured as Kellid.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A Kellid skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.</p>\n<section class=\"secret\" id=\"secret-CVgGvYkOWSblFEjt\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Q5JKNbcFMBLTwObn]{09. The Iron Juggernaut}.</strong> A Kellid hunter delivered a century ago; the longest tally in the hold. His spear is a level 16 permanent item reflavoured as Kellid.</p>\n</section>",
       "level": {
         "value": 0
       }

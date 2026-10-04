@@ -185,6 +185,38 @@ function seedTokens(sceneId: string, slug: string, members: CastMember[], size: 
   });
 }
 
+const NOTE_ICON = 'icons/svg/book.svg';
+
+interface NotePosition { _id: string; x: number; y: number }
+
+// A GM-only pin in the map's top-left square that opens the scene's site page; the module hides it
+// from players. A GM's unpacked move of the pin survives regeneration.
+function journalNote(sceneId: string, slug: string, pageId: string, text: string, size: { width: number; height: number }, grid: number, notes: unknown[]) {
+  const id = stableId(`scene-note:${slug}`);
+  const iconSize = Math.min(Math.max(grid, 48), 100);
+  const padX = Math.ceil((PADDING * size.width) / grid) * grid;
+  const padY = Math.ceil((PADDING * size.height) / grid) * grid;
+  const moved = (notes as NotePosition[]).find((n) => n._id === id);
+  return {
+    _id: id,
+    _key: `!scenes.notes!${sceneId}.${id}`,
+    entryId: ids.journal(),
+    pageId,
+    x: moved?.x ?? padX + Math.round(Math.max(grid, iconSize) / 2),
+    y: moved?.y ?? padY + Math.round(Math.max(grid, iconSize) / 2),
+    elevation: 0,
+    levels: [],
+    sort: 0,
+    locked: false,
+    texture: { src: NOTE_ICON },
+    iconSize,
+    text,
+    fontSize: 32,
+    global: false,
+    flags: { [MODULE_ID]: { scene: true } },
+  };
+}
+
 const PLACEABLES = ['drawings', 'tokens', 'lights', 'notes', 'sounds', 'regions', 'tiles', 'walls'] as const;
 type Placeables = Partial<Record<(typeof PLACEABLES)[number], unknown[]>>;
 
@@ -230,6 +262,8 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
   const members = SCENE_CAST[slug] ? cast.filter((m) => SCENE_CAST[slug].includes(m.slug)) : cast;
   const name = `${pad(encounter.number)}. ${encounter.title}${meta.label ? `: ${meta.label}` : ''}`;
   const fixedLight = meta.darkness !== undefined;
+  const pageId = ids.encounterPage(slugify(`${encounter.number}. ${encounter.title}`));
+  const note = journalNote(id, slug, pageId, `${pad(encounter.number)}. ${encounter.title}`, size, meta.grid, kept('notes'));
   return {
     _id: id,
     _key: `!scenes!${id}`,
@@ -287,15 +321,15 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
       },
     ],
     lights: kept('lights'),
-    notes: kept('notes'),
+    notes: [...kept('notes').filter((n) => (n as NotePosition)._id !== note._id), note],
     sounds: kept('sounds'),
     regions: kept('regions'),
     tiles: kept('tiles'),
     walls: kept('walls'),
     playlist: null,
     playlistSound: null,
-    journal: ids.siteJournal(slugify(`${encounter.number}. ${encounter.title}`)),
-    journalEntryPage: ids.encounterPage(slugify(`${encounter.number}. ${encounter.title}`)),
+    journal: ids.journal(),
+    journalEntryPage: pageId,
     weather: '',
     folder,
     sort,

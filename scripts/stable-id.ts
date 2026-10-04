@@ -17,9 +17,11 @@ export function slugify(heading: string): string {
 export const pad = (n: number): string => String(n).padStart(2, '0');
 
 export const ids = {
-  overviewJournal: () => stableId('journal:overview'),
-  /** One journal entry per site; `headingSlug` is the encounter heading's slug, e.g. `1-the-shadowless-lodge`. */
-  siteJournal: (headingSlug: string) => stableId(`journal:${headingSlug}`),
+  /** The one journal entry that holds the overview and every site. */
+  journal: () => stableId('journal:irovettis-map'),
+  /** `headingSlug` is a zone heading's slug, e.g. `zone-13-rushlight`. */
+  category: (headingSlug: string) => stableId(`category:${headingSlug}`),
+  /** `headingSlug` is the encounter heading's slug, e.g. `1-the-shadowless-lodge`. */
   encounterPage: (headingSlug: string) => stableId(`page:${headingSlug}`),
   handoutPage: (headingSlug: string) => stableId(`note:${headingSlug}`),
   /** `artSlug` is the shared portrait/token file name without extension, e.g. `01-ankou`. */

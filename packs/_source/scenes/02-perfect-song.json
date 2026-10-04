@@ -336,14 +336,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "MVBXFDzwfas7tisb",
+      "_key": "!scenes.notes!23qPDzi4CvQ7CGXY.MVBXFDzwfas7tisb",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "U8ZFHQbadEPnC1T2",
+      "x": 330,
+      "y": 330,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 60,
+      "text": "02. The Perfect Song",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "axyLdBAyqZCic0GJ",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "U8ZFHQbadEPnC1T2",
   "weather": "",
   "folder": "R8hb0aQcKU616XN1",

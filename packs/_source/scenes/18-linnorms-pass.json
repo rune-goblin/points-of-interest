@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "QzKCCAL2mMJ6L1BD",
+      "_key": "!scenes.notes!GOMS6bxDEdEkKyTo.QzKCCAL2mMJ6L1BD",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "2bl199Js092nPA7G",
+      "x": 324,
+      "y": 324,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 72,
+      "text": "18. The Linnorm's Pass",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "AMUikWjn5lrCthLH",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "2bl199Js092nPA7G",
   "weather": "",
   "folder": "HmMMtvF4hDEoOVAs",

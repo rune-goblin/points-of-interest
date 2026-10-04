@@ -3,7 +3,7 @@
   "items": [],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.</p>\n<section class=\"secret\" id=\"secret-1cxRcx1dzIL5I6L3\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.AMUikWjn5lrCthLH.JournalEntryPage.2bl199Js092nPA7G]{18. The Linnorm's Pass}.</strong> One of fifty-two Pitaxian soldiers in the pass. Their regimental insignia and Irovetti's orders are evidence of Pitaxian aggression; their gear yields 800 gp.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.</p>\n<section class=\"secret\" id=\"secret-1cxRcx1dzIL5I6L3\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.2bl199Js092nPA7G]{18. The Linnorm's Pass}.</strong> One of fifty-two Pitaxian soldiers in the pass. Their regimental insignia and Irovetti's orders are evidence of Pitaxian aggression; their gear yields 800 gp.</p>\n</section>",
       "level": {
         "value": 0
       }

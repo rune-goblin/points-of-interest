@@ -336,14 +336,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "Qn2NAWCqzXrCxx4t",
+      "_key": "!scenes.notes!oIgh6u5KGdnDooXj.Qn2NAWCqzXrCxx4t",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "mAEL4M1H7FApT6Ct",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "06. The Larder",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "YAuAJTJqiZrAifoW",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "mAEL4M1H7FApT6Ct",
   "weather": "",
   "folder": "0Mo7G8XBaU1dA9qW",

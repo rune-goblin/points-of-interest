@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "z6cKiHnV2kGsTQfZ",
+      "_key": "!scenes.notes!wxjOACWNjR1EJITW.z6cKiHnV2kGsTQfZ",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "Hcwe7BAWmZeft2MG",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "16. The Lantern King's Emissary",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "r7bqizlud4xfIntz",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "Hcwe7BAWmZeft2MG",
   "weather": "",
   "folder": "BaZmDOUTl3srAmQ4",

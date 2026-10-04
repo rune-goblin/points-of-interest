@@ -2,6 +2,7 @@ import './styles.css';
 import { MODULE_ID } from './constants';
 import { promptAdventureImport } from './adventure';
 import { importJournal, placeMapNotes, registerMapNoteHooks } from './map-notes';
+import { registerSceneLinks } from './scene-links';
 
 interface ModuleApi {
   version: string;
@@ -11,6 +12,7 @@ interface ModuleApi {
 
 Hooks.once('init', () => {
   registerMapNoteHooks();
+  registerSceneLinks();
   console.log(`${MODULE_ID} | init`);
 });
 

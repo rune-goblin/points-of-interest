@@ -305,14 +305,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "qCs8BBAsdIBteGie",
+      "_key": "!scenes.notes!h8TZha8IN306iKgb.qCs8BBAsdIBteGie",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "O5rNFDKxgn9WE38b",
+      "x": 360,
+      "y": 360,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 80,
+      "text": "21. The Annihilator",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "dO1SJTMbMCHcThyz",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "O5rNFDKxgn9WE38b",
   "weather": "",
   "folder": "71IGLC0hgVByZcas",

@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "zaXDDViQB3VF4lQO",
+      "_key": "!scenes.notes!EDX8rTES0UZMbzvk.zaXDDViQB3VF4lQO",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "u3owPBswTYDEuJAk",
+      "x": 360,
+      "y": 360,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 80,
+      "text": "13. The Quilled Hunter",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "soOcHOYNzraPWxlL",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "u3owPBswTYDEuJAk",
   "weather": "",
   "folder": "BaZmDOUTl3srAmQ4",

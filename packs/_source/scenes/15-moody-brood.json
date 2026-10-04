@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "OFvmigugLMPf4D4K",
+      "_key": "!scenes.notes!lfZuFNikK6ZqDZif.OFvmigugLMPf4D4K",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "tWk8K2xbGexPMOa4",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "15. The Moody Brood",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "Nwb1ZdHG79xISnrj",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "tWk8K2xbGexPMOa4",
   "weather": "",
   "folder": "BaZmDOUTl3srAmQ4",

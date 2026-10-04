@@ -3,7 +3,7 @@
   "items": [],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A skeleton in worn leather armour with a Pitaxian dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.</p>\n<section class=\"secret\" id=\"secret-f39whxE5Bax8XxnV\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.l8yVtAsdwxM19hvZ.JournalEntryPage.oZ23BnjhOFOnIP6B]{10. The Scout's Wager}.</strong> Irovetti's agent who poached the white stag; her skeleton lies in the pod with her satchel (900 gp, a level 16 consumable, the stag's last antler tine).</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A skeleton in worn leather armour with a Pitaxian dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.</p>\n<section class=\"secret\" id=\"secret-f39whxE5Bax8XxnV\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.oZ23BnjhOFOnIP6B]{10. The Scout's Wager}.</strong> Irovetti's agent who poached the white stag; her skeleton lies in the pod with her satchel (900 gp, a level 16 consumable, the stag's last antler tine).</p>\n</section>",
       "level": {
         "value": 0
       }

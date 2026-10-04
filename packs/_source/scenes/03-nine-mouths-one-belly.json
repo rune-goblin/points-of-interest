@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "hi13qnIk3zcA7OIz",
+      "_key": "!scenes.notes!apUviv73qyki46ON.hi13qnIk3zcA7OIz",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "wdlbFe4qIZDYqrwL",
+      "x": 360,
+      "y": 360,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 80,
+      "text": "03. Nine Mouths, One Belly",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "eSsLNw6OwCwMmcdc",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "wdlbFe4qIZDYqrwL",
   "weather": "",
   "folder": "p86ZDWNYA5D23o5Z",

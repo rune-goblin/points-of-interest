@@ -243,14 +243,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "WFHPA0s6sF8FXya4",
+      "_key": "!scenes.notes!u2pINL2HTqwEerNv.WFHPA0s6sF8FXya4",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "oZ23BnjhOFOnIP6B",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "10. The Scout's Wager",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "l8yVtAsdwxM19hvZ",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "oZ23BnjhOFOnIP6B",
   "weather": "",
   "folder": "9l1LsOK4oS6DICC5",

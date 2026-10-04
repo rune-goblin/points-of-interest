@@ -274,14 +274,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "qv2NgWxP5o1a5cFG",
+      "_key": "!scenes.notes!lGlcY0t6BlRVA3t5.qv2NgWxP5o1a5cFG",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "3KX3D2bQDpvDQSDH",
+      "x": 330,
+      "y": 330,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 60,
+      "text": "11. The Unmaker",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "YxjZbUb1x7PnySC8",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "3KX3D2bQDpvDQSDH",
   "weather": "",
   "folder": "9l1LsOK4oS6DICC5",

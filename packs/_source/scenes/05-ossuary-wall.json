@@ -212,14 +212,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "2MNXY6kwVhAKaWaM",
+      "_key": "!scenes.notes!FSfsMVJvX9TaZ1wT.2MNXY6kwVhAKaWaM",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "94wLkbfz0zc6czXz",
+      "x": 324,
+      "y": 324,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 72,
+      "text": "05. The Ossuary Wall",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "uSrkiqeHgOGRKDcS",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "94wLkbfz0zc6czXz",
   "weather": "",
   "folder": "0Mo7G8XBaU1dA9qW",

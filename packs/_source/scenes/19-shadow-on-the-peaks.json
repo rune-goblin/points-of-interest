@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "vzwtgzeOmZBAn7ey",
+      "_key": "!scenes.notes!NVgVH9EvkL8qhFF6.vzwtgzeOmZBAn7ey",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "tGPRvXMxFYVlVVee",
+      "x": 360,
+      "y": 360,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 80,
+      "text": "19. Shadow on the Peaks",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "aVXp4lpUlMOutNDX",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "tGPRvXMxFYVlVVee",
   "weather": "",
   "folder": "HmMMtvF4hDEoOVAs",

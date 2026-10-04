@@ -274,14 +274,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "xJkvNo0BM8JhwsYe",
+      "_key": "!scenes.notes!KhyQ0Kbn9XnUi9U6.xJkvNo0BM8JhwsYe",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "tHD1LQofggP4spzC",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "08. The Lightwardens",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "GUEIiKvIYJHJLfDw",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "tHD1LQofggP4spzC",
   "weather": "",
   "folder": "9l1LsOK4oS6DICC5",

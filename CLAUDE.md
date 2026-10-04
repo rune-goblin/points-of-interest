@@ -10,19 +10,27 @@ compendium packs from `packs/_source/`).
 - `docs/encounters.md` — **canonical encounter text.** `npm run build` regenerates the journal
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
-  The journal holds one overview entry plus one entry per site: an "Irovetti's Note" handout page,
-  then the "Encounter" page.
+  One journal, "Irovetti's Map", holds the overview and every site in a category per zone: each site's
+  encounter page (level 1), then its "Irovetti's Note" handout image page (level 2).
 - Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the Kingmaker
   Stolen Lands region map (the key the `pf2e-kingmaker` hex HUD shows). The build copies it into the
-  site entry's `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.
-- Every generated id comes from `scripts/stable-id.ts` (`ids.siteJournal`, `ids.actor`, `ids.scene`, …),
+  site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.
+- Every generated id comes from `scripts/stable-id.ts` (`ids.journal`, `ids.actor`, `ids.scene`, …),
   so the packs link to each other without a lookup table. Scenes and actors carry
   `flags['points-of-interest'].encounter`; `build-journal.ts` reads it to head each encounter page
-  with links to its scene and actors, so `build-scenes.ts` runs before it in `npm run build`.
+  with its scenes (a preview card per scene) and each scene's tokens, so `build-scenes.ts` runs before
+  it in `npm run build`. Scene cards are `a.poi-scene[data-scene]`, which `src/scene-links.ts` views
+  (importing the scene and its actors when the world lacks them); a core link would open the scene's
+  linked journal, the same page. Tokens are core content links (`data-link`, `data-pack`), so they
+  open and drag without the module. Previews live in `assets/maps/previews/` (800 px, made by cwebp
+  on build only when missing, committed like the thumbnails).
 - `scripts/build-scenes.ts` → `packs/_source/scenes/` (generated on build). One scene per map, native
   v14 (one level holds the background). Grid sizes are judged per map and recorded in its table.
   It seeds each scene's actors as tokens; placeables edited in Foundry and unpacked over
   `packs/_source/scenes/` survive regeneration (a scene reseeds only when it has no tokens).
+  Every scene also gets a book note (flagged `scene`) in the map's top-left square, linked to its
+  encounter page; the build regenerates it each run and keeps only an unpacked move. The `refreshNote`
+  hook hides it from players, who hold Limited on the journal and would otherwise see the pin.
 - `scripts/build-actors.ts` → `packs/_source/actors/` (**committed, not part of `npm run build`**: it
   needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`). The mapping
   table at its top names each actor's source stat block. Copy only from PF2e **system** packs
@@ -35,7 +43,7 @@ compendium packs from `packs/_source/`).
   A character's portrait and token share a file name. Reference art by its served path
   `modules/points-of-interest/assets/…`.
 - `assets/map-icons/NN-name.webp` — 512 px map-pin icons derived from `assets/map-notes/`
-  (trimmed, parchment halo, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
+  (trimmed to the ink, traced with a thin white line, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
   after changing map-note art; the icons are committed, not built.
 
 **The Foundry/PF2e API, compendium packs, Svelte-in-ApplicationV2, the Vite build, and
@@ -130,15 +138,16 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 - Map notes: a GM runs the "Place Irovetti's Map Notes" macro, which calls
   `game.modules.get('points-of-interest').api.placeMapNotes(scene?)`. It targets the given scene, else
   the viewed region map, else the world's only one (several and none viewed → asks the GM to view one).
-  It imports or refreshes the journal
-  entries into an "Irovetti's Map" world folder (same ids as the pack), then creates or moves one note
-  per site (160 px icon, linked to the site's entry, flagged `site`). Re-run it after journal edits.
+  It imports or refreshes the journal into an "Irovetti's Map" world folder (same ids as the pack),
+  deletes the per-site entries v0.2.0 made, adds the `scene` note to world copies of the module scenes
+  that lack it (refreshing the link of one already there), then creates or moves one note per site (275 px icon, one hex wide,
+  linked to the site's encounter page, flagged `site`). Re-run it after journal edits.
   The module hides Foundry's dark backing square and idle border on these notes (`refreshNote` hook).
 - The desktop install links the module as `npm run setup` would (`Data/modules/points-of-interest`
   symlinks into the repo). The stolen-lands world already holds the journal folder and the 21 notes;
   enable the module there after a Foundry restart to get the hook and the API.
-  New site entries give players Limited ownership: they see each pin and its name but can't open the
-  entry. Share a handout with Show Players. Don't link a note to the image page: Foundry lets Limited
+  A new world journal gives players Limited ownership: they see each pin and its name but can't read
+  a page. Share a handout with Show Players. Don't link a note to the image page: Foundry lets Limited
   players open an image page straight from its pin.
 - Next: check the actor sheets and scene grids in a live world, reposition tokens, trace walls and lights.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;

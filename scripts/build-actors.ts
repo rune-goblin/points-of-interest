@@ -62,7 +62,7 @@ const titles = new Map([...encountersMd.matchAll(/^### (\d+)\. (.+)$/gm)].map((m
 function encounterLink(n: number): string {
   const title = titles.get(n)!;
   const slug = slugify(`${n}. ${title}`);
-  return `@UUID[Compendium.${MODULE_ID}.journals.JournalEntry.${ids.siteJournal(slug)}.JournalEntryPage.${ids.encounterPage(slug)}]{${pad(n)}. ${title}}`;
+  return `@UUID[Compendium.${MODULE_ID}.journals.JournalEntry.${ids.journal()}.JournalEntryPage.${ids.encounterPage(slug)}]{${pad(n)}. ${title}}`;
 }
 
 // The art briefs: "## NN. Title" > "### Character" > "- **Portrait:** text".

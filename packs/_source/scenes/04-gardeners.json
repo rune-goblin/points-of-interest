@@ -460,14 +460,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "8C3aCv03TtHWKSnP",
+      "_key": "!scenes.notes!VgRuna04QJl2xYGX.8C3aCv03TtHWKSnP",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "Yw6GRD852RLVDyt0",
+      "x": 312,
+      "y": 312,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 48,
+      "text": "04. The Gardeners",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "DLn9BpdX9sVQS0dF",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "Yw6GRD852RLVDyt0",
   "weather": "",
   "folder": "p86ZDWNYA5D23o5Z",

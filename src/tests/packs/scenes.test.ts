@@ -7,7 +7,7 @@ const ROOT = process.cwd();
 interface StableId {
   MODULE_ID: string;
   slugify(heading: string): string;
-  ids: { siteJournal(slug: string): string; encounterPage(slug: string): string; scene(mapSlug: string): string };
+  ids: { journal(): string; encounterPage(slug: string): string; scene(mapSlug: string): string };
 }
 // Loaded at runtime: tsconfig.json's rootDir is src/, so a static import of scripts/ fails `npm run check`.
 const { MODULE_ID, ids, slugify } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'stable-id.ts'))) as StableId;
@@ -15,6 +15,7 @@ const SOURCE = join(ROOT, 'packs', '_source', 'scenes');
 const SERVED = `modules/${MODULE_ID}/`;
 
 interface Level { _id: string; _key: string; background: { src: string } }
+interface Note { _id: string; _key: string; entryId: string; pageId: string; x: number; y: number; iconSize: number; flags: Record<string, { scene?: boolean }> }
 interface Token { _id: string; _key: string; actorId: string; level: string; x: number; y: number; width: number; height: number }
 interface SceneSource {
   _id: string;
@@ -28,6 +29,7 @@ interface SceneSource {
   grid: { size: number };
   levels: Level[];
   tokens: Token[];
+  notes: Note[];
   journal: string;
   journalEntryPage: string;
   folder: string | null;
@@ -101,13 +103,32 @@ describe('scenes pack source', () => {
     expect(scenes.every((s) => s.tokens.length > 0)).toBe(true);
   });
 
+  it('pins a note to its encounter page in the top-left square of the map', () => {
+    for (const s of scenes) {
+      const heading = headings.get(s.flags[MODULE_ID]?.encounter ?? NaN)!;
+      const notes = s.notes.filter((n) => n.flags[MODULE_ID]?.scene);
+      expect(notes, s.name).toHaveLength(1);
+      const [note] = notes;
+      expect(note._key).toBe(`!scenes.notes!${s._id}.${note._id}`);
+      expect(note.entryId).toBe(ids.journal());
+      expect(note.pageId).toBe(ids.encounterPage(slugify(heading)));
+      const g = s.grid.size;
+      const pad = { x: Math.ceil((s.padding * s.width) / g) * g, y: Math.ceil((s.padding * s.height) / g) * g };
+      const corner = Math.max(g, note.iconSize);
+      expect(note.x - pad.x, s.name).toBeGreaterThanOrEqual(note.iconSize / 2);
+      expect(note.x - pad.x, s.name).toBeLessThanOrEqual(corner);
+      expect(note.y - pad.y, s.name).toBeGreaterThanOrEqual(note.iconSize / 2);
+      expect(note.y - pad.y, s.name).toBeLessThanOrEqual(corner);
+    }
+  });
+
   it('links each scene to its encounter page and a zone folder', () => {
     const folderIds = new Set(folders.map((f) => f._id));
     for (const s of scenes) {
       const encounter = s.flags[MODULE_ID]?.encounter;
       const heading = headings.get(encounter ?? NaN);
       expect(heading, s.name).toBeDefined();
-      expect(s.journal).toBe(ids.siteJournal(slugify(heading!)));
+      expect(s.journal).toBe(ids.journal());
       expect(s.journalEntryPage).toBe(ids.encounterPage(slugify(heading!)));
       expect(folderIds.has(s.folder ?? ''), s.name).toBe(true);
     }

@@ -7,7 +7,12 @@
       "WrongScene": "{scene} is not the Kingmaker Stolen Lands map (275 px hex rows), so Irovetti's map notes can't go there.",
       "NoScene": "This world has no Kingmaker Stolen Lands map (275 px hex rows). Import it from the Kingmaker module, then place Irovetti's map notes.",
       "ManyScenes": "This world has {count} Kingmaker Stolen Lands maps. View the one to mark, then place Irovetti's map notes.",
-      "Placed": "Placed {count} of Irovetti's map notes on {scene}."
+      "Placed": "Placed {count} of Irovetti's map notes on {scene}.",
+      "Merged": "Moved Irovetti's sites into the {journal} journal and deleted the {count} entries it replaces.",
+      "SceneNotes": "Added a journal note to {count} of the Points of Interest scenes."
+    },
+    "SceneLinks": {
+      "Missing": "This scene is missing from the Points of Interest scenes pack. Run npm run build."
     }
   }
 }

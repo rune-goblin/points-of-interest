@@ -150,14 +150,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "Kf5pwzYHobpBApQw",
+      "_key": "!scenes.notes!CGaXwOUUH59BdUGA.Kf5pwzYHobpBApQw",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "Q5JKNbcFMBLTwObn",
+      "x": 330,
+      "y": 330,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 60,
+      "text": "09. The Iron Juggernaut",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "Alxl4JlFa2HPXcr5",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "Q5JKNbcFMBLTwObn",
   "weather": "",
   "folder": "9l1LsOK4oS6DICC5",

@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "oiCDL9bM0OgQGpSk",
+      "_key": "!scenes.notes!1woE8vDxl14ltD9K.oiCDL9bM0OgQGpSk",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "wHeJAYszJH8N6zBw",
+      "x": 360,
+      "y": 360,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 80,
+      "text": "20. The Burning Giant",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "ORi4fBCW14ANBJCT",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "wHeJAYszJH8N6zBw",
   "weather": "",
   "folder": "HmMMtvF4hDEoOVAs",

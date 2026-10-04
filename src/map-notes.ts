@@ -1,10 +1,14 @@
 import { MODULE_ID } from './constants';
 
 const JOURNAL_PACK = `${MODULE_ID}.journals`;
+const SCENE_PACK = `${MODULE_ID}.scenes`;
 const REGION_HEX_SIZE = 275;
-const ICON_SIZE = 160;
+// A pointy-top hex's grid size is its flat-to-flat width, so each sketch spans its hex.
+const ICON_SIZE = REGION_HEX_SIZE;
 const FONT_SIZE = 30;
 const FALLBACK_ICON = 'icons/svg/book.svg';
+// Releases up to 0.2.0 kept each site in its own entry beside this overview entry.
+const LEGACY_OVERVIEW_ID = '9snGUfaEyJ38MwSg';
 
 interface SiteFlags {
   site: number;
@@ -15,6 +19,7 @@ interface SiteFlags {
 // The typedefs omit Note#controlIcon; these are the members the refresh hook touches.
 interface DrawnNote {
   document: NoteDocument<Scene | null>;
+  visible: boolean;
   controlIcon: { bg: { visible: boolean }; border: { visible: boolean } };
   hover: boolean;
   controlled: boolean;
@@ -25,8 +30,8 @@ interface DrawnNote {
 const t = (key: string, data?: Record<string, string>): string =>
   data ? game.i18n.format(`${MODULE_ID}.MapNotes.${key}`, data) : game.i18n.localize(`${MODULE_ID}.MapNotes.${key}`);
 
-function siteFlags(entry: JournalEntry): SiteFlags | undefined {
-  return entry.flags[MODULE_ID] as unknown as SiteFlags | undefined;
+function siteFlags(doc: JournalEntry | JournalEntryPage<JournalEntry>): SiteFlags | undefined {
+  return doc.flags[MODULE_ID] as unknown as SiteFlags | undefined;
 }
 
 // Hex keys follow the Kingmaker module's region map, which only lines up on its own grid.
@@ -47,7 +52,7 @@ async function journalFolder(): Promise<Folder> {
   return created as Folder;
 }
 
-// World copies keep the compendium ids, so links between entries can point at the world copies.
+// The world copy keeps the compendium ids, so links between pages can point at the world copy.
 function toWorld(source: JournalEntry): JournalEntry['_source'] {
   const data = game.journal.fromCompendium(source, { keepId: true, clearSort: false, clearOwnership: false });
   const compendiumRef = `Compendium.${JOURNAL_PACK}.JournalEntry.`;
@@ -57,33 +62,71 @@ function toWorld(source: JournalEntry): JournalEntry['_source'] {
   return data;
 }
 
+async function upsertEmbedded(
+  journal: JournalEntry,
+  name: 'JournalEntryCategory' | 'JournalEntryPage',
+  docs: ({ _id?: string | null } & Record<string, unknown>)[],
+): Promise<void> {
+  const existing = name === 'JournalEntryPage' ? journal.pages : journal.categories;
+  const rows = docs.map(({ ownership: _ownership, _stats, ...doc }) => ({ ...doc, _id: doc._id! }));
+  const updates = rows.filter((d) => existing.has(d._id));
+  const additions = rows.filter((d) => !existing.has(d._id));
+  if (updates.length) await journal.updateEmbeddedDocuments(name, updates);
+  if (additions.length) await journal.createEmbeddedDocuments(name, additions, { keepId: true });
+}
+
 /**
- * Create every pack entry missing from the world and refresh the text, images and flags of the ones
- * already there. New entries keep the pack's ownership (Limited for sites, so players see the map
- * note but can't open the entry); existing entries keep whatever ownership and folder the GM gave them.
+ * Create the Irovetti's Map journal from the pack, or refresh the text, images, categories and flags
+ * of the world copy. A new copy keeps the pack's ownership (Limited, so players see the map notes but
+ * can't read a page); an existing copy keeps whatever ownership and folder the GM gave it. Entries
+ * left from the one-entry-per-site layout are deleted.
  */
-export async function importJournal(): Promise<JournalEntry[]> {
+export async function importJournal(): Promise<JournalEntry> {
   const pack = game.packs.get(JOURNAL_PACK);
-  if (!pack) throw new Error(t('NoPack'));
-  const sources = (await pack.getDocuments()) as JournalEntry[];
-  const folder = await journalFolder();
-  const missing: JournalEntry['_source'][] = [];
-  for (const source of sources) {
-    const data = toWorld(source);
-    const existing = game.journal.get(source.id);
-    if (!existing) {
-      missing.push({ ...data, folder: folder.id });
-      continue;
-    }
-    const pages = data.pages.map(({ ownership: _ownership, _stats, ...page }) => ({ ...page, _id: page._id! }));
-    const updates = pages.filter((p) => existing.pages.has(p._id));
-    const additions = pages.filter((p) => !existing.pages.has(p._id));
-    await existing.update({ name: data.name, flags: data.flags });
-    await existing.updateEmbeddedDocuments('JournalEntryPage', updates);
-    if (additions.length) await existing.createEmbeddedDocuments('JournalEntryPage', additions, { keepId: true });
+  const [source] = ((await pack?.getDocuments()) ?? []) as JournalEntry[];
+  if (!source) throw new Error(t('NoPack'));
+  const data = toWorld(source);
+  let journal = game.journal.get(source.id);
+  if (journal) {
+    await upsertEmbedded(journal, 'JournalEntryCategory', data.categories);
+    await upsertEmbedded(journal, 'JournalEntryPage', data.pages);
+    await journal.update({ name: data.name, flags: data.flags });
+  } else {
+    const folder = await journalFolder();
+    journal = (await JournalEntry.create({ ...data, folder: folder.id }, { keepId: true })) as JournalEntry;
   }
-  if (missing.length) await JournalEntry.createDocuments(missing, { keepId: true });
-  return sources.map((s) => game.journal.get(s.id)).filter((e): e is JournalEntry => !!e);
+  const legacy = game.journal.filter((e) => e.id === LEGACY_OVERVIEW_ID || siteFlags(e)?.site !== undefined);
+  if (legacy.length) {
+    await JournalEntry.deleteDocuments(legacy.map((e) => e.id));
+    ui.notifications.info(t('Merged', { count: String(legacy.length), journal: journal.name }));
+  }
+  return journal;
+}
+
+const isSceneNote = (note: NoteDocument<Scene | null>): boolean => !!note.getFlag(MODULE_ID, 'scene');
+
+/**
+ * Give each world copy of a module scene the journal note its pack version carries, and refresh the
+ * link and label of one already there. The GM's placement of an existing note stays.
+ */
+async function syncSceneNotes(): Promise<number> {
+  const pack = game.packs.get(SCENE_PACK);
+  const ids = game.scenes.map((s) => s.id).filter((id) => pack?.index.has(id));
+  const sources = ((await pack?.getDocuments({ _id__in: ids })) ?? []) as Scene[];
+  let created = 0;
+  for (const source of sources) {
+    const scene = game.scenes.get(source.id);
+    const note = source.notes.find(isSceneNote);
+    if (!scene || !note) continue;
+    const existing = scene.notes.find(isSceneNote);
+    if (existing) {
+      await existing.update({ entryId: note.entryId, pageId: note.pageId, text: note.text });
+    } else {
+      await scene.createEmbeddedDocuments('Note', [note.toObject()]);
+      created++;
+    }
+  }
+  return created;
 }
 
 // The viewed scene wins, so a GM with several copies of the region map picks one by opening it.
@@ -96,9 +139,10 @@ function findRegionMap(): Scene | null {
 }
 
 /**
- * Import the site journal entries, then pin each site's map note to its hex on the Stolen Lands
- * region map: the given scene, else the viewed one, else the world's only region map. Re-running
- * moves existing notes back to their hexes instead of duplicating them.
+ * Import the Irovetti's Map journal and give the world's copies of the module scenes their journal
+ * notes, then pin each site's map note to its hex on the Stolen Lands region map: the given scene,
+ * else the viewed one, else the world's only region map. Re-running moves existing notes back to
+ * their hexes instead of duplicating them.
  */
 export async function placeMapNotes(target?: Scene): Promise<void> {
   if (!game.user.isGM) {
@@ -111,7 +155,9 @@ export async function placeMapNotes(target?: Scene): Promise<void> {
   }
   const scene = target ?? findRegionMap();
   if (!scene) return;
-  const entries = await importJournal();
+  const journal = await importJournal();
+  const sceneNotes = await syncSceneNotes();
+  if (sceneNotes) ui.notifications.info(t('SceneNotes', { count: String(sceneNotes) }));
   const placed = new Map(
     scene.notes.contents
       .map((note) => [note.getFlag(MODULE_ID, 'site') as number | undefined, note] as const)
@@ -119,19 +165,18 @@ export async function placeMapNotes(target?: Scene): Promise<void> {
   );
   const creates: Record<string, unknown>[] = [];
   const updates: ({ _id: string } & Record<string, unknown>)[] = [];
-  for (const entry of entries) {
-    const flags = siteFlags(entry);
+  for (const page of journal.pages) {
+    const flags = siteFlags(page);
     if (!flags) continue;
     const [i, j] = flags.hex.split('.').map(Number);
     const { x, y } = scene.grid.getCenterPoint({ i, j });
     const data = {
       x,
       y,
-      // Linking the entry alone keeps the pin openable only at Observer; an image page link would let
-      // Limited players open the handout.
-      entryId: entry.id,
-      pageId: null,
-      text: entry.name,
+      // A text page opens only at Observer; an image page link would let Limited players open the handout.
+      entryId: journal.id,
+      pageId: page.id,
+      text: page.name,
       texture: { src: flags.icon ?? FALLBACK_ICON },
       iconSize: ICON_SIZE,
       fontSize: FONT_SIZE,
@@ -146,12 +191,18 @@ export async function placeMapNotes(target?: Scene): Promise<void> {
   ui.notifications.info(t('Placed', { count: String(creates.length + updates.length), scene: scene.name }));
 }
 
-// The sketches carry their own parchment halo, so Foundry's dark backing square and idle border would
+// The sketches sit straight on the map, so Foundry's dark backing square and idle border would
 // only box them in. The border still shows whenever Foundry would tint it.
+function refreshSiteNote(note: DrawnNote): void {
+  note.controlIcon.bg.visible = false;
+  note.controlIcon.border.visible = note.hover || note.controlled || note.layer.highlightObjects || note.isPreview;
+}
+
 export function registerMapNoteHooks(): void {
   Hooks.on('refreshNote', (note: DrawnNote) => {
-    if (note.document.getFlag(MODULE_ID, 'site') === undefined) return;
-    note.controlIcon.bg.visible = false;
-    note.controlIcon.border.visible = note.hover || note.controlled || note.layer.highlightObjects || note.isPreview;
+    if (note.document.getFlag(MODULE_ID, 'site') !== undefined) refreshSiteNote(note);
+    // Each tactical scene's note opens its site page. Players hold Limited on the journal, which would
+    // show them the pin; the page itself needs Observer, so the pin would open an empty journal.
+    if (note.document.getFlag(MODULE_ID, 'scene') && !game.user.isGM) note.visible = false;
   });
 }

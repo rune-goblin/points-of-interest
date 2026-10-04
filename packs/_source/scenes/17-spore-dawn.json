@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "4RfmrLVVxxY6Bubf",
+      "_key": "!scenes.notes!af7s3UQFtCthMKsx.4RfmrLVVxxY6Bubf",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "edGXn37wYpivMJIH",
+      "x": 336,
+      "y": 336,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 96,
+      "text": "17. Spore-Dawn",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "xKHOQLQGJ3INdRC0",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "edGXn37wYpivMJIH",
   "weather": "",
   "folder": "BaZmDOUTl3srAmQ4",

@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "YAUuEouNtFL2x23G",
+      "_key": "!scenes.notes!c4haAgleYQUr66t7.YAUuEouNtFL2x23G",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "DI1nblGxCdYa2okA",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "12. The Storm Tree",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "t0x4Y4AMZCKv37KY",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "DI1nblGxCdYa2okA",
   "weather": "",
   "folder": "BaZmDOUTl3srAmQ4",

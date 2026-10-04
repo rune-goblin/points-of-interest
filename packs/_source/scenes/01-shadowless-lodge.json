@@ -243,14 +243,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "5W7qVdmWjvm8sF1G",
+      "_key": "!scenes.notes!rAFfkFAKtfvBTeBP.5W7qVdmWjvm8sF1G",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "F9q63x7NzRmmeBGq",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "01. The Shadowless Lodge",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "wBVTqTEAYkchfjL4",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "F9q63x7NzRmmeBGq",
   "weather": "",
   "folder": "R8hb0aQcKU616XN1",

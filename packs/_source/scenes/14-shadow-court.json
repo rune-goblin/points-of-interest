@@ -305,14 +305,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "f3NxFkEr7DGUHPP1",
+      "_key": "!scenes.notes!qV9wP8xNSwIApkoZ.f3NxFkEr7DGUHPP1",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "Re1E5HNvjVn5pPMC",
+      "x": 420,
+      "y": 420,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 100,
+      "text": "14. The Shadow Court",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "sNp4rcOvEr2c6nMu",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "Re1E5HNvjVn5pPMC",
   "weather": "",
   "folder": "BaZmDOUTl3srAmQ4",

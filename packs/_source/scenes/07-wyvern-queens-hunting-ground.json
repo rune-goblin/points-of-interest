@@ -181,14 +181,39 @@
     }
   ],
   "lights": [],
-  "notes": [],
+  "notes": [
+    {
+      "_id": "PP0JMXnB8os9EcwI",
+      "_key": "!scenes.notes!W5FperevvbySnQZ2.PP0JMXnB8os9EcwI",
+      "entryId": "jxn9bB1XhZTRpF65",
+      "pageId": "ehfB89bZocdpzaAr",
+      "x": 336,
+      "y": 336,
+      "elevation": 0,
+      "levels": [],
+      "sort": 0,
+      "locked": false,
+      "texture": {
+        "src": "icons/svg/book.svg"
+      },
+      "iconSize": 96,
+      "text": "07. The Wyvern Queen's Hunting Ground",
+      "fontSize": 32,
+      "global": false,
+      "flags": {
+        "points-of-interest": {
+          "scene": true
+        }
+      }
+    }
+  ],
   "sounds": [],
   "regions": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
   "playlistSound": null,
-  "journal": "cfWCOoRyR3MwqSxP",
+  "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "ehfB89bZocdpzaAr",
   "weather": "",
   "folder": "0Mo7G8XBaU1dA9qW",

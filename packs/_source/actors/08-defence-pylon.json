@@ -129,7 +129,7 @@
       }
     },
     "details": {
-      "description": "<p>Three pylons fire laser bursts at intruders inside the scorched ring.</p>\n<h2>Appearance</h2>\n<p>A tall, slim metal pylon topped by a rotating cluster of lenses, scorched at the base, humming with light.</p>\n<section class=\"secret\" id=\"secret-KW82bunZNDXyiqNW\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.GUEIiKvIYJHJLfDw.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Complex hazard 16 (40 XP). Place one token per pylon (three); each unlinked token tracks its own pylon HP. Disabling all three opens the hatch, which powers down the warden.</p>\n</section>",
+      "description": "<p>Three pylons fire laser bursts at intruders inside the scorched ring.</p>\n<h2>Appearance</h2>\n<p>A tall, slim metal pylon topped by a rotating cluster of lenses, scorched at the base, humming with light.</p>\n<section class=\"secret\" id=\"secret-KW82bunZNDXyiqNW\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Complex hazard 16 (40 XP). Place one token per pylon (three); each unlinked token tracks its own pylon HP. Disabling all three opens the hatch, which powers down the warden.</p>\n</section>",
       "disable": "<p>@Check[thievery|dc:38|traits:action:disable-a-device] or @Check[crafting|dc:40] to disable one pylon; a @Check[society|dc:36] or @Check[crafting|dc:36] check to read the hull's glyphs reduces the remaining pylons' Disable DCs by 2.</p>",
       "isComplex": true,
       "level": {
