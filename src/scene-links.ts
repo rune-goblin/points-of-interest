@@ -17,7 +17,9 @@ async function importScene(id: string): Promise<Scene | undefined> {
   const actors = game.packs.get(ACTOR_PACK);
   if (missing.length && actors) {
     const docs = (await actors.getDocuments({ _id__in: missing })) as Parameters<typeof game.actors.fromCompendium>[0][];
-    await Actor.createDocuments(docs.map((actor) => game.actors.fromCompendium(actor, { keepId: true, clearFolder: true })), { keepId: true });
+    // The pack's ownership gives players Limited on loot, which PF2e needs to let them take from it.
+    const data = docs.map((actor) => game.actors.fromCompendium(actor, { keepId: true, clearFolder: true, clearOwnership: false }));
+    await Actor.createDocuments(data, { keepId: true });
   }
   const entryId = source.notes.find((note) => !!note.getFlag(MODULE_ID, 'scene'))?.entryId;
   if (entryId && !game.journal.has(entryId)) await importJournal();

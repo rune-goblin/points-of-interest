@@ -430,6 +430,68 @@
       },
       "effects": [],
       "_key": "!actors.items!BQTJqMAzpuhW85xk.Cb2C8LIPyMVI1r9J"
+    },
+    {
+      "name": "Adamantine Plating",
+      "type": "treasure",
+      "img": "icons/commodities/metal/armor-plate-reticulated.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 6
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Raw metal stripped from the destroyed or disabled hauler.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 3000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "7DlHgRAtVMyf51d6",
+      "_key": "!actors.items!BQTJqMAzpuhW85xk.7DlHgRAtVMyf51d6"
     }
   ],
   "name": "The Iron Juggernaut",
@@ -589,8 +651,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 9
+      "encounter": 9,
+      "slug": "09-iron-juggernaut",
+      "kind": "creature"
     }
   }
 }

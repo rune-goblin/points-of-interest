@@ -262,6 +262,37 @@
       "hidden": false,
       "locked": false,
       "sort": 0
+    },
+    {
+      "name": "Pitaxian Scout's Cloak",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/equipment/back/cloak-layered-green.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "vge7W58dudOdz6rO",
+      "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.vge7W58dudOdz6rO",
+      "actorId": "PI87VWSgaHSg1Ih5",
+      "x": 1680,
+      "y": 360,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

@@ -396,7 +396,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 2
+      "encounter": 2,
+      "slug": "02-cauthooj-third",
+      "kind": "creature"
     }
   }
 }

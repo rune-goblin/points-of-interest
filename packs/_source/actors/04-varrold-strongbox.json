@@ -1,0 +1,188 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "_id": "MvpBWUtIqzmKGq8h",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1000,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "_key": "!actors.items!Fn816vZAm6qORb8W.MvpBWUtIqzmKGq8h"
+    },
+    {
+      "name": "Varrold Family Silver",
+      "type": "treasure",
+      "img": "icons/containers/kitchenware/goblet-engraved-lines-grey.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 2
+        },
+        "category": "art-object",
+        "containerId": null,
+        "description": {
+          "value": "<p>Candlesticks, plate and a christening cup marked with the Varrold crest.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 600
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "QytmRreQMxXq3Cjo",
+      "_key": "!actors.items!Fn816vZAm6qORb8W.QytmRreQMxXq3Cjo"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-XYWH7VGHrmTwYB1b\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{04. The Gardeners}.</strong> The Varrold family's strongbox, hidden in the ruined manor with the family silver.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "Fn816vZAm6qORb8W",
+  "_key": "!actors!Fn816vZAm6qORb8W",
+  "name": "Varrold Strongbox",
+  "img": "icons/containers/chest/chest-simple-steel-brown.webp",
+  "prototypeToken": {
+    "name": "Varrold Strongbox",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/containers/chest/chest-simple-steel-brown.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "TMhUlOLTxwg3JoAB",
+  "sort": 12000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 4,
+      "slug": "04-varrold-strongbox",
+      "kind": "cache",
+      "stowed": true
+    }
+  },
+  "effects": []
+}

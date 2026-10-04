@@ -281,7 +281,7 @@
         "compendiumSource": "Compendium.pf2e.equipment-srd.Item.War0uyLBx1jA0Ge7"
       },
       "img": "systems/pf2e/icons/equipment/weapons/battle-axe.webp",
-      "name": "Battle Axe",
+      "name": "Grosh's Battle Axe",
       "sort": 500000,
       "system": {
         "baseItem": "battle-axe",
@@ -302,7 +302,7 @@
           "die": "d8"
         },
         "description": {
-          "value": "<p>These axes are designed explicitly as weapons, rather than tools. They typically weigh less, with a shaft reinforced with metal bands or bolts, and have a sharper blade, making them ideal for chopping limbs rather than wood.</p>"
+          "value": "<p><em>Sized for a Large creature: sell it or resize it.</em></p>\n<p>These axes are designed explicitly as weapons, rather than tools. They typically weigh less, with a shaft reinforced with metal bands or bolts, and have a sharper blade, making them ideal for chopping limbs rather than wood.</p>"
         },
         "equipped": {
           "carryType": "worn",
@@ -341,7 +341,9 @@
         "rules": [],
         "runes": {
           "potency": 2,
-          "property": [],
+          "property": [
+            "wounding"
+          ],
           "striking": 1
         },
         "size": "lg",
@@ -398,7 +400,7 @@
           "die": "d6"
         },
         "description": {
-          "value": "<p>This small axe can be used in close combat or thrown.</p>"
+          "value": "<p><em>Sized for a Large creature: sell it or resize it.</em></p>\n<p>This small axe can be used in close combat or thrown.</p>"
         },
         "equipped": {
           "carryType": "worn",
@@ -437,7 +439,9 @@
         "rules": [],
         "runes": {
           "potency": 1,
-          "property": [],
+          "property": [
+            "returning"
+          ],
           "striking": 1
         },
         "size": "lg",
@@ -697,7 +701,17 @@
           "title": ""
         },
         "range": null,
-        "rules": [],
+        "rules": [
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "wounding"
+          }
+        ],
         "slug": null,
         "traits": {
           "rarity": "common",
@@ -757,7 +771,17 @@
           "title": ""
         },
         "range": null,
-        "rules": [],
+        "rules": [
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "returning"
+          }
+        ],
         "slug": null,
         "traits": {
           "rarity": "common",
@@ -819,7 +843,17 @@
           "title": ""
         },
         "range": null,
-        "rules": [],
+        "rules": [
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "returning"
+          }
+        ],
         "slug": null,
         "traits": {
           "rarity": "common",
@@ -1381,8 +1415,14 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 6
+      "encounter": 6,
+      "slug": "06-grosh",
+      "kind": "creature",
+      "usesGear": true
     }
   }
 }

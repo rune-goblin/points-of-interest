@@ -1,0 +1,125 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "name": "Irovetti's Silver Service",
+      "type": "treasure",
+      "img": "icons/containers/kitchenware/goblet-jeweled-gold-white.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 2
+        },
+        "category": "art-object",
+        "containerId": null,
+        "description": {
+          "value": "<p>Plates, goblets and cutlery engraved with his monogram.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "OoAty21T0ob4yrP0",
+      "_key": "!actors.items!TkUL9SdWKyJyqeem.OoAty21T0ob4yrP0"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-aqcR0cgU0AyLFgXl\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> The ruined banquet table from Irovetti's visit.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "TkUL9SdWKyJyqeem",
+  "_key": "!actors!TkUL9SdWKyJyqeem",
+  "name": "Picnic Remains",
+  "img": "icons/containers/kitchenware/goblet-engraved-grey.webp",
+  "prototypeToken": {
+    "name": "Picnic Remains",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/containers/kitchenware/goblet-engraved-grey.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "6NdrKiOnwwSscL7y",
+  "sort": 3000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 15,
+      "slug": "15-picnic-remains",
+      "kind": "cache"
+    }
+  },
+  "effects": []
+}

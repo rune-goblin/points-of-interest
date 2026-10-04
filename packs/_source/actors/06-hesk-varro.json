@@ -783,7 +783,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 6
+      "encounter": 6,
+      "slug": "06-hesk-varro",
+      "kind": "npc"
     }
   }
 }

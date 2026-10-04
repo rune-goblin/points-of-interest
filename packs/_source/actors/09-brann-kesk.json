@@ -650,6 +650,81 @@
       },
       "effects": [],
       "_key": "!actors.items!JrUM4zcUeK2nqIYe.27ad6XjzCq82zBIz"
+    },
+    {
+      "_id": "YtFVmlFuYmDegezH",
+      "img": "icons/tools/medical/toolkit-surgical-pink.webp",
+      "name": "The Kesks' Salvage Tools",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 2
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>You need these tools to create items from raw materials with the Craft skill. Sterling artisan's tools give you a +1 item bonus to the check.</p>\n<p>Different sets are needed for different work, as determined by the GM; for example, a blacksmith's toolkit differs from a woodworker's toolkit. If you wear your artisan's toolkit, you can draw and replace it as part of the action that uses it.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 3
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 50
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [
+          {
+            "key": "FlatModifier",
+            "label": "Artisan's Tools, Sterling (craft items)",
+            "predicate": [
+              "action:craft"
+            ],
+            "selector": "crafting",
+            "type": "item",
+            "value": 1
+          }
+        ],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "usage": {
+          "value": "other"
+        },
+        "slug": "artisans-toolkit-sterling",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "equipment",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.0QgniSjpzksm5riV"
+      },
+      "effects": [],
+      "_key": "!actors.items!JrUM4zcUeK2nqIYe.YtFVmlFuYmDegezH"
     }
   ],
   "name": "Brann Kesk",
@@ -804,8 +879,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 9
+      "encounter": 9,
+      "slug": "09-brann-kesk",
+      "kind": "npc"
     }
   }
 }

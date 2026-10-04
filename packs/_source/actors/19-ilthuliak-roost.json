@@ -1,0 +1,222 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "_id": "vtHk4Hq1SjwCmDK5",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 2000,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "_key": "!actors.items!lvdSWan9U6HdTift.vtHk4Hq1SjwCmDK5"
+    },
+    {
+      "_id": "ozgNUhDqAd6PeE0w",
+      "img": "icons/weapons/swords/sword-guard-blue.webp",
+      "name": "Acid-Etched Longsword",
+      "system": {
+        "ammo": null,
+        "baseItem": "longsword",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+          "damageType": "slashing",
+          "dice": 1,
+          "die": "d8"
+        },
+        "description": {
+          "value": "<p><em>Corroded but intact.</em></p>\n<p>Longswords, also known as arming swords, can be one-edged or two-edged swords. Their blades are heavy and they're between 3 and 4 feet in length.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "sword",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+          "value": null
+        },
+        "rules": [],
+        "runes": {
+          "potency": 3,
+          "striking": 2,
+          "property": [
+            "corrosive"
+          ]
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "versatile-p"
+          ]
+        },
+        "usage": {
+          "canBeAmmo": false,
+          "value": "held-in-one-hand"
+        },
+        "slug": "longsword",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.LJdbVTOZog39EEbi"
+      },
+      "effects": [],
+      "_key": "!actors.items!lvdSWan9U6HdTift.ozgNUhDqAd6PeE0w"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-3BVATfLVLHjvCGdh\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tGPRvXMxFYVlVVee]{19. Shadow on the Peaks}.</strong> Her old cache on the ledge near the top of the spire (DC 38 Athletics to climb). The PCs find it at the sighting, before Chapter 10.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "lvdSWan9U6HdTift",
+  "_key": "!actors!lvdSWan9U6HdTift",
+  "name": "Ilthuliak's Roost",
+  "img": "icons/commodities/bones/bones-dragon-grey.webp",
+  "prototypeToken": {
+    "name": "Ilthuliak's Roost",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/commodities/bones/bones-dragon-grey.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "zVuuiYZPqnoHeKlF",
+  "sort": 3000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 19,
+      "slug": "19-ilthuliak-roost",
+      "kind": "cache"
+    }
+  },
+  "effects": []
+}

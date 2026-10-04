@@ -200,6 +200,68 @@
       "hidden": false,
       "locked": false,
       "sort": 3
+    },
+    {
+      "name": "The Baron's Gun Cabinet",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/chest/chest-reinforced-steel-walnut-brown.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "ngiTgxLMfom2KGD0",
+      "_key": "!scenes.tokens!rAFfkFAKtfvBTeBP.ngiTgxLMfom2KGD0",
+      "actorId": "qdPxmxiBBjn7b0uV",
+      "x": 1560,
+      "y": 360,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Scouts' Pay Chest",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/chest/chest-reinforced-steel-green.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "ZDCYrZuIvOBQE7uy",
+      "_key": "!scenes.tokens!rAFfkFAKtfvBTeBP.ZDCYrZuIvOBQE7uy",
+      "actorId": "BZSvUCDV7ALBW3R9",
+      "x": 1800,
+      "y": 360,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 1
     }
   ],
   "levels": [

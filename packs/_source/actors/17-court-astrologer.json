@@ -1,6 +1,212 @@
 {
   "type": "loot",
-  "items": [],
+  "items": [
+    {
+      "_id": "djtwPFAF2fqKC1JH",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 2500,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "_key": "!actors.items!cZ0OV7ivFsKFwk9u.djtwPFAF2fqKC1JH"
+    },
+    {
+      "_id": "Z4dusoACGNdcU1fN",
+      "img": "icons/consumables/potions/bottle-round-corked-orante-red.webp",
+      "name": "Healing Potion (Major)",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "category": "potion",
+        "containerId": null,
+        "damage": {
+          "formula": "8d8+30",
+          "kind": "healing",
+          "type": "vitality"
+        },
+        "description": {
+          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p><hr /><p>A <em>healing potion</em> is a vial of a ruby-red liquid that imparts a tingling sensation as the drinker's wounds heal rapidly. When you drink a <em>healing potion</em>, you regain @Damage[(8d8+30)[healing]] Hit Points.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 18
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 5000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "consumable",
+            "healing",
+            "magical",
+            "potion",
+            "vitality"
+          ]
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "uses": {
+          "autoDestroy": true,
+          "max": 1,
+          "value": 1
+        },
+        "slug": "healing-potion-major",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.p3ppzFSsZXFRe3H8"
+      },
+      "effects": [],
+      "_key": "!actors.items!cZ0OV7ivFsKFwk9u.Z4dusoACGNdcU1fN"
+    },
+    {
+      "name": "Astrologer's Notebook",
+      "type": "equipment",
+      "img": "icons/sundries/books/book-eye-purple.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>Records that \"thunder made it shudder\" (DC 38 Society or Occultism), and names three more omens the astrologer charted.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {}
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "NcmD6HHSTDv3Ls9K",
+      "_key": "!actors.items!cZ0OV7ivFsKFwk9u.NcmD6HHSTDv3Ls9K"
+    }
+  ],
   "system": {
     "details": {
       "description": "<h2>Appearance</h2>\n<p>A thin older man in faded star-patterned robes, a brass astrolabe hanging from his neck, ink-stained fingers clutching a notebook. His face is gaunt and worried.</p>\n<section class=\"secret\" id=\"secret-Lx5HaECp18HEyusD\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.edGXn37wYpivMJIH]{17. Spore-Dawn}.</strong> Irovetti's astrologer, dead in the hunting blind. The notebook records that \"thunder made it shudder\" (DC 38 Society or Occultism); the satchel holds 2,500 gp and a major healing potion.</p>\n</section>",
@@ -49,11 +255,13 @@
   "folder": "3nyNUtK6UN8olHY1",
   "sort": 2000,
   "ownership": {
-    "default": 0
+    "default": 1
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 17
+      "encounter": 17,
+      "slug": "17-court-astrologer",
+      "kind": "remains"
     }
   },
   "effects": []

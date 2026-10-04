@@ -138,6 +138,37 @@
       "hidden": false,
       "locked": false,
       "sort": 1
+    },
+    {
+      "name": "Huntmaster's Shield",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/equipment/shield/heater-steel-worn.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "ngZBbqvULEGl5kQ7",
+      "_key": "!scenes.tokens!W5FperevvbySnQZ2.ngZBbqvULEGl5kQ7",
+      "actorId": "ojOBTIvXxFAOsNTq",
+      "x": 1632,
+      "y": 288,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

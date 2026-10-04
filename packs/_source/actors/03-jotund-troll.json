@@ -790,7 +790,10 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 3
+      "encounter": 3,
+      "slug": "03-jotund-troll",
+      "kind": "creature",
+      "usesGear": true
     }
   }
 }

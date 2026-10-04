@@ -1,0 +1,249 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "_id": "CVE47jTicnPSOzdM",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 500,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "_key": "!actors.items!4z2s29O3zLebWEzv.CVE47jTicnPSOzdM"
+    },
+    {
+      "name": "Silver Plate",
+      "type": "treasure",
+      "img": "icons/containers/kitchenware/goblet-engraved-vines-grey.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 2
+        },
+        "category": "art-object",
+        "containerId": null,
+        "description": {
+          "value": "<p>Looted from Pitaxian caravans.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 400
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "YfHfRFu6DsKbuo69",
+      "_key": "!actors.items!4z2s29O3zLebWEzv.YfHfRFu6DsKbuo69"
+    },
+    {
+      "name": "Trade Goods",
+      "type": "treasure",
+      "img": "icons/containers/boxes/crate-wooden-beige.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 4
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Bolts of cloth, spices and salt.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 300
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "pR4yhlqZtwr2sQJ8",
+      "_key": "!actors.items!4z2s29O3zLebWEzv.pR4yhlqZtwr2sQJ8"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-2VK6CcnD1ebFQWRF\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.mAEL4M1H7FApT6Ct]{06. The Larder}.</strong> Coin, silver plate and trade goods the butchers piled in the smokehouse.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "4z2s29O3zLebWEzv",
+  "_key": "!actors!4z2s29O3zLebWEzv",
+  "name": "Smokehouse Stores",
+  "img": "icons/containers/boxes/crates-wooden-stacked.webp",
+  "prototypeToken": {
+    "name": "Smokehouse Stores",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/containers/boxes/crates-wooden-stacked.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "uxWNUwfDUBLbNmuN",
+  "sort": 8000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 6,
+      "slug": "06-smokehouse-stores",
+      "kind": "cache"
+    }
+  },
+  "effects": []
+}

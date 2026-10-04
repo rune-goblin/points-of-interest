@@ -1,6 +1,69 @@
 {
   "type": "loot",
-  "items": [],
+  "items": [
+    {
+      "name": "Pitaxian Scouts' Kit",
+      "type": "equipment",
+      "img": "icons/containers/bags/pack-leather-brown.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>Bedrolls, rope, rations and spare green cloaks for six scouts.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {}
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "9KXY5WrQSpzMljvS",
+      "_key": "!actors.items!fQaCjludOjyecS33.9KXY5WrQSpzMljvS"
+    }
+  ],
   "system": {
     "details": {
       "description": "<h2>Appearance</h2>\n<p>A young man in Pitaxian green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The dead Pitaxian scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
@@ -49,11 +112,13 @@
   "folder": "rnHDDXkNTy6gJKC9",
   "sort": 4000,
   "ownership": {
-    "default": 0
+    "default": 1
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 1
+      "encounter": 1,
+      "slug": "01-felgo",
+      "kind": "remains"
     }
   },
   "effects": []

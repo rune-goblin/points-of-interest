@@ -1069,7 +1069,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 18
+      "encounter": 18,
+      "slug": "18-vashkra",
+      "kind": "creature"
     }
   }
 }

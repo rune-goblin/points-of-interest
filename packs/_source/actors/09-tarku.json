@@ -1,9 +1,106 @@
 {
   "type": "loot",
-  "items": [],
+  "items": [
+    {
+      "_id": "92eeYLnInLG5SW3x",
+      "img": "icons/weapons/polearms/spear-flared-steel.webp",
+      "name": "Tarku's Spear",
+      "system": {
+        "ammo": null,
+        "baseItem": "spear",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+          "damageType": "piercing",
+          "dice": 1,
+          "die": "d6"
+        },
+        "description": {
+          "value": "<p><em>Stone-tipped and wrapped in a Kellid charm, found among the bones in the hold.</em></p>\n<p>A long metal shaft ending with a metal spike, a spear can be used one-handed as a melee weapon and can be thrown.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "spear",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "sp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+          "value": null
+        },
+        "rules": [],
+        "runes": {
+          "potency": 3,
+          "striking": 2,
+          "property": []
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "monk",
+            "thrown-20"
+          ]
+        },
+        "usage": {
+          "canBeAmmo": false,
+          "value": "held-in-one-hand"
+        },
+        "slug": "spear",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.tOhoGvmCMw4JpWcS"
+      },
+      "effects": [],
+      "_key": "!actors.items!FWM41aRNbIdGH0jG.92eeYLnInLG5SW3x"
+    }
+  ],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A Kellid skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.</p>\n<section class=\"secret\" id=\"secret-CVgGvYkOWSblFEjt\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Q5JKNbcFMBLTwObn]{09. The Iron Juggernaut}.</strong> A Kellid hunter delivered a century ago; the longest tally in the hold. His spear is a level 16 permanent item reflavoured as Kellid.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A Kellid skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.</p>\n<section class=\"secret\" id=\"secret-CVgGvYkOWSblFEjt\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Q5JKNbcFMBLTwObn]{09. The Iron Juggernaut}.</strong> A Kellid hunter delivered a century ago; the longest tally in the hold. His stone-tipped spear, wrapped in a Kellid charm, is a +3 greater striking spear.</p>\n</section>",
       "level": {
         "value": 0
       }
@@ -49,11 +146,13 @@
   "folder": "rrwVEp0yfD2nEZ3v",
   "sort": 4000,
   "ownership": {
-    "default": 0
+    "default": 1
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 9
+      "encounter": 9,
+      "slug": "09-tarku",
+      "kind": "remains"
     }
   },
   "effects": []

@@ -1,0 +1,207 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "_id": "AE8F7uOLF9DSBp5s",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 550,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "_key": "!actors.items!BZSvUCDV7ALBW3R9.AE8F7uOLF9DSBp5s"
+    },
+    {
+      "_id": "HGPtEkDjRh1KI3eH",
+      "img": "icons/consumables/potions/bottle-round-corked-orante-red.webp",
+      "name": "Healing Potion (Major)",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "category": "potion",
+        "containerId": null,
+        "damage": {
+          "formula": "8d8+30",
+          "kind": "healing",
+          "type": "vitality"
+        },
+        "description": {
+          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p><hr /><p>A <em>healing potion</em> is a vial of a ruby-red liquid that imparts a tingling sensation as the drinker's wounds heal rapidly. When you drink a <em>healing potion</em>, you regain @Damage[(8d8+30)[healing]] Hit Points.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 18
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 5000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "consumable",
+            "healing",
+            "magical",
+            "potion",
+            "vitality"
+          ]
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "uses": {
+          "autoDestroy": true,
+          "max": 1,
+          "value": 1
+        },
+        "slug": "healing-potion-major",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.p3ppzFSsZXFRe3H8"
+      },
+      "effects": [],
+      "_key": "!actors.items!BZSvUCDV7ALBW3R9.HGPtEkDjRh1KI3eH"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-VacGC3Ws6vRGmSSr\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The scouts' pay chest in the bunkroom.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "BZSvUCDV7ALBW3R9",
+  "_key": "!actors!BZSvUCDV7ALBW3R9",
+  "name": "Scouts' Pay Chest",
+  "img": "icons/containers/chest/chest-reinforced-steel-green.webp",
+  "prototypeToken": {
+    "name": "Scouts' Pay Chest",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/containers/chest/chest-reinforced-steel-green.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "rnHDDXkNTy6gJKC9",
+  "sort": 5000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 1,
+      "slug": "01-scouts-pay-chest",
+      "kind": "cache",
+      "stowed": true
+    }
+  },
+  "effects": []
+}

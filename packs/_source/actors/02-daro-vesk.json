@@ -1749,6 +1749,130 @@
       },
       "effects": [],
       "_key": "!actors.items!UMsYU0nqCTrgKuBx.5MyYDCSSRvOAcJCe"
+    },
+    {
+      "_id": "VzBigJg0givcOUoz",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 80,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "_key": "!actors.items!UMsYU0nqCTrgKuBx.VzBigJg0givcOUoz"
+    },
+    {
+      "name": "Silver Signet Ring",
+      "type": "treasure",
+      "img": "icons/equipment/finger/ring-band-engraved-scrolls-silver.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "category": "art-object",
+        "containerId": null,
+        "description": {
+          "value": "<p>Engraved with the crest of the Academy of Grand Arts.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 120
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "X7Kh4mpDFe7ABrRB",
+      "_key": "!actors.items!UMsYU0nqCTrgKuBx.X7Kh4mpDFe7ABrRB"
     }
   ],
   "name": "Daro Vesk",
@@ -1921,8 +2045,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 2
+      "encounter": 2,
+      "slug": "02-daro-vesk",
+      "kind": "npc"
     }
   }
 }

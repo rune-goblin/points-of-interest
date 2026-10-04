@@ -1424,7 +1424,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 10
+      "encounter": 10,
+      "slug": "10-ash-tongue",
+      "kind": "creature"
     }
   }
 }

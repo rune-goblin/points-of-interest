@@ -773,7 +773,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 11
+      "encounter": 11,
+      "slug": "11-master-engineer-odalric-vane",
+      "kind": "npc"
     }
   }
 }

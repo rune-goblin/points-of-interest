@@ -805,7 +805,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 9
+      "encounter": 9,
+      "slug": "09-ottilie-kesk",
+      "kind": "npc"
     }
   }
 }

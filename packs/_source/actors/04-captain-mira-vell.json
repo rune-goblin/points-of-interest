@@ -1182,7 +1182,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 4
+      "encounter": 4,
+      "slug": "04-captain-mira-vell",
+      "kind": "npc"
     }
   }
 }

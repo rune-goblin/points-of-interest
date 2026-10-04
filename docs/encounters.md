@@ -85,7 +85,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 - **Shadows released.** The scouts lie peacefully. Returning the bodies to their families in Pitax earns goodwill once Pitax is under the PCs' rule.
 - **Shadows left in the jar.** The jar becomes a possible bargaining chip in encounter 14; the ankous want it back.
 
-**Rewards.** 60 XP for the fight, plus 30 XP for releasing the shadows and identifying the killer. Treasure: the scouts' kit and pay chest (550 gp in Pitaxian coin), a *major healing potion*, and a level 15 permanent item from the baron's locked gun cabinet (a hunting weapon fits). Kingdom: returning the scouts gains +1 Loyalty checks in Pitax for one kingdom turn after annexation.
+**Rewards.** 60 XP for the fight, plus 30 XP for releasing the shadows and identifying the killer. Treasure: the scouts' kit and pay chest (550 gp in Pitaxian coin), a *major healing potion*, and the baron's hunting arquebus from his locked gun cabinet (a *+2 greater striking greater thundering arquebus*). Kingdom: returning the scouts gains +1 Loyalty checks in Pitax for one kingdom turn after annexation.
 
 **Scaling.** For a weaker party, skip Shadow Doubles. For party level 18, give the ankou the elite adjustment and allow Shadow Doubles twice.
 
@@ -133,7 +133,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 - **Birds killed first.** The song stops; Pell dies unless a PC succeeds at a DC 36 Medicine check within 10 minutes, and the others resent the PCs.
 - **PCs leave.** The composers die within days. Their scores find their way to the Academy, and the tune turns up later in a Pitaxian tavern.
 
-**Rewards.** 60 XP for reaching Influence 6 with Rova; 30 XP for the cauthoojes if fought. Treasure: the composers carry Academy stipends and court jewellery worth 900 gp, and Rova's own *virtuoso instrument* (a fine violin) she offers in thanks. Kingdom: if the composers join the PCs' capital, they complete *The Rushlight Nocturne*, a masterwork that counts as a Create a Masterpiece success for the kingdom.
+**Rewards.** 60 XP for reaching Influence 6 with Rova; 30 XP for the cauthoojes if fought. Treasure: the composers carry Academy stipends and court jewellery worth 900 gp, and Rova's own violin, a *moderate maestro's instrument*, which she offers in thanks. Kingdom: if the composers join the PCs' capital, they complete *The Rushlight Nocturne*, a masterwork that counts as a Create a Masterpiece success for the kingdom.
 
 **Scaling.** At party level 18, add a fourth cauthooj and raise all DCs by 3. For a shorter scene, reduce the clock to 4 rounds.
 
@@ -227,7 +227,7 @@ Geography decides much of the order, so treat this as a pacing guide. Role-play 
 - **Victims lost.** Count the dead; Captain Mira Vell, the Pitaxian officer, is the most valuable survivor (below).
 - **Athaches flee.** Any surviving adolescents run to the Glenebon Uplands and join the six-athach band of the Zone 16 table.
 
-**Rewards.** 90 XP; +10 XP for each living victim rescued. Treasure: the Varrold family silver and a hidden strongbox (1,600 gp total), a *+2 greater striking* polearm from a dead knight, and a level 16 permanent item among the athaches' trophies. Kingdom: Captain Mira Vell of the Pitax army owes the PCs her life and can serve as an army commander or informant during the war; once Pitax falls, she can help secure the estate as a new settlement site.
+**Rewards.** 90 XP; +10 XP for each living victim rescued. Treasure: the Varrold family silver and a hidden strongbox (1,600 gp total), and, among the athaches' trophies, a dead knight's *+2 greater striking halberd* and *major sturdy shield*. Kingdom: Captain Mira Vell of the Pitax army owes the PCs her life and can serve as an army commander or informant during the war; once Pitax falls, she can help secure the estate as a new settlement site.
 
 **Scaling.** Use four athaches for a Low threat. At party level 18, use six elite athaches and give Gorm the elite adjustment twice (level 14).
 
@@ -280,7 +280,7 @@ Complex, Haunt
 - **Bargain struck.** If the PCs give the skulltaker a skull, it lets them leave with their answers. Note this; a good-aligned church in the PCs' kingdom will not approve.
 - **The antiquarians.** Their four skulls can be removed and returned to the Academy for burial.
 
-**Rewards.** 110 XP. Treasure: the chieftain's chamber holds a gold torc and grave goods worth 2,400 gp, a level 17 permanent item (a Kellid war-axe or a primal amulet fits), and two *major healing potions* taken from the antiquarians' packs. The antiquarians' sketchbooks are worth 300 gp to any scholar. Kingdom: returning the antiquarians' remains and notes to the Academy earns +1 to the kingdom's next Culture check after Pitax falls.
+**Rewards.** 110 XP. Treasure: the chieftain's chamber holds a gold torc and grave goods worth 2,400 gp, the chieftain's bronze arm-rings (*bracers of strength*), and two *major healing potions* taken from the antiquarians' packs. The antiquarians' sketchbooks are worth 300 gp to any scholar. Kingdom: returning the antiquarians' remains and notes to the Academy earns +1 to the kingdom's next Culture check after Pitax falls.
 
 **Scaling.** Drop the haunt for a Moderate threat (80 XP). At party level 18, raise the haunt to level 17 (DCs +3) and let the skulltaker's Bonetaker raise any of the four antiquarians as skeletal champions on round 2.
 
@@ -321,7 +321,7 @@ Complex, Haunt
 - **Captives saved.** The Numerian scavenger, Hesk Varro, offers to guide the PCs to the Lightwardens (#8) or the Annihilator (#9) as payment. The Tiger Lord outrider owes the PCs a life-debt.
 - **Receipt kept.** Proof of Irovetti's arrangement with Moleg. Presenting it in Pitax after liberation helps sway the city's nobility.
 
-**Rewards.** 80 XP. Treasure: 1,200 gp in coin, silver plate and trade goods from the smokehouse; the giants' battle axe is a *+2 greater striking battle axe* sized for a Large creature (sell value or resize). The receipt grants a +2 circumstance bonus to one Kingdom check or Liberation activity tied to Pitaxian nobility.
+**Rewards.** 80 XP. Treasure: 1,200 gp in coin, silver plate and trade goods from the smokehouse; each butcher carries a *+2 striking wounding battle axe* and a *+1 striking returning hatchet*, sized for a Large creature (sell value or resize). The receipt grants a +2 circumstance bonus to one Kingdom check or Liberation activity tied to Pitaxian nobility.
 
 **Scaling.** For a stronger party, add Kob Moleg's level 16 overseer (an elite hill giant butcher). At party level 18 the encounter drops to Low; use it as a breather.
 
@@ -413,7 +413,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 - **Hatch opened first.** The warden powers down. Its core can be salvaged.
 - **Retreat.** The grid resets. The warden returns to its orrery disguise.
 
-**Rewards.** 100 XP. Treasure inside the hull: a skymetal cache (orichalcum or adamantine stock worth 2,000 gp), a level 17 permanent item reflavoured as Numerian tech, and two consumables of level 15–16. A salvaged warden core is worth 1,500 gp to Numerian buyers or serves as a kingdom curiosity.
+**Rewards.** 100 XP. Treasure inside the hull: a skymetal cache (orichalcum or adamantine stock worth 2,000 gp), *artificer spectacles* of Numerian make, a *truesight potion* and a *major elixir of life*. A salvaged warden core is worth 1,500 gp to Numerian buyers or serves as a kingdom curiosity.
 
 **Scaling.** At party level 18, add a second radiant warden. For a weaker party, run the grid with two pylons.
 
@@ -454,7 +454,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 - **Delivery fulfilled.** A PC at the depot crater who succeeds at a DC 41 Crafting or Society check (very hard), or speaks antique Numerian and succeeds at a DC 38 Deception check, poses as the receiving clerk. The Juggernaut opens its hold, unloads, and shuts down with its orders complete. On a critical success, the PC can give it a new destination.
 - **The Annihilator connection.** If the Annihilator still roams, the Juggernaut's hold fills again. Ottilie can describe the four-legged machine that caught them, and the cradle's scorch marks show where it docks.
 
-**Rewards.** 80 XP, plus 20 XP for each Kesk rescued alive. Treasure: adamantine plating worth 3,000 gp in raw metal, the Kesks' salvage tools (a set of expanded artisan's tools), and Tarku's spear, a stone-tipped weapon wrapped in a Kellid charm, among the bones (a level 16 permanent item of your choice reflavoured as Kellid). Kingdom benefit: a Juggernaut with a new destination hauls Numerian salvage to the PCs' capital, worth 1 Ore commodity each kingdom turn while it runs. The Kesks will work for the kingdom out of gratitude.
+**Rewards.** 80 XP, plus 20 XP for each Kesk rescued alive. Treasure: adamantine plating worth 3,000 gp in raw metal, the Kesks' salvage tools (a set of expanded artisan's tools), and Tarku's spear, a stone-tipped weapon wrapped in a Kellid charm, among the bones (a *+3 greater striking spear*). Kingdom benefit: a Juggernaut with a new destination hauls Numerian salvage to the PCs' capital, worth 1 Ore commodity each kingdom turn while it runs. The Kesks will work for the kingdom out of gratitude.
 
 **Scaling.** At party level 18, add the Annihilator docking at the cradle mid-fight. For a weaker party, remove Repair Mode.
 
@@ -484,7 +484,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 
 **Running the encounter.**
 - **The challenge.** Sileth calls out the terms: "Pitax owes the hunt a kill. You carry Pitax. Run." Sileth lets the PCs take one full round to flee. The hunt is the point. The PCs may refuse to run; Sileth is delighted either way.
-- **Tactics.** The hounds use **Summon Pack** on round one and **Knockdown** to drop PCs for Sileth's sneak attacks. Sileth stays mobile, firing **Befuddle** emerald beams and using **Focus Gaze** with the hounds to slow PCs inside the overlapping **Wild Gaze** auras. Sileth closes with the **Crystal Scimitar** on off-guard targets.
+- **Tactics.** The hounds use **Summon Pack** on round one and **Knockdown** to drop PCs for Sileth's sneak attacks. Sileth stays mobile, firing **Befuddle** emerald beams and using **Focus Gaze** with the hounds to slow PCs inside the overlapping **Wild Gaze** auras. Sileth closes with the **Crystal Scimitar** on off-guard targets. Its wounding and keen runes make her quarry bleed (1d6 persistent bleed) and turn a hit on a natural 19 into a critical hit.
 - **The wager.** A PC who throws down the Pitaxian loot and declares it forfeit (Diplomacy or Intimidation DC 41) does not end the fight. Sileth takes the offering as a sign of weakness and focuses that PC. The hunt does not bargain.
 - **Truce rule.** If at least half the hunt falls (Sileth or both hounds), the survivors break off and call a truce, as the Zone 14 Wild Hunt rule states. Sileth names the PCs as future quarry and leaves a green thread tied around the wrist of the PC who fought best.
 - **Weakness.** All hunt members have weakness 15 to cold iron.
@@ -494,7 +494,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 - **Truce called.** Sileth leaves. The thread marks the PC; in Chapter 11 the Hunt seeks that PC first.
 - **PCs flee.** The hunt pursues for one day. Repeat the encounter at a new location of your choice.
 
-**Rewards.** 120 XP. Treasure: Varga's satchel in the pod (900 gp in Pitaxian coin, a level 16 consumable, and the white stag's last antler tine, worth 1,500 gp to a druid or as a primal component). The trophies on the pod include a level 17 permanent item from an earlier victim. Kingdom benefit: none; the Hunt remembers.
+**Rewards.** 120 XP. Treasure: Varga's satchel in the pod (900 gp in Pitaxian coin and the white stag's last antler tine, worth 1,500 gp to a druid or as a primal component). Sileth wears *greater daredevil boots*, a trophy from an earlier victim, and carries a *major eagle eye elixir* taken from the satchel. Kingdom benefit: none; the Hunt remembers.
 
 **Scaling.** At party level 18, add a Wild Hunt archer (level 16). For a weaker party, use one hound.
 
@@ -549,7 +549,7 @@ Complex, Electricity, Fire, Mechanical, Trap
 - **Vane hired.** He becomes a kingdom NPC who grants +1 circumstance bonus to Engineering activities for one kingdom turn per kingdom level advance, at your discretion.
 - **Vane dead.** His notes reveal Irovetti's plan to march the Colossus on the PCs' capital.
 
-**Rewards.** 120 XP for a fight; award 80 XP if the PCs stop the waking without fighting. Treasure: 2,000 gp in Pitaxian coin in Vane's wagon; the guthallath's core, a chunk of standard-grade adamantine and skymetal circuitry worth 3,500 gp to a smith or to Numerian traders; Vane's notebook (a level 16 formula of your choice for a construct-themed item). Kingdom: salvaging the core grants 1 Commodity of Ore and Luxuries each.
+**Rewards.** 120 XP for a fight; award 80 XP if the PCs stop the waking without fighting. Treasure: 2,000 gp in Pitaxian coin in Vane's wagon; the guthallath's core, a chunk of standard-grade adamantine and skymetal circuitry worth 3,500 gp to a smith or to Numerian traders; Vane's notebook (the formula for a *Highhelm drill Mark III*, a level 16 item). Kingdom: salvaging the core grants 1 Commodity of Ore and Luxuries each.
 
 **Scaling.** For a weaker party, end the encounter at clock 5 with a half-awake guthallath that never tears free. At party level 18 or above, start the clock at 2 and let the guthallath wake with all six drums intact.
 
@@ -645,7 +645,7 @@ A PC who succeeds at the Trophy Walls check learns that the bandersnatch has wea
 - **Bandersnatch escapes.** It hunts the PCs again on their next trip into Thousand Voices, starting the Hunt Clock at 3.
 - **Wren's pack recovered.** It holds Wren's journal, which maps two hidden trails in Thousand Voices and records a meeting with a raven-masked fey (foreshadowing #16).
 
-**Rewards.** 120 XP; award an extra 30 XP if the PCs reach the Den without triggering the ambush. Treasure: Wren's bow is a +2 greater striking composite longbow with a level 16 property rune of your choice; the troll king's crown is worth 1,500 gp; the bandersnatch pelt and quills are worth 2,500 gp. Kingdom: a bandersnatch pelt in the throne room grants +1 Fame once.
+**Rewards.** 120 XP; award an extra 30 XP if the PCs reach the Den without triggering the ambush. Treasure: Wren's bow is a *+2 greater striking speed composite longbow*; the troll king's crown is worth 1,500 gp; the bandersnatch pelt and quills are worth 2,500 gp. Kingdom: a bandersnatch pelt in the throne room grants +1 Fame once.
 
 **Scaling.** For a weaker party, give a +2 circumstance bonus to the stage checks. At party level 18, the bandersnatch arrives at Hunt Clock 5.
 
@@ -702,7 +702,7 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 - **Feather earned.** One ankou encounter later in the campaign becomes a parley.
 - **Fight.** The Court scatters. Nyrissa's agents treat the PCs as enemies from then on; raise the DC of later fey social checks by 2.
 
-**Rewards.** 140 XP for a full audience (Influence 5 or higher) or a fight; 80 XP for a partial one. Treasure: the Pitaxian scout's cloak hides a waxed packet holding 1,200 gp in gems and a scroll of a 7th-rank spell of your choice; the black feather (above). Kingdom: none, but the knowledge prepares the PCs for Chapter 10.
+**Rewards.** 140 XP for a full audience (Influence 5 or higher) or a fight; 80 XP for a partial one. Treasure: the Pitaxian scout's cloak hides a waxed packet holding 1,200 gp in gems and a *scroll of regenerate*; the black feather (above). Kingdom: none, but the knowledge prepares the PCs for Chapter 10.
 
 **Scaling.** For a weaker party, drop two ankous. At party level 18, add a second ankou assassin as the Speaker's second.
 
@@ -755,7 +755,7 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 - **Sulking wyrms.** The PCs leave unmolested but unrewarded.
 - **Combat.** The wyrms remember. Every later encounter with whimwyrms starts with both at Mood 2.
 
-**Rewards.** 120 XP for a fight or for reaching Mood 10 with both wyrms; 60 XP for a peaceful partial success. Treasure: Pippet's gift is a ring of rose-gold scales, a level 17 permanent item of your choice with an illusion theme; Gloamsy's gift is a jester's cap from Irovetti's court, now enchanted as a level 16 worn item of your choice. The picnic remains hold Irovetti's silver service, worth 1,000 gp. Kingdom: hosting the wyrms at a kingdom festival grants +1 Fame once and a story your bards will tell for decades.
+**Rewards.** 120 XP for a fight or for reaching Mood 10 with both wyrms; 60 XP for a peaceful partial success. Treasure: Pippet's gift is a mantle of rose-gold scales, a *major unmemorable mantle*; Gloamsy's gift is a jester's cap from Irovetti's court, now enchanted as a *troubadour's cap*. The picnic remains hold Irovetti's silver service, worth 1,000 gp. Kingdom: hosting the wyrms at a kingdom festival grants +1 Fame once and a story your bards will tell for decades.
 
 **Scaling.** For a weaker party, lower all whim DCs by 2. At party level 18, add a third sibling, Hullabalo, who wants whatever the other two don't.
 
@@ -795,7 +795,7 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 - **Weaknesses** Courtly etiquette and flattery of the Lantern King (–2 DC to Diplomacy and Performance). Mentioning Irovetti's flight lets the herald sneer at him at length, and it reveals one discovery for free.
 - **Penalty** Each failure on an Influence check costs the PCs 1 round. Critical failures with Intimidation trigger combat.
 
-**Combat.** If combat begins, the herald fights to drive the PCs out and avoids killing them. It uses Aura of Disquietude to break the party's cohesion and its greatsword for nonlethal attacks once a PC drops below a quarter of their HP. The zomok uses Entombing Breath on clustered PCs and Swallow Whole on the strongest melee combatant. It spits the creature out at the forest edge when the fight ends. Both withdraw with Forest Step if either drops below 100 HP, and the herald calls out: "Go home. Grow strong. Someone is counting on you."
+**Combat.** If combat begins, the herald fights to drive the PCs out and avoids killing them. It uses Aura of Disquietude to break the party's cohesion and its greatsword for nonlethal attacks once a PC drops below a quarter of their HP. The greatsword carries greater brilliant and greater fearsome runes: each hit deals an extra 1d4 fire, and a critical hit leaves the target frightened 2 and blinded for 1 round unless it succeeds at a DC 41 Fortitude save. The zomok uses Entombing Breath on clustered PCs and Swallow Whole on the strongest melee combatant. It spits the creature out at the forest edge when the fight ends. Both withdraw with Forest Step if either drops below 100 HP, and the herald calls out: "Go home. Grow strong. Someone is counting on you."
 
 **Outcomes.**
 - **Influence 6 or more.** The PCs learn that the Lantern King backs their kingdom's growth for his own ends and gain the raven feather.
@@ -804,7 +804,7 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 - **Combat.** The emissary withdraws and never appears again in Zone 18. The PCs keep the clue from the ninth stone only.
 - **Herald slain.** A rare outcome. The Lantern King notices. In Chapter 11, the court treats the PCs with hostility from the first scene (+2 DC to social checks with Lantern King loyalists).
 
-**Rewards.** 160 XP for an Influence 6 resolution or for driving the pair off. Treasure: the raven feather (unique, story item). The herald's plate holds no coin. If the herald dies, its black full plate counts as a level 17 permanent item (*+2 greater resilient full plate*) and the zomok's heartwood is a 3,000 gp crafting reagent for a primal item.
+**Rewards.** 160 XP for an Influence 6 resolution or for driving the pair off. Treasure: the raven feather (unique, story item). The herald's plate holds no coin. If the herald dies, its black full plate is *+2 greater resilient full plate* (level 14) and the zomok's heartwood is a 3,000 gp crafting reagent for a primal item.
 
 **Scaling.** For a weaker party, raise the patience to 6 rounds and lower DCs by 2. For a stronger party, have the herald dismount and send the zomok after anyone who wanders off.
 
@@ -891,7 +891,7 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 - **Vashkra slain.** The pass opens permanently. The killer carries the curse until a 9th-rank *cleanse affliction* or an equivalent ritual removes it.
 - **PCs leave.** Vashkra remains. The PCs may return with tribute.
 
-**Rewards.** 120 XP for any resolution at Influence 4 or more, or for a victory at party level 18. Treasure: the soldiers' gear yields 800 gp. Vashkra's hoard, reached through the magma vent (fire resistance or a DC 40 Athletics check to swim through it), holds 9,000 gp in obsidian, silver and gems, plus a level 18 permanent item.
+**Rewards.** 120 XP for any resolution at Influence 4 or more, or for a victory at party level 18. Treasure: the soldiers' gear yields 800 gp. Vashkra's hoard, reached through the magma vent (fire resistance or a DC 40 Athletics check to swim through it), holds 9,000 gp in obsidian, silver and gems, plus *major obsidian goggles*.
 
 **Scaling.** At party level 19, add two magma elemental servants or raise the curse DC by 2. For a gentler table, Vashkra lets any party that reaches Influence 2 pass with no tribute.
 
@@ -932,7 +932,7 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 - **Ambush won.** Ilthuliak dies or flees for good. The fen begins to recover within a year.
 - **Ambush lost or fled.** Ilthuliak keeps hunting the PCs and attacks again within a month.
 
-**Rewards.** Sighting: 40 XP for finding the roost. Ambush: 120 XP at party level 18. Treasure (roost): 2,000 gp in tarnished coins, a level 16 permanent item corroded but intact. Treasure (ambush): her hoard remains in the First World, but her carried horn ornaments are worth 3,000 gp.
+**Rewards.** Sighting: 40 XP for finding the roost. Ambush: 120 XP at party level 18. Treasure (roost): 2,000 gp in tarnished coins and an acid-etched *+3 greater striking corrosive longsword*, corroded but intact. Treasure (ambush): her hoard remains in the First World, but her carried horn ornaments are worth 3,000 gp.
 
 **Scaling.** At party level 19 or higher, add a black dragon drake or an acid-water hazard to the ambush. If the PCs never reach her First World den, keep the encounter as a sighting.
 
@@ -966,7 +966,7 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 - **Lerritan slain, village lost.** The PCs end the threat. The kingdom suffers 1 Unrest from refugees.
 - **PCs retreat.** The lerritan continues. One week later it reaches a PC settlement; run a Disaster kingdom event and reroll the encounter there.
 
-**Rewards.** 120 XP at party level 18 (base) or 19 (elite). Treasure: the lerritan's obsidian warhammer counts as a level 18 *+3 greater striking flaming warhammer* sized Gargantuan. Its glass skin yields 6,000 gp in volcanic glass, usable as a crafting reagent. The village elders give the PCs 500 gp in thanks.
+**Rewards.** 120 XP at party level 18 (base) or 19 (elite). Treasure: the lerritan's obsidian warhammer is a *+3 greater striking flaming warhammer* sized for a Gargantuan creature (sell value or resize). Its glass skin yields 6,000 gp in volcanic glass, usable as a crafting reagent. The village elders give the PCs 500 gp in thanks.
 
 **Scaling.** At party level 19, use the elite lerritan and add two fire elementals summoned by Volcanic Eruption. For a smaller party, give the villagers one more round to evacuate.
 

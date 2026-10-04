@@ -1063,7 +1063,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 8
+      "encounter": 8,
+      "slug": "08-radiant-warden-dormant",
+      "kind": "creature"
     }
   }
 }

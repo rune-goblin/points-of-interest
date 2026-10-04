@@ -508,7 +508,10 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 1
+      "encounter": 1,
+      "slug": "01-ankou-shadow-double-second",
+      "kind": "creature",
+      "usesGear": true
     }
   }
 }

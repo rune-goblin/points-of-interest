@@ -138,6 +138,37 @@
       "hidden": false,
       "locked": false,
       "sort": 1
+    },
+    {
+      "name": "Brannock's Strongbox",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/chest/chest-reinforced-steel-brown.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "p23hlubWsmfWc30v",
+      "_key": "!scenes.tokens!c4haAgleYQUr66t7.p23hlubWsmfWc30v",
+      "actorId": "xUc5lBp0QDo5wSMA",
+      "x": 1680,
+      "y": 360,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

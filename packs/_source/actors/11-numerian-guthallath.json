@@ -869,6 +869,68 @@
       "type": "action",
       "effects": [],
       "_key": "!actors.items!2nALYXdjjK1B0aCo.Uzinvon7QqcS48NH"
+    },
+    {
+      "name": "Guthallath Core",
+      "type": "treasure",
+      "img": "icons/commodities/tech/cog-gear-steel-glass.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 4
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Standard-grade adamantine and skymetal circuitry, worth 3,500 gp to a smith or to Numerian traders. Salvaging it also grants 1 Commodity each of Ore and Luxuries.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 3500
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "om1AdeuUqQTo2bsA",
+      "_key": "!actors.items!2nALYXdjjK1B0aCo.om1AdeuUqQTo2bsA"
     }
   ],
   "name": "Numerian Guthallath (the Colossus)",
@@ -1039,8 +1101,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 11
+      "encounter": 11,
+      "slug": "11-numerian-guthallath",
+      "kind": "creature"
     }
   }
 }

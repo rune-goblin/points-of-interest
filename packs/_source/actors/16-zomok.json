@@ -1121,6 +1121,68 @@
       "type": "action",
       "effects": [],
       "_key": "!actors.items!V8vMERRn6fsKdllI.pYiWNLrYh7MbvSRl"
+    },
+    {
+      "name": "Zomok Heartwood",
+      "type": "treasure",
+      "img": "icons/commodities/wood/log-rough-petrified-white.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 2
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>A crafting reagent for a primal item.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 3000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "rGtePzsEYwLjMMLg",
+      "_key": "!actors.items!V8vMERRn6fsKdllI.rGtePzsEYwLjMMLg"
     }
   ],
   "name": "The Zomok",
@@ -1321,8 +1383,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 16
+      "encounter": 16,
+      "slug": "16-zomok",
+      "kind": "creature"
     }
   }
 }

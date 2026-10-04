@@ -805,7 +805,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 11
+      "encounter": 11,
+      "slug": "11-apprentice-hessa",
+      "kind": "npc"
     }
   }
 }

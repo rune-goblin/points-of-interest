@@ -33,7 +33,8 @@
     "build:journal": "node scripts/build-journal.ts",
     "build:scenes": "node scripts/build-scenes.ts",
     "build:actors": "node scripts/build-actors.ts",
-    "build:icons": "node scripts/build-map-icons.ts"
+    "build:icons": "node scripts/build-map-icons.ts",
+    "build:banner": "node scripts/build-banner.ts"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.3",

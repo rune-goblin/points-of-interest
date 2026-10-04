@@ -1,6 +1,233 @@
 {
   "type": "loot",
-  "items": [],
+  "items": [
+    {
+      "_id": "xltVDvI7MaBCPLpa",
+      "img": "icons/weapons/bows/longbow-recurve-brown.webp",
+      "name": "Wren's Bow",
+      "system": {
+        "ammo": {
+          "baseType": "arrows",
+          "builtIn": false,
+          "capacity": null
+        },
+        "baseItem": "composite-longbow",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 2
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+          "damageType": "piercing",
+          "dice": 1,
+          "die": "d8"
+        },
+        "description": {
+          "value": "<p>This projectile weapon is made from horn, wood, and sinew laminated together to increase the power of its pull and the force of its projectile. Like all longbows, its great size also increases the bow's range and power. You must use two hands to fire it, and it cannot be used while mounted. Any time an ability is specifically restricted to a longbow, such as Erastil's favored weapon, it also applies to composite longbows unless otherwise stated.</p>"
+        },
+        "expend": 1,
+        "grade": null,
+        "group": "bow",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 1
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": 100,
+        "reload": {
+          "value": "0"
+        },
+        "rules": [],
+        "runes": {
+          "potency": 2,
+          "striking": 2,
+          "property": [
+            "speed"
+          ]
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "deadly-d10",
+            "propulsive",
+            "volley-30"
+          ]
+        },
+        "usage": {
+          "value": "held-in-one-plus-hands"
+        },
+        "slug": "composite-longbow",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.dUC8Fsa6FZtVikS3"
+      },
+      "effects": [],
+      "_key": "!actors.items!xfaDabys6fdAbYtr.xltVDvI7MaBCPLpa"
+    },
+    {
+      "name": "Wren's Journal",
+      "type": "equipment",
+      "img": "icons/sundries/books/book-notes-ragged-green.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>Maps two hidden trails in Thousand Voices and records a meeting with a raven-masked fey.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {}
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "qeW0MHVeyD4Q8XjW",
+      "_key": "!actors.items!xfaDabys6fdAbYtr.qeW0MHVeyD4Q8XjW"
+    },
+    {
+      "name": "Troll King's Crown",
+      "type": "treasure",
+      "img": "icons/equipment/head/crown-horns-brown.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "art-object",
+        "containerId": null,
+        "description": {
+          "value": "<p>Found among the bones in the den.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1500
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "D6O7ol6SEZRCcvGD",
+      "_key": "!actors.items!xfaDabys6fdAbYtr.D6O7ol6SEZRCcvGD"
+    }
+  ],
   "system": {
     "details": {
       "description": "<h2>Appearance</h2>\n<p>A lean ranger with cropped grey hair and a weathered face, wearing a Pitaxian green cloak and a quiver at the hip. This is a sketch from the front of Wren's journal.</p>\n<section class=\"secret\" id=\"secret-KQaIrHtzUhA1Us0G\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.u3owPBswTYDEuJAk]{13. The Quilled Hunter}.</strong> Irovetti's ranger. Only a torn green cloak remains in the den; Wren's bow and pack lie nearby.</p>\n</section>",
@@ -49,11 +276,13 @@
   "folder": "zYAJhRsEeA5L70jx",
   "sort": 2000,
   "ownership": {
-    "default": 0
+    "default": 1
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 13
+      "encounter": 13,
+      "slug": "13-wren-ashby",
+      "kind": "remains"
     }
   },
   "effects": []

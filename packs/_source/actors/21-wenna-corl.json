@@ -939,7 +939,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 21
+      "encounter": 21,
+      "slug": "21-wenna-corl",
+      "kind": "npc"
     }
   }
 }

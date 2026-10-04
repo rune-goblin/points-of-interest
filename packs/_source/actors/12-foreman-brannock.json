@@ -1,6 +1,101 @@
 {
   "type": "loot",
-  "items": [],
+  "items": [
+    {
+      "_id": "zXUu9HxX5ZCAIAYP",
+      "img": "icons/weapons/axes/axe-double-engraved.webp",
+      "name": "Brannock's Cold Iron Greataxe",
+      "system": {
+        "ammo": null,
+        "baseItem": "greataxe",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 2
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+          "damageType": "slashing",
+          "dice": 1,
+          "die": "d12"
+        },
+        "description": {
+          "value": "<p><em>High-grade cold iron, found in the foreman's tent.</em></p>\n<p>This large battle axe is too heavy to wield with only one hand. Many greataxes incorporate two blades, and they are often \"bearded,\" having a hook at the bottom to increase the strength of their chopping power.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "axe",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "type": "cold-iron",
+          "grade": "high"
+        },
+        "price": {
+          "value": {
+            "gp": 2
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+          "value": null
+        },
+        "rules": [],
+        "runes": {
+          "potency": 0,
+          "property": [],
+          "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "sweep"
+          ]
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "slug": "greataxe",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.8COlYvHe6hKCXY8x"
+      },
+      "effects": [],
+      "_key": "!actors.items!qGA8OoCDisvgZESm.zXUu9HxX5ZCAIAYP"
+    }
+  ],
   "system": {
     "details": {
       "description": "<h2>Appearance</h2>\n<p>A broad-shouldered, red-bearded woodcutter in a Pitaxian work tabard, axe on his shoulder, as he looked in life. This portrait appears in the ledger as a sketch by one of his crew.</p>\n<section class=\"secret\" id=\"secret-ThuqPASmwindnzXz\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.DI1nblGxCdYa2okA]{12. The Storm Tree}.</strong> Foreman of the logging crew the sard killed. His body lies beside the strongbox holding his ledger and 1,800 gp of wages.</p>\n</section>",
@@ -49,11 +144,13 @@
   "folder": "xmLCLGgIPn2qgcgb",
   "sort": 2000,
   "ownership": {
-    "default": 0
+    "default": 1
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 12
+      "encounter": 12,
+      "slug": "12-foreman-brannock",
+      "kind": "remains"
     }
   },
   "effects": []

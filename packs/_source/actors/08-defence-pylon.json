@@ -213,7 +213,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 8
+      "encounter": 8,
+      "slug": "08-defence-pylon",
+      "kind": "hazard"
     }
   },
   "effects": []

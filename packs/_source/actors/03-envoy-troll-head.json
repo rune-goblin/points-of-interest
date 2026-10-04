@@ -134,7 +134,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 3
+      "encounter": 3,
+      "slug": "03-envoy-troll-head",
+      "kind": "voice"
     }
   },
   "effects": []

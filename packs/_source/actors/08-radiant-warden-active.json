@@ -890,6 +890,68 @@
       },
       "effects": [],
       "_key": "!actors.items!Wh0UoANuOMtToLgL.4s8ELNWXmsGfFB7V"
+    },
+    {
+      "name": "Warden Core",
+      "type": "treasure",
+      "img": "icons/commodities/tech/battery-arcane-crystal-cube.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 2
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Worth 1,500 gp to Numerian buyers, or kept as a kingdom curiosity. If the hatch opened first, salvage it from the powered-down warden.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1500
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "3BIDiHsB9b2QY8LU",
+      "_key": "!actors.items!Wh0UoANuOMtToLgL.3BIDiHsB9b2QY8LU"
     }
   ],
   "name": "Radiant Warden (Active)",
@@ -1062,8 +1124,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 8
+      "encounter": 8,
+      "slug": "08-radiant-warden-active",
+      "kind": "creature"
     }
   }
 }

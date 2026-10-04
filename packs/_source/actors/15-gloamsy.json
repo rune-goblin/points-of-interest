@@ -1231,6 +1231,87 @@
       },
       "effects": [],
       "_key": "!actors.items!0Y4KZTNlrHBcFopp.BtJvNGAGxO2VOuXB"
+    },
+    {
+      "_id": "mGGId3bnlnKuh7HF",
+      "img": "icons/equipment/head/hat-cocked-feather-green.webp",
+      "name": "Troubadour's Cap",
+      "system": {
+        "apex": {
+          "attribute": "cha"
+        },
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p><em>A jester's cap from Irovetti's court, now enchanted: Gloamsy's gift when her Mood reaches 10.</em></p>\n<p>This jaunty cap can take the form and color of any type of hat you wish upon investing the item, but it always has a peacock feather jutting out from one side. You gain a +2 item bonus to Diplomacy and Performance checks while wearing the cap. When you invest the cap, you either increase your Charisma modifier by 1 or increase it to +4, whichever would give you a higher value.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> (concentrate)</p>\n<p><strong>Frequency</strong> once per hour</p><hr /><p><strong>Effect</strong> You cast @UUID[Compendium.pf2e.spells-srd.Item.K2WpC3FFoHrqX9Q5]{Hypnotize} (DC 37).</p><hr /><p><strong>Activate</strong> <span class=\"action-glyph\">2</span> (manipulate)</p>\n<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> Picking the feather from your cap, you throw it toward a target, casting @UUID[Compendium.pf2e.spells-srd.Item.d6o52BnjViNz7Gub]{Prismatic Spray} (DC 35).</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 17
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 15000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Treasure Vault (Remastered)"
+        },
+        "quantity": 1,
+        "rules": [
+          {
+            "key": "FlatModifier",
+            "selector": [
+              "diplomacy",
+              "performance"
+            ],
+            "type": "item",
+            "value": 2
+          }
+        ],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "apex",
+            "invested",
+            "magical"
+          ]
+        },
+        "usage": {
+          "value": "wornheadwear"
+        },
+        "slug": "troubadours-cap",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "equipment",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.h7OCAvvnUnCIM9Aj"
+      },
+      "effects": [],
+      "_key": "!actors.items!0Y4KZTNlrHBcFopp.mGGId3bnlnKuh7HF"
     }
   ],
   "name": "Gloamsy",
@@ -1439,8 +1520,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 15
+      "encounter": 15,
+      "slug": "15-gloamsy",
+      "kind": "creature"
     }
   }
 }

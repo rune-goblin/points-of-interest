@@ -3,8 +3,9 @@ import { MODULE_ID } from './constants';
 const JOURNAL_PACK = `${MODULE_ID}.journals`;
 const SCENE_PACK = `${MODULE_ID}.scenes`;
 const REGION_HEX_SIZE = 275;
-// A pointy-top hex's grid size is its flat-to-flat width, so each sketch spans its hex.
-const ICON_SIZE = REGION_HEX_SIZE;
+// A pointy-top hex's grid size is its flat-to-flat width. The icon spans the hex point to point, so
+// the scrim scripts/build-map-icons.ts bakes into each icon covers the whole hex.
+const ICON_SIZE = Math.round((REGION_HEX_SIZE * 2) / Math.sqrt(3));
 const FONT_SIZE = 30;
 const FALLBACK_ICON = 'icons/svg/book.svg';
 // Releases up to 0.2.0 kept each site in its own entry beside this overview entry.
@@ -191,8 +192,8 @@ export async function placeMapNotes(target?: Scene): Promise<void> {
   ui.notifications.info(t('Placed', { count: String(creates.length + updates.length), scene: scene.name }));
 }
 
-// The sketches sit straight on the map, so Foundry's dark backing square and idle border would
-// only box them in. The border still shows whenever Foundry would tint it.
+// Each icon carries its own hex scrim, so Foundry's dark backing square and idle border would only
+// box it in. The border still shows whenever Foundry would tint it.
 function refreshSiteNote(note: DrawnNote): void {
   note.controlIcon.bg.visible = false;
   note.controlIcon.border.visible = note.hover || note.controlled || note.layer.highlightObjects || note.isPreview;

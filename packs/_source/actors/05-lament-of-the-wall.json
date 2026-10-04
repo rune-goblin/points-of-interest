@@ -104,7 +104,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 5
+      "encounter": 5,
+      "slug": "05-lament-of-the-wall",
+      "kind": "hazard"
     }
   },
   "effects": []

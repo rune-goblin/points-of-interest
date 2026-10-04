@@ -138,6 +138,37 @@
       "hidden": false,
       "locked": false,
       "sort": 1
+    },
+    {
+      "name": "Barrow Grave Goods",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/chest/chest-reinforced-stone.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "FqFfnYLHGbcd3kJU",
+      "_key": "!scenes.tokens!apUviv73qyki46ON.FqFfnYLHGbcd3kJU",
+      "actorId": "EHATWyBWSxuYdooR",
+      "x": 1680,
+      "y": 320,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

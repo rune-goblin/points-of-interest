@@ -912,6 +912,68 @@
       },
       "effects": [],
       "_key": "!actors.items!TYSmugwnxgYrf9qb.gwyxM0numx6kL7On"
+    },
+    {
+      "name": "Delivery Receipt",
+      "type": "equipment",
+      "img": "icons/sundries/documents/document-sealed-red-tan.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>Sealed with Irovetti's signet: proof of his arrangement with Kob Moleg. It grants a +2 circumstance bonus to one Kingdom check or Liberation activity tied to Pitaxian nobility.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {}
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "ankJjiOEwxTm61xp",
+      "_key": "!actors.items!TYSmugwnxgYrf9qb.ankJjiOEwxTm61xp"
     }
   ],
   "name": "Ederis Pallo",
@@ -1064,8 +1126,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 6
+      "encounter": 6,
+      "slug": "06-ederis-pallo",
+      "kind": "npc"
     }
   }
 }

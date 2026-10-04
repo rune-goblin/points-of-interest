@@ -1,0 +1,125 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "name": "Ancient Kellid Torcs",
+      "type": "treasure",
+      "img": "icons/equipment/neck/choker-chain-thick-gold.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "art-object",
+        "containerId": null,
+        "description": {
+          "value": "<p>Gold neck-rings from the barrow floor.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1200
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "bRg1WhpDM0oX4sOg",
+      "_key": "!actors.items!EHATWyBWSxuYdooR.bRg1WhpDM0oX4sOg"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-DzjlA8iJv4HCW1Ot\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> Kellid torcs among the bones and armour on the barrow floor, near the bones of the troll's mother.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "EHATWyBWSxuYdooR",
+  "_key": "!actors!EHATWyBWSxuYdooR",
+  "name": "Barrow Grave Goods",
+  "img": "icons/containers/chest/chest-reinforced-stone.webp",
+  "prototypeToken": {
+    "name": "Barrow Grave Goods",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/containers/chest/chest-reinforced-stone.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "Ux1CdY6WNeAEo7MP",
+  "sort": 5000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 3,
+      "slug": "03-barrow-grave-goods",
+      "kind": "cache"
+    }
+  },
+  "effects": []
+}

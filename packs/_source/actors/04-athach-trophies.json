@@ -1,0 +1,238 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "_id": "01cKve2EBtAc28Gl",
+      "img": "systems/pf2e/icons/equipment/weapons/halberd.webp",
+      "name": "Dead Knight's Halberd",
+      "system": {
+        "ammo": null,
+        "baseItem": "halberd",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 2
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+          "damageType": "piercing",
+          "dice": 1,
+          "die": "d10"
+        },
+        "description": {
+          "value": "<p>This polearm has a relatively short, 5-foot shaft. The business end is a long spike with an axe blade attached.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "polearm",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 2
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+          "value": null
+        },
+        "rules": [],
+        "runes": {
+          "potency": 2,
+          "striking": 2,
+          "property": []
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "reach",
+            "versatile-s"
+          ]
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "slug": "halberd",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.dgWxsYm0DWHb27h6"
+      },
+      "effects": [],
+      "_key": "!actors.items!uDXtXDkgbDcsDBox.01cKve2EBtAc28Gl"
+    },
+    {
+      "_id": "3HtAQFK0cAu5YzTZ",
+      "img": "systems/pf2e/icons/equipment/shields/specific-shields/sturdy-shield.webp",
+      "name": "Sturdy Shield (Major)",
+      "system": {
+        "acBonus": 2,
+        "baseItem": "steel-shield",
+        "bulk": {
+          "value": 1
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p><em>The same knight's shield, dented by athach fists.</em></p>\n<p>With a superior design and excellent craftsmanship, this steel shield has higher Hardness than its non-magical counterparts, making it harder to break and destroy.</p>\n<p>The shield has Hardness 17, HP 136, and BT 68.</p>"
+        },
+        "grade": null,
+        "hardness": 17,
+        "hp": {
+          "max": 136,
+          "value": 136
+        },
+        "level": {
+          "value": 16
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 10000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+          "reinforcing": 0
+        },
+        "size": "med",
+        "specific": {
+          "integrated": null,
+          "material": {
+            "grade": null,
+            "type": null
+          },
+          "runes": {
+            "reinforcing": 0
+          }
+        },
+        "speedPenalty": 0,
+        "traits": {
+          "integrated": null,
+          "rarity": "common",
+          "value": [
+            "magical"
+          ]
+        },
+        "slug": "sturdy-shield-major",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "shield",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.BWQzaHbGVqlBuMww"
+      },
+      "effects": [],
+      "_key": "!actors.items!uDXtXDkgbDcsDBox.3HtAQFK0cAu5YzTZ"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-DkXEHEJQrEdJmZy6\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{04. The Gardeners}.</strong> The athaches' trophy pile in the manor rubble, among them a dead knight's arms.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "uDXtXDkgbDcsDBox",
+  "_key": "!actors!uDXtXDkgbDcsDBox",
+  "name": "Athaches' Trophies",
+  "img": "icons/commodities/bones/bones-stack-brown.webp",
+  "prototypeToken": {
+    "name": "Athaches' Trophies",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/commodities/bones/bones-stack-brown.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "TMhUlOLTxwg3JoAB",
+  "sort": 13000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 4,
+      "slug": "04-athach-trophies",
+      "kind": "cache"
+    }
+  },
+  "effects": []
+}

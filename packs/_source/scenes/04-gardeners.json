@@ -417,6 +417,68 @@
       "hidden": false,
       "locked": false,
       "sort": 10
+    },
+    {
+      "name": "Athaches' Trophies",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/commodities/bones/bones-stack-brown.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "EkGpK6XezunotOfu",
+      "_key": "!scenes.tokens!VgRuna04QJl2xYGX.EkGpK6XezunotOfu",
+      "actorId": "uDXtXDkgbDcsDBox",
+      "x": 1632,
+      "y": 288,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
+    },
+    {
+      "name": "Varrold Strongbox",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/chest/chest-simple-steel-brown.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "GauGZOb0TMZaXwSv",
+      "_key": "!scenes.tokens!VgRuna04QJl2xYGX.GauGZOb0TMZaXwSv",
+      "actorId": "Fn816vZAm6qORb8W",
+      "x": 1728,
+      "y": 288,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 1
     }
   ],
   "levels": [

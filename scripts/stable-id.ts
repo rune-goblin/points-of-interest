@@ -26,6 +26,8 @@ export const ids = {
   handoutPage: (headingSlug: string) => stableId(`note:${headingSlug}`),
   /** `artSlug` is the shared portrait/token file name without extension, e.g. `01-ankou`. */
   actor: (artSlug: string) => stableId(`actor:${artSlug}`),
+  /** An item an actor carries, keyed by the actor's slug and the item's name. */
+  item: (actorSlug: string, name: string) => stableId(`item:${actorSlug}:${slugify(name)}`),
   /** `mapSlug` is the map file name without extension, e.g. `09-iron-juggernaut-cargo-hold`. */
   scene: (mapSlug: string) => stableId(`scene:${mapSlug}`),
   folder: (pack: string, encounter: number) => stableId(`folder:${pack}:${pad(encounter)}`),

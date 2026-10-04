@@ -4,7 +4,8 @@
 //   node scripts/build-scenes.ts
 // Thumbnails are committed art; cwebp runs only to make a missing one, so CI never needs it.
 // Placeables (tokens, walls, lights, …) edited in Foundry and unpacked over packs/_source/scenes
-// survive regeneration; only a scene with no tokens yet gets the seeded layout below.
+// survive regeneration. A scene with no tokens yet gets the seeded layout below; a scene that has
+// tokens gains one only for a cast member it lacks, in a row along the map's top edge.
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -91,11 +92,9 @@ function ensureThumb(mapFile: string, slug: string, size: { width: number; heigh
 }
 
 const ACTORS_DIR = join(ROOT, 'packs', '_source', 'actors');
-const TOKENS_DIR = join(ROOT, 'assets', 'tokens');
 
 // Keyed by actor slug (the shared portrait/token file name).
-const VOICE_ONLY = new Set(['03-envoy-troll-head', '03-old-heads', '05-magister-corwen-ash', '05-dalia-sorn', '05-hemmet-brask', '05-lio-venn']);
-/** Tokens for later states, optional extras and unnoticed hazards start hidden from players. */
+/** Tokens for later states, optional extras and unnoticed hazards start hidden from players, as do treasure caches. */
 const HIDDEN = new Set([
   '01-ankou-shadow-double-first', '01-ankou-shadow-double-second', '05-skeletal-champion', '05-lament-of-the-wall',
   '07-minognos-ushad-diving', '08-radiant-warden-active', '14-spared-ankou', '19-ilthuliak-ambush',
@@ -112,32 +111,28 @@ interface ActorSource {
   _key: string;
   name: string;
   sort?: number;
-  flags: Record<string, { encounter?: number }>;
+  flags: Record<string, { encounter?: number; slug?: string; kind?: string }>;
   prototypeToken: Record<string, unknown> & { width: number; height: number };
 }
 interface CastMember { slug: string; actor: ActorSource }
 
 function readCast(): Map<number, CastMember[]> {
-  const slugById = new Map(
-    // The haunt is the one actor without token art of its own.
-    [...readdirSync(TOKENS_DIR).map((f) => f.replace(/\.webp$/, '')), '05-lament-of-the-wall'].map((slug) => [ids.actor(slug), slug]),
-  );
   const cast = new Map<number, CastMember[]>();
   if (!existsSync(ACTORS_DIR)) return cast;
   for (const file of readdirSync(ACTORS_DIR).filter((f) => f.endsWith('.json')).sort()) {
     const actor = JSON.parse(readFileSync(join(ACTORS_DIR, file), 'utf8')) as ActorSource;
     if (!actor._key.startsWith('!actors!')) continue;
-    const slug = slugById.get(actor._id);
-    const encounter = actor.flags[MODULE_ID]?.encounter;
-    if (!slug || encounter === undefined) throw new Error(`${file}: no art slug or encounter flag for actor ${actor.name}`);
-    if (VOICE_ONLY.has(slug)) continue;
+    const { slug, encounter, kind } = actor.flags[MODULE_ID] ?? {};
+    if (!slug || encounter === undefined) throw new Error(`${file}: no slug or encounter flag for actor ${actor.name}`);
+    // A voice is a speaking portrait for a creature that already has a token.
+    if (kind === 'voice') continue;
     cast.set(encounter, [...(cast.get(encounter) ?? []), { slug, actor }]);
   }
   return cast;
 }
 
-// Rows of tokens centred on the map, one empty square apart, for the GM to drag into place.
-function seedTokens(sceneId: string, slug: string, members: CastMember[], size: { width: number; height: number }, grid: number) {
+// Rows of tokens centred on the map (or along its top edge), one empty square apart, for the GM to drag into place.
+function seedTokens(sceneId: string, slug: string, members: CastMember[], size: { width: number; height: number }, grid: number, alongTop = false) {
   const pieces = members.flatMap((m) => Array.from({ length: COPIES[m.slug] ?? 1 }, (_, copy) => ({ ...m, copy })));
   const across = Math.floor(size.width / grid);
   const maxRow = Math.max(4, Math.floor(across * 0.6));
@@ -157,7 +152,7 @@ function seedTokens(sceneId: string, slug: string, members: CastMember[], size: 
   // Token x/y are canvas coordinates, which start at the padding Foundry adds around the map.
   const padX = Math.ceil((PADDING * size.width) / grid) * grid;
   const padY = Math.ceil((PADDING * size.height) / grid) * grid;
-  let top = Math.floor((size.height / grid - total) / 2);
+  let top = alongTop ? 0 : Math.floor((size.height / grid - total) / 2);
   return rows.flatMap((row, r) => {
     const width = row.reduce((a, p) => a + p.actor.prototypeToken.width, 0) + row.length - 1;
     let left = Math.floor((across - width) / 2);
@@ -173,7 +168,7 @@ function seedTokens(sceneId: string, slug: string, members: CastMember[], size: 
         y: padY + Math.round(top * grid),
         elevation: 0,
         level: LEVEL_ID,
-        hidden: HIDDEN.has(piece.slug),
+        hidden: HIDDEN.has(piece.slug) || piece.actor.flags[MODULE_ID]?.kind === 'cache',
         locked: false,
         sort: i,
       };
@@ -183,6 +178,13 @@ function seedTokens(sceneId: string, slug: string, members: CastMember[], size: 
     top += rowHeights[r] + 1;
     return placed;
   });
+}
+
+// Keeps a scene's placed tokens and adds one for each cast member it lacks, so a new actor reaches a placed scene.
+function placeTokens(sceneId: string, slug: string, members: CastMember[], size: { width: number; height: number }, grid: number, previous: { actorId?: string }[]) {
+  if (!previous.length) return seedTokens(sceneId, slug, members, size, grid);
+  const missing = members.filter((m) => !previous.some((t) => t.actorId === m.actor._id));
+  return [...previous, ...seedTokens(sceneId, slug, missing, size, grid, true)];
 }
 
 const NOTE_ICON = 'icons/svg/book.svg';
@@ -304,7 +306,7 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
     },
     transition: { type: null, duration: 1500, activeOnly: false },
     drawings: kept('drawings'),
-    tokens: previous?.tokens?.length ? previous.tokens : seedTokens(id, slug, members, size, meta.grid),
+    tokens: placeTokens(id, slug, members, size, meta.grid, (previous?.tokens ?? []) as { actorId?: string }[]),
     levels: [
       {
         _id: LEVEL_ID,

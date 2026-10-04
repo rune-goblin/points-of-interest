@@ -741,7 +741,26 @@
           "title": ""
         },
         "range": null,
-        "rules": [],
+        "rules": [
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "greaterBrilliant"
+          },
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "greaterFearsome"
+          }
+        ],
         "slug": null,
         "traits": {
           "rarity": "common",
@@ -1280,6 +1299,146 @@
       },
       "effects": [],
       "_key": "!actors.items!tc3faa6OpuFN6QEy.zWFmuptIJBa1t8FT"
+    },
+    {
+      "_id": "5clu2OIdt7xkF53w",
+      "img": "icons/equipment/chest/breastplate-layered-steel-green.webp",
+      "name": "The Herald's Black Full Plate",
+      "system": {
+        "acBonus": 6,
+        "baseItem": "full-plate",
+        "bulk": {
+          "value": 4
+        },
+        "category": "heavy",
+        "checkPenalty": -3,
+        "containerId": null,
+        "description": {
+          "value": "<p><em>Taken only if the herald dies.</em></p>\n<p>Plate mail consists of interlocking plates that encase nearly the entire body in a carapace of steel. It is costly and heavy, and the wearer often requires help to don it correctly, but it provides some of the best defense armor can supply. A suit of this armor comes with an undercoat of @UUID[Compendium.pf2e.equipment-srd.Item.zBYEU9E7034ENCmh]{Padded Armor} and a pair of @UUID[Compendium.pf2e.equipment-srd.Item.Ix2vicchE79d6Cl3]{gauntlets}.</p>"
+        },
+        "dexCap": 0,
+        "grade": null,
+        "group": "plate",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 2
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 30
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+          "potency": 2,
+          "resilient": 2,
+          "property": []
+        },
+        "size": "med",
+        "speedPenalty": -10,
+        "strength": 4,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "bulwark"
+          ]
+        },
+        "slug": "full-plate",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "handsHeld": 0,
+          "inSlot": true
+        }
+      },
+      "type": "armor",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.Gq1cZWSKOtJhKd2p"
+      },
+      "effects": [],
+      "_key": "!actors.items!tc3faa6OpuFN6QEy.5clu2OIdt7xkF53w"
+    },
+    {
+      "name": "Black Raven Feather",
+      "type": "equipment",
+      "img": "icons/commodities/materials/feather-black-blue.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>The herald's token at Influence 6. Once, a creature holding it may ask the Lantern King's court a single question in Chapter 11, or it may serve as safe passage past one fey guardian loyal to the Lantern King (GM's choice).</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {}
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "L1rq78vXJ7xP1XZK",
+      "_key": "!actors.items!tc3faa6OpuFN6QEy.L1rq78vXJ7xP1XZK"
     }
   ],
   "name": "The Vilderavn Herald",
@@ -1362,7 +1521,7 @@
       "level": {
         "value": 19
       },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Hcwe7BAWmZeft2MG]{16. The Lantern King's Emissary}.</strong> The Lantern King's emissary, posing as Nyrissa's warden. Run as Influence over 4 rounds; in a fight it pulls its punches and withdraws with Forest Step below 100 HP.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Hcwe7BAWmZeft2MG]{16. The Lantern King's Emissary}.</strong> The Lantern King's emissary, posing as Nyrissa's warden. Run as Influence over 4 rounds; in a fight it pulls its punches and withdraws with Forest Step below 100 HP. Its greatsword's greater brilliant and greater fearsome runes add 1d4 fire, and a critical hit leaves the target frightened 2 and risks blinding it (DC 41 Fortitude).</p>",
       "publicNotes": "<p>In its true form, a vilderavn herald is a human-sized raven. Its ability to assume a humanoid guise suits it to insinuate itself into the retinue of a mortal ruler or to travel without too much concern, but more often these deadly fey directly serve more powerful rulers, such as the Eldest.</p>\n<h2>Appearance</h2>\n<p>A knight in black full plate with a helm shaped like a raven's skull, the beak curving down over the face. Black feathers sprout from the pauldrons and gorget. One gauntleted hand rests on a greatsword planted point-down; the other gestures toward the viewer. Behind the eye slits, two glints of cold light. A second view shows its true form: a human-sized raven with a scarred beak and eyes like polished jet.</p>",
       "publication": {
         "license": "OGL",
@@ -1473,8 +1632,14 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 16
+      "encounter": 16,
+      "slug": "16-vilderavn-herald",
+      "kind": "creature",
+      "usesGear": true
     }
   }
 }

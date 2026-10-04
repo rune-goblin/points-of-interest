@@ -27,7 +27,10 @@ compendium packs from `packs/_source/`).
 - `scripts/build-scenes.ts` → `packs/_source/scenes/` (generated on build). One scene per map, native
   v14 (one level holds the background). Grid sizes are judged per map and recorded in its table.
   It seeds each scene's actors as tokens; placeables edited in Foundry and unpacked over
-  `packs/_source/scenes/` survive regeneration (a scene reseeds only when it has no tokens).
+  `packs/_source/scenes/` survive regeneration (a scene reseeds only when it has no tokens). A scene
+  that has tokens gains one for each cast member it lacks, in a row along the map's top edge, so a
+  token deleted in Foundry comes back on the next build; drop an actor from a scene with `SCENE_CAST`.
+  It reads each actor's slug and kind from `flags['points-of-interest']` and seeds caches hidden.
   Every scene also gets a book note (flagged `scene`) in the map's top-left square, linked to its
   encounter page; the build regenerates it each run and keeps only an unpacked move. The `refreshNote`
   hook hides it from players, who hold Limited on the journal and would otherwise see the pin.
@@ -36,15 +39,39 @@ compendium packs from `packs/_source/`).
   table at its top names each actor's source stat block. Copy only from PF2e **system** packs
   (OGL/ORC), never from the premium `pf2e-kingmaker` module. The remaster renamed the ankou
   "Ozthoom" (Monster Core 2); the Kingmaker Ankou Assassin keeps its name.
+  `TREASURE` (keyed by actor slug) turns each encounter's Rewards into items: PF2e `equipment-srd` copies
+  (with runes, material, size), coins, custom valuables and story items, and a scroll built the way
+  PF2e's `createConsumableFromSpell` builds one. Creatures and NPCs carry what they own and get
+  `flags.pf2e.lootable`; remains hold what lies on the body; `CACHES` adds a loot actor (core Foundry
+  icon) for treasure lying at a site. Loot actors ship with default Limited ownership, which PF2e
+  needs to let players take from them, and `src/scene-links.ts` keeps it on import. Keep the item
+  names in `docs/encounters.md` Rewards in step with the table.
+  **Enemies carry and use what they could use; nothing usable lies in the open.** A creature spec
+  marked `usesGear` (a body that can wield and wear) must carry and use everything at its site it
+  could use: weapons (bombs too), shields, armour and worn items of its size, potions and elixirs if
+  it lives, scrolls and wands of a tradition it casts. In use means a weapon linked by one of its
+  strikes, armour worn, a shield held, a worn item worn and invested, a consumable carried. A cache
+  marked `stowed` (a chest, strongbox, sealed chamber or hidden packet) is exempt. The build equips
+  gear handed to such a creature; a weapon must be a `stock()` entry (the stat block's own weapon,
+  renamed as treasure, `runes` optional) so its strike stays linked. PF2e resets an NPC strike's
+  property runes each prepare and applies a linked weapon's runes only through `AdjustStrike`
+  (`property-runes`) rules on the strike, so the build adds one per rune, as the bestiaries do.
+  `src/tests/packs/actors.test.ts` enforces both rules.
 - `docs/art/NN-slug.md` — art briefs per encounter; `docs/art/by-type/` — the same briefs
   regrouped as map notes, maps and characters.
 - `docs/pitches.md` — the original one-paragraph pitches.
 - `assets/map-notes|maps|portraits|tokens/NN-name.webp` — art, prefixed with the encounter number.
   A character's portrait and token share a file name. Reference art by its served path
   `modules/points-of-interest/assets/…`.
-- `assets/map-icons/NN-name.webp` — 512 px map-pin icons derived from `assets/map-notes/`
-  (trimmed to the ink, traced with a thin white line, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
-  after changing map-note art; the icons are committed, not built.
+- `assets/map-notes/white-ink/NN-name.webp` — white-ink redraws of the map-note sketches, named like
+  their navy originals. The originals stay the journal handouts; the redraws feed the map icons.
+- `assets/map-icons/NN-name.webp` — 512 px map-pin icons derived from `assets/map-notes/white-ink/`
+  (a 25% black scrim filling the region hex, the sketch fitted inside it with coloured accents
+  lightened, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
+  after changing that art; the icons are committed, not built.
+- `assets/adventure-banner.webp` — the Adventure's banner (module.json `banner`, shown by the importer
+  and the compendium sidebar): #07's navy sketch on generated parchment. `npm run build:banner`
+  redraws it (needs ImageMagick 7; `NOTE` in the script picks the sketch); committed, not built.
 
 **The Foundry/PF2e API, compendium packs, Svelte-in-ApplicationV2, the Vite build, and
 multi-client sync live in the user-level `foundry-pf2e` skill** — consult it for any of
@@ -133,14 +160,14 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 ## Status and next steps
 
 - Done: module scaffold, art in `assets/`, encounter docs, generated journal pack, scenes pack
-  (22, actors placed in a centre block, no walls/lights), Adventure `irovettis-map`, actors pack (86, including 2 hazards and 8 loot remains; one folder per encounter),
+  (22, actors placed in a centre block, no walls/lights), Adventure `irovettis-map`, actors pack (102, including 2 hazards, 8 loot remains and 16 treasure caches; one folder per encounter),
   macros pack (hand-authored `packs/_source/macros/`, ids from `ids.macro`; the Adventure bundles it too).
 - Map notes: a GM runs the "Place Irovetti's Map Notes" macro, which calls
   `game.modules.get('points-of-interest').api.placeMapNotes(scene?)`. It targets the given scene, else
   the viewed region map, else the world's only one (several and none viewed → asks the GM to view one).
   It imports or refreshes the journal into an "Irovetti's Map" world folder (same ids as the pack),
   deletes the per-site entries v0.2.0 made, adds the `scene` note to world copies of the module scenes
-  that lack it (refreshing the link of one already there), then creates or moves one note per site (275 px icon, one hex wide,
+  that lack it (refreshing the link of one already there), then creates or moves one note per site (318 px icon, one hex tall,
   linked to the site's encounter page, flagged `site`). Re-run it after journal edits.
   The module hides Foundry's dark backing square and idle border on these notes (`refreshNote` hook).
 - The desktop install links the module as `npm run setup` would (`Data/modules/points-of-interest`

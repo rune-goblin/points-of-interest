@@ -3472,6 +3472,68 @@
       },
       "effects": [],
       "_key": "!actors.items!piSaUnyJLjaaeCN7.khNk0fYgnDMF7kKq"
+    },
+    {
+      "name": "Horn Ornaments",
+      "type": "treasure",
+      "img": "icons/commodities/treasure/horn-carved-banded.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "art-object",
+        "containerId": null,
+        "description": {
+          "value": "<p>Banded gold she wears on her horns; her hoard stays in the First World.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 3000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "d6Wm9nmtzCbP0uE1",
+      "_key": "!actors.items!piSaUnyJLjaaeCN7.d6Wm9nmtzCbP0uE1"
     }
   ],
   "name": "Ilthuliak (Ambush)",
@@ -3671,8 +3733,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 19
+      "encounter": 19,
+      "slug": "19-ilthuliak-ambush",
+      "kind": "creature"
     }
   }
 }

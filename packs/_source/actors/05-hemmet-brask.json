@@ -134,7 +134,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 5
+      "encounter": 5,
+      "slug": "05-hemmet-brask",
+      "kind": "voice"
     }
   },
   "effects": []

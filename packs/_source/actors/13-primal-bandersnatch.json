@@ -724,6 +724,68 @@
       },
       "effects": [],
       "_key": "!actors.items!Kdd28WIx0rFfHUHu.WhCqHDOg0A8FK3IF"
+    },
+    {
+      "name": "Bandersnatch Pelt and Quills",
+      "type": "treasure",
+      "img": "icons/commodities/leather/fur-pelt-spotted-brown.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 4
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Prized by fletchers. A pelt in the throne room grants +1 Fame once.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 2500
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "TLJg0ywUtYE40YSi",
+      "_key": "!actors.items!Kdd28WIx0rFfHUHu.TLJg0ywUtYE40YSi"
     }
   ],
   "name": "Primal Bandersnatch",
@@ -900,8 +962,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 13
+      "encounter": 13,
+      "slug": "13-primal-bandersnatch",
+      "kind": "creature"
     }
   }
 }

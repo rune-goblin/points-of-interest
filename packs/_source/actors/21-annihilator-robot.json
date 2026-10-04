@@ -454,6 +454,192 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       }
+    },
+    {
+      "name": "Annihilator Chain Gun",
+      "type": "equipment",
+      "img": "icons/commodities/tech/blade-mechanical-cutter.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>Functions as a level 16 integrated firearm only while wired to a power source.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {}
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 2,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "GIRpZMIYHg19HCP2",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.GIRpZMIYHg19HCP2"
+    },
+    {
+      "name": "Stasis-Bay Power Cell",
+      "type": "treasure",
+      "img": "icons/commodities/tech/battery-fuel-cell-teal.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 2
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Worth 2,000 gp to Numerian buyers.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 2000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "zHCqbHiHvV1WY6Dl",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.zHCqbHiHvV1WY6Dl"
+    },
+    {
+      "name": "Salvage Plating",
+      "type": "treasure",
+      "img": "icons/commodities/metal/plate-curved-brass.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 4
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Stripped from the wreck.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1500
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "aSxMtxRLVhg2DchB",
+      "_key": "!actors.items!XMgYnpFjFh4GKSSS.aSxMtxRLVhg2DchB"
     }
   ],
   "system": {
@@ -671,8 +857,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 21
+      "encounter": 21,
+      "slug": "21-annihilator-robot",
+      "kind": "creature"
     }
   },
   "effects": []

@@ -231,6 +231,37 @@
       "hidden": false,
       "locked": false,
       "sort": 4
+    },
+    {
+      "name": "Vane's Wagon",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/boxes/crate-wooden-brown.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "GYA28eOgwIKvwCnx",
+      "_key": "!scenes.tokens!lGlcY0t6BlRVA3t5.GYA28eOgwIKvwCnx",
+      "actorId": "BFMe3z9zd9Gt43cA",
+      "x": 1680,
+      "y": 300,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

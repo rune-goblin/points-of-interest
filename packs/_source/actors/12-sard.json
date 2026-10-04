@@ -1021,6 +1021,68 @@
       "type": "action",
       "effects": [],
       "_key": "!actors.items!rzUPwTm5szT9wcAW.uDxnASCZGKnXfoQw"
+    },
+    {
+      "name": "Sard Heartwood Shard",
+      "type": "treasure",
+      "img": "icons/commodities/wood/log-cut-petrified-violet.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Works as a level 17 magic item component worth 3,000 gp.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 3000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "gBiS8jGDncKTS9Gm",
+      "_key": "!actors.items!rzUPwTm5szT9wcAW.gBiS8jGDncKTS9Gm"
     }
   ],
   "name": "The Sard",
@@ -1222,8 +1284,13 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 12
+      "encounter": 12,
+      "slug": "12-sard",
+      "kind": "creature"
     }
   }
 }

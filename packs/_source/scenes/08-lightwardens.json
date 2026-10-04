@@ -231,6 +231,37 @@
       "hidden": false,
       "locked": false,
       "sort": 0
+    },
+    {
+      "name": "Hull Cache",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/chest/chest-tech-silver.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "4PqeP7Y8Ptmkdnei",
+      "_key": "!scenes.tokens!KhyQ0Kbn9XnUi9U6.4PqeP7Y8Ptmkdnei",
+      "actorId": "NgurDFDPt2lWrQGF",
+      "x": 1680,
+      "y": 360,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

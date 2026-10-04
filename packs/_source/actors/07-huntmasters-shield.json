@@ -1,0 +1,131 @@
+{
+  "type": "loot",
+  "items": [
+    {
+      "_id": "YYCuh90pypUvpQWk",
+      "img": "systems/pf2e/icons/equipment/shields/steel-shield.webp",
+      "name": "Huntmaster's Shield",
+      "system": {
+        "acBonus": 2,
+        "baseItem": "steel-shield",
+        "bulk": {
+          "value": 1
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p><em>It bears Irovetti's household crest. Returning it to the huntmaster's widow in Pitax after liberation earns goodwill among Pitax's old families.</em></p>\n<p>Like wooden shields, steel shields come in a variety of shapes and sizes. Though more expensive than wooden shields, they are much more durable.</p><table class=\"pf2e remaster\"><thead><tr><th>Hardness</th><th>HP</th><th>BT</th></tr></thead><tbody><tr><td>5</td><td>20</td><td>10</td></tr></tbody></table>"
+        },
+        "grade": null,
+        "hardness": 5,
+        "hp": {
+          "max": 20,
+          "value": 20
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 2
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+          "reinforcing": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "traits": {
+          "integrated": null,
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "steel-shield",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "shield",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.Yr9yCuJiAlFh3QEB"
+      },
+      "effects": [],
+      "_key": "!actors.items!ojOBTIvXxFAOsNTq.YYCuh90pypUvpQWk"
+    }
+  ],
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-huG2mGI4qdyPG32d\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.ehfB89bZocdpzaAr]{07. The Wyvern Queen's Hunting Ground}.</strong> Buried in the shale near the cliff. Minognos-Ushad's own treasure lies in her lair at BR3.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  },
+  "_id": "ojOBTIvXxFAOsNTq",
+  "_key": "!actors!ojOBTIvXxFAOsNTq",
+  "name": "Huntmaster's Shield",
+  "img": "icons/equipment/shield/heater-steel-worn.webp",
+  "prototypeToken": {
+    "name": "Huntmaster's Shield",
+    "actorLink": false,
+    "disposition": 0,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/equipment/shield/heater-steel-worn.webp",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    "ring": {
+      "enabled": false
+    },
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "folder": "v3GA8FHpHVzawDyP",
+  "sort": 3000,
+  "ownership": {
+    "default": 1
+  },
+  "flags": {
+    "points-of-interest": {
+      "encounter": 7,
+      "slug": "07-huntmasters-shield",
+      "kind": "cache"
+    }
+  },
+  "effects": []
+}

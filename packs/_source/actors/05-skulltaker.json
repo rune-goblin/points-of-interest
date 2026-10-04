@@ -1312,7 +1312,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 5
+      "encounter": 5,
+      "slug": "05-skulltaker",
+      "kind": "creature"
     }
   }
 }

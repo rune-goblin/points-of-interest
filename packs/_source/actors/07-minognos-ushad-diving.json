@@ -668,7 +668,9 @@
   },
   "flags": {
     "points-of-interest": {
-      "encounter": 7
+      "encounter": 7,
+      "slug": "07-minognos-ushad-diving",
+      "kind": "creature"
     }
   }
 }

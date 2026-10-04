@@ -138,6 +138,37 @@
       "hidden": false,
       "locked": false,
       "sort": 1
+    },
+    {
+      "name": "Ilthuliak's Roost",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/commodities/bones/bones-dragon-grey.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "AfkugPCGaLV6h7td",
+      "_key": "!scenes.tokens!NVgVH9EvkL8qhFF6.AfkugPCGaLV6h7td",
+      "actorId": "lvdSWan9U6HdTift",
+      "x": 1680,
+      "y": 320,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

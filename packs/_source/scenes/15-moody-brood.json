@@ -138,6 +138,37 @@
       "hidden": false,
       "locked": false,
       "sort": 1
+    },
+    {
+      "name": "Picnic Remains",
+      "actorLink": false,
+      "disposition": 0,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "icons/containers/kitchenware/goblet-engraved-grey.webp",
+        "scaleX": 1,
+        "scaleY": 1
+      },
+      "ring": {
+        "enabled": false
+      },
+      "flags": {
+        "pf2e": {
+          "linkToActorSize": true,
+          "autoscale": true
+        }
+      },
+      "_id": "IKDIjSYFPgIxJJfy",
+      "_key": "!scenes.tokens!lfZuFNikK6ZqDZif.IKDIjSYFPgIxJJfy",
+      "actorId": "TkUL9SdWKyJyqeem",
+      "x": 1680,
+      "y": 360,
+      "elevation": 0,
+      "level": "defaultLevel0000",
+      "hidden": true,
+      "locked": false,
+      "sort": 0
     }
   ],
   "levels": [

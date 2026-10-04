@@ -1143,7 +1143,26 @@
           "title": ""
         },
         "range": null,
-        "rules": [],
+        "rules": [
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "wounding"
+          },
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "keen"
+          }
+        ],
         "slug": null,
         "traits": {
           "rarity": "common",
@@ -1805,6 +1824,169 @@
       "type": "action",
       "effects": [],
       "_key": "!actors.items!Ht24NSLDYimUiEkU.wyAVtZ4X5ErNqi3C"
+    },
+    {
+      "_id": "V8hBQYy1YQTPvmEN",
+      "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-elixirs/eagle-eyes-elixir.webp",
+      "name": "Eagle Eye Elixir (Major)",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "category": "elixir",
+        "containerId": null,
+        "damage": null,
+        "description": {
+          "value": "<p><em>Taken from Varga's satchel.</em></p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p><hr /><p>After you drink this elixir, you notice subtle visual details. For the next hour, you gain a +3 item bonus to Perception checks, or +4 when attempting to find secret doors and traps.</p>\n<p>Each time you pass within 10 feet of a secret door or trap, the GM automatically rolls a secret check for you to find it.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.VOSQ77DV4BnAkP7m]{Effect: Eagle Eye Elixir}</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 16
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 2000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "alchemical",
+            "consumable",
+            "elixir"
+          ]
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "uses": {
+          "autoDestroy": true,
+          "max": 1,
+          "value": 1
+        },
+        "slug": "eagle-eye-elixir-major",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.kicNrnZz1KjJYRVI"
+      },
+      "effects": [],
+      "_key": "!actors.items!Ht24NSLDYimUiEkU.V8hBQYy1YQTPvmEN"
+    },
+    {
+      "_id": "ixnssTCm3Zg6n2RQ",
+      "img": "icons/equipment/feet/boots-armored-red.webp",
+      "name": "Daredevil Boots (Greater)",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p><em>A trophy Sileth took from an earlier victim of the Hunt.</em></p>\n<p>These brightly colored, soft-soled boots motivate you to perform risky stunts and grant you the agility to succeed. The boots grant you a +3 item bonus to Acrobatics checks and a +2 circumstance bonus to checks to [[/act tumble-through]] an enemy's space.</p>\n<p>The boots can grip solid surfaces and help you avoid a fall, allowing you to use the [[/act grab-an-edge]] reaction even if your hands aren't free. You treat falls as 10 feet shorter or, if you have the @UUID[Compendium.pf2e.feats-srd.Item.LQw0yIMDUJJkq1nD]{Cat Fall} feat, treat your proficiency rank in Acrobatics as one degree better to determine the benefits of that feat. If you have Cat Fall and are already legendary in Acrobatics, you can choose the speed of your fall, from 60 feet per round up to normal falling speed.</p>\n<p><strong>Activate—Daredevil Impulse</strong> <span class=\"action-glyph\">2</span> (concentrate)</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The boots cast @UUID[Compendium.pf2e.spells-srd.Item.aqRYNoSvxsVfqglH]{Unfettered Movement} on you.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 17
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 14000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [
+          {
+            "key": "FlatModifier",
+            "selector": "acrobatics",
+            "type": "item",
+            "value": 3
+          },
+          {
+            "key": "FlatModifier",
+            "label": "PF2E.SpecificRule.Equipment.DaredevilBoots.TumbleThroughLabel",
+            "predicate": [
+              "action:tumble-through"
+            ],
+            "selector": "skill-check",
+            "slug": "daredevil-boots-tumble-through",
+            "type": "circumstance",
+            "value": 2
+          }
+        ],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "invested",
+            "magical"
+          ]
+        },
+        "usage": {
+          "value": "wornshoes"
+        },
+        "slug": "daredevil-boots-greater",
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "handsHeld": 0,
+          "inSlot": true,
+          "invested": true
+        }
+      },
+      "type": "equipment",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.kjFFmqci69k2zMXF"
+      },
+      "effects": [],
+      "_key": "!actors.items!Ht24NSLDYimUiEkU.ixnssTCm3Zg6n2RQ"
     }
   ],
   "name": "Sileth",
@@ -1867,7 +2049,7 @@
       "level": {
         "value": 18
       },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.oZ23BnjhOFOnIP6B]{10. The Scout's Wager}.</strong> Wild Hunt scout hunting anyone carrying Pitaxian goods. Gives the PCs one round to run, then fires Befuddle beams and closes with the Crystal Scimitar. Calls a truce if half the hunt falls.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.oZ23BnjhOFOnIP6B]{10. The Scout's Wager}.</strong> Wild Hunt scout hunting anyone carrying Pitaxian goods. Gives the PCs one round to run, then fires Befuddle beams and closes with the Crystal Scimitar, whose wounding and keen runes make her quarry bleed and turn a hit on a natural 19 into a critical hit. Calls a truce if half the hunt falls.</p>",
       "publicNotes": "<p>These compact few have pointed ears, green eyes, and ram's horns. They relish the chance to seek revenge upon those who have wronged or insulted the wild hunt, but they tend to grow bored when the stakes aren't lethal.</p>\n<hr />\n<p>Although some believe the wild hunt is nothing more than legend, the riders of the wild hunt are real. Countless members of these fey compose the wild hunt-the term \"wild hunt\" refers to the family of creatures as a whole as well as to individual groups of these fey who gather to pursue their quarry.</p>\n<p>Wild hunt monarchs set the terms of each specific hunt, depending upon the prey and their own whims. The easier the prey, the more likely a monarch is to impose rules to make the hunt more entertaining, such as forbidding anyone but their hounds from injuring the quarry, or holding back their forces to give the target creature time to rest and recover.</p>\n<p>While most missions come from rumors gathered by a wild hunt monarch, monarchs occasionally consider proposals from the few who are brave and knowledgeable enough to seek them out. They accept tasks only from sources they deem worthy, and the payments they demand for their services vary significantly, though they have no interest in material wealth. Wild hunt monarchs take grave offense at unfavorable deals. Those who attempt to cheat a monarch often become the enraged fey's next target.</p>\n<h2>Appearance</h2>\n<p>A compact fey with curling ram's horns, glowing green eyes and a sharp, amused smile. Sileth wears leaf-green leathers and holds a scimitar of crystallised green force. A shard of the same crystal glows in the other hand. Green threads are knotted around both wrists.</p>",
       "publication": {
         "license": "OGL",
@@ -1982,8 +2164,14 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 10
+      "encounter": 10,
+      "slug": "10-sileth",
+      "kind": "creature",
+      "usesGear": true
     }
   }
 }

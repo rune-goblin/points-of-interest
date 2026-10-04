@@ -28,7 +28,8 @@
       "label": "Irovetti's Map",
       "path": "packs/irovettis-map",
       "type": "Adventure",
-      "system": "pf2e"
+      "system": "pf2e",
+      "banner": "modules/points-of-interest/assets/adventure-banner.webp"
     },
     {
       "name": "journals",

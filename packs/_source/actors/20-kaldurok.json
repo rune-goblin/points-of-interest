@@ -680,7 +680,7 @@
         "compendiumSource": "Compendium.pf2e.equipment-srd.Item.rXt4629QSg7KDTgJ"
       },
       "img": "systems/pf2e/icons/equipment/weapons/warhammer.webp",
-      "name": "+3 Greater Striking Warhammer",
+      "name": "Kaldurok's Obsidian Warhammer",
       "sort": 800000,
       "system": {
         "baseItem": "warhammer",
@@ -701,7 +701,7 @@
           "die": "d8"
         },
         "description": {
-          "value": "<p>This weapon has a wooden shaft ending in a large, heavy metal head. The head of the hammer might be single-sided or double-sided, but it's always capable of delivering powerful bludgeoning blows.</p>"
+          "value": "<p><em>Sized for a Gargantuan creature: sell it or resize it.</em></p>\n<p>This weapon has a wooden shaft ending in a large, heavy metal head. The head of the hammer might be single-sided or double-sided, but it's always capable of delivering powerful bludgeoning blows.</p>"
         },
         "equipped": {
           "carryType": "worn",
@@ -740,7 +740,9 @@
         "rules": [],
         "runes": {
           "potency": 3,
-          "property": [],
+          "property": [
+            "flaming"
+          ],
           "striking": 2
         },
         "size": "grg",
@@ -806,7 +808,17 @@
           "title": ""
         },
         "range": null,
-        "rules": [],
+        "rules": [
+          {
+            "definition": [
+              "item:id:{item|_id}"
+            ],
+            "key": "AdjustStrike",
+            "mode": "add",
+            "property": "property-runes",
+            "value": "flaming"
+          }
+        ],
         "slug": null,
         "traits": {
           "rarity": "common",
@@ -1147,6 +1159,68 @@
       },
       "effects": [],
       "_key": "!actors.items!V9BYDTHtwTLr4Zyi.JGXYh66auv2dCHDv"
+    },
+    {
+      "name": "Volcanic Glass Skin",
+      "type": "treasure",
+      "img": "icons/commodities/stone/ore-chunk-magma-brown.webp",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 8
+        },
+        "category": "material",
+        "containerId": null,
+        "description": {
+          "value": "<p>Usable as a crafting reagent.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 6000
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": null,
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "effects": [],
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "_id": "l6VvDcHlm1WNRrVE",
+      "_key": "!actors.items!V9BYDTHtwTLr4Zyi.l6VvDcHlm1WNRrVE"
     }
   ],
   "name": "Kaldurok",
@@ -1344,8 +1418,14 @@
     "default": 0
   },
   "flags": {
+    "pf2e": {
+      "lootable": true
+    },
     "points-of-interest": {
-      "encounter": 20
+      "encounter": 20,
+      "slug": "20-kaldurok",
+      "kind": "creature",
+      "usesGear": true
     }
   }
 }
