@@ -327,7 +327,7 @@
     {
       "_id": "lqVfEZu6MeCHDuky",
       "img": "systems/pf2e/icons/default-icons/lore.svg",
-      "name": "Lore (any one related to their trade)",
+      "name": "Farming Lore",
       "sort": 600000,
       "system": {
         "description": {

@@ -145,6 +145,13 @@ const MECHANIC = NPC('Koz2GhqliCU5sIJl');
 const GADGETEER = NPC('jx5KZC2tbgJIJnOq');
 const MAYOR = NPC('HKQofrjurRdgEq3p');
 const DROVER = NPC('aq5spzk2UZrI0ZwK');
+// The dead antiquarians keep the stat blocks they had in life, for a spell like Talking Corpse or a resurrection.
+const AVUNCULAR_PROFESSOR = NPC('hZ2ch39MaaKFKgtJ');
+const OBSESSIVE_RESEARCHER = NPC('DPSvIsPlVrlx7Q8V');
+const TOMB_RAIDER = NPC('Yl6pxCXAoFECt89L');
+const SAGE = NPC('3R2J90R84AUgFJH2');
+const ANTIQUARIAN = 'Stat block as in life, without the gear left in the camp; the Skulltaker actor holds the statistics the wall fights with.';
+const JOTUND_TROLL = MC2('4Ay3tf49upoyaJrg');
 
 // The Ankou Assassin's Shadow Doubles: "the same statistics as an ankou, but they have the
 // summoned trait, have 110 Hit Points, can't use Shadow Doubles or innate spells, and have an
@@ -169,6 +176,47 @@ function overrideStats(perception: number, will: number) {
   return (actor: Json): void => {
     actor.system.perception.mod = perception;
     actor.system.saves.will.value = will;
+  };
+}
+
+function renameItem(from: string, to: string) {
+  return (actor: Json): void => {
+    const item = actor.items.find((i: Json) => i.name === from);
+    if (!item) throw new Error(`${actor.name}: no item "${from}" to rename`);
+    item.name = to;
+  };
+}
+
+function loreItem(actorId: string, name: string, mod: number): Json {
+  const _id = stableId(`lore:${actorId}:${slugify(name)}`);
+  return {
+    _id,
+    _key: `!actors.items!${actorId}.${_id}`,
+    img: 'systems/pf2e/icons/default-icons/lore.svg',
+    name,
+    sort: 0,
+    system: {
+      description: { value: '' },
+      mod: { value: mod },
+      proficient: { value: 0 },
+      publication: publication('Points of Interest'),
+      rules: [],
+      slug: null,
+      traits: {},
+      _migration: MIGRATION,
+    },
+    type: 'lore',
+    effects: [],
+  };
+}
+
+// A head speaks with the troll's defences; the troll's strikes and abilities belong to its body.
+function trollHead(skills: Record<string, number>, lores: Record<string, number>) {
+  return (actor: Json): void => {
+    actor.items = actor.items.filter((i: Json) => i.type !== 'action');
+    for (const [skill, base] of Object.entries(skills)) actor.system.skills[skill] = { base };
+    for (const [name, mod] of Object.entries(lores)) actor.items.push(loreItem(actor._id, name, mod));
+    actor.system.details.blurb = 'Head of the Jotund Troll';
   };
 }
 
@@ -202,12 +250,14 @@ const ENCOUNTERS: Record<number, Spec[]> = {
       role: 'The youngest of the three cauthoojes.' },
   ],
   3: [
-    { slug: '03-jotund-troll', name: 'The Jotund Troll', brief: 'The Jotund Troll', kind: 'creature', usesGear: true, source: MC2('4Ay3tf49upoyaJrg'), linked: true,
+    { slug: '03-jotund-troll', name: 'The Jotund Troll', brief: 'The Jotund Troll', kind: 'creature', usesGear: true, source: JOTUND_TROLL, linked: true,
       role: 'The nine-headed troll. It negotiates by head-vote and fights only if insulted twice, the vote fails, or the PCs attack; it flees into the moor at 120 HP.' },
-    { slug: '03-envoy-troll-head', name: 'The Envoy (Troll Head)', brief: 'The Envoy (troll head)', kind: 'voice', linked: true,
-      role: 'Speaking portrait for the head that mimics Ser Halward Toll. The Jotund Troll actor holds its statistics.' },
-    { slug: '03-old-heads', name: 'The Old Heads (Troll Heads)', brief: 'The Old Heads (troll heads)', kind: 'voice', linked: true,
-      role: 'Speaking portrait for the two Old Heads. The Jotund Troll actor holds their statistics.' },
+    { slug: '03-envoy-troll-head', name: 'The Envoy (Troll Head)', brief: 'The Envoy (troll head)', kind: 'voice', source: JOTUND_TROLL, linked: true,
+      patch: trollHead({ deception: 28, diplomacy: 28, society: 25 }, { 'Pitaxian Court Lore': 25 }),
+      role: "The head that mimics Ser Halward Toll and speaks for the Envoy bloc. It shares the Jotund Troll's defences, which take any damage; its courtly skills serve its lies and Sense Motive against it." },
+    { slug: '03-old-heads', name: 'The Old Heads (Troll Heads)', brief: 'The Old Heads (troll heads)', kind: 'voice', source: JOTUND_TROLL, linked: true,
+      patch: trollHead({ religion: 25 }, { 'Barrow Lore': 28 }),
+      role: "The two Old Heads, the bloc that guards their mother's bones. They share the Jotund Troll's defences, which take any damage; Religion and Barrow Lore are what they know." },
     { slug: '03-ser-halward-toll', name: 'Ser Halward Toll', brief: 'Ser Halward Toll (dead envoy)', kind: 'remains', linked: true,
       role: "Irovetti's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds Irovetti's letter of offer, 400 gp and a greater bottled lightning." },
   ],
@@ -233,19 +283,22 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '04-brother-amat', name: 'Brother Amat', brief: 'Brother Amat (living statue, wandering priest)', kind: 'npc', source: PROPHET, linked: true,
       role: 'Wandering priest of Erastil on a plinth: enfeebled 3 and unable to act. NPC Core Prophet.' },
     { slug: '04-tobin-herder-boy', name: 'Tobin', brief: 'Tobin (living statue, boy)', kind: 'npc', source: COMMONER, linked: true,
+      patch: renameItem('Lore (any one related to their trade)', 'Herding Lore'),
       role: 'A herder boy of about ten on a plinth: enfeebled 3 and unable to act. NPC Core Commoner.' },
   ],
   5: [
     { slug: '05-skulltaker', name: 'The Skulltaker', brief: 'The Skulltaker', kind: 'creature', source: MC('zkl6planCbeCuAdS'), linked: true,
       role: "Speaks through the antiquarians' skulls and trades Skeletal Lore answers for a new skull. In the fight it opens with Splintered Ground and keeps Shard Storm active." },
-    { slug: '05-magister-corwen-ash', name: 'Magister Corwen Ash', brief: 'Magister Corwen Ash (dead antiquarian, voice in the wall)', kind: 'voice', linked: true,
-      role: 'Speaking portrait for the dead antiquarian whose voice the skulltaker uses. The Skulltaker actor holds the statistics.' },
-    { slug: '05-dalia-sorn', name: 'Dalia Sorn', brief: 'Dalia Sorn (dead antiquarian)', kind: 'voice', linked: true,
-      role: 'Speaking portrait for a dead antiquarian in the wall. The Skulltaker actor holds the statistics.' },
-    { slug: '05-hemmet-brask', name: 'Hemmet Brask', brief: 'Hemmet Brask (dead antiquarian)', kind: 'voice', linked: true,
-      role: 'Speaking portrait for a dead antiquarian in the wall. The Skulltaker actor holds the statistics.' },
-    { slug: '05-lio-venn', name: 'Lio Venn', brief: 'Lio Venn (dead antiquarian)', kind: 'voice', linked: true,
-      role: 'Speaking portrait for a dead antiquarian in the wall. The Skulltaker actor holds the statistics.' },
+    { slug: '05-magister-corwen-ash', name: 'Magister Corwen Ash', brief: 'Magister Corwen Ash (dead antiquarian, voice in the wall)', kind: 'voice', source: AVUNCULAR_PROFESSOR, linked: true,
+      patch: renameItem('One Additional Lore', 'Kellid Lore'),
+      role: `Dead antiquarian whose voice the skulltaker uses. ${ANTIQUARIAN} NPC Core Avuncular Professor.` },
+    { slug: '05-dalia-sorn', name: 'Dalia Sorn', brief: 'Dalia Sorn (dead antiquarian)', kind: 'voice', source: OBSESSIVE_RESEARCHER, linked: true,
+      patch: renameItem('Narrow Lore', 'Kellid Art Lore'),
+      role: `Dead antiquarian and field sketcher. ${ANTIQUARIAN} NPC Core Obsessive Researcher.` },
+    { slug: '05-hemmet-brask', name: 'Hemmet Brask', brief: 'Hemmet Brask (dead antiquarian)', kind: 'voice', source: TOMB_RAIDER, linked: true,
+      role: `Dead antiquarian and surveyor. ${ANTIQUARIAN} NPC Core Tomb Raider.` },
+    { slug: '05-lio-venn', name: 'Lio Venn', brief: 'Lio Venn (dead antiquarian)', kind: 'voice', source: SAGE, linked: true,
+      role: `Dead antiquarian and linguist. ${ANTIQUARIAN} NPC Core Sage.` },
     { slug: '05-skeletal-champion', name: 'Skeletal Champion', brief: 'Skeletal Champion (risen victim, optional)', kind: 'creature', usesGear: true, source: MC('FH58AcRBZIfrHKvv'),
       role: "A creature that dies within 60 feet of the skulltaker rises as this skeletal champion in 1d4 rounds unless it succeeds at a DC 40 Will save (Bonetaker). Bonetaker names the Monster Core skeletal champion, a level 2 creature; it adds bodies to the fight, not threat. At party level 18 the four antiquarians rise on round 2." },
   ],
@@ -383,10 +436,13 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '21-aldo-corl', name: 'Aldo Corl', brief: 'Aldo Corl (farmer)', kind: 'npc', source: FARMER, linked: true,
       role: 'Farmer guarding his family in the root cellar. NPC Core Farmer.' },
     { slug: '21-hesk-corl', name: 'Hesk Corl', brief: 'Hesk Corl (grandmother)', kind: 'npc', source: COMMONER, linked: true,
+      patch: renameItem('Lore (any one related to their trade)', 'Farming Lore'),
       role: "Aldo's mother, in the root cellar. NPC Core Commoner." },
     { slug: '21-pell-corl', name: 'Pell Corl', brief: 'Pell Corl (son)', kind: 'npc', source: COMMONER, linked: true,
+      patch: renameItem('Lore (any one related to their trade)', 'Goatherding Lore'),
       role: 'A boy of about eight, in the root cellar. NPC Core Commoner.' },
     { slug: '21-mira-corl', name: 'Mira Corl', brief: 'Mira Corl (daughter)', kind: 'npc', source: COMMONER, linked: true,
+      patch: renameItem('Lore (any one related to their trade)', 'Goatherding Lore'),
       role: 'A girl of about five, in the root cellar. NPC Core Commoner.' },
   ],
 };
@@ -921,40 +977,6 @@ function defenceGrid(id: string): Json {
   };
 }
 
-// Statistics live on the parent creature; the voice actor only carries a portrait for chat.
-function voice(): Json {
-  const zero = { mod: 0 };
-  return {
-    type: 'npc',
-    items: [],
-    system: {
-      abilities: { str: zero, dex: zero, con: zero, int: zero, wis: zero, cha: zero },
-      attributes: {
-        ac: { value: 10, details: '' },
-        adjustment: null,
-        allSaves: { value: '' },
-        hp: { value: 1, max: 1, temp: 0, details: '' },
-        speed: { value: 0, otherSpeeds: [], details: '' },
-      },
-      details: {
-        blurb: 'Speaking portrait',
-        languages: { value: [], details: '' },
-        level: { value: 0 },
-        privateNotes: '',
-        publicNotes: '',
-        publication: publication('Points of Interest'),
-      },
-      initiative: { statistic: 'perception' },
-      perception: { details: '', mod: 0, senses: [] },
-      resources: {},
-      saves: { fortitude: { value: 0, saveDetail: '' }, reflex: { value: 0, saveDetail: '' }, will: { value: 0, saveDetail: '' } },
-      skills: {},
-      traits: { rarity: 'unique', size: { value: 'med' }, value: [] },
-      _migration: MIGRATION,
-    },
-  };
-}
-
 function lootActor(): Json {
   return {
     type: 'loot',
@@ -989,6 +1011,7 @@ function rekey(node: unknown, actorId: string): void {
 const html = (text: string): string => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 const LIMITED = 1;
+const PHYSICAL = new Set(['weapon', 'armor', 'shield', 'equipment', 'consumable', 'treasure', 'backpack', 'ammo', 'book']);
 
 function claimStock(actor: Json, { stock: name, ...edit }: Stock): void {
   const item = actor.items.find((i: Json) => i.name === name);
@@ -1116,12 +1139,14 @@ function build(spec: Spec, encounter: number, sort: number, docs: Map<string, Js
     base = structuredClone(source);
     base._stats = { ...base._stats, compendiumSource: `Compendium.pf2e.${pack}.Actor.${sourceId}` };
   } else {
-    const make = spec.custom ?? (spec.kind === 'voice' ? voice : spec.kind === 'remains' || spec.kind === 'cache' ? lootActor : undefined);
+    const make = spec.custom ?? (spec.kind === 'remains' || spec.kind === 'cache' ? lootActor : undefined);
     if (!make) throw new Error(`${spec.slug}: needs a source or a custom builder`);
     base = { ...make(_id), _stats: { ...stats, compendiumSource: null } };
   }
 
   const actor: Json = { ...base, _id, _key: `!actors!${_id}`, name: spec.name };
+  // A voice speaks without a body: its gear and strikes stay with the troll or the corpse.
+  if (spec.kind === 'voice') actor.items = actor.items.filter((i: Json) => i.type !== 'melee' && !PHYSICAL.has(i.type));
   spec.patch?.(actor);
   const loot = TREASURE[spec.slug] ?? [];
   for (const entry of loot) if ('stock' in entry) claimStock(actor, entry);

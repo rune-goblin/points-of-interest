@@ -44,12 +44,10 @@ const folders = docs.filter((d) => d._key.startsWith('!folders!')) as unknown as
 const servedFile = (path: string) => join(ROOT, path.slice(SERVED.length));
 
 const ACTORS = join(ROOT, 'packs', '_source', 'actors');
-const actorIds = new Set(
-  readdirSync(ACTORS)
-    .map((f) => JSON.parse(readFileSync(join(ACTORS, f), 'utf8')) as { _id: string; _key: string })
-    .filter((d) => d._key.startsWith('!actors!'))
-    .map((d) => d._id),
-);
+const actors = readdirSync(ACTORS)
+  .map((f) => JSON.parse(readFileSync(join(ACTORS, f), 'utf8')) as { _id: string; _key: string; name: string; type: string; flags: Record<string, { encounter?: number }> })
+  .filter((d) => d._key.startsWith('!actors!'));
+const actorIds = new Set(actors.map((d) => d._id));
 
 const headings = new Map(
   [...readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8').matchAll(/^### (\d+)\. (.+)$/gm)].map((m) => [Number(m[1]), `${m[1]}. ${m[2].trim()}`]),
@@ -101,6 +99,15 @@ describe('scenes pack source', () => {
       }
     }
     expect(scenes.every((s) => s.tokens.length > 0)).toBe(true);
+  });
+
+  it('puts every loot actor on a map of its encounter', () => {
+    const unplaced = actors.filter(
+      (a) =>
+        a.type === 'loot' &&
+        !scenes.some((s) => s.flags[MODULE_ID]?.encounter === a.flags[MODULE_ID]?.encounter && s.tokens.some((t) => t.actorId === a._id)),
+    );
+    expect(unplaced.map((a) => a.name)).toEqual([]);
   });
 
   it('pins a note to its encounter page in the top-left square of the map', () => {

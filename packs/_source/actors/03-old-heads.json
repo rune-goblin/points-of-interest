@@ -1,63 +1,115 @@
 {
-  "type": "npc",
-  "items": [],
+  "_id": "lJ3pXX50xYYXfVdB",
+  "img": "modules/points-of-interest/assets/portraits/03-old-heads.webp",
+  "items": [
+    {
+      "_id": "15HXsFnPxxeCFggu",
+      "_key": "!actors.items!lJ3pXX50xYYXfVdB.15HXsFnPxxeCFggu",
+      "img": "systems/pf2e/icons/default-icons/lore.svg",
+      "name": "Barrow Lore",
+      "sort": 0,
+      "system": {
+        "description": {
+          "value": ""
+        },
+        "mod": {
+          "value": 28
+        },
+        "proficient": {
+          "value": 0
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Points of Interest"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {},
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "lore",
+      "effects": []
+    }
+  ],
+  "name": "The Old Heads (Troll Heads)",
   "system": {
     "abilities": {
-      "str": {
-        "mod": 0
-      },
-      "dex": {
-        "mod": 0
+      "cha": {
+        "mod": 4
       },
       "con": {
-        "mod": 0
+        "mod": 8
+      },
+      "dex": {
+        "mod": 4
       },
       "int": {
-        "mod": 0
+        "mod": -1
+      },
+      "str": {
+        "mod": 8
       },
       "wis": {
-        "mod": 0
-      },
-      "cha": {
-        "mod": 0
+        "mod": 6
       }
     },
     "attributes": {
       "ac": {
-        "value": 10,
-        "details": ""
+        "details": "",
+        "value": 35
       },
-      "adjustment": null,
       "allSaves": {
         "value": ""
       },
       "hp": {
-        "value": 1,
-        "max": 1,
+        "details": "",
+        "max": 360,
         "temp": 0,
-        "details": ""
+        "value": 360
       },
       "speed": {
-        "value": 0,
-        "otherSpeeds": [],
-        "details": ""
-      }
+        "otherSpeeds": [
+          {
+            "type": "climb",
+            "value": 20
+          }
+        ],
+        "value": 30
+      },
+      "weaknesses": [
+        {
+          "exceptions": [],
+          "type": "electricity",
+          "value": 15
+        },
+        {
+          "exceptions": [],
+          "type": "fire",
+          "value": 15
+        }
+      ]
     },
     "details": {
-      "blurb": "Speaking portrait",
+      "blurb": "Head of the Jotund Troll",
       "languages": {
-        "value": [],
-        "details": ""
+        "details": "",
+        "value": [
+          "jotun"
+        ]
       },
       "level": {
-        "value": 0
+        "value": 15
       },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> Speaking portrait for the two Old Heads. The Jotund Troll actor holds their statistics.</p>",
-      "publicNotes": "<h2>Appearance</h2>\n<p>Two grey, sagging heads with milky eyes and drooping lips, tilted toward the bone cairn in the alcove.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> The two Old Heads, the bloc that guards their mother's bones. They share the Jotund Troll's defences, which take any damage; Religion and Barrow Lore are what they know.</p>",
+      "publicNotes": "<p>Jotund trolls are gigantic, nine-headed horrors who prowl frigid moors, marshes, and wastelands, often alone and always ravenous. While each of the jotund troll's nine heads possess their own brains and senses, they bicker with each other much less than the heads of a two-headed troll. Yet the heads still argue, particularly over which of them gets to eat. The fact that all nine maws lead to the same shared stomach makes little difference in such culinary disagreements. Many scholars echo a story that jotund trolls resemble the first trolls, titans cast out of Elysium and cursed for their crimes against the gods. The jotund trolls themselves make no claims to such a heritage, however, and those concerned with such matters claim the father of all trolls arose in the Outer Rifts. Individual jotund trolls either begin their life as a common troll or, far more rarely, are born to a jotund troll parent. To the jotund trolls, their nine heads are a crown of rule that marks them as above the natural order and free from its laws.</p><hr /><p>Towering brutes with slavering jaws and razor-sharp claws, trolls are voracious predators. A connection to the land not only rebuilds their bodies but creates countless varieties of trolls, each a reflection of the terrain that they draw upon. Trolls who migrate into new areas slowly transform as each body part is regenerated, leading to aberrant growth as new flesh tangles with the old.</p>\n<h2>Appearance</h2>\n<p>Two grey, sagging heads with milky eyes and drooping lips, tilted toward the bone cairn in the alcove.</p>",
       "publication": {
         "license": "ORC",
         "remaster": true,
-        "title": "Points of Interest"
+        "title": "Pathfinder Monster Core 2"
       }
     },
     "initiative": {
@@ -65,53 +117,72 @@
     },
     "perception": {
       "details": "",
-      "mod": 0,
-      "senses": []
+      "mod": 26,
+      "senses": [
+        {
+          "type": "darkvision"
+        }
+      ]
     },
     "resources": {},
     "saves": {
       "fortitude": {
-        "value": 0,
-        "saveDetail": ""
+        "saveDetail": "",
+        "value": 31
       },
       "reflex": {
-        "value": 0,
-        "saveDetail": ""
+        "saveDetail": "",
+        "value": 24
       },
       "will": {
-        "value": 0,
-        "saveDetail": ""
+        "saveDetail": "",
+        "value": 23
       }
     },
-    "skills": {},
-    "traits": {
-      "rarity": "unique",
-      "size": {
-        "value": "med"
+    "skills": {
+      "athletics": {
+        "base": 29
       },
-      "value": []
+      "intimidation": {
+        "base": 27
+      },
+      "religion": {
+        "base": 25
+      }
+    },
+    "traits": {
+      "rarity": "rare",
+      "size": {
+        "value": "huge"
+      },
+      "value": [
+        "giant",
+        "humanoid",
+        "mutant",
+        "troll",
+        "wood"
+      ]
     },
     "_migration": {
       "version": 0.959,
       "previous": null
     }
   },
+  "type": "npc",
   "_stats": {
     "coreVersion": "14.361",
     "systemId": "pf2e",
     "systemVersion": "8.5.1",
-    "compendiumSource": null
+    "compendiumSource": "Compendium.pf2e.pathfinder-monster-core-2.Actor.4Ay3tf49upoyaJrg"
   },
-  "_id": "lJ3pXX50xYYXfVdB",
+  "effects": [],
   "_key": "!actors!lJ3pXX50xYYXfVdB",
-  "name": "The Old Heads (Troll Heads)",
-  "img": "modules/points-of-interest/assets/portraits/03-old-heads.webp",
   "prototypeToken": {
     "name": "The Old Heads (Troll Heads)",
     "actorLink": true,
     "disposition": 0,
-    "width": 1,
-    "height": 1,
+    "width": 3,
+    "height": 3,
     "texture": {
       "src": "modules/points-of-interest/assets/tokens/03-old-heads.webp",
       "scaleX": 1,
@@ -138,6 +209,5 @@
       "slug": "03-old-heads",
       "kind": "voice"
     }
-  },
-  "effects": []
+  }
 }

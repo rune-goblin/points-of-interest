@@ -39,6 +39,11 @@ compendium packs from `packs/_source/`).
   table at its top names each actor's source stat block. Copy only from PF2e **system** packs
   (OGL/ORC), never from the premium `pf2e-kingmaker` module. The remaster renamed the ankou
   "Ozthoom" (Monster Core 2); the Kingmaker Ankou Assassin keeps its name.
+  Voices (kind `voice`: the troll heads and the dead antiquarians) are speaking portraits kept off the
+  maps, but each carries a real stat block without gear or strikes: the heads share the Jotund
+  Troll's defences and add their bloc's skills, and the antiquarians keep their NPC Core stat
+  blocks from life. Rename NPC Core placeholder lores ("Lore (any one…)", "Narrow Lore") with
+  `renameItem`; a spec rejects them.
   `TREASURE` (keyed by actor slug) turns each encounter's Rewards into items: PF2e `equipment-srd` copies
   (with runes, material, size), coins, custom valuables and story items, and a scroll built the way
   PF2e's `createConsumableFromSpell` builds one. Creatures and NPCs carry what they own and get
@@ -160,7 +165,7 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 ## Status and next steps
 
 - Done: module scaffold, art in `assets/`, encounter docs, generated journal pack, scenes pack
-  (22, actors placed in a centre block, no walls/lights), Adventure `irovettis-map`, actors pack (102, including 2 hazards, 8 loot remains and 16 treasure caches; one folder per encounter),
+  (22, every token at its starting spot from the encounter text, loot where it lies; no walls/lights), Adventure `irovettis-map`, actors pack (102, including 2 hazards, 8 loot remains and 16 treasure caches; one folder per encounter),
   macros pack (hand-authored `packs/_source/macros/`, ids from `ids.macro`; the Adventure bundles it too).
 - Map notes: a GM runs the "Place Irovetti's Map Notes" macro, which calls
   `game.modules.get('points-of-interest').api.placeMapNotes(scene?)`. It targets the given scene, else
@@ -176,7 +181,7 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   A new world journal gives players Limited ownership: they see each pin and its name but can't read
   a page. Share a handout with Show Players. Don't link a note to the image page: Foundry lets Limited
   players open an image page straight from its pin.
-- Next: check the actor sheets and scene grids in a live world, reposition tokens, trace walls and lights.
+- Next: check the actor sheets, scene grids and token placement in a live world, trace walls and lights.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;
   its stat block lives in `docs/encounters.md`. #9 uses the Kingmaker Elite Numerian Adamantine Golem.
 - Art is stored in **Git LFS** (`assets/**` in `.gitattributes`); `release.yml` checks out with

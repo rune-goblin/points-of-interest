@@ -1,63 +1,359 @@
 {
-  "type": "npc",
-  "items": [],
+  "_id": "fofPOOzx3qU1sSFq",
+  "folder": "ZUm9dPvBiSPLGreQ",
+  "img": "modules/points-of-interest/assets/portraits/05-dalia-sorn.webp",
+  "items": [
+    {
+      "_id": "qLiaBfaRDMjWhOg9",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "Monomania",
+      "sort": 500000,
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "description": {
+          "value": "<p>Each obsessive researcher is preoccupied with a hyper-specialized, niche body of knowledge (their Narrow Lore) in which they are the acknowledged world authority. The catch is that when such an expert goes wrong, they go badly wrong—if an obsessive researcher gets a success on a Narrow Lore roll, they get a critical success instead. But if they roll a failure, then they get a critical failure instead.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": ""
+        },
+        "rules": [
+          {
+            "adjustment": {
+              "failure": "to-critical-failure",
+              "success": "to-critical-success"
+            },
+            "key": "AdjustDegreeOfSuccess",
+            "selector": "narrow-lore"
+          }
+        ],
+        "slug": null,
+        "traits": {
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!fofPOOzx3qU1sSFq.qLiaBfaRDMjWhOg9"
+    },
+    {
+      "_id": "dOdZhNEI72ExiOvY",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "World-Class Authority",
+      "sort": 600000,
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "description": {
+          "value": "<p>In their narrow field of interest, the obsessive researcher is a 10th-level challenge.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!fofPOOzx3qU1sSFq.dOdZhNEI72ExiOvY"
+    },
+    {
+      "_id": "eV272gzjPHmqW46i",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "Idée Fixe",
+      "sort": 700000,
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "defensive",
+        "description": {
+          "value": "<p>Nothing gets between the obsessive researcher and their subject. If the obsessive researcher is targeted by a spell or ability with a Will save that would prompt them to give up, ignore, or divert course from the subject of their Narrow Lore (for example, using a @UUID[Compendium.pf2e.spells-srd.Item.qwlh6aDgi86U3Q7H]{Suggestion} to get a specialist in Jistkan artificing to give up a construct part), then the obsessive researcher can use their Narrow Lore skill in place of their Will save.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "value": []
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!fofPOOzx3qU1sSFq.eV272gzjPHmqW46i"
+    },
+    {
+      "_id": "MmlQuNf8g01gtJip",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Furious Harangue",
+      "sort": 800000,
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>The researcher starts hectoring an enemy within 30 feet, upbraiding them for daring to interrupt such valuable research. The target must attempt a @Check[will|dc:15|options:inflicts:frightened,inflicts:fleeing] save. On a failure, they are @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round on a critical failure). Regardless of the result of its save, the target is temporarily immune for 1 hour.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "value": [
+            "auditory",
+            "emotion",
+            "fear",
+            "mental"
+          ]
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!fofPOOzx3qU1sSFq.MmlQuNf8g01gtJip"
+    },
+    {
+      "_id": "igG03ZKhQ3xt7FV9",
+      "img": "systems/pf2e/icons/default-icons/lore.svg",
+      "name": "Academia Lore",
+      "sort": 900000,
+      "system": {
+        "description": {
+          "value": ""
+        },
+        "mod": {
+          "value": 19
+        },
+        "proficient": {
+          "value": 0
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {},
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "lore",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!fofPOOzx3qU1sSFq.igG03ZKhQ3xt7FV9"
+    },
+    {
+      "_id": "4p8pYpiCnhWZqvkP",
+      "img": "systems/pf2e/icons/default-icons/lore.svg",
+      "name": "Library Lore",
+      "sort": 1000000,
+      "system": {
+        "description": {
+          "value": ""
+        },
+        "mod": {
+          "value": 23
+        },
+        "proficient": {
+          "value": 0
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {},
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "lore",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!fofPOOzx3qU1sSFq.4p8pYpiCnhWZqvkP"
+    },
+    {
+      "_id": "yHjEYDMHt4MRXUO9",
+      "img": "systems/pf2e/icons/default-icons/lore.svg",
+      "name": "Kellid Art Lore",
+      "sort": 1100000,
+      "system": {
+        "description": {
+          "value": ""
+        },
+        "mod": {
+          "value": 25
+        },
+        "proficient": {
+          "value": 0
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": ""
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {},
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "type": "lore",
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "pf2e",
+        "systemVersion": "8.5.1",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!fofPOOzx3qU1sSFq.yHjEYDMHt4MRXUO9"
+    }
+  ],
+  "name": "Dalia Sorn",
   "system": {
     "abilities": {
+      "cha": {
+        "mod": -1
+      },
+      "con": {
+        "mod": 2
+      },
+      "dex": {
+        "mod": 1
+      },
+      "int": {
+        "mod": 5
+      },
       "str": {
         "mod": 0
       },
-      "dex": {
-        "mod": 0
-      },
-      "con": {
-        "mod": 0
-      },
-      "int": {
-        "mod": 0
-      },
       "wis": {
-        "mod": 0
-      },
-      "cha": {
         "mod": 0
       }
     },
     "attributes": {
       "ac": {
-        "value": 10,
-        "details": ""
+        "details": "",
+        "value": 14
       },
-      "adjustment": null,
       "allSaves": {
         "value": ""
       },
       "hp": {
-        "value": 1,
-        "max": 1,
+        "details": "",
+        "max": 7,
         "temp": 0,
-        "details": ""
+        "value": 7
       },
       "speed": {
-        "value": 0,
         "otherSpeeds": [],
-        "details": ""
+        "value": 25
       }
     },
     "details": {
-      "blurb": "Speaking portrait",
+      "blurb": "",
       "languages": {
-        "value": [],
-        "details": ""
+        "details": "up to 3 additional uncommon languages",
+        "value": [
+          "common"
+        ]
       },
       "level": {
-        "value": 0
+        "value": -1
       },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Speaking portrait for a dead antiquarian in the wall. The Skulltaker actor holds the statistics.</p>",
-      "publicNotes": "<h2>Appearance</h2>\n<p>In life: a young field sketcher with a smudged charcoal pencil and a wide-brimmed hat. In death: a small white skull with charcoal smudges still on the brow.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Dead antiquarian and field sketcher. Stat block as in life, without the gear left in the camp; the Skulltaker actor holds the statistics the wall fights with. NPC Core Obsessive Researcher.</p>",
+      "publicNotes": "<p>Academia rewards specialization, and so the universities and athenaeums of the Inner Sea are full to the brim of sunlight-deprived scholars who are the world experts in such obscure topics such as the migratory habits of bogwids or the folklore of pre-Choral Brevoy.</p><hr /><p>True power comes from knowledge—the power to shape the growth of kingdoms by mere whispers, stay three steps ahead of adversaries, or even know which flora is best for creating untraceable poisons.</p>\n<h2>Appearance</h2>\n<p>In life: a young field sketcher with a smudged charcoal pencil and a wide-brimmed hat. In death: a small white skull with charcoal smudges still on the brow.</p>",
       "publication": {
         "license": "ORC",
         "remaster": true,
-        "title": "Points of Interest"
+        "title": "Pathfinder NPC Core"
       }
     },
     "initiative": {
@@ -65,47 +361,53 @@
     },
     "perception": {
       "details": "",
-      "mod": 0,
+      "mod": 3,
       "senses": []
     },
     "resources": {},
     "saves": {
       "fortitude": {
-        "value": 0,
-        "saveDetail": ""
+        "saveDetail": "",
+        "value": 3
       },
       "reflex": {
-        "value": 0,
-        "saveDetail": ""
+        "saveDetail": "",
+        "value": 2
       },
       "will": {
-        "value": 0,
-        "saveDetail": ""
+        "saveDetail": "",
+        "value": 7
       }
     },
-    "skills": {},
+    "skills": {
+      "stealth": {
+        "base": 5
+      }
+    },
     "traits": {
-      "rarity": "unique",
+      "rarity": "common",
       "size": {
         "value": "med"
       },
-      "value": []
+      "value": [
+        "human",
+        "humanoid"
+      ]
     },
     "_migration": {
       "version": 0.959,
       "previous": null
     }
   },
+  "type": "npc",
   "_stats": {
     "coreVersion": "14.361",
     "systemId": "pf2e",
     "systemVersion": "8.5.1",
-    "compendiumSource": null
+    "compendiumSource": "Compendium.pf2e.pathfinder-npc-core.Actor.DPSvIsPlVrlx7Q8V"
   },
-  "_id": "fofPOOzx3qU1sSFq",
+  "effects": [],
   "_key": "!actors!fofPOOzx3qU1sSFq",
-  "name": "Dalia Sorn",
-  "img": "modules/points-of-interest/assets/portraits/05-dalia-sorn.webp",
   "prototypeToken": {
     "name": "Dalia Sorn",
     "actorLink": true,
@@ -127,7 +429,6 @@
       }
     }
   },
-  "folder": "ZUm9dPvBiSPLGreQ",
   "sort": 3000,
   "ownership": {
     "default": 0
@@ -138,6 +439,5 @@
       "slug": "05-dalia-sorn",
       "kind": "voice"
     }
-  },
-  "effects": []
+  }
 }

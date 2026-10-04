@@ -30,7 +30,13 @@ interface ActorSource extends Doc {
   items: Item[];
   prototypeToken: { name: string; texture: { src: string } };
   flags: Record<string, { encounter?: number; kind?: string; usesGear?: boolean; stowed?: boolean }>;
-  system: { details: { privateNotes?: string; description?: string }; traits?: { size: { value: string }; value: string[] } };
+  system: {
+    details: { privateNotes?: string; description?: string };
+    traits?: { size: { value: string }; value: string[] };
+    perception?: { mod: number };
+    saves?: { will: { value: number } };
+    skills?: Record<string, unknown>;
+  };
 }
 
 const readDir = <T>(dir: string): T[] =>
@@ -148,6 +154,16 @@ describe('actors pack sources', () => {
       }
     }
     expect(mismatched).toEqual([]);
+  });
+
+  it('gives every NPC and voice Perception, Will, skills and named lore', () => {
+    for (const actor of actors.filter((a) => ['npc', 'voice'].includes(a.flags[MODULE_ID]?.kind ?? ''))) {
+      const lores = actor.items.filter((i) => i.type === 'lore').map((i) => i.name);
+      expect(actor.system.perception?.mod, actor.name).toBeGreaterThan(0);
+      expect(actor.system.saves?.will.value, actor.name).toBeGreaterThan(0);
+      expect(Object.keys(actor.system.skills ?? {}).length + lores.length, actor.name).toBeGreaterThan(0);
+      expect(lores.filter((n) => /\bany\b|additional|narrow/i.test(n)), actor.name).toEqual([]);
+    }
   });
 
   it('files every actor under its encounter folder', () => {
