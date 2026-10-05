@@ -2,7 +2,7 @@
   "type": "loot",
   "items": [
     {
-      "name": "Irovetti's Letter of Offer",
+      "name": "King's Letter of Offer",
       "type": "equipment",
       "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
       "system": {
@@ -15,7 +15,7 @@
         },
         "containerId": null,
         "description": {
-          "value": "<p>Irovetti's offer to the troll, under his seal: evidence of his habit of sending envoys to monsters.</p>"
+          "value": "<p>The King's offer to the troll, under his seal: evidence of his habit of sending envoys to monsters.</p>"
         },
         "hardness": 0,
         "hp": {
@@ -60,8 +60,8 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "wx61dUf2wGIjbz0i",
-      "_key": "!actors.items!n0zcaN7GHRAXWmSp.wx61dUf2wGIjbz0i"
+      "_id": "Qt32K3pEpZMEFOnO",
+      "_key": "!actors.items!n0zcaN7GHRAXWmSp.Qt32K3pEpZMEFOnO"
     },
     {
       "_id": "nvAoDjpIavJAk0q2",
@@ -233,7 +233,7 @@
   ],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>In life: a polished Pitaxian courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.</p>\n<section class=\"secret\" id=\"secret-iRGEhFYM1nPwI4b7\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> Irovetti's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds Irovetti's letter of offer, 400 gp and a greater bottled lightning.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>In life: a polished royal courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.</p>\n<section class=\"secret\" id=\"secret-iRGEhFYM1nPwI4b7\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> The King's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds the King's letter of offer, 400 gp and a greater bottled lightning.</p>\n</section>",
       "level": {
         "value": 0
       }

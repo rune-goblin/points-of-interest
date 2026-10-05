@@ -1,10 +1,10 @@
 # 21. The Annihilator — Art
 
 ## Map note
-A line of small burned-house glyphs running west out of Numeria, each one crossed through. At the end of the line: "no bodies — it takes them ALIVE. where?"
+A line of small burned-house glyphs running west out of the Skyfall Wastes, each one crossed through. At the end of the line: "no bodies — it takes them ALIVE. where?"
 
 ## Tactical map
-A hillside farm on the Numerian border. A stone farmhouse with a root-cellar door at its back. A wooden barn burning. A goat pasture ringed by a dry-stone wall, goats scattering. A well, a woodpile and an overturned cart in the yard. A track runs east over the hill toward Numeria, with smoke rising from other burned steadings on the horizon.
+A hillside farm on the Skyfall border. A stone farmhouse with a root-cellar door at its back. A wooden barn burning. A goat pasture ringed by a dry-stone wall, goats scattering. A well, a woodpile and an overturned cart in the yard. A track runs east over the hill toward the Skyfall Wastes, with smoke rising from other burned steadings on the horizon.
 
 ## Characters
 

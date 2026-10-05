@@ -2,7 +2,7 @@
   "type": "loot",
   "items": [
     {
-      "name": "Irovetti's Silver Service",
+      "name": "King's Silver Service",
       "type": "treasure",
       "img": "icons/containers/kitchenware/goblet-jeweled-gold-white.webp",
       "system": {
@@ -60,13 +60,13 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "OoAty21T0ob4yrP0",
-      "_key": "!actors.items!TkUL9SdWKyJyqeem.OoAty21T0ob4yrP0"
+      "_id": "JTsb0HS3jUn7zpbO",
+      "_key": "!actors.items!TkUL9SdWKyJyqeem.JTsb0HS3jUn7zpbO"
     }
   ],
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-aqcR0cgU0AyLFgXl\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> The ruined banquet table from Irovetti's visit.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-aqcR0cgU0AyLFgXl\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> The ruined banquet table from the King's visit.</p>\n</section>",
       "level": {
         "value": 0
       }

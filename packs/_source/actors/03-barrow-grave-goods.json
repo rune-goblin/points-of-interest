@@ -2,7 +2,7 @@
   "type": "loot",
   "items": [
     {
-      "name": "Ancient Kellid Torcs",
+      "name": "Ancient Hill-Clan Torcs",
       "type": "treasure",
       "img": "icons/equipment/neck/choker-chain-thick-gold.webp",
       "system": {
@@ -60,13 +60,13 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "bRg1WhpDM0oX4sOg",
-      "_key": "!actors.items!EHATWyBWSxuYdooR.bRg1WhpDM0oX4sOg"
+      "_id": "f4zv6TK7u5gKNj8P",
+      "_key": "!actors.items!EHATWyBWSxuYdooR.f4zv6TK7u5gKNj8P"
     }
   ],
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-DzjlA8iJv4HCW1Ot\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> Kellid torcs among the bones and armour on the barrow floor, near the bones of the troll's mother.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-DzjlA8iJv4HCW1Ot\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> Hill-clan torcs among the bones and armour on the barrow floor, near the bones of the troll's mother.</p>\n</section>",
       "level": {
         "value": 0
       }

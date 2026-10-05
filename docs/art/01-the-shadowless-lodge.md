@@ -8,7 +8,7 @@ A clearing ringed by bare birch trees, every trunk casting a long shadow across 
 
 ## Characters
 
-### The Ankou (Nyrissa's assassin)
+### The Ankou (the Fey Queen's assassin)
 - **Portrait:** A tall, faceless fey shape wrapped in folded black wings that hang like a cloak. Where a face should be there is only a smooth hollow of shadow. Long claws rest crossed in front of its body, and it holds a slip of fluttering darkness pinched between two fingers like a moth: a stolen shadow.
 - **Token:** Seen from above, wings half-spread over the rafters, body crouched to drop, claws hooked over a beam.
 
@@ -20,6 +20,6 @@ A clearing ringed by bare birch trees, every trunk casting a long shadow across 
 - **Portrait:** The same shape, frozen mid-turn, its head tilted at an angle no living neck could manage.
 - **Token:** Upright and still, wings folded, standing beside a pillar like a mourner.
 
-### Felgo (dead Pitaxian scout)
-- **Portrait:** A young man in Pitaxian green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.
+### Felgo (dead royal scout)
+- **Portrait:** A young man in royal green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.
 - **Token:** Face-down on a threshold, one hand stretched toward a door, no shadow beneath him.

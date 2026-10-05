@@ -78,13 +78,13 @@
   "drawings": [],
   "tokens": [
     {
-      "name": "Fallen Pitaxian Soldier",
+      "name": "Fallen Royal Soldier",
       "actorLink": false,
       "disposition": 0,
       "width": 1,
       "height": 1,
       "texture": {
-        "src": "modules/points-of-interest/assets/tokens/18-fallen-pitaxian-soldier.webp",
+        "src": "modules/points-of-interest/assets/tokens/18-fallen-royal-soldier.webp",
         "scaleX": 1,
         "scaleY": 1
       },
@@ -99,7 +99,7 @@
       },
       "_id": "kgVxlDWUgKQ8WmfT",
       "_key": "!scenes.tokens!GOMS6bxDEdEkKyTo.kgVxlDWUgKQ8WmfT",
-      "actorId": "UPfDMH5xrS5v1PH9",
+      "actorId": "eFasidYJHXNA1ysn",
       "x": 1800,
       "y": 1872,
       "elevation": 0,
@@ -247,7 +247,7 @@
   "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "2bl199Js092nPA7G",
   "weather": "",
-  "folder": "HmMMtvF4hDEoOVAs",
+  "folder": "rtRCHD5X8EqjdzOD",
   "sort": 18000,
   "ownership": {
     "default": 0

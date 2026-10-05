@@ -4,7 +4,7 @@
 A curled ram's horn drawn in green ink beside a small crater. Beneath it: "Varga — never again. Pay them nothing."
 
 ## Tactical map
-A shallow crater with sloping sides. At its bottom lies a blackened, split-open metal escape pod. Green threads run from the pod's ribs to stakes around the crater floor, strung with antlers, skulls and a torn Pitaxian cloak. Patches of fused glass shine across the crater floor. Low fog pools in the deepest parts. A skeleton in leather armour lies inside the pod beside a satchel. Grassland and scattered rocks surround the rim.
+A shallow crater with sloping sides. At its bottom lies a blackened, split-open metal escape pod. Green threads run from the pod's ribs to stakes around the crater floor, strung with antlers, skulls and a torn royal cloak. Patches of fused glass shine across the crater floor. Low fog pools in the deepest parts. A skeleton in leather armour lies inside the pod beside a satchel. Grassland and scattered rocks surround the rim.
 
 ## Characters
 
@@ -21,5 +21,5 @@ A shallow crater with sloping sides. At its bottom lies a blackened, split-open 
 - **Token:** Stalking low, head down, eyes glowing.
 
 ### Varga Tess (dead agent)
-- **Portrait:** A skeleton in worn leather armour with a Pitaxian dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.
+- **Portrait:** A skeleton in worn leather armour with a royal dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.
 - **Token:** Slumped skeleton clutching an antler tine.

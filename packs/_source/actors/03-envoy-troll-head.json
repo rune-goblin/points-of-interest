@@ -3,10 +3,10 @@
   "img": "modules/points-of-interest/assets/portraits/03-envoy-troll-head.webp",
   "items": [
     {
-      "_id": "zD4Rm4S2hlmKYbdm",
-      "_key": "!actors.items!Y5YWrVuiSckINAaE.zD4Rm4S2hlmKYbdm",
+      "_id": "hzQrcCm2qY5oH6Wn",
+      "_key": "!actors.items!Y5YWrVuiSckINAaE.hzQrcCm2qY5oH6Wn",
       "img": "systems/pf2e/icons/default-icons/lore.svg",
-      "name": "Pitaxian Court Lore",
+      "name": "Royal Court Lore",
       "sort": 0,
       "system": {
         "description": {

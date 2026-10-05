@@ -2,7 +2,7 @@
 // source of truth for encounter text. Run by `npm run build` before packing:
 //   node scripts/build-journal.ts
 // One journal holds the overview and every site, grouped into a category per zone. Each site has an
-// encounter page headed by its scenes and creatures, then Irovetti's note as an image page beneath it.
+// encounter page headed by its scenes and creatures, then the King's note as an image page beneath it.
 // Ids derive from a hash of each heading's slug, so rebuilding keeps every @UUID link and every
 // placed map note stable.
 import { execFileSync } from 'node:child_process';
@@ -107,8 +107,7 @@ function imagePage(pageId: string, name: string, src: string, caption: string, {
   };
 }
 
-function category(slug: string, name: string, sort: number) {
-  const id = ids.category(slug);
+function category(id: string, name: string, sort: number) {
   return { _id: id, _key: `!journal.categories!${journalId}.${id}`, name, sort, flags: {} };
 }
 
@@ -203,9 +202,9 @@ function encounterHtml(s: Section): string {
   return end < 0 ? header + html : `${html.slice(0, end + 8)}\n${header}${html.slice(end + 8)}`;
 }
 
-const intro = category('irovettis-map', "Irovetti's Map", 0);
+const intro = category(ids.overviewCategory(), 'Overview', 0);
 const zones = [...new Map(sections.map((s) => [s.zone.slug, s.zone])).values()];
-const categories = [intro, ...zones.map((z, i) => category(z.slug, z.title, (i + 1) * 1000))];
+const categories = [intro, ...zones.map((z, i) => category(ids.category(z.slug), z.title, (i + 1) * 1000))];
 const categoryOf = (zone: Zone): string => ids.category(zone.slug);
 
 function sitePages(s: Section) {
@@ -216,7 +215,7 @@ function sitePages(s: Section) {
   });
   const note = artPath('map-notes', s.number);
   if (!note) return [encounter];
-  const handout = imagePage(ids.handoutPage(s.slug), "Irovetti's Note", note, `Irovetti's note on the map: ${s.title}`, {
+  const handout = imagePage(ids.handoutPage(s.slug), "The King's Note", note, `The King's note on the map: ${s.title}`, {
     ...options,
     level: 2,
     sort: options.sort + 500,
@@ -230,7 +229,7 @@ const LIMITED = 1;
 const journal = {
   _id: journalId,
   _key: `!journal!${journalId}`,
-  name: "Irovetti's Map",
+  name: "Points of Interest",
   pages: [
     textPage(stableId('page:overview'), 'Overview', render(overviewMd), { category: intro._id, level: 1, sort: 0 }),
     ...sections.flatMap(sitePages),
@@ -244,5 +243,5 @@ const journal = {
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
-writeFileSync(join(OUT, 'irovettis-map.json'), `${JSON.stringify(journal, null, 2)}\n`);
+writeFileSync(join(OUT, 'points-of-interest.json'), `${JSON.stringify(journal, null, 2)}\n`);
 console.log(`journal: overview + ${sections.length} sites in ${zones.length} zones → packs/_source/${PACK}`);

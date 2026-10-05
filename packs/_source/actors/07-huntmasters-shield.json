@@ -13,7 +13,7 @@
         },
         "containerId": null,
         "description": {
-          "value": "<p><em>It bears Irovetti's household crest. Returning it to the huntmaster's widow in Pitax after liberation earns goodwill among Pitax's old families.</em></p>\n<p>Like wooden shields, steel shields come in a variety of shapes and sizes. Though more expensive than wooden shields, they are much more durable.</p><table class=\"pf2e remaster\"><thead><tr><th>Hardness</th><th>HP</th><th>BT</th></tr></thead><tbody><tr><td>5</td><td>20</td><td>10</td></tr></tbody></table>"
+          "value": "<p><em>It bears the King's household crest. Returning it to the huntmaster's widow in the King's city after liberation earns goodwill among the city's old families.</em></p>\n<p>Like wooden shields, steel shields come in a variety of shapes and sizes. Though more expensive than wooden shields, they are much more durable.</p><table class=\"pf2e remaster\"><thead><tr><th>Hardness</th><th>HP</th><th>BT</th></tr></thead><tbody><tr><td>5</td><td>20</td><td>10</td></tr></tbody></table>"
         },
         "grade": null,
         "hardness": 5,
@@ -72,7 +72,7 @@
   ],
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-huG2mGI4qdyPG32d\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.ehfB89bZocdpzaAr]{07. The Wyvern Queen's Hunting Ground}.</strong> Buried in the shale near the cliff. Minognos-Ushad's own treasure lies in her lair at BR3.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-huG2mGI4qdyPG32d\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.ehfB89bZocdpzaAr]{07. The Wyvern Queen's Hunting Ground}.</strong> Buried in the shale near the cliff. The Wyvern Queen's own treasure lies in her lair at BR3.</p>\n</section>",
       "level": {
         "value": 0
       }

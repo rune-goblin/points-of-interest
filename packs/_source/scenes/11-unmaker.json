@@ -202,13 +202,13 @@
       "sort": 3
     },
     {
-      "name": "Numerian Guthallath (the Colossus)",
+      "name": "Guthallath (the Colossus)",
       "actorLink": true,
       "disposition": -1,
       "width": 4,
       "height": 4,
       "texture": {
-        "src": "modules/points-of-interest/assets/tokens/11-numerian-guthallath.webp",
+        "src": "modules/points-of-interest/assets/tokens/11-guthallath.webp",
         "scaleX": 1,
         "scaleY": 1
       },
@@ -223,7 +223,7 @@
       },
       "_id": "7QhjCtwSMerNZORk",
       "_key": "!scenes.tokens!lGlcY0t6BlRVA3t5.7QhjCtwSMerNZORk",
-      "actorId": "2nALYXdjjK1B0aCo",
+      "actorId": "Gw8OZJ5kibu5YKlB",
       "x": 1680,
       "y": 1440,
       "elevation": 0,
@@ -340,7 +340,7 @@
   "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "3KX3D2bQDpvDQSDH",
   "weather": "",
-  "folder": "9l1LsOK4oS6DICC5",
+  "folder": "9NbUuqhEeDLrHq1y",
   "sort": 11000,
   "ownership": {
     "default": 0

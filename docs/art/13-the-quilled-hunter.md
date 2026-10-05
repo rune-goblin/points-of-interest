@@ -13,5 +13,5 @@ The den at the canyon's end. Steep rock walls on both sides close overhead under
 - **Token:** Seen from above: crouched to spring, tail curled, quills raised along its spine.
 
 ### Wren Ashby (remains)
-- **Portrait:** A lean ranger with cropped grey hair and a weathered face, wearing a Pitaxian green cloak and a quiver at the hip. This is a sketch from the front of Wren's journal.
+- **Portrait:** A lean ranger with cropped grey hair and a weathered face, wearing a royal green cloak and a quiver at the hip. This is a sketch from the front of Wren's journal.
 - **Token:** Not used in play. A green cloak lies torn in the den, pinned beneath a quill.

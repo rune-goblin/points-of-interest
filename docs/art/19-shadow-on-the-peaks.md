@@ -8,7 +8,7 @@ A black-rock spire rising out of a misty fen of dark, still water. The fen is do
 
 ## Characters
 
-### Ilthuliak (black dragon)
+### The Black Dragon
 - **Portrait:** A huge black dragon with horns that sweep forward, acid dripping from her jaws and hissing where it lands. A long, pale scar runs along her flank. Her eyes are bright green and narrowed with hatred.
 - **Token (sighting):** Seen from above: the dragon in flight, wings spread wide, her shadow falling on fen water.
 - **Token (ambush):** Seen from above: the dragon rising from black water, head lowered and jaws open, water streaming from her wings.

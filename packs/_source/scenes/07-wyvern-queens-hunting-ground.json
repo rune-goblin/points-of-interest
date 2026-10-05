@@ -78,13 +78,13 @@
   "drawings": [],
   "tokens": [
     {
-      "name": "Minognos-Ushad",
+      "name": "The Wyvern Queen",
       "actorLink": true,
       "disposition": -1,
       "width": 3,
       "height": 3,
       "texture": {
-        "src": "modules/points-of-interest/assets/tokens/07-minognos-ushad-diving.webp",
+        "src": "modules/points-of-interest/assets/tokens/07-wyvern-queen-diving.webp",
         "scaleX": 1,
         "scaleY": 1
       },
@@ -99,7 +99,7 @@
       },
       "_id": "0reo5TNrO7uGtiEg",
       "_key": "!scenes.tokens!W5FperevvbySnQZ2.0reo5TNrO7uGtiEg",
-      "actorId": "HvVlEj4RSm5Wk5qa",
+      "actorId": "pSstYDsPRTcoJB3k",
       "x": 2016,
       "y": 384,
       "elevation": 0,
@@ -109,13 +109,13 @@
       "sort": 0
     },
     {
-      "name": "Minognos-Ushad",
+      "name": "The Wyvern Queen",
       "actorLink": true,
       "disposition": -1,
       "width": 3,
       "height": 3,
       "texture": {
-        "src": "modules/points-of-interest/assets/tokens/07-minognos-ushad.webp",
+        "src": "modules/points-of-interest/assets/tokens/07-wyvern-queen.webp",
         "scaleX": 1,
         "scaleY": 1
       },
@@ -130,7 +130,7 @@
       },
       "_id": "Ig8nAUobAw9GB2UF",
       "_key": "!scenes.tokens!W5FperevvbySnQZ2.Ig8nAUobAw9GB2UF",
-      "actorId": "rmgU6F2RnT5w85Ug",
+      "actorId": "hJ72NoJINkXDIRBy",
       "x": 2016,
       "y": 384,
       "elevation": 0,
@@ -247,7 +247,7 @@
   "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "ehfB89bZocdpzaAr",
   "weather": "",
-  "folder": "0Mo7G8XBaU1dA9qW",
+  "folder": "InAtrektciAFA4KE",
   "sort": 7000,
   "ownership": {
     "default": 0

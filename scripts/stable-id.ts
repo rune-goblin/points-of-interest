@@ -17,9 +17,11 @@ export function slugify(heading: string): string {
 export const pad = (n: number): string => String(n).padStart(2, '0');
 
 export const ids = {
+  // Pinned to the ids the journal's first release hashed from its old title, so world copies keep matching.
   /** The one journal entry that holds the overview and every site. */
-  journal: () => stableId('journal:irovettis-map'),
-  /** `headingSlug` is a zone heading's slug, e.g. `zone-13-rushlight`. */
+  journal: () => 'jxn9bB1XhZTRpF65',
+  overviewCategory: () => 'wsMUEJbgMmvS1TGZ',
+  /** `headingSlug` is a zone heading's slug, e.g. `zone-13-tourney-fields`. */
   category: (headingSlug: string) => stableId(`category:${headingSlug}`),
   /** `headingSlug` is the encounter heading's slug, e.g. `1-the-shadowless-lodge`. */
   encounterPage: (headingSlug: string) => stableId(`page:${headingSlug}`),

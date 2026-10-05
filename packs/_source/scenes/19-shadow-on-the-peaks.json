@@ -78,13 +78,13 @@
   "drawings": [],
   "tokens": [
     {
-      "name": "Ilthuliak",
+      "name": "The Black Dragon",
       "actorLink": true,
       "disposition": -1,
       "width": 4,
       "height": 4,
       "texture": {
-        "src": "modules/points-of-interest/assets/tokens/19-ilthuliak-ambush.webp",
+        "src": "modules/points-of-interest/assets/tokens/19-black-dragon-ambush.webp",
         "scaleX": 1,
         "scaleY": 1
       },
@@ -99,7 +99,7 @@
       },
       "_id": "5ETpO1QFZqouGBDl",
       "_key": "!scenes.tokens!NVgVH9EvkL8qhFF6.5ETpO1QFZqouGBDl",
-      "actorId": "piSaUnyJLjaaeCN7",
+      "actorId": "2IRBP7qvQJxspuVj",
       "x": 1040,
       "y": 2240,
       "elevation": 0,
@@ -109,13 +109,13 @@
       "sort": 0
     },
     {
-      "name": "Ilthuliak",
+      "name": "The Black Dragon",
       "actorLink": true,
       "disposition": -1,
       "width": 4,
       "height": 4,
       "texture": {
-        "src": "modules/points-of-interest/assets/tokens/19-ilthuliak-sighting.webp",
+        "src": "modules/points-of-interest/assets/tokens/19-black-dragon-sighting.webp",
         "scaleX": 1,
         "scaleY": 1
       },
@@ -130,7 +130,7 @@
       },
       "_id": "9UfdRGBAjZAniyNp",
       "_key": "!scenes.tokens!NVgVH9EvkL8qhFF6.9UfdRGBAjZAniyNp",
-      "actorId": "mhegWCVYQ4D4pOyS",
+      "actorId": "aK6TETLcoRcgRr7o",
       "x": 960,
       "y": 640,
       "elevation": 0,
@@ -140,7 +140,7 @@
       "sort": 1
     },
     {
-      "name": "Ilthuliak's Roost",
+      "name": "The Black Dragon's Roost",
       "actorLink": false,
       "disposition": 0,
       "width": 1,
@@ -161,7 +161,7 @@
       },
       "_id": "AfkugPCGaLV6h7td",
       "_key": "!scenes.tokens!NVgVH9EvkL8qhFF6.AfkugPCGaLV6h7td",
-      "actorId": "lvdSWan9U6HdTift",
+      "actorId": "gmCXlDRwhRYyXtOp",
       "x": 2480,
       "y": 720,
       "elevation": 0,
@@ -247,7 +247,7 @@
   "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "tGPRvXMxFYVlVVee",
   "weather": "",
-  "folder": "HmMMtvF4hDEoOVAs",
+  "folder": "rtRCHD5X8EqjdzOD",
   "sort": 19000,
   "ownership": {
     "default": 0

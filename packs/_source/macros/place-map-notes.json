@@ -1,7 +1,7 @@
 {
   "_id": "XaGsAejJFny4vMpv",
   "_key": "!macros!XaGsAejJFny4vMpv",
-  "name": "Place Irovetti's Map Notes",
+  "name": "Place the King's Map Notes",
   "type": "script",
   "img": "icons/tools/navigation/map-marked-brown.webp",
   "scope": "global",

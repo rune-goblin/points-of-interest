@@ -8,10 +8,10 @@ A collapsed ridge seen from above: a slope of grey shale running down from south
 
 ## Characters
 
-### Minognos-Ushad (legendary wyvern)
+### The Wyvern Queen (legendary wyvern)
 - **Portrait:** A huge wyvern with scarred, slate-green scales and a ragged left wing membrane patched with old scar tissue. Her barbed stinger drips amber venom. One eye is milky from an old arrow wound; the other burns yellow. A broken hunting spear juts from her shoulder, long healed over.
 - **Token:** Wings spread wide from above, tail curled forward over her back with the stinger poised, the old spear visible in her shoulder.
 
-### Minognos-Ushad (diving)
+### The Wyvern Queen (diving)
 - **Portrait:** The same wyvern in a steep dive, talons forward and wings folded back, jaws open.
 - **Token:** Wings swept back in a dive, talons extended forward.

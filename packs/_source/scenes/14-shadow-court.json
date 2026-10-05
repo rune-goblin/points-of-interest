@@ -264,7 +264,7 @@
       "sort": 0
     },
     {
-      "name": "Pitaxian Scout's Cloak",
+      "name": "Royal Scout's Cloak",
       "actorLink": false,
       "disposition": 0,
       "width": 1,
@@ -285,7 +285,7 @@
       },
       "_id": "vge7W58dudOdz6rO",
       "_key": "!scenes.tokens!qV9wP8xNSwIApkoZ.vge7W58dudOdz6rO",
-      "actorId": "PI87VWSgaHSg1Ih5",
+      "actorId": "CKX5T6thFVYDUobt",
       "x": 840,
       "y": 1080,
       "elevation": 0,
@@ -371,7 +371,7 @@
   "journal": "jxn9bB1XhZTRpF65",
   "journalEntryPage": "Re1E5HNvjVn5pPMC",
   "weather": "",
-  "folder": "BaZmDOUTl3srAmQ4",
+  "folder": "0sHqGOpEC0R55OHx",
   "sort": 14000,
   "ownership": {
     "default": 0

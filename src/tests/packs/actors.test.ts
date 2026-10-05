@@ -84,7 +84,7 @@ function inUse(holder: ActorSource, item: Item): boolean {
 }
 
 describe('actors pack sources', () => {
-  it('has one actor per portrait, a second Ilthuliak token, the two hazards and the treasure caches', () => {
+  it('has one actor per portrait, a second black dragon token, the two hazards and the treasure caches', () => {
     expect(actors.filter((a) => !isCache(a))).toHaveLength(86);
     expect(actors.filter(isCache)).toHaveLength(16);
     const portraits = readdirSync(join(ROOT, 'assets', 'portraits')).map((f) => `${SERVED}assets/portraits/${f}`);

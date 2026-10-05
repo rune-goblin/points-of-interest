@@ -1,12 +1,12 @@
 {
-  "_id": "wxjOACWNjR1EJITW",
-  "_key": "!scenes!wxjOACWNjR1EJITW",
-  "name": "16. The Lantern King's Emissary",
+  "_id": "kwzvvnYXAfrv9HEh",
+  "_key": "!scenes!kwzvvnYXAfrv9HEh",
+  "name": "16. The Trickster's Emissary",
   "active": false,
   "navigation": false,
   "navOrder": 0,
   "navName": "",
-  "thumb": "modules/points-of-interest/assets/maps/thumbs/16-lantern-kings-emissary.webp",
+  "thumb": "modules/points-of-interest/assets/maps/thumbs/16-tricksters-emissary.webp",
   "width": 2880,
   "height": 2880,
   "padding": 0.1,
@@ -98,7 +98,7 @@
         }
       },
       "_id": "eQCVZHf5eRDdyz3A",
-      "_key": "!scenes.tokens!wxjOACWNjR1EJITW.eQCVZHf5eRDdyz3A",
+      "_key": "!scenes.tokens!kwzvvnYXAfrv9HEh.eQCVZHf5eRDdyz3A",
       "actorId": "tc3faa6OpuFN6QEy",
       "x": 1680,
       "y": 1680,
@@ -129,7 +129,7 @@
         }
       },
       "_id": "s3JcDl8VP9HCwUh1",
-      "_key": "!scenes.tokens!wxjOACWNjR1EJITW.s3JcDl8VP9HCwUh1",
+      "_key": "!scenes.tokens!kwzvvnYXAfrv9HEh.s3JcDl8VP9HCwUh1",
       "actorId": "V8vMERRn6fsKdllI",
       "x": 1560,
       "y": 1200,
@@ -143,15 +143,15 @@
   "levels": [
     {
       "_id": "defaultLevel0000",
-      "_key": "!scenes.levels!wxjOACWNjR1EJITW.defaultLevel0000",
-      "name": "16. The Lantern King's Emissary",
+      "_key": "!scenes.levels!kwzvvnYXAfrv9HEh.defaultLevel0000",
+      "name": "16. The Trickster's Emissary",
       "elevation": {
         "bottom": 0,
         "top": null
       },
       "background": {
         "color": "#999999",
-        "src": "modules/points-of-interest/assets/maps/16-lantern-kings-emissary.webp",
+        "src": "modules/points-of-interest/assets/maps/16-tricksters-emissary.webp",
         "tint": "#ffffff",
         "alphaThreshold": 0.75
       },
@@ -183,10 +183,10 @@
   "lights": [],
   "notes": [
     {
-      "_id": "z6cKiHnV2kGsTQfZ",
-      "_key": "!scenes.notes!wxjOACWNjR1EJITW.z6cKiHnV2kGsTQfZ",
+      "_id": "S6mVhp7y3AYUd8FK",
+      "_key": "!scenes.notes!kwzvvnYXAfrv9HEh.S6mVhp7y3AYUd8FK",
       "entryId": "jxn9bB1XhZTRpF65",
-      "pageId": "Hcwe7BAWmZeft2MG",
+      "pageId": "d5zY0mPkcFChKYhl",
       "x": 420,
       "y": 420,
       "elevation": 0,
@@ -197,7 +197,7 @@
         "src": "icons/svg/book.svg"
       },
       "iconSize": 100,
-      "text": "16. The Lantern King's Emissary",
+      "text": "16. The Trickster's Emissary",
       "fontSize": 32,
       "global": false,
       "flags": {
@@ -214,9 +214,9 @@
   "playlist": null,
   "playlistSound": null,
   "journal": "jxn9bB1XhZTRpF65",
-  "journalEntryPage": "Hcwe7BAWmZeft2MG",
+  "journalEntryPage": "d5zY0mPkcFChKYhl",
   "weather": "",
-  "folder": "BaZmDOUTl3srAmQ4",
+  "folder": "0sHqGOpEC0R55OHx",
   "sort": 16000,
   "ownership": {
     "default": 0

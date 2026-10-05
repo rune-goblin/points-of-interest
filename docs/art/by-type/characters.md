@@ -4,7 +4,7 @@ Portrait and token briefs for every creature and NPC, grouped by encounter.
 
 ## 01. The Shadowless Lodge
 
-### The Ankou (Nyrissa's assassin)
+### The Ankou (the Fey Queen's assassin)
 - **Portrait:** A tall, faceless fey shape wrapped in folded black wings that hang like a cloak. Where a face should be there is only a smooth hollow of shadow. Long claws rest crossed in front of its body, and it holds a slip of fluttering darkness pinched between two fingers like a moth: a stolen shadow.
 - **Token:** Seen from above, wings half-spread over the rafters, body crouched to drop, claws hooked over a beam.
 
@@ -16,8 +16,8 @@ Portrait and token briefs for every creature and NPC, grouped by encounter.
 - **Portrait:** The same shape, frozen mid-turn, its head tilted at an angle no living neck could manage.
 - **Token:** Upright and still, wings folded, standing beside a pillar like a mourner.
 
-### Felgo (dead Pitaxian scout)
-- **Portrait:** A young man in Pitaxian green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.
+### Felgo (dead royal scout)
+- **Portrait:** A young man in royal green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.
 - **Token:** Face-down on a threshold, one hand stretched toward a door, no shadow beneath him.
 
 Source: [01-the-shadowless-lodge.md](../01-the-shadowless-lodge.md)
@@ -69,7 +69,7 @@ Source: [02-the-perfect-song.md](../02-the-perfect-song.md)
 - **Token:** Not needed separately; used as a speaking portrait only.
 
 ### Ser Halward Toll (dead envoy)
-- **Portrait:** In life: a polished Pitaxian courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.
+- **Portrait:** In life: a polished royal courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.
 - **Token:** A head on a stake with a satchel hanging beneath.
 
 Source: [03-nine-mouths-one-belly.md](../03-nine-mouths-one-belly.md)
@@ -100,8 +100,8 @@ Source: [03-nine-mouths-one-belly.md](../03-nine-mouths-one-belly.md)
 - **Portrait:** The smallest and cruellest, with briars woven into its matted hair and venom dripping from its third claw, grinning at a statue-victim.
 - **Token:** Leaning over a plinth, claw poised above a victim's neck.
 
-### Captain Mira Vell (living statue, Pitaxian officer)
-- **Portrait:** A hard-faced woman in a torn green Pitaxian officer's coat, hair cropped short, wrists bound by vines, her face slack from venom except for furious, tracking eyes.
+### Captain Mira Vell (living statue, royal officer)
+- **Portrait:** A hard-faced woman in a torn green royal officer's coat, hair cropped short, wrists bound by vines, her face slack from venom except for furious, tracking eyes.
 - **Token:** Upright on a plinth, vines around her body, eyes turned toward the viewer.
 
 ### Haddo (living statue, farmer)
@@ -113,7 +113,7 @@ Source: [03-nine-mouths-one-belly.md](../03-nine-mouths-one-belly.md)
 - **Token:** Propped on a plinth, arms tied out like a scarecrow.
 
 ### Brother Amat (living statue, wandering priest)
-- **Portrait:** An elderly priest of Erastil in a muddy brown robe, holy symbol still around his neck, eyes closed in prayer.
+- **Portrait:** An elderly priest of the hunter god in a muddy brown robe, holy symbol still around his neck, eyes closed in prayer.
 - **Token:** Kneeling on a plinth, bound in place.
 
 ### Tobin (living statue, boy)
@@ -145,7 +145,7 @@ Source: [04-the-gardeners.md](../04-the-gardeners.md)
 - **Token:** Not needed; voice portrait only.
 
 ### Skeletal Champion (risen victim, optional)
-- **Portrait:** A skeleton in mixed Kellid and Academy remnants, bone shards orbiting its skull, wielding a rusted Kellid axe.
+- **Portrait:** A skeleton in mixed hill-clan and Academy remnants, bone shards orbiting its skull, wielding a rusted hill-clan axe.
 - **Token:** Striding forward, axe raised, shards trailing behind.
 
 Source: [05-the-ossuary-wall.md](../05-the-ossuary-wall.md)
@@ -165,30 +165,30 @@ Source: [05-the-ossuary-wall.md](../05-the-ossuary-wall.md)
 - **Token:** Crouched low, both hatchets raised to either side.
 
 ### Hobb (the coward)
-- **Portrait:** A younger hill giant with a patchy beard and nervous eyes, wearing a dented Pitaxian helmet far too small for him. He clutches a battle axe close to his chest.
+- **Portrait:** A younger hill giant with a patchy beard and nervous eyes, wearing a dented royal helmet far too small for him. He clutches a battle axe close to his chest.
 - **Token:** Half-turned as if about to bolt, small helmet perched on his head.
 
 ### Ederis Pallo (captive tax clerk)
-- **Portrait:** A thin, middle-aged human in a torn Pitaxian clerk's coat, ink-stained fingers, and spectacles with one cracked lens. He clutches a wax-sealed paper to his chest.
+- **Portrait:** A thin, middle-aged human in a torn royal clerk's coat, ink-stained fingers, and spectacles with one cracked lens. He clutches a wax-sealed paper to his chest.
 - **Token:** Kneeling, hands pressed to the sealed receipt.
 
-### Hesk Varro (captive Numerian scavenger)
+### Hesk Varro (captive skyfall scavenger)
 - **Portrait:** A weathered human scavenger with a shaved head, a goggle strap across her brow and a coat sewn with metal scraps. Her expression is calculating.
 - **Token:** Sitting with arms folded, goggles pushed up.
 
-### Kael (captive Tiger Lord outrider)
-- **Portrait:** A young Kellid rider with tiger-striped face paint, braided hair, and a bruised cheek. He bares his teeth in defiance.
+### Kael (captive horse-clan outrider)
+- **Portrait:** A young hill-clan rider with tiger-striped face paint, braided hair, and a bruised cheek. He bares his teeth in defiance.
 - **Token:** Gripping the cage bars, snarling.
 
 Source: [06-the-larder.md](../06-the-larder.md)
 
 ## 07. The Wyvern Queen's Hunting Ground
 
-### Minognos-Ushad (legendary wyvern)
+### The Wyvern Queen (legendary wyvern)
 - **Portrait:** A huge wyvern with scarred, slate-green scales and a ragged left wing membrane patched with old scar tissue. Her barbed stinger drips amber venom. One eye is milky from an old arrow wound; the other burns yellow. A broken hunting spear juts from her shoulder, long healed over.
 - **Token:** Wings spread wide from above, tail curled forward over her back with the stinger poised, the old spear visible in her shoulder.
 
-### Minognos-Ushad (diving)
+### The Wyvern Queen (diving)
 - **Portrait:** The same wyvern in a steep dive, talons forward and wings folded back, jaws open.
 - **Token:** Wings swept back in a dive, talons extended forward.
 
@@ -213,7 +213,7 @@ Source: [08-the-lightwardens.md](../08-the-lightwardens.md)
 ## 09. The Iron Juggernaut
 
 ### The Iron Juggernaut
-- **Portrait:** A house-sized hauler on two wide tracks, plated in dark grey adamantine scarred by ages of travel. Steam vents and laser emitters line its flanks. Two jointed manipulator arms fold against its front. A dorsal hatch sits on its back, and faded Numerian delivery glyphs cover its prow.
+- **Portrait:** A house-sized hauler on two wide tracks, plated in dark grey adamantine scarred by ages of travel. Steam vents and laser emitters line its flanks. Two jointed manipulator arms fold against its front. A dorsal hatch sits on its back, and faded skyfall delivery glyphs cover its prow.
 - **Token:** Seen from above, a long armoured hull on twin tracks, arms folded forward, hatch on top.
 
 ### Brann Kesk (starving salvager)
@@ -225,7 +225,7 @@ Source: [08-the-lightwardens.md](../08-the-lightwardens.md)
 - **Token:** Kneeling, one hand raised to the wall mid-scratch.
 
 ### Tarku (remains)
-- **Portrait:** A Kellid skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.
+- **Portrait:** A hill-clan skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.
 - **Token:** A seated skeleton with a spear across its knees.
 
 Source: [09-the-iron-juggernaut.md](../09-the-iron-juggernaut.md)
@@ -245,19 +245,19 @@ Source: [09-the-iron-juggernaut.md](../09-the-iron-juggernaut.md)
 - **Token:** Stalking low, head down, eyes glowing.
 
 ### Varga Tess (dead agent)
-- **Portrait:** A skeleton in worn leather armour with a Pitaxian dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.
+- **Portrait:** A skeleton in worn leather armour with a royal dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.
 - **Token:** Slumped skeleton clutching an antler tine.
 
 Source: [10-the-scouts-wager.md](../10-the-scouts-wager.md)
 
 ## 11. The Unmaker
 
-### Numerian guthallath (the Colossus)
+### Guthallath (the Colossus)
 - **Portrait:** A colossal humanoid war machine of pitted grey metal and green-tinged skymetal plates. Its head is a narrow visor with two slits glowing white. Chalk symbols cover its chest. Cables trail from its shoulders. Glittering dust streams from vents along its arms like smoke.
 - **Token:** Seen from above: massive shoulders, the visor glowing, both fists raised, shards of glass and broken scaffold scattered at its feet.
 
 ### Master Engineer Odalric Vane
-- **Portrait:** A thin, balding man in his fifties with burn scars on both hands and a magnifying lens strapped over one eye. He wears a stained leather apron over a once-fine Pitaxian doublet. His expression mixes pride and desperation.
+- **Portrait:** A thin, balding man in his fifties with burn scars on both hands and a magnifying lens strapped over one eye. He wears a stained leather apron over a once-fine court doublet. His expression mixes pride and desperation.
 - **Token:** A small figure clutching a sheaf of notes and a sparking copper rod, leaning forward as if shouting orders.
 
 ### Apprentice Hessa
@@ -281,7 +281,7 @@ Source: [11-the-unmaker.md](../11-the-unmaker.md)
 - **Token:** Seen from above: a spread of black branches with lightning crackling between them, roots splayed outward like legs.
 
 ### Foreman Brannock (remains)
-- **Portrait:** A broad-shouldered, red-bearded woodcutter in a Pitaxian work tabard, axe on his shoulder, as he looked in life. This portrait appears in the ledger as a sketch by one of his crew.
+- **Portrait:** A broad-shouldered, red-bearded woodcutter in a royal work tabard, axe on his shoulder, as he looked in life. This portrait appears in the ledger as a sketch by one of his crew.
 - **Token:** A body lying face-down beside the strongbox, axe still in hand, half-covered in ash.
 
 Source: [12-the-storm-tree.md](../12-the-storm-tree.md)
@@ -293,7 +293,7 @@ Source: [12-the-storm-tree.md](../12-the-storm-tree.md)
 - **Token:** Seen from above: crouched to spring, tail curled, quills raised along its spine.
 
 ### Wren Ashby (remains)
-- **Portrait:** A lean ranger with cropped grey hair and a weathered face, wearing a Pitaxian green cloak and a quiver at the hip. This is a sketch from the front of Wren's journal.
+- **Portrait:** A lean ranger with cropped grey hair and a weathered face, wearing a royal green cloak and a quiver at the hip. This is a sketch from the front of Wren's journal.
 - **Token:** Not used in play. A green cloak lies torn in the den, pinned beneath a quill.
 
 Source: [13-the-quilled-hunter.md](../13-the-quilled-hunter.md)
@@ -338,9 +338,9 @@ Source: [14-the-shadow-court.md](../14-the-shadow-court.md)
 
 Source: [15-the-moody-brood.md](../15-the-moody-brood.md)
 
-## 16. The Lantern King's Emissary
+## 16. The Trickster's Emissary
 
-### The Vilderavn Herald (Lantern King's emissary)
+### The Vilderavn Herald (Trickster Lord's emissary)
 - **Portrait:** A knight in black full plate with a helm shaped like a raven's skull, the beak curving down over the face. Black feathers sprout from the pauldrons and gorget. One gauntleted hand rests on a greatsword planted point-down; the other gestures toward the viewer. Behind the eye slits, two glints of cold light. A second view shows its true form: a human-sized raven with a scarred beak and eyes like polished jet.
 - **Token:** Seen from above, mounted: the raven-helmed knight seated astride the zomok's neck, greatsword across the lap, head turned to one side as if listening.
 
@@ -348,7 +348,7 @@ Source: [15-the-moody-brood.md](../15-the-moody-brood.md)
 - **Portrait:** A dragon made of living wood and root: bark scales, a mane of leaves turning autumn gold and red, eyes like knots of amber sap. Mushrooms and moss grow in the cracks of its hide. Its jaws hang open to show teeth of polished root, and soil spills from its mouth.
 - **Token:** Seen from above: a coiled plant-dragon with leaf-green wings half-spread, tail curled around itself, head lifted and turned toward the viewer.
 
-Source: [16-the-lantern-kings-emissary.md](../16-the-lantern-kings-emissary.md)
+Source: [16-the-tricksters-emissary.md](../16-the-tricksters-emissary.md)
 
 ## 17. Spore-Dawn
 
@@ -368,15 +368,15 @@ Source: [17-spore-dawn.md](../17-spore-dawn.md)
 - **Portrait:** An immense grey-scaled serpent with two clawed forelimbs and a crown of obsidian horns. Her eyes glow like coals. Old scars cross her snout, and ash drifts from the vents along her neck. Her coils wrap around a lava-lit crag.
 - **Token:** Seen from above: a vast coiled serpent with its head raised and turned to the side, forelimbs gripping rock, a trail of ash behind it.
 
-### Pitaxian Soldier (fallen)
+### Royal Soldier (fallen)
 - **Portrait:** A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.
-- **Token:** Seen from above: bones sprawled among rocks, the tabard faded but still showing Pitax's colours.
+- **Token:** Seen from above: bones sprawled among rocks, the tabard faded but still showing the King's colours.
 
 Source: [18-the-linnorms-pass.md](../18-the-linnorms-pass.md)
 
 ## 19. Shadow on the Peaks
 
-### Ilthuliak (black dragon)
+### The Black Dragon
 - **Portrait:** A huge black dragon with horns that sweep forward, acid dripping from her jaws and hissing where it lands. A long, pale scar runs along her flank. Her eyes are bright green and narrowed with hatred.
 - **Token (sighting):** Seen from above: the dragon in flight, wings spread wide, her shadow falling on fen water.
 - **Token (ambush):** Seen from above: the dragon rising from black water, head lowered and jaws open, water streaming from her wings.

@@ -1,6 +1,6 @@
 # Map Notes
 
-Irovetti's scrawls on the campaign map, one per site.
+The King's scrawls on the campaign map, one per site.
 
 ## 01. The Shadowless Lodge
 
@@ -34,7 +34,7 @@ Source: [05-the-ossuary-wall.md](../05-the-ossuary-wall.md)
 
 ## 06. The Larder
 
-A butcher's cleaver sketched in quick strokes beside a hollow in the uplands. Beneath it: "Moleg's men — tolerate." To the side, a tally of six marks with a single line struck through them.
+A butcher's cleaver sketched in quick strokes beside a hollow in the uplands. Beneath it: "The Giant Lord's men — tolerate." To the side, a tally of six marks with a single line struck through them.
 
 Source: [06-the-larder.md](../06-the-larder.md)
 
@@ -46,7 +46,7 @@ Source: [07-the-wyvern-queens-hunting-ground.md](../07-the-wyvern-queens-hunting
 
 ## 08. The Lightwardens
 
-A small silver-ink wedge shape with three concentric rings drawn around it. Beside it: "unopened — buyers in Starfall."
+A small silver-ink wedge shape with three concentric rings drawn around it. Beside it: "unopened — buyers in the salvage towns."
 
 Source: [08-the-lightwardens.md](../08-the-lightwardens.md)
 
@@ -64,7 +64,7 @@ Source: [10-the-scouts-wager.md](../10-the-scouts-wager.md)
 
 ## 11. The Unmaker
 
-A small circle hatched solid black, with a towering stick figure inside it, arms raised. Beside it in Irovetti's looping hand: "the Colossus — wake it for the war?" Below, in a steadier hand: "Vane says three days. Pay him double." A thumbprint of soot smudges one corner.
+A small circle hatched solid black, with a towering stick figure inside it, arms raised. Beside it in the King's looping hand: "the Colossus — wake it for the war?" Below, in a steadier hand: "Vane says three days. Pay him double." A thumbprint of soot smudges one corner.
 
 Source: [11-the-unmaker.md](../11-the-unmaker.md)
 
@@ -92,11 +92,11 @@ A circle divided into four wedges like a sundial, each coloured for a season: gr
 
 Source: [15-the-moody-brood.md](../15-the-moody-brood.md)
 
-## 16. The Lantern King's Emissary
+## 16. The Trickster's Emissary
 
 A raven inked in solid black with one eye left as a blank white circle. Beneath it, in a hurried hand: "the raven. it knew my name before I spoke. DO NOT RETURN." The ink is smeared where the pen dragged.
 
-Source: [16-the-lantern-kings-emissary.md](../16-the-lantern-kings-emissary.md)
+Source: [16-the-tricksters-emissary.md](../16-the-tricksters-emissary.md)
 
 ## 17. Spore-Dawn
 
@@ -118,12 +118,12 @@ Source: [19-shadow-on-the-peaks.md](../19-shadow-on-the-peaks.md)
 
 ## 20. The Burning Giant
 
-A line of hexes coloured in red crayon, running from the mountains toward the lowlands. Beside it: "toward us — or toward them?" and an arrow pointing away from Pitax that has been scratched out and redrawn twice.
+A line of hexes coloured in red crayon, running from the mountains toward the lowlands. Beside it: "toward us — or toward them?" and an arrow pointing away from the King's city that has been scratched out and redrawn twice.
 
 Source: [20-the-burning-giant.md](../20-the-burning-giant.md)
 
 ## 21. The Annihilator
 
-A line of small burned-house glyphs running west out of Numeria, each one crossed through. At the end of the line: "no bodies — it takes them ALIVE. where?"
+A line of small burned-house glyphs running west out of the Skyfall Wastes, each one crossed through. At the end of the line: "no bodies — it takes them ALIVE. where?"
 
 Source: [21-the-annihilator.md](../21-the-annihilator.md)

@@ -1,7 +1,7 @@
 # 20. The Burning Giant — Art
 
 ## Map note
-A line of hexes coloured in red crayon, running from the mountains toward the lowlands. Beside it: "toward us — or toward them?" and an arrow pointing away from Pitax that has been scratched out and redrawn twice.
+A line of hexes coloured in red crayon, running from the mountains toward the lowlands. Beside it: "toward us — or toward them?" and an arrow pointing away from the King's city that has been scratched out and redrawn twice.
 
 ## Tactical map
 A scorched valley with a small herding village, Kettle Hollow, at its centre: twelve thatched buildings, several on fire, with a grain cellar and a stone well-house. A cold stream runs along the south edge of the valley. Shards of black glass litter the ground in a trail leading from the north ridge to the village. Smoke and cinders drift across the scene.

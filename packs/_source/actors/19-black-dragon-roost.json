@@ -2,7 +2,7 @@
   "type": "loot",
   "items": [
     {
-      "_id": "vtHk4Hq1SjwCmDK5",
+      "_id": "6ZxvxNQmW8sLMbNz",
       "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
       "name": "Gold Pieces",
       "system": {
@@ -61,10 +61,10 @@
         "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
       },
       "effects": [],
-      "_key": "!actors.items!lvdSWan9U6HdTift.vtHk4Hq1SjwCmDK5"
+      "_key": "!actors.items!gmCXlDRwhRYyXtOp.6ZxvxNQmW8sLMbNz"
     },
     {
-      "_id": "ozgNUhDqAd6PeE0w",
+      "_id": "ZUrek6k4vFpCgqsU",
       "img": "icons/weapons/swords/sword-guard-blue.webp",
       "name": "Acid-Etched Longsword",
       "system": {
@@ -158,12 +158,12 @@
         "compendiumSource": "Compendium.pf2e.equipment-srd.Item.LJdbVTOZog39EEbi"
       },
       "effects": [],
-      "_key": "!actors.items!lvdSWan9U6HdTift.ozgNUhDqAd6PeE0w"
+      "_key": "!actors.items!gmCXlDRwhRYyXtOp.ZUrek6k4vFpCgqsU"
     }
   ],
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-3BVATfLVLHjvCGdh\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tGPRvXMxFYVlVVee]{19. Shadow on the Peaks}.</strong> Her old cache on the ledge near the top of the spire (DC 38 Athletics to climb). The PCs find it at the sighting, before Chapter 10.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-kNL38kfn8VcAx5Pd\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tGPRvXMxFYVlVVee]{19. Shadow on the Peaks}.</strong> Her old cache on the ledge near the top of the spire (DC 38 Athletics to climb). The PCs find it at the sighting, before Chapter 10.</p>\n</section>",
       "level": {
         "value": 0
       }
@@ -181,12 +181,12 @@
     "systemVersion": "8.5.1",
     "compendiumSource": null
   },
-  "_id": "lvdSWan9U6HdTift",
-  "_key": "!actors!lvdSWan9U6HdTift",
-  "name": "Ilthuliak's Roost",
+  "_id": "gmCXlDRwhRYyXtOp",
+  "_key": "!actors!gmCXlDRwhRYyXtOp",
+  "name": "The Black Dragon's Roost",
   "img": "icons/commodities/bones/bones-dragon-grey.webp",
   "prototypeToken": {
-    "name": "Ilthuliak's Roost",
+    "name": "The Black Dragon's Roost",
     "actorLink": false,
     "disposition": 0,
     "width": 1,
@@ -214,7 +214,7 @@
   "flags": {
     "points-of-interest": {
       "encounter": 19,
-      "slug": "19-ilthuliak-roost",
+      "slug": "19-black-dragon-roost",
       "kind": "cache"
     }
   },

@@ -13,7 +13,7 @@
         "category": "gem",
         "containerId": null,
         "description": {
-          "value": "<p>Sewn into the lining of a Pitaxian scout's cloak.</p>"
+          "value": "<p>Sewn into the lining of a royal scout's cloak.</p>"
         },
         "hardness": 0,
         "hp": {
@@ -60,11 +60,11 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "wsM6LDTpJt922SWC",
-      "_key": "!actors.items!PI87VWSgaHSg1Ih5.wsM6LDTpJt922SWC"
+      "_id": "L9y3fTqmWGG7SGax",
+      "_key": "!actors.items!CKX5T6thFVYDUobt.L9y3fTqmWGG7SGax"
     },
     {
-      "_id": "6xkQNYO5mtZxEad5",
+      "_id": "HU2hWDLbm2GMwrQ2",
       "img": "icons/sundries/scrolls/scroll-symbol-eye-brown.webp",
       "name": "Scroll of Regenerate (Rank 7)",
       "system": {
@@ -132,7 +132,7 @@
           "carryType": "worn"
         },
         "spell": {
-          "_id": "PChojte1MKi8Equo",
+          "_id": "sBhXqEo0Tuphgpmz",
           "img": "icons/magic/life/cross-beam-green.webp",
           "name": "Regenerate",
           "system": {
@@ -210,12 +210,12 @@
         "compendiumSource": "Compendium.pf2e.equipment-srd.Item.fomEZZ4MxVVK3uVu"
       },
       "effects": [],
-      "_key": "!actors.items!PI87VWSgaHSg1Ih5.6xkQNYO5mtZxEad5"
+      "_key": "!actors.items!CKX5T6thFVYDUobt.HU2hWDLbm2GMwrQ2"
     }
   ],
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-74kt11EXw81SIXS4\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{14. The Shadow Court}.</strong> One of the empty ankou cloaks in the branches bears the badge of a Pitaxian scout. A waxed packet hides in its lining.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-EalKJT18wTnng7CJ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{14. The Shadow Court}.</strong> One of the empty ankou cloaks in the branches bears the badge of a royal scout. A waxed packet hides in its lining.</p>\n</section>",
       "level": {
         "value": 0
       }
@@ -233,12 +233,12 @@
     "systemVersion": "8.5.1",
     "compendiumSource": null
   },
-  "_id": "PI87VWSgaHSg1Ih5",
-  "_key": "!actors!PI87VWSgaHSg1Ih5",
-  "name": "Pitaxian Scout's Cloak",
+  "_id": "CKX5T6thFVYDUobt",
+  "_key": "!actors!CKX5T6thFVYDUobt",
+  "name": "Royal Scout's Cloak",
   "img": "icons/equipment/back/cloak-layered-green.webp",
   "prototypeToken": {
-    "name": "Pitaxian Scout's Cloak",
+    "name": "Royal Scout's Cloak",
     "actorLink": false,
     "disposition": 0,
     "width": 1,
@@ -266,7 +266,7 @@
   "flags": {
     "points-of-interest": {
       "encounter": 14,
-      "slug": "14-pitaxian-scouts-cloak",
+      "slug": "14-royal-scouts-cloak",
       "kind": "cache",
       "stowed": true
     }

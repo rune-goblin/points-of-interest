@@ -75,7 +75,7 @@ describe('journals pack source', () => {
     for (const page of pages) expect(page.ownership.default).toBe(-1);
   });
 
-  it('places each site on its own hex of the Kingmaker region map', () => {
+  it('places each site on its own hex of the region map', () => {
     const hexes = sites.map((p) => p.flags[MODULE_ID].hex!);
     expect(new Set(hexes).size).toBe(hexes.length);
     for (const hex of hexes) {

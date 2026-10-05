@@ -1,14 +1,14 @@
 {
   "points-of-interest": {
     "MapNotes": {
-      "Folder": "Irovetti's Map",
-      "GMOnly": "Only a GM can place Irovetti's map notes.",
+      "Folder": "Points of Interest",
+      "GMOnly": "Only a GM can place the King's map notes.",
       "NoPack": "The Points of Interest journal pack is missing. Run npm run build.",
-      "WrongScene": "{scene} is not the Kingmaker Stolen Lands map (275 px hex rows), so Irovetti's map notes can't go there.",
-      "NoScene": "This world has no Kingmaker Stolen Lands map (275 px hex rows). Import it from the Kingmaker module, then place Irovetti's map notes.",
-      "ManyScenes": "This world has {count} Kingmaker Stolen Lands maps. View the one to mark, then place Irovetti's map notes.",
-      "Placed": "Placed {count} of Irovetti's map notes on {scene}.",
-      "Merged": "Moved Irovetti's sites into the {journal} journal and deleted the {count} entries it replaces.",
+      "WrongScene": "{scene} is not the region map (275 px hex rows), so the King's map notes can't go there.",
+      "NoScene": "This world has no region map (275 px hex rows). Import one, then place the King's map notes.",
+      "ManyScenes": "This world has {count} region maps. View the one to mark, then place the King's map notes.",
+      "Placed": "Placed {count} of the King's map notes on {scene}.",
+      "Merged": "Moved the King's sites into the {journal} journal and deleted the {count} entries it replaces.",
       "SceneNotes": "Added a journal note to {count} of the Points of Interest scenes."
     },
     "SceneLinks": {

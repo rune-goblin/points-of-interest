@@ -35,7 +35,7 @@ function siteFlags(doc: JournalEntry | JournalEntryPage<JournalEntry>): SiteFlag
   return doc.flags[MODULE_ID] as unknown as SiteFlags | undefined;
 }
 
-// Hex keys follow the Kingmaker module's region map, which only lines up on its own grid.
+// Hex keys follow the pf2e-kingmaker module's region map, which only lines up on its own grid.
 function isRegionMap(scene: Scene): boolean {
   return scene.grid.type === CONST.GRID_TYPES.HEXODDR && scene.grid.size === REGION_HEX_SIZE;
 }
@@ -77,7 +77,7 @@ async function upsertEmbedded(
 }
 
 /**
- * Create the Irovetti's Map journal from the pack, or refresh the text, images, categories and flags
+ * Create the Points of Interest journal from the pack, or refresh the text, images, categories and flags
  * of the world copy. A new copy keeps the pack's ownership (Limited, so players see the map notes but
  * can't read a page); an existing copy keeps whatever ownership and folder the GM gave it. Entries
  * left from the one-entry-per-site layout are deleted.
@@ -140,8 +140,8 @@ function findRegionMap(): Scene | null {
 }
 
 /**
- * Import the Irovetti's Map journal and give the world's copies of the module scenes their journal
- * notes, then pin each site's map note to its hex on the Stolen Lands region map: the given scene,
+ * Import the Points of Interest journal and give the world's copies of the module scenes their journal
+ * notes, then pin each site's map note to its hex on the region map: the given scene,
  * else the viewed one, else the world's only region map. Re-running moves existing notes back to
  * their hexes instead of duplicating them.
  */

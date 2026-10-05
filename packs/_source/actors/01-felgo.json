@@ -2,7 +2,7 @@
   "type": "loot",
   "items": [
     {
-      "name": "Pitaxian Scouts' Kit",
+      "name": "Royal Scouts' Kit",
       "type": "equipment",
       "img": "icons/containers/bags/pack-leather-brown.webp",
       "system": {
@@ -60,13 +60,13 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "9KXY5WrQSpzMljvS",
-      "_key": "!actors.items!fQaCjludOjyecS33.9KXY5WrQSpzMljvS"
+      "_id": "Y5fPnwKW4gdLMYCs",
+      "_key": "!actors.items!fQaCjludOjyecS33.Y5fPnwKW4gdLMYCs"
     }
   ],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A young man in Pitaxian green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The dead Pitaxian scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A young man in royal green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The dead royal scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
       "level": {
         "value": 0
       }

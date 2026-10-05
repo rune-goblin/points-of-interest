@@ -1,4 +1,4 @@
-# 16. The Lantern King's Emissary — Art
+# 16. The Trickster's Emissary — Art
 
 ## Map note
 A raven inked in solid black with one eye left as a blank white circle. Beneath it, in a hurried hand: "the raven. it knew my name before I spoke. DO NOT RETURN." The ink is smeared where the pen dragged.
@@ -8,7 +8,7 @@ A round clearing in old-growth forest, floored with moss and fallen leaves. Seve
 
 ## Characters
 
-### The Vilderavn Herald (Lantern King's emissary)
+### The Vilderavn Herald (Trickster Lord's emissary)
 - **Portrait:** A knight in black full plate with a helm shaped like a raven's skull, the beak curving down over the face. Black feathers sprout from the pauldrons and gorget. One gauntleted hand rests on a greatsword planted point-down; the other gestures toward the viewer. Behind the eye slits, two glints of cold light. A second view shows its true form: a human-sized raven with a scarred beak and eyes like polished jet.
 - **Token:** Seen from above, mounted: the raven-helmed knight seated astride the zomok's neck, greatsword across the lap, head turned to one side as if listening.
 

@@ -32,8 +32,8 @@ The roofless shell of a stone manor at one end, its upper floor collapsed into r
 - **Portrait:** The smallest and cruellest, with briars woven into its matted hair and venom dripping from its third claw, grinning at a statue-victim.
 - **Token:** Leaning over a plinth, claw poised above a victim's neck.
 
-### Captain Mira Vell (living statue, Pitaxian officer)
-- **Portrait:** A hard-faced woman in a torn green Pitaxian officer's coat, hair cropped short, wrists bound by vines, her face slack from venom except for furious, tracking eyes.
+### Captain Mira Vell (living statue, royal officer)
+- **Portrait:** A hard-faced woman in a torn green royal officer's coat, hair cropped short, wrists bound by vines, her face slack from venom except for furious, tracking eyes.
 - **Token:** Upright on a plinth, vines around her body, eyes turned toward the viewer.
 
 ### Haddo (living statue, farmer)
@@ -45,7 +45,7 @@ The roofless shell of a stone manor at one end, its upper floor collapsed into r
 - **Token:** Propped on a plinth, arms tied out like a scarecrow.
 
 ### Brother Amat (living statue, wandering priest)
-- **Portrait:** An elderly priest of Erastil in a muddy brown robe, holy symbol still around his neck, eyes closed in prayer.
+- **Portrait:** An elderly priest of the hunter god in a muddy brown robe, holy symbol still around his neck, eyes closed in prayer.
 - **Token:** Kneeling on a plinth, bound in place.
 
 ### Tobin (living statue, boy)

@@ -123,11 +123,11 @@ const OZTHOOM_SHADOW_DOUBLE = MC2('wNa8UPQqSepdxscG');
 const CAUTHOOJ = MC('1a5faH5CCtFfbQHO');
 const ATHACH = B2('CwrVQsRAeqlr1Vh0');
 const HILL_GIANT_BUTCHER = KM('bF0FHdZMWl1OuRae');
-const MINOGNOS_USHAD = KM('SjU0oB6pOk0XY8VN');
+const WYVERN_QUEEN = KM('SjU0oB6pOk0XY8VN');
 const RADIANT_WARDEN = KM('ASevlX00GdHGNWrS');
 const WILD_HUNT_HOUND = KM('OnHIutiVLt1czwWL');
 const WHIMWYRM = KM('SfFMqKTUQ1Dwu5lT');
-const ILTHULIAK = KM('n82GZhM6joceE91v');
+const BLACK_DRAGON = KM('n82GZhM6joceE91v');
 
 // NPC Core picks for the noncombatants; the role decides the stat block, the art decides the name.
 const MAESTRO = NPC('1wk2fBlDuHLRYfJW');
@@ -223,14 +223,14 @@ function trollHead(skills: Record<string, number>, lores: Record<string, number>
 
 const ENCOUNTERS: Record<number, Spec[]> = {
   1: [
-    { slug: '01-ankou', name: 'The Ankou', brief: "The Ankou (Nyrissa's assassin)", kind: 'creature', usesGear: true, source: ANKOU_ASSASSIN, linked: true,
-      role: "Nyrissa's ankou. Drops from the rafters once the PCs find the shadow jar or three clues, opens with Shadow Doubles, and withdraws below 150 HP. If it escapes, it returns as the Speaker or the spared ankou in encounter 14." },
+    { slug: '01-ankou', name: 'The Ankou', brief: "The Ankou (the Fey Queen's assassin)", kind: 'creature', usesGear: true, source: ANKOU_ASSASSIN, linked: true,
+      role: "The Fey Queen's ankou. Drops from the rafters once the PCs find the shadow jar or three clues, opens with Shadow Doubles, and withdraws below 150 HP. If it escapes, it returns as the Speaker or the spared ankou in encounter 14." },
     { slug: '01-ankou-shadow-double-first', name: "The Ankou's Shadow Double (First)", brief: "The Ankou's Shadow Double (first)", kind: 'creature', usesGear: true, source: ANKOU_ASSASSIN, patch: shadowDouble, tokenName: 'The Ankou',
       role: "A double from the ankou's Shadow Doubles (110 HP, Strikes +27, no innate spells). It vanishes when the ankou leaves or dies." },
     { slug: '01-ankou-shadow-double-second', name: "The Ankou's Shadow Double (Second)", brief: "The Ankou's Shadow Double (second)", kind: 'creature', usesGear: true, source: ANKOU_ASSASSIN, patch: shadowDouble, tokenName: 'The Ankou',
       role: "The second double from Shadow Doubles (110 HP, Strikes +27, no innate spells)." },
-    { slug: '01-felgo', name: 'Felgo', brief: 'Felgo (dead Pitaxian scout)', kind: 'remains', linked: true,
-      role: 'The dead Pitaxian scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.' },
+    { slug: '01-felgo', name: 'Felgo', brief: 'Felgo (dead royal scout)', kind: 'remains', linked: true,
+      role: 'The dead royal scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.' },
   ],
   2: [
     { slug: '02-maestra-ilsabet-rova', name: 'Maestra Ilsabet Rova', brief: 'Maestra Ilsabet Rova (composer, leader)', kind: 'npc', source: MAESTRO, linked: true,
@@ -253,13 +253,13 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '03-jotund-troll', name: 'The Jotund Troll', brief: 'The Jotund Troll', kind: 'creature', usesGear: true, source: JOTUND_TROLL, linked: true,
       role: 'The nine-headed troll. It negotiates by head-vote and fights only if insulted twice, the vote fails, or the PCs attack; it flees into the moor at 120 HP.' },
     { slug: '03-envoy-troll-head', name: 'The Envoy (Troll Head)', brief: 'The Envoy (troll head)', kind: 'voice', source: JOTUND_TROLL, linked: true,
-      patch: trollHead({ deception: 28, diplomacy: 28, society: 25 }, { 'Pitaxian Court Lore': 25 }),
+      patch: trollHead({ deception: 28, diplomacy: 28, society: 25 }, { 'Royal Court Lore': 25 }),
       role: "The head that mimics Ser Halward Toll and speaks for the Envoy bloc. It shares the Jotund Troll's defences, which take any damage; its courtly skills serve its lies and Sense Motive against it." },
     { slug: '03-old-heads', name: 'The Old Heads (Troll Heads)', brief: 'The Old Heads (troll heads)', kind: 'voice', source: JOTUND_TROLL, linked: true,
       patch: trollHead({ religion: 25 }, { 'Barrow Lore': 28 }),
       role: "The two Old Heads, the bloc that guards their mother's bones. They share the Jotund Troll's defences, which take any damage; Religion and Barrow Lore are what they know." },
     { slug: '03-ser-halward-toll', name: 'Ser Halward Toll', brief: 'Ser Halward Toll (dead envoy)', kind: 'remains', linked: true,
-      role: "Irovetti's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds Irovetti's letter of offer, 400 gp and a greater bottled lightning." },
+      role: "The King's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds the King's letter of offer, 400 gp and a greater bottled lightning." },
   ],
   4: [
     { slug: '04-matriarch-gorm', name: 'Matriarch Gorm', brief: 'Matriarch Gorm (athach, family head)', kind: 'creature', usesGear: true, source: ATHACH, adjustment: 'elite', linked: true,
@@ -274,14 +274,14 @@ const ENCOUNTERS: Record<number, Spec[]> = {
       role: 'Adolescent athach working the maze in a pair; starts by the compost pit.' },
     { slug: '04-bramble', name: 'Bramble', brief: 'Bramble (adolescent athach)', kind: 'creature', usesGear: true, source: ATHACH, adjustment: 'elite', linked: true,
       role: 'The smallest, cruellest adolescent athach; first to grab a victim as a hostage.' },
-    { slug: '04-captain-mira-vell', name: 'Captain Mira Vell', brief: 'Captain Mira Vell (living statue, Pitaxian officer)', kind: 'npc', source: CAPTAIN_OF_THE_GUARD, linked: true,
-      role: 'Pitaxian officer and the most valuable victim: enfeebled 3 and unable to act until a DC 32 Medicine check or a cure. She can serve the PCs as an army commander or informant. NPC Core Captain of the Guard.' },
+    { slug: '04-captain-mira-vell', name: 'Captain Mira Vell', brief: 'Captain Mira Vell (living statue, royal officer)', kind: 'npc', source: CAPTAIN_OF_THE_GUARD, linked: true,
+      role: 'Royal officer and the most valuable victim: enfeebled 3 and unable to act until a DC 32 Medicine check or a cure. She can serve the PCs as an army commander or informant. NPC Core Captain of the Guard.' },
     { slug: '04-haddo', name: 'Haddo', brief: 'Haddo (living statue, farmer)', kind: 'npc', source: FARMER, linked: true,
       role: 'Victim on a plinth: enfeebled 3 and unable to act. NPC Core Farmer.' },
     { slug: '04-ysolde', name: 'Ysolde', brief: 'Ysolde (living statue, pedlar)', kind: 'npc', source: MERCHANT, linked: true,
       role: 'Victim on a plinth: enfeebled 3 and unable to act. NPC Core Merchant.' },
     { slug: '04-brother-amat', name: 'Brother Amat', brief: 'Brother Amat (living statue, wandering priest)', kind: 'npc', source: PROPHET, linked: true,
-      role: 'Wandering priest of Erastil on a plinth: enfeebled 3 and unable to act. NPC Core Prophet.' },
+      role: 'Wandering priest of the hunter god on a plinth: enfeebled 3 and unable to act. NPC Core Prophet.' },
     { slug: '04-tobin-herder-boy', name: 'Tobin', brief: 'Tobin (living statue, boy)', kind: 'npc', source: COMMONER, linked: true,
       patch: renameItem('Lore (any one related to their trade)', 'Herding Lore'),
       role: 'A herder boy of about ten on a plinth: enfeebled 3 and unable to act. NPC Core Commoner.' },
@@ -290,10 +290,10 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '05-skulltaker', name: 'The Skulltaker', brief: 'The Skulltaker', kind: 'creature', source: MC('zkl6planCbeCuAdS'), linked: true,
       role: "Speaks through the antiquarians' skulls and trades Skeletal Lore answers for a new skull. In the fight it opens with Splintered Ground and keeps Shard Storm active." },
     { slug: '05-magister-corwen-ash', name: 'Magister Corwen Ash', brief: 'Magister Corwen Ash (dead antiquarian, voice in the wall)', kind: 'voice', source: AVUNCULAR_PROFESSOR, linked: true,
-      patch: renameItem('One Additional Lore', 'Kellid Lore'),
+      patch: renameItem('One Additional Lore', 'Hill-Clan Lore'),
       role: `Dead antiquarian whose voice the skulltaker uses. ${ANTIQUARIAN} NPC Core Avuncular Professor.` },
     { slug: '05-dalia-sorn', name: 'Dalia Sorn', brief: 'Dalia Sorn (dead antiquarian)', kind: 'voice', source: OBSESSIVE_RESEARCHER, linked: true,
-      patch: renameItem('Narrow Lore', 'Kellid Art Lore'),
+      patch: renameItem('Narrow Lore', 'Hill-Clan Art Lore'),
       role: `Dead antiquarian and field sketcher. ${ANTIQUARIAN} NPC Core Obsessive Researcher.` },
     { slug: '05-hemmet-brask', name: 'Hemmet Brask', brief: 'Hemmet Brask (dead antiquarian)', kind: 'voice', source: TOMB_RAIDER, linked: true,
       role: `Dead antiquarian and surveyor. ${ANTIQUARIAN} NPC Core Tomb Raider.` },
@@ -310,19 +310,19 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '06-tuk', name: 'Tuk', brief: 'Tuk (twin hatchets)', kind: 'creature', usesGear: true, source: HILL_GIANT_BUTCHER, linked: true,
       role: 'Closes and uses Twin Butchery on whoever leads.' },
     { slug: '06-hobb', name: 'Hobb', brief: 'Hobb (the coward)', kind: 'creature', usesGear: true, source: HILL_GIANT_BUTCHER, linked: true,
-      role: 'The first to flee up the shelf path toward Kob Moleg once two butchers fall.' },
+      role: 'The first to flee up the shelf path toward the Giant Lord once two butchers fall.' },
     { slug: '06-ederis-pallo', name: 'Ederis Pallo', brief: 'Ederis Pallo (captive tax clerk)', kind: 'npc', source: TAX_COLLECTOR, linked: true,
-      role: "Captive Pitaxian tax clerk carrying the delivery receipt sealed with Irovetti's signet; begs the PCs to destroy it. NPC Core Tax Collector." },
-    { slug: '06-hesk-varro', name: 'Hesk Varro', brief: 'Hesk Varro (captive Numerian scavenger)', kind: 'npc', source: GUIDE, linked: true,
-      role: 'Captive Numerian scavenger. Offers to guide the PCs to the Lightwardens (#8) or the Annihilator (#21) as payment. NPC Core Guide.' },
-    { slug: '06-kael', name: 'Kael', brief: 'Kael (captive Tiger Lord outrider)', kind: 'npc', source: BANDIT, linked: true,
-      role: 'Captive Tiger Lord outrider; owes the PCs a life-debt. The butchers kill him first. NPC Core Bandit.' },
+      role: "Captive royal tax clerk carrying the delivery receipt sealed with the King's signet; begs the PCs to destroy it. NPC Core Tax Collector." },
+    { slug: '06-hesk-varro', name: 'Hesk Varro', brief: 'Hesk Varro (captive skyfall scavenger)', kind: 'npc', source: GUIDE, linked: true,
+      role: 'Captive skyfall scavenger. Offers to guide the PCs to the Lightwardens (#8) or the Annihilator (#21) as payment. NPC Core Guide.' },
+    { slug: '06-kael', name: 'Kael', brief: 'Kael (captive horse-clan outrider)', kind: 'npc', source: BANDIT, linked: true,
+      role: 'Captive horse-clan outrider; owes the PCs a life-debt. The butchers kill him first. NPC Core Bandit.' },
   ],
   7: [
-    { slug: '07-minognos-ushad', name: 'Minognos-Ushad', brief: 'Minognos-Ushad (legendary wyvern)', kind: 'creature', source: MINOGNOS_USHAD, linked: true,
+    { slug: '07-wyvern-queen', name: 'The Wyvern Queen', brief: 'The Wyvern Queen (legendary wyvern)', kind: 'creature', source: WYVERN_QUEEN, linked: true,
       role: 'The wyvern queen. Part one: a flyover; she flees to BR3 at 100 HP or fewer. Part two: she returns 1d4 days later and fights to the death. Use the Diving actor for the swap mid-fight.' },
-    { slug: '07-minognos-ushad-diving', name: 'Minognos-Ushad (Diving)', brief: 'Minognos-Ushad (diving)', kind: 'creature', source: MINOGNOS_USHAD, linked: true, tokenName: 'Minognos-Ushad',
-      role: 'The same wyvern with diving art, for Powerful Dive out of the sun. Same statistics as Minognos-Ushad; swap the token rather than placing both.' },
+    { slug: '07-wyvern-queen-diving', name: 'The Wyvern Queen (Diving)', brief: 'The Wyvern Queen (diving)', kind: 'creature', source: WYVERN_QUEEN, linked: true, tokenName: 'The Wyvern Queen',
+      role: 'The same wyvern with diving art, for Powerful Dive out of the sun. Same statistics as the Wyvern Queen; swap the token rather than placing both.' },
   ],
   8: [
     { slug: '08-radiant-warden-dormant', name: 'Radiant Warden (Dormant)', brief: 'Radiant warden (dormant)', kind: 'creature', source: RADIANT_WARDEN, linked: true, tokenName: 'Orrery',
@@ -332,30 +332,30 @@ const ENCOUNTERS: Record<number, Spec[]> = {
   ],
   9: [
     { slug: '09-iron-juggernaut', name: 'The Iron Juggernaut', brief: 'The Iron Juggernaut', kind: 'creature', source: KM('qKCx4DrEL3vTcNC3'), adjustment: 'elite', linked: true,
-      role: 'Elite Numerian adamantine golem reflavoured as a tracked hauler. Inexorable March on the trench, Vent as cutting lasers, fists against boarders; Repair Mode at 0 HP.' },
+      role: 'Elite adamantine golem reflavoured as a tracked hauler. Inexorable March on the trench, Vent as cutting lasers, fists against boarders; Repair Mode at 0 HP.' },
     { slug: '09-brann-kesk', name: 'Brann Kesk', brief: 'Brann Kesk (starving salvager)', kind: 'npc', source: MECHANIC, linked: true,
       role: "Starving salvager in the Juggernaut's hold, three days from death; he dies first. NPC Core Mechanic." },
     { slug: '09-ottilie-kesk', name: 'Ottilie Kesk', brief: 'Ottilie Kesk (starving salvager)', kind: 'npc', source: MECHANIC, linked: true,
       role: "Starving salvager in the hold; she can describe the Annihilator that caught them. NPC Core Mechanic." },
     { slug: '09-tarku', name: 'Tarku', brief: 'Tarku (remains)', kind: 'remains', linked: true,
-      role: "A Kellid hunter delivered a century ago; the longest tally in the hold. His stone-tipped spear, wrapped in a Kellid charm, is a +3 greater striking spear." },
+      role: "A hill-clan hunter delivered a century ago; the longest tally in the hold. His stone-tipped spear, wrapped in a hill-clan charm, is a +3 greater striking spear." },
   ],
   10: [
     { slug: '10-sileth', name: 'Sileth', brief: 'Sileth (Wild Hunt scout)', kind: 'creature', usesGear: true, source: KM('fQ9FuovHuRt6vtcq'), linked: true,
       patch: runeStrike('Crystal Scimitar', ['wounding', 'keen']),
-      role: 'Wild Hunt scout hunting anyone carrying Pitaxian goods. Gives the PCs one round to run, then fires Befuddle beams and closes with the Crystal Scimitar, whose wounding and keen runes make her quarry bleed and turn a hit on a natural 19 into a critical hit. Calls a truce if half the hunt falls.' },
+      role: 'Wild Hunt scout hunting anyone carrying royal goods. Gives the PCs one round to run, then fires Befuddle beams and closes with the Crystal Scimitar, whose wounding and keen runes make her quarry bleed and turn a hit on a natural 19 into a critical hit. Calls a truce if half the hunt falls.' },
     { slug: '10-ash-tongue', name: 'Ash-Tongue', brief: 'Ash-Tongue (Wild Hunt hound)', kind: 'creature', source: WILD_HUNT_HOUND, linked: true,
       role: "Wild Hunt hound: Summon Pack on round one, then Knockdown to drop PCs for Sileth's sneak attacks." },
     { slug: '10-thornfoot', name: 'Thornfoot', brief: 'Thornfoot (Wild Hunt hound)', kind: 'creature', source: WILD_HUNT_HOUND, linked: true,
       role: 'Wild Hunt hound working with Ash-Tongue.' },
     { slug: '10-varga-tess', name: 'Varga Tess', brief: 'Varga Tess (dead agent)', kind: 'remains', linked: true,
-      role: "Irovetti's agent who poached the white stag; her skeleton lies in the pod with her satchel (900 gp and the stag's last antler tine)." },
+      role: "The King's agent who poached the white stag; her skeleton lies in the pod with her satchel (900 gp and the stag's last antler tine)." },
   ],
   11: [
-    { slug: '11-numerian-guthallath', name: 'Numerian Guthallath (the Colossus)', brief: 'Numerian guthallath (the Colossus)', kind: 'creature', source: KM('UqUj1IF3vCFuXYqb'), linked: true,
-      role: 'The Colossus. Half-awake at Waking Clock 3–5 (two actions, feet stuck in the glass); awake at 6, it smashes the scaffold and opens with Annihilation Beams. Kingmaker Numerian Guthallah stat block.' },
+    { slug: '11-guthallath', name: 'Guthallath (the Colossus)', brief: 'Guthallath (the Colossus)', kind: 'creature', source: KM('UqUj1IF3vCFuXYqb'), linked: true,
+      role: 'The Colossus. Half-awake at Waking Clock 3–5 (two actions, feet stuck in the glass); awake at 6, it smashes the scaffold and opens with Annihilation Beams. Kingmaker guthallath stat block.' },
     { slug: '11-master-engineer-odalric-vane', name: 'Master Engineer Odalric Vane', brief: 'Master Engineer Odalric Vane', kind: 'npc', source: GADGETEER, linked: true,
-      role: 'The disgraced Starfall technician waking the Colossus, and the Influence target. The encounter treats him as level 8; this NPC Core Gadgeteer is level 6 and fits the role better than any level 8 stat block.' },
+      role: 'The disgraced salvage-town technician waking the Colossus, and the Influence target. The encounter treats him as level 8; this NPC Core Gadgeteer is level 6 and fits the role better than any level 8 stat block.' },
     { slug: '11-apprentice-hessa', name: 'Apprentice Hessa', brief: 'Apprentice Hessa', kind: 'npc', source: MECHANIC, linked: true,
       role: "One of Vane's apprentices tending the sigils on the scaffold; noncombatant. NPC Core Mechanic." },
     { slug: '11-apprentice-tobin', name: 'Apprentice Tobin', brief: 'Apprentice Tobin', kind: 'npc', source: MECHANIC, linked: true,
@@ -365,7 +365,7 @@ const ENCOUNTERS: Record<number, Spec[]> = {
   ],
   12: [
     { slug: '12-sard', name: 'The Sard', brief: 'The sard', kind: 'creature', source: B2('eD1kydftMIp4CL2K'), linked: true,
-      role: 'Threshold guardian of Thousand Voices. Warns in Sylvan through the thunder first; fights to the death with Thorn Volley, Trample and Splintering Death.' },
+      role: 'Threshold guardian of the Whispering Wood. Warns in Sylvan through the thunder first; fights to the death with Thorn Volley, Trample and Splintering Death.' },
     { slug: '12-foreman-brannock', name: 'Foreman Brannock', brief: 'Foreman Brannock (remains)', kind: 'remains', linked: true,
       role: "Foreman of the logging crew the sard killed. His body lies beside the strongbox holding his ledger and 1,800 gp of wages." },
   ],
@@ -373,7 +373,7 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '13-primal-bandersnatch', name: 'Primal Bandersnatch', brief: 'Primal bandersnatch', kind: 'creature', source: KM('hLBHFloWuXLjCQYH'), linked: true,
       role: 'Stalks the PCs through the canyon on the Hunt Clock; at 6 it ambushes with Frumious Charge. Withdraws into the thickets below 100 HP to heal; fights to the death in its den.' },
     { slug: '13-wren-ashby', name: 'Wren Ashby', brief: 'Wren Ashby (remains)', kind: 'remains', linked: true,
-      role: "Irovetti's ranger. Only a torn green cloak remains in the den; Wren's bow and pack lie nearby." },
+      role: "The King's ranger. Only a torn green cloak remains in the den; Wren's bow and pack lie nearby." },
   ],
   14: [
     { slug: '14-speaker', name: 'The Speaker', brief: 'The Speaker (ankou assassin)', kind: 'creature', usesGear: true, source: ANKOU_ASSASSIN, linked: true,
@@ -396,9 +396,9 @@ const ENCOUNTERS: Record<number, Spec[]> = {
       role: 'Dusk-coloured whimwyrm. Loves dark jokes and hates being touched; a Strike, touch spell or uninvited Interact sets her Mood to 0.' },
   ],
   16: [
-    { slug: '16-vilderavn-herald', name: 'The Vilderavn Herald', brief: "The Vilderavn Herald (Lantern King's emissary)", kind: 'creature', usesGear: true, source: KM('UXXEOnvp2MDaS9Sc'), linked: true,
+    { slug: '16-vilderavn-herald', name: 'The Vilderavn Herald', brief: "The Vilderavn Herald (Trickster Lord's emissary)", kind: 'creature', usesGear: true, source: KM('UXXEOnvp2MDaS9Sc'), linked: true,
       patch: runeStrike('Greatsword', ['greaterBrilliant', 'greaterFearsome']),
-      role: "The Lantern King's emissary, posing as Nyrissa's warden. Run as Influence over 4 rounds; in a fight it pulls its punches and withdraws with Forest Step below 100 HP. Its greatsword's greater brilliant and greater fearsome runes add 1d4 fire, and a critical hit leaves the target frightened 2 and risks blinding it (DC 41 Fortitude)." },
+      role: "The Trickster Lord's emissary, posing as the Fey Queen's warden. Run as Influence over 4 rounds; in a fight it pulls its punches and withdraws with Forest Step below 100 HP. Its greatsword's greater brilliant and greater fearsome runes add 1d4 fire, and a critical hit leaves the target frightened 2 and risks blinding it (DC 41 Fortitude)." },
     { slug: '16-zomok', name: 'The Zomok', brief: "The Zomok (emissary's mount)", kind: 'creature', source: B2('Ge5Q5I7TTksf7QyN'), linked: true,
       role: "The herald's mount. Entombing Breath on clusters, Swallow Whole on the strongest melee PC." },
   ],
@@ -406,25 +406,25 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '17-mu-spore', name: 'The Mu Spore', brief: 'The Mu Spore', kind: 'creature', source: B1('VUJrPHKOjYkIQnWn'), linked: true,
       role: 'Omen of catastrophe anchored above the sinkhole. Opens with Enormous Inhalation; sonic damage stops its regeneration. While three or more corrupted trees stand, its Spores DC rises by 1 and it regains 10 more HP each round.' },
     { slug: '17-court-astrologer', name: 'The Court Astrologer', brief: 'The Court Astrologer (deceased)', kind: 'remains', linked: true,
-      role: "Irovetti's astrologer, dead in the hunting blind. The notebook records that \"thunder made it shudder\" (DC 38 Society or Occultism); the satchel holds 2,500 gp and a major healing potion." },
+      role: "The King's astrologer, dead in the hunting blind. The notebook records that \"thunder made it shudder\" (DC 38 Society or Occultism); the satchel holds 2,500 gp and a major healing potion." },
   ],
   18: [
     { slug: '18-vashkra', name: 'Vashkra', brief: 'Vashkra (tor linnorm)', kind: 'creature', source: MC('0H54u83vZ1w3xHcD'), linked: true,
       role: 'Tor linnorm of the pass. Run as Influence over 5 rounds; a fight is for party level 18+. Whoever kills her saves against the Curse of Boiling Blood (DC 48 Will).' },
-    { slug: '18-fallen-pitaxian-soldier', name: 'Fallen Pitaxian Soldier', brief: 'Pitaxian Soldier (fallen)', kind: 'remains',
-      role: "One of fifty-two Pitaxian soldiers in the pass. Their regimental insignia and Irovetti's orders are evidence of Pitaxian aggression; their gear yields 800 gp." },
+    { slug: '18-fallen-royal-soldier', name: 'Fallen Royal Soldier', brief: 'Royal Soldier (fallen)', kind: 'remains',
+      role: "One of fifty-two royal soldiers in the pass. Their regimental insignia and the King's orders are evidence of royal aggression; their gear yields 800 gp." },
   ],
   19: [
-    { slug: '19-ilthuliak-sighting', name: 'Ilthuliak (Sighting)', brief: 'Ilthuliak (black dragon)', kind: 'creature', source: ILTHULIAK, linked: true,
-      tokenName: 'Ilthuliak', portrait: 'portraits/19-ilthuliak.webp', token: 'tokens/19-ilthuliak-sighting.webp',
+    { slug: '19-black-dragon-sighting', name: 'The Black Dragon (Sighting)', brief: 'The Black Dragon', kind: 'creature', source: BLACK_DRAGON, linked: true,
+      tokenName: 'The Black Dragon', portrait: 'portraits/19-black-dragon.webp', token: 'tokens/19-black-dragon-sighting.webp',
       role: 'Before Chapter 10: she circles the spire twice and climbs into the clouds. No combat.' },
-    { slug: '19-ilthuliak-ambush', name: 'Ilthuliak (Ambush)', brief: 'Ilthuliak (black dragon)', kind: 'creature', source: ILTHULIAK, linked: true,
-      tokenName: 'Ilthuliak', portrait: 'portraits/19-ilthuliak.webp', token: 'tokens/19-ilthuliak-ambush.webp',
+    { slug: '19-black-dragon-ambush', name: 'The Black Dragon (Ambush)', brief: 'The Black Dragon', kind: 'creature', source: BLACK_DRAGON, linked: true,
+      tokenName: 'The Black Dragon', portrait: 'portraits/19-black-dragon.webp', token: 'tokens/19-black-dragon-ambush.webp',
       role: 'After the PCs fight her in Chapter 10: she rises from the fen, opens with her Breath Weapon down the longest line, and flies to the roost below 100 HP.' },
   ],
   20: [
     { slug: '20-kaldurok', name: 'Kaldurok', brief: 'Kaldurok (lerritan)', kind: 'creature', usesGear: true, source: B2('xfcFXLbadD3KdlHW'), linked: true,
-      role: 'Lerritan burning toward Kettle Hollow in the name of Ymeri. Opens with Volcanic Eruption; fights to the death. Apply the elite adjustment at party level 19.' },
+      role: 'Lerritan burning toward Kettle Hollow in the name of its fire demigod. Opens with Volcanic Eruption; fights to the death. Apply the elite adjustment at party level 19.' },
     { slug: '20-elder-maren', name: 'Elder Maren', brief: 'Elder Maren (Kettle Hollow headwoman)', kind: 'npc', source: MAYOR, linked: true,
       role: 'Headwoman of Kettle Hollow, hiding thirty villagers in the grain cellar and well-house. NPC Core Mayor.' },
   ],
@@ -468,7 +468,7 @@ const CACHES: Record<number, Spec[]> = {
   ],
   3: [
     { slug: '03-barrow-grave-goods', name: 'Barrow Grave Goods', kind: 'cache', icon: `${CHEST}/chest-reinforced-stone.webp`,
-      role: "Kellid torcs among the bones and armour on the barrow floor, near the bones of the troll's mother." },
+      role: "Hill-clan torcs among the bones and armour on the barrow floor, near the bones of the troll's mother." },
   ],
   4: [
     { slug: '04-varrold-strongbox', name: 'Varrold Strongbox', kind: 'cache', stowed: true, icon: `${CHEST}/chest-simple-steel-brown.webp`,
@@ -488,7 +488,7 @@ const CACHES: Record<number, Spec[]> = {
   ],
   7: [
     { slug: '07-huntmasters-shield', name: "Huntmaster's Shield", kind: 'cache', icon: 'icons/equipment/shield/heater-steel-worn.webp',
-      role: "Buried in the shale near the cliff. Minognos-Ushad's own treasure lies in her lair at BR3." },
+      role: "Buried in the shale near the cliff. The Wyvern Queen's own treasure lies in her lair at BR3." },
   ],
   8: [
     { slug: '08-hull-cache', name: 'Hull Cache', kind: 'cache', stowed: true, icon: `${CHEST}/chest-tech-silver.webp`,
@@ -496,26 +496,26 @@ const CACHES: Record<number, Spec[]> = {
   ],
   11: [
     { slug: '11-vanes-wagon', name: "Vane's Wagon", kind: 'cache', icon: 'icons/containers/boxes/crate-wooden-brown.webp',
-      role: "Vane's covered wagon at the crater's rim, holding his notes, tools and the last of Irovetti's gold." },
+      role: "Vane's covered wagon at the crater's rim, holding his notes, tools and the last of the King's gold." },
   ],
   12: [
     { slug: '12-brannocks-strongbox', name: "Brannock's Strongbox", kind: 'cache', stowed: true, icon: `${CHEST}/chest-reinforced-steel-brown.webp`,
       role: "Iron, half-buried beside the foreman's tent, 40 feet from the sard. Unlocking it takes a DC 34 Thievery check; prying it open takes a DC 36 Athletics check." },
   ],
   14: [
-    { slug: '14-pitaxian-scouts-cloak', name: "Pitaxian Scout's Cloak", kind: 'cache', stowed: true, icon: 'icons/equipment/back/cloak-layered-green.webp',
-      role: 'One of the empty ankou cloaks in the branches bears the badge of a Pitaxian scout. A waxed packet hides in its lining.' },
+    { slug: '14-royal-scouts-cloak', name: "Royal Scout's Cloak", kind: 'cache', stowed: true, icon: 'icons/equipment/back/cloak-layered-green.webp',
+      role: 'One of the empty ankou cloaks in the branches bears the badge of a royal scout. A waxed packet hides in its lining.' },
   ],
   15: [
     { slug: '15-picnic-remains', name: 'Picnic Remains', kind: 'cache', icon: 'icons/containers/kitchenware/goblet-engraved-grey.webp',
-      role: "The ruined banquet table from Irovetti's visit." },
+      role: "The ruined banquet table from the King's visit." },
   ],
   18: [
     { slug: '18-vashkras-hoard', name: "Vashkra's Hoard", kind: 'cache', icon: `${CHEST}/chest-small-gold-cherry.webp`,
       role: 'Reached through the magma vent: fire resistance or a DC 40 Athletics check to swim through it.' },
   ],
   19: [
-    { slug: '19-ilthuliak-roost', name: "Ilthuliak's Roost", kind: 'cache', icon: 'icons/commodities/bones/bones-dragon-grey.webp',
+    { slug: '19-black-dragon-roost', name: "The Black Dragon's Roost", kind: 'cache', icon: 'icons/commodities/bones/bones-dragon-grey.webp',
       role: 'Her old cache on the ledge near the top of the spire (DC 38 Athletics to climb). The PCs find it at the sighting, before Chapter 10.' },
   ],
 };
@@ -539,7 +539,7 @@ const GREATAXE = '8COlYvHe6hKCXY8x';
 const GREATER_BOTTLED_LIGHTNING = 'r2iTRbt1zpkAqHj2';
 const GREATER_DAREDEVIL_BOOTS = 'kjFFmqci69k2zMXF';
 const HALBERD = 'dgWxsYm0DWHb27h6';
-const HIGHHELM_DRILL_MARK_III = 'vkYWqXrHdUAggJIg';
+const DRILL_MARK_III = 'vkYWqXrHdUAggJIg';
 const LONGSWORD = 'LJdbVTOZog39EEbi';
 const MAJOR_EAGLE_EYE_ELIXIR = 'kicNrnZz1KjJYRVI';
 const MAJOR_ELIXIR_OF_LIFE = 'AmxSqEoFhRLMYd1W';
@@ -579,37 +579,37 @@ const TREASURE: Record<string, Loot[]> = {
     keepsake('Cold Iron Feather', 'icons/commodities/materials/feather-black-blue.webp', "A feather from the ankou's wing, won by killing it."),
   ],
   '01-felgo': [
-    keepsake("Pitaxian Scouts' Kit", 'icons/containers/bags/pack-leather-brown.webp', 'Bedrolls, rope, rations and spare green cloaks for six scouts.'),
+    keepsake("Royal Scouts' Kit", 'icons/containers/bags/pack-leather-brown.webp', 'Bedrolls, rope, rations and spare green cloaks for six scouts.'),
   ],
   '01-scouts-pay-chest': [coins(550), gear(MAJOR_HEALING_POTION)],
   '01-gun-cabinet': [
     gear(ARQUEBUS, { name: "The Baron's Hunting Arquebus", runes: { potency: 2, striking: 2, property: ['greaterThundering'] },
-      note: "The Pitaxian baron's hunting gun, with an antler-inlaid stock." }),
+      note: "The baron's hunting gun, with an antler-inlaid stock." }),
   ],
   '02-maestra-ilsabet-rova': [
     stock("Lyre (Moderate Maestro's Instrument)", { name: "Violin (Moderate Maestro's Instrument)" }),
     coins(120),
-    art('Gold Court Brooch', 180, 'icons/commodities/treasure/brooch-gold-ruby.webp', 'Pitaxian court jewellery, worn on ruined velvet.'),
+    art('Gold Court Brooch', 180, 'icons/commodities/treasure/brooch-gold-ruby.webp', 'Royal court jewellery, worn on ruined velvet.'),
   ],
   '02-daro-vesk': [
     coins(80),
-    art('Silver Signet Ring', 120, 'icons/equipment/finger/ring-band-engraved-scrolls-silver.webp', 'Engraved with the crest of the Academy of Grand Arts.'),
+    art('Silver Signet Ring', 120, 'icons/equipment/finger/ring-band-engraved-scrolls-silver.webp', 'Engraved with the crest of the Royal Academy.'),
   ],
   '02-olenna-fair': [
     coins(80),
-    art('Pearl Earrings', 120, 'icons/commodities/treasure/pearl-shell.webp', 'A gift from the Pitaxian court.'),
+    art('Pearl Earrings', 120, 'icons/commodities/treasure/pearl-shell.webp', 'A gift from the royal court.'),
   ],
   '02-pell-composer': [
     coins(50),
     art('Garnet Ring', 150, 'icons/equipment/finger/ring-cabochon-gold-red.webp', "His mother's, worn on a cord because it no longer fits his wasted finger."),
   ],
   '03-ser-halward-toll': [
-    keepsake("Irovetti's Letter of Offer", `${DOC}/document-sealed-signatures-red.webp`, "Irovetti's offer to the troll, under his seal: evidence of his habit of sending envoys to monsters."),
+    keepsake("King's Letter of Offer", `${DOC}/document-sealed-signatures-red.webp`, "The King's offer to the troll, under his seal: evidence of his habit of sending envoys to monsters."),
     coins(400),
     gear(GREATER_BOTTLED_LIGHTNING),
   ],
   '03-barrow-grave-goods': [
-    art('Ancient Kellid Torcs', 1200, 'icons/equipment/neck/choker-chain-thick-gold.webp', 'Gold neck-rings from the barrow floor.', 1),
+    art('Ancient Hill-Clan Torcs', 1200, 'icons/equipment/neck/choker-chain-thick-gold.webp', 'Gold neck-rings from the barrow floor.', 1),
   ],
   '04-varrold-strongbox': [
     coins(1000),
@@ -621,11 +621,11 @@ const TREASURE: Record<string, Loot[]> = {
   ],
   '05-chieftains-chamber': [
     art("Chieftain's Gold Torc and Grave Goods", 2400, 'icons/commodities/treasure/crown-gold-laurel-wreath.webp', 'A heavy gold torc, amber beads and bronze vessels.', 2),
-    gear(BRACERS_OF_STRENGTH, { note: "Bronze arm-rings from the Kellid chieftain's grave." }),
+    gear(BRACERS_OF_STRENGTH, { note: "Bronze arm-rings from the hill-clan chieftain's grave." }),
   ],
   '05-antiquarians-camp': [
     gear(MAJOR_HEALING_POTION, { quantity: 2 }),
-    art("Antiquarians' Sketchbooks", 300, 'icons/sundries/books/book-backed-wood-tan.webp', "Drawings of the fort and notes on the chieftain's burial chamber. Worth 300 gp to any scholar; returning them to the Academy earns +1 to the kingdom's next Culture check after Pitax falls.", 1),
+    art("Antiquarians' Sketchbooks", 300, 'icons/sundries/books/book-backed-wood-tan.webp', "Drawings of the fort and notes on the chieftain's burial chamber. Worth 300 gp to any scholar; returning them to the Academy earns +1 to the kingdom's next Culture check after the King's city falls.", 1),
   ],
   '06-grosh': [
     stock('Battle Axe', { name: "Grosh's Battle Axe", runes: WOUNDING, note: LARGE }),
@@ -635,22 +635,22 @@ const TREASURE: Record<string, Loot[]> = {
   '06-tuk': [stock('Battle Axe', { runes: WOUNDING, note: LARGE }), stock('Hatchet', { runes: RETURNING, note: LARGE })],
   '06-hobb': [stock('Battle Axe', { runes: WOUNDING, note: LARGE }), stock('Hatchet', { runes: RETURNING, note: LARGE })],
   '06-ederis-pallo': [
-    keepsake('Delivery Receipt', `${DOC}/document-sealed-red-tan.webp`, "Sealed with Irovetti's signet: proof of his arrangement with Kob Moleg. It grants a +2 circumstance bonus to one Kingdom check or Liberation activity tied to Pitaxian nobility."),
+    keepsake('Delivery Receipt', `${DOC}/document-sealed-red-tan.webp`, "Sealed with the King's signet: proof of his arrangement with the Giant Lord. It grants a +2 circumstance bonus to one Kingdom check or Liberation activity tied to the city's nobility."),
   ],
   '06-smokehouse-stores': [
     coins(500),
-    art('Silver Plate', 400, 'icons/containers/kitchenware/goblet-engraved-vines-grey.webp', 'Looted from Pitaxian caravans.', 2),
+    art('Silver Plate', 400, 'icons/containers/kitchenware/goblet-engraved-vines-grey.webp', 'Looted from royal caravans.', 2),
     material('Trade Goods', 300, 'icons/containers/boxes/crate-wooden-beige.webp', 'Bolts of cloth, spices and salt.', 4),
   ],
   '07-huntmasters-shield': [
-    gear(STEEL_SHIELD, { name: "Huntmaster's Shield", note: "It bears Irovetti's household crest. Returning it to the huntmaster's widow in Pitax after liberation earns goodwill among Pitax's old families." }),
+    gear(STEEL_SHIELD, { name: "Huntmaster's Shield", note: "It bears the King's household crest. Returning it to the huntmaster's widow in the King's city after liberation earns goodwill among the city's old families." }),
   ],
   '08-radiant-warden-active': [
-    material('Warden Core', 1500, 'icons/commodities/tech/battery-arcane-crystal-cube.webp', 'Worth 1,500 gp to Numerian buyers, or kept as a kingdom curiosity. If the hatch opened first, salvage it from the powered-down warden.', 2),
+    material('Warden Core', 1500, 'icons/commodities/tech/battery-arcane-crystal-cube.webp', 'Worth 1,500 gp to skyfall buyers, or kept as a kingdom curiosity. If the hatch opened first, salvage it from the powered-down warden.', 2),
   ],
   '08-hull-cache': [
     material('Skymetal Stock', 2000, 'icons/commodities/metal/ingot-stack-teal.webp', 'Orichalcum and adamantine bar stock.', 2),
-    gear(ARTIFICER_SPECTACLES, { note: 'Numerian lenses on a brass headband.' }),
+    gear(ARTIFICER_SPECTACLES, { note: 'Skyfall lenses on a brass headband.' }),
     gear(TRUESIGHT_POTION),
     gear(MAJOR_ELIXIR_OF_LIFE),
   ],
@@ -661,7 +661,7 @@ const TREASURE: Record<string, Loot[]> = {
     gear(STERLING_ARTISANS_TOOLKIT, { name: "The Kesks' Salvage Tools" }),
   ],
   '09-tarku': [
-    gear(SPEAR, { name: "Tarku's Spear", runes: RUNES_3_GREATER_STRIKING, note: 'Stone-tipped and wrapped in a Kellid charm, found among the bones in the hold.' }),
+    gear(SPEAR, { name: "Tarku's Spear", runes: RUNES_3_GREATER_STRIKING, note: 'Stone-tipped and wrapped in a hill-clan charm, found among the bones in the hold.' }),
   ],
   '10-varga-tess': [
     coins(900),
@@ -671,12 +671,12 @@ const TREASURE: Record<string, Loot[]> = {
     gear(MAJOR_EAGLE_EYE_ELIXIR, { note: "Taken from Varga's satchel." }),
     gear(GREATER_DAREDEVIL_BOOTS, { note: 'A trophy Sileth took from an earlier victim of the Hunt.' }),
   ],
-  '11-numerian-guthallath': [
-    material('Guthallath Core', 3500, 'icons/commodities/tech/cog-gear-steel-glass.webp', 'Standard-grade adamantine and skymetal circuitry, worth 3,500 gp to a smith or to Numerian traders. Salvaging it also grants 1 Commodity each of Ore and Luxuries.', 4),
+  '11-guthallath': [
+    material('Guthallath Core', 3500, 'icons/commodities/tech/cog-gear-steel-glass.webp', 'Standard-grade adamantine and skymetal circuitry, worth 3,500 gp to a smith or to skyfall traders. Salvaging it also grants 1 Commodity each of Ore and Luxuries.', 4),
   ],
   '11-vanes-wagon': [
     coins(2000),
-    keepsake("Vane's Notebook", 'icons/sundries/books/book-embossed-steel-brown.webp', `Holds the formula for the @UUID[Compendium.pf2e.equipment-srd.Item.${HIGHHELM_DRILL_MARK_III}]{Highhelm Drill Mark III}, a level 16 construct-driven drill.`),
+    keepsake("Vane's Notebook", 'icons/sundries/books/book-embossed-steel-brown.webp', `Holds the formula for the @UUID[Compendium.pf2e.equipment-srd.Item.${DRILL_MARK_III}]{siege drill (Mark III)}, a level 16 construct-driven drill.`),
   ],
   '12-sard': [
     material('Sard Heartwood Shard', 3000, 'icons/commodities/wood/log-cut-petrified-violet.webp', 'Works as a level 17 magic item component worth 3,000 gp.', 1),
@@ -693,28 +693,28 @@ const TREASURE: Record<string, Loot[]> = {
   ],
   '13-wren-ashby': [
     gear(COMPOSITE_LONGBOW, { name: "Wren's Bow", runes: { potency: 2, striking: 2, property: ['speed'] } }),
-    keepsake("Wren's Journal", 'icons/sundries/books/book-notes-ragged-green.webp', 'Maps two hidden trails in Thousand Voices and records a meeting with a raven-masked fey.'),
+    keepsake("Wren's Journal", 'icons/sundries/books/book-notes-ragged-green.webp', 'Maps two hidden trails in the Whispering Wood and records a meeting with a raven-masked fey.'),
     art("Troll King's Crown", 1500, 'icons/equipment/head/crown-horns-brown.webp', 'Found among the bones in the den.', 1),
   ],
   '14-speaker': [
     keepsake('Black Feather', 'icons/commodities/materials/feather-black-blue.webp', 'The Speaker gives it at Influence 7. Showing it once to any ankou prevents that ankou from attacking for one encounter.'),
   ],
-  '14-pitaxian-scouts-cloak': [
-    gems('Waxed Packet of Gems', 1200, 'icons/commodities/gems/gem-cluster-blue-white.webp', "Sewn into the lining of a Pitaxian scout's cloak."),
+  '14-royal-scouts-cloak': [
+    gems('Waxed Packet of Gems', 1200, 'icons/commodities/gems/gem-cluster-blue-white.webp', "Sewn into the lining of a royal scout's cloak."),
     scroll(REGENERATE, 7),
   ],
   '15-pippet': [
     gear(MAJOR_UNMEMORABLE_MANTLE, { note: "A mantle of rose-gold scales: Pippet's gift when her Mood reaches 10." }),
   ],
   '15-gloamsy': [
-    gear(TROUBADOURS_CAP, { note: "A jester's cap from Irovetti's court, now enchanted: Gloamsy's gift when her Mood reaches 10." }),
+    gear(TROUBADOURS_CAP, { note: "A jester's cap from the King's court, now enchanted: Gloamsy's gift when her Mood reaches 10." }),
   ],
   '15-picnic-remains': [
-    art("Irovetti's Silver Service", 1000, 'icons/containers/kitchenware/goblet-jeweled-gold-white.webp', 'Plates, goblets and cutlery engraved with his monogram.', 2),
+    art("King's Silver Service", 1000, 'icons/containers/kitchenware/goblet-jeweled-gold-white.webp', 'Plates, goblets and cutlery engraved with his monogram.', 2),
   ],
   '16-vilderavn-herald': [
     gear(FULL_PLATE, { name: "The Herald's Black Full Plate", runes: { potency: 2, resilient: 2, property: [] }, note: 'Taken only if the herald dies.' }),
-    keepsake('Black Raven Feather', 'icons/commodities/materials/feather-black-blue.webp', "The herald's token at Influence 6. Once, a creature holding it may ask the Lantern King's court a single question in Chapter 11, or it may serve as safe passage past one fey guardian loyal to the Lantern King (GM's choice)."),
+    keepsake('Black Raven Feather', 'icons/commodities/materials/feather-black-blue.webp', "The herald's token at Influence 6. Once, a creature holding it may ask the Trickster Lord's court a single question in Chapter 11, or it may serve as safe passage past one fey guardian loyal to the Trickster Lord (GM's choice)."),
   ],
   '16-zomok': [
     material('Zomok Heartwood', 3000, 'icons/commodities/wood/log-rough-petrified-white.webp', 'A crafting reagent for a primal item.', 2),
@@ -727,19 +727,19 @@ const TREASURE: Record<string, Loot[]> = {
     gear(MAJOR_HEALING_POTION),
     keepsake("Astrologer's Notebook", 'icons/sundries/books/book-eye-purple.webp', 'Records that "thunder made it shudder" (DC 38 Society or Occultism), and names three more omens the astrologer charted.'),
   ],
-  '18-fallen-pitaxian-soldier': [
+  '18-fallen-royal-soldier': [
     material("Soldiers' Gear", 800, 'icons/commodities/metal/mail-plate-steel.webp', 'Arms and armour salvaged from the fifty-two dead.', 8),
-    keepsake('Regimental Insignia', 'icons/commodities/treasure/medal-ribbon-gold-red.webp', 'Evidence of Pitaxian aggression.'),
-    keepsake("Irovetti's Orders", `${DOC}/document-official-capital.webp`, "The regiment's original orders, under Irovetti's seal: evidence of Pitaxian aggression."),
+    keepsake('Regimental Insignia', 'icons/commodities/treasure/medal-ribbon-gold-red.webp', 'Evidence of royal aggression.'),
+    keepsake("King's Orders", `${DOC}/document-official-capital.webp`, "The regiment's original orders, under the King's seal: evidence of royal aggression."),
   ],
   '18-vashkras-hoard': [
     gems('Obsidian, Silver and Gems', 9000, 'icons/commodities/gems/gem-rough-ball-purple.webp', "Vashkra's hoard.", 3),
     gear(MAJOR_OBSIDIAN_GOGGLES),
   ],
-  '19-ilthuliak-ambush': [
-    art('Horn Ornaments', 3000, 'icons/commodities/treasure/horn-carved-banded.webp', 'Banded gold she wears on her horns; her hoard stays in the First World.', 1),
+  '19-black-dragon-ambush': [
+    art('Horn Ornaments', 3000, 'icons/commodities/treasure/horn-carved-banded.webp', 'Banded gold she wears on her horns; her hoard stays in the fey realm.', 1),
   ],
-  '19-ilthuliak-roost': [
+  '19-black-dragon-roost': [
     coins(2000),
     gear(LONGSWORD, { name: 'Acid-Etched Longsword', runes: { potency: 3, striking: 2, property: ['corrosive'] }, note: 'Corroded but intact.' }),
   ],
@@ -751,7 +751,7 @@ const TREASURE: Record<string, Loot[]> = {
   '20-elder-maren': [coins(500)],
   '21-annihilator-robot': [
     keepsake('Annihilator Chain Gun', 'icons/commodities/tech/blade-mechanical-cutter.webp', 'Functions as a level 16 integrated firearm only while wired to a power source.', 2),
-    material('Stasis-Bay Power Cell', 2000, 'icons/commodities/tech/battery-fuel-cell-teal.webp', 'Worth 2,000 gp to Numerian buyers.', 2),
+    material('Stasis-Bay Power Cell', 2000, 'icons/commodities/tech/battery-fuel-cell-teal.webp', 'Worth 2,000 gp to skyfall buyers.', 2),
     material('Salvage Plating', 1500, 'icons/commodities/metal/plate-curved-brass.webp', 'Stripped from the wreck.', 4),
   ],
 };
@@ -883,11 +883,11 @@ function annihilator(id: string): Json {
         speed: { value: 50, otherSpeeds: [{ type: 'climb', value: 30 }], details: 'booster jets' },
       },
       details: {
-        blurb: 'Numerian war machine',
-        languages: { value: ['common'], details: 'antique Numerian dialect' },
+        blurb: 'Skyfall war machine',
+        languages: { value: ['common'], details: 'antique machine dialect' },
         level: { value: 18 },
         privateNotes: '',
-        publicNotes: "<p>An annihilator robot ranges out of Numeria on orders older than any living nation: burn structures, destroy growth, and collect survivors. It carries captives in four stasis bays and brings them to the docking cradle on the Iron Juggernaut's loop, where it transfers them into the Juggernaut's hold.</p>",
+        publicNotes: "<p>An annihilator robot ranges out of the Skyfall Wastes on orders older than any living nation: burn structures, destroy growth, and collect survivors. It carries captives in four stasis bays and brings them to the docking cradle on the Iron Juggernaut's loop, where it transfers them into the Juggernaut's hold.</p>",
         publication: publication('Points of Interest (conversion of the Pathfinder RPG annihilator robot)', 'OGL'),
       },
       initiative: { statistic: 'perception' },
@@ -921,7 +921,7 @@ function lament(): Json {
       },
       details: {
         description: '<p>Thousands of skulls scream their old grievances in unison.</p>',
-        disable: '<p>@Check[religion|dc:36] to recite the funeral rites of the Kellid dead (three successes required), or @Check[diplomacy|dc:39] or Kellid Lore to promise the bones their chieftain will be honoured (two successes). Destroying the skulltaker also ends the haunt.</p>',
+        disable: '<p>@Check[religion|dc:36] to recite the funeral rites of the hill-clan dead (three successes required), or @Check[diplomacy|dc:39] or Hill-Clan Lore to promise the bones their chieftain will be honoured (two successes). Destroying the skulltaker also ends the haunt.</p>',
         isComplex: true,
         level: { value: 15 },
         publication: publication('Points of Interest'),

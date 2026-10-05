@@ -12,7 +12,7 @@ A long, low metal hold lit through cracks in the hull. The floor is deep in bone
 ## Characters
 
 ### The Iron Juggernaut
-- **Portrait:** A house-sized hauler on two wide tracks, plated in dark grey adamantine scarred by ages of travel. Steam vents and laser emitters line its flanks. Two jointed manipulator arms fold against its front. A dorsal hatch sits on its back, and faded Numerian delivery glyphs cover its prow.
+- **Portrait:** A house-sized hauler on two wide tracks, plated in dark grey adamantine scarred by ages of travel. Steam vents and laser emitters line its flanks. Two jointed manipulator arms fold against its front. A dorsal hatch sits on its back, and faded skyfall delivery glyphs cover its prow.
 - **Token:** Seen from above, a long armoured hull on twin tracks, arms folded forward, hatch on top.
 
 ### Brann Kesk (starving salvager)
@@ -24,5 +24,5 @@ A long, low metal hold lit through cracks in the hull. The floor is deep in bone
 - **Token:** Kneeling, one hand raised to the wall mid-scratch.
 
 ### Tarku (remains)
-- **Portrait:** A Kellid skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.
+- **Portrait:** A hill-clan skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.
 - **Token:** A seated skeleton with a spear across its knees.

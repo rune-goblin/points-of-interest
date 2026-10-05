@@ -4,7 +4,7 @@
 A ring of five dead trees drawn in grey ink, each with a hooded cloak hanging from its branches. One cloak is filled in solid black. Beneath, in a shaky hand: "they watched me. they let me leave." The note has no date.
 
 ## Tactical map
-A round clearing of grey moss in a dead forest. Five huge dead trees form a ring, their branches hung with dozens of empty grey cloaks. A stone table stands at the centre with a single untouched place setting: plate, goblet and knife. At the head of the table stands a carved chair draped in black silk. A badge of Pitax is pinned to one of the hanging cloaks. Dim light filters through the dead branches.
+A round clearing of grey moss in a dead forest. Five huge dead trees form a ring, their branches hung with dozens of empty grey cloaks. A stone table stands at the centre with a single untouched place setting: plate, goblet and knife. At the head of the table stands a carved chair draped in black silk. A royal badge is pinned to one of the hanging cloaks. Dim light filters through the dead branches.
 
 ## Characters
 

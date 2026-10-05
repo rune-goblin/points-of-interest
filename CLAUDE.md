@@ -1,7 +1,7 @@
 # points-of-interest — project rules
 
-A Foundry VTT **Pathfinder 2e** content module for Kingmaker, Chapter 8 onward: the points of
-interest Irovetti marked on his map of the western Stolen Lands. Each site gets a journal page,
+A Foundry VTT **Pathfinder 2e** content module for a kingdom campaign at party level 16 and up: the points of
+interest the King marked on his map of the western borderlands. Each site gets a journal page,
 a scene, actors and art. Built from the Rune Goblin module template (TypeScript + Vite esmodule,
 compendium packs from `packs/_source/`).
 
@@ -10,10 +10,10 @@ compendium packs from `packs/_source/`).
 - `docs/encounters.md` — **canonical encounter text.** `npm run build` regenerates the journal
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
-  One journal, "Irovetti's Map", holds the overview and every site in a category per zone: each site's
-  encounter page (level 1), then its "Irovetti's Note" handout image page (level 2).
-- Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the Kingmaker
-  Stolen Lands region map (the key the `pf2e-kingmaker` hex HUD shows). The build copies it into the
+  One journal, "Points of Interest", holds the overview and every site in a category per zone: each site's
+  encounter page (level 1), then its "The King's Note" handout image page (level 2).
+- Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the
+  `pf2e-kingmaker` region map (the key its hex HUD shows). The build copies it into the
   site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.
 - Every generated id comes from `scripts/stable-id.ts` (`ids.journal`, `ids.actor`, `ids.scene`, …),
   so the packs link to each other without a lookup table. Scenes and actors carry
@@ -90,6 +90,13 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 
 ## Hard rules (override defaults)
 
+- **No setting proper nouns.** Paizo reserves every person, place, faction, deity and event name
+  from its Pathfinder setting; none may appear in content, file names or slugs. Use the established
+  stand-ins: the King, the King's city and "royal", the Fey Queen, the Trickster Lord, the elder fey,
+  the fey realm, the borderlands, the Skyfall and the Skyfall Wastes ("skyfall"), the salvage towns,
+  hill-clan, horse-clan, the Giant Lord, the Wyvern Queen, the black dragon. Book titles appear only
+  as source credits; the `pf2e-kingmaker` module id stays where code and setup need it. Names this
+  project invented stay, and so does the Wild Hunt, which is older folklore.
 - **v14 only, no v1 APIs.** Everything under `foundry.*`. Never `foundry.appv1`, bare
   `Application` / `FormApplication` / `Dialog`, or bare `mergeObject` / `duplicate` /
   `getProperty`. Windows are ApplicationV2; dialogs DialogV2; structured data is
@@ -165,12 +172,12 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 ## Status and next steps
 
 - Done: module scaffold, art in `assets/`, encounter docs, generated journal pack, scenes pack
-  (22, every token at its starting spot from the encounter text, loot where it lies; no walls/lights), Adventure `irovettis-map`, actors pack (102, including 2 hazards, 8 loot remains and 16 treasure caches; one folder per encounter),
+  (22, every token at its starting spot from the encounter text, loot where it lies; no walls/lights), Adventure pack `adventure`, actors pack (102, including 2 hazards, 8 loot remains and 16 treasure caches; one folder per encounter),
   macros pack (hand-authored `packs/_source/macros/`, ids from `ids.macro`; the Adventure bundles it too).
-- Map notes: a GM runs the "Place Irovetti's Map Notes" macro, which calls
+- Map notes: a GM runs the "Place the King's Map Notes" macro, which calls
   `game.modules.get('points-of-interest').api.placeMapNotes(scene?)`. It targets the given scene, else
   the viewed region map, else the world's only one (several and none viewed → asks the GM to view one).
-  It imports or refreshes the journal into an "Irovetti's Map" world folder (same ids as the pack),
+  It imports or refreshes the journal into a "Points of Interest" world folder (same ids as the pack),
   deletes the per-site entries v0.2.0 made, adds the `scene` note to world copies of the module scenes
   that lack it (refreshing the link of one already there), then creates or moves one note per site (318 px icon, one hex tall,
   linked to the site's encounter page, flagged `site`). Re-run it after journal edits.
@@ -183,7 +190,7 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   players open an image page straight from its pin.
 - Next: check the actor sheets, scene grids and token placement in a live world, trace walls and lights.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;
-  its stat block lives in `docs/encounters.md`. #9 uses the Kingmaker Elite Numerian Adamantine Golem.
+  its stat block lives in `docs/encounters.md`. #9 uses the elite adamantine golem from the system's Kingmaker bestiary.
 - Art is stored in **Git LFS** (`assets/**` in `.gitattributes`); `release.yml` checks out with
   `lfs: true` so the zip ships the real files. Tactical maps are lossy WebP at quality 75
   (`cwebp -q 75 -m 6`); convert new maps the same way before adding them.

@@ -46,7 +46,7 @@ Source: [05-the-ossuary-wall.md](../05-the-ossuary-wall.md)
 
 ### Tactical map
 
-A wooded hollow closed on the north by a granite cliff with a narrow switchback path climbing to a rock pile on top. In the centre, a large fire pit ringed with stones, a spit across it. Around the fire stand timber smoking racks hung with split carcasses. A sod-roofed smokehouse sits to the east, smoke leaking from its door and roof. Against the cliff stand three log cages, one holding a man in a torn clerk's coat, one a wiry scavenger, one a Kellid rider. Scattered barrels of salt, a chopping block with a cleaver buried in it, piled bones, and a broken prisoner wagon with a Pitaxian crest at the southern edge where the trail enters the hollow.
+A wooded hollow closed on the north by a granite cliff with a narrow switchback path climbing to a rock pile on top. In the centre, a large fire pit ringed with stones, a spit across it. Around the fire stand timber smoking racks hung with split carcasses. A sod-roofed smokehouse sits to the east, smoke leaking from its door and roof. Against the cliff stand three log cages, one holding a man in a torn clerk's coat, one a wiry scavenger, one a hill-clan rider. Scattered barrels of salt, a chopping block with a cleaver buried in it, piled bones, and a broken prisoner wagon with a royal crest at the southern edge where the trail enters the hollow.
 
 Source: [06-the-larder.md](../06-the-larder.md)
 
@@ -62,7 +62,7 @@ Source: [07-the-wyvern-queens-hunting-ground.md](../07-the-wyvern-queens-hunting
 
 ### Tactical map
 
-A grassy hillside with a huge wedge of silvery hull buried at a steep angle, its seams glowing with pale light and a round sealed hatch on its exposed flank. In front of the hull, a wide ring of glassy, scorched earth. Three tall metal pylons with lens heads stand in an arc inside the ring. Within the ring lie skeletons in Pitaxian livery, a dropped crowbar, a broken lantern and a pack spilling tools. At the edge of the ring, a large brass-and-glass device of nested rings and lenses stands motionless. Long grass and scattered boulders surround the scorched area.
+A grassy hillside with a huge wedge of silvery hull buried at a steep angle, its seams glowing with pale light and a round sealed hatch on its exposed flank. In front of the hull, a wide ring of glassy, scorched earth. Three tall metal pylons with lens heads stand in an arc inside the ring. Within the ring lie skeletons in royal livery, a dropped crowbar, a broken lantern and a pack spilling tools. At the edge of the ring, a large brass-and-glass device of nested rings and lenses stands motionless. Long grass and scattered boulders surround the scorched area.
 
 Source: [08-the-lightwardens.md](../08-the-lightwardens.md)
 
@@ -82,7 +82,7 @@ Source: [09-the-iron-juggernaut.md](../09-the-iron-juggernaut.md)
 
 ### Tactical map
 
-A shallow crater with sloping sides. At its bottom lies a blackened, split-open metal escape pod. Green threads run from the pod's ribs to stakes around the crater floor, strung with antlers, skulls and a torn Pitaxian cloak. Patches of fused glass shine across the crater floor. Low fog pools in the deepest parts. A skeleton in leather armour lies inside the pod beside a satchel. Grassland and scattered rocks surround the rim.
+A shallow crater with sloping sides. At its bottom lies a blackened, split-open metal escape pod. Green threads run from the pod's ribs to stakes around the crater floor, strung with antlers, skulls and a torn royal cloak. Patches of fused glass shine across the crater floor. Low fog pools in the deepest parts. A skeleton in leather armour lies inside the pod beside a satchel. Grassland and scattered rocks surround the rim.
 
 Source: [10-the-scouts-wager.md](../10-the-scouts-wager.md)
 
@@ -98,7 +98,7 @@ Source: [11-the-unmaker.md](../11-the-unmaker.md)
 
 ### Tactical map
 
-A forest clearing on a slope. The upper half is rows of charred stumps where trees were felled in neat lines. In the middle sits a half-burned logging camp: collapsed canvas tents, a rectangular sawpit, a cart heaped with split logs parked on the slope, and a foreman's tent with a half-buried iron strongbox beside it. At the centre of the camp stands an enormous blackened tree with glowing cracks in its bark and roots splayed across the ground. Scorch marks radiate through the soil around it. The living forest wall of Thousand Voices rises along the bottom edge.
+A forest clearing on a slope. The upper half is rows of charred stumps where trees were felled in neat lines. In the middle sits a half-burned logging camp: collapsed canvas tents, a rectangular sawpit, a cart heaped with split logs parked on the slope, and a foreman's tent with a half-buried iron strongbox beside it. At the centre of the camp stands an enormous blackened tree with glowing cracks in its bark and roots splayed across the ground. Scorch marks radiate through the soil around it. The living forest wall of the Whispering Wood rises along the bottom edge.
 
 Source: [12-the-storm-tree.md](../12-the-storm-tree.md)
 
@@ -114,7 +114,7 @@ Source: [13-the-quilled-hunter.md](../13-the-quilled-hunter.md)
 
 ### Tactical map
 
-A round clearing of grey moss in a dead forest. Five huge dead trees form a ring, their branches hung with dozens of empty grey cloaks. A stone table stands at the centre with a single untouched place setting: plate, goblet and knife. At the head of the table stands a carved chair draped in black silk. A badge of Pitax is pinned to one of the hanging cloaks. Dim light filters through the dead branches.
+A round clearing of grey moss in a dead forest. Five huge dead trees form a ring, their branches hung with dozens of empty grey cloaks. A stone table stands at the centre with a single untouched place setting: plate, goblet and knife. At the head of the table stands a carved chair draped in black silk. A royal badge is pinned to one of the hanging cloaks. Dim light filters through the dead branches.
 
 Source: [14-the-shadow-court.md](../14-the-shadow-court.md)
 
@@ -126,13 +126,13 @@ A round grove divided into four quarters by season. Spring has blossoming trees 
 
 Source: [15-the-moody-brood.md](../15-the-moody-brood.md)
 
-## 16. The Lantern King's Emissary
+## 16. The Trickster's Emissary
 
 ### Tactical map
 
 A round clearing in old-growth forest, floored with moss and fallen leaves. Seven standing stones, moss-covered and lichen-streaked, ring the clearing. An eighth stone lies toppled outside the ring, its face carved with a lantern-bearing figure and kneeling worshippers. Huge tree trunks crowd the edge of the clearing, their roots buckling the ground. Shafts of light fall through gaps in the canopy onto the centre, where a large patch of crushed moss marks where the zomok lands.
 
-Source: [16-the-lantern-kings-emissary.md](../16-the-lantern-kings-emissary.md)
+Source: [16-the-tricksters-emissary.md](../16-the-tricksters-emissary.md)
 
 ## 17. Spore-Dawn
 
@@ -146,7 +146,7 @@ Source: [17-spore-dawn.md](../17-spore-dawn.md)
 
 ### Tactical map
 
-A high mountain pass of grey scree between two cliff faces. A broad avalanche chute runs down one side, choked with boulders. Near the head of the pass, a crack in the mountainside glows with molten rock, and steam rises from it. Drifts of bones in rusted green-and-gold Pitaxian armour lie heaped against the rocks along the trail. The pass narrows to two tight points where the cliffs close in.
+A high mountain pass of grey scree between two cliff faces. A broad avalanche chute runs down one side, choked with boulders. Near the head of the pass, a crack in the mountainside glows with molten rock, and steam rises from it. Drifts of bones in rusted green-and-gold royal armour lie heaped against the rocks along the trail. The pass narrows to two tight points where the cliffs close in.
 
 Source: [18-the-linnorms-pass.md](../18-the-linnorms-pass.md)
 
@@ -170,6 +170,6 @@ Source: [20-the-burning-giant.md](../20-the-burning-giant.md)
 
 ### Tactical map
 
-A hillside farm on the Numerian border. A stone farmhouse with a root-cellar door at its back. A wooden barn burning. A goat pasture ringed by a dry-stone wall, goats scattering. A well, a woodpile and an overturned cart in the yard. A track runs east over the hill toward Numeria, with smoke rising from other burned steadings on the horizon.
+A hillside farm on the Skyfall border. A stone farmhouse with a root-cellar door at its back. A wooden barn burning. A goat pasture ringed by a dry-stone wall, goats scattering. A well, a woodpile and an overturned cart in the yard. A track runs east over the hill toward the Skyfall Wastes, with smoke rising from other burned steadings on the horizon.
 
 Source: [21-the-annihilator.md](../21-the-annihilator.md)

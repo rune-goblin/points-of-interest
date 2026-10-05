@@ -55,7 +55,7 @@ const MAPS: Record<string, MapMeta> = {
   '13-quilled-hunter': { grid: 80, why: 'canyon floor 15 to 80 ft wide', environments: ['forest'], tint: { hue: 120 / 360, intensity: 0.2 } },
   '14-shadow-court': { grid: 120, why: 'stone table about 15 ft, grove about 80 ft across', environments: ['forest'], darkness: 0.5 },
   '15-moody-brood': { grid: 120, why: 'picnic table about 15 ft', environments: ['forest'] },
-  '16-lantern-kings-emissary': { grid: 120, why: 'stone ring about 45 ft, wide enough for a Gargantuan zomok', environments: ['forest'] },
+  '16-tricksters-emissary': { grid: 120, why: 'stone ring about 45 ft, wide enough for a Gargantuan zomok', environments: ['forest'] },
   '17-spore-dawn': { grid: 96, why: 'sinkhole about 100 ft across, the width of the spore', environments: ['forest'], tint: { hue: 0, intensity: 0, saturation: -0.5 } },
   '18-linnorms-pass': { grid: 72, why: 'the two narrows about 15 ft', environments: ['mountain'] },
   '19-shadow-on-the-peaks': { grid: 80, why: 'summit about 80 ft across, trail about 5 ft', environments: ['mountain', 'swamp'] },
@@ -97,7 +97,7 @@ const ACTORS_DIR = join(ROOT, 'packs', '_source', 'actors');
 /** Tokens for later states, optional extras and unnoticed hazards start hidden from players, as do treasure caches. */
 const HIDDEN = new Set([
   '01-ankou-shadow-double-first', '01-ankou-shadow-double-second', '05-skeletal-champion', '05-lament-of-the-wall',
-  '07-minognos-ushad-diving', '08-radiant-warden-active', '14-spared-ankou', '19-ilthuliak-ambush',
+  '07-wyvern-queen-diving', '08-radiant-warden-active', '14-spared-ankou', '19-black-dragon-ambush',
 ]);
 const COPIES: Record<string, number> = { '08-defence-pylon': 3 };
 /** Scenes that hold only part of their encounter's cast; every other scene takes the whole encounter. */

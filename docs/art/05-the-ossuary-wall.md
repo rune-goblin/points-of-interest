@@ -29,5 +29,5 @@ A hilltop ruin on a windswept ridge. An outer ring of tumbled grey stone surroun
 - **Token:** Not needed; voice portrait only.
 
 ### Skeletal Champion (risen victim, optional)
-- **Portrait:** A skeleton in mixed Kellid and Academy remnants, bone shards orbiting its skull, wielding a rusted Kellid axe.
+- **Portrait:** A skeleton in mixed hill-clan and Academy remnants, bone shards orbiting its skull, wielding a rusted hill-clan axe.
 - **Token:** Striding forward, axe raised, shards trailing behind.

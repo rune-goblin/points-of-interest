@@ -60,8 +60,8 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "l0xP2YuSX8OvBdl7",
-      "_key": "!actors.items!UPfDMH5xrS5v1PH9.l0xP2YuSX8OvBdl7"
+      "_id": "FXALCwWQrchYHNS0",
+      "_key": "!actors.items!eFasidYJHXNA1ysn.FXALCwWQrchYHNS0"
     },
     {
       "name": "Regimental Insignia",
@@ -77,7 +77,7 @@
         },
         "containerId": null,
         "description": {
-          "value": "<p>Evidence of Pitaxian aggression.</p>"
+          "value": "<p>Evidence of royal aggression.</p>"
         },
         "hardness": 0,
         "hp": {
@@ -122,11 +122,11 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "GI3wfA5sjHSzyR1R",
-      "_key": "!actors.items!UPfDMH5xrS5v1PH9.GI3wfA5sjHSzyR1R"
+      "_id": "whdZ7hl9uL0ikFpn",
+      "_key": "!actors.items!eFasidYJHXNA1ysn.whdZ7hl9uL0ikFpn"
     },
     {
-      "name": "Irovetti's Orders",
+      "name": "King's Orders",
       "type": "equipment",
       "img": "icons/sundries/documents/document-official-capital.webp",
       "system": {
@@ -139,7 +139,7 @@
         },
         "containerId": null,
         "description": {
-          "value": "<p>The regiment's original orders, under Irovetti's seal: evidence of Pitaxian aggression.</p>"
+          "value": "<p>The regiment's original orders, under the King's seal: evidence of royal aggression.</p>"
         },
         "hardness": 0,
         "hp": {
@@ -184,13 +184,13 @@
         "systemVersion": "8.5.1",
         "compendiumSource": null
       },
-      "_id": "cpOwbWiXH4Ajtq8K",
-      "_key": "!actors.items!UPfDMH5xrS5v1PH9.cpOwbWiXH4Ajtq8K"
+      "_id": "cK5mhivbsTj3J7hV",
+      "_key": "!actors.items!eFasidYJHXNA1ysn.cK5mhivbsTj3J7hV"
     }
   ],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.</p>\n<section class=\"secret\" id=\"secret-1cxRcx1dzIL5I6L3\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.2bl199Js092nPA7G]{18. The Linnorm's Pass}.</strong> One of fifty-two Pitaxian soldiers in the pass. Their regimental insignia and Irovetti's orders are evidence of Pitaxian aggression; their gear yields 800 gp.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.</p>\n<section class=\"secret\" id=\"secret-crC75wpC8zwG8jWh\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.2bl199Js092nPA7G]{18. The Linnorm's Pass}.</strong> One of fifty-two royal soldiers in the pass. Their regimental insignia and the King's orders are evidence of royal aggression; their gear yields 800 gp.</p>\n</section>",
       "level": {
         "value": 0
       }
@@ -208,18 +208,18 @@
     "systemVersion": "8.5.1",
     "compendiumSource": null
   },
-  "_id": "UPfDMH5xrS5v1PH9",
-  "_key": "!actors!UPfDMH5xrS5v1PH9",
-  "name": "Fallen Pitaxian Soldier",
-  "img": "modules/points-of-interest/assets/portraits/18-fallen-pitaxian-soldier.webp",
+  "_id": "eFasidYJHXNA1ysn",
+  "_key": "!actors!eFasidYJHXNA1ysn",
+  "name": "Fallen Royal Soldier",
+  "img": "modules/points-of-interest/assets/portraits/18-fallen-royal-soldier.webp",
   "prototypeToken": {
-    "name": "Fallen Pitaxian Soldier",
+    "name": "Fallen Royal Soldier",
     "actorLink": false,
     "disposition": 0,
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/points-of-interest/assets/tokens/18-fallen-pitaxian-soldier.webp",
+      "src": "modules/points-of-interest/assets/tokens/18-fallen-royal-soldier.webp",
       "scaleX": 1,
       "scaleY": 1
     },
@@ -241,7 +241,7 @@
   "flags": {
     "points-of-interest": {
       "encounter": 18,
-      "slug": "18-fallen-pitaxian-soldier",
+      "slug": "18-fallen-royal-soldier",
       "kind": "remains"
     }
   },

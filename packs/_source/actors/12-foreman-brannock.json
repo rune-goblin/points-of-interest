@@ -98,7 +98,7 @@
   ],
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A broad-shouldered, red-bearded woodcutter in a Pitaxian work tabard, axe on his shoulder, as he looked in life. This portrait appears in the ledger as a sketch by one of his crew.</p>\n<section class=\"secret\" id=\"secret-ThuqPASmwindnzXz\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.DI1nblGxCdYa2okA]{12. The Storm Tree}.</strong> Foreman of the logging crew the sard killed. His body lies beside the strongbox holding his ledger and 1,800 gp of wages.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A broad-shouldered, red-bearded woodcutter in a royal work tabard, axe on his shoulder, as he looked in life. This portrait appears in the ledger as a sketch by one of his crew.</p>\n<section class=\"secret\" id=\"secret-ThuqPASmwindnzXz\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.DI1nblGxCdYa2okA]{12. The Storm Tree}.</strong> Foreman of the logging crew the sard killed. His body lies beside the strongbox holding his ledger and 1,800 gp of wages.</p>\n</section>",
       "level": {
         "value": 0
       }

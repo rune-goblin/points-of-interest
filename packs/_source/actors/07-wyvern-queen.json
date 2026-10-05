@@ -1,6 +1,6 @@
 {
-  "_id": "rmgU6F2RnT5w85Ug",
-  "img": "modules/points-of-interest/assets/portraits/07-minognos-ushad.webp",
+  "_id": "hJ72NoJINkXDIRBy",
+  "img": "modules/points-of-interest/assets/portraits/07-wyvern-queen.webp",
   "items": [
     {
       "_id": "s5DYWIxSytUTy1x2",
@@ -55,7 +55,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.s5DYWIxSytUTy1x2"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.s5DYWIxSytUTy1x2"
     },
     {
       "_id": "Ptn3Zb1Syk7YdL4y",
@@ -112,7 +112,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.Ptn3Zb1Syk7YdL4y"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.Ptn3Zb1Syk7YdL4y"
     },
     {
       "_id": "SPTwJf1wzeADk4sn",
@@ -170,7 +170,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.SPTwJf1wzeADk4sn"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.SPTwJf1wzeADk4sn"
     },
     {
       "_id": "sHRh4SLqM1rBlpHb",
@@ -212,7 +212,7 @@
       },
       "type": "action",
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.sHRh4SLqM1rBlpHb"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.sHRh4SLqM1rBlpHb"
     },
     {
       "_id": "R8f6nx9jMnFB03qP",
@@ -254,7 +254,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.R8f6nx9jMnFB03qP"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.R8f6nx9jMnFB03qP"
     },
     {
       "_id": "KUcCUd82J1JqXWE5",
@@ -299,7 +299,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.KUcCUd82J1JqXWE5"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.KUcCUd82J1JqXWE5"
     },
     {
       "_id": "kq0boAEZsA01NsEH",
@@ -343,7 +343,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.kq0boAEZsA01NsEH"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.kq0boAEZsA01NsEH"
     },
     {
       "_id": "2ECIwvcXVQ6w8vi5",
@@ -401,7 +401,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.2ECIwvcXVQ6w8vi5"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.2ECIwvcXVQ6w8vi5"
     },
     {
       "_id": "Mj7eIolH2KmKRos4",
@@ -445,7 +445,7 @@
         "compendiumSource": null
       },
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.Mj7eIolH2KmKRos4"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.Mj7eIolH2KmKRos4"
     },
     {
       "_id": "EwwHk83vJUlZ0cbV",
@@ -487,10 +487,10 @@
       },
       "type": "action",
       "effects": [],
-      "_key": "!actors.items!rmgU6F2RnT5w85Ug.EwwHk83vJUlZ0cbV"
+      "_key": "!actors.items!hJ72NoJINkXDIRBy.EwwHk83vJUlZ0cbV"
     }
   ],
-  "name": "Minognos-Ushad",
+  "name": "The Wyvern Queen",
   "system": {
     "abilities": {
       "cha": {
@@ -639,15 +639,15 @@
     "compendiumSource": "Compendium.pf2e.kingmaker-bestiary.Actor.SjU0oB6pOk0XY8VN"
   },
   "effects": [],
-  "_key": "!actors!rmgU6F2RnT5w85Ug",
+  "_key": "!actors!hJ72NoJINkXDIRBy",
   "prototypeToken": {
-    "name": "Minognos-Ushad",
+    "name": "The Wyvern Queen",
     "actorLink": true,
     "disposition": -1,
     "width": 3,
     "height": 3,
     "texture": {
-      "src": "modules/points-of-interest/assets/tokens/07-minognos-ushad.webp",
+      "src": "modules/points-of-interest/assets/tokens/07-wyvern-queen.webp",
       "scaleX": 1,
       "scaleY": 1
     },
@@ -669,7 +669,7 @@
   "flags": {
     "points-of-interest": {
       "encounter": 7,
-      "slug": "07-minognos-ushad",
+      "slug": "07-wyvern-queen",
       "kind": "creature"
     }
   }

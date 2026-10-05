@@ -21,5 +21,5 @@ A grey-green peat moor dotted with cairns and dark bog pools. A long barrow moun
 - **Token:** Not needed separately; used as a speaking portrait only.
 
 ### Ser Halward Toll (dead envoy)
-- **Portrait:** In life: a polished Pitaxian courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.
+- **Portrait:** In life: a polished royal courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.
 - **Token:** A head on a stake with a satchel hanging beneath.
