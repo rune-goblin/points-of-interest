@@ -1,7 +1,7 @@
+import { adventureContent } from './adventure';
 import { MODULE_ID } from './constants';
 
-const JOURNAL_PACK = `${MODULE_ID}.journals`;
-const SCENE_PACK = `${MODULE_ID}.scenes`;
+type Source = Record<string, any>;
 const REGION_HEX_SIZE = 275;
 // A pointy-top hex's grid size is its flat-to-flat width. The icon spans the hex point to point, so
 // the scrim scripts/build-map-icons.ts bakes into each icon covers the whole hex.
@@ -53,14 +53,9 @@ async function journalFolder(): Promise<Folder> {
   return created as Folder;
 }
 
-// The world copy keeps the compendium ids, so links between pages can point at the world copy.
-function toWorld(source: JournalEntry): JournalEntry['_source'] {
-  const data = game.journal.fromCompendium(source, { keepId: true, clearSort: false, clearOwnership: false });
-  const compendiumRef = `Compendium.${JOURNAL_PACK}.JournalEntry.`;
-  for (const page of data.pages) {
-    if (page.text?.content) page.text.content = page.text.content.replaceAll(compendiumRef, 'JournalEntry.');
-  }
-  return data;
+// The Adventure's pages already link the world journal; the world copy keeps its ids so those links hold.
+function toWorld(source: Source): JournalEntry['_source'] {
+  return game.journal.fromCompendium(source as JournalEntry['_source'], { keepId: true, clearSort: false, clearOwnership: false });
 }
 
 async function upsertEmbedded(
@@ -77,17 +72,16 @@ async function upsertEmbedded(
 }
 
 /**
- * Create the Points of Interest journal from the pack, or refresh the text, images, categories and flags
- * of the world copy. A new copy keeps the pack's ownership (Limited, so players see the map notes but
+ * Create the Points of Interest journal from the Adventure, or refresh the text, images, categories and flags
+ * of the world copy. A new copy keeps the Adventure's ownership (Limited, so players see the map notes but
  * can't read a page); an existing copy keeps whatever ownership and folder the GM gave it. Entries
  * left from the one-entry-per-site layout are deleted.
  */
 export async function importJournal(): Promise<JournalEntry> {
-  const pack = game.packs.get(JOURNAL_PACK);
-  const [source] = ((await pack?.getDocuments()) ?? []) as JournalEntry[];
+  const [source] = (await adventureContent())?.journal ?? [];
   if (!source) throw new Error(t('NoPack'));
   const data = toWorld(source);
-  let journal = game.journal.get(source.id);
+  let journal = game.journal.get(source._id);
   if (journal) {
     await upsertEmbedded(journal, 'JournalEntryCategory', data.categories);
     await upsertEmbedded(journal, 'JournalEntryPage', data.pages);
@@ -107,23 +101,21 @@ export async function importJournal(): Promise<JournalEntry> {
 const isSceneNote = (note: NoteDocument<Scene | null>): boolean => !!note.getFlag(MODULE_ID, 'scene');
 
 /**
- * Give each world copy of a module scene the journal note its pack version carries, and refresh the
+ * Give each world copy of a module scene the journal note its Adventure version carries, and refresh the
  * link and label of one already there. The GM's placement of an existing note stays.
  */
 async function syncSceneNotes(): Promise<number> {
-  const pack = game.packs.get(SCENE_PACK);
-  const ids = game.scenes.map((s) => s.id).filter((id) => pack?.index.has(id));
-  const sources = ((await pack?.getDocuments({ _id__in: ids })) ?? []) as Scene[];
+  const sources = (await adventureContent())?.scenes ?? [];
   let created = 0;
   for (const source of sources) {
-    const scene = game.scenes.get(source.id);
-    const note = source.notes.find(isSceneNote);
+    const scene = game.scenes.get(source._id);
+    const note = (source.notes as Source[]).find((n) => !!n.flags?.[MODULE_ID]?.scene);
     if (!scene || !note) continue;
     const existing = scene.notes.find(isSceneNote);
     if (existing) {
       await existing.update({ entryId: note.entryId, pageId: note.pageId, text: note.text });
     } else {
-      await scene.createEmbeddedDocuments('Note', [note.toObject()]);
+      await scene.createEmbeddedDocuments('Note', [note]);
       created++;
     }
   }

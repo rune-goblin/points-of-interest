@@ -4,23 +4,25 @@ A Pathfinder 2e Foundry VTT module for a kingdom-building campaign at **party le
 
 ## Contents
 
+The module ships one compendium entry, the **Points of Interest** Adventure. It holds the following.
+
 - **Journal: Points of Interest** holds an overview with assumptions and a running order, then a page per site, grouped by zone. Each site page shows a preview of its scene and the tokens of the creatures on it. Click a preview to view the scene; a GM's first click imports it with its actors. Click a token to open the actor, or drag it onto a scene. The King's note follows each site page as a handout image page.
-- **Adventure: Points of Interest** bundles the journals, scenes and actors for a one-click import that keeps every id, so placed tokens and links resolve. The GM is prompted to import it once.
+- **Import:** one click brings in the journal, scenes, actors and macro under their own ids, so placed tokens and links resolve. The GM is prompted to import it once. A scene card, a journal token link or the map-notes macro brings in any piece the world lacks, straight from the Adventure.
 - **Scenes:** one per tactical map, 22 in all (#9 adds the Juggernaut's cargo hold), filed by zone. Each sets a grid sized to the art, links to its encounter page and has its actors placed in a block at the centre for the GM to reposition. A journal note in the map's top-left corner opens the site's page; only the GM sees it. Later states and optional extras start hidden. They carry no walls or lights yet.
-- **Macro: Place the King's Map Notes** pins all 21 sites to their hexes on the region map from the `pf2e-kingmaker` module, each with its map-note sketch as the icon and linked to the site's page in the Points of Interest journal. Players see the pins and site names but can't open the pages. The macro uses the region map you are viewing, or the world's only one, and imports the journal first. It adds the corner journal note to any copy of the module's scenes already in the world and deletes the one-entry-per-site journals that version 0.2.0 created. Running it again moves the pins back to their hexes and creates no duplicates. It ships in the Macros compendium and arrives with the Adventure.
-- **Actors:** every creature and NPC with art, 86 in one folder per encounter. Combatants use PF2e system stat blocks (Kingmaker Bestiary, Monster Core, Bestiary 2 and others), with elite adjustments where the encounter calls for them. Noncombatants use NPC Core stat blocks, remains are loot actors, and the annihilator robot and two hazards are built from `docs/encounters.md`. The pack ships each actor's name, art and notes with a recipe; the module builds the stat block from your installed PF2e system when the actor enters a world, by Adventure import, scene card, journal link or drag. A GM never runs anything for it. After a module update that changes an actor, the module offers to rebuild that world's copies.
+- **Macro: Place the King's Map Notes** pins all 21 sites to their hexes on the region map from the `pf2e-kingmaker` module, each with its map-note sketch as the icon and linked to the site's page in the Points of Interest journal. Players see the pins and site names but can't open the pages. The macro uses the region map you are viewing, or the world's only one, and imports the journal first. It adds the corner journal note to any copy of the module's scenes already in the world and deletes the one-entry-per-site journals that version 0.2.0 created. Running it again moves the pins back to their hexes and creates no duplicates. It arrives with the Adventure.
+- **Actors:** every creature and NPC with art, 86 in one folder per encounter. Combatants use PF2e system stat blocks (Kingmaker Bestiary, Monster Core, Bestiary 2 and others), with elite adjustments where the encounter calls for them. Noncombatants use NPC Core stat blocks, remains are loot actors, and the annihilator robot and two hazards are built from `docs/encounters.md`. The Adventure ships each actor's name, art and notes with a recipe; the module builds the stat block from your installed PF2e system when the actor enters a world, by Adventure import, scene card, journal link or drag. A GM never runs anything for it. After a module update that changes an actor, the module offers to rebuild that world's copies.
 
 ## Layout
 
 | Path | Contents |
 |---|---|
-| `docs/encounters.md` | Canonical encounter text; the journal pack builds from it |
+| `docs/encounters.md` | Canonical encounter text; the journal builds from it |
 | `docs/art/` | Art briefs per encounter, plus `by-type/` views |
 | `docs/pitches.md` | Original encounter pitches |
 | `assets/map-notes/` | The King's map notes |
 | `assets/maps/` | Tactical maps |
 | `assets/portraits/`, `assets/tokens/` | Character art; a portrait and its token share a file name |
-| `packs/_source/` | Compendium JSON sources (journals and scenes are generated) |
+| `packs/_source/` | Per-type JSON sources the Adventure is built from (journals and scenes are generated) |
 | `scripts/build-journal.ts` | Markdown-to-journal generator |
 | `scripts/build-scenes.ts` | Scene generator; grid sizes per map live in its table |
 | `scripts/build-actors.ts` | Actor generator; reads an installed PF2e system, output committed |
@@ -53,7 +55,7 @@ cwebp -q 75 -m 6 input.png -o assets/maps/NN-name.webp
 
 ## License
 
-MIT for code. All art in `assets/` is original to this project. The actors pack ships no PF2e content: the module loads creature statistics from the PF2e system installed in your Foundry.
+MIT for code. All art in `assets/` is original to this project. The Adventure ships no PF2e content: the module loads creature statistics from the PF2e system installed in your Foundry.
 
 ## Community Use
 

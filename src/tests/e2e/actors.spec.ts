@@ -1,7 +1,13 @@
 import { expect } from '@playwright/test';
 import { MODULE_ID, test } from './fixtures/foundry-clients';
 
-const PACK = `${MODULE_ID}.actors`;
+// Creates a world actor from the Adventure's stub under a new id, as a copy or duplicate would.
+async function createFromStub({ slug, name }: { slug: string; name: string }): Promise<string> {
+  const [adventure] = await game.packs.get('points-of-interest.adventure').getDocuments();
+  const stub = adventure.toObject().actors.find((a: any) => a.flags['points-of-interest'].slug === slug);
+  const { _id, ...data } = stub;
+  return (await (window as any).Actor.create({ ...data, name })).id as string;
+}
 
 test.describe('actor hydration', () => {
   test.afterEach(async ({ gmPage }) => {
@@ -11,14 +17,8 @@ test.describe('actor hydration', () => {
     });
   });
 
-  test('hydrates a stub dragged in from the pack, with its elite adjustment', async ({ gmPage }) => {
-    const id = await gmPage.evaluate(async (pack) => {
-      const index = await game.packs.get(pack).getIndex({ fields: ['flags.points-of-interest.slug'] });
-      const entry = index.find((e: any) => e.flags?.['points-of-interest']?.slug === '04-matriarch-gorm');
-      const doc = await game.packs.get(pack).getDocument(entry._id);
-      const actor = await (window as any).Actor.create({ ...game.actors.fromCompendium(doc), name: '__e2e_Gorm' });
-      return actor.id as string;
-    }, PACK);
+  test('hydrates a stub created in the world, with its elite adjustment', async ({ gmPage }) => {
+    const id = await gmPage.evaluate(createFromStub, { slug: '04-matriarch-gorm', name: '__e2e_Gorm' });
     await gmPage.waitForFunction((actorId) => !!game.actors.get(actorId)?.getFlag('points-of-interest', 'hydrated'), id);
     const actor = await gmPage.evaluate((actorId) => {
       const a = game.actors.get(actorId);
@@ -30,12 +30,7 @@ test.describe('actor hydration', () => {
   });
 
   test("gives a hydrated butcher's axe strike the wounding rune", async ({ gmPage }) => {
-    const id = await gmPage.evaluate(async (pack) => {
-      const index = await game.packs.get(pack).getIndex({ fields: ['flags.points-of-interest.slug'] });
-      const entry = index.find((e: any) => e.flags?.['points-of-interest']?.slug === '06-grosh');
-      const doc = await game.packs.get(pack).getDocument(entry._id);
-      return (await (window as any).Actor.create({ ...game.actors.fromCompendium(doc), name: '__e2e_Grosh' })).id as string;
-    }, PACK);
+    const id = await gmPage.evaluate(createFromStub, { slug: '06-grosh', name: '__e2e_Grosh' });
     await gmPage.waitForFunction((actorId) => !!game.actors.get(actorId)?.getFlag('points-of-interest', 'hydrated'), id);
     const runes = await gmPage.evaluate((actorId) => {
       const a = game.actors.get(actorId);

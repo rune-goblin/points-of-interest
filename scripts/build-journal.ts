@@ -155,12 +155,11 @@ function sceneCard(scene: SceneDoc): string {
 const TYPE_ORDER = ['npc', 'hazard', 'loot'];
 const KIND_LABEL: Record<string, string> = { hazard: 'Hazard', remains: 'Remains', cache: 'Treasure' };
 
-// data-pack lets core build drag data for a compendium actor, which fromUuidSync can't do.
 function tokenLink(actor: ActorDoc, count: number): string {
   const label = KIND_LABEL[String(actor.flags?.[MODULE_ID]?.kind)];
   return (
     `<a class="poi-token" draggable="true" data-link="" data-uuid="Compendium.${MODULE_ID}.actors.Actor.${actor._id}" ` +
-    `data-pack="${MODULE_ID}.actors" data-id="${actor._id}" data-type="Actor" data-tooltip="Open, or drag onto a scene">` +
+    `data-id="${actor._id}" data-type="Actor" data-tooltip="Open, or drag onto a scene">` +
     `<img class="nopopout" src="${actor.prototypeToken.texture.src}" alt=""><span>${escapeHtml(actor.name)}${count > 1 ? ` ×${count}` : ''}</span>` +
     `${label ? `<small>${label}</small>` : ''}</a>`
   );

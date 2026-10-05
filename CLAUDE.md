@@ -21,8 +21,9 @@ compendium packs from `packs/_source/`).
   with its scenes (a preview card per scene) and each scene's tokens, so `build-scenes.ts` runs before
   it in `npm run build`. Scene cards are `a.poi-scene[data-scene]`, which `src/scene-links.ts` views
   (importing the scene and its actors when the world lacks them); a core link would open the scene's
-  linked journal, the same page. Tokens are core content links (`data-link`, `data-pack`), so they
-  open and drag without the module. Previews live in `assets/maps/previews/` (800 px, made by cwebp
+  linked journal, the same page. Tokens are core content links (`data-link`) to world actors once the
+  Adventure build rewrites them; `src/actors/runtime.ts` imports a linked actor the world lacks before
+  opening or dropping it. Previews live in `assets/maps/previews/` (800 px, made by cwebp
   on build only when missing, committed like the thumbnails).
 - `scripts/build-scenes.ts` → `packs/_source/scenes/` (generated on build). One scene per map, native
   v14 (one level holds the background). Grid sizes are judged per map and recorded in its table.
@@ -183,13 +184,17 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 
 ## Status and next steps
 
-- Done: module scaffold, art in `assets/`, encounter docs, generated journal pack, scenes pack
-  (22, every token at its starting spot from the encounter text, loot where it lies; no walls/lights), Adventure pack `adventure`, actors pack (102, including 2 hazards, 8 loot remains and 16 treasure caches; one folder per encounter),
-  macros pack (hand-authored `packs/_source/macros/`, ids from `ids.macro`; the Adventure bundles it too).
+- Done: module scaffold, art in `assets/`, encounter docs, and the Adventure pack `adventure`, the only
+  pack `module.json` registers. It is built from the per-type sources: the generated journal, scenes
+  (22, every token at its starting spot from the encounter text, loot where it lies; no walls/lights),
+  actors (102, including 2 hazards, 8 loot remains and 16 treasure caches; one folder per encounter) and
+  the hand-authored macro (`packs/_source/macros/`, ids from `ids.macro`). Runtime code that imports a
+  piece on its own (map notes, scene cards, actor links) reads the Adventure through `adventureContent()`
+  in `src/adventure.ts`; don't register the per-type packs, so the sidebar shows one entry.
 - Map notes: a GM runs the "Place the King's Map Notes" macro, which calls
   `game.modules.get('points-of-interest').api.placeMapNotes(scene?)`. It targets the given scene, else
   the viewed region map, else the world's only one (several and none viewed → asks the GM to view one).
-  It imports or refreshes the journal into a "Points of Interest" world folder (same ids as the pack),
+  It imports or refreshes the journal into a "Points of Interest" world folder (same ids as the Adventure),
   deletes the per-site entries v0.2.0 made, adds the `scene` note to world copies of the module scenes
   that lack it (refreshing the link of one already there), then creates or moves one note per site (318 px icon, one hex tall,
   linked to the site's encounter page, flagged `site`). Re-run it after journal edits.

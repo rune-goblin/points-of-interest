@@ -30,31 +30,6 @@
       "type": "Adventure",
       "system": "pf2e",
       "banner": "modules/points-of-interest/assets/adventure-banner.webp"
-    },
-    {
-      "name": "journals",
-      "label": "Points of Interest: Journals",
-      "path": "packs/journals",
-      "type": "JournalEntry"
-    },
-    {
-      "name": "actors",
-      "label": "Points of Interest: Actors",
-      "path": "packs/actors",
-      "type": "Actor",
-      "system": "pf2e"
-    },
-    {
-      "name": "scenes",
-      "label": "Points of Interest: Scenes",
-      "path": "packs/scenes",
-      "type": "Scene"
-    },
-    {
-      "name": "macros",
-      "label": "Points of Interest: Macros",
-      "path": "packs/macros",
-      "type": "Macro"
     }
   ],
   "relationships": {
@@ -82,19 +57,5 @@
   },
   "url": "https://github.com/rune-goblin/points-of-interest",
   "manifest": "https://github.com/rune-goblin/points-of-interest/releases/latest/download/module.json",
-  "download": "https://github.com/rune-goblin/points-of-interest/releases/latest/download/points-of-interest.zip",
-  "packFolders": [
-    {
-      "name": "Points of Interest",
-      "sorting": "m",
-      "color": "#3b2a1a",
-      "packs": [
-        "adventure",
-        "journals",
-        "scenes",
-        "actors",
-        "macros"
-      ]
-    }
-  ]
+  "download": "https://github.com/rune-goblin/points-of-interest/releases/latest/download/points-of-interest.zip"
 }

@@ -3,7 +3,7 @@
     "MapNotes": {
       "Folder": "Points of Interest",
       "GMOnly": "Only a GM can place the King's map notes.",
-      "NoPack": "The Points of Interest journal pack is missing. Run npm run build.",
+      "NoPack": "The Points of Interest Adventure is missing. Run npm run build.",
       "WrongScene": "{scene} is not the region map (275 px hex rows), so the King's map notes can't go there.",
       "NoScene": "This world has no region map (275 px hex rows). Import one, then place the King's map notes.",
       "ManyScenes": "This world has {count} region maps. View the one to mark, then place the King's map notes.",
@@ -12,7 +12,7 @@
       "SceneNotes": "Added a journal note to {count} of the Points of Interest scenes."
     },
     "SceneLinks": {
-      "Missing": "This scene is missing from the Points of Interest scenes pack. Run npm run build."
+      "Missing": "This scene is missing from the Points of Interest Adventure. Run npm run build."
     },
     "Actors": {
       "Failed": "These actors could not load their stat blocks from the PF2e system and stay as name and art only: {names}. Check that the PF2e system is up to date; the module retries on the next world load.",

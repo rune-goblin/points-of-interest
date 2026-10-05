@@ -1,7 +1,6 @@
+import { adventureContent } from '../adventure';
 import { MODULE_ID } from '../constants';
 import { hydrate, hydratedOf, lookup, recipeOf, requiredUuids, type Json } from './hydrate';
-
-const ACTOR_PACK = `${MODULE_ID}.actors`;
 
 type WorldActor = (typeof game.actors.contents)[number];
 const DECLINED = 'declinedRebuild';
@@ -9,7 +8,9 @@ const DECLINED = 'declinedRebuild';
 const t = (key: string, data?: Record<string, string>): string =>
   data ? game.i18n.format(`${MODULE_ID}.Actors.${key}`, data) : game.i18n.localize(`${MODULE_ID}.Actors.${key}`);
 
-const actorPack = () => game.packs.get(ACTOR_PACK);
+const stubs = async (): Promise<Json[]> => (await adventureContent())?.actors ?? [];
+const slugOf = (actor: Json | WorldActor): string | undefined =>
+  'getFlag' in actor ? (actor.getFlag(MODULE_ID, 'slug') as string | undefined) : actor.flags?.[MODULE_ID]?.slug;
 const sourceOf = (actor: WorldActor): Json => actor.toObject() as unknown as Json;
 const needsHydration = (source: Json): boolean => !!recipeOf(source) && !hydratedOf(source);
 
@@ -71,64 +72,45 @@ export async function hydrateActors(actors: WorldActor[] = [...game.actors]): Pr
 }
 
 /**
- * Imports actors from the module's pack under their own ids, hydrated, so scene tokens and later
- * drops find them. An actor keeps its pack folder when the world has it from the Adventure.
+ * Imports actors from the module's Adventure under their own ids, hydrated, so scene tokens and
+ * journal links find them. An actor keeps its encounter folder when the world has it from the Adventure.
  */
 export async function importActors(ids: string[]): Promise<WorldActor[]> {
-  const missing = ids.filter((id) => !game.actors.has(id));
-  const pack = actorPack();
-  if (!missing.length || !pack) return [];
-  const docs = (await pack.getDocuments({ _id__in: missing })) as WorldActor[];
-  // The pack's ownership gives players Limited on loot, which PF2e needs to let them take from it.
-  const data = docs.map((doc) => {
-    const folder = doc._source.folder;
-    return game.actors.fromCompendium(doc, { keepId: true, clearFolder: !(folder && game.folders.has(folder)), clearOwnership: false });
-  });
-  const hydrated = await hydrateSources(data as unknown as Json[]);
-  return (await Actor.createDocuments(hydrated as never[], { keepId: true })) as WorldActor[];
-}
-
-// A stub's notes link its site page in the journal pack; a world that holds the journal gets links to its own copy.
-function worldRefs(source: Json): Json {
-  const json = JSON.stringify(source).replace(
-    new RegExp(`Compendium\\.${MODULE_ID}\\.journals\\.JournalEntry\\.(\\w{16})`, 'g'),
-    (ref, id: string) => (game.journal.has(id) ? `JournalEntry.${id}` : ref),
-  );
-  return JSON.parse(json) as Json;
+  const missing = new Set(ids.filter((id) => !game.actors.has(id)));
+  if (!missing.size) return [];
+  // The Adventure's ownership gives players Limited on loot, which PF2e needs to let them take from it.
+  const data = (await stubs())
+    .filter((stub) => missing.has(stub._id))
+    .map((stub) => {
+      const folder = stub.folder as string | null;
+      const clearFolder = !(folder && game.folders.has(folder));
+      return game.actors.fromCompendium(stub as never, { keepId: true, clearFolder, clearOwnership: false }) as unknown as Json;
+    });
+  if (!data.length) return [];
+  return (await Actor.createDocuments((await hydrateSources(data)) as never[], { keepId: true })) as WorldActor[];
 }
 
 /**
  * Rebuilds world actors from the module's stubs and the installed PF2e, matching them by slug. It
  * replaces the whole actor, play state included, and keeps only its id, folder, sort and ownership.
  */
-export async function rebuildActors(actors?: WorldActor[]): Promise<number> {
-  const pack = actorPack();
-  if (!pack) return 0;
-  const index = await pack.getIndex({ fields: [`flags.${MODULE_ID}.slug`] });
-  const idBySlug = new Map(index.map((e) => [(e as Json).flags?.[MODULE_ID]?.slug as string, e._id]));
-  const targets = (actors ?? [...game.actors]).filter((a) => idBySlug.has(a.getFlag(MODULE_ID, 'slug') as string));
-  const stubs = new Map(
-    ((await pack.getDocuments({ _id__in: [...new Set(targets.map((a) => idBySlug.get(a.getFlag(MODULE_ID, 'slug') as string)!))] })) as WorldActor[]).map(
-      (doc) => [doc.id, sourceOf(doc)],
-    ),
-  );
-  const sources = targets.map((actor) => {
-    const stub = stubs.get(idBySlug.get(actor.getFlag(MODULE_ID, 'slug') as string)!)!;
+export async function rebuildActors(actors: WorldActor[] = [...game.actors]): Promise<number> {
+  const bySlug = new Map((await stubs()).map((stub) => [slugOf(stub), stub]));
+  const sources = actors.flatMap((actor) => {
+    const stub = bySlug.get(slugOf(actor));
+    if (!stub) return [];
     const keep = sourceOf(actor);
-    return worldRefs({ ...stub, _id: actor.id, folder: keep.folder, sort: keep.sort, ownership: keep.ownership });
+    return [{ ...structuredClone(stub), _id: actor.id, folder: keep.folder, sort: keep.sort, ownership: keep.ownership }];
   });
   return replace(await hydrateSources(sources));
 }
 
 /** World actors built from an older recipe than the installed module's, with the current recipe's hash. */
 async function outdatedActors(): Promise<{ actor: WorldActor; hash: string }[]> {
-  const pack = actorPack();
-  if (!pack) return [];
-  const index = await pack.getIndex({ fields: [`flags.${MODULE_ID}.slug`, `flags.${MODULE_ID}.recipe.hash`] });
-  const hashBySlug = new Map(index.map((e) => [(e as Json).flags?.[MODULE_ID]?.slug, (e as Json).flags?.[MODULE_ID]?.recipe?.hash]));
+  const hashBySlug = new Map((await stubs()).map((stub) => [slugOf(stub), recipeOf(stub)?.hash]));
   return game.actors.contents.flatMap((actor) => {
     const built = hydratedOf(sourceOf(actor))?.hash;
-    const hash = hashBySlug.get(actor.getFlag(MODULE_ID, 'slug'));
+    const hash = hashBySlug.get(slugOf(actor));
     return built && hash && built !== hash ? [{ actor, hash }] : [];
   });
 }
@@ -180,38 +162,30 @@ export function registerActorHooks(): void {
     });
   });
 
-  // Any other way a stub reaches the world: a drag to the sidebar, a compendium import, a canvas drop.
+  // Any other way a stub reaches the world, such as a copy of one whose hydration failed.
   Hooks.on('createActor', (actor: WorldActor, _options: unknown, userId: string) => {
     if (userId === game.user.id && needsHydration(sourceOf(actor))) queue(actor);
   });
 
-  // A token dropped from the journal or the pack reuses the world's copy of that actor, imported once under its own id.
+  // The journal's token links name world actors. A token dragged from one whose actor the world lacks,
+  // because the GM deleted it or imported only the journal, brings the actor in from the Adventure first.
   Hooks.on('dropCanvasData', (_canvas: unknown, data: { type?: string; uuid?: string; x: number; y: number }, event: DragEvent) => {
-    const prefix = `Compendium.${ACTOR_PACK}.Actor.`;
-    if (data.type !== 'Actor' || !data.uuid?.startsWith(prefix) || !game.user.isGM) return;
-    const id = data.uuid.slice(prefix.length);
-    if (game.actors.has(id)) {
-      data.uuid = `Actor.${id}`;
-      return;
-    }
-    void importActors([id]).then(() => canvas.tokens._onDropActorData(event, { type: 'Actor', uuid: `Actor.${id}`, x: data.x, y: data.y }));
+    const id = data.uuid?.startsWith('Actor.') ? data.uuid.slice('Actor.'.length) : undefined;
+    if (data.type !== 'Actor' || !id || game.actors.has(id) || !game.user.isGM) return;
+    void importActors([id]).then(([actor]) => actor && canvas.tokens._onDropActorData(event, { type: 'Actor', uuid: actor.uuid, x: data.x, y: data.y }));
     return false;
   });
 
-  // Core opens a content link on the body's bubbling click, so capturing first lets a token link open the
-  // world's hydrated copy instead of the pack's stub.
+  // Core opens a content link on the body's bubbling click, so capturing first lets a link to an actor
+  // the world lacks import it before opening it.
   document.body.addEventListener(
     'click',
     (event) => {
-      const link = (event.target as Element | null)?.closest<HTMLElement>(`a.poi-token[data-pack="${ACTOR_PACK}"]`);
-      if (!link || !game.user.isGM) return;
+      const id = (event.target as Element | null)?.closest<HTMLElement>('a.poi-token[data-id]')?.dataset.id;
+      if (!id || game.actors.has(id) || !game.user.isGM) return;
       event.preventDefault();
       event.stopImmediatePropagation();
-      const id = link.dataset.id!;
-      void (async () => {
-        const actor = game.actors.get(id) ?? (await importActors([id]))[0];
-        void actor?.sheet.render(true);
-      })();
+      void importActors([id]).then(([actor]) => actor?.sheet.render(true));
     },
     true,
   );
