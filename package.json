@@ -34,7 +34,8 @@
     "build:scenes": "node scripts/build-scenes.ts",
     "build:actors": "node scripts/build-actors.ts",
     "build:icons": "node scripts/build-map-icons.ts",
-    "build:banner": "node scripts/build-banner.ts"
+    "build:banner": "node scripts/build-banner.ts",
+    "remove-module": "node scripts/remove-module.ts"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.3",
@@ -42,6 +43,7 @@
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@types/node": "^22.12.0",
     "@vitest/ui": "^4.1.9",
+    "classic-level": "^3.0.0",
     "foundry-pf2e": "github:7H3LaughingMan/foundry-pf2e#78aa843c39a59e06ede407a45ed1fd627169b5a3",
     "marked": "^18.0.14",
     "svelte": "^5.46.4",

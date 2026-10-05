@@ -89,7 +89,7 @@ locally, so a stray Foundry left on a port gets silently reused. Guard rails:
   the world + module version it actually exercised — a stale/wrong server fails loud.
 - Before a run, if anything's off, check for strays and kill them:
   ```bash
-  lsof -ti:30005 | xargs kill    # stray test Foundry (also check :30000 / :30001)
+  lsof -ti:30005 | xargs kill    # stray test Foundry (also check :30000 / :30002)
   ```
 - Your own Foundry being open is *fine* — the data path is cloned, not shared. Only a stray
   Foundry **on :30005** can hijack a run.

@@ -92,6 +92,10 @@ Source: [10-the-scouts-wager.md](../10-the-scouts-wager.md)
 
 A broad crater with a floor of fused green glass, cracked in spiderweb lines that run toward the centre. At the heart, a giant construct stands buried to the waist, its chest plates daubed with chalk sigils. Timber scaffolding climbs its front to the collar. Copper cables run from its shoulders to a ring of six iron capacitor drums spaced evenly around the crater floor. A haze of glittering dust hangs around the giant. At the crater's rim, a covered wagon stands beside a campfire, a workbench and crates of tools. A rough track winds down the slope from the wagon to the scaffold.
 
+### Tactical map after the wake
+
+The same crater once the guthallath tears free, drawn to lay over the first map. A black shaft about 30 feet across gapes where it stood, ringed with smashed scaffolding and rubble, ladders hanging down its sides. The copper cables hang loose into the shaft. The plank walkway ends at the broken rim. The drums, the wagon and the camp stay as they were. The scene shows only the centre of this map, as a tile over the first.
+
 Source: [11-the-unmaker.md](../11-the-unmaker.md)
 
 ## 12. The Storm Tree

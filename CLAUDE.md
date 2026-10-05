@@ -47,6 +47,14 @@ compendium packs from `packs/_source/`).
   Every scene also gets a book note (flagged `scene`) in the map's top-left square, linked to its
   encounter page; the build regenerates it each run and keeps only an unpacked move. The `refreshNote`
   hook hides it from players, who hold Limited on the journal and would otherwise see the pin.
+  A map with a later state gets a reveal tile (`REVEALS`): art from `assets/tiles/`, cut from a second
+  map of the same site and laid over the first, hidden and locked, regenerated each run and flagged
+  `reveal` with an actor id. v14 places a tile by its texture anchor, which defaults to its centre. `src/reveals.ts` fades it in when that actor's token first moves in a
+  started combat, and keeps the hidden tile from ghosting over the map for the GM off the Tiles layer.
+  A GM viewing such a scene also gets a frameless, draggable panel (`src/ui/RevealPanel.ts`) with a
+  "Show the pit"/"Hide the pit" button per tile (the tile's name). Double-clicking its grip folds it to
+  the grip alone and back; it reopens where and as the GM left it.
+  Only #11 has one: the pit the guthallath leaves.
 - `scripts/build-actors.ts` → `packs/_source/actors/` (**committed, not part of `npm run build`**: it
   needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`, or
   `$PF2E_SYSTEM`, or the default install path). The mapping table at its top names each actor's
@@ -100,7 +108,7 @@ compendium packs from `packs/_source/`).
   lightened, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
   after changing that art; the icons are committed, not built.
 - `assets/adventure-banner.webp` — the Adventure's banner (module.json `banner`, shown by the importer
-  and the compendium sidebar): #07's white-ink sketch, inked navy, on generated parchment. `npm run build:banner`
+  and the compendium sidebar): #07's white-ink sketch on generated dark parchment. `npm run build:banner`
   redraws it (needs ImageMagick 7; `NOTE` in the script picks the sketch); committed, not built.
 
 **The Foundry/PF2e API, compendium packs, Svelte-in-ApplicationV2, the Vite build, and
@@ -137,7 +145,7 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
 
 - `npm run build` → builds `packs/` from `packs/_source/` **and** `dist/` (both gitignored;
   build before enabling a world, and after edits).
-- `npm run dev` — HMR dev server (`:30001`, proxies Foundry). `npm run watch` — `vite build --watch`.
+- `npm run dev` — HMR dev server (`:30002`, proxies Foundry). `npm run watch` — `vite build --watch`.
   `npm run check` — `svelte-check` + `tsc`. `npm run setup` —
   resolve dev paths (detect/clone/prompt), then scaffold the Foundry module dir + pull references in.
 - **Test (verification loop):** `npm test` — vitest unit specs (zero-setup, the CI tier:
@@ -191,7 +199,8 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   Decision guide + workflow: README "Ship as an Adventure" and the skill's `packs-cli.md`.
 - `dist/` is gitignored — served via the dev scaffold's `dist` symlink after build; CI builds it for releases.
 - Vite does **not** type-check — run `npm run check` (the release workflow does too).
-- `npm run dev` = Vite HMR dev server on `:30001` reverse-proxying Foundry (`:30000`). It proxies an *already-running* Foundry — start Foundry and **launch a world with the module enabled** first, or there's no esmodule to hot-swap. Then browse `:30001/game` (not `:30000`). `.svelte` edits hot-swap; editing `src/index.ts` full-reloads. `npm run watch` = old `vite build --watch` (browse `:30000`, manual F5; Foundry hot-reloads `.hbs`/`.css`/`.json` but not esmodules).
+- `npm run dev` = Vite HMR dev server on `:30002` reverse-proxying Foundry (`:30000`); `:30001` belongs to
+  pf2e-reignmaker's dev server, so the two run side by side. It proxies an *already-running* Foundry — start Foundry and **launch a world with the module enabled** first, or there's no esmodule to hot-swap. Then browse `:30002/game` (not `:30000`). `.svelte` edits hot-swap; editing `src/index.ts` full-reloads. `npm run watch` = old `vite build --watch` (browse `:30000`, manual F5; Foundry hot-reloads `.hbs`/`.css`/`.json` but not esmodules).
 - Persist state in document flags, not raw socket; raw socket for transient signals only (skill's `multi-client-sync.md`).
 
 ## Status and next steps
@@ -211,6 +220,11 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   that lack it (refreshing the link of one already there), then creates or moves one note per site (318 px icon, one hex tall,
   linked to the site's encounter page, flagged `site`). Re-run it after journal edits.
   The module hides Foundry's dark backing square and idle border on these notes (`refreshNote` hook).
+- Fresh start: with the world closed, `npm run remove-module` asks for a world, then deletes from its
+  LevelDB everything the Adventure imports or the module flagged, the site notes, the module's world
+  settings and Foundry's import record; then import the Adventure again. World copies never pick up
+  pack changes, and a build while Foundry runs swaps the pack under it on macOS, so Foundry keeps the old
+  one until it restarts.
 - The desktop install links the module as `npm run setup` would (`Data/modules/points-of-interest`
   symlinks into the repo). The stolen-lands world already holds the journal folder and the 21 notes;
   enable the module there after a Foundry restart to get the hook and the API.

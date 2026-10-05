@@ -50,8 +50,7 @@ export function linkChecks(md: string): string {
 }
 
 const ICONS: Record<string, string> = {
-  assumptions: 'fa-clipboard-list',
-  'running-order': 'fa-route',
+  sites: 'fa-route',
   background: 'fa-scroll',
   arrival: 'fa-comment-dots',
   features: 'fa-map-location-dot',

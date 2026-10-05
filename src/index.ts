@@ -3,7 +3,9 @@ import { MODULE_ID } from './constants';
 import { promptAdventureImport } from './adventure';
 import { checkWorldActors, hydrateActors, rebuildActors, registerActorHooks } from './actors/runtime';
 import { importJournal, placeMapNotes, registerMapNoteHooks } from './map-notes';
+import { registerRevealHooks } from './reveals';
 import { registerSceneLinks } from './scene-links';
+import { registerRevealPanel } from './ui/RevealPanel';
 
 interface ModuleApi {
   version: string;
@@ -17,6 +19,8 @@ Hooks.once('init', () => {
   registerMapNoteHooks();
   registerSceneLinks();
   registerActorHooks();
+  registerRevealHooks();
+  registerRevealPanel();
   console.log(`${MODULE_ID} | init`);
 });
 

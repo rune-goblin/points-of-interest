@@ -17,6 +17,7 @@ const OUT = join(ROOT, 'packs', '_source', PACK);
 const MAPS_DIR = join(ROOT, 'assets', 'maps');
 const THUMBS_DIR = join(MAPS_DIR, 'thumbs');
 const THUMB = { width: 300, height: 100 }; // Foundry's own Scene#createThumbnail size
+const TILES_DIR = join(ROOT, 'assets', 'tiles');
 const PADDING = 0.1;
 
 // Foundry's id for a scene's only level; its v13→v14 migration uses the same one.
@@ -50,7 +51,7 @@ const MAPS: Record<string, MapMeta> = {
   '09-iron-juggernaut': { grid: 60, why: 'patrol trench about 30 ft wide', environments: ['plains'] },
   '09-iron-juggernaut-cargo-hold': { grid: 144, label: 'Cargo Hold', why: 'each seated captive fills about one square', environments: [], darkness: 0.6 },
   '10-scouts-wager': { grid: 120, why: 'escape pod about 25 ft, crater about 80 ft across', environments: ['plains'] },
-  '11-unmaker': { grid: 60, why: 'capacitor drums about 80 ft from the centre', environments: ['plains'] },
+  '11-unmaker': { grid: 100, why: 'the buried guthallath fills a 25 ft (5-square) token; drums about 45 ft from the centre', environments: ['plains'] },
   '12-storm-tree': { grid: 120, why: 'tents 10 to 15 ft; strongbox about 35 ft from the sard', environments: ['forest'] },
   '13-quilled-hunter': { grid: 80, why: 'canyon floor 15 to 80 ft wide', environments: ['forest'], tint: { hue: 120 / 360, intensity: 0.2 } },
   '14-shadow-court': { grid: 120, why: 'stone table about 15 ft, grove about 80 ft across', environments: ['forest'], darkness: 0.5 },
@@ -106,6 +107,22 @@ const SCENE_CAST: Record<string, string[]> = {
   '09-iron-juggernaut-cargo-hold': ['09-brann-kesk', '09-ottilie-kesk', '09-tarku'],
 };
 
+interface Reveal {
+  /** File name in assets/tiles/ without extension. */
+  tile: string;
+  /** The tile's name, which reads mid-sentence on the GM's "Show the pit" button. */
+  name: string;
+  /** The tile's top-left corner in map pixels. */
+  x: number;
+  y: number;
+  /** Slug of the actor whose token's first move in combat reveals the tile (src/reveals.ts). */
+  actor: string;
+}
+/** Later states of a map: art cut from a second version of the map, laid over the first as a hidden tile. */
+const REVEALS: Record<string, Reveal> = {
+  '11-unmaker': { tile: '11-unmaker-pit', name: 'the pit', x: 537, y: 453, actor: '11-guthallath' },
+};
+
 interface ActorSource {
   _id: string;
   _key: string;
@@ -131,6 +148,11 @@ function readCast(): Map<number, CastMember[]> {
   return cast;
 }
 
+// Placeable x/y are canvas coordinates, which start at the padding Foundry adds around the map.
+function mapOrigin(size: { width: number; height: number }, grid: number) {
+  return { x: Math.ceil((PADDING * size.width) / grid) * grid, y: Math.ceil((PADDING * size.height) / grid) * grid };
+}
+
 // Rows of tokens centred on the map (or along its top edge), one empty square apart, for the GM to drag into place.
 function seedTokens(sceneId: string, slug: string, members: CastMember[], size: { width: number; height: number }, grid: number, alongTop = false) {
   const pieces = members.flatMap((m) => Array.from({ length: COPIES[m.slug] ?? 1 }, (_, copy) => ({ ...m, copy })));
@@ -149,9 +171,7 @@ function seedTokens(sceneId: string, slug: string, members: CastMember[], size: 
   }
   const rowHeights = rows.map((r) => Math.max(1, ...r.map((p) => p.actor.prototypeToken.height)));
   const total = rowHeights.reduce((a, b) => a + b, 0) + rows.length - 1;
-  // Token x/y are canvas coordinates, which start at the padding Foundry adds around the map.
-  const padX = Math.ceil((PADDING * size.width) / grid) * grid;
-  const padY = Math.ceil((PADDING * size.height) / grid) * grid;
+  const { x: padX, y: padY } = mapOrigin(size, grid);
   let top = alongTop ? 0 : Math.floor((size.height / grid - total) / 2);
   return rows.flatMap((row, r) => {
     const width = row.reduce((a, p) => a + p.actor.prototypeToken.width, 0) + row.length - 1;
@@ -196,8 +216,7 @@ interface NotePosition { _id: string; x: number; y: number }
 function journalNote(sceneId: string, slug: string, pageId: string, text: string, size: { width: number; height: number }, grid: number, notes: unknown[]) {
   const id = stableId(`scene-note:${slug}`);
   const iconSize = Math.min(Math.max(grid, 48), 100);
-  const padX = Math.ceil((PADDING * size.width) / grid) * grid;
-  const padY = Math.ceil((PADDING * size.height) / grid) * grid;
+  const { x: padX, y: padY } = mapOrigin(size, grid);
   const moved = (notes as NotePosition[]).find((n) => n._id === id);
   return {
     _id: id,
@@ -216,6 +235,40 @@ function journalNote(sceneId: string, slug: string, pageId: string, text: string
     fontSize: 32,
     global: false,
     flags: { [MODULE_ID]: { scene: true } },
+  };
+}
+
+// Regenerated each run in its hidden starting state, so it always lines up with the map beneath it.
+function revealTile(sceneId: string, slug: string, size: { width: number; height: number }, grid: number) {
+  const reveal = REVEALS[slug];
+  if (!reveal) return undefined;
+  const id = stableId(`reveal:${slug}`);
+  const art = webpSize(join(TILES_DIR, `${reveal.tile}.webp`));
+  const origin = mapOrigin(size, grid);
+  return {
+    _id: id,
+    _key: `!scenes.tiles!${sceneId}.${id}`,
+    name: reveal.name,
+    texture: {
+      src: `modules/${MODULE_ID}/assets/tiles/${reveal.tile}.webp`,
+      anchorX: 0.5, anchorY: 0.5, offsetX: 0, offsetY: 0, fit: 'fill', scaleX: 1, scaleY: 1, rotation: 0, tint: '#ffffff', alphaThreshold: 0.75,
+    },
+    width: art.width,
+    height: art.height,
+    // v14 places a tile by its texture anchor, so x and y name the tile's centre.
+    x: origin.x + reveal.x + Math.round(art.width / 2),
+    y: origin.y + reveal.y + Math.round(art.height / 2),
+    elevation: 0,
+    levels: [],
+    sort: 0,
+    rotation: 0,
+    alpha: 1,
+    hidden: true,
+    locked: true,
+    restrictions: { light: false, weather: false },
+    occlusion: { modes: [], alpha: 0 },
+    video: { loop: true, autoplay: true, volume: 0 },
+    flags: { [MODULE_ID]: { reveal: ids.actor(reveal.actor) } },
   };
 }
 
@@ -263,6 +316,7 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
   const fixedLight = meta.darkness !== undefined;
   const pageId = ids.encounterPage(slugify(`${encounter.number}. ${encounter.title}`));
   const note = journalNote(id, slug, pageId, `${pad(encounter.number)}. ${encounter.title}`, size, meta.grid, kept('notes'));
+  const reveal = revealTile(id, slug, size, meta.grid);
   return {
     _id: id,
     _key: `!scenes!${id}`,
@@ -323,7 +377,7 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
     notes: [...kept('notes').filter((n) => (n as NotePosition)._id !== note._id), note],
     sounds: kept('sounds'),
     regions: kept('regions'),
-    tiles: kept('tiles'),
+    tiles: [...kept('tiles').filter((t) => (t as { _id: string })._id !== reveal?._id), ...(reveal ? [reveal] : [])],
     walls: kept('walls'),
     playlist: null,
     playlistSound: null,

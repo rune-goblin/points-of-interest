@@ -2,42 +2,32 @@
 
 Twenty-one sites the King marked on his map of the western borderlands, written as full encounters. Each encounter has a matching art brief in `art/` covering the map note, the tactical map, and a portrait and token for every creature and NPC.
 
-## Assumptions
+## Sites
 
-- **Party:** 4 PCs at level 16. They will level through Chapters 9–11.
-- **Threat:** measured against party level 16 unless an entry says otherwise. Four sites use level 21 creatures and wait for party level 18–19.
-- **Role-play:** social encounters use the GM Core Influence subsystem.
-- **Wild Hunt:** always hostile. The Zone 14 truce rule still applies, and a truce marks the PCs as future quarry.
-- **Skyfall constructs:** follow the Zone 17 rule of weakness 15 to critical hits and electricity.
-
-## Running order
-
-Geography decides much of the order, so treat this as a pacing guide. Role-play and low-threat sites sit between the hard fights. Run #21 The Annihilator before #9 The Iron Juggernaut so the captives lead the PCs to the hauler; either order works.
-
-| Order | # | Site | Zone | Type | Threat @16 |
-|---|---|---|---|---|---|
-| 1 | 2 | [The Perfect Song](#2-the-perfect-song) | 13 | Role-play | Trivial |
-| 2 | 4 | [The Gardeners](#4-the-gardeners) | 14 | Combat + rescue | Moderate |
-| 3 | 1 | [The Shadowless Lodge](#1-the-shadowless-lodge) | 13 | Investigation + combat | Low |
-| 4 | 6 | [The Larder](#6-the-larder) | 16 | Combat | Moderate |
-| 5 | 3 | [Nine Mouths, One Belly](#3-nine-mouths-one-belly) | 14 | Role-play | Trivial |
-| 6 | 21 | [The Annihilator](#21-the-annihilator) | 16 | Combat + protect survivors | Moderate |
-| 7 | 5 | [The Ossuary Wall](#5-the-ossuary-wall) | 16 | Combat + haunt | Moderate–Severe |
-| 8 | 7 | [The Wyvern Queen's Hunting Ground](#7-the-wyvern-queens-hunting-ground) | 16 | Combat, two-part | Severe |
-| 9 | 9 | [The Iron Juggernaut](#9-the-iron-juggernaut) | 17 | Combat + rescue clock | Moderate |
-| 10 | 11 | [The Unmaker](#11-the-unmaker) | 17 | Combat + clock | Severe |
-| 11 | 8 | [The Lightwardens](#8-the-lightwardens) | 17 | Combat + hazard | Moderate |
-| 12 | 10 | [The Scout's Wager](#10-the-scouts-wager) | 17 | Combat | Severe |
-| 13 | 16 | [The Trickster's Emissary](#16-the-tricksters-emissary) | 18 | Role-play (before Chapter 10) | Extreme if fought |
-| 14 | 12 | [The Storm Tree](#12-the-storm-tree) | 18 | Combat + exploration | Severe |
-| 15 | 15 | [The Moody Brood](#15-the-moody-brood) | 18 | Role-play | Severe if fought |
-| 16 | 13 | [The Quilled Hunter](#13-the-quilled-hunter) | 18 | Chase + combat | Severe |
-| 17 | 14 | [The Shadow Court](#14-the-shadow-court) | 18 | Role-play | Severe if fought |
-| 18 | 19 | [Shadow on the Peaks](#19-shadow-on-the-peaks) | 19 | Sighting (before Chapter 10) | None |
-| 19 | 18 | [The Linnorm's Pass](#18-the-linnorms-pass) | 19 | Role-play (bargain) | Fight at level 18+ |
-| Later | 17 | [Spore-Dawn](#17-spore-dawn) | 18 | Combat set piece | Level 18+ |
-| Later | 20 | [The Burning Giant](#20-the-burning-giant) | 19 | Combat + kingdom clock | Level 18–19 |
-| Later | 19 | [Shadow on the Peaks](#19-shadow-on-the-peaks) (ambush) | 19 | Combat (after Chapter 10) | Level 18+ |
+| # | Site | Type | Threat @16 |
+|---|---|---|---|
+| 1 | [The Shadowless Lodge](#1-the-shadowless-lodge) | Investigation + combat | Low |
+| 2 | [The Perfect Song](#2-the-perfect-song) | Role-play | Trivial |
+| 3 | [Nine Mouths, One Belly](#3-nine-mouths-one-belly) | Role-play | Trivial |
+| 4 | [The Gardeners](#4-the-gardeners) | Combat + rescue | Moderate |
+| 5 | [The Ossuary Wall](#5-the-ossuary-wall) | Combat + haunt | Moderate–Severe |
+| 6 | [The Larder](#6-the-larder) | Combat | Moderate |
+| 7 | [The Wyvern Queen's Hunting Ground](#7-the-wyvern-queens-hunting-ground) | Combat, two-part | Severe |
+| 8 | [The Lightwardens](#8-the-lightwardens) | Combat + hazard | Moderate |
+| 9 | [The Iron Juggernaut](#9-the-iron-juggernaut) | Combat + rescue clock | Moderate |
+| 10 | [The Scout's Wager](#10-the-scouts-wager) | Combat | Severe |
+| 11 | [The Unmaker](#11-the-unmaker) | Combat + clock | Severe |
+| 12 | [The Storm Tree](#12-the-storm-tree) | Combat + exploration | Severe |
+| 13 | [The Quilled Hunter](#13-the-quilled-hunter) | Chase + combat | Severe |
+| 14 | [The Shadow Court](#14-the-shadow-court) | Role-play | Severe if fought |
+| 15 | [The Moody Brood](#15-the-moody-brood) | Role-play | Severe if fought |
+| 16 | [The Trickster's Emissary](#16-the-tricksters-emissary) | Role-play (before Chapter 10) | Extreme if fought |
+| 17 | [Spore-Dawn](#17-spore-dawn) | Combat set piece | Level 18+ |
+| 18 | [The Linnorm's Pass](#18-the-linnorms-pass) | Role-play (bargain) | Fight at level 18+ |
+| 19 | [Shadow on the Peaks](#19-shadow-on-the-peaks) | Sighting (before Chapter 10) | None |
+| 19 | [Shadow on the Peaks](#19-shadow-on-the-peaks) (ambush) | Combat (after Chapter 10) | Level 18+ |
+| 20 | [The Burning Giant](#20-the-burning-giant) | Combat + kingdom clock | Level 18–19 |
+| 21 | [The Annihilator](#21-the-annihilator) | Combat + protect survivors | Moderate |
 
 ---
 
@@ -318,7 +308,7 @@ Complex, Haunt
 **Outcomes.**
 - **All giants slain.** The PCs free the captives and take the receipt. The Giant Lord loses a raiding team and learns nothing of the PCs' approach.
 - **A giant escapes.** The Giant Lord's hold goes on alert; his next encounter starts with sentries ready.
-- **Captives saved.** The skyfall scavenger, Hesk Varro, offers to guide the PCs to the Lightwardens (#8) or the Annihilator (#9) as payment. The horse-clan outrider owes the PCs a life-debt.
+- **Captives saved.** The skyfall scavenger, Hesk Varro, offers to guide the PCs to the Lightwardens (#8) or the Annihilator (#21) as payment. The horse-clan outrider owes the PCs a life-debt.
 - **Receipt kept.** Proof of the King's arrangement with the Giant Lord. Presenting it in the King's city after liberation helps sway the city's nobility.
 
 **Rewards.** 80 XP. Treasure: 1,200 gp in coin, silver plate and trade goods from the smokehouse; each butcher carries a *+2 striking wounding battle axe* and a *+1 striking returning hatchet*, sized for a Large creature (sell value or resize). The receipt grants a +2 circumstance bonus to one Kingdom check or Liberation activity tied to the city's nobility.
@@ -518,7 +508,8 @@ Complex, Electricity, Fire, Mechanical, Trap
 **Features.**
 - **Glass floor.** The crater floor counts as uneven ground (DC 30 Acrobatics to Balance when Striding at full speed). A creature knocked prone slides 10 feet downslope toward the centre.
 - **Scaffold.** Timber scaffolding rises 60 feet up the guthallath's front. Climbing it takes a DC 25 Athletics check. The guthallath smashes the scaffold on its first turn awake; anyone on it falls unless they Grab an Edge.
-- **Capacitor drums.** Six iron drums in a ring 80 feet from the centre feed the waking ritual. Each has AC 30, Hardness 10, 40 HP. A destroyed drum discharges 6d6 electricity in a 10-foot burst (DC 36 basic Reflex). The guthallath has weakness 15 to electricity, so a drum blast that catches it deals the extra damage.
+- **The pit.** Tearing free, the guthallath leaves a shaft about 30 feet across and 60 feet deep, ringed with broken timbers. A creature that falls in takes 30 bludgeoning damage. Climbing the fused-glass walls takes a DC 30 Athletics check; the ladders still hanging from the rim need none. A prone creature that slides into the shaft falls unless it Grabs an Edge. The scene shows the shaft the first time the guthallath's token moves in combat.
+- **Capacitor drums.** Six iron drums in a ring about 45 feet from the centre feed the waking ritual. Each has AC 30, Hardness 10, 40 HP. A destroyed drum discharges 6d6 electricity in a 10-foot burst (DC 36 basic Reflex). The guthallath has weakness 15 to electricity, so a drum blast that catches it deals the extra damage.
 - **Nanite haze.** The guthallath's Erosion Aura manifests as clouds of deconstructor nanites. They also erode the scaffold and the drums once it wakes.
 - **Vane's wagon.** A covered wagon at the crater's rim holds Vane's notes, tools and the last of the King's gold.
 

@@ -17,6 +17,7 @@ const SERVED = `modules/${MODULE_ID}/`;
 interface Level { _id: string; _key: string; background: { src: string } }
 interface Note { _id: string; _key: string; entryId: string; pageId: string; x: number; y: number; iconSize: number; flags: Record<string, { scene?: boolean }> }
 interface Token { _id: string; _key: string; actorId: string; level: string; x: number; y: number; width: number; height: number }
+interface Tile { _id: string; _key: string; texture: { src: string; anchorX: number; anchorY: number }; x: number; y: number; width: number; height: number; hidden: boolean; flags: Record<string, { reveal?: string }> }
 interface SceneSource {
   _id: string;
   _key: string;
@@ -30,6 +31,7 @@ interface SceneSource {
   levels: Level[];
   tokens: Token[];
   notes: Note[];
+  tiles: Tile[];
   journal: string;
   journalEntryPage: string;
   folder: string | null;
@@ -126,6 +128,23 @@ describe('scenes pack source', () => {
       expect(note.x - pad.x, s.name).toBeLessThanOrEqual(corner);
       expect(note.y - pad.y, s.name).toBeGreaterThanOrEqual(note.iconSize / 2);
       expect(note.y - pad.y, s.name).toBeLessThanOrEqual(corner);
+    }
+  });
+
+  it('hides each reveal tile on the map until a token of its scene wakes it', () => {
+    const reveals = scenes.flatMap((s) => s.tiles.filter((t) => t.flags[MODULE_ID]?.reveal).map((t) => ({ s, t })));
+    expect(reveals.length).toBeGreaterThan(0);
+    for (const { s, t } of reveals) {
+      const g = s.grid.size;
+      const pad = { x: Math.ceil((s.padding * s.width) / g) * g, y: Math.ceil((s.padding * s.height) / g) * g };
+      expect(t._key).toBe(`!scenes.tiles!${s._id}.${t._id}`);
+      expect(existsSync(servedFile(t.texture.src)), t.texture.src).toBe(true);
+      expect(t.hidden, s.name).toBe(true);
+      const left = t.x - t.width * t.texture.anchorX;
+      const top = t.y - t.height * t.texture.anchorY;
+      expect(left >= pad.x && left + t.width <= pad.x + s.width, `${s.name}: tile x`).toBe(true);
+      expect(top >= pad.y && top + t.height <= pad.y + s.height, `${s.name}: tile y`).toBe(true);
+      expect(s.tokens.some((k) => k.actorId === t.flags[MODULE_ID].reveal), s.name).toBe(true);
     }
   });
 

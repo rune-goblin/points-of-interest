@@ -432,3 +432,22 @@ strong.poi-term {
     width: auto;
   }
 }
+
+/* The GM's reveal panel is frameless, so it draws its own box. */
+.points-of-interest-reveals {
+  position: absolute;
+  z-index: var(--z-index-window);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid light-dark(rgb(30 39 56 / 25%), rgb(236 230 216 / 20%));
+  border-radius: 6px;
+  background: light-dark(rgb(244 240 230 / 95%), rgb(22 24 30 / 92%));
+  color: light-dark(#1e2738, #ece6d8);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 45%);
+
+  > div {
+    display: contents;
+  }
+}

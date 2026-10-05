@@ -10,6 +10,11 @@
       "Merged": "Moved the King's sites into the {journal} journal and deleted the {count} entries it replaces.",
       "SceneNotes": "Added a journal note to {count} of the Points of Interest scenes."
     },
+    "Reveals": {
+      "Show": "Show {name}",
+      "Hide": "Hide {name}",
+      "Grip": "Drag to move the panel; double-click to fold it"
+    },
     "SceneLinks": {
       "Missing": "This scene is missing from the Points of Interest Adventure. Run npm run build."
     },

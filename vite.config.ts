@@ -7,6 +7,8 @@ const moduleJSON = JSON.parse(readFileSync(new URL('./module.json', import.meta.
 const id = moduleJSON.id;
 
 const FOUNDRY = 'http://localhost:30000';
+// pf2e-reignmaker's dev server holds :30001.
+const DEV_PORT = 30002;
 
 export default defineConfig({
   root: 'src/',
@@ -17,17 +19,19 @@ export default defineConfig({
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
   // `npm run dev` runs this as a reverse proxy in front of Foundry: open
-  // http://localhost:30001/game (NOT :30000) and Vite serves our module's source with
+  // http://localhost:30002/game (NOT :30000) and Vite serves our module's source with
   // HMR while proxying everything else — Foundry routes, the socket, our static files —
   // to the real server on :30000. Ignored by `vite build`.
   server: {
-    port: 30001,
+    port: DEV_PORT,
+    // The entry proxy below targets DEV_PORT, so Vite moving to a free port would break it.
+    strictPort: true,
     open: '/game',
     proxy: {
       // The built entry doesn't exist in dev: bounce Foundry's request for it back to
       // Vite as src/index.ts (base maps /modules/<id>/dist/ → src/), served with HMR.
       [`/modules/${id}/dist/${id}.js`]: {
-        target: `http://localhost:30001/modules/${id}/dist`,
+        target: `http://localhost:${DEV_PORT}/modules/${id}/dist`,
         rewrite: () => '/index.ts',
       },
       // The built stylesheet doesn't exist in dev either; index.ts imports the styles with HMR,
