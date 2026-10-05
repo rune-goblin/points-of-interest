@@ -1,7 +1,27 @@
 {
+  "_id": "EHATWyBWSxuYdooR",
+  "_key": "!actors!EHATWyBWSxuYdooR",
+  "name": "Barrow Grave Goods",
   "type": "loot",
+  "img": "icons/containers/chest/chest-reinforced-stone.webp",
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-DzjlA8iJv4HCW1Ot\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> Hill-clan torcs among the bones and armour on the barrow floor, near the bones of the troll's mother.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
+      "_id": "f4zv6TK7u5gKNj8P",
+      "_key": "!actors.items!EHATWyBWSxuYdooR.f4zv6TK7u5gKNj8P",
       "name": "Ancient Hill-Clan Torcs",
       "type": "treasure",
       "img": "icons/equipment/neck/choker-chain-thick-gold.webp",
@@ -59,35 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "f4zv6TK7u5gKNj8P",
-      "_key": "!actors.items!EHATWyBWSxuYdooR.f4zv6TK7u5gKNj8P"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<section class=\"secret\" id=\"secret-DzjlA8iJv4HCW1Ot\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> Hill-clan torcs among the bones and armour on the barrow floor, near the bones of the troll's mother.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "EHATWyBWSxuYdooR",
-  "_key": "!actors!EHATWyBWSxuYdooR",
-  "name": "Barrow Grave Goods",
-  "img": "icons/containers/chest/chest-reinforced-stone.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Barrow Grave Goods",
     "actorLink": false,
@@ -121,5 +116,10 @@
       "kind": "cache"
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

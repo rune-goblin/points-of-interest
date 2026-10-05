@@ -13,6 +13,12 @@
     },
     "SceneLinks": {
       "Missing": "This scene is missing from the Points of Interest scenes pack. Run npm run build."
+    },
+    "Actors": {
+      "Failed": "These actors could not load their stat blocks from the PF2e system and stay as name and art only: {names}. Check that the PF2e system is up to date; the module retries on the next world load.",
+      "RebuildTitle": "Rebuild Points of Interest Actors",
+      "RebuildPrompt": "The updated module changed {count} actors in this world: {names}. Rebuild them? Rebuilding replaces each one whole, so current Hit Points, conditions and effects reset.",
+      "Rebuilt": "Rebuilt {count} Points of Interest actors."
     }
   }
 }

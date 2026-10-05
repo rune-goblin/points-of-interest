@@ -35,10 +35,20 @@ compendium packs from `packs/_source/`).
   encounter page; the build regenerates it each run and keeps only an unpacked move. The `refreshNote`
   hook hides it from players, who hold Limited on the journal and would otherwise see the pin.
 - `scripts/build-actors.ts` → `packs/_source/actors/` (**committed, not part of `npm run build`**: it
-  needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`). The mapping
-  table at its top names each actor's source stat block. Copy only from PF2e **system** packs
-  (OGL/ORC), never from the premium `pf2e-kingmaker` module. The remaster renamed the ankou
-  "Ozthoom" (Monster Core 2); the Kingmaker Ankou Assassin keeps its name.
+  needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`, or
+  `$PF2E_SYSTEM`, or the default install path). The mapping table at its top names each actor's
+  source stat block. Reference only PF2e **system** packs, never the premium `pf2e-kingmaker` module.
+  The remaster renamed the ankou "Ozthoom" (Monster Core 2); the Kingmaker Ankou Assassin keeps its name.
+  **Nothing copied from PF2e ships.** An actor built on a system stat block is a stub: our name, art,
+  notes and items, the stat block's level, size and rarity, and a recipe in
+  `flags['points-of-interest'].recipe` naming the PF2e documents by UUID and the changes to make
+  (ops, treasure, adjustment). `src/actors/hydrate.ts` (pure, shared by the build, the specs and the
+  module) turns a stub into the full actor; `src/actors/runtime.ts` runs it whenever a stub reaches a
+  world (Adventure import via `preImportAdventure`, scene-card import, any `createActor`, a journal
+  token click or canvas drop, and the active GM's world-load sweep) and, after a module update changes
+  a recipe, asks the GM to rebuild the affected actors. The build hydrates every recipe against the
+  installed system, fails on any warning, and stamps it `verified`. Generic system item names in
+  recipes are fallbacks for drifted ids.
   Voices (kind `voice`: the troll heads and the dead antiquarians) are speaking portraits kept off the
   maps, but each carries a real stat block without gear or strikes: the heads share the Jotund
   Troll's defences and add their bloc's skills, and the antiquarians keep their NPC Core stat
@@ -56,12 +66,14 @@ compendium packs from `packs/_source/`).
   could use: weapons (bombs too), shields, armour and worn items of its size, potions and elixirs if
   it lives, scrolls and wands of a tradition it casts. In use means a weapon linked by one of its
   strikes, armour worn, a shield held, a worn item worn and invested, a consumable carried. A cache
-  marked `stowed` (a chest, strongbox, sealed chamber or hidden packet) is exempt. The build equips
+  marked `stowed` (a chest, strongbox, sealed chamber or hidden packet) is exempt. Hydration equips
   gear handed to such a creature; a weapon must be a `stock()` entry (the stat block's own weapon,
   renamed as treasure, `runes` optional) so its strike stays linked. PF2e resets an NPC strike's
   property runes each prepare and applies a linked weapon's runes only through `AdjustStrike`
-  (`property-runes`) rules on the strike, so the build adds one per rune, as the bestiaries do.
-  `src/tests/packs/actors.test.ts` enforces both rules.
+  (`property-runes`) rules on the strike, so hydration adds one per rune, as the bestiaries do.
+  `src/tests/packs/actors.hydrated.test.ts` enforces both rules on hydrated actors; it needs an
+  installed PF2e and skips without one, so run it after every PF2e update. `actors.test.ts` (CI)
+  checks that the stubs carry nothing from PF2e and that every recipe is hashed and verified.
 - `docs/art/NN-slug.md` — art briefs per encounter; `docs/art/by-type/` — the same briefs
   regrouped as map notes, maps and characters.
 - `docs/pitches.md` — the original one-paragraph pitches.

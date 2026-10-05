@@ -1,7 +1,27 @@
 {
+  "_id": "fQaCjludOjyecS33",
+  "_key": "!actors!fQaCjludOjyecS33",
+  "name": "Felgo",
   "type": "loot",
+  "img": "modules/points-of-interest/assets/portraits/01-felgo.webp",
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A young man in royal green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The dead royal scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
+      "_id": "Y5fPnwKW4gdLMYCs",
+      "_key": "!actors.items!fQaCjludOjyecS33.Y5fPnwKW4gdLMYCs",
       "name": "Royal Scouts' Kit",
       "type": "equipment",
       "img": "icons/containers/bags/pack-leather-brown.webp",
@@ -59,35 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "Y5fPnwKW4gdLMYCs",
-      "_key": "!actors.items!fQaCjludOjyecS33.Y5fPnwKW4gdLMYCs"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<h2>Appearance</h2>\n<p>A young man in royal green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The dead royal scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "fQaCjludOjyecS33",
-  "_key": "!actors!fQaCjludOjyecS33",
-  "name": "Felgo",
-  "img": "modules/points-of-interest/assets/portraits/01-felgo.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Felgo",
     "actorLink": true,
@@ -121,5 +116,10 @@
       "kind": "remains"
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

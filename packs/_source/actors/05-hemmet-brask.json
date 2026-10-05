@@ -1,316 +1,30 @@
 {
   "_id": "dkXDnzulTONnV1rh",
-  "folder": "ZUm9dPvBiSPLGreQ",
-  "img": "modules/points-of-interest/assets/portraits/05-hemmet-brask.webp",
-  "items": [
-    {
-      "_id": "taX3Q0r1h37NNYFO",
-      "img": "systems/pf2e/icons/actions/Passive.webp",
-      "name": "Hazard Spotter",
-      "sort": 800000,
-      "system": {
-        "actionType": {
-          "value": "passive"
-        },
-        "actions": {
-          "value": null
-        },
-        "category": "interaction",
-        "description": {
-          "value": "<p>Even if the tomb raider isn't @UUID[Compendium.pf2e.actionspf2e.Item.TiNDYUGlMmxzxBYU]{Searching}, they get a check to find traps that normally require them to be Searching.</p>"
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": ""
-        },
-        "rules": [],
-        "slug": null,
-        "traits": {
-          "value": []
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!dkXDnzulTONnV1rh.taX3Q0r1h37NNYFO"
-    },
-    {
-      "_id": "XPYr9hMESgVNjbVp",
-      "img": "systems/pf2e/icons/actions/OneAction.webp",
-      "name": "Trick Attack",
-      "sort": 900000,
-      "system": {
-        "actionType": {
-          "value": "action"
-        },
-        "actions": {
-          "value": 1
-        },
-        "category": "offensive",
-        "description": {
-          "value": "<p>The tomb raider chooses one of their weapons. The next attack with that weapon this turn deals an additional 2d6 precision damage. In addition, the tomb raider can Interact to draw or reload the weapon.</p>"
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": ""
-        },
-        "rules": [
-          {
-            "domain": "damage",
-            "key": "RollOption",
-            "option": "trick-attack",
-            "toggleable": true
-          },
-          {
-            "category": "precision",
-            "diceNumber": 2,
-            "dieSize": "d6",
-            "key": "DamageDice",
-            "predicate": [
-              "trick-attack"
-            ],
-            "selector": "strike-damage"
-          }
-        ],
-        "slug": null,
-        "traits": {
-          "value": []
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!dkXDnzulTONnV1rh.XPYr9hMESgVNjbVp"
-    },
-    {
-      "_id": "fwJUsC1cyxsHPo94",
-      "img": "systems/pf2e/icons/default-icons/lore.svg",
-      "name": "Architecture Lore",
-      "sort": 1000000,
-      "system": {
-        "description": {
-          "value": ""
-        },
-        "mod": {
-          "value": 11
-        },
-        "proficient": {
-          "value": 0
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": ""
-        },
-        "rules": [],
-        "slug": null,
-        "traits": {},
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "lore",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!dkXDnzulTONnV1rh.fwJUsC1cyxsHPo94"
-    },
-    {
-      "_id": "duBrf89grnmT2Qdn",
-      "img": "systems/pf2e/icons/default-icons/lore.svg",
-      "name": "Engineering Lore",
-      "sort": 1100000,
-      "system": {
-        "description": {
-          "value": ""
-        },
-        "mod": {
-          "value": 11
-        },
-        "proficient": {
-          "value": 0
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": ""
-        },
-        "rules": [],
-        "slug": null,
-        "traits": {},
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "lore",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!dkXDnzulTONnV1rh.duBrf89grnmT2Qdn"
-    }
-  ],
+  "_key": "!actors!dkXDnzulTONnV1rh",
   "name": "Hemmet Brask",
+  "type": "npc",
+  "img": "modules/points-of-interest/assets/portraits/05-hemmet-brask.webp",
   "system": {
-    "abilities": {
-      "cha": {
-        "mod": 0
-      },
-      "con": {
-        "mod": 1
-      },
-      "dex": {
-        "mod": 4
-      },
-      "int": {
-        "mod": 2
-      },
-      "str": {
-        "mod": 3
-      },
-      "wis": {
-        "mod": 2
-      }
-    },
-    "attributes": {
-      "ac": {
-        "details": "",
-        "value": 21
-      },
-      "allSaves": {
-        "value": ""
-      },
-      "hp": {
-        "details": "",
-        "max": 75,
-        "temp": 0,
-        "value": 75
-      },
-      "speed": {
-        "otherSpeeds": [
-          {
-            "type": "climb",
-            "value": 15
-          }
-        ],
-        "value": 25
-      }
-    },
     "details": {
-      "blurb": "",
-      "languages": {
-        "details": "",
-        "value": [
-          "common"
-        ]
-      },
       "level": {
         "value": 5
       },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Dead antiquarian and surveyor. Stat block as in life, without the gear left in the camp; the Skulltaker actor holds the statistics the wall fights with. NPC Core Tomb Raider.</p>",
-      "publicNotes": "<p>Great treasure awaits those willing to explore the hazardous depths of ancient tombs and forgotten dungeons. Some tomb raiders seek the riches of bygone eras; others recover pieces of history thought lost to the sands of time.</p><hr /><p>Explorers are often well-equipped and well-trained for any type of hazard and are eager to lead others into the wild.</p>\n<h2>Appearance</h2>\n<p>In life: a burly surveyor in mud-caked boots carrying the surveyor's chain. In death: a broad skull with a gold tooth.</p>",
-      "publication": {
-        "license": "ORC",
-        "remaster": true,
-        "title": "Pathfinder NPC Core"
-      }
-    },
-    "initiative": {
-      "statistic": "perception"
-    },
-    "perception": {
-      "details": "",
-      "mod": 13,
-      "senses": []
-    },
-    "resources": {},
-    "saves": {
-      "fortitude": {
-        "saveDetail": "",
-        "value": 10
-      },
-      "reflex": {
-        "saveDetail": "",
-        "value": 15
-      },
-      "will": {
-        "saveDetail": "",
-        "value": 11
-      }
-    },
-    "skills": {
-      "acrobatics": {
-        "base": 13
-      },
-      "athletics": {
-        "base": 13
-      },
-      "deception": {
-        "base": 7
-      },
-      "society": {
-        "base": 9
-      },
-      "stealth": {
-        "base": 11
-      },
-      "thievery": {
-        "base": 13
-      }
+      "publicNotes": "<h2>Appearance</h2>\n<p>In life: a burly surveyor in mud-caked boots carrying the surveyor's chain. In death: a broad skull with a gold tooth.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Dead antiquarian and surveyor. Stat block as in life, without the gear left in the camp; the Skulltaker actor holds the statistics the wall fights with. NPC Core Tomb Raider.</p>"
     },
     "traits": {
-      "rarity": "common",
       "size": {
         "value": "med"
       },
-      "value": [
-        "human",
-        "humanoid"
-      ]
+      "rarity": "common"
     },
     "_migration": {
       "version": 0.959,
       "previous": null
     }
   },
-  "type": "npc",
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": "Compendium.pf2e.pathfinder-npc-core.Actor.Yl6pxCXAoFECt89L"
-  },
+  "items": [],
   "effects": [],
-  "_key": "!actors!dkXDnzulTONnV1rh",
   "prototypeToken": {
     "name": "Hemmet Brask",
     "actorLink": true,
@@ -332,6 +46,7 @@
       }
     }
   },
+  "folder": "ZUm9dPvBiSPLGreQ",
   "sort": 4000,
   "ownership": {
     "default": 0
@@ -340,7 +55,36 @@
     "points-of-interest": {
       "encounter": 5,
       "slug": "05-hemmet-brask",
-      "kind": "voice"
+      "kind": "voice",
+      "recipe": {
+        "source": "Compendium.pf2e.pathfinder-npc-core.Actor.Yl6pxCXAoFECt89L",
+        "ops": [
+          {
+            "op": "removeItems",
+            "types": [
+              "melee",
+              "weapon",
+              "armor",
+              "shield",
+              "equipment",
+              "consumable",
+              "treasure",
+              "backpack",
+              "ammo",
+              "book"
+            ]
+          }
+        ],
+        "treasure": [],
+        "hash": "74ab8cd4960ad4b5",
+        "verified": "8.5.1"
+      }
     }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
   }
 }

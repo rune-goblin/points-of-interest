@@ -1,228 +1,30 @@
 {
   "_id": "Zr65ujrGoNbm12t4",
-  "folder": "ZUm9dPvBiSPLGreQ",
-  "img": "modules/points-of-interest/assets/portraits/05-lio-venn.webp",
-  "items": [
-    {
-      "_id": "mOaqXByjpJOQroyH",
-      "img": "systems/pf2e/icons/actions/Reaction.webp",
-      "name": "Timely Advice",
-      "sort": 500000,
-      "system": {
-        "actionType": {
-          "value": "reaction"
-        },
-        "actions": {
-          "value": null
-        },
-        "category": "defensive",
-        "description": {
-          "value": "<p><strong>Trigger</strong> An ally is about to attempt an attack roll or skill check and has not yet rolled</p>\n<hr />\n<p><strong>Effect</strong> The sage gives the ally a savvy piece of advice, providing valuable insight. The ally gains a +2 circumstance bonus to the triggering roll.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.FISKjI7bal26AnyL]{Effect: Timely Advice}</p>"
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": ""
-        },
-        "rules": [],
-        "slug": null,
-        "traits": {
-          "value": [
-            "auditory",
-            "concentrate",
-            "linguistic",
-            "mental"
-          ]
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!Zr65ujrGoNbm12t4.mOaqXByjpJOQroyH"
-    },
-    {
-      "_id": "pCgvFzMbb4y6tLfW",
-      "img": "systems/pf2e/icons/actions/OneAction.webp",
-      "name": "Sage's Analysis",
-      "sort": 600000,
-      "system": {
-        "actionType": {
-          "value": "action"
-        },
-        "actions": {
-          "value": 1
-        },
-        "category": "offensive",
-        "description": {
-          "value": "<p>The sage studies a creature, attempting an @Check[arcana], @Check[nature], @Check[occultism], @Check[religion], or @Check[society] check against the creature's @UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{Recall Knowledge} DC. On a success, the sage gains a +2 circumstance bonus to attack rolls and AC against that creature and deals an additional 2d6 damage to the creature with weapon attacks.</p>\n<p>These benefits last for 1 minute or until the sage uses this ability again.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.pdEXnJrIHIEX9NM4]{Effect: Sage's Analysis}</p>"
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": ""
-        },
-        "rules": [],
-        "slug": null,
-        "traits": {
-          "value": [
-            "concentrate"
-          ]
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!Zr65ujrGoNbm12t4.pCgvFzMbb4y6tLfW"
-    }
-  ],
+  "_key": "!actors!Zr65ujrGoNbm12t4",
   "name": "Lio Venn",
+  "type": "npc",
+  "img": "modules/points-of-interest/assets/portraits/05-lio-venn.webp",
   "system": {
-    "abilities": {
-      "cha": {
-        "mod": 0
-      },
-      "con": {
-        "mod": 1
-      },
-      "dex": {
-        "mod": 2
-      },
-      "int": {
-        "mod": 4
-      },
-      "str": {
-        "mod": 2
-      },
-      "wis": {
-        "mod": 3
-      }
-    },
-    "attributes": {
-      "ac": {
-        "details": "",
-        "value": 22
-      },
-      "allSaves": {
-        "value": ""
-      },
-      "hp": {
-        "details": "",
-        "max": 86,
-        "temp": 0,
-        "value": 86
-      },
-      "speed": {
-        "otherSpeeds": [],
-        "value": 25
-      }
-    },
     "details": {
-      "blurb": "",
-      "languages": {
-        "details": "up to 4 additional languages",
-        "value": [
-          "common"
-        ]
-      },
       "level": {
         "value": 6
       },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Dead antiquarian and linguist. Stat block as in life, without the gear left in the camp; the Skulltaker actor holds the statistics the wall fights with. NPC Core Sage.</p>",
-      "publicNotes": "<p>The greatest knowledge comes from experience. Village elders, ancient seers, and advisors to royalty are examples of those valued for such wisdom. Sages educate and guide their people from straying from their cultures' norms and traditions.</p><hr /><p>True power comes from knowledge—the power to shape the growth of kingdoms by mere whispers, stay three steps ahead of adversaries, or even know which flora is best for creating untraceable poisons.</p>\n<h2>Appearance</h2>\n<p>In life: an elderly linguist with a long white beard and a satchel of rubbings. In death: a skull with a scrap of beard still caught in its jaw.</p>",
-      "publication": {
-        "license": "ORC",
-        "remaster": true,
-        "title": "Pathfinder NPC Core"
-      }
-    },
-    "initiative": {
-      "statistic": "perception"
-    },
-    "perception": {
-      "details": "",
-      "mod": 14,
-      "senses": []
-    },
-    "resources": {},
-    "saves": {
-      "fortitude": {
-        "saveDetail": "",
-        "value": 10
-      },
-      "reflex": {
-        "saveDetail": "",
-        "value": 12
-      },
-      "will": {
-        "saveDetail": "",
-        "value": 16
-      }
-    },
-    "skills": {
-      "arcana": {
-        "base": 12
-      },
-      "diplomacy": {
-        "base": 13
-      },
-      "medicine": {
-        "base": 12
-      },
-      "nature": {
-        "base": 14
-      },
-      "occultism": {
-        "base": 12
-      },
-      "religion": {
-        "base": 12
-      },
-      "society": {
-        "base": 14
-      }
+      "publicNotes": "<h2>Appearance</h2>\n<p>In life: an elderly linguist with a long white beard and a satchel of rubbings. In death: a skull with a scrap of beard still caught in its jaw.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Dead antiquarian and linguist. Stat block as in life, without the gear left in the camp; the Skulltaker actor holds the statistics the wall fights with. NPC Core Sage.</p>"
     },
     "traits": {
-      "rarity": "common",
       "size": {
         "value": "med"
       },
-      "value": [
-        "human",
-        "humanoid"
-      ]
+      "rarity": "common"
     },
     "_migration": {
       "version": 0.959,
       "previous": null
     }
   },
-  "type": "npc",
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": "Compendium.pf2e.pathfinder-npc-core.Actor.3R2J90R84AUgFJH2"
-  },
+  "items": [],
   "effects": [],
-  "_key": "!actors!Zr65ujrGoNbm12t4",
   "prototypeToken": {
     "name": "Lio Venn",
     "actorLink": true,
@@ -244,6 +46,7 @@
       }
     }
   },
+  "folder": "ZUm9dPvBiSPLGreQ",
   "sort": 5000,
   "ownership": {
     "default": 0
@@ -252,7 +55,36 @@
     "points-of-interest": {
       "encounter": 5,
       "slug": "05-lio-venn",
-      "kind": "voice"
+      "kind": "voice",
+      "recipe": {
+        "source": "Compendium.pf2e.pathfinder-npc-core.Actor.3R2J90R84AUgFJH2",
+        "ops": [
+          {
+            "op": "removeItems",
+            "types": [
+              "melee",
+              "weapon",
+              "armor",
+              "shield",
+              "equipment",
+              "consumable",
+              "treasure",
+              "backpack",
+              "ammo",
+              "book"
+            ]
+          }
+        ],
+        "treasure": [],
+        "hash": "51c0005a63449169",
+        "verified": "8.5.1"
+      }
     }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
   }
 }

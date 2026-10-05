@@ -1,485 +1,30 @@
 {
   "_id": "CBPw4ICfGbiAvo8D",
-  "img": "modules/points-of-interest/assets/portraits/01-ankou-shadow-double-first.webp",
-  "items": [
-    {
-      "_id": "IvFL4oT7wjrxQZqw",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
-      "name": "Claw",
-      "sort": 1100000,
-      "system": {
-        "attack": {
-          "value": ""
-        },
-        "attackEffects": {
-          "value": []
-        },
-        "bonus": {
-          "value": 27
-        },
-        "damageRolls": {
-          "0": {
-            "damage": "3d8+16",
-            "damageType": "slashing"
-          }
-        },
-        "description": {
-          "value": ""
-        },
-        "publication": {
-          "license": "OGL",
-          "remaster": false,
-          "title": ""
-        },
-        "range": null,
-        "rules": [],
-        "slug": null,
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "agile",
-            "cold-iron",
-            "unarmed"
-          ]
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "melee",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!CBPw4ICfGbiAvo8D.IvFL4oT7wjrxQZqw"
-    },
-    {
-      "_id": "JdsDXPVL1v4JEQt5",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
-      "name": "Wing",
-      "sort": 1200000,
-      "system": {
-        "attack": {
-          "value": ""
-        },
-        "attackEffects": {
-          "value": []
-        },
-        "bonus": {
-          "value": 27
-        },
-        "damageRolls": {
-          "0": {
-            "damage": "2d8+16",
-            "damageType": "piercing"
-          },
-          "1": {
-            "damage": "2d6",
-            "damageType": "bleed"
-          }
-        },
-        "description": {
-          "value": ""
-        },
-        "publication": {
-          "license": "OGL",
-          "remaster": false,
-          "title": ""
-        },
-        "range": null,
-        "rules": [],
-        "slug": null,
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "cold-iron",
-            "reach-10"
-          ]
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "melee",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!CBPw4ICfGbiAvo8D.JdsDXPVL1v4JEQt5"
-    },
-    {
-      "_id": "PjBdBCA31o7FcQvI",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.bestiary-ability-glossary-srd.Item.kdhbPaBMK1d1fpbA"
-      },
-      "img": "systems/pf2e/icons/actions/Passive.webp",
-      "name": "Telepathy 100 feet",
-      "sort": 1300000,
-      "system": {
-        "actionType": {
-          "value": "passive"
-        },
-        "actions": {
-          "value": null
-        },
-        "category": "interaction",
-        "description": {
-          "value": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Telepathy]</p>"
-        },
-        "publication": {
-          "license": "OGL",
-          "remaster": false,
-          "title": "Pathfinder Bestiary"
-        },
-        "rules": [],
-        "slug": "telepathy",
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "aura",
-            "magical"
-          ]
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "effects": [],
-      "_key": "!actors.items!CBPw4ICfGbiAvo8D.PjBdBCA31o7FcQvI"
-    },
-    {
-      "_id": "V8J7D9aK5N4MpaBI",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.bestiary-ability-glossary-srd.Item.sebk9XseMCRkDqRg"
-      },
-      "img": "systems/pf2e/icons/actions/Passive.webp",
-      "name": "Lifesense 120 feet",
-      "sort": 1400000,
-      "system": {
-        "actionType": {
-          "value": "passive"
-        },
-        "actions": {
-          "value": null
-        },
-        "category": "interaction",
-        "description": {
-          "value": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-        },
-        "publication": {
-          "license": "OGL",
-          "remaster": false,
-          "title": "Pathfinder Bestiary"
-        },
-        "rules": [],
-        "slug": "lifesense",
-        "traits": {
-          "rarity": "common",
-          "value": []
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "effects": [],
-      "_key": "!actors.items!CBPw4ICfGbiAvo8D.V8J7D9aK5N4MpaBI"
-    },
-    {
-      "_id": "Bpm9xvzcp3dBpCvp",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.bestiary-ability-glossary-srd.Item.AWvNPE4U0kEJSL1T"
-      },
-      "img": "systems/pf2e/icons/actions/Passive.webp",
-      "name": "Sneak Attack",
-      "sort": 1600000,
-      "system": {
-        "actionType": {
-          "value": "passive"
-        },
-        "actions": {
-          "value": null
-        },
-        "category": "offensive",
-        "description": {
-          "value": "<p>An ankou's Strikes deal an additional 3d6 precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
-        },
-        "publication": {
-          "license": "OGL",
-          "remaster": false,
-          "title": "Pathfinder Bestiary"
-        },
-        "rules": [
-          {
-            "category": "precision",
-            "diceNumber": 3,
-            "dieSize": "d6",
-            "key": "DamageDice",
-            "predicate": [
-              "target:condition:off-guard"
-            ],
-            "selector": "strike-damage"
-          },
-          {
-            "key": "RollOption",
-            "label": "PF2E.SpecificRule.TOTMToggle.OffGuard",
-            "option": "target:condition:off-guard",
-            "toggleable": "totm"
-          }
-        ],
-        "slug": "sneak-attack",
-        "traits": {
-          "rarity": "common",
-          "value": []
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "effects": [],
-      "_key": "!actors.items!CBPw4ICfGbiAvo8D.Bpm9xvzcp3dBpCvp"
-    },
-    {
-      "_id": "B0KFQ4clYDAjh7I8",
-      "img": "systems/pf2e/icons/actions/Passive.webp",
-      "name": "Saving throws against Light effects",
-      "sort": 500000,
-      "system": {
-        "actionType": {
-          "value": "passive"
-        },
-        "actions": {
-          "value": null
-        },
-        "category": "defensive",
-        "description": {
-          "value": "<p>A shadow double that attempts a saving throw against a light effect can't get a result better than failure.</p>"
-        },
-        "publication": {
-          "license": "OGL",
-          "remaster": false,
-          "title": ""
-        },
-        "rules": [
-          {
-            "key": "Note",
-            "outcome": [
-              "failure"
-            ],
-            "predicate": [
-              "item:trait:light"
-            ],
-            "selector": "saving-throw",
-            "text": "{item|description}",
-            "title": "{item|name}"
-          },
-          {
-            "adjustment": {
-              "criticalSuccess": "to-failure",
-              "success": "to-failure"
-            },
-            "key": "AdjustDegreeOfSuccess",
-            "predicate": [
-              "item:trait:light"
-            ],
-            "selector": "saving-throw"
-          }
-        ],
-        "slug": null,
-        "traits": {
-          "value": []
-        },
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        }
-      },
-      "type": "action",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": null
-      },
-      "effects": [],
-      "_key": "!actors.items!CBPw4ICfGbiAvo8D.B0KFQ4clYDAjh7I8"
-    }
-  ],
+  "_key": "!actors!CBPw4ICfGbiAvo8D",
   "name": "The Ankou's Shadow Double (First)",
+  "type": "npc",
+  "img": "modules/points-of-interest/assets/portraits/01-ankou-shadow-double-first.webp",
   "system": {
-    "abilities": {
-      "cha": {
-        "mod": 6
-      },
-      "con": {
-        "mod": 5
-      },
-      "dex": {
-        "mod": 9
-      },
-      "int": {
-        "mod": 3
-      },
-      "str": {
-        "mod": 8
-      },
-      "wis": {
-        "mod": 3
-      }
-    },
-    "attributes": {
-      "ac": {
-        "details": "",
-        "value": 40
-      },
-      "allSaves": {
-        "value": ""
-      },
-      "hp": {
-        "details": "",
-        "max": 110,
-        "temp": 0,
-        "value": 110
-      },
-      "speed": {
-        "otherSpeeds": [
-          {
-            "type": "fly",
-            "value": 75
-          }
-        ],
-        "value": 0
-      },
-      "weaknesses": [
-        {
-          "type": "cold-iron",
-          "value": 15
-        }
-      ]
-    },
     "details": {
-      "blurb": "Variant ankou",
-      "languages": {
-        "details": "can't speak any language; telepathy 100 feet",
-        "value": [
-          "aklo",
-          "common",
-          "fey"
-        ]
-      },
       "level": {
         "value": 17
       },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> A double from the ankou's Shadow Doubles (110 HP, Strikes +27, no innate spells). It vanishes when the ankou leaves or dies.</p>",
-      "publicNotes": "<p>Ankous are shadowy killers who serve powerful fey creatures, or even the Eldest- the demigods of the First World. Amid the courts of the Eldest or of powerful fey rulers, these sinister assassins lurk overhead as they await the call to action-implied threats akin to deadly weapons hung as decor in a royal hall. Ankous never speak aloud; when they feel the need to communicate at all, they do so in a telepathic whisper directly into a victim's mind. While an ankou's body is made of strange, fleshy material, their claws and the cruel hooks on their wings are made of razor-sharp cold iron, a quality that makes them much feared among other fey. A typical ankou is 10 feet tall and has an 8-foot wingspan but weighs less than 80 pounds.</p>\n<p>While most ankous serve powerful masters, some of these murderous fey are left to their own devices and serve none but their own capricious, cruel whims. In some cases, their master may have been slain, while in others the ankou may have been released from service for any number of reasons. An ankou left to indulge their own whims unrestrained is often the most dangerous ankou of them all!</p>\n<h2>Appearance</h2>\n<p>The ankou's silhouette rendered in smoke, edges fraying into wisps, its wings slightly mismatched as if poorly copied.</p>",
-      "publication": {
-        "license": "OGL",
-        "remaster": false,
-        "title": "Pathfinder Kingmaker"
-      }
-    },
-    "initiative": {
-      "statistic": "perception"
-    },
-    "perception": {
-      "details": "",
-      "mod": 30,
-      "senses": [
-        {
-          "acuity": "precise",
-          "range": 120,
-          "type": "lifesense"
-        },
-        {
-          "type": "low-light-vision"
-        }
-      ]
-    },
-    "resources": {
-      "focus": {
-        "max": 1,
-        "value": 1
-      }
-    },
-    "saves": {
-      "fortitude": {
-        "saveDetail": "",
-        "value": 28
-      },
-      "reflex": {
-        "saveDetail": "",
-        "value": 32
-      },
-      "will": {
-        "saveDetail": "",
-        "value": 29
-      }
-    },
-    "skills": {
-      "acrobatics": {
-        "base": 34
-      },
-      "deception": {
-        "base": 31
-      },
-      "intimidation": {
-        "base": 34
-      },
-      "nature": {
-        "base": 28
-      },
-      "stealth": {
-        "base": 34
-      }
+      "publicNotes": "<h2>Appearance</h2>\n<p>The ankou's silhouette rendered in smoke, edges fraying into wisps, its wings slightly mismatched as if poorly copied.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> A double from the ankou's Shadow Doubles (110 HP, Strikes +27, no innate spells). It vanishes when the ankou leaves or dies.</p>"
     },
     "traits": {
-      "rarity": "rare",
       "size": {
         "value": "lg"
       },
-      "value": [
-        "evil",
-        "fey",
-        "lawful",
-        "summoned"
-      ]
+      "rarity": "rare"
     },
     "_migration": {
       "version": 0.959,
       "previous": null
     }
   },
-  "type": "npc",
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": "Compendium.pf2e.kingmaker-bestiary.Actor.m8kwG6NskYDlBSCy"
-  },
+  "items": [],
   "effects": [],
-  "_key": "!actors!CBPw4ICfGbiAvo8D",
   "prototypeToken": {
     "name": "The Ankou",
     "actorLink": false,
@@ -511,7 +56,55 @@
       "encounter": 1,
       "slug": "01-ankou-shadow-double-first",
       "kind": "creature",
-      "usesGear": true
+      "usesGear": true,
+      "recipe": {
+        "source": "Compendium.pf2e.kingmaker-bestiary.Actor.m8kwG6NskYDlBSCy",
+        "ops": [
+          {
+            "op": "set",
+            "path": "system.attributes.hp.max",
+            "value": 110
+          },
+          {
+            "op": "set",
+            "path": "system.attributes.hp.value",
+            "value": 110
+          },
+          {
+            "op": "addTraits",
+            "traits": [
+              "summoned"
+            ]
+          },
+          {
+            "op": "removeItems",
+            "spellcasting": true,
+            "items": [
+              {
+                "id": "Q0VRtsqm6etoZxCa",
+                "name": "Shadow Doubles"
+              }
+            ]
+          },
+          {
+            "op": "strikeBonus",
+            "value": 27
+          },
+          {
+            "op": "copyItem",
+            "uuid": "Compendium.pf2e.pathfinder-monster-core-2.Actor.wNa8UPQqSepdxscG.Item.B0KFQ4clYDAjh7I8"
+          }
+        ],
+        "treasure": [],
+        "hash": "3f9a12fe706ee017",
+        "verified": "8.5.1"
+      }
     }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
   }
 }

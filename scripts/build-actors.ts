@@ -1,63 +1,22 @@
 // Generate the actors pack sources: one actor per character in docs/art/by-type/characters.md,
-// the two custom hazards, and a loot actor per treasure cache. Stat blocks and treasure items are
-// copied from the installed PF2e system's compendia (OGL/ORC content only; never from the paid
-// pf2e-kingmaker module), renamed and re-arted.
+// the two custom hazards, and a loot actor per treasure cache. An actor built on a PF2e stat block
+// ships as a stub: our name, art, notes, items and the stat block's level, size and rarity, plus a
+// recipe naming the PF2e documents and the changes the module applies when it hydrates the actor in
+// a world (src/actors/hydrate.ts). Nothing copied from the system ships. The build hydrates every
+// stub against the installed system and fails on any warning, then stamps the recipe verified.
 // Not part of `npm run build`, because it needs a PF2e install; the output is committed.
 //   node scripts/build-actors.ts [--system <path to Data/systems/pf2e>]
-import { execFileSync } from 'node:child_process';
-import { cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
+import { createHash } from 'node:crypto';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { BODYLESS, hydrate, lookup, type ItemRef, type Op, type Recipe, type Runes, type Treasure } from '../src/actors/hydrate.ts';
+import { findSystem, loadPacks, systemVersion } from './pf2e-packs.ts';
 import { MODULE_ID, ids, pad, slugify, stableId } from './stable-id.ts';
 
 const ROOT = process.cwd();
 const OUT = join(ROOT, 'packs', '_source', 'actors');
 
 type Json = Record<string, any>;
-type Pack =
-  | 'kingmaker-bestiary'
-  | 'pathfinder-bestiary'
-  | 'pathfinder-bestiary-2'
-  | 'pathfinder-monster-core'
-  | 'pathfinder-monster-core-2'
-  | 'pathfinder-npc-core'
-  | 'equipment'
-  | 'spells';
-type Source = [Pack, string];
-
-function systemDir(): string {
-  const i = process.argv.indexOf('--system');
-  const dir = i > 0 ? process.argv[i + 1] : join(ROOT, '_foundry-data', 'systems', 'pf2e');
-  if (!dir || !existsSync(join(dir, 'packs'))) {
-    console.error(`No PF2e system packs at ${dir ?? '(missing path)'}/packs.`);
-    console.error('Pass --system <path to Data/systems/pf2e>, or run `npm run setup` to create _foundry-data.');
-    process.exit(1);
-  }
-  return dir;
-}
-
-// Foundry holds a LOCK on packs it has open, so read copies instead of the live LevelDB.
-function loadPacks(system: string, packs: Pack[]): Map<string, Json> {
-  const tmp = mkdtempSync(join(tmpdir(), 'poi-actors-'));
-  const fvtt = join(ROOT, 'node_modules', '.bin', 'fvtt');
-  const docs = new Map<string, Json>();
-  try {
-    for (const pack of packs) {
-      const ldb = join(tmp, 'ldb', pack);
-      cpSync(join(system, 'packs', pack), ldb, { recursive: true });
-      rmSync(join(ldb, 'LOCK'), { force: true });
-      const json = join(tmp, 'json', pack);
-      execFileSync(fvtt, ['package', 'unpack', pack, '--in', join(tmp, 'ldb'), '--out', json], { stdio: 'ignore' });
-      for (const file of readdirSync(json)) {
-        const doc = JSON.parse(readFileSync(join(json, file), 'utf8')) as Json;
-        if (/^!(actors|items)!/.test(doc._key ?? '')) docs.set(`${pack}/${doc._id}`, doc);
-      }
-    }
-  } finally {
-    rmSync(tmp, { recursive: true, force: true });
-  }
-  return docs;
-}
 
 const encountersMd = readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8');
 const titles = new Map([...encountersMd.matchAll(/^### (\d+)\. (.+)$/gm)].map((m) => [Number(m[1]), m[2].trim()]));
@@ -92,7 +51,8 @@ interface Spec {
   brief?: string;
   role: string;
   kind: Kind;
-  source?: Source;
+  /** UUID of the PF2e stat block the actor hydrates from. */
+  source?: string;
   adjustment?: 'elite' | 'weak';
   linked?: boolean;
   /** Shown on the canvas when it must differ from the actor name, e.g. so a double passes for the original. */
@@ -106,16 +66,22 @@ interface Spec {
   usesGear?: boolean;
   /** A cache shut away in a chest, strongbox, sealed chamber or hidden packet rather than lying in the open, so its gear needn't be in an enemy's hands. */
   stowed?: boolean;
+  /** Lore skills of our own, as items the stub carries. */
+  lores?: Record<string, number>;
   custom?: (actorId: string) => Json;
-  patch?: (actor: Json) => void;
+  patch?: (source: Json) => Op[];
 }
 
-const KM = (id: string): Source => ['kingmaker-bestiary', id];
-const MC = (id: string): Source => ['pathfinder-monster-core', id];
-const MC2 = (id: string): Source => ['pathfinder-monster-core-2', id];
-const B1 = (id: string): Source => ['pathfinder-bestiary', id];
-const B2 = (id: string): Source => ['pathfinder-bestiary-2', id];
-const NPC = (id: string): Source => ['pathfinder-npc-core', id];
+const actorUuid = (pack: string) => (id: string): string => `Compendium.pf2e.${pack}.Actor.${id}`;
+const KM = actorUuid('kingmaker-bestiary');
+const MC = actorUuid('pathfinder-monster-core');
+const MC2 = actorUuid('pathfinder-monster-core-2');
+const B1 = actorUuid('pathfinder-bestiary');
+const B2 = actorUuid('pathfinder-bestiary-2');
+const NPC = actorUuid('pathfinder-npc-core');
+const EQUIPMENT = (id: string): string => `Compendium.pf2e.equipment-srd.Item.${id}`;
+const SPELL = (id: string): string => `Compendium.pf2e.spells-srd.Item.${id}`;
+const ACTOR_PACKS = ['kingmaker-bestiary', 'pathfinder-bestiary', 'pathfinder-bestiary-2', 'pathfinder-monster-core', 'pathfinder-monster-core-2', 'pathfinder-npc-core'];
 
 const ANKOU_ASSASSIN = KM('m8kwG6NskYDlBSCy');
 const OZTHOOM = MC2('EG8jLZfIfTwA0b5g');
@@ -153,38 +119,42 @@ const SAGE = NPC('3R2J90R84AUgFJH2');
 const ANTIQUARIAN = 'Stat block as in life, without the gear left in the camp; the Skulltaker actor holds the statistics the wall fights with.';
 const JOTUND_TROLL = MC2('4Ay3tf49upoyaJrg');
 
+/** A source stat block's item, by the name it has in the installed system. */
+function ref(source: Json, name: string, type?: string): ItemRef {
+  const item = (source.items as Json[]).find((i) => i.name === name && (!type || i.type === type));
+  if (!item) throw new Error(`${source.name}: no ${type ?? 'item'} "${name}"`);
+  return { id: item._id, name };
+}
+
 // The Ankou Assassin's Shadow Doubles: "the same statistics as an ankou, but they have the
 // summoned trait, have 110 Hit Points, can't use Shadow Doubles or innate spells, and have an
 // attack bonus of +27 for their Strikes", plus the light-save cap MC2's Ozthoom Shadow Double encodes.
-let lightSaveCap: Json | undefined;
-function shadowDouble(actor: Json): void {
-  const hp = actor.system.attributes.hp;
-  hp.max = hp.value = 110;
-  actor.system.traits.value = [...new Set([...actor.system.traits.value, 'summoned'])].sort();
-  const entries = new Set(actor.items.filter((i: Json) => i.type === 'spellcastingEntry').map((i: Json) => i._id));
-  actor.items = actor.items.filter(
-    (i: Json) =>
-      i.type !== 'spellcastingEntry' &&
-      !(i.type === 'spell' && entries.has(i.system.location?.value)) &&
-      i.name !== 'Shadow Doubles',
-  );
-  for (const strike of actor.items.filter((i: Json) => i.type === 'melee')) strike.system.bonus.value = 27;
-  if (lightSaveCap) actor.items.push(structuredClone(lightSaveCap));
+let lightSaveCap = '';
+function shadowDouble(source: Json): Op[] {
+  return [
+    { op: 'set', path: 'system.attributes.hp.max', value: 110 },
+    { op: 'set', path: 'system.attributes.hp.value', value: 110 },
+    { op: 'addTraits', traits: ['summoned'] },
+    { op: 'removeItems', spellcasting: true, items: [ref(source, 'Shadow Doubles')] },
+    { op: 'strikeBonus', value: 27 },
+    { op: 'copyItem', uuid: lightSaveCap },
+  ];
 }
 
 function overrideStats(perception: number, will: number) {
-  return (actor: Json): void => {
-    actor.system.perception.mod = perception;
-    actor.system.saves.will.value = will;
-  };
+  return (): Op[] => [
+    { op: 'set', path: 'system.perception.mod', value: perception },
+    { op: 'set', path: 'system.saves.will.value', value: will },
+  ];
 }
 
 function renameItem(from: string, to: string) {
-  return (actor: Json): void => {
-    const item = actor.items.find((i: Json) => i.name === from);
-    if (!item) throw new Error(`${actor.name}: no item "${from}" to rename`);
-    item.name = to;
-  };
+  return (source: Json): Op[] => [{ op: 'renameItem', item: ref(source, from), name: to }];
+}
+
+/** Runes for a strike with no weapon item behind it, such as a creature's own magical blade. */
+function runeStrike(name: string, runes: string[]) {
+  return (source: Json): Op[] => [{ op: 'strikeRunes', item: ref(source, name, 'melee'), runes }];
 }
 
 function loreItem(actorId: string, name: string, mod: number): Json {
@@ -211,13 +181,12 @@ function loreItem(actorId: string, name: string, mod: number): Json {
 }
 
 // A head speaks with the troll's defences; the troll's strikes and abilities belong to its body.
-function trollHead(skills: Record<string, number>, lores: Record<string, number>) {
-  return (actor: Json): void => {
-    actor.items = actor.items.filter((i: Json) => i.type !== 'action');
-    for (const [skill, base] of Object.entries(skills)) actor.system.skills[skill] = { base };
-    for (const [name, mod] of Object.entries(lores)) actor.items.push(loreItem(actor._id, name, mod));
-    actor.system.details.blurb = 'Head of the Jotund Troll';
-  };
+function trollHead(skills: Record<string, number>) {
+  return (): Op[] => [
+    { op: 'removeItems', types: ['action'] },
+    ...Object.entries(skills).map(([skill, base]): Op => ({ op: 'set', path: `system.skills.${skill}`, value: { base } })),
+    { op: 'set', path: 'system.details.blurb', value: 'Head of the Jotund Troll' },
+  ];
 }
 
 
@@ -253,10 +222,10 @@ const ENCOUNTERS: Record<number, Spec[]> = {
     { slug: '03-jotund-troll', name: 'The Jotund Troll', brief: 'The Jotund Troll', kind: 'creature', usesGear: true, source: JOTUND_TROLL, linked: true,
       role: 'The nine-headed troll. It negotiates by head-vote and fights only if insulted twice, the vote fails, or the PCs attack; it flees into the moor at 120 HP.' },
     { slug: '03-envoy-troll-head', name: 'The Envoy (Troll Head)', brief: 'The Envoy (troll head)', kind: 'voice', source: JOTUND_TROLL, linked: true,
-      patch: trollHead({ deception: 28, diplomacy: 28, society: 25 }, { 'Royal Court Lore': 25 }),
+      patch: trollHead({ deception: 28, diplomacy: 28, society: 25 }), lores: { 'Royal Court Lore': 25 },
       role: "The head that mimics Ser Halward Toll and speaks for the Envoy bloc. It shares the Jotund Troll's defences, which take any damage; its courtly skills serve its lies and Sense Motive against it." },
     { slug: '03-old-heads', name: 'The Old Heads (Troll Heads)', brief: 'The Old Heads (troll heads)', kind: 'voice', source: JOTUND_TROLL, linked: true,
-      patch: trollHead({ religion: 25 }, { 'Barrow Lore': 28 }),
+      patch: trollHead({ religion: 25 }), lores: { 'Barrow Lore': 28 },
       role: "The two Old Heads, the bloc that guards their mother's bones. They share the Jotund Troll's defences, which take any damage; Religion and Barrow Lore are what they know." },
     { slug: '03-ser-halward-toll', name: 'Ser Halward Toll', brief: 'Ser Halward Toll (dead envoy)', kind: 'remains', linked: true,
       role: "The King's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds the King's letter of offer, 400 gp and a greater bottled lightning." },
@@ -520,9 +489,9 @@ const CACHES: Record<number, Spec[]> = {
   ],
 };
 
-interface Gear { from: string; name?: string; quantity?: number; note?: string; runes?: Json; material?: Json; size?: string }
+interface Gear { from: string; name?: string; quantity?: number; note?: string; runes?: Runes; material?: { type: string; grade: string }; size?: string }
 /** An item the holder's stat block already carries, made treasure in place so its strike stays linked. */
-interface Stock { stock: string; name?: string; note?: string; runes?: Json }
+interface Stock { stock: string; name?: string; note?: string; runes?: Runes }
 interface Valuable { name: string; gp: number; category: 'art-object' | 'gem' | 'material'; img: string; note: string; bulk: number }
 interface Keepsake { name: string; img: string; note: string; quantity: number }
 interface Scroll { spell: string; rank: number }
@@ -990,91 +959,19 @@ function lootActor(): Json {
   };
 }
 
-// Mirrors getHpAdjustment in the PF2e system's actor/creature/helpers.ts.
-function hpAdjustment(level: number, adjustment: 'elite' | 'weak'): number {
-  if (adjustment === 'elite') return level >= 20 ? 30 : level >= 5 ? 20 : level >= 2 ? 15 : 10;
-  return level >= 21 ? -30 : level >= 6 ? -20 : level >= 3 ? -15 : level >= 1 ? -10 : 0;
-}
-
 const TOKEN_SQUARES: Record<string, number> = { tiny: 1, sm: 1, med: 1, lg: 2, huge: 3, grg: 4 };
-
-function rekey(node: unknown, actorId: string): void {
-  if (Array.isArray(node)) return node.forEach((n) => rekey(n, actorId));
-  if (!node || typeof node !== 'object') return;
-  const obj = node as Json;
-  if (typeof obj._key === 'string' && obj._key.startsWith('!actors.')) {
-    obj._key = obj._key.replace(/^(!actors\.[^!]+!)[^.]+/, `$1${actorId}`);
-  }
-  for (const value of Object.values(obj)) rekey(value, actorId);
-}
 
 const html = (text: string): string => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 const LIMITED = 1;
-const PHYSICAL = new Set(['weapon', 'armor', 'shield', 'equipment', 'consumable', 'treasure', 'backpack', 'ammo', 'book']);
 
-function claimStock(actor: Json, { stock: name, ...edit }: Stock): void {
-  const item = actor.items.find((i: Json) => i.name === name);
-  if (!item) throw new Error(`${actor.name}: no stock item "${name}"`);
-  if (edit.name) item.name = edit.name;
-  if (edit.runes) item.system.runes = { ...item.system.runes, ...edit.runes };
-  if (edit.note) item.system.description.value = `<p><em>${html(edit.note)}</em></p>\n${item.system.description.value}`;
-}
-
-// Gear handed to an enemy that can use it goes on, as the gear check in actors.test.ts expects.
-function wield(item: Json, holder: string): void {
-  const usage: string = item.system.usage?.value ?? '';
-  const traits: string[] = item.system.traits.value;
-  if (item.type === 'armor') item.system.equipped = { carryType: 'worn', handsHeld: 0, inSlot: true };
-  if (item.type === 'shield') item.system.equipped = { carryType: 'held', handsHeld: 1 };
-  if (item.type === 'equipment' && usage.startsWith('worn')) {
-    item.system.equipped = { carryType: 'worn', handsHeld: 0, inSlot: usage !== 'worn', invested: traits.includes('invested') };
-  }
-  if (item.type === 'weapon') throw new Error(`${holder}: give ${item.name} as stock() so a strike links to it`);
-}
-
-// NPC strikes reset their property runes on every prepare; PF2e applies a rune to a strike only
-// through an AdjustStrike rule on it, the way the bestiaries encode a runed weapon.
-function addRuneRules(strike: Json, runes: string[]): void {
-  const rules: Json[] = (strike.system.rules ??= []);
-  for (const rune of runes) {
-    if (rules.some((r) => r.key === 'AdjustStrike' && r.property === 'property-runes' && r.value === rune)) continue;
-    rules.push({ definition: ['item:id:{item|_id}'], key: 'AdjustStrike', mode: 'add', property: 'property-runes', value: rune });
-  }
-}
-
-function applyRunesToStrikes(actor: Json): void {
-  for (const strike of actor.items.filter((i: Json) => i.type === 'melee')) {
-    const weapon = actor.items.find((i: Json) => i._id === strike.flags?.pf2e?.linkedWeapon);
-    if (weapon) addRuneRules(strike, weapon.system.runes.property);
-  }
-}
-
-/** Runes for a strike with no weapon item behind it, such as a creature's own magical blade. */
-function runeStrike(name: string, runes: string[]) {
-  return (actor: Json): void => {
-    const strike = actor.items.find((i: Json) => i.type === 'melee' && i.name === name);
-    if (!strike) throw new Error(`${actor.name}: no strike "${name}"`);
-    addRuneRules(strike, runes);
-  };
-}
-
-function lootItem(loot: Exclude<Loot, Stock>, docs: Map<string, Json>): Json {
-  if ('spell' in loot) return spellScroll(loot, docs);
-  if ('from' in loot) {
-    const source = docs.get(`equipment/${loot.from}`);
-    if (!source) throw new Error(`no equipment-srd item ${loot.from}`);
-    const item = structuredClone(source);
-    if (loot.name) item.name = loot.name;
-    if (loot.quantity) item.system.quantity = loot.quantity;
-    if (loot.runes) item.system.runes = loot.runes;
-    if (loot.material) item.system.material = loot.material;
-    if (loot.size) item.system.size = loot.size;
-    if (loot.note) item.system.description.value = `<p><em>${html(loot.note)}</em></p>\n${item.system.description.value}`;
-    return item;
-  }
+/** A valuable or keepsake of our own, which the stub carries. */
+function ownItem(loot: Valuable | Keepsake, actorId: string, slug: string): Json {
   const valuable = 'gp' in loot;
+  const _id = ids.item(slug, loot.name);
   return {
+    _id,
+    _key: `!actors.items!${actorId}.${_id}`,
     name: loot.name,
     type: valuable ? 'treasure' : 'equipment',
     img: loot.img,
@@ -1103,25 +1000,29 @@ function lootItem(loot: Exclude<Loot, Stock>, docs: Map<string, Json>): Json {
   };
 }
 
-// Mirrors createConsumableFromSpell in the PF2e system: the rank's generic scroll, renamed, with the spell embedded.
-function spellScroll({ spell: spellId, rank }: Scroll, docs: Map<string, Json>): Json {
-  const ordinal = ['', '1st', '2nd', '3rd'][rank] ?? `${rank}th`;
-  const spell = docs.get(`spells/${spellId}`);
-  const base = [...docs.values()].find((d) => d.type === 'consumable' && d.name === `Scroll of ${ordinal}-rank Spell`);
-  if (!spell || !base) throw new Error(`no scroll of spells-srd ${spellId} at rank ${rank}`);
-  const uuid = `Compendium.pf2e.spells-srd.Item.${spellId}`;
-  const item = structuredClone(base);
-  item.name = `Scroll of ${spell.name} (Rank ${rank})`;
-  item.system.traits.value = [...new Set([...item.system.traits.value, ...spell.system.traits.value])].sort();
-  item.system.traits.rarity = spell.system.traits.rarity;
-  item.system.description.value = `<p>@UUID[${uuid}]{${spell.name}}</p>\n<hr />\n${item.system.description.value}`;
-  const embedded = structuredClone(spell);
-  delete embedded._key;
-  delete embedded.folder;
-  embedded._stats = { ...embedded._stats, compendiumSource: uuid };
-  embedded.system.location = { value: null, heightenedLevel: rank };
-  item.system.spell = embedded;
-  return item;
+/** Treasure the recipe builds from PF2e items when the actor is hydrated. */
+function recipeTreasure(loot: Gear | Stock | Scroll, slug: string, source: Json | undefined): Treasure {
+  if ('stock' in loot) {
+    if (!source) throw new Error(`${slug}: stock() needs a source stat block`);
+    const { stock: name, ...edit } = loot;
+    return { kind: 'stock', item: ref(source, name), ...edit };
+  }
+  if ('spell' in loot) {
+    const spell = docs.get(SPELL(loot.spell));
+    const ordinal = ['', '1st', '2nd', '3rd'][loot.rank] ?? `${loot.rank}th`;
+    const base = [...docs.entries()].find(([uuid, d]) => uuid.includes('.equipment-srd.') && d.type === 'consumable' && d.name === `Scroll of ${ordinal}-rank Spell`);
+    if (!spell || !base) throw new Error(`${slug}: no scroll of spells-srd ${loot.spell} at rank ${loot.rank}`);
+    const id = ids.item(slug, `Scroll of ${spell.name} (Rank ${loot.rank})`);
+    return { kind: 'scroll', spell: SPELL(loot.spell), base: base[0], rank: loot.rank, id, spellId: stableId(`spell:${id}`) };
+  }
+  const { from, ...edit } = loot;
+  const item = docs.get(EQUIPMENT(from));
+  if (!item) throw new Error(`${slug}: no equipment-srd item ${from}`);
+  return { kind: 'gear', uuid: EQUIPMENT(from), id: ids.item(slug, edit.name ?? item.name), ...edit };
+}
+
+function recipeHash(recipe: Omit<Recipe, 'hash' | 'verified'>): string {
+  return createHash('sha256').update(JSON.stringify(recipe)).digest('hex').slice(0, 16);
 }
 
 function asset(path: string): string {
@@ -1129,87 +1030,104 @@ function asset(path: string): string {
   return `modules/${MODULE_ID}/assets/${path}`;
 }
 
-function build(spec: Spec, encounter: number, sort: number, docs: Map<string, Json>): Json {
+function build(spec: Spec, encounter: number, sort: number): Json {
   const _id = ids.actor(spec.slug);
-  let base: Json;
-  if (spec.source) {
-    const [pack, sourceId] = spec.source;
-    const source = docs.get(`${pack}/${sourceId}`);
-    if (!source) throw new Error(`${spec.slug}: no ${pack} actor ${sourceId}`);
-    base = structuredClone(source);
-    base._stats = { ...base._stats, compendiumSource: `Compendium.pf2e.${pack}.Actor.${sourceId}` };
-  } else {
-    const make = spec.custom ?? (spec.kind === 'remains' || spec.kind === 'cache' ? lootActor : undefined);
-    if (!make) throw new Error(`${spec.slug}: needs a source or a custom builder`);
-    base = { ...make(_id), _stats: { ...stats, compendiumSource: null } };
-  }
-
-  const actor: Json = { ...base, _id, _key: `!actors!${_id}`, name: spec.name };
-  // A voice speaks without a body: its gear and strikes stay with the troll or the corpse.
-  if (spec.kind === 'voice') actor.items = actor.items.filter((i: Json) => i.type !== 'melee' && !PHYSICAL.has(i.type));
-  spec.patch?.(actor);
-  const loot = TREASURE[spec.slug] ?? [];
-  for (const entry of loot) if ('stock' in entry) claimStock(actor, entry);
-  const treasure = loot.filter((entry): entry is Exclude<Loot, Stock> => !('stock' in entry)).map((entry) => {
-    const item = lootItem(entry, docs);
-    if (spec.usesGear) wield(item, spec.slug);
-    item._id = ids.item(spec.slug, item.name);
-    item._key = `!actors.items!${_id}.${item._id}`;
-    if (item.system.spell) item.system.spell._id = stableId(`spell:${item._id}`);
-    return item;
-  });
-  if (new Set(treasure.map((i) => i._id)).size !== treasure.length) throw new Error(`${spec.slug}: two treasure items share a name`);
-  actor.items = [...actor.items, ...treasure];
-  applyRunesToStrikes(actor);
-  rekey(actor.items, _id);
-  rekey(actor.effects, _id);
-  if (spec.adjustment) {
-    actor.system.attributes.adjustment = spec.adjustment;
-    // PF2e derives the adjusted max HP but stores current HP, as NPCPF2e#applyAdjustment does.
-    actor.system.attributes.hp.value += hpAdjustment(actor.system.details.level.value, spec.adjustment);
-  }
-
-  const portrait = spec.icon ?? asset(spec.portrait ?? `portraits/${spec.slug}.webp`);
-  const tokenImg = spec.icon ?? asset(spec.token ?? `tokens/${spec.slug}.webp`);
+  const source = spec.source ? docs.get(spec.source) : undefined;
+  if (spec.source && !source) throw new Error(`${spec.slug}: no PF2e actor ${spec.source}`);
   const appearance = spec.brief ? portraits.get(`${encounter}/${spec.brief}`) : undefined;
   if (spec.brief && !appearance) throw new Error(`${spec.slug}: no portrait brief "${spec.brief}" under encounter ${encounter}`);
   const appearanceHtml = appearance ? `<h2>Appearance</h2>\n<p>${html(appearance)}</p>` : '';
   const gmNote = `<p><strong>${encounterLink(encounter)}.</strong> ${html(spec.role)}</p>`;
 
-  const details = actor.system.details;
-  if (actor.type === 'npc') {
-    details.publicNotes = [details.publicNotes, appearanceHtml].filter(Boolean).join('\n');
-    details.privateNotes = [gmNote, details.privateNotes].filter(Boolean).join('\n');
+  let actor: Json;
+  if (source) {
+    // The stub carries the stat block's level, size and rarity, which tokens and lists need before hydration.
+    actor = {
+      type: source.type,
+      system: {
+        details: { level: { value: source.system.details.level.value }, publicNotes: appearanceHtml, privateNotes: gmNote },
+        traits: { size: { value: source.system.traits.size.value }, rarity: source.system.traits.rarity },
+        _migration: MIGRATION,
+      },
+      items: [],
+    };
   } else {
-    // Loot and hazards have one description field; a secret section keeps the GM note from observers.
-    const secret = `<section class="secret" id="secret-${stableId(`secret:${spec.slug}`)}">\n${gmNote}\n</section>`;
-    details.description = [details.description, appearanceHtml, secret].filter(Boolean).join('\n');
+    const make = spec.custom ?? (spec.kind === 'remains' || spec.kind === 'cache' ? lootActor : undefined);
+    if (!make) throw new Error(`${spec.slug}: needs a source or a custom builder`);
+    actor = make(_id);
+    const details = actor.system.details;
+    if (actor.type === 'npc') {
+      details.publicNotes = [details.publicNotes, appearanceHtml].filter(Boolean).join('\n');
+      details.privateNotes = [gmNote, details.privateNotes].filter(Boolean).join('\n');
+    } else {
+      // Loot and hazards have one description field; a secret section keeps the GM note from observers.
+      const secret = `<section class="secret" id="secret-${stableId(`secret:${spec.slug}`)}">\n${gmNote}\n</section>`;
+      details.description = [details.description, appearanceHtml, secret].filter(Boolean).join('\n');
+    }
   }
 
-  const size = actor.system.traits?.size?.value ?? 'med';
+  const loot = TREASURE[spec.slug] ?? [];
+  const own = loot.filter((entry): entry is Valuable | Keepsake => 'img' in entry);
+  const lores = Object.entries(spec.lores ?? {}).map(([name, mod]) => loreItem(_id, name, mod));
+  actor.items = [...actor.items, ...lores, ...own.map((entry) => ownItem(entry, _id, spec.slug))];
+
+  const ops: Op[] = [
+    // A voice speaks without a body: its gear and strikes stay with the troll or the corpse.
+    ...(spec.kind === 'voice' ? [{ op: 'removeItems', types: BODYLESS } satisfies Op] : []),
+    ...(spec.patch && source ? spec.patch(source) : []),
+  ];
+  const treasure = loot.filter((entry): entry is Gear | Stock | Scroll => !('img' in entry)).map((entry) => recipeTreasure(entry, spec.slug, source));
+  const body = { ...(spec.source && { source: spec.source }), ...(spec.adjustment && { adjustment: spec.adjustment }), ops, treasure };
+  const recipe: Recipe | undefined = spec.source || treasure.length ? { ...body, hash: recipeHash(body) } : undefined;
+
+  const size = (source ?? actor).system.traits?.size?.value ?? 'med';
   const squares = TOKEN_SQUARES[size] ?? 1;
   const hostile = spec.kind === 'creature' || spec.kind === 'hazard';
-  actor.img = portrait;
-  actor.prototypeToken = {
-    name: spec.tokenName ?? spec.name,
-    actorLink: spec.linked ?? false,
-    disposition: hostile ? -1 : 0,
-    width: squares,
-    height: squares,
-    texture: { src: tokenImg, scaleX: 1, scaleY: 1 },
-    ring: { enabled: false },
-    flags: { pf2e: { linkToActorSize: true, autoscale: true } },
+  const portrait = spec.icon ?? asset(spec.portrait ?? `portraits/${spec.slug}.webp`);
+  const tokenImg = spec.icon ?? asset(spec.token ?? `tokens/${spec.slug}.webp`);
+  const stub: Json = {
+    _id,
+    _key: `!actors!${_id}`,
+    name: spec.name,
+    type: actor.type,
+    img: portrait,
+    system: actor.system,
+    items: actor.items,
+    effects: [],
+    prototypeToken: {
+      name: spec.tokenName ?? spec.name,
+      actorLink: spec.linked ?? false,
+      disposition: hostile ? -1 : 0,
+      width: squares,
+      height: squares,
+      texture: { src: tokenImg, scaleX: 1, scaleY: 1 },
+      ring: { enabled: false },
+      flags: { pf2e: { linkToActorSize: true, autoscale: true } },
+    },
+    folder: ids.folder('actors', encounter),
+    sort,
+    // Limited lets players take from a loot actor's token once the GM reveals it.
+    ownership: { default: actor.type === 'loot' ? LIMITED : 0 },
+    flags: {
+      ...(actor.type === 'npc' && loot.length ? { pf2e: { lootable: true } } : {}),
+      [MODULE_ID]: {
+        encounter,
+        slug: spec.slug,
+        kind: spec.kind,
+        ...(spec.usesGear && { usesGear: true }),
+        ...(spec.stowed && { stowed: true }),
+        ...(recipe && { recipe }),
+      },
+    },
+    _stats: { ...stats, compendiumSource: null },
   };
-  actor.folder = ids.folder('actors', encounter);
-  actor.sort = sort;
-  // Limited lets players take from a loot actor's token once the GM reveals it.
-  actor.ownership = { default: actor.type === 'loot' ? LIMITED : 0 };
-  actor.flags = {
-    ...(actor.type === 'npc' && loot.length ? { pf2e: { lootable: true } } : {}),
-    [MODULE_ID]: { encounter, slug: spec.slug, kind: spec.kind, ...(spec.usesGear && { usesGear: true }), ...(spec.stowed && { stowed: true }) },
-  };
-  actor.effects ??= [];
-  return actor;
+
+  if (recipe) {
+    const { error, warnings } = hydrate(stub, { systemVersion: version, resolve: (uuid) => lookup(docs, uuid) });
+    if (error || warnings.length) throw new Error([error, ...warnings].filter(Boolean).join('\n'));
+    recipe.verified = version;
+  }
+  return stub;
 }
 
 function folder(encounter: number): Json {
@@ -1229,41 +1147,39 @@ function folder(encounter: number): Json {
   };
 }
 
-const docs = loadPacks(systemDir(), [
-  'kingmaker-bestiary',
-  'pathfinder-bestiary',
-  'pathfinder-bestiary-2',
-  'pathfinder-monster-core',
-  'pathfinder-monster-core-2',
-  'pathfinder-npc-core',
-  'equipment',
-  'spells',
-]);
-const reference = docs.get(`${ANKOU_ASSASSIN[0]}/${ANKOU_ASSASSIN[1]}`)!;
+const system = findSystem();
+if (!system) {
+  console.error('No PF2e system found. Pass --system <path to Data/systems/pf2e>, or set PF2E_SYSTEM.');
+  process.exit(1);
+}
+const version = systemVersion(system);
+const docs = loadPacks(system, [...ACTOR_PACKS, 'equipment-srd', 'spells-srd']);
+const reference = docs.get(ANKOU_ASSASSIN)!;
 stats = {
   coreVersion: reference._stats.coreVersion,
   systemId: 'pf2e',
   systemVersion: reference._stats.systemVersion,
 };
-lightSaveCap = docs.get(`${OZTHOOM_SHADOW_DOUBLE[0]}/${OZTHOOM_SHADOW_DOUBLE[1]}`)?.items.find(
-  (i: Json) => i.name === 'Saving throws against Light effects',
-);
-if (!lightSaveCap) throw new Error('Ozthoom Shadow Double lost its light-save item; update shadowDouble()');
+const capItem = docs.get(OZTHOOM_SHADOW_DOUBLE)?.items.find((i: Json) => i.name === 'Saving throws against Light effects');
+if (!capItem) throw new Error('Ozthoom Shadow Double lost its light-save item; update shadowDouble()');
+lightSaveCap = `${OZTHOOM_SHADOW_DOUBLE}.Item.${capItem._id}`;
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 let count = 0;
+let recipes = 0;
 const built = new Set<string>();
 for (const encounter of [...titles.keys()].sort((a, b) => a - b)) {
   writeFileSync(join(OUT, `_folder-${pad(encounter)}.json`), `${JSON.stringify(folder(encounter), null, 2)}\n`);
   const specs = [...(ENCOUNTERS[encounter] ?? []), ...(HAZARDS[encounter] ?? []), ...(CACHES[encounter] ?? [])];
   specs.forEach((spec, i) => {
-    const actor = build(spec, encounter, (i + 1) * 1000, docs);
+    const actor = build(spec, encounter, (i + 1) * 1000);
     writeFileSync(join(OUT, `${spec.slug}.json`), `${JSON.stringify(actor, null, 2)}\n`);
     built.add(spec.slug);
     count++;
+    if (actor.flags[MODULE_ID].recipe) recipes++;
   });
 }
 const strays = Object.keys(TREASURE).filter((slug) => !built.has(slug));
 if (strays.length) throw new Error(`treasure for unknown actors: ${strays.join(', ')}`);
-console.log(`actors: ${count} actors in ${titles.size} folders → packs/_source/actors`);
+console.log(`actors: ${count} actors in ${titles.size} folders → packs/_source/actors; ${recipes} recipes verified against PF2e ${version}`);

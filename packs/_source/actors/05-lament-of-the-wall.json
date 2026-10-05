@@ -1,6 +1,9 @@
 {
+  "_id": "aVr0ASvDmRLZQK9E",
+  "_key": "!actors!aVr0ASvDmRLZQK9E",
+  "name": "Lament of the Wall",
   "type": "hazard",
-  "items": [],
+  "img": "modules/points-of-interest/assets/map-notes/05-ossuary-wall.webp",
   "system": {
     "attributes": {
       "ac": {
@@ -66,16 +69,8 @@
       "previous": null
     }
   },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "aVr0ASvDmRLZQK9E",
-  "_key": "!actors!aVr0ASvDmRLZQK9E",
-  "name": "Lament of the Wall",
-  "img": "modules/points-of-interest/assets/map-notes/05-ossuary-wall.webp",
+  "items": [],
+  "effects": [],
   "prototypeToken": {
     "name": "Lament of the Wall",
     "actorLink": true,
@@ -109,5 +104,10 @@
       "kind": "hazard"
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

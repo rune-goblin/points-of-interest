@@ -1,69 +1,27 @@
 {
+  "_id": "xUc5lBp0QDo5wSMA",
+  "_key": "!actors!xUc5lBp0QDo5wSMA",
+  "name": "Brannock's Strongbox",
   "type": "loot",
+  "img": "icons/containers/chest/chest-reinforced-steel-brown.webp",
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-3hd0JjJHfejrcGO2\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.DI1nblGxCdYa2okA]{12. The Storm Tree}.</strong> Iron, half-buried beside the foreman's tent, 40 feet from the sard. Unlocking it takes a DC 34 Thievery check; prying it open takes a DC 36 Athletics check.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
-      "_id": "lvCNuxh3QTSZRLT6",
-      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
-      "name": "Gold Pieces",
-      "system": {
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "category": "coin",
-        "containerId": null,
-        "description": {
-          "value": ""
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 0
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 1
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder Player Core"
-        },
-        "quantity": 1800,
-        "rules": [],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": []
-        },
-        "slug": "gold-pieces",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "treasure",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
-      },
-      "effects": [],
-      "_key": "!actors.items!xUc5lBp0QDo5wSMA.lvCNuxh3QTSZRLT6"
-    },
-    {
+      "_id": "Qt0iViH12hYnvWcg",
+      "_key": "!actors.items!xUc5lBp0QDo5wSMA.Qt0iViH12hYnvWcg",
       "name": "Brannock's Ledger",
       "type": "equipment",
       "img": "icons/sundries/books/book-simple-brown.webp",
@@ -121,35 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "Qt0iViH12hYnvWcg",
-      "_key": "!actors.items!xUc5lBp0QDo5wSMA.Qt0iViH12hYnvWcg"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<section class=\"secret\" id=\"secret-3hd0JjJHfejrcGO2\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.DI1nblGxCdYa2okA]{12. The Storm Tree}.</strong> Iron, half-buried beside the foreman's tent, 40 feet from the sard. Unlocking it takes a DC 34 Thievery check; prying it open takes a DC 36 Athletics check.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "xUc5lBp0QDo5wSMA",
-  "_key": "!actors!xUc5lBp0QDo5wSMA",
-  "name": "Brannock's Strongbox",
-  "img": "icons/containers/chest/chest-reinforced-steel-brown.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Brannock's Strongbox",
     "actorLink": false,
@@ -181,8 +114,26 @@
       "encounter": 12,
       "slug": "12-brannocks-strongbox",
       "kind": "cache",
-      "stowed": true
+      "stowed": true,
+      "recipe": {
+        "ops": [],
+        "treasure": [
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz",
+            "id": "lvCNuxh3QTSZRLT6",
+            "quantity": 1800
+          }
+        ],
+        "hash": "4c73dd1a08201600",
+        "verified": "8.5.1"
+      }
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

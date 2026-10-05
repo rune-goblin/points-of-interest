@@ -1,7 +1,27 @@
 {
+  "_id": "TkUL9SdWKyJyqeem",
+  "_key": "!actors!TkUL9SdWKyJyqeem",
+  "name": "Picnic Remains",
   "type": "loot",
+  "img": "icons/containers/kitchenware/goblet-engraved-grey.webp",
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-aqcR0cgU0AyLFgXl\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> The ruined banquet table from the King's visit.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
+      "_id": "JTsb0HS3jUn7zpbO",
+      "_key": "!actors.items!TkUL9SdWKyJyqeem.JTsb0HS3jUn7zpbO",
       "name": "King's Silver Service",
       "type": "treasure",
       "img": "icons/containers/kitchenware/goblet-jeweled-gold-white.webp",
@@ -59,35 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "JTsb0HS3jUn7zpbO",
-      "_key": "!actors.items!TkUL9SdWKyJyqeem.JTsb0HS3jUn7zpbO"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<section class=\"secret\" id=\"secret-aqcR0cgU0AyLFgXl\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> The ruined banquet table from the King's visit.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "TkUL9SdWKyJyqeem",
-  "_key": "!actors!TkUL9SdWKyJyqeem",
-  "name": "Picnic Remains",
-  "img": "icons/containers/kitchenware/goblet-engraved-grey.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Picnic Remains",
     "actorLink": false,
@@ -121,5 +116,10 @@
       "kind": "cache"
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

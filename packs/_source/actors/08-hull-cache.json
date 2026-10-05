@@ -1,7 +1,27 @@
 {
+  "_id": "NgurDFDPt2lWrQGF",
+  "_key": "!actors!NgurDFDPt2lWrQGF",
+  "name": "Hull Cache",
   "type": "loot",
+  "img": "icons/containers/chest/chest-tech-silver.webp",
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-73Ot6ELPpNJyhGMF\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Inside the hull, behind the hatch: DC 38 Thievery or Crafting, or open once all three pylons are disabled.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
+      "_id": "LRyagc9DmvDYglQr",
+      "_key": "!actors.items!NgurDFDPt2lWrQGF.LRyagc9DmvDYglQr",
       "name": "Skymetal Stock",
       "type": "treasure",
       "img": "icons/commodities/metal/ingot-stack-teal.webp",
@@ -59,279 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "LRyagc9DmvDYglQr",
-      "_key": "!actors.items!NgurDFDPt2lWrQGF.LRyagc9DmvDYglQr"
-    },
-    {
-      "_id": "vV8lOesydf4ru5HJ",
-      "img": "icons/equipment/head/goggles-leather-tan.webp",
-      "name": "Artificer Spectacles",
-      "system": {
-        "apex": {
-          "attribute": "int"
-        },
-        "baseItem": null,
-        "bulk": {
-          "value": 0
-        },
-        "containerId": null,
-        "description": {
-          "value": "<p><em>Skyfall lenses on a brass headband.</em></p>\n<p>These seemingly ordinary rectangular eyeglasses feature clear lenses framed in copper. When invested and worn, they rest perfectly on the bridge of the nose and can only be removed by the wearer. You gain a +3 item bonus to Crafting checks and any skill check made to Identify Magic. When you invest the spectacles, you either increase your Intelligence modifier by 1 or increase it to +4, whichever would give you a higher value. You must select the skills and languages the first time you invest the item, and whenever you invest the same artificer spectacles, you get the same skills and languages you chose the first time.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> (manipulate)</p>\n<p><strong>Frequency</strong> once per hour</p><hr /><p><strong>Effect</strong> You cast a 3rd-rank @UUID[Compendium.pf2e.spells-srd.Item.dINQzhqGmIsqGMUY]{Mending} spell on an item you touch.</p>"
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 17
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 15000
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder Treasure Vault (Remastered)"
-        },
-        "quantity": 1,
-        "rules": [
-          {
-            "key": "FlatModifier",
-            "selector": "crafting",
-            "slug": "artificer-spectacles-crafting",
-            "type": "item",
-            "value": 3
-          },
-          {
-            "key": "FlatModifier",
-            "predicate": [
-              "action:identify-magic"
-            ],
-            "selector": "skill-check",
-            "slug": "artificer-spectacles-identify-magic",
-            "type": "item",
-            "value": 3
-          }
-        ],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "apex",
-            "invested",
-            "magical"
-          ]
-        },
-        "usage": {
-          "value": "worneyepiece"
-        },
-        "slug": "artificer-spectacles",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "equipment",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.VVymhIF6UBThdHP9"
-      },
-      "effects": [],
-      "_key": "!actors.items!NgurDFDPt2lWrQGF.vV8lOesydf4ru5HJ"
-    },
-    {
-      "_id": "h5NTcE0zBAcQvJTn",
-      "img": "systems/pf2e/icons/equipment/consumables/potions/truesight-potion.webp",
-      "name": "Truesight Potion",
-      "system": {
-        "baseItem": null,
-        "bulk": {
-          "value": 0.1
-        },
-        "category": "potion",
-        "containerId": null,
-        "damage": null,
-        "description": {
-          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p>\n<hr />\n<p>Upon drinking this clear, refreshing potion, you can see things as they actually are. You gain the benefits of a 7th-rank @UUID[Compendium.pf2e.spells-srd.Item.uqlxMQQeSGWEVjki]{Truesight} spell that has a counteract modifier of [[/r 1d20+25]].</p>"
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 16
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 1500
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder GM Core"
-        },
-        "quantity": 1,
-        "rules": [],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "consumable",
-            "magical",
-            "potion"
-          ]
-        },
-        "usage": {
-          "value": "held-in-one-hand"
-        },
-        "uses": {
-          "autoDestroy": true,
-          "max": 1,
-          "value": 1
-        },
-        "slug": "truesight-potion",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "consumable",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.CoMwPsQ8mPj5Evti"
-      },
-      "effects": [],
-      "_key": "!actors.items!NgurDFDPt2lWrQGF.h5NTcE0zBAcQvJTn"
-    },
-    {
-      "_id": "baBYeIoKqEYGrTHl",
-      "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-elixirs/elixir-of-life.webp",
-      "name": "Elixir of Life (Major)",
-      "system": {
-        "baseItem": null,
-        "bulk": {
-          "value": 0.1
-        },
-        "category": "elixir",
-        "containerId": null,
-        "damage": {
-          "formula": "8d6+21",
-          "kind": "healing",
-          "type": "untyped"
-        },
-        "description": {
-          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p><hr /><p>Elixirs of life accelerate a living creature's natural healing processes and immune system. Upon drinking this elixir, you regain @Damage[(8d6+21)[healing]] Hit Points and gain +3 item bonus to saving throws against diseases and poisons for 10 minutes.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.lPRuIRbu0rHBkoKY]{Effect: Elixir of Life}</p>"
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 15
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 1300
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder GM Core"
-        },
-        "quantity": 1,
-        "rules": [],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "alchemical",
-            "consumable",
-            "elixir",
-            "healing"
-          ]
-        },
-        "usage": {
-          "value": "held-in-one-hand"
-        },
-        "uses": {
-          "autoDestroy": true,
-          "max": 1,
-          "value": 1
-        },
-        "slug": "elixir-of-life-major",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "consumable",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.AmxSqEoFhRLMYd1W"
-      },
-      "effects": [],
-      "_key": "!actors.items!NgurDFDPt2lWrQGF.baBYeIoKqEYGrTHl"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<section class=\"secret\" id=\"secret-73Ot6ELPpNJyhGMF\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Inside the hull, behind the hatch: DC 38 Thievery or Crafting, or open once all three pylons are disabled.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "NgurDFDPt2lWrQGF",
-  "_key": "!actors!NgurDFDPt2lWrQGF",
-  "name": "Hull Cache",
-  "img": "icons/containers/chest/chest-tech-silver.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Hull Cache",
     "actorLink": false,
@@ -363,8 +114,36 @@
       "encounter": 8,
       "slug": "08-hull-cache",
       "kind": "cache",
-      "stowed": true
+      "stowed": true,
+      "recipe": {
+        "ops": [],
+        "treasure": [
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.VVymhIF6UBThdHP9",
+            "id": "vV8lOesydf4ru5HJ",
+            "note": "Skyfall lenses on a brass headband."
+          },
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.CoMwPsQ8mPj5Evti",
+            "id": "h5NTcE0zBAcQvJTn"
+          },
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.AmxSqEoFhRLMYd1W",
+            "id": "baBYeIoKqEYGrTHl"
+          }
+        ],
+        "hash": "4246baab1cda3e07",
+        "verified": "8.5.1"
+      }
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

@@ -1,6 +1,28 @@
 {
   "_id": "Y5YWrVuiSckINAaE",
+  "_key": "!actors!Y5YWrVuiSckINAaE",
+  "name": "The Envoy (Troll Head)",
+  "type": "npc",
   "img": "modules/points-of-interest/assets/portraits/03-envoy-troll-head.webp",
+  "system": {
+    "details": {
+      "level": {
+        "value": 15
+      },
+      "publicNotes": "<h2>Appearance</h2>\n<p>Close on one troll head with a waxed moustache, a gold earring and a raised, supercilious brow, speaking with the poise of a diplomat.</p>",
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> The head that mimics Ser Halward Toll and speaks for the Envoy bloc. It shares the Jotund Troll's defences, which take any damage; its courtly skills serve its lies and Sense Motive against it.</p>"
+    },
+    "traits": {
+      "size": {
+        "value": "huge"
+      },
+      "rarity": "rare"
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
       "_id": "hzQrcCm2qY5oH6Wn",
@@ -35,154 +57,7 @@
       "effects": []
     }
   ],
-  "name": "The Envoy (Troll Head)",
-  "system": {
-    "abilities": {
-      "cha": {
-        "mod": 4
-      },
-      "con": {
-        "mod": 8
-      },
-      "dex": {
-        "mod": 4
-      },
-      "int": {
-        "mod": -1
-      },
-      "str": {
-        "mod": 8
-      },
-      "wis": {
-        "mod": 6
-      }
-    },
-    "attributes": {
-      "ac": {
-        "details": "",
-        "value": 35
-      },
-      "allSaves": {
-        "value": ""
-      },
-      "hp": {
-        "details": "",
-        "max": 360,
-        "temp": 0,
-        "value": 360
-      },
-      "speed": {
-        "otherSpeeds": [
-          {
-            "type": "climb",
-            "value": 20
-          }
-        ],
-        "value": 30
-      },
-      "weaknesses": [
-        {
-          "exceptions": [],
-          "type": "electricity",
-          "value": 15
-        },
-        {
-          "exceptions": [],
-          "type": "fire",
-          "value": 15
-        }
-      ]
-    },
-    "details": {
-      "blurb": "Head of the Jotund Troll",
-      "languages": {
-        "details": "",
-        "value": [
-          "jotun"
-        ]
-      },
-      "level": {
-        "value": 15
-      },
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> The head that mimics Ser Halward Toll and speaks for the Envoy bloc. It shares the Jotund Troll's defences, which take any damage; its courtly skills serve its lies and Sense Motive against it.</p>",
-      "publicNotes": "<p>Jotund trolls are gigantic, nine-headed horrors who prowl frigid moors, marshes, and wastelands, often alone and always ravenous. While each of the jotund troll's nine heads possess their own brains and senses, they bicker with each other much less than the heads of a two-headed troll. Yet the heads still argue, particularly over which of them gets to eat. The fact that all nine maws lead to the same shared stomach makes little difference in such culinary disagreements. Many scholars echo a story that jotund trolls resemble the first trolls, titans cast out of Elysium and cursed for their crimes against the gods. The jotund trolls themselves make no claims to such a heritage, however, and those concerned with such matters claim the father of all trolls arose in the Outer Rifts. Individual jotund trolls either begin their life as a common troll or, far more rarely, are born to a jotund troll parent. To the jotund trolls, their nine heads are a crown of rule that marks them as above the natural order and free from its laws.</p><hr /><p>Towering brutes with slavering jaws and razor-sharp claws, trolls are voracious predators. A connection to the land not only rebuilds their bodies but creates countless varieties of trolls, each a reflection of the terrain that they draw upon. Trolls who migrate into new areas slowly transform as each body part is regenerated, leading to aberrant growth as new flesh tangles with the old.</p>\n<h2>Appearance</h2>\n<p>Close on one troll head with a waxed moustache, a gold earring and a raised, supercilious brow, speaking with the poise of a diplomat.</p>",
-      "publication": {
-        "license": "ORC",
-        "remaster": true,
-        "title": "Pathfinder Monster Core 2"
-      }
-    },
-    "initiative": {
-      "statistic": "perception"
-    },
-    "perception": {
-      "details": "",
-      "mod": 26,
-      "senses": [
-        {
-          "type": "darkvision"
-        }
-      ]
-    },
-    "resources": {},
-    "saves": {
-      "fortitude": {
-        "saveDetail": "",
-        "value": 31
-      },
-      "reflex": {
-        "saveDetail": "",
-        "value": 24
-      },
-      "will": {
-        "saveDetail": "",
-        "value": 23
-      }
-    },
-    "skills": {
-      "athletics": {
-        "base": 29
-      },
-      "intimidation": {
-        "base": 27
-      },
-      "deception": {
-        "base": 28
-      },
-      "diplomacy": {
-        "base": 28
-      },
-      "society": {
-        "base": 25
-      }
-    },
-    "traits": {
-      "rarity": "rare",
-      "size": {
-        "value": "huge"
-      },
-      "value": [
-        "giant",
-        "humanoid",
-        "mutant",
-        "troll",
-        "wood"
-      ]
-    },
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "type": "npc",
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": "Compendium.pf2e.pathfinder-monster-core-2.Actor.4Ay3tf49upoyaJrg"
-  },
   "effects": [],
-  "_key": "!actors!Y5YWrVuiSckINAaE",
   "prototypeToken": {
     "name": "The Envoy (Troll Head)",
     "actorLink": true,
@@ -213,7 +88,68 @@
     "points-of-interest": {
       "encounter": 3,
       "slug": "03-envoy-troll-head",
-      "kind": "voice"
+      "kind": "voice",
+      "recipe": {
+        "source": "Compendium.pf2e.pathfinder-monster-core-2.Actor.4Ay3tf49upoyaJrg",
+        "ops": [
+          {
+            "op": "removeItems",
+            "types": [
+              "melee",
+              "weapon",
+              "armor",
+              "shield",
+              "equipment",
+              "consumable",
+              "treasure",
+              "backpack",
+              "ammo",
+              "book"
+            ]
+          },
+          {
+            "op": "removeItems",
+            "types": [
+              "action"
+            ]
+          },
+          {
+            "op": "set",
+            "path": "system.skills.deception",
+            "value": {
+              "base": 28
+            }
+          },
+          {
+            "op": "set",
+            "path": "system.skills.diplomacy",
+            "value": {
+              "base": 28
+            }
+          },
+          {
+            "op": "set",
+            "path": "system.skills.society",
+            "value": {
+              "base": 25
+            }
+          },
+          {
+            "op": "set",
+            "path": "system.details.blurb",
+            "value": "Head of the Jotund Troll"
+          }
+        ],
+        "treasure": [],
+        "hash": "1f8b04a2d186092e",
+        "verified": "8.5.1"
+      }
     }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
   }
 }

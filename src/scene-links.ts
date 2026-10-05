@@ -1,8 +1,8 @@
 import { MODULE_ID } from './constants';
+import { importActors } from './actors/runtime';
 import { importJournal } from './map-notes';
 
 const SCENE_PACK = `${MODULE_ID}.scenes`;
-const ACTOR_PACK = `${MODULE_ID}.actors`;
 
 const t = (key: string): string => game.i18n.localize(`${MODULE_ID}.SceneLinks.${key}`);
 
@@ -14,13 +14,7 @@ async function importScene(id: string): Promise<Scene | undefined> {
   const missing = [...new Set(source.tokens.map((token) => token.actorId))].filter(
     (actorId): actorId is string => !!actorId && !game.actors.has(actorId),
   );
-  const actors = game.packs.get(ACTOR_PACK);
-  if (missing.length && actors) {
-    const docs = (await actors.getDocuments({ _id__in: missing })) as Parameters<typeof game.actors.fromCompendium>[0][];
-    // The pack's ownership gives players Limited on loot, which PF2e needs to let them take from it.
-    const data = docs.map((actor) => game.actors.fromCompendium(actor, { keepId: true, clearFolder: true, clearOwnership: false }));
-    await Actor.createDocuments(data, { keepId: true });
-  }
+  await importActors(missing);
   const entryId = source.notes.find((note) => !!note.getFlag(MODULE_ID, 'scene'))?.entryId;
   if (entryId && !game.journal.has(entryId)) await importJournal();
   const data = game.scenes.fromCompendium(source, { keepId: true, clearFolder: true });

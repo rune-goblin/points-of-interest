@@ -1,26 +1,19 @@
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { requiredUuids, type Recipe } from '../../actors/hydrate';
 
 const ROOT = process.cwd();
 const MODULE_ID = 'points-of-interest';
 const SERVED = `modules/${MODULE_ID}/`;
+const PF2E_UUID = /^Compendium\.pf2e\.[\w-]+\.(Actor|Item)\.\w{16}(\.Item\.\w{16})?$/;
 
 interface Doc { _id: string; _key: string; name: string }
-interface Rule { key: string; property?: string; value?: unknown }
 interface Item extends Doc {
   type: string;
-  flags?: { pf2e?: { linkedWeapon?: string } };
-  system: {
-    size?: string;
-    usage?: { value: string };
-    traits?: { value: string[] };
-    equipped?: { carryType: string; inSlot?: boolean; invested?: boolean | null };
-    runes?: { property?: string[] };
-    rules?: Rule[];
-    spell?: { system: { traits: { traditions?: string[] } } };
-    tradition?: { value: string };
-  };
+  _stats?: { compendiumSource?: string | null };
+  system: { publication?: { title?: string }; spell?: unknown };
 }
 interface ActorSource extends Doc {
   type: string;
@@ -28,15 +21,10 @@ interface ActorSource extends Doc {
   folder: string | null;
   ownership: { default: number };
   items: Item[];
+  effects: unknown[];
   prototypeToken: { name: string; texture: { src: string } };
-  flags: Record<string, { encounter?: number; kind?: string; usesGear?: boolean; stowed?: boolean }>;
-  system: {
-    details: { privateNotes?: string; description?: string };
-    traits?: { size: { value: string }; value: string[] };
-    perception?: { mod: number };
-    saves?: { will: { value: number } };
-    skills?: Record<string, unknown>;
-  };
+  flags: Record<string, { encounter?: number; kind?: string; recipe?: Recipe }>;
+  system: Record<string, Record<string, unknown>> & { details: { privateNotes?: string; description?: string } };
 }
 
 const readDir = <T>(dir: string): T[] =>
@@ -46,6 +34,7 @@ const docs = readDir<Doc>(join(ROOT, 'packs', '_source', 'actors'));
 const actors = docs.filter((d) => d._key.startsWith('!actors!')) as ActorSource[];
 const folders = docs.filter((d) => d._key.startsWith('!folders!'));
 const isCache = (actor: ActorSource): boolean => actor.flags[MODULE_ID]?.kind === 'cache';
+const recipeOf = (actor: ActorSource): Recipe | undefined => actor.flags[MODULE_ID]?.recipe;
 
 const journals = readDir<{ _id: string; pages: Doc[] }>(join(ROOT, 'packs', '_source', 'journals'));
 const pageUuids = new Set(
@@ -53,35 +42,6 @@ const pageUuids = new Set(
 );
 
 const servedFile = (path: string): string => join(ROOT, path.slice(SERVED.length));
-
-const itemTraits = (item: Item): string[] => item.system.traits?.value ?? [];
-const isWorn = (item: Item): boolean => item.type === 'equipment' && !!item.system.usage?.value.startsWith('worn');
-
-// Weapons (bombs among them), armour, shields and worn items must fit the wielder's size; a potion or
-// elixir needs a living drinker; a scroll or wand needs a caster of one of its spell's traditions.
-function canUse(wielder: ActorSource, item: Item): boolean {
-  if (['weapon', 'armor', 'shield'].includes(item.type) || isWorn(item)) return item.system.size === wielder.system.traits?.size.value;
-  if (item.type !== 'consumable') return false;
-  const traits = itemTraits(item);
-  if (traits.includes('scroll') || traits.includes('wand')) {
-    const traditions = item.system.spell?.system.traits.traditions ?? [];
-    return wielder.items.some((i) => i.type === 'spellcastingEntry' && traditions.includes(i.system.tradition?.value ?? ''));
-  }
-  const living = !wielder.system.traits?.value.some((t) => t === 'undead' || t === 'construct');
-  return living || !(traits.includes('potion') || traits.includes('elixir'));
-}
-
-// NPC strikes are melee items; a weapon is in use when one links to it. A consumable is in use once carried.
-function inUse(holder: ActorSource, item: Item): boolean {
-  const equipped = item.system.equipped;
-  if (item.type === 'weapon') return holder.items.some((i) => i.type === 'melee' && i.flags?.pf2e?.linkedWeapon === item._id);
-  if (item.type === 'armor') return equipped?.carryType === 'worn' && !!equipped.inSlot;
-  if (item.type === 'shield') return equipped?.carryType === 'held';
-  if (item.type === 'consumable') return true;
-  const slotted = item.system.usage?.value !== 'worn';
-  const investable = !!item.system.traits?.value.includes('invested');
-  return equipped?.carryType === 'worn' && (!slotted || !!equipped.inSlot) && (!investable || !!equipped.invested);
-}
 
 describe('actors pack sources', () => {
   it('has one actor per portrait, a second black dragon token, the two hazards and the treasure caches', () => {
@@ -122,47 +82,43 @@ describe('actors pack sources', () => {
   it('gives players Limited on every loot actor, each holding something to take', () => {
     for (const actor of actors.filter((a) => a.type === 'loot')) {
       expect(actor.ownership.default, actor.name).toBe(1);
-      expect(actor.items.length, actor.name).toBeGreaterThan(0);
+      expect(actor.items.length + (recipeOf(actor)?.treasure.length ?? 0), actor.name).toBeGreaterThan(0);
     }
   });
 
-  it('leaves nothing an enemy at its site could use lying in the open: an enemy carries it and uses it', () => {
-    const unused: string[] = [];
-    for (const encounter of new Set(actors.map((a) => a.flags[MODULE_ID]?.encounter))) {
-      const site = actors.filter((a) => a.flags[MODULE_ID]?.encounter === encounter);
-      const wielders = site.filter((a) => a.flags[MODULE_ID]?.kind === 'creature' && a.flags[MODULE_ID]?.usesGear);
-      for (const holder of site.filter((a) => !a.flags[MODULE_ID]?.stowed)) {
-        for (const item of holder.items) {
-          const fit = wielders.filter((w) => canUse(w, item));
-          if (fit.length && !(fit.includes(holder) && inUse(holder, item))) unused.push(`${holder.name}: ${item.name}`);
-        }
-      }
+  it('ships nothing from PF2e: a stub holds our text and its stat block level, size and rarity', () => {
+    for (const actor of actors.filter((a) => recipeOf(a)?.source)) {
+      expect(Object.keys(actor.system).sort(), actor.name).toEqual(['_migration', 'details', 'traits']);
+      expect(Object.keys(actor.system.details).sort(), actor.name).toEqual(['level', 'privateNotes', 'publicNotes']);
+      expect(Object.keys(actor.system.traits).sort(), actor.name).toEqual(['rarity', 'size']);
+      expect(actor.effects, actor.name).toEqual([]);
     }
-    expect(unused).toEqual([]);
-  });
-
-  it("gives every strike its linked weapon's property runes, as AdjustStrike rules", () => {
-    const mismatched: string[] = [];
     for (const actor of actors) {
-      for (const strike of actor.items.filter((i) => i.type === 'melee')) {
-        const weapon = actor.items.find((i) => i._id === strike.flags?.pf2e?.linkedWeapon);
-        const applied = (strike.system.rules ?? []).filter((r) => r.key === 'AdjustStrike' && r.property === 'property-runes').map((r) => String(r.value));
-        const runes = weapon?.system.runes?.property ?? [];
-        if (weapon && [...applied].sort().join() !== [...runes].sort().join()) {
-          mismatched.push(`${actor.name}: ${strike.name} applies [${applied}], ${weapon.name} has [${runes}]`);
-        }
+      for (const item of actor.items) {
+        const where = `${actor.name}: ${item.name}`;
+        expect(item._stats?.compendiumSource ?? null, where).toBeNull();
+        expect(item.system.spell, where).toBeUndefined();
+        expect(['', 'Points of Interest'], where).toContain(item.system.publication?.title ?? '');
       }
     }
-    expect(mismatched).toEqual([]);
   });
 
-  it('gives every NPC and voice Perception, Will, skills and named lore', () => {
-    for (const actor of actors.filter((a) => ['npc', 'voice'].includes(a.flags[MODULE_ID]?.kind ?? ''))) {
-      const lores = actor.items.filter((i) => i.type === 'lore').map((i) => i.name);
-      expect(actor.system.perception?.mod, actor.name).toBeGreaterThan(0);
-      expect(actor.system.saves?.will.value, actor.name).toBeGreaterThan(0);
-      expect(Object.keys(actor.system.skills ?? {}).length + lores.length, actor.name).toBeGreaterThan(0);
-      expect(lores.filter((n) => /\bany\b|additional|narrow/i.test(n)), actor.name).toEqual([]);
+  it('names only PF2e compendium documents in its recipes', () => {
+    for (const actor of actors) {
+      const recipe = recipeOf(actor);
+      if (!recipe) continue;
+      for (const uuid of requiredUuids(recipe)) expect(uuid, actor.name).toMatch(PF2E_UUID);
+      for (const op of recipe.ops) if (op.op === 'copyItem') expect(op.uuid, actor.name).toMatch(PF2E_UUID);
+    }
+  });
+
+  it('hashes each recipe and verified it against an installed PF2e system', () => {
+    for (const actor of actors) {
+      const recipe = recipeOf(actor);
+      if (!recipe) continue;
+      const { hash, verified, ...body } = recipe;
+      expect(hash, actor.name).toBe(createHash('sha256').update(JSON.stringify(body)).digest('hex').slice(0, 16));
+      expect(verified, actor.name).toMatch(/^\d+\.\d+\.\d+$/);
     }
   });
 

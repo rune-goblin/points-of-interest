@@ -1,7 +1,27 @@
 {
+  "_id": "n0zcaN7GHRAXWmSp",
+  "_key": "!actors!n0zcaN7GHRAXWmSp",
+  "name": "Ser Halward Toll",
   "type": "loot",
+  "img": "modules/points-of-interest/assets/portraits/03-ser-halward-toll.webp",
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>In life: a polished royal courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.</p>\n<section class=\"secret\" id=\"secret-iRGEhFYM1nPwI4b7\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> The King's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds the King's letter of offer, 400 gp and a greater bottled lightning.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
+      "_id": "Qt32K3pEpZMEFOnO",
+      "_key": "!actors.items!n0zcaN7GHRAXWmSp.Qt32K3pEpZMEFOnO",
       "name": "King's Letter of Offer",
       "type": "equipment",
       "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
@@ -59,202 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "Qt32K3pEpZMEFOnO",
-      "_key": "!actors.items!n0zcaN7GHRAXWmSp.Qt32K3pEpZMEFOnO"
-    },
-    {
-      "_id": "nvAoDjpIavJAk0q2",
-      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
-      "name": "Gold Pieces",
-      "system": {
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "category": "coin",
-        "containerId": null,
-        "description": {
-          "value": ""
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 0
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 1
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder Player Core"
-        },
-        "quantity": 400,
-        "rules": [],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": []
-        },
-        "slug": "gold-pieces",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "treasure",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
-      },
-      "effects": [],
-      "_key": "!actors.items!n0zcaN7GHRAXWmSp.nvAoDjpIavJAk0q2"
-    },
-    {
-      "_id": "2xiSqcyCEO8oRDXY",
-      "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-bombs/bottled-lightning.webp",
-      "name": "Bottled Lightning (Greater)",
-      "system": {
-        "ammo": null,
-        "baseItem": "alchemical-bomb",
-        "bonus": {
-          "value": 2
-        },
-        "bonusDamage": {
-          "value": 0
-        },
-        "bulk": {
-          "value": 0.1
-        },
-        "category": "martial",
-        "containerId": null,
-        "damage": {
-          "damageType": "electricity",
-          "dice": 3,
-          "die": "d6"
-        },
-        "description": {
-          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> Strike</p><hr /><p>Bottled lightning is packed with volatile reagents that create a blast of electricity when they are exposed to air. Bottled lightning deals 3d6 electricity damage and 3 electricity splash damage. On a hit, the target becomes @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of your next turn. You gain a +2 item bonus to attack rolls.</p>"
-        },
-        "expend": 1,
-        "grade": null,
-        "group": "bomb",
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 11
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 250
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder Player Core 2"
-        },
-        "quantity": 1,
-        "range": 20,
-        "reload": {
-          "value": "-"
-        },
-        "rules": [
-          {
-            "key": "Note",
-            "selector": "{item|_id}-damage",
-            "text": "PF2E.BombNotes.BottledLightning.Greater.success"
-          }
-        ],
-        "runes": {
-          "potency": 0,
-          "property": [],
-          "striking": 0
-        },
-        "size": "med",
-        "splashDamage": {
-          "value": 3
-        },
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "alchemical",
-            "bomb",
-            "consumable",
-            "electricity",
-            "splash"
-          ]
-        },
-        "usage": {
-          "canBeAmmo": false,
-          "value": "held-in-one-hand"
-        },
-        "slug": "bottled-lightning-greater",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "weapon",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.r2iTRbt1zpkAqHj2"
-      },
-      "effects": [],
-      "_key": "!actors.items!n0zcaN7GHRAXWmSp.2xiSqcyCEO8oRDXY"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<h2>Appearance</h2>\n<p>In life: a polished royal courtier with an oiled moustache, a green-and-gold sash and a confident diplomat's smile. In death: the same face on a stake, with a crow perched on the pole.</p>\n<section class=\"secret\" id=\"secret-iRGEhFYM1nPwI4b7\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> The King's envoy, eaten mid-negotiation. His head sits on a stake beside the barrow; his satchel holds the King's letter of offer, 400 gp and a greater bottled lightning.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "n0zcaN7GHRAXWmSp",
-  "_key": "!actors!n0zcaN7GHRAXWmSp",
-  "name": "Ser Halward Toll",
-  "img": "modules/points-of-interest/assets/portraits/03-ser-halward-toll.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Ser Halward Toll",
     "actorLink": true,
@@ -285,8 +113,31 @@
     "points-of-interest": {
       "encounter": 3,
       "slug": "03-ser-halward-toll",
-      "kind": "remains"
+      "kind": "remains",
+      "recipe": {
+        "ops": [],
+        "treasure": [
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz",
+            "id": "nvAoDjpIavJAk0q2",
+            "quantity": 400
+          },
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.r2iTRbt1zpkAqHj2",
+            "id": "2xiSqcyCEO8oRDXY"
+          }
+        ],
+        "hash": "a027a5ea4f37c0b3",
+        "verified": "8.5.1"
+      }
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

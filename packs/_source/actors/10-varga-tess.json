@@ -1,69 +1,27 @@
 {
+  "_id": "veXlsEz83sEuiLk8",
+  "_key": "!actors!veXlsEz83sEuiLk8",
+  "name": "Varga Tess",
   "type": "loot",
+  "img": "modules/points-of-interest/assets/portraits/10-varga-tess.webp",
+  "system": {
+    "details": {
+      "description": "<h2>Appearance</h2>\n<p>A skeleton in worn leather armour with a royal dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.</p>\n<section class=\"secret\" id=\"secret-f39whxE5Bax8XxnV\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.oZ23BnjhOFOnIP6B]{10. The Scout's Wager}.</strong> The King's agent who poached the white stag; her skeleton lies in the pod with her satchel (900 gp and the stag's last antler tine).</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
-      "_id": "4ublWBGavlWvVcxI",
-      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
-      "name": "Gold Pieces",
-      "system": {
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "category": "coin",
-        "containerId": null,
-        "description": {
-          "value": ""
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 0
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 1
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder Player Core"
-        },
-        "quantity": 900,
-        "rules": [],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": []
-        },
-        "slug": "gold-pieces",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "treasure",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
-      },
-      "effects": [],
-      "_key": "!actors.items!veXlsEz83sEuiLk8.4ublWBGavlWvVcxI"
-    },
-    {
+      "_id": "TcHgovOWtvijW6xd",
+      "_key": "!actors.items!veXlsEz83sEuiLk8.TcHgovOWtvijW6xd",
       "name": "White Stag's Antler Tine",
       "type": "treasure",
       "img": "icons/commodities/bones/horn-antler-pink-white.webp",
@@ -121,35 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "TcHgovOWtvijW6xd",
-      "_key": "!actors.items!veXlsEz83sEuiLk8.TcHgovOWtvijW6xd"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<h2>Appearance</h2>\n<p>A skeleton in worn leather armour with a royal dagger on its belt, slumped inside the pod, a stag antler tine in one bony hand.</p>\n<section class=\"secret\" id=\"secret-f39whxE5Bax8XxnV\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.oZ23BnjhOFOnIP6B]{10. The Scout's Wager}.</strong> The King's agent who poached the white stag; her skeleton lies in the pod with her satchel (900 gp and the stag's last antler tine).</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "veXlsEz83sEuiLk8",
-  "_key": "!actors!veXlsEz83sEuiLk8",
-  "name": "Varga Tess",
-  "img": "modules/points-of-interest/assets/portraits/10-varga-tess.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Varga Tess",
     "actorLink": true,
@@ -180,8 +113,26 @@
     "points-of-interest": {
       "encounter": 10,
       "slug": "10-varga-tess",
-      "kind": "remains"
+      "kind": "remains",
+      "recipe": {
+        "ops": [],
+        "treasure": [
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz",
+            "id": "4ublWBGavlWvVcxI",
+            "quantity": 900
+          }
+        ],
+        "hash": "641cea3b666bca4a",
+        "verified": "8.5.1"
+      }
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

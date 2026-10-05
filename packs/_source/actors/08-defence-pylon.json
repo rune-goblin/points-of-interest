@@ -1,5 +1,87 @@
 {
+  "_id": "sRc0hJQFnVsUfYos",
+  "_key": "!actors!sRc0hJQFnVsUfYos",
+  "name": "Hull Defence Grid",
   "type": "hazard",
+  "img": "modules/points-of-interest/assets/portraits/08-defence-pylon.webp",
+  "system": {
+    "attributes": {
+      "ac": {
+        "value": 39
+      },
+      "emitsSound": "encounter",
+      "hardness": 20,
+      "hasHealth": true,
+      "hp": {
+        "details": "per pylon (BT 40)",
+        "max": 80,
+        "temp": 0,
+        "tempmax": 0,
+        "value": 80
+      },
+      "immunities": [
+        {
+          "type": "critical-hits"
+        },
+        {
+          "type": "object-immunities"
+        },
+        {
+          "type": "precision"
+        }
+      ],
+      "stealth": {
+        "details": "<p>(expert); @Check[perception|dc:38] to notice the pylons' tracking lenses before entering the scorched ring</p>",
+        "value": 30
+      }
+    },
+    "details": {
+      "description": "<p>Three pylons fire laser bursts at intruders inside the scorched ring.</p>\n<h2>Appearance</h2>\n<p>A tall, slim metal pylon topped by a rotating cluster of lenses, scorched at the base, humming with light.</p>\n<section class=\"secret\" id=\"secret-KW82bunZNDXyiqNW\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Complex hazard 16 (40 XP). Place one token per pylon (three); each unlinked token tracks its own pylon HP. Disabling all three opens the hatch, which powers down the warden.</p>\n</section>",
+      "disable": "<p>@Check[thievery|dc:38|traits:action:disable-a-device] or @Check[crafting|dc:40] to disable one pylon; a @Check[society|dc:36] or @Check[crafting|dc:36] check to read the hull's glyphs reduces the remaining pylons' Disable DCs by 2.</p>",
+      "isComplex": true,
+      "level": {
+        "value": 16
+      },
+      "publication": {
+        "license": "ORC",
+        "remaster": true,
+        "title": "Points of Interest"
+      },
+      "reset": "<p>The grid resets 1 hour after no creatures remain in the ring.</p>",
+      "routine": "<p>(one action per working pylon) Each working pylon fires a laser at a random creature in the ring.</p>"
+    },
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 30
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 24
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 0
+      }
+    },
+    "statusEffects": [],
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": [
+        "electricity",
+        "fire",
+        "mechanical",
+        "trap"
+      ]
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
       "_id": "wz5Tc6cCY6TsTZzk",
@@ -97,94 +179,7 @@
       }
     }
   ],
-  "system": {
-    "attributes": {
-      "ac": {
-        "value": 39
-      },
-      "emitsSound": "encounter",
-      "hardness": 20,
-      "hasHealth": true,
-      "hp": {
-        "details": "per pylon (BT 40)",
-        "max": 80,
-        "temp": 0,
-        "tempmax": 0,
-        "value": 80
-      },
-      "immunities": [
-        {
-          "type": "critical-hits"
-        },
-        {
-          "type": "object-immunities"
-        },
-        {
-          "type": "precision"
-        }
-      ],
-      "stealth": {
-        "details": "<p>(expert); @Check[perception|dc:38] to notice the pylons' tracking lenses before entering the scorched ring</p>",
-        "value": 30
-      }
-    },
-    "details": {
-      "description": "<p>Three pylons fire laser bursts at intruders inside the scorched ring.</p>\n<h2>Appearance</h2>\n<p>A tall, slim metal pylon topped by a rotating cluster of lenses, scorched at the base, humming with light.</p>\n<section class=\"secret\" id=\"secret-KW82bunZNDXyiqNW\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Complex hazard 16 (40 XP). Place one token per pylon (three); each unlinked token tracks its own pylon HP. Disabling all three opens the hatch, which powers down the warden.</p>\n</section>",
-      "disable": "<p>@Check[thievery|dc:38|traits:action:disable-a-device] or @Check[crafting|dc:40] to disable one pylon; a @Check[society|dc:36] or @Check[crafting|dc:36] check to read the hull's glyphs reduces the remaining pylons' Disable DCs by 2.</p>",
-      "isComplex": true,
-      "level": {
-        "value": 16
-      },
-      "publication": {
-        "license": "ORC",
-        "remaster": true,
-        "title": "Points of Interest"
-      },
-      "reset": "<p>The grid resets 1 hour after no creatures remain in the ring.</p>",
-      "routine": "<p>(one action per working pylon) Each working pylon fires a laser at a random creature in the ring.</p>"
-    },
-    "saves": {
-      "fortitude": {
-        "saveDetail": "",
-        "value": 30
-      },
-      "reflex": {
-        "saveDetail": "",
-        "value": 24
-      },
-      "will": {
-        "saveDetail": "",
-        "value": 0
-      }
-    },
-    "statusEffects": [],
-    "traits": {
-      "rarity": "unique",
-      "size": {
-        "value": "med"
-      },
-      "value": [
-        "electricity",
-        "fire",
-        "mechanical",
-        "trap"
-      ]
-    },
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "sRc0hJQFnVsUfYos",
-  "_key": "!actors!sRc0hJQFnVsUfYos",
-  "name": "Hull Defence Grid",
-  "img": "modules/points-of-interest/assets/portraits/08-defence-pylon.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Hull Defence Grid",
     "actorLink": false,
@@ -218,5 +213,10 @@
       "kind": "hazard"
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

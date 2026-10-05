@@ -1,7 +1,27 @@
 {
+  "_id": "CKX5T6thFVYDUobt",
+  "_key": "!actors!CKX5T6thFVYDUobt",
+  "name": "Royal Scout's Cloak",
   "type": "loot",
+  "img": "icons/equipment/back/cloak-layered-green.webp",
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-EalKJT18wTnng7CJ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{14. The Shadow Court}.</strong> One of the empty ankou cloaks in the branches bears the badge of a royal scout. A waxed packet hides in its lining.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
+      "_id": "L9y3fTqmWGG7SGax",
+      "_key": "!actors.items!CKX5T6thFVYDUobt.L9y3fTqmWGG7SGax",
       "name": "Waxed Packet of Gems",
       "type": "treasure",
       "img": "icons/commodities/gems/gem-cluster-blue-white.webp",
@@ -59,184 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "L9y3fTqmWGG7SGax",
-      "_key": "!actors.items!CKX5T6thFVYDUobt.L9y3fTqmWGG7SGax"
-    },
-    {
-      "_id": "HU2hWDLbm2GMwrQ2",
-      "img": "icons/sundries/scrolls/scroll-symbol-eye-brown.webp",
-      "name": "Scroll of Regenerate (Rank 7)",
-      "system": {
-        "baseItem": null,
-        "bulk": {
-          "value": 0.1
-        },
-        "category": "scroll",
-        "containerId": null,
-        "damage": null,
-        "description": {
-          "value": "<p>@UUID[Compendium.pf2e.spells-srd.Item.2Vkd1IxylPceUAAF]{Regenerate}</p>\n<hr />\n<p>Casting a Spell from a scroll requires holding the scroll in one hand and activating it with a Cast a Spell activity using the normal number of actions for that spell.</p>\n<p>The spell must appear on your spell list. Because you're the one Casting the Spell, use your spell attack modifier and spell DC. The spell also gains the appropriate trait for your tradition (arcane, divine, occult, or primal).</p>\n<p>Any physical costs are provided when a scroll is created, so you don't need to provide them when casting from a scroll. If the spell requires a locus, you must have that locus to Cast the Spell from a scroll.</p>\n<hr />\n<p><em>Note: To create a scroll or wand of a specific spell, drag the spell from the compendium or compendium browser into the inventory of a PC, NPC, or loot actor.</em></p>"
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 13
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 600
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder GM Core"
-        },
-        "quantity": 1,
-        "rules": [],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": [
-            "concentrate",
-            "consumable",
-            "healing",
-            "magical",
-            "manipulate",
-            "scroll",
-            "vitality"
-          ]
-        },
-        "usage": {
-          "value": "held-in-one-hand"
-        },
-        "uses": {
-          "autoDestroy": true,
-          "max": 1,
-          "value": 1
-        },
-        "slug": "scroll-of-7th-rank-spell",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        },
-        "spell": {
-          "_id": "sBhXqEo0Tuphgpmz",
-          "img": "icons/magic/life/cross-beam-green.webp",
-          "name": "Regenerate",
-          "system": {
-            "area": null,
-            "cost": {
-              "value": ""
-            },
-            "counteraction": false,
-            "damage": {},
-            "defense": null,
-            "description": {
-              "value": "<p>An infusion of vital energy grants a creature continuous healing. The target temporarily gains regeneration 15, which restores 15 Hit Points to it at the start of each of its turns. While it has regeneration, the target can't die from taking Hit Point damage and its @UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{Dying} condition can't increase to a value that would kill it (this stops most creatures' dying condition at dying 3), though if its @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded} value becomes 4 or higher, it stays @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} until its wounds are treated. If the target takes acid or fire damage, its regeneration deactivates until after the end of its next turn.</p>\n<p>Each time the creature regains Hit Points from regeneration, it also regrows one damaged or ruined organ (if any). During the spell's duration, the creature can also reattach severed body parts by spending an Interact action to hold the body part to the area it was severed from.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.dXq7z633ve4E0nlX]{Spell Effect: Regenerate}</p>\n<hr />\n<p><strong>Heightened (9th)</strong> The regeneration increases to 20.</p>"
-            },
-            "duration": {
-              "sustained": false,
-              "value": "1 minute"
-            },
-            "level": {
-              "value": 7
-            },
-            "publication": {
-              "license": "ORC",
-              "remaster": true,
-              "title": "Pathfinder Player Core"
-            },
-            "range": {
-              "value": "touch"
-            },
-            "requirements": "",
-            "rules": [],
-            "target": {
-              "value": "1 willing living creature"
-            },
-            "time": {
-              "value": "2"
-            },
-            "traits": {
-              "rarity": "common",
-              "traditions": [
-                "divine",
-                "primal"
-              ],
-              "value": [
-                "concentrate",
-                "healing",
-                "manipulate",
-                "vitality"
-              ]
-            },
-            "slug": "regenerate",
-            "_migration": {
-              "version": 0.959,
-              "previous": null
-            },
-            "location": {
-              "value": null,
-              "heightenedLevel": 7
-            }
-          },
-          "type": "spell",
-          "_stats": {
-            "coreVersion": "14.361",
-            "systemId": "pf2e",
-            "systemVersion": "8.5.1",
-            "compendiumSource": "Compendium.pf2e.spells-srd.Item.2Vkd1IxylPceUAAF"
-          },
-          "effects": []
-        }
-      },
-      "type": "consumable",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.fomEZZ4MxVVK3uVu"
-      },
-      "effects": [],
-      "_key": "!actors.items!CKX5T6thFVYDUobt.HU2hWDLbm2GMwrQ2"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<section class=\"secret\" id=\"secret-EalKJT18wTnng7CJ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{14. The Shadow Court}.</strong> One of the empty ankou cloaks in the branches bears the badge of a royal scout. A waxed packet hides in its lining.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "CKX5T6thFVYDUobt",
-  "_key": "!actors!CKX5T6thFVYDUobt",
-  "name": "Royal Scout's Cloak",
-  "img": "icons/equipment/back/cloak-layered-green.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Royal Scout's Cloak",
     "actorLink": false,
@@ -268,8 +114,28 @@
       "encounter": 14,
       "slug": "14-royal-scouts-cloak",
       "kind": "cache",
-      "stowed": true
+      "stowed": true,
+      "recipe": {
+        "ops": [],
+        "treasure": [
+          {
+            "kind": "scroll",
+            "spell": "Compendium.pf2e.spells-srd.Item.2Vkd1IxylPceUAAF",
+            "base": "Compendium.pf2e.equipment-srd.Item.fomEZZ4MxVVK3uVu",
+            "rank": 7,
+            "id": "HU2hWDLbm2GMwrQ2",
+            "spellId": "sBhXqEo0Tuphgpmz"
+          }
+        ],
+        "hash": "377508c574b686d1",
+        "verified": "8.5.1"
+      }
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

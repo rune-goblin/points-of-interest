@@ -1,69 +1,27 @@
 {
+  "_id": "Fn816vZAm6qORb8W",
+  "_key": "!actors!Fn816vZAm6qORb8W",
+  "name": "Varrold Strongbox",
   "type": "loot",
+  "img": "icons/containers/chest/chest-simple-steel-brown.webp",
+  "system": {
+    "details": {
+      "description": "<section class=\"secret\" id=\"secret-XYWH7VGHrmTwYB1b\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{04. The Gardeners}.</strong> The Varrold family's strongbox, hidden in the ruined manor with the family silver.</p>\n</section>",
+      "level": {
+        "value": 0
+      }
+    },
+    "lootSheetType": "Loot",
+    "hiddenWhenEmpty": false,
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  },
   "items": [
     {
-      "_id": "MvpBWUtIqzmKGq8h",
-      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
-      "name": "Gold Pieces",
-      "system": {
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "category": "coin",
-        "containerId": null,
-        "description": {
-          "value": ""
-        },
-        "hardness": 0,
-        "hp": {
-          "max": 0,
-          "value": 0
-        },
-        "level": {
-          "value": 0
-        },
-        "material": {
-          "grade": null,
-          "type": null
-        },
-        "price": {
-          "value": {
-            "gp": 1
-          }
-        },
-        "publication": {
-          "license": "ORC",
-          "remaster": true,
-          "title": "Pathfinder Player Core"
-        },
-        "quantity": 1000,
-        "rules": [],
-        "size": "med",
-        "traits": {
-          "rarity": "common",
-          "value": []
-        },
-        "slug": "gold-pieces",
-        "_migration": {
-          "version": 0.959,
-          "previous": null
-        },
-        "equipped": {
-          "carryType": "worn"
-        }
-      },
-      "type": "treasure",
-      "_stats": {
-        "coreVersion": "14.361",
-        "systemId": "pf2e",
-        "systemVersion": "8.5.1",
-        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
-      },
-      "effects": [],
-      "_key": "!actors.items!Fn816vZAm6qORb8W.MvpBWUtIqzmKGq8h"
-    },
-    {
+      "_id": "QytmRreQMxXq3Cjo",
+      "_key": "!actors.items!Fn816vZAm6qORb8W.QytmRreQMxXq3Cjo",
       "name": "Varrold Family Silver",
       "type": "treasure",
       "img": "icons/containers/kitchenware/goblet-engraved-lines-grey.webp",
@@ -121,35 +79,10 @@
         "systemId": "pf2e",
         "systemVersion": "8.5.1",
         "compendiumSource": null
-      },
-      "_id": "QytmRreQMxXq3Cjo",
-      "_key": "!actors.items!Fn816vZAm6qORb8W.QytmRreQMxXq3Cjo"
+      }
     }
   ],
-  "system": {
-    "details": {
-      "description": "<section class=\"secret\" id=\"secret-XYWH7VGHrmTwYB1b\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{04. The Gardeners}.</strong> The Varrold family's strongbox, hidden in the ruined manor with the family silver.</p>\n</section>",
-      "level": {
-        "value": 0
-      }
-    },
-    "lootSheetType": "Loot",
-    "hiddenWhenEmpty": false,
-    "_migration": {
-      "version": 0.959,
-      "previous": null
-    }
-  },
-  "_stats": {
-    "coreVersion": "14.361",
-    "systemId": "pf2e",
-    "systemVersion": "8.5.1",
-    "compendiumSource": null
-  },
-  "_id": "Fn816vZAm6qORb8W",
-  "_key": "!actors!Fn816vZAm6qORb8W",
-  "name": "Varrold Strongbox",
-  "img": "icons/containers/chest/chest-simple-steel-brown.webp",
+  "effects": [],
   "prototypeToken": {
     "name": "Varrold Strongbox",
     "actorLink": false,
@@ -181,8 +114,26 @@
       "encounter": 4,
       "slug": "04-varrold-strongbox",
       "kind": "cache",
-      "stowed": true
+      "stowed": true,
+      "recipe": {
+        "ops": [],
+        "treasure": [
+          {
+            "kind": "gear",
+            "uuid": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz",
+            "id": "MvpBWUtIqzmKGq8h",
+            "quantity": 1000
+          }
+        ],
+        "hash": "51179233b7ec78ac",
+        "verified": "8.5.1"
+      }
     }
   },
-  "effects": []
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "pf2e",
+    "systemVersion": "8.5.1",
+    "compendiumSource": null
+  }
 }

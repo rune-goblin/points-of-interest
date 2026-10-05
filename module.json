@@ -63,7 +63,8 @@
         "id": "pf2e",
         "type": "system",
         "compatibility": {
-          "minimum": "8.0.0"
+          "minimum": "8.0.0",
+          "verified": "8.5.1"
         }
       }
     ],
