@@ -1,4 +1,4 @@
-import { adventureContent } from '../adventure';
+import { adventureContent, importFolders } from '../adventure';
 import { MODULE_ID } from '../constants';
 import { hydrate, hydratedOf, lookup, recipeOf, requiredUuids, type Json } from './hydrate';
 
@@ -72,20 +72,16 @@ export async function hydrateActors(actors: WorldActor[] = [...game.actors]): Pr
 }
 
 /**
- * Imports actors from the module's Adventure under their own ids, hydrated, so scene tokens and
- * journal links find them. An actor keeps its encounter folder when the world has it from the Adventure.
+ * Imports actors from the module's Adventure under their own ids, hydrated and in their folders, so
+ * scene tokens and journal links find them.
  */
 export async function importActors(ids: string[]): Promise<WorldActor[]> {
   const missing = new Set(ids.filter((id) => !game.actors.has(id)));
   if (!missing.size) return [];
+  const chosen = (await stubs()).filter((stub) => missing.has(stub._id));
+  await importFolders(chosen.map((stub) => stub.folder));
   // The Adventure's ownership gives players Limited on loot, which PF2e needs to let them take from it.
-  const data = (await stubs())
-    .filter((stub) => missing.has(stub._id))
-    .map((stub) => {
-      const folder = stub.folder as string | null;
-      const clearFolder = !(folder && game.folders.has(folder));
-      return game.actors.fromCompendium(stub as never, { keepId: true, clearFolder, clearOwnership: false }) as unknown as Json;
-    });
+  const data = chosen.map((stub) => game.actors.fromCompendium(stub as never, { keepId: true, clearOwnership: false }) as unknown as Json);
   if (!data.length) return [];
   return (await Actor.createDocuments((await hydrateSources(data)) as never[], { keepId: true })) as WorldActor[];
 }

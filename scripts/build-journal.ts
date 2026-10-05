@@ -1,15 +1,16 @@
 // Generate the journal pack source from docs/encounters.md, so the markdown stays the single
 // source of truth for encounter text. Run by `npm run build` before packing:
 //   node scripts/build-journal.ts
-// One journal holds the overview and every site, grouped into a category per zone. Each site has an
-// encounter page headed by its scenes and creatures, then the King's note as an image page beneath it.
+// One journal holds the overview and every site, in encounter order. Each site has one encounter page
+// headed by the King's note, then its scenes and creatures, then its sections (scripts/journal-html.ts).
 // Ids derive from a hash of each heading's slug, so rebuilding keeps every @UUID link and every
 // placed map note stable.
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { marked } from 'marked';
-import { MODULE_ID, ids, pad, slugify, stableId } from './stable-id.ts';
+import { encounterParts, overviewHtml, type Renderers } from './journal-html.ts';
+import { MODULE_ID, ids, pad, rootFolder, slugify, stableId } from './stable-id.ts';
 
 const ROOT = process.cwd();
 const PACK = 'journals';
@@ -17,17 +18,11 @@ const OUT = join(ROOT, 'packs', '_source', PACK);
 const SERVED = `modules/${MODULE_ID}/`;
 const PREVIEW_WIDTH = 800;
 
-interface Zone { title: string; slug: string }
-interface Section { number: number; title: string; slug: string; hex: string; zone: Zone; body: string }
+interface Section { number: number; title: string; slug: string; hex: string; body: string }
 
 const source = readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8');
 const firstZone = source.search(/^## Zone /m);
 const overviewMd = source.slice(0, firstZone).replace(/^# .*\n/, '').replace(/\n---\s*$/, '');
-
-const zoneHeadings = [...source.slice(firstZone).matchAll(/^## (.+)$/gm)].map((m) => ({
-  index: firstZone + m.index!,
-  zone: { title: m[1].trim(), slug: slugify(m[1]) },
-}));
 
 const sections: Section[] = [];
 const headingRe = /^### (\d+)\. (.+)$/gm;
@@ -44,9 +39,7 @@ headings.forEach((match, i) => {
   // The placement key the Kingmaker module uses for region-map hexes: "row.column".
   const hex = body.match(/^\| \*\*Hex\*\* \| (\d+\.\d+)\b/m)?.[1];
   if (!hex) throw new Error(`docs/encounters.md: "${match[0]}" has no | **Hex** | row in its header table`);
-  const zone = zoneHeadings.filter((z) => z.index < match.index!).at(-1)?.zone;
-  if (!zone) throw new Error(`docs/encounters.md: "${match[0]}" sits under no ## zone heading`);
-  sections.push({ number, title: match[2].trim(), slug: slugify(`${match[1]}. ${match[2]}`), hex, zone, body });
+  sections.push({ number, title: match[2].trim(), slug: slugify(`${match[1]}. ${match[2]}`), hex, body });
 });
 sections.sort((a, b) => a.number - b.number);
 
@@ -74,9 +67,9 @@ function artPath(dir: string, number: number): string | undefined {
 const escapeHtml = (text: string): string =>
   text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-interface PageOptions { category: string; level: number; sort: number }
+interface PageOptions { level: number; sort: number }
 
-function textPage(pageId: string, name: string, html: string, { category, level, sort }: PageOptions, flags = {}) {
+function textPage(pageId: string, name: string, html: string, { level, sort }: PageOptions, flags = {}) {
   return {
     _id: pageId,
     _key: `!journal.pages!${journalId}.${pageId}`,
@@ -84,31 +77,10 @@ function textPage(pageId: string, name: string, html: string, { category, level,
     type: 'text',
     title: { show: true, level },
     text: { format: 1, content: html },
-    category,
     sort,
     ownership: { default: -1 },
     flags,
   };
-}
-
-function imagePage(pageId: string, name: string, src: string, caption: string, { category, level, sort }: PageOptions) {
-  return {
-    _id: pageId,
-    _key: `!journal.pages!${journalId}.${pageId}`,
-    name,
-    type: 'image',
-    title: { show: true, level },
-    src,
-    image: { caption },
-    category,
-    sort,
-    ownership: { default: -1 },
-    flags: {},
-  };
-}
-
-function category(id: string, name: string, sort: number) {
-  return { _id: id, _key: `!journal.categories!${journalId}.${id}`, name, sort, flags: {} };
 }
 
 interface PackDoc { _id: string; _key: string; name: string; sort?: number; flags?: Record<string, Record<string, unknown>> }
@@ -190,36 +162,33 @@ function siteHeader(number: number): string {
 }
 
 // The encounter header tables are key/value pairs with a blank header row; drop it.
-const render = (md: string): string =>
-  (marked.parse(linkify(md), { async: false }) as string).replace(/<thead>\s*<tr>\s*(<th><\/th>\s*)+<\/tr>\s*<\/thead>\s*/g, '');
+const renderers: Renderers = {
+  block: (md) =>
+    (marked.parse(linkify(md), { async: false }) as string).replace(/<thead>\s*<tr>\s*(<th><\/th>\s*)+<\/tr>\s*<\/thead>\s*/g, ''),
+  inline: (md) => marked.parseInline(linkify(md), { async: false }) as string,
+};
+
+// Foundry pops out an image clicked in a page, titled by its title attribute, and the popout's
+// Show Players shares only the image, so the note needs no image page of its own.
+function kingsNote(s: Section, caption?: string): string {
+  const note = artPath('map-notes/white-ink', s.number);
+  if (!note) return '';
+  const alt = escapeHtml(`The King's note on the map: ${s.title}`);
+  const text = caption ? `<figcaption>${caption}</figcaption>` : '';
+  return `<figure class="poi-note"><img src="${note}" title="The King's Note" alt="${alt}">${text}</figure>\n`;
+}
 
 // The site header sits under the encounter's key/value table, so the facts read first.
 function encounterHtml(s: Section): string {
-  const html = render(s.body);
-  const header = siteHeader(s.number);
-  const end = html.indexOf('</table>');
-  return end < 0 ? header + html : `${html.slice(0, end + 8)}\n${header}${html.slice(end + 8)}`;
+  const { facts, caption, body } = encounterParts(s.body, renderers);
+  return `${kingsNote(s, caption)}${facts}\n${siteHeader(s.number)}${body}`;
 }
 
-const intro = category(ids.overviewCategory(), 'Overview', 0);
-const zones = [...new Map(sections.map((s) => [s.zone.slug, s.zone])).values()];
-const categories = [intro, ...zones.map((z, i) => category(ids.category(z.slug), z.title, (i + 1) * 1000))];
-const categoryOf = (zone: Zone): string => ids.category(zone.slug);
-
-function sitePages(s: Section) {
-  const options = { category: categoryOf(s.zone), sort: s.number * 1000 };
+function sitePage(s: Section) {
   const icon = artPath('map-icons', s.number) ?? artPath('map-notes', s.number);
-  const encounter = textPage(ids.encounterPage(s.slug), `${pad(s.number)}. ${s.title}`, encounterHtml(s), { ...options, level: 1 }, {
+  return textPage(ids.encounterPage(s.slug), `${pad(s.number)}. ${s.title}`, encounterHtml(s), { level: 1, sort: s.number * 1000 }, {
     [MODULE_ID]: { site: s.number, hex: s.hex, ...(icon ? { icon } : {}) },
   });
-  const note = artPath('map-notes', s.number);
-  if (!note) return [encounter];
-  const handout = imagePage(ids.handoutPage(s.slug), "The King's Note", note, `The King's note on the map: ${s.title}`, {
-    ...options,
-    level: 2,
-    sort: options.sort + 500,
-  });
-  return [encounter, handout];
 }
 
 // Limited lets players see each site's map note on the region map; every page needs Observer to read.
@@ -230,11 +199,11 @@ const journal = {
   _key: `!journal!${journalId}`,
   name: "Points of Interest",
   pages: [
-    textPage(stableId('page:overview'), 'Overview', render(overviewMd), { category: intro._id, level: 1, sort: 0 }),
-    ...sections.flatMap(sitePages),
+    textPage(stableId('page:overview'), 'Overview', overviewHtml(overviewMd, renderers), { level: 1, sort: 0 }),
+    ...sections.map(sitePage),
   ],
-  categories,
-  folder: null,
+  categories: [],
+  folder: rootFolder('JournalEntry')._id,
   sort: 0,
   ownership: { default: LIMITED },
   flags: {},
@@ -242,5 +211,6 @@ const journal = {
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
+writeFileSync(join(OUT, '_folder.json'), `${JSON.stringify(rootFolder('JournalEntry'), null, 2)}\n`);
 writeFileSync(join(OUT, 'points-of-interest.json'), `${JSON.stringify(journal, null, 2)}\n`);
-console.log(`journal: overview + ${sections.length} sites in ${zones.length} zones → packs/_source/${PACK}`);
+console.log(`journal: overview + ${sections.length} sites → packs/_source/${PACK}`);

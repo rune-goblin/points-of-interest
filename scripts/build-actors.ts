@@ -11,7 +11,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node
 import { join } from 'node:path';
 import { BODYLESS, hydrate, lookup, type ItemRef, type Op, type Recipe, type Runes, type Treasure } from '../src/actors/hydrate.ts';
 import { findSystem, loadPacks, systemVersion } from './pf2e-packs.ts';
-import { MODULE_ID, ids, pad, slugify, stableId } from './stable-id.ts';
+import { MODULE_ID, ids, pad, rootFolder, slugify, stableId } from './stable-id.ts';
 
 const ROOT = process.cwd();
 const OUT = join(ROOT, 'packs', '_source', 'actors');
@@ -1137,7 +1137,7 @@ function folder(encounter: number): Json {
     _key: `!folders!${_id}`,
     name: `${pad(encounter)}. ${titles.get(encounter)}`,
     type: 'Actor',
-    folder: null,
+    folder: rootFolder('Actor')._id,
     sorting: 'm',
     sort: encounter * 1000,
     color: null,
@@ -1166,6 +1166,7 @@ lightSaveCap = `${OZTHOOM_SHADOW_DOUBLE}.Item.${capItem._id}`;
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
+writeFileSync(join(OUT, '_folder-00-root.json'), `${JSON.stringify(rootFolder('Actor'), null, 2)}\n`);
 let count = 0;
 let recipes = 0;
 const built = new Set<string>();

@@ -23,6 +23,23 @@ export function adventureContent(): Promise<AdventureContent | undefined> {
   return content;
 }
 
+/**
+ * Creates the Adventure's folders that these ids name, parents first, when the world lacks them, so
+ * a document imported on its own lands in the same Points of Interest folder an Adventure import uses.
+ */
+export async function importFolders(ids: (string | null | undefined)[]): Promise<void> {
+  const folders = new Map(((await adventureContent())?.folders ?? []).map((f) => [f._id as string, f]));
+  const missing: Source[] = [];
+  const visit = (id: string | null | undefined): void => {
+    const folder = id ? folders.get(id) : undefined;
+    if (!folder || game.folders.has(folder._id) || missing.includes(folder)) return;
+    visit(folder.folder);
+    missing.push(folder);
+  };
+  ids.forEach(visit);
+  for (const folder of missing) await Folder.create(folder as never, { keepId: true });
+}
+
 // Adventure install prompt. Wire it into an adventure module's `ready` hook; it's a no-op for a
 // plain compendium module (no Adventure pack), so it self-deactivates. See README "Ship as an
 // Adventure".

@@ -9,7 +9,7 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { MODULE_ID, ids, pad, slugify, stableId } from './stable-id.ts';
+import { MODULE_ID, ids, pad, rootFolder, slugify, stableId } from './stable-id.ts';
 
 const ROOT = process.cwd();
 const PACK = 'scenes';
@@ -235,15 +235,12 @@ function readPrevious(): Map<string, Placeables> {
   return previous;
 }
 
-interface Encounter { number: number; title: string; zone: string }
+interface Encounter { number: number; title: string }
 function readEncounters(): Map<number, Encounter> {
   const encounters = new Map<number, Encounter>();
-  let zone = '';
   for (const line of readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8').split('\n')) {
-    const zoneMatch = /^## (.+)$/.exec(line);
-    if (zoneMatch) zone = zoneMatch[1].trim();
     const match = /^### (\d+)\. (.+)$/.exec(line);
-    if (match) encounters.set(Number(match[1]), { number: Number(match[1]), title: match[2].trim(), zone });
+    if (match) encounters.set(Number(match[1]), { number: Number(match[1]), title: match[2].trim() });
   }
   return encounters;
 }
@@ -356,11 +353,6 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
   };
 }
 
-function folder(name: string, sort: number) {
-  const id = stableId(`folder:scenes:${slugify(name)}`);
-  return { _id: id, _key: `!folders!${id}`, name, type: 'Scene', folder: null, description: '', sorting: 'm', sort, color: null, flags: {} };
-}
-
 const encounters = readEncounters();
 const casts = readCast();
 const previous = readPrevious();
@@ -368,21 +360,19 @@ const slugs = readdirSync(MAPS_DIR).filter((f) => f.endsWith('.webp')).map((f) =
 const unlisted = slugs.filter((s) => !MAPS[s]);
 if (unlisted.length) throw new Error(`Add a grid size to MAPS in build-scenes.ts for: ${unlisted.join(', ')}`);
 
-const folders = new Map<string, ReturnType<typeof folder>>();
 const scenes = slugs.map((slug) => {
   const number = Number(slug.slice(0, 2));
   const encounter = encounters.get(number);
   if (!encounter) throw new Error(`${slug}: no "### ${number}." heading in docs/encounters.md`);
-  if (!folders.has(encounter.zone)) folders.set(encounter.zone, folder(encounter.zone, (folders.size + 1) * 1000));
   const meta = MAPS[slug];
   const sort = number * 1000 + (meta.label ? 1 : 0);
-  const doc = scene(slug, meta, encounter, folders.get(encounter.zone)!._id, sort, casts.get(number) ?? [], previous.get(ids.scene(slug)));
+  const doc = scene(slug, meta, encounter, rootFolder('Scene')._id, sort, casts.get(number) ?? [], previous.get(ids.scene(slug)));
   return { slug, doc };
 });
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
-for (const f of folders.values()) writeFileSync(join(OUT, `folder-${slugify(f.name)}.json`), `${JSON.stringify(f, null, 2)}\n`);
+writeFileSync(join(OUT, 'folder-00-root.json'), `${JSON.stringify(rootFolder('Scene'), null, 2)}\n`);
 for (const { slug, doc } of scenes) writeFileSync(join(OUT, `${slug}.json`), `${JSON.stringify(doc, null, 2)}\n`);
 const tokens = scenes.reduce((n, { doc }) => n + doc.tokens.length, 0);
-console.log(`scenes: ${scenes.length} scenes, ${tokens} tokens, ${folders.size} zone folders → packs/_source/${PACK}`);
+console.log(`scenes: ${scenes.length} scenes, ${tokens} tokens → packs/_source/${PACK}`);

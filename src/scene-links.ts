@@ -1,4 +1,4 @@
-import { adventureContent } from './adventure';
+import { adventureContent, importFolders } from './adventure';
 import { MODULE_ID } from './constants';
 import { importActors } from './actors/runtime';
 import { importJournal } from './map-notes';
@@ -8,7 +8,7 @@ type Source = Record<string, any>;
 const t = (key: string): string => game.i18n.localize(`${MODULE_ID}.SceneLinks.${key}`);
 
 // Tokens name their actors by id, so a scene imported on its own brings its actors in under the same ids,
-// and the journal its note opens. It keeps its zone folder when the world has that from the Adventure.
+// and the journal its note opens, and the scene keeps its folder.
 async function importScene(id: string): Promise<Scene | undefined> {
   const source = (await adventureContent())?.scenes.find((s) => s._id === id);
   if (!source) return undefined;
@@ -18,8 +18,8 @@ async function importScene(id: string): Promise<Scene | undefined> {
   await importActors(missing);
   const entryId = (source.notes as Source[]).find((note) => !!note.flags?.[MODULE_ID]?.scene)?.entryId;
   if (entryId && !game.journal.has(entryId)) await importJournal();
-  const folder = source.folder as string | null;
-  const data = game.scenes.fromCompendium(source as never, { keepId: true, clearFolder: !(folder && game.folders.has(folder)) });
+  await importFolders([source.folder]);
+  const data = game.scenes.fromCompendium(source as never, { keepId: true });
   return (await Scene.create(data, { keepId: true })) as Scene | undefined;
 }
 

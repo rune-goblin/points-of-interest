@@ -30,6 +30,15 @@ export default defineConfig({
         target: `http://localhost:30001/modules/${id}/dist`,
         rewrite: () => '/index.ts',
       },
+      // The built stylesheet doesn't exist in dev either; index.ts imports the styles with HMR,
+      // so answer module.json's <link> with an empty sheet instead of a 404.
+      [`/modules/${id}/dist/${id}.css`]: {
+        target: FOUNDRY,
+        bypass: (_req, res) => {
+          res?.writeHead(200, { 'Content-Type': 'text/css' }).end();
+          return '';
+        },
+      },
       // Our static files live on disk under the module, not in Vite's src/ root — Foundry serves them.
       [`^/modules/${id}/(lang|packs|assets)/`]: FOUNDRY,
       // Everything outside our module (Foundry core, the active system, other modules).

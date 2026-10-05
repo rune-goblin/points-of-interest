@@ -10,6 +10,7 @@ const SERVED = `modules/${MODULE_ID}/`;
 const PF2E_UUID = /^Compendium\.pf2e\.[\w-]+\.(Actor|Item)\.\w{16}(\.Item\.\w{16})?$/;
 
 interface Doc { _id: string; _key: string; name: string }
+interface FolderDoc extends Doc { type: string; folder: string | null }
 interface Item extends Doc {
   type: string;
   _stats?: { compendiumSource?: string | null };
@@ -32,11 +33,11 @@ const readDir = <T>(dir: string): T[] =>
 
 const docs = readDir<Doc>(join(ROOT, 'packs', '_source', 'actors'));
 const actors = docs.filter((d) => d._key.startsWith('!actors!')) as ActorSource[];
-const folders = docs.filter((d) => d._key.startsWith('!folders!'));
+const folders = docs.filter((d) => d._key.startsWith('!folders!')) as FolderDoc[];
 const isCache = (actor: ActorSource): boolean => actor.flags[MODULE_ID]?.kind === 'cache';
 const recipeOf = (actor: ActorSource): Recipe | undefined => actor.flags[MODULE_ID]?.recipe;
 
-const journals = readDir<{ _id: string; pages: Doc[] }>(join(ROOT, 'packs', '_source', 'journals'));
+const journals = readDir<{ _id: string; _key: string; pages: Doc[] }>(join(ROOT, 'packs', '_source', 'journals')).filter((d) => d._key.startsWith('!journal!'));
 const pageUuids = new Set(
   journals.flatMap((j) => j.pages.map((p) => `Compendium.${MODULE_ID}.journals.JournalEntry.${j._id}.JournalEntryPage.${p._id}`)),
 );
@@ -122,9 +123,13 @@ describe('actors pack sources', () => {
     }
   });
 
-  it('files every actor under its encounter folder', () => {
-    const folderIds = new Set(folders.map((f) => f._id));
-    expect(folders).toHaveLength(21);
+  it('files every actor under its encounter folder, inside one Points of Interest folder', () => {
+    const roots = folders.filter((f) => !f.folder);
+    expect(roots.map((f) => [f.name, f.type])).toEqual([['Points of Interest', 'Actor']]);
+    const encounterFolders = folders.filter((f) => f.folder === roots[0]._id);
+    expect(encounterFolders).toHaveLength(21);
+    expect(folders).toHaveLength(22);
+    const folderIds = new Set(encounterFolders.map((f) => f._id));
     for (const actor of actors) {
       const encounter = actor.flags[MODULE_ID]?.encounter;
       expect(encounter, actor.name).toBeGreaterThanOrEqual(1);

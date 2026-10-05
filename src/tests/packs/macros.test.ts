@@ -11,9 +11,13 @@ const SOURCE = join(ROOT, 'packs', '_source', 'macros');
 
 interface MacroSource { _id: string; _key: string; type: string; command: string }
 
-const macros = readdirSync(SOURCE)
+interface FolderSource { _id: string; _key: string; name: string; type: string; folder: string | null }
+
+const sources = readdirSync(SOURCE)
   .filter((f) => f.endsWith('.json'))
-  .map((f) => ({ slug: f.replace(/\.json$/, ''), doc: JSON.parse(readFileSync(join(SOURCE, f), 'utf8')) as MacroSource }));
+  .map((f) => ({ slug: f.replace(/\.json$/, ''), doc: JSON.parse(readFileSync(join(SOURCE, f), 'utf8')) as MacroSource & { folder: string | null } }));
+const macros = sources.filter((s) => s.doc._key.startsWith('!macros!'));
+const folders = sources.filter((s) => s.doc._key.startsWith('!folders!')).map((s) => s.doc as unknown as FolderSource);
 const apiMembers = [...readFileSync(join(ROOT, 'src', 'index.ts'), 'utf8').matchAll(/^\s+(\w+): typeof \w+;$/gm)].map((m) => m[1]);
 const AsyncFunction = (async () => {}).constructor as new (body: string) => unknown;
 
@@ -34,6 +38,11 @@ describe('macros pack sources', () => {
       expect(doc.type).toBe('script');
       expect(() => new AsyncFunction(doc.command)).not.toThrow();
     }
+  });
+
+  it('files every macro in one Points of Interest folder', () => {
+    expect(folders.map((f) => [f.name, f.type, f.folder])).toEqual([['Points of Interest', 'Macro', null]]);
+    for (const { doc } of macros) expect(doc.folder).toBe(folders[0]._id);
   });
 
   it('calls only functions the module API exposes', () => {

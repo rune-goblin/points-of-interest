@@ -1,5 +1,5 @@
 // Derive the map-pin icons in assets/map-icons/ from the white-ink redraws of the map-note art in
-// assets/map-notes/white-ink/ (the navy originals stay the journal handouts). Needs ImageMagick 7
+// assets/map-notes/white-ink/ (the same redraws head the journal's encounter pages). Needs ImageMagick 7
 // (`magick`) on PATH; run after changing that art:
 //   npm run build:icons
 // Each icon darkens its whole region hex with a black scrim and sets the sketch on it, scaled as

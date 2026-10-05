@@ -16,16 +16,20 @@ export function slugify(heading: string): string {
 
 export const pad = (n: number): string => String(n).padStart(2, '0');
 
+export type FolderType = 'Actor' | 'Scene' | 'JournalEntry' | 'Macro';
+
+/** The one top-level folder that holds everything of a document type the Adventure imports. */
+export function rootFolder(type: FolderType) {
+  const _id = stableId(`folder:root:${type}`);
+  return { _id, _key: `!folders!${_id}`, name: 'Points of Interest', type, folder: null, description: '', sorting: 'm', sort: 0, color: '#3b2a1a', flags: {} };
+}
+
 export const ids = {
-  // Pinned to the ids the journal's first release hashed from its old title, so world copies keep matching.
+  // Pinned to the id the journal's first release hashed from its old title, so world copies keep matching.
   /** The one journal entry that holds the overview and every site. */
   journal: () => 'jxn9bB1XhZTRpF65',
-  overviewCategory: () => 'wsMUEJbgMmvS1TGZ',
-  /** `headingSlug` is a zone heading's slug, e.g. `zone-13-tourney-fields`. */
-  category: (headingSlug: string) => stableId(`category:${headingSlug}`),
   /** `headingSlug` is the encounter heading's slug, e.g. `1-the-shadowless-lodge`. */
   encounterPage: (headingSlug: string) => stableId(`page:${headingSlug}`),
-  handoutPage: (headingSlug: string) => stableId(`note:${headingSlug}`),
   /** `artSlug` is the shared portrait/token file name without extension, e.g. `01-ankou`. */
   actor: (artSlug: string) => stableId(`actor:${artSlug}`),
   /** An item an actor carries, keyed by the actor's slug and the item's name. */

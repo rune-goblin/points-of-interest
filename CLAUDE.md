@@ -10,11 +10,23 @@ compendium packs from `packs/_source/`).
 - `docs/encounters.md` — **canonical encounter text.** `npm run build` regenerates the journal
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
-  One journal, "Points of Interest", holds the overview and every site in a category per zone: each site's
-  encounter page (level 1), then its "The King's Note" handout image page (level 2).
+  One journal, "Points of Interest", holds the overview, then one text page per site in encounter order
+  (no categories). Each encounter page opens with the King's note (the white-ink redraw, captioned with
+  the "**The King's map note.**" paragraph); a GM clicks it and presses Show Players in the popout to share it.
+  `scripts/journal-html.ts` structures the rest, so keep the markdown patterns it reads: a run-in label
+  (`**Background.** …`) opens a section under a large heading, and an italic one (`*The heads.* …`) a
+  sub-section; `**NAME** — HAZARD 15` (or `CREATURE`) starts a stat block that runs while paragraphs open
+  with a bold term; `**Name** (aside)` or `*Influence: Name* (aside)` followed by a list makes an Influence
+  card; the Rewards line splits into XP, Treasure and Kingdom rows at sentences opening "Treasure" or
+  "Kingdom". Write checks as "DC 36 Religion", "DC 35 basic Reflex" or "Society or Crafting, DC 36": the
+  build makes each a PF2e `@Check` a GM can roll or post to chat (read-aloud text excepted). `src/styles.css`
+  styles the pages for both themes with `light-dark()`: 16 px text, mixed-case headings, no all-caps labels.
 - Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the
   `pf2e-kingmaker` region map (the key its hex HUD shows). The build copies it into the
   site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.
+- Everything the Adventure imports sits in one "Points of Interest" folder per sidebar tab (actors,
+  scenes, journal, macros; `rootFolder()` in `scripts/stable-id.ts`). Actors sit in an encounter folder inside it; scenes sit
+  in it directly. A piece imported on its own brings its folders along (`importFolders()`).
 - Every generated id comes from `scripts/stable-id.ts` (`ids.journal`, `ids.actor`, `ids.scene`, …),
   so the packs link to each other without a lookup table. Scenes and actors carry
   `flags['points-of-interest'].encounter`; `build-journal.ts` reads it to head each encounter page
@@ -82,7 +94,8 @@ compendium packs from `packs/_source/`).
   A character's portrait and token share a file name. Reference art by its served path
   `modules/points-of-interest/assets/…`.
 - `assets/map-notes/white-ink/NN-name.webp` — white-ink redraws of the map-note sketches, named like
-  their navy originals. The originals stay the journal handouts; the redraws feed the map icons.
+  their navy originals. The redraws head the encounter pages and feed the map icons; the originals
+  feed the banner.
 - `assets/map-icons/NN-name.webp` — 512 px map-pin icons derived from `assets/map-notes/white-ink/`
   (a 25% black scrim filling the region hex, the sketch fitted inside it with coloured accents
   lightened, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
@@ -195,7 +208,7 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   `game.modules.get('points-of-interest').api.placeMapNotes(scene?)`. It targets the given scene, else
   the viewed region map, else the world's only one (several and none viewed → asks the GM to view one).
   It imports or refreshes the journal into a "Points of Interest" world folder (same ids as the Adventure),
-  deletes the per-site entries v0.2.0 made, adds the `scene` note to world copies of the module scenes
+  deletes the per-site entries v0.2.0 made and the old King's Note image pages, adds the `scene` note to world copies of the module scenes
   that lack it (refreshing the link of one already there), then creates or moves one note per site (318 px icon, one hex tall,
   linked to the site's encounter page, flagged `site`). Re-run it after journal edits.
   The module hides Foundry's dark backing square and idle border on these notes (`refreshNote` hook).
@@ -203,8 +216,8 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   symlinks into the repo). The stolen-lands world already holds the journal folder and the 21 notes;
   enable the module there after a Foundry restart to get the hook and the API.
   A new world journal gives players Limited ownership: they see each pin and its name but can't read
-  a page. Share a handout with Show Players. Don't link a note to the image page: Foundry lets Limited
-  players open an image page straight from its pin.
+  a page. Share the King's note by clicking it on its encounter page and pressing Show Players. Keep the
+  journal free of image pages: Foundry lets Limited players open an image page straight from its pin.
 - Next: check the actor sheets, scene grids and token placement in a live world, trace walls and lights.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;
   its stat block lives in `docs/encounters.md`. #9 uses the elite adamantine golem from the system's Kingmaker bestiary.

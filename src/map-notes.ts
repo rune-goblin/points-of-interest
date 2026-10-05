@@ -1,4 +1,4 @@
-import { adventureContent } from './adventure';
+import { adventureContent, importFolders } from './adventure';
 import { MODULE_ID } from './constants';
 
 type Source = Record<string, any>;
@@ -10,6 +10,8 @@ const FONT_SIZE = 30;
 const FALLBACK_ICON = 'icons/svg/book.svg';
 // Releases up to 0.2.0 kept each site in its own entry beside this overview entry.
 const LEGACY_OVERVIEW_ID = '9snGUfaEyJ38MwSg';
+// Earlier releases gave each site's map note an image page; the encounter page shows it now.
+const LEGACY_HANDOUT_ART = `modules/${MODULE_ID}/assets/map-notes/`;
 
 interface SiteFlags {
   site: number;
@@ -40,19 +42,6 @@ function isRegionMap(scene: Scene): boolean {
   return scene.grid.type === CONST.GRID_TYPES.HEXODDR && scene.grid.size === REGION_HEX_SIZE;
 }
 
-async function journalFolder(): Promise<Folder> {
-  const existing = game.folders.find((f) => f.type === 'JournalEntry' && !!f.getFlag(MODULE_ID, 'journal'));
-  if (existing) return existing;
-  const created = await Folder.create({
-    name: t('Folder'),
-    type: 'JournalEntry',
-    sorting: 'm',
-    color: '#3b2a1a',
-    flags: { [MODULE_ID]: { journal: true } },
-  });
-  return created as Folder;
-}
-
 // The Adventure's pages already link the world journal; the world copy keeps its ids so those links hold.
 function toWorld(source: Source): JournalEntry['_source'] {
   return game.journal.fromCompendium(source as JournalEntry['_source'], { keepId: true, clearSort: false, clearOwnership: false });
@@ -75,7 +64,7 @@ async function upsertEmbedded(
  * Create the Points of Interest journal from the Adventure, or refresh the text, images, categories and flags
  * of the world copy. A new copy keeps the Adventure's ownership (Limited, so players see the map notes but
  * can't read a page); an existing copy keeps whatever ownership and folder the GM gave it. Entries
- * left from the one-entry-per-site layout are deleted.
+ * left from the one-entry-per-site layout and the old map-note image pages are deleted.
  */
 export async function importJournal(): Promise<JournalEntry> {
   const [source] = (await adventureContent())?.journal ?? [];
@@ -86,9 +75,11 @@ export async function importJournal(): Promise<JournalEntry> {
     await upsertEmbedded(journal, 'JournalEntryCategory', data.categories);
     await upsertEmbedded(journal, 'JournalEntryPage', data.pages);
     await journal.update({ name: data.name, flags: data.flags });
+    const handouts = journal.pages.filter((p) => p.type === 'image' && !!p.src?.startsWith(LEGACY_HANDOUT_ART));
+    if (handouts.length) await journal.deleteEmbeddedDocuments('JournalEntryPage', handouts.map((p) => p.id));
   } else {
-    const folder = await journalFolder();
-    journal = (await JournalEntry.create({ ...data, folder: folder.id }, { keepId: true })) as JournalEntry;
+    await importFolders([source.folder]);
+    journal = (await JournalEntry.create(data, { keepId: true })) as JournalEntry;
   }
   const legacy = game.journal.filter((e) => e.id === LEGACY_OVERVIEW_ID || siteFlags(e)?.site !== undefined);
   if (legacy.length) {
@@ -166,7 +157,6 @@ export async function placeMapNotes(target?: Scene): Promise<void> {
     const data = {
       x,
       y,
-      // A text page opens only at Observer; an image page link would let Limited players open the handout.
       entryId: journal.id,
       pageId: page.id,
       text: page.name,

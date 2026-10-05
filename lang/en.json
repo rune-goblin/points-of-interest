@@ -1,7 +1,6 @@
 {
   "points-of-interest": {
     "MapNotes": {
-      "Folder": "Points of Interest",
       "GMOnly": "Only a GM can place the King's map notes.",
       "NoPack": "The Points of Interest Adventure is missing. Run npm run build.",
       "WrongScene": "{scene} is not the region map (275 px hex rows), so the King's map notes can't go there.",

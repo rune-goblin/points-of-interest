@@ -3,6 +3,8 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 const ROOT = process.cwd();
+// Loaded at runtime: tsconfig.json's rootDir is src/, so a static import of scripts/ fails `npm run check`.
+const { linkChecks } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'journal-html.ts'))) as { linkChecks(md: string): string };
 const MODULE_ID = 'points-of-interest';
 const SERVED = `modules/${MODULE_ID}/`;
 
@@ -11,7 +13,7 @@ interface Page {
   name: string;
   type: string;
   src?: string;
-  category: string;
+  category?: string | null;
   sort: number;
   title: { level: number };
   ownership: { default: number };
@@ -20,6 +22,7 @@ interface Page {
 }
 interface Journal {
   _id: string;
+  folder: string | null;
   ownership: { default: number };
   categories: { _id: string; _key: string; name: string; sort: number }[];
   pages: Page[];
@@ -27,8 +30,11 @@ interface Journal {
 interface PackDoc { _id: string; _key: string; flags?: Record<string, { encounter?: number }> }
 
 const dir = join(ROOT, 'packs', '_source', 'journals');
-const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
-const journal = JSON.parse(readFileSync(join(dir, files[0]), 'utf8')) as Journal;
+const sources = readdirSync(dir)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => JSON.parse(readFileSync(join(dir, f), 'utf8')) as { _key: string });
+const journal = sources.find((d) => d._key.startsWith('!journal!')) as unknown as Journal;
+const folders = sources.filter((d) => d._key.startsWith('!folders!')) as unknown as { _id: string; name: string; type: string; folder: string | null }[];
 const pages = [...journal.pages].sort((a, b) => a.sort - b.sort);
 const sites = pages.filter((p) => p.flags[MODULE_ID]?.site !== undefined);
 const headings = [...readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8').matchAll(/^### (\d+)\. /gm)];
@@ -45,29 +51,68 @@ const actors = packDocs('actors', 'actors');
 
 describe('journals pack source', () => {
   it('holds the overview and every encounter in one journal', () => {
-    expect(files).toHaveLength(1);
+    expect(sources.filter((d) => d._key.startsWith('!journal!'))).toHaveLength(1);
     expect(sites.map((p) => p.flags[MODULE_ID].site)).toEqual(headings.map((h) => Number(h[1])));
     expect(pages[0].name).toBe('Overview');
   });
 
-  it('follows each encounter page with its map-note handout, one level down', () => {
+  it('files the journal in one Points of Interest folder', () => {
+    expect(folders.map((f) => [f.name, f.type, f.folder])).toEqual([['Points of Interest', 'JournalEntry', null]]);
+    expect(journal.folder).toBe(folders[0]._id);
+  });
+
+  it('keeps every site on one text page', () => {
+    expect(pages.filter((p) => p.type !== 'text').map((p) => p.name)).toEqual([]);
+    expect(pages).toHaveLength(sites.length + 1);
+  });
+
+  it('opens each encounter page with the white-ink King\'s note, which pops out to share', () => {
     for (const site of sites) {
-      const handout = pages[pages.indexOf(site) + 1];
-      expect(site.type).toBe('text');
-      expect(handout.type).toBe('image');
-      expect(handout.category).toBe(site.category);
-      expect(handout.title.level).toBe(site.title.level + 1);
-      expect(existsSync(servedFile(handout.src!))).toBe(true);
+      const note = site.text!.content.match(/^<figure class="poi-note"><img src="([^"]+)" title="The King's Note"/);
+      expect(note, site.name).not.toBeNull();
+      expect(note![1]).toMatch(new RegExp(`^${SERVED}assets/map-notes/white-ink/${String(site.flags[MODULE_ID].site).padStart(2, '0')}-`));
+      expect(existsSync(servedFile(note![1]))).toBe(true);
     }
   });
 
-  it('files every page under one of the journal categories, zones in document order', () => {
-    const categories = new Set(journal.categories.map((c) => c._id));
-    for (const page of pages) expect(categories.has(page.category), page.name).toBe(true);
-    for (const c of journal.categories) expect(c._key).toBe(`!journal.categories!${journal._id}.${c._id}`);
-    const order = [...new Set(sites.map((p) => p.category))];
-    const sorted = [...journal.categories].sort((a, b) => a.sort - b.sort).map((c) => c._id);
-    expect(sorted.filter((id) => order.includes(id))).toEqual(order);
+  it("captions each King's note with its description", () => {
+    for (const site of sites) expect(site.text!.content, site.name).toMatch(/^<figure class="poi-note"><img [^>]+><figcaption>.+?<\/figcaption><\/figure>/);
+  });
+
+  it('opens each section and sub-section under a heading the contents sidebar leaves out', () => {
+    const required = ['background', 'arrival', 'features', 'outcomes', 'rewards', 'scaling'];
+    for (const page of pages) {
+      const html = page.text!.content;
+      const body = html.slice(html.indexOf('<div class="poi-body">'));
+      expect(body.length, page.name).toBeGreaterThan(0);
+      for (const [heading] of body.matchAll(/<h[1-6][^>]*>/g)) expect(heading, page.name).toContain('data-no-toc');
+      expect(body.match(/<p><(strong|em)>[^<]+\.<\/\1>/g) ?? [], page.name).toEqual([]);
+      if (page === pages[0]) continue;
+      const kinds = new Set([...body.matchAll(/class="poi-sec poi-sec--([\w-]+)/g)].map((m) => m[1]));
+      for (const kind of required) expect(kinds.has(kind), `${page.name}: ${kind}`).toBe(true);
+    }
+  });
+
+  it('sets each Rewards line out as rows, XP first', () => {
+    for (const site of sites) {
+      const rows = [...site.text!.content.matchAll(/<div><dt>(\w+)<\/dt><dd>/g)].map((m) => m[1]);
+      expect(rows[0], site.name).toBe('XP');
+      expect(rows.slice(1).every((r) => r === 'Treasure' || r === 'Kingdom'), site.name).toBe(true);
+    }
+  });
+
+  it('links every check and save that names a DC, outside read-aloud text', () => {
+    const statistic = /\bDC \d+ (basic )?(Acrobatics|Arcana|Athletics|Crafting|Deception|Diplomacy|Intimidation|Medicine|Nature|Occultism|Performance|Religion|Society|Stealth|Survival|Thievery|Perception|Fortitude|Reflex|Will)\b/;
+    for (const site of sites) {
+      const html = site.text!.content.replace(/<blockquote>[\s\S]*?<\/blockquote>/g, '');
+      expect(html.match(statistic)?.[0], site.name).toBeUndefined();
+      for (const [, check] of html.matchAll(/@Check\[([^\]]*)\]/g)) expect(check, site.name).toMatch(/^[a-z-]+\|dc:\d+(\|basic)?$/);
+    }
+  });
+
+  it('lists the pages without categories', () => {
+    expect(journal.categories).toEqual([]);
+    for (const page of pages) expect(page.category ?? null, page.name).toBeNull();
   });
 
   it('lets players see site map notes but keeps every page closed to them', () => {
@@ -115,5 +160,32 @@ describe('journals pack source', () => {
     );
     expect(links.length).toBeGreaterThan(0);
     expect(links.filter((l) => !uuids.has(l))).toEqual([]);
+  });
+});
+
+describe('linkChecks', () => {
+  it('links each statistic in a list, keeping its separators', () => {
+    expect(linkChecks('a DC 39 Perception, Nature or Society check')).toBe(
+      'a @Check[perception|dc:39], @Check[nature|dc:39] or @Check[society|dc:39] check',
+    );
+  });
+
+  it('marks basic saves and links Lore skills', () => {
+    expect(linkChecks('(DC 35 basic Reflex)')).toBe('(@Check[reflex|dc:35|basic])');
+    expect(linkChecks('DC 39 Diplomacy or Hill-Clan Lore')).toBe('@Check[diplomacy|dc:39] or @Check[hill-clan-lore|dc:39]');
+  });
+
+  it('reads a DC that follows its statistics', () => {
+    expect(linkChecks('(Society or Crafting, DC 36)')).toBe('(@Check[society|dc:36] or @Check[crafting|dc:36])');
+  });
+
+  it('escapes pipes in table rows and leaves read-aloud lines alone', () => {
+    expect(linkChecks('| Den | DC 36 Perception |')).toBe('| Den | @Check[perception\\|dc:36] |');
+    expect(linkChecks('> a DC 30 Athletics climb')).toBe('> a DC 30 Athletics climb');
+  });
+
+  it('leaves a DC with no statistic, or a creature\'s own DC, as written', () => {
+    expect(linkChecks('until it Escapes (DC 30)')).toBe('until it Escapes (DC 30)');
+    expect(linkChecks('- **Perception** DC 42')).toBe('- **Perception** DC 42');
   });
 });

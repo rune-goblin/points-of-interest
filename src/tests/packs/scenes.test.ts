@@ -35,7 +35,7 @@ interface SceneSource {
   folder: string | null;
   flags: Record<string, { encounter?: number }>;
 }
-interface FolderSource { _id: string; _key: string; type: string }
+interface FolderSource { _id: string; _key: string; type: string; name: string; folder: string | null }
 
 const docs = readdirSync(SOURCE).map((f) => JSON.parse(readFileSync(join(SOURCE, f), 'utf8')) as { _id: string; _key: string });
 const scenes = docs.filter((d) => d._key.startsWith('!scenes!')) as unknown as SceneSource[];
@@ -129,15 +129,15 @@ describe('scenes pack source', () => {
     }
   });
 
-  it('links each scene to its encounter page and a zone folder', () => {
-    const folderIds = new Set(folders.map((f) => f._id));
+  it('links each scene to its encounter page and files it in one Points of Interest folder', () => {
+    expect(folders.map((f) => [f.name, f.type, f.folder])).toEqual([['Points of Interest', 'Scene', null]]);
     for (const s of scenes) {
       const encounter = s.flags[MODULE_ID]?.encounter;
       const heading = headings.get(encounter ?? NaN);
       expect(heading, s.name).toBeDefined();
       expect(s.journal).toBe(ids.journal());
       expect(s.journalEntryPage).toBe(ids.encounterPage(slugify(heading!)));
-      expect(folderIds.has(s.folder ?? ''), s.name).toBe(true);
+      expect(s.folder, s.name).toBe(folders[0]._id);
     }
   });
 });

@@ -2,6 +2,55 @@
   --points-of-interest-accent: #6b21a8;
 }
 
+/* Journal pages. Foundry sets color-scheme on every application, so light-dark() follows its theme. */
+:is(.poi-note, .poi-facts, .poi-body) {
+  --poi-ink: light-dark(#1e2738, #ece6d8);
+  --poi-muted: light-dark(#5f6677, #a9a499);
+  --poi-rule: light-dark(rgb(30 39 56 / 18%), rgb(236 230 216 / 16%));
+  --poi-accent: light-dark(#2d5b8c, #93b8de);
+  --poi-accent-wash: light-dark(rgb(45 91 140 / 9%), rgb(147 184 222 / 8%));
+  --poi-gold: light-dark(#7d5a12, #dcb75e);
+  --poi-gold-wash: light-dark(rgb(176 134 40 / 10%), rgb(220 183 94 / 7%));
+  --poi-card: light-dark(rgb(255 255 255 / 45%), rgb(255 255 255 / 3%));
+  --poi-serif: Gelasio, Georgia, serif;
+  --poi-display: Eczar, Georgia, serif;
+}
+
+.journal-page-content:has(> .poi-body) {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* The white-ink notes are transparent, so they need a dark ground in either theme, popped out too. */
+.poi-note {
+  margin: 0 auto 1rem;
+  max-width: 20rem;
+}
+
+.poi-note img,
+.image-popout img[src*="/assets/map-notes/white-ink/"] {
+  background: radial-gradient(#2b2f3a, #14161c);
+  border: none;
+  border-radius: 8px;
+}
+
+.poi-note img {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.poi-note figcaption {
+  margin-top: 0.6rem;
+  color: var(--poi-muted);
+  font: italic 1rem/1.5 var(--poi-serif);
+  text-align: center;
+}
+
+.poi-facts td:first-child strong {
+  color: var(--poi-muted);
+}
+
 .poi-site {
   display: grid;
   gap: 0.75rem;
@@ -66,9 +115,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 5.5rem;
+  width: 6rem;
   color: inherit;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.2;
   text-align: center;
 }
@@ -89,4 +138,297 @@
   font-size: 0.75rem;
   font-style: italic;
   opacity: 0.7;
+}
+
+.poi-body {
+  container-type: inline-size;
+  margin-top: 2rem;
+}
+
+.poi-body:first-child {
+  margin-top: 0;
+}
+
+.poi-sec + .poi-sec {
+  margin-top: 2.25rem;
+}
+
+.poi-sec > .poi-h {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.85rem;
+  padding: 0 0 0.35rem;
+  border-bottom: 1px solid var(--poi-rule);
+  color: var(--poi-ink);
+  font: 600 1.6rem/1.2 var(--poi-display);
+}
+
+.poi-h i {
+  width: 1.5rem;
+  color: var(--poi-accent);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.poi-sec-body > :first-child {
+  margin-top: 0;
+}
+
+.poi-sec-body > :last-child {
+  margin-bottom: 0;
+}
+
+.poi-sec--intro .poi-sec-body {
+  font: 1.15rem/1.6 var(--poi-serif);
+}
+
+.poi-sec-body > h3.poi-sub {
+  margin: 1.4rem 0 0.35rem;
+  padding: 0;
+  border: none;
+  color: var(--poi-accent);
+  font: 600 1.25rem/1.25 var(--poi-display);
+}
+
+.poi-sec-body > ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.6rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.poi-sec-body > ul > li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.poi-sec-body > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0.15rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  background: var(--poi-accent);
+  transform: rotate(45deg);
+}
+
+.poi-sec--outcomes .poi-sec-body > ul > li::before {
+  top: 0.4em;
+  width: 0.5rem;
+  height: 0.7rem;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  transform: none;
+}
+
+strong.poi-term {
+  color: var(--poi-ink);
+}
+
+.poi-sec--arrival blockquote {
+  position: relative;
+  margin: 0;
+  padding: 0.9rem 1.1rem 0.9rem 2.6rem;
+  border: none;
+  border-left: 3px solid var(--poi-accent);
+  border-radius: 0 6px 6px 0;
+  background: linear-gradient(90deg, var(--poi-accent-wash), transparent 85%);
+  color: var(--poi-ink);
+  font: italic 1.15rem/1.6 var(--poi-serif);
+}
+
+.poi-sec--arrival blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.15rem;
+  left: 0.6rem;
+  color: var(--poi-accent);
+  font: 700 2.8rem/1 var(--poi-display);
+  opacity: 0.55;
+}
+
+.poi-sec--arrival blockquote p {
+  margin: 0;
+}
+
+.poi-sec--scaling .poi-sec-body {
+  color: var(--poi-muted);
+}
+
+.poi-ledger {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  margin: 0;
+  border: 1px solid var(--poi-rule);
+  border-radius: 6px;
+  background: var(--poi-gold-wash);
+  overflow: hidden;
+}
+
+.poi-ledger > div {
+  display: contents;
+}
+
+.poi-ledger :is(dt, dd) {
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  border-top: 1px solid var(--poi-rule);
+}
+
+.poi-ledger > div:first-child > * {
+  border-top: none;
+}
+
+.poi-ledger dt {
+  color: var(--poi-gold);
+  font-weight: 700;
+}
+
+.poi-card {
+  margin: 1rem 0;
+  border: 1px solid var(--poi-rule);
+  border-radius: 8px;
+  background: var(--poi-card);
+  overflow: hidden;
+}
+
+.poi-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  padding: 0.6rem 0.9rem 0.45rem;
+  border-bottom: 2px solid var(--poi-accent);
+  background: var(--poi-accent-wash);
+}
+
+.poi-card-head h3 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: var(--poi-ink);
+  font: 600 1.35rem/1.2 var(--poi-display);
+}
+
+.poi-card-tag {
+  color: var(--poi-accent);
+  font-weight: 700;
+}
+
+.poi-card-body {
+  padding: 0.6rem 0.9rem 0.75rem;
+}
+
+.poi-card-body > :first-child {
+  margin-top: 0;
+}
+
+.poi-card-body > :last-child {
+  margin-bottom: 0;
+}
+
+.poi-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.6rem 0.9rem 0;
+}
+
+.poi-traits span {
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--poi-rule);
+  border-radius: 3px;
+  color: var(--poi-ink);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.poi-traits [data-trait="uncommon"] {
+  border-color: transparent;
+  background: #a8541a;
+  color: #fff;
+}
+
+.poi-traits [data-trait="rare"] {
+  border-color: transparent;
+  background: #253a85;
+  color: #fff;
+}
+
+.poi-traits [data-trait="unique"] {
+  border-color: transparent;
+  background: #6a2381;
+  color: #fff;
+}
+
+.poi-stat .poi-card-body p {
+  margin: 0.3rem 0;
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+/* Inline checks are inline-blocks, which inherit the hanging indent. */
+.poi-stat .poi-card-body p * {
+  text-indent: 0;
+}
+
+.poi-stat .poi-card-body hr {
+  height: 0;
+  margin: 0.5rem 0;
+  border: none;
+  border-top: 1px solid var(--poi-accent);
+  opacity: 0.5;
+}
+
+.poi-body .action-glyph {
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.poi-influence ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.poi-influence li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 10rem;
+  border-top: 1px dotted var(--poi-rule);
+}
+
+.poi-influence li:first-child {
+  border-top: none;
+}
+
+.poi-influence li > strong:first-child {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  width: 9rem;
+  color: var(--poi-ink);
+}
+
+.poi-influence li.poi-threshold {
+  background: linear-gradient(90deg, var(--poi-accent-wash), transparent 70%);
+}
+
+.poi-influence li.poi-threshold > strong:first-child {
+  color: var(--poi-accent);
+}
+
+@container (width < 34rem) {
+  .poi-influence li {
+    padding-left: 0;
+  }
+
+  .poi-influence li > strong:first-child {
+    position: static;
+    display: block;
+    width: auto;
+  }
 }

@@ -6,7 +6,7 @@
   "img": "icons/tools/navigation/map-marked-brown.webp",
   "scope": "global",
   "command": "const api = game.modules.get(\"points-of-interest\")?.api;\nif (api) await api.placeMapNotes();\nelse ui.notifications.error(\"Enable the Points of Interest module, then run this macro again.\");",
-  "folder": null,
+  "folder": "sO8OSdn1fwEGlv97",
   "sort": 0,
   "ownership": {
     "default": 0
