@@ -1,7 +1,7 @@
 # 08. The Lightwardens — Art
 
 ## Map note
-A small silver-ink wedge shape with three concentric rings drawn around it. Beside it: "unopened — buyers in the salvage towns."
+A small silver-ink wedge shape with three concentric rings drawn around it. Beside it: "Sealed skyfall."
 
 ## Tactical map
 A grassy hillside with a huge wedge of silvery hull buried at a steep angle, its seams glowing with pale light and a round sealed hatch on its exposed flank. In front of the hull, a wide ring of glassy, scorched earth. Three tall metal pylons with lens heads stand in an arc inside the ring. Within the ring lie skeletons in royal livery, a dropped crowbar, a broken lantern and a pack spilling tools. At the edge of the ring, a large brass-and-glass device of nested rings and lenses stands motionless. Long grass and scattered boulders surround the scorched area.

@@ -34,7 +34,7 @@ Source: [05-the-ossuary-wall.md](../05-the-ossuary-wall.md)
 
 ## 06. The Larder
 
-A butcher's cleaver sketched in quick strokes beside a hollow in the uplands. Beneath it: "The Giant Lord's men — tolerate." To the side, a tally of six marks with a single line struck through them.
+A butcher's cleaver sketched in quick strokes, driven into the ground beside a hollow in the uplands. Beneath it: "Brutal, but ours. Tolerate." To the side, a tally of five marks with a single line struck through them.
 
 Source: [06-the-larder.md](../06-the-larder.md)
 
@@ -46,7 +46,7 @@ Source: [07-the-wyvern-queens-hunting-ground.md](../07-the-wyvern-queens-hunting
 
 ## 08. The Lightwardens
 
-A small silver-ink wedge shape with three concentric rings drawn around it. Beside it: "unopened — buyers in the salvage towns."
+A small silver-ink wedge shape with three concentric rings drawn around it. Beside it: "Sealed skyfall."
 
 Source: [08-the-lightwardens.md](../08-the-lightwardens.md)
 

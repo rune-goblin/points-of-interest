@@ -1,7 +1,7 @@
 # 06. The Larder — Art
 
 ## Map note
-A butcher's cleaver sketched in quick strokes beside a hollow in the uplands. Beneath it: "The Giant Lord's men — tolerate." To the side, a tally of six marks with a single line struck through them.
+A butcher's cleaver sketched in quick strokes, driven into the ground beside a hollow in the uplands. Beneath it: "Brutal, but ours. Tolerate." To the side, a tally of five marks with a single line struck through them.
 
 ## Tactical map
 A wooded hollow closed on the north by a granite cliff with a narrow switchback path climbing to a rock pile on top. In the centre, a large fire pit ringed with stones, a spit across it. Around the fire stand timber smoking racks hung with split carcasses. A sod-roofed smokehouse sits to the east, smoke leaking from its door and roof. Against the cliff stand three log cages, one holding a man in a torn clerk's coat, one a wiry scavenger, one a hill-clan rider. Scattered barrels of salt, a chopping block with a cleaver buried in it, piled bones, and a broken prisoner wagon with a royal crest at the southern edge where the trail enters the hollow.

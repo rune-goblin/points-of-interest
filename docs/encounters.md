@@ -294,7 +294,7 @@ Complex, Haunt
 | **Threat** | Moderate 80 XP at party level 16 |
 | **Creatures** | 4 hill giant butchers (level 14, *Kingmaker Bestiary*) |
 
-**The King's map note.** A cleaver drawn beside the hollow, with "The Giant Lord's men — tolerate" underneath and a tally of six marks crossed through.
+**The King's map note.** A cleaver driven into the ground beside the hollow, with "Brutal, but ours. Tolerate." underneath and a tally of five marks struck through.
 
 **Background.** The Giant Lord sends four butchers to stock his larder from the uplands. The King paid the Giant Lord in coin and convicts to keep the giants off the King's western roads, and the tally counts the prisoner wagons he sent. The butchers run a smokehouse camp in the hollow. Three captives still live in the cages: a royal tax clerk, a skyfall scavenger and a horse-clan outrider. The clerk carries the last delivery receipt, sealed with the King's signet.
 
@@ -378,7 +378,7 @@ Complex, Haunt
 | **Threat** | Moderate 100 XP at party level 16 |
 | **Creatures** | 1 skyfall radiant warden (level 17, *Kingmaker*) + hull defence grid (complex hazard 16, 40 XP) |
 
-**The King's map note.** A small wedge drawn in silver ink with three concentric rings around it and "unopened — buyers in the salvage towns."
+**The King's map note.** A small wedge drawn in silver ink with three concentric rings around it and "Sealed skyfall" beside it.
 
 **Background.** A wedge of starship hull broke off during the Skyfall and buried itself in this hillside. The radiant warden is one of its maintenance constructs. It still guards the sealed hatch and still runs the hull's defence grid. The King bought the location from a skyfall scavenger and planned to sell the contents to buyers in the salvage towns. His expedition never got past the grid.
 

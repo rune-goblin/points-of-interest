@@ -416,10 +416,10 @@ const ENCOUNTERS: Record<number, Spec[]> = {
   ],
 };
 
-// Hazards come from the encounter stat blocks; the haunt borrows the skull-ring map note as art.
+// Hazards come from the encounter stat blocks; the haunt borrows the skull-ring map icon as art.
 const HAZARDS: Record<number, Spec[]> = {
   5: [{ slug: '05-lament-of-the-wall', name: 'Lament of the Wall', kind: 'hazard', linked: true,
-    custom: lament, portrait: 'map-notes/05-ossuary-wall.webp', token: 'map-notes/05-ossuary-wall.webp',
+    custom: lament, portrait: 'map-icons/05-ossuary-wall.webp', token: 'map-icons/05-ossuary-wall.webp',
     role: 'Level 15 complex haunt that joins the skulltaker fight. Drop it for a Moderate threat (80 XP); at party level 18 raise it to level 17 (DCs +3).' }],
   8: [{ slug: '08-defence-pylon', name: 'Hull Defence Grid', brief: 'Defence pylon', kind: 'hazard', custom: defenceGrid,
     role: 'Complex hazard 16 (40 XP). Place one token per pylon (three); each unlinked token tracks its own pylon HP. Disabling all three opens the hatch, which powers down the warden.' }],

@@ -185,7 +185,7 @@ function encounterHtml(s: Section): string {
 }
 
 function sitePage(s: Section) {
-  const icon = artPath('map-icons', s.number) ?? artPath('map-notes', s.number);
+  const icon = artPath('map-icons', s.number);
   return textPage(ids.encounterPage(s.slug), `${pad(s.number)}. ${s.title}`, encounterHtml(s), { level: 1, sort: s.number * 1000 }, {
     [MODULE_ID]: { site: s.number, hex: s.hex, ...(icon ? { icon } : {}) },
   });

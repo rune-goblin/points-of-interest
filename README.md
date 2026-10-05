@@ -19,7 +19,7 @@ The module ships one compendium entry, the **Points of Interest** Adventure. It 
 | `docs/encounters.md` | Canonical encounter text; the journal builds from it |
 | `docs/art/` | Art briefs per encounter, plus `by-type/` views |
 | `docs/pitches.md` | Original encounter pitches |
-| `assets/map-notes/` | The King's map notes |
+| `assets/map-notes/white-ink/` | The King's map notes |
 | `assets/maps/` | Tactical maps |
 | `assets/portraits/`, `assets/tokens/` | Character art; a portrait and its token share a file name |
 | `packs/_source/` | Per-type JSON sources the Adventure is built from (journals and scenes are generated) |

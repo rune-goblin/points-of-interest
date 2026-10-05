@@ -90,18 +90,17 @@ compendium packs from `packs/_source/`).
 - `docs/art/NN-slug.md` — art briefs per encounter; `docs/art/by-type/` — the same briefs
   regrouped as map notes, maps and characters.
 - `docs/pitches.md` — the original one-paragraph pitches.
-- `assets/map-notes|maps|portraits|tokens/NN-name.webp` — art, prefixed with the encounter number.
+- `assets/maps|portraits|tokens/NN-name.webp` — art, prefixed with the encounter number.
   A character's portrait and token share a file name. Reference art by its served path
   `modules/points-of-interest/assets/…`.
-- `assets/map-notes/white-ink/NN-name.webp` — white-ink redraws of the map-note sketches, named like
-  their navy originals. The redraws head the encounter pages and feed the map icons; the originals
-  feed the banner.
+- `assets/map-notes/white-ink/NN-name.webp` — the King's map-note sketches in white ink on transparency,
+  the only map-note art. They head the encounter pages and feed the map icons and the banner.
 - `assets/map-icons/NN-name.webp` — 512 px map-pin icons derived from `assets/map-notes/white-ink/`
   (a 25% black scrim filling the region hex, the sketch fitted inside it with coloured accents
   lightened, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
   after changing that art; the icons are committed, not built.
 - `assets/adventure-banner.webp` — the Adventure's banner (module.json `banner`, shown by the importer
-  and the compendium sidebar): #07's navy sketch on generated parchment. `npm run build:banner`
+  and the compendium sidebar): #07's white-ink sketch, inked navy, on generated parchment. `npm run build:banner`
   redraws it (needs ImageMagick 7; `NOTE` in the script picks the sketch); committed, not built.
 
 **The Foundry/PF2e API, compendium packs, Svelte-in-ApplicationV2, the Vite build, and
