@@ -118,10 +118,13 @@ function scenePreview(scene: SceneDoc): string {
 }
 
 // The module's click handler views (or imports, then views) the scene. A core content link would
-// open the scene's linked journal instead, which is this very page.
+// open the scene's linked journal instead, which is this very page. The zoom icon opens the full map
+// in the module's lightbox; it sits beside the link so the link's tooltip closes over it.
 function sceneCard(scene: SceneDoc): string {
-  const name = scene.name.replace(/^\d+\. /, '');
-  return `<a class="poi-scene" data-scene="${scene._id}" data-tooltip="View this scene"><img class="nopopout" src="${scenePreview(scene)}" alt=""><span>${escapeHtml(name)}</span></a>`;
+  const name = escapeHtml(scene.name.replace(/^\d+\. /, ''));
+  const link = `<a class="poi-scene" data-scene="${scene._id}" data-tooltip="View this scene"><img class="nopopout" src="${scenePreview(scene)}" alt=""><span>${name}</span></a>`;
+  const zoom = `<i class="poi-zoom fa-solid fa-magnifying-glass-plus" role="button" aria-label="Show the full map" data-map="${scene.levels[0].background.src}" data-caption="${name}"></i>`;
+  return `<div class="poi-scene-card">${link}${zoom}</div>`;
 }
 
 const TYPE_ORDER = ['npc', 'hazard', 'loot'];

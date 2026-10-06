@@ -33,7 +33,9 @@ compendium packs from `packs/_source/`).
   with its scenes (a preview card per scene) and each scene's tokens, so `build-scenes.ts` runs before
   it in `npm run build`. Scene cards are `a.poi-scene[data-scene]`, which `src/scene-links.ts` views
   (importing the scene and its actors when the world lacks them); a core link would open the scene's
-  linked journal, the same page. Tokens are core content links (`data-link`) to world actors once the
+  linked journal, the same page. A card's zoom icon (`.poi-zoom[data-map]`, top right) opens the full
+  map in a lightbox instead (`src/ui/MapLightbox.ts`, a modal `<dialog>` that keeps Escape from Foundry,
+  whose dismiss key closes every framed window). Tokens are core content links (`data-link`) to world actors once the
   Adventure build rewrites them; `src/actors/runtime.ts` imports a linked actor the world lacks before
   opening or dropping it. Previews live in `assets/maps/previews/` (800 px, made by cwebp
   on build only when missing, committed like the thumbnails).

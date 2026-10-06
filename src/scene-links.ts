@@ -2,6 +2,7 @@ import { adventureContent, importFolders } from './adventure';
 import { MODULE_ID } from './constants';
 import { importActors } from './actors/runtime';
 import { importJournal } from './map-notes';
+import { MapLightbox } from './ui/MapLightbox';
 
 type Source = Record<string, any>;
 
@@ -31,11 +32,19 @@ async function viewScene(id: string): Promise<void> {
 
 /**
  * Scene cards on the site pages (`a.poi-scene[data-scene]`) view their scene, importing it and its
- * actors from the module's Adventure when the world has no copy yet.
+ * actors from the module's Adventure when the world has no copy yet. A card's zoom icon
+ * (`.poi-zoom[data-map]`) shows the full map in a lightbox instead.
  */
 export function registerSceneLinks(): void {
   document.body.addEventListener('click', (event) => {
-    const link = (event.target as Element | null)?.closest<HTMLElement>('a.poi-scene[data-scene]');
+    const target = event.target as Element | null;
+    const zoom = target?.closest<HTMLElement>('.poi-zoom[data-map]');
+    if (zoom) {
+      event.preventDefault();
+      MapLightbox.open(zoom.dataset.map!, zoom.dataset.caption ?? '');
+      return;
+    }
+    const link = target?.closest<HTMLElement>('a.poi-scene[data-scene]');
     if (!link || !game.user.isGM) return;
     event.preventDefault();
     void viewScene(link.dataset.scene!);

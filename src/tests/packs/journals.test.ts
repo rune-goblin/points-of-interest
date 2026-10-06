@@ -146,6 +146,9 @@ describe('journals pack source', () => {
       const actorIds = [...html.matchAll(/data-uuid="Compendium\.points-of-interest\.actors\.Actor\.([^"]+)"/g)].map((m) => m[1]);
       expect(sceneIds.sort(), site.name).toEqual(scenes.filter((s) => s.flags?.[MODULE_ID]?.encounter === number).map((s) => s._id).sort());
       expect(actorIds.sort(), site.name).toEqual(actors.filter((a) => a.flags?.[MODULE_ID]?.encounter === number).map((a) => a._id).sort());
+      const maps = [...html.matchAll(/data-map="([^"]+)"/g)].map((m) => m[1]);
+      expect(maps.length, site.name).toBe(sceneIds.length);
+      for (const map of maps) expect(existsSync(servedFile(map)), map).toBe(true);
       for (const [, src] of html.matchAll(/<img class="nopopout" src="([^"]+)"/g)) {
         // Treasure caches show core Foundry icons, which ship with Foundry rather than the module.
         if (!src.startsWith('icons/')) expect(existsSync(servedFile(src)), src).toBe(true);

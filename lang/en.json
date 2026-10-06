@@ -18,6 +18,9 @@
     "SceneLinks": {
       "Missing": "This scene is missing from the Points of Interest Adventure. Run npm run build."
     },
+    "Lightbox": {
+      "Close": "Close the map"
+    },
     "Actors": {
       "Failed": "These actors could not load their stat blocks from the PF2e system and stay as name and art only: {names}. Check that the PF2e system is up to date; the module retries on the next world load.",
       "RebuildTitle": "Rebuild Points of Interest Actors",
