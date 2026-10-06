@@ -59,6 +59,7 @@
     align-items: center;
     gap: 0.75rem;
     margin: 0;
+    max-width: 100%;
     cursor: default;
   }
 
@@ -101,6 +102,12 @@
   @keyframes fade-in {
     from {
       opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    dialog {
+      animation: none;
     }
   }
 </style>

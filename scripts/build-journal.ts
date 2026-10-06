@@ -2,7 +2,7 @@
 // source of truth for encounter text. Run by `npm run build` before packing:
 //   node scripts/build-journal.ts
 // One journal holds the overview and every site, in encounter order. Each site has one encounter page
-// headed by the King's note, then its scenes and creatures, then its sections (scripts/journal-html.ts).
+// headed by establishing art and creatures, then its sections (scripts/journal-html.ts).
 // Ids derive from a hash of each heading's slug, so rebuilding keeps every @UUID link and every
 // placed map note stable.
 import { execFileSync } from 'node:child_process';
@@ -117,14 +117,19 @@ function scenePreview(scene: SceneDoc): string {
   return preview;
 }
 
-// The module's click handler views (or imports, then views) the scene. A core content link would
-// open the scene's linked journal instead, which is this very page. The zoom icon opens the full map
-// in the module's lightbox; it sits beside the link so the link's tooltip closes over it.
-function sceneCard(scene: SceneDoc): string {
+// Match the exact scene filename: the Juggernaut's exterior and cargo hold have separate artwork.
+// The banner opens the establishing image; the two buttons open the tactical map or the scene.
+function sceneCard(scene: SceneDoc, showName: boolean): string {
   const name = escapeHtml(scene.name.replace(/^\d+\. /, ''));
-  const link = `<a class="poi-scene" data-scene="${scene._id}" data-tooltip="View this scene"><img class="nopopout" src="${scenePreview(scene)}" alt=""><span>${name}</span></a>`;
-  const zoom = `<i class="poi-zoom fa-solid fa-magnifying-glass-plus" role="button" aria-label="Show the full map" data-map="${scene.levels[0].background.src}" data-caption="${name}"></i>`;
-  return `<div class="poi-scene-card">${link}${zoom}</div>`;
+  const map = scene.levels[0].background.src;
+  const establishing = map.replace('/assets/maps/', '/assets/establishing/');
+  const art = existsSync(join(ROOT, establishing.slice(SERVED.length))) ? establishing : scenePreview(scene);
+  const image = `<a class="poi-scene-art" href="${art}" data-image="${art}" data-caption="${name}" aria-label="Expand ${name}">` +
+    `<img class="nopopout" src="${art}" alt="${name}" loading="lazy"></a>`;
+  const buttons = `<div class="poi-scene-actions">` +
+    `<button type="button" class="poi-show-map" data-map="${map}" data-caption="${name}" aria-label="Show map: ${name}"><i class="fa-solid fa-map" aria-hidden="true"></i>Show map</button>` +
+    `<button type="button" class="poi-open-scene" data-scene="${scene._id}" aria-label="Open scene: ${name}"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Open scene</button></div>`;
+  return `<figure class="poi-scene-card">${image}${buttons}${showName ? `<figcaption>${name}</figcaption>` : ''}</figure>`;
 }
 
 const TYPE_ORDER = ['npc', 'hazard', 'loot'];
@@ -155,7 +160,7 @@ function siteHeader(number: number): string {
     for (const t of scene.tokens) counts.set(t.actorId, (counts.get(t.actorId) ?? 0) + 1);
     const onScene = actors.filter((a) => counts.has(a._id));
     for (const a of onScene) placed.add(a._id);
-    return `<div class="poi-scene-block">${sceneCard(scene)}${onScene.length ? cast(onScene, counts) : ''}</div>`;
+    return `<div class="poi-scene-block">${sceneCard(scene, scenes.length > 1)}${onScene.length ? cast(onScene, counts) : ''}</div>`;
   });
   const offMap = actors.filter((a) => !placed.has(a._id));
   if (offMap.length) {
@@ -181,10 +186,15 @@ function kingsNote(s: Section, caption?: string): string {
   return `<figure class="poi-note"><img src="${note}" title="The King's Note" alt="${alt}">${text}</figure>\n`;
 }
 
-// The site header sits under the encounter's key/value table, so the facts read first.
+// Keep the artwork and cast together; the GM can expand the note and complete reference table.
 function encounterHtml(s: Section): string {
   const { facts, caption, body } = encounterParts(s.body, renderers);
-  return `${kingsNote(s, caption)}${facts}\n${siteHeader(s.number)}${body}`;
+  const metadata = [...s.body.matchAll(/^\| \*\*(?:Type|Threat)\*\* \| (.+?) \|$/gm)]
+    .map((match) => `<span>${renderers.inline(match[1])}</span>`).join('');
+  const head = `<header class="poi-masthead"><h1 data-no-toc>${escapeHtml(s.title)}</h1><p class="poi-metadata">${metadata}</p></header>`;
+  const reference = `<details class="poi-reference"><summary>The King's note &amp; encounter details</summary>` +
+    `<div class="poi-reference-body">${kingsNote(s, caption)}${facts}</div></details>`;
+  return `${head}${siteHeader(s.number)}${reference}${body}`;
 }
 
 function sitePage(s: Section) {

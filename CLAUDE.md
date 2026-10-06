@@ -11,8 +11,9 @@ compendium packs from `packs/_source/`).
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
   One journal, "Points of Interest", holds the overview, then one text page per site in encounter order
-  (no categories). Each encounter page opens with the King's note (the white-ink redraw, captioned with
-  the "**The King's map note.**" paragraph); a GM clicks it and presses Show Players in the popout to share it.
+  (no categories). Each encounter page opens with its title, establishing artwork, and creature tokens.
+  The expandable reference beneath them holds the King's note (the white-ink redraw, captioned with
+  the "**The King's map note.**" paragraph) and encounter facts; a GM clicks the note and presses Show Players in the popout to share it.
   `scripts/journal-html.ts` structures the rest, so keep the markdown patterns it reads: a run-in label
   (`**Background.** …`) opens a section under a large heading, and an italic one (`*The heads.* …`) a
   sub-section; `**NAME** — HAZARD 15` (or `CREATURE`) starts a stat block that runs while paragraphs open
@@ -30,12 +31,14 @@ compendium packs from `packs/_source/`).
 - Every generated id comes from `scripts/stable-id.ts` (`ids.journal`, `ids.actor`, `ids.scene`, …),
   so the packs link to each other without a lookup table. Scenes and actors carry
   `flags['points-of-interest'].encounter`; `build-journal.ts` reads it to head each encounter page
-  with its scenes (a preview card per scene) and each scene's tokens, so `build-scenes.ts` runs before
-  it in `npm run build`. Scene cards are `a.poi-scene[data-scene]`, which `src/scene-links.ts` views
-  (importing the scene and its actors when the world lacks them); a core link would open the scene's
-  linked journal, the same page. A card's zoom icon (`.poi-zoom[data-map]`, top right) opens the full
-  map in a lightbox instead (`src/ui/MapLightbox.ts`, a modal `<dialog>` that keeps Escape from Foundry,
-  whose dismiss key closes every framed window). Tokens are core content links (`data-link`) to world actors once the
+  with its scenes (a banner per scene) and each scene's tokens, so `build-scenes.ts` runs before
+  it in `npm run build`. Each banner uses the matching filename from `assets/establishing/`, falling
+  back to a tactical-map preview when artwork is absent. Clicking `a.poi-scene-art[data-image]`
+  expands that artwork; the bottom-right `button.poi-show-map[data-map]` expands the tactical map,
+  and `button.poi-open-scene[data-scene]` views the scene, importing it and its actors when necessary.
+  `src/scene-links.ts` retains the legacy scene-card and zoom handlers for older world journals.
+  Both images use `src/ui/MapLightbox.ts`, a modal `<dialog>` that keeps Escape from Foundry,
+  whose dismiss key closes every framed window. Tokens are core content links (`data-link`) to world actors once the
   Adventure build rewrites them; `src/actors/runtime.ts` imports a linked actor the world lacks before
   opening or dropping it. Previews live in `assets/maps/previews/` (800 px, made by cwebp
   on build only when missing, committed like the thumbnails).

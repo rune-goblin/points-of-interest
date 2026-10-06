@@ -3,22 +3,141 @@
 }
 
 /* Journal pages. Foundry sets color-scheme on every application, so light-dark() follows its theme. */
-:is(.poi-note, .poi-facts, .poi-body) {
-  --poi-ink: light-dark(#1e2738, #ece6d8);
-  --poi-muted: light-dark(#5f6677, #a9a499);
-  --poi-rule: light-dark(rgb(30 39 56 / 18%), rgb(236 230 216 / 16%));
-  --poi-accent: light-dark(#2d5b8c, #93b8de);
-  --poi-accent-wash: light-dark(rgb(45 91 140 / 9%), rgb(147 184 222 / 8%));
-  --poi-gold: light-dark(#7d5a12, #dcb75e);
-  --poi-gold-wash: light-dark(rgb(176 134 40 / 10%), rgb(220 183 94 / 7%));
-  --poi-card: light-dark(rgb(255 255 255 / 45%), rgb(255 255 255 / 3%));
+.journal-page-content:has(> .poi-body),
+:is(.poi-note, .poi-facts, .poi-site, .poi-body) {
+  --poi-ink: light-dark(#302b23, #e6dfcf);
+  --poi-muted: light-dark(#6a6051, #b5aa96);
+  --poi-rule: light-dark(rgb(121 89 36 / 30%), rgb(194 164 99 / 28%));
+  --poi-accent: light-dark(#792b31, #dca08a);
+  --poi-accent-wash: light-dark(rgb(138 56 44 / 6%), rgb(220 160 138 / 6%));
+  --poi-gold: light-dark(#795923, #c2a463);
+  --poi-blue: light-dark(#29445d, #8da9c5);
+  --poi-paper: light-dark(#f6f0e4, #19171a);
+  --poi-gold-wash: light-dark(rgb(176 134 40 / 6%), rgb(194 164 99 / 5%));
+  --poi-card: light-dark(rgb(255 251 239 / 45%), rgb(194 164 99 / 3%));
   --poi-serif: Gelasio, Georgia, serif;
   --poi-display: Eczar, Georgia, serif;
+  --poi-ui: Signika, sans-serif;
 }
 
+/* Measure follows the journal pane, including when the Foundry window is resized. */
 .journal-page-content:has(> .poi-body) {
-  font-size: 1rem;
-  line-height: 1.55;
+  container: poi-page / inline-size;
+  box-sizing: border-box;
+  width: 100%;
+  max-inline-size: calc(70ch + 5rem);
+  margin-inline: auto;
+  padding-block: 0.5rem 2rem;
+  color: var(--poi-ink);
+  font: 400 1rem/1.65 var(--poi-serif);
+  overflow-wrap: anywhere;
+}
+
+.journal-entry-page:has(.poi-body) > .journal-page-header {
+  max-inline-size: 43rem;
+  margin-inline: auto;
+}
+
+.journal-entry-page:has(.poi-masthead) > .journal-page-header {
+  display: none;
+}
+
+.poi-masthead {
+  padding: 1.25rem 1.5rem 1rem;
+  border-top: 1px solid var(--poi-rule);
+  background: #171619;
+  text-align: center;
+}
+
+.poi-masthead::before {
+  content: "";
+  display: block;
+  width: 9rem;
+  height: 2rem;
+  margin: 0 auto 0.5rem;
+  background: url("/modules/points-of-interest/assets/journal/knotwork.webp") center / contain no-repeat;
+}
+
+.poi-masthead h1 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #ddc79c;
+  font: 600 clamp(1.75rem, 1.2rem + 3cqi, 2.75rem)/1.2 var(--poi-display);
+  text-wrap: balance;
+}
+
+.poi-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+  margin: 0.75rem 0 0;
+  color: #d6cbbb;
+  font: 400 0.9375rem/1.5 var(--poi-ui);
+  text-wrap: balance;
+}
+
+.poi-metadata span + span::before {
+  content: "·";
+  margin-right: 1rem;
+  color: #c2a463;
+}
+
+.poi-reference {
+  margin-top: 0.75rem;
+  border-block: 1px solid var(--poi-rule);
+  color: var(--poi-muted);
+}
+
+.poi-reference > summary {
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  font: 400 0.9375rem/1.5 var(--poi-ui);
+}
+
+.poi-reference > summary:hover {
+  color: var(--poi-ink);
+}
+
+.poi-reference-body {
+  padding: 0.75rem;
+}
+
+.poi-body :is(p, li, dd) {
+  text-wrap: pretty;
+}
+
+.poi-body :is(a.inline-check, a.inline-roll, a.content-link) {
+  font-family: var(--poi-ui);
+  font-size: 0.9375em;
+}
+
+.poi-body table {
+  width: 100%;
+  border-block: 1px solid var(--poi-rule);
+  background: transparent;
+  font: 400 0.9375rem/1.5 var(--poi-ui);
+}
+
+.poi-body table :is(th, td) {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.poi-body table th {
+  color: var(--poi-ink);
+  text-align: left;
+}
+
+.poi-body table :is(thead, tr:nth-child(even)) {
+  background: var(--poi-gold-wash);
+}
+
+/* Long site titles must wrap inside the overview and encounter facts. */
+:is(.poi-body table, .poi-facts) a.content-link {
+  white-space: normal;
+  word-break: normal;
 }
 
 /* The white-ink notes are transparent, so they need a dark ground in either theme, popped out too. */
@@ -47,36 +166,130 @@
   text-align: center;
 }
 
+.poi-facts {
+  width: 100%;
+  border-block: 1px solid var(--poi-rule);
+  background: transparent;
+  color: var(--poi-ink);
+  font: 400 0.9375rem/1.5 var(--poi-ui);
+}
+
+.poi-facts tr:nth-child(even) {
+  background: var(--poi-gold-wash);
+}
+
+.poi-facts td {
+  padding: 0.45rem 0.65rem;
+  vertical-align: top;
+}
+
+.poi-facts td:first-child {
+  width: 8rem;
+}
+
 .poi-facts td:first-child strong {
   color: var(--poi-muted);
+  font-weight: 600;
 }
 
 .poi-site {
   display: grid;
-  gap: 0.75rem;
-  margin: 1rem 0;
+  gap: 0;
+  margin: 0;
+  background: #171619;
+  color: #ece6d8;
+  font-family: var(--poi-ui);
 }
 
 .poi-scene-block {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.5rem;
-  border: 1px solid var(--color-border, #7a7971);
-  border-radius: 8px;
+  min-width: 0;
+}
+
+.poi-scene-block + .poi-scene-block {
+  border-top: 1px solid rgb(194 164 99 / 30%);
 }
 
 .poi-scene-card {
   position: relative;
-  flex: 0 1 16rem;
+  margin: 0;
 }
 
+.poi-scene-card > figcaption {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.25rem 0.65rem;
+  background: rgb(15 14 17 / 85%);
+  color: #ece6d8;
+  font: 500 1rem/1.5 var(--poi-ui);
+  pointer-events: none;
+}
+
+.poi-scene-art {
+  display: block;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.poi-scene-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  object-position: center 55%;
+  border: none;
+  pointer-events: none;
+}
+
+.poi-scene-actions {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.poi-scene-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: auto;
+  min-height: 2.25rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #b79b63;
+  border-radius: 2px;
+  background: rgb(15 14 17 / 92%);
+  color: #f2e8d5;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 35%);
+  font: 500 0.875rem/1.25 var(--poi-ui);
+  cursor: pointer;
+}
+
+.poi-scene-actions button:hover {
+  border-color: #f0d59f;
+  background: #383024;
+  color: #fff8e8;
+}
+
+.poi-scene-art:focus-visible {
+  outline: 3px solid #f0d59f;
+  outline-offset: -3px;
+}
+
+.poi-scene-actions button:focus-visible,
+.poi-reference > summary:focus-visible {
+  outline: 2px solid var(--poi-gold);
+  outline-offset: 3px;
+}
+
+/* Legacy cards remain usable until the world journal is refreshed. */
 .poi-scene {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 1px;
   color: #fff;
 }
 
@@ -127,15 +340,18 @@
 
 .poi-label {
   flex-basis: 100%;
-  margin: 0;
+  margin: 0.75rem 1rem 0;
   font-weight: bold;
+  text-align: center;
 }
 
 .poi-cast {
   display: flex;
-  flex: 1 1 12rem;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.85rem;
+  min-width: 0;
+  padding: 1.25rem 1rem;
 }
 
 .poi-token {
@@ -150,8 +366,9 @@
 }
 
 .poi-token img {
-  width: 4rem;
-  height: 4rem;
+  width: 4.25rem;
+  height: 4.25rem;
+  margin-bottom: 0.3rem;
   border: none;
   pointer-events: none;
   filter: drop-shadow(0 1px 2px rgb(0 0 0 / 40%));
@@ -168,8 +385,35 @@
 }
 
 .poi-body {
+  position: relative;
   container-type: inline-size;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
+  padding: 1.75rem clamp(1rem, 5cqi, 2.5rem) 4rem;
+  border: 1px solid var(--poi-rule);
+  background: var(--poi-paper);
+  color: var(--poi-ink);
+  font: 400 1rem/1.65 var(--poi-serif);
+}
+
+.poi-body::before,
+.poi-body::after {
+  content: "";
+  position: absolute;
+  bottom: 0.35rem;
+  width: 2rem;
+  height: 3rem;
+  background: url("/modules/points-of-interest/assets/journal/manuscript-corner.webp") top left / contain no-repeat;
+  pointer-events: none;
+}
+
+.poi-body::before {
+  left: 0.35rem;
+  transform: scaleY(-1);
+}
+
+.poi-body::after {
+  right: 0.35rem;
+  transform: rotate(180deg);
 }
 
 .poi-body:first-child {
@@ -177,25 +421,54 @@
 }
 
 .poi-sec + .poi-sec {
-  margin-top: 2.25rem;
+  margin-top: 2rem;
 }
 
 .poi-sec > .poi-h {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 0.85rem;
-  padding: 0 0 0.35rem;
-  border-bottom: 1px solid var(--poi-rule);
-  color: var(--poi-ink);
-  font: 600 1.6rem/1.2 var(--poi-display);
+  gap: 0.9rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  border: none;
+  color: var(--poi-accent);
+  font: 600 clamp(1.5rem, 1.25rem + 1cqi, 1.85rem)/1.3 var(--poi-display);
+  text-wrap: balance;
 }
 
+/* Keep older imported journals compatible while replacing their utility icons. */
 .poi-h i {
-  width: 1.5rem;
-  color: var(--poi-accent);
-  font-size: 1.1rem;
-  text-align: center;
+  display: none;
+}
+
+.poi-h::after {
+  content: "";
+  flex: 1 0 2rem;
+  height: 1px;
+  order: 1;
+  background: var(--poi-rule);
+}
+
+.poi-h::before {
+  content: "";
+  order: 2;
+  flex: 0 0 0.45rem;
+  height: 0.45rem;
+  margin-left: -0.5rem;
+  border: 1px solid var(--poi-gold);
+  background: var(--poi-blue);
+  transform: rotate(45deg);
+}
+
+.poi-sec--background .poi-sec-body > p:first-child::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  color: var(--poi-gold);
+  font: 500 3.5em/0.85 var(--poi-display);
+}
+
+.poi-sec--background .poi-sec-body {
+  display: flow-root;
 }
 
 .poi-sec-body > :first-child {
@@ -220,7 +493,7 @@
 
 .poi-sec-body > ul {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.8rem;
   margin: 0.6rem 0;
   padding: 0;
   list-style: none;
@@ -228,25 +501,44 @@
 
 .poi-sec-body > ul > li {
   position: relative;
-  padding-left: 1.25rem;
+  padding-left: 1.1rem;
 }
 
 .poi-sec-body > ul > li::before {
   content: "";
   position: absolute;
-  top: 0.55em;
+  top: 0.65em;
   left: 0.15rem;
-  width: 0.42rem;
-  height: 0.42rem;
-  background: var(--poi-accent);
+  width: 0.3rem;
+  height: 0.3rem;
+  border: 1px solid var(--poi-gold);
   transform: rotate(45deg);
 }
 
-.poi-sec--outcomes .poi-sec-body > ul > li::before {
-  top: 0.4em;
-  width: 0.5rem;
-  height: 0.7rem;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
+.poi-sec--features .poi-sec-body > ul {
+  counter-reset: poi-feature;
+  gap: 1rem;
+}
+
+.poi-sec--features .poi-sec-body > ul > li {
+  padding-left: 3rem;
+  counter-increment: poi-feature;
+}
+
+.poi-sec--features .poi-sec-body > ul > li::before {
+  content: counter(poi-feature);
+  top: 0.1rem;
+  left: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  border: 3px double #c2a463;
+  border-radius: 50%;
+  background: #29445d;
+  color: #f3ead8;
+  font: 500 1.05rem/1 var(--poi-display);
   transform: none;
 }
 
@@ -254,42 +546,116 @@ strong.poi-term {
   color: var(--poi-ink);
 }
 
-.poi-sec--arrival blockquote {
-  position: relative;
-  margin: 0;
-  padding: 0.9rem 1.1rem 0.9rem 2.6rem;
-  border: none;
-  border-left: 3px solid var(--poi-accent);
-  border-radius: 0 6px 6px 0;
-  background: linear-gradient(90deg, var(--poi-accent-wash), transparent 85%);
+.poi-sec--features strong.poi-term {
   color: var(--poi-ink);
-  font: italic 1.15rem/1.6 var(--poi-serif);
 }
 
-.poi-sec--arrival blockquote::before {
-  content: "\201C";
+.poi-sec--arrival {
+  position: relative;
+  margin-inline: -1rem;
+  padding: 0.65rem 2rem 0.5rem;
+}
+
+.poi-sec--arrival::before,
+.poi-sec--arrival::after {
+  content: "";
   position: absolute;
-  top: 0.15rem;
-  left: 0.6rem;
-  color: var(--poi-accent);
-  font: 700 2.8rem/1 var(--poi-display);
-  opacity: 0.55;
+  top: 0;
+  width: 2rem;
+  height: 3.5rem;
+  background: url("/modules/points-of-interest/assets/journal/manuscript-corner.webp") top left / contain no-repeat;
+  pointer-events: none;
+}
+
+.poi-sec--arrival::before {
+  left: -0.3rem;
+}
+
+.poi-sec--arrival::after {
+  right: -0.3rem;
+  transform: scaleX(-1);
+}
+
+.poi-sec--arrival blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--poi-ink);
+  font: 400 1.075rem/1.75 var(--poi-serif);
 }
 
 .poi-sec--arrival blockquote p {
   margin: 0;
 }
 
+.poi-sec--arrival blockquote p + p {
+  margin-top: 0.8em;
+}
+
+.poi-outcomes {
+  display: grid;
+  grid-template-columns: minmax(8rem, 32%) minmax(0, 1fr);
+  margin: 0;
+  border-block: 1px solid var(--poi-rule);
+}
+
+.poi-outcomes > div {
+  display: contents;
+}
+
+.poi-outcomes :is(dt, dd) {
+  margin: 0;
+  padding: 0.75rem;
+  border-top: 1px solid var(--poi-rule);
+}
+
+.poi-outcomes > div:first-child > * {
+  border-top: none;
+}
+
+.poi-outcomes dt {
+  position: relative;
+  padding-left: 2.5rem;
+  border-right: 1px solid var(--poi-rule);
+  color: var(--poi-ink);
+  font-weight: 700;
+}
+
+.poi-outcomes dt::before {
+  content: "❦";
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid #c2a463;
+  background: #29445d;
+  color: #e1c88c;
+  font: 400 1.2rem/1 Georgia, serif;
+}
+
+.poi-outcomes dd > :first-child {
+  margin-top: 0;
+}
+
+.poi-outcomes dd > :last-child {
+  margin-bottom: 0;
+}
+
 .poi-sec--scaling .poi-sec-body {
   color: var(--poi-muted);
+  font: 400 0.9375rem/1.6 var(--poi-ui);
 }
 
 .poi-ledger {
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: minmax(5rem, max-content) minmax(0, 1fr);
   margin: 0;
   border: 1px solid var(--poi-rule);
-  border-radius: 6px;
+  border-radius: 2px;
   background: var(--poi-gold-wash);
   overflow: hidden;
 }
@@ -310,13 +676,14 @@ strong.poi-term {
 
 .poi-ledger dt {
   color: var(--poi-gold);
+  font-family: var(--poi-ui);
   font-weight: 700;
 }
 
 .poi-card {
   margin: 1rem 0;
   border: 1px solid var(--poi-rule);
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--poi-card);
   overflow: hidden;
 }
@@ -328,7 +695,7 @@ strong.poi-term {
   justify-content: space-between;
   gap: 0.25rem 0.75rem;
   padding: 0.6rem 0.9rem 0.45rem;
-  border-bottom: 2px solid var(--poi-accent);
+  border-bottom: 1px solid var(--poi-rule);
   background: var(--poi-accent-wash);
 }
 
@@ -342,6 +709,7 @@ strong.poi-term {
 
 .poi-card-tag {
   color: var(--poi-accent);
+  font-family: var(--poi-ui);
   font-weight: 700;
 }
 
@@ -370,6 +738,7 @@ strong.poi-term {
   border: 1px solid var(--poi-rule);
   border-radius: 3px;
   color: var(--poi-ink);
+  font-family: var(--poi-ui);
   font-size: 0.875rem;
   font-weight: 700;
 }
@@ -441,7 +810,7 @@ strong.poi-term {
 }
 
 .poi-influence li.poi-threshold {
-  background: linear-gradient(90deg, var(--poi-accent-wash), transparent 70%);
+  background: var(--poi-gold-wash);
 }
 
 .poi-influence li.poi-threshold > strong:first-child {
@@ -457,6 +826,116 @@ strong.poi-term {
     position: static;
     display: block;
     width: auto;
+  }
+}
+
+@container poi-page (width < 28rem) {
+  .poi-masthead {
+    padding-inline: 0.75rem;
+  }
+
+  .poi-scene-art img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .poi-cast {
+    gap: 0.75rem 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  .poi-token {
+    width: 5rem;
+  }
+
+  .poi-scene-actions {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .poi-scene-actions button {
+    padding: 0.4rem 0.55rem;
+  }
+
+  .poi-body {
+    padding-inline: 1rem;
+  }
+
+  .poi-sec--arrival {
+    margin-inline: 0;
+    padding-inline: 0.75rem;
+  }
+
+  .poi-sec--arrival::before,
+  .poi-sec--arrival::after {
+    width: 1.2rem;
+    height: 2rem;
+  }
+
+  .poi-sec--arrival::before {
+    left: -0.75rem;
+  }
+
+  .poi-sec--arrival::after {
+    right: -0.75rem;
+  }
+
+  .poi-outcomes,
+  .poi-outcomes > div {
+    display: block;
+  }
+
+  .poi-outcomes > div + div {
+    border-top: 1px solid var(--poi-rule);
+  }
+
+  .poi-outcomes :is(dt, dd) {
+    border: none;
+  }
+
+  .poi-outcomes dt {
+    padding-bottom: 0.25rem;
+  }
+
+  .poi-outcomes dd {
+    padding-top: 0;
+    padding-left: 2.5rem;
+  }
+
+  .poi-facts td:first-child {
+    width: 5.5rem;
+  }
+
+  .poi-ledger {
+    display: block;
+  }
+
+  .poi-ledger > div {
+    display: block;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .poi-ledger > div + div {
+    border-top: 1px solid var(--poi-rule);
+  }
+
+  .poi-ledger :is(dt, dd) {
+    padding: 0;
+    border: none;
+  }
+
+  .poi-ledger dt {
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poi-scene img,
+  .poi-zoom {
+    transition: none;
+  }
+
+  .poi-scene:hover img {
+    transform: none;
   }
 }
 

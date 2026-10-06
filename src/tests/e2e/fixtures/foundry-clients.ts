@@ -14,7 +14,15 @@ export const MODULE_ID = 'points-of-interest';
 /** Drive Foundry's /join screen to log this context in as a specific user. */
 export async function joinAs(page: Page, userId: string, password = ''): Promise<void> {
   await page.goto('/join');
-  await page.selectOption('select[name="userid"]', userId);
+  await page.locator('select[name="userid"], input[name="username"]').waitFor();
+  if (await page.locator('select[name="userid"]').count()) {
+    await page.selectOption('select[name="userid"]', userId);
+  } else {
+    // Foundry 14 can ask for a username instead of exposing the user selector.
+    const username = await page.evaluate((id) => game.users.get(id)?.name, userId);
+    if (!username) throw new Error(`User ${userId} is absent from the test world`);
+    await page.fill('input[name="username"]', username);
+  }
   if (password) await page.fill('input[name="password"]', password);
   await Promise.all([
     page.waitForURL(/\/game\b/, { timeout: 30_000 }),

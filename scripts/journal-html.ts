@@ -1,4 +1,4 @@
-import { marked, type Token } from 'marked';
+import { marked, type Token, type Tokens } from 'marked';
 import { slugify } from './stable-id.ts';
 
 export interface Renderers {
@@ -141,6 +141,15 @@ function rewardLedger(md: string, inline: Renderers['inline']): string | undefin
 
 interface Section { label?: string; raws: string[]; html: string[] }
 
+// Outcome labels form the first column; render each description as Markdown to preserve links and lists.
+function outcomeLedger(items: Tokens.ListItem[], { block, inline }: Renderers): string | undefined {
+  const rows = items.map((item) => item.text.match(/^\*\*([^*\n]+)\*\*\s+([\s\S]+)$/));
+  if (rows.some((row) => !row)) return undefined;
+  return `<dl class="poi-outcomes">${rows.map((row) =>
+    `<div><dt>${inline(row![1])}</dt><dd>${block(row![2])}</dd></div>`,
+  ).join('')}</dl>`;
+}
+
 function sectionHtml(section: Section, render: Renderers['block']): string {
   const flush = section.raws.length ? render(section.raws.join('\n\n')) : '';
   const content = actionGlyphs(markLeads(section.html.join('') + flush));
@@ -171,6 +180,14 @@ function sections(tokens: Token[], { block: render, inline }: Renderers): string
     if (token.type === 'heading' && token.depth === 2) {
       out.push({ label: token.text, raws: [], html: [] });
       continue;
+    }
+    if (token.type === 'list' && current().label === 'Outcomes') {
+      const ledger = outcomeLedger(token.items, { block: render, inline });
+      if (ledger) {
+        flush();
+        current().html.push(ledger);
+        continue;
+      }
     }
     if (token.type !== 'paragraph') {
       current().raws.push(raw);

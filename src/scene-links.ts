@@ -31,22 +31,28 @@ async function viewScene(id: string): Promise<void> {
 }
 
 /**
- * Scene cards on the site pages (`a.poi-scene[data-scene]`) view their scene, importing it and its
- * actors from the module's Adventure when the world has no copy yet. A card's zoom icon
- * (`.poi-zoom[data-map]`) shows the full map in a lightbox instead.
+ * Banners expand the establishing art. Show map expands the tactical map. Open scene views the
+ * scene, importing it and its actors when necessary. Legacy cards retain their original actions.
  */
 export function registerSceneLinks(): void {
   document.body.addEventListener('click', (event) => {
     const target = event.target as Element | null;
-    const zoom = target?.closest<HTMLElement>('.poi-zoom[data-map]');
+    const art = target?.closest<HTMLElement>('.poi-scene-art[data-image]');
+    if (art) {
+      event.preventDefault();
+      MapLightbox.open(art.dataset.image!, art.dataset.caption ?? '');
+      return;
+    }
+    const zoom = target?.closest<HTMLElement>('.poi-show-map[data-map], .poi-zoom[data-map]');
     if (zoom) {
       event.preventDefault();
       MapLightbox.open(zoom.dataset.map!, zoom.dataset.caption ?? '');
       return;
     }
-    const link = target?.closest<HTMLElement>('a.poi-scene[data-scene]');
-    if (!link || !game.user.isGM) return;
+    const link = target?.closest<HTMLElement>('.poi-open-scene[data-scene], a.poi-scene[data-scene]');
+    if (!link) return;
     event.preventDefault();
+    if (!game.user.isGM) return;
     void viewScene(link.dataset.scene!);
   });
 }

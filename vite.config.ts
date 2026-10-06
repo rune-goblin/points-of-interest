@@ -62,6 +62,8 @@ export default defineConfig({
       fileName: () => `${id}.js`,
     },
     rollupOptions: {
+      // Foundry serves these files from assets/; keep CSS references external to the bundle.
+      external: (source) => source.startsWith(`/modules/${id}/assets/`),
       output: {
         assetFileNames: (asset) => {
           const name = asset.name ?? asset.names?.[0] ?? '';

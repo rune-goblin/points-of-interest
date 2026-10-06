@@ -1,10 +1,14 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { marked } from 'marked';
 
 const ROOT = process.cwd();
 // Loaded at runtime: tsconfig.json's rootDir is src/, so a static import of scripts/ fails `npm run check`.
-const { linkChecks } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'journal-html.ts'))) as { linkChecks(md: string): string };
+const { linkChecks, encounterParts } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'journal-html.ts'))) as {
+  linkChecks(md: string): string;
+  encounterParts(md: string, renderers: { block(md: string): string; inline(md: string): string }): { body: string };
+};
 const MODULE_ID = 'points-of-interest';
 const SERVED = `modules/${MODULE_ID}/`;
 
@@ -66,9 +70,11 @@ describe('journals pack source', () => {
     expect(pages).toHaveLength(sites.length + 1);
   });
 
-  it('opens each encounter page with the white-ink King\'s note, which pops out to share', () => {
+  it('keeps the shareable King\'s note in the expandable encounter reference', () => {
     for (const site of sites) {
-      const note = site.text!.content.match(/^<figure class="poi-note"><img src="([^"]+)" title="The King's Note"/);
+      const reference = site.text!.content.match(/<details class="poi-reference">([\s\S]+?)<\/details>/)?.[1];
+      expect(reference, site.name).toContain('poi-facts');
+      const note = reference?.match(/<figure class="poi-note"><img src="([^"]+)" title="The King's Note"/);
       expect(note, site.name).not.toBeNull();
       expect(note![1]).toMatch(new RegExp(`^${SERVED}assets/map-notes/white-ink/${String(site.flags[MODULE_ID].site).padStart(2, '0')}-`));
       expect(existsSync(servedFile(note![1]))).toBe(true);
@@ -76,7 +82,7 @@ describe('journals pack source', () => {
   });
 
   it("captions each King's note with its description", () => {
-    for (const site of sites) expect(site.text!.content, site.name).toMatch(/^<figure class="poi-note"><img [^>]+><figcaption>.+?<\/figcaption><\/figure>/);
+    for (const site of sites) expect(site.text!.content, site.name).toMatch(/<figure class="poi-note"><img [^>]+><figcaption>.+?<\/figcaption><\/figure>/);
   });
 
   it('opens each section and sub-section under a heading the contents sidebar leaves out', () => {
@@ -156,6 +162,28 @@ describe('journals pack source', () => {
     }
   });
 
+  it('pairs every banner with its own establishing art, tactical map, and scene action', () => {
+    for (const site of sites) {
+      const html = site.text!.content;
+      expect(html.indexOf('poi-site'), site.name).toBeLessThan(html.indexOf('poi-reference'));
+      const banners = [...html.matchAll(/<figure class="poi-scene-card">([\s\S]+?)<\/figure>/g)];
+      const siteScenes = scenes.filter((s) => s.flags?.[MODULE_ID]?.encounter === site.flags[MODULE_ID].site);
+      expect(banners.length, site.name).toBe(siteScenes.length);
+      for (const [, banner] of banners) {
+        const art = banner.match(/data-image="([^"]+)"/)?.[1];
+        const map = banner.match(/data-map="([^"]+)"/)?.[1];
+        expect(art, site.name).toBe(map?.replace('/assets/maps/', '/assets/establishing/'));
+        expect(existsSync(servedFile(art!)), art).toBe(true);
+        expect(banner).toContain(`href="${art}"`);
+        expect(banner).toContain('class="poi-show-map"');
+        expect(banner).toContain('class="poi-open-scene"');
+        const sceneId = banner.match(/data-scene="([^"]+)"/)?.[1];
+        const scene = siteScenes.find((s) => s._id === sceneId) as PackDoc & { levels: { background: { src: string } }[] };
+        expect(map).toBe(scene.levels[0].background.src);
+      }
+    }
+  });
+
   it('resolves every link into the journals pack', () => {
     const uuids = new Set(pages.map((p) => `Compendium.${MODULE_ID}.journals.JournalEntry.${journal._id}.JournalEntryPage.${p._id}`));
     const links = pages.flatMap((p) =>
@@ -190,5 +218,28 @@ describe('linkChecks', () => {
   it('leaves a DC with no statistic, or a creature\'s own DC, as written', () => {
     expect(linkChecks('until it Escapes (DC 30)')).toBe('until it Escapes (DC 30)');
     expect(linkChecks('- **Perception** DC 42')).toBe('- **Perception** DC 42');
+  });
+});
+
+describe('outcome rows', () => {
+  const renderers = {
+    block: (md: string) => marked.parse(md, { async: false }) as string,
+    inline: (md: string) => marked.parseInline(md, { async: false }) as string,
+  };
+
+  it('preserves emphasis, checks, and links in outcome descriptions', () => {
+    const { body } = encounterParts('**Outcomes.**\n- **Released.** A DC 36 Religion check grants *peace*. See [the court](#court).\n- **Escaped.** The ankou reports to the queen.', renderers);
+    expect(body).toContain('<dt>Released.</dt>');
+    expect(body).toContain('@Check[religion|dc:36]');
+    expect(body).toContain('<em>peace</em>');
+    expect(body).toContain('<a href="#court">the court</a>');
+    expect(body).toContain('<dt>Escaped.</dt><dd><p>The ankou reports to the queen.</p>');
+  });
+
+  it('keeps an ordinary list when outcome labels are absent', () => {
+    const { body } = encounterParts('**Outcomes.**\n- The scouts rest.\n- The court waits.', renderers);
+    expect(body).toContain('<ul>');
+    expect(body).toContain('<li>The scouts rest.</li>');
+    expect(body).not.toContain('poi-outcomes');
   });
 });
