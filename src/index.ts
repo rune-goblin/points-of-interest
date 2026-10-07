@@ -2,7 +2,7 @@ import './styles.css';
 import { MODULE_ID } from './constants';
 import { promptAdventureImport } from './adventure';
 import { checkWorldActors, hydrateActors, rebuildActors, registerActorHooks } from './actors/runtime';
-import { importJournal, placeMapNotes, registerMapNoteHooks } from './map-notes';
+import { importJournal, placeMapNotes, registerMapNoteHooks, tileSitePins } from './map-notes';
 import { registerRevealHooks } from './reveals';
 import { registerSceneLinks } from './scene-links';
 import { registerRevealPanel } from './ui/RevealPanel';
@@ -33,4 +33,5 @@ Hooks.once('ready', () => {
   console.log(`${MODULE_ID} | ready (v${version})`);
   void promptAdventureImport();
   void checkWorldActors();
+  void tileSitePins();
 });

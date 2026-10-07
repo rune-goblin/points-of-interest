@@ -65,7 +65,7 @@ compendium packs from `packs/_source/`).
   `docs/art/journal-samples/retired/`; `assets/journal/` holds only the graphics the module uses.
 - Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the
   `pf2e-kingmaker` region map (the key its hex HUD shows). The build copies it into the
-  site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.
+  site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the site's tile and pin from it.
 - Everything the Adventure imports sits in one "Points of Interest" folder per sidebar tab (actors,
   scenes, journal, macros; `rootFolder()` in `scripts/stable-id.ts`). Actors sit in an encounter folder inside it; scenes sit
   in it directly. A piece imported on its own brings its folders along (`importFolders()`).
@@ -93,8 +93,8 @@ compendium packs from `packs/_source/`).
   token deleted in Foundry comes back on the next build; drop an actor from a scene with `SCENE_CAST`.
   It reads each actor's slug and kind from `flags['points-of-interest']` and seeds caches hidden.
   Every scene also gets a book note (flagged `scene`) in the map's top-left square, linked to its
-  encounter page; the build regenerates it each run and keeps only an unpacked move. The `refreshNote`
-  hook hides it from players, who hold Limited on the journal and would otherwise see the pin.
+  encounter page; the build regenerates it each run and keeps only an unpacked move. Players hold no
+  access to the journal, so Foundry hides the note from them.
   A map with a later state gets a reveal tile (`REVEALS`): art from `assets/tiles/`, cut from a second
   map of the same site and laid over the first, hidden and locked, regenerated each run and flagged
   `reveal` with an actor id. v14 places a tile by its texture anchor, which defaults to its centre. `src/reveals.ts` fades it in when that actor's token first moves in a
@@ -265,21 +265,23 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   the viewed region map, else the world's only one (several and none viewed → asks the GM to view one).
   It imports or refreshes the journal into a "Points of Interest" world folder (same ids as the Adventure),
   deletes the per-site entries v0.2.0 made and the old King's Note image pages, adds the `scene` note to world copies of the module scenes
-  that lack it (refreshing the link of one already there), then creates or moves one note per site (318 px icon, one hex tall,
-  linked to the site's encounter page, flagged `site`). Re-run it after journal edits.
-  The module hides Foundry's dark backing square and idle border on these notes (`refreshNote` hook).
+  that lack it (refreshing the link of one already there), then creates or moves a locked tile and a pin per site, both
+  one hex tall (318 px), showing the site's map icon and flagged `site`. Players see the tile. The pin links the
+  GM to the site's encounter page, and Foundry hides it from players because they hold no access to the journal.
+  Re-run it after journal edits. The module hides Foundry's dark backing square and idle border on the pins
+  (`refreshNote` hook). `tileSitePins()` runs on load for the active GM: when the journal still grants players
+  Limited, as releases before the tiles did, it drops that to None and lays tiles under the pins already placed.
 - Fresh start: with the world closed, `npm run remove-module` asks for a world, then deletes from its
-  LevelDB everything the Adventure imports or the module flagged, the site notes, the module's world
+  LevelDB everything the Adventure imports or the module flagged, the site pins and tiles, the module's world
   settings and Foundry's import record; then import the Adventure again. World copies never pick up
   pack changes, and a build while Foundry runs swaps the pack under it on macOS, so Foundry keeps the old
   one until it restarts.
 - The desktop install links the module as `npm run setup` would (`Data/modules/points-of-interest`
-  symlinks into the repo). The stolen-lands world already holds the journal folder and the 21 notes;
-  enable the module there after a Foundry restart to get the hook and the API.
-  A new world journal gives players Limited ownership: they see each pin and its name but can't read
-  a page, and the journal stays out of their sidebar (Foundry lists a journal from Observer up). The
-  `activateNote` hook stops a player's double-click on a site pin, which would open an empty journal. Share the King's note by clicking it on its encounter page and pressing Show Players. Keep the
-  journal free of image pages: Foundry lets Limited players open an image page straight from its pin.
+  symlinks into the repo). The stolen-lands world already holds the journal folder and the 21 pins;
+  its next load lays the tiles under them.
+  The world journal gives players no access: they see each site's tile and nothing else, and the
+  journal stays out of their sidebar. Share the King's note by clicking it on its encounter page and
+  pressing Show Players.
 - Next: check the actor sheets, scene grids and token placement in a live world, trace walls and lights.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;
   its stat block lives in `docs/encounters.md`. #9 uses the elite adamantine golem from the system's Kingmaker bestiary.

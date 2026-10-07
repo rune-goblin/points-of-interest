@@ -143,8 +143,8 @@ describe('journals pack source', () => {
     for (const page of pages) expect(page.category ?? null, page.name).toBeNull();
   });
 
-  it('lets players see site map notes but keeps every page closed to them', () => {
-    expect(journal.ownership.default).toBe(1);
+  it('keeps the journal, its pages and its pins closed to players', () => {
+    expect(journal.ownership.default).toBe(0);
     for (const page of pages) expect(page.ownership.default).toBe(-1);
   });
 

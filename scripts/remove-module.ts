@@ -5,7 +5,7 @@
 //
 // It removes the documents the Adventure imports and any other document flagged `points-of-interest`
 // (such as the per-site journal entries of releases up to 0.2.0), each with its embedded documents; the
-// combats and fog of the deleted scenes; the King's map notes on the scenes that stay; the module's world
+// combats and fog of the deleted scenes; the King's map-note pins and tiles on the scenes that stay; the module's world
 // settings; and Foundry's record of the import, so the importer opens on the next load. Anything else
 // filed in a deleted folder moves up to the nearest surviving one, as Foundry does when a folder goes.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -171,22 +171,27 @@ for (const [collection, ids] of removed) {
   report.push(`${collection}: ${ids.size}`);
 }
 
-let siteNotes = 0;
+let siteMarks = 0;
 const scenesDb = dbs.get('scenes');
 if (scenesDb) {
-  const notes = new Map<string, string[]>();
-  for await (const [key, note] of scenesDb.iterator({ gt: '!scenes.notes!', lt: '!scenes.notes!~' })) {
-    const [sceneId, noteId] = key.split('!')[2].split('.');
-    if (deletedScenes.has(sceneId) || note.flags?.[MODULE_ID]?.site === undefined) continue;
-    notes.set(sceneId, [...(notes.get(sceneId) ?? []), noteId]);
-    write('scenes').push({ type: 'del', key });
+  const trimmed = new Set<string>();
+  for (const embedded of ['notes', 'tiles'] as const) {
+    const marks = new Map<string, string[]>();
+    for await (const [key, doc] of scenesDb.iterator({ gt: `!scenes.${embedded}!`, lt: `!scenes.${embedded}!~` })) {
+      const [sceneId, docId] = key.split('!')[2].split('.');
+      if (deletedScenes.has(sceneId) || doc.flags?.[MODULE_ID]?.site === undefined) continue;
+      marks.set(sceneId, [...(marks.get(sceneId) ?? []), docId]);
+      write('scenes').push({ type: 'del', key });
+    }
+    for (const [sceneId, docIds] of marks) {
+      const scene = top.get('scenes')!.get(sceneId)!;
+      scene[embedded] = scene[embedded].filter((id: string) => !docIds.includes(id));
+      trimmed.add(sceneId);
+      siteMarks += docIds.length;
+      report.push(`King's map-note ${embedded === 'notes' ? 'pins' : 'tiles'} on ${scene.name}: ${docIds.length}`);
+    }
   }
-  for (const [sceneId, noteIds] of notes) {
-    const scene = top.get('scenes')!.get(sceneId)!;
-    write('scenes').push({ type: 'put', key: `!scenes!${sceneId}`, value: { ...scene, notes: scene.notes.filter((id: string) => !noteIds.includes(id)) } });
-    siteNotes += noteIds.length;
-    report.push(`King's map notes on ${scene.name}: ${noteIds.length}`);
-  }
+  for (const sceneId of trimmed) write('scenes').push({ type: 'put', key: `!scenes!${sceneId}`, value: top.get('scenes')!.get(sceneId)! });
 }
 
 const deletedFolders = removed.get('folders') ?? new Set();
@@ -239,5 +244,5 @@ if (remove) for (const [collection, ops] of writes) await dbs.get(collection)!.b
 for (const db of dbs.values()) await db.close();
 rl?.close();
 if (remove) {
-  console.log(`Deleted. Launch ${title} and import the Adventure.${siteNotes ? ' Then run "Place the King\'s Map Notes" to put the map notes back.' : ''}`);
+  console.log(`Deleted. Launch ${title} and import the Adventure.${siteMarks ? ' Then run "Place the King\'s Map Notes" to put the map notes back.' : ''}`);
 }

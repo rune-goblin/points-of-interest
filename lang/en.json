@@ -8,7 +8,8 @@
       "ManyScenes": "This world has {count} region maps. View the one to mark, then place the King's map notes.",
       "Placed": "Placed {count} of the King's map notes on {scene}.",
       "Merged": "Moved the King's sites into the {journal} journal and deleted the {count} entries it replaces.",
-      "SceneNotes": "Added a journal note to {count} of the Points of Interest scenes."
+      "SceneNotes": "Added a journal note to {count} of the Points of Interest scenes.",
+      "Tiled": "Players now see the King's map notes on {scene} as art; only the GM sees the pins."
     },
     "Reveals": {
       "Show": "Show {name}",

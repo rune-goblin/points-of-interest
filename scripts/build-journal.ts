@@ -231,8 +231,9 @@ function sitePage(s: Section) {
   });
 }
 
-// Limited lets players see each site's map note on the region map; every page needs Observer to read.
-const LIMITED = 1;
+// Players see the region map's site tiles, never the pins or the pages, which also hides each
+// tactical scene's journal note from them.
+const NONE = 0;
 
 const journal = {
   _id: journalId,
@@ -245,7 +246,7 @@ const journal = {
   categories: [],
   folder: rootFolder('JournalEntry')._id,
   sort: 0,
-  ownership: { default: LIMITED },
+  ownership: { default: NONE },
   flags: {},
 };
 
