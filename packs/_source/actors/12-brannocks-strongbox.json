@@ -6,7 +6,7 @@
   "img": "icons/containers/chest/chest-reinforced-steel-brown.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-3hd0JjJHfejrcGO2\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.DI1nblGxCdYa2okA]{12. The Storm Tree}.</strong> Iron, half-buried beside the foreman's tent, 40 feet from the sard. Unlocking it takes a DC 34 Thievery check; prying it open takes a DC 36 Athletics check.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-3hd0JjJHfejrcGO2\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.DI1nblGxCdYa2okA]{The Storm Tree}.</strong> Iron, half-buried beside the foreman's tent, 40 feet from the sard. Unlocking it takes a DC 34 Thievery check; prying it open takes a DC 36 Athletics check.</p>\n</section>",
       "level": {
         "value": 0
       }

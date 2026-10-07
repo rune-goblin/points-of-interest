@@ -6,7 +6,7 @@
   "img": "icons/containers/boxes/crates-wooden-stacked.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-2VK6CcnD1ebFQWRF\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.mAEL4M1H7FApT6Ct]{06. The Larder}.</strong> Coin, silver plate and trade goods the butchers piled in the smokehouse.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-2VK6CcnD1ebFQWRF\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.mAEL4M1H7FApT6Ct]{The Larder}.</strong> Coin, silver plate and trade goods the butchers piled in the smokehouse.</p>\n</section>",
       "level": {
         "value": 0
       }

@@ -6,7 +6,7 @@
   "img": "icons/containers/chest/chest-reinforced-steel-green.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-VacGC3Ws6vRGmSSr\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The scouts' pay chest in the bunkroom.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-VacGC3Ws6vRGmSSr\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{The Shadowless Lodge}.</strong> The scouts' pay chest in the bunkroom.</p>\n</section>",
       "level": {
         "value": 0
       }

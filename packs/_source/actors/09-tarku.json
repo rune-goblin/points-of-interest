@@ -6,7 +6,7 @@
   "img": "modules/points-of-interest/assets/portraits/09-tarku.webp",
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A hill-clan skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.</p>\n<section class=\"secret\" id=\"secret-CVgGvYkOWSblFEjt\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Q5JKNbcFMBLTwObn]{09. The Iron Juggernaut}.</strong> A hill-clan hunter delivered a century ago; the longest tally in the hold. His stone-tipped spear, wrapped in a hill-clan charm, is a +3 greater striking spear.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A hill-clan skeleton in rotted furs and bone ornaments, braids still bound with beads, a stone-tipped spear wrapped in a charm across its lap. The longest tally on the wall runs above it.</p>\n<section class=\"secret\" id=\"secret-CVgGvYkOWSblFEjt\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Q5JKNbcFMBLTwObn]{The Iron Juggernaut}.</strong> A hill-clan hunter delivered a century ago; the longest tally in the hold. His stone-tipped spear, wrapped in a hill-clan charm, is a +3 greater striking spear.</p>\n</section>",
       "level": {
         "value": 0
       }

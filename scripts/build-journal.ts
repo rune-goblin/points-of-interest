@@ -67,15 +67,15 @@ function artPath(dir: string, number: number): string | undefined {
 const escapeHtml = (text: string): string =>
   text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-interface PageOptions { level: number; sort: number }
+interface PageOptions { level: number; sort: number; show?: boolean }
 
-function textPage(pageId: string, name: string, html: string, { level, sort }: PageOptions, flags = {}) {
+function textPage(pageId: string, name: string, html: string, { level, sort, show = true }: PageOptions, flags = {}) {
   return {
     _id: pageId,
     _key: `!journal.pages!${journalId}.${pageId}`,
     name,
     type: 'text',
-    title: { show: true, level },
+    title: { show, level },
     text: { format: 1, content: html },
     sort,
     ownership: { default: -1 },
@@ -118,14 +118,13 @@ function scenePreview(scene: SceneDoc): string {
 }
 
 // Match the exact scene filename: the Juggernaut's exterior and cargo hold have separate artwork.
-// The banner opens the establishing image; the buttons share it with players, or open the tactical map or the scene.
+// The banner image ignores clicks; its buttons share it with players, or open the tactical map or the scene.
 function sceneCard(scene: SceneDoc, showName: boolean): string {
   const name = escapeHtml(scene.name.replace(/^\d+\. /, ''));
   const map = scene.levels[0].background.src;
   const establishing = map.replace('/assets/maps/', '/assets/establishing/');
   const art = existsSync(join(ROOT, establishing.slice(SERVED.length))) ? establishing : scenePreview(scene);
-  const image = `<a class="poi-scene-art" href="${art}" data-image="${art}" data-caption="${name}" aria-label="Expand ${name}">` +
-    `<img class="nopopout" src="${art}" alt="${name}" loading="lazy"></a>`;
+  const image = `<div class="poi-scene-art"><img class="nopopout" src="${art}" alt="${name}" loading="lazy"></div>`;
   const buttons = `<div class="poi-scene-actions">` +
     `<button type="button" class="poi-show-players" data-image="${art}" data-caption="${name}" aria-label="Show to players: ${name}"><i class="fa-solid fa-eye" aria-hidden="true"></i>Show to players</button>` +
     `<button type="button" class="poi-show-map" data-map="${map}" data-caption="${name}" aria-label="Show map: ${name}"><i class="fa-solid fa-map" aria-hidden="true"></i>Show map</button>` +
@@ -140,6 +139,19 @@ function illumination(number: number): 'night' | 'grove' | 'relic' {
   if ([2, 4, 6, 12, 15, 17].includes(number)) return 'grove';
   if ([8, 9, 11, 20, 21].includes(number)) return 'relic';
   return 'night';
+}
+
+type IllustrationRole = 'creature' | 'location' | 'detail';
+interface IllustrationSet { number: number; images: { role: IllustrationRole; asset: string }[] }
+const illustrationSets = (JSON.parse(readFileSync(join(ROOT, 'docs/art/journal-illustrations.json'), 'utf8')) as {
+  encounters: IllustrationSet[];
+}).encounters;
+
+function illustration(number: number, role: IllustrationRole): string {
+  const asset = illustrationSets.find((entry) => entry.number === number)?.images.find((entry) => entry.role === role)?.asset;
+  if (!asset || !existsSync(join(ROOT, asset))) throw new Error(`Encounter ${number}: missing ${role} illustration`);
+  const placement = role === 'location' ? 'poi-location-study' : `poi-margin-study poi-margin-study--${role}`;
+  return `<img class="${placement} nopopout" src="${SERVED}${asset}" alt="" aria-hidden="true" loading="lazy" decoding="async">`;
 }
 
 function tokenLink(actor: ActorDoc, count: number): string {
@@ -201,12 +213,20 @@ function encounterHtml(s: Section): string {
   const head = `<header class="poi-masthead"><h1 data-no-toc>${escapeHtml(s.title)}</h1><p class="poi-metadata">${metadata}</p>${PAGE_RULE}</header>`;
   const reference = `<details class="poi-reference"><summary>The King's note &amp; encounter details</summary>` +
     `<div class="poi-reference-body">${kingsNote(s, caption)}${facts}</div></details>`;
-  return `${head}${siteHeader(s.number)}<div class="poi-body" data-illumination="${illumination(s.number)}">${reference}${background}${body}${PAGE_RULE}</div>`;
+  const running = '<section class="poi-sec poi-sec--running-the-encounter">';
+  if (!body.includes(running)) throw new Error(`Encounter ${s.number}: missing Running the encounter section`);
+  const rewards = '<section class="poi-sec poi-sec--rewards">';
+  if (!body.includes(rewards)) throw new Error(`Encounter ${s.number}: missing Rewards section`);
+  const illustratedBody = body
+    .replace(running, `${illustration(s.number, 'location')}${running}${illustration(s.number, 'creature')}`)
+    .replace(rewards, `${rewards}${illustration(s.number, 'detail')}`);
+  return `${head}${siteHeader(s.number)}<div class="poi-body" data-illustrated data-illumination="${illumination(s.number)}">${reference}${background}${illustratedBody}${PAGE_RULE}</div>`;
 }
 
 function sitePage(s: Section) {
   const icon = artPath('map-icons', s.number);
-  return textPage(ids.encounterPage(s.slug), `${pad(s.number)}. ${s.title}`, encounterHtml(s), { level: 1, sort: s.number * 1000 }, {
+  // The masthead H1 carries the title, and the journal sidebar already numbers each page.
+  return textPage(ids.encounterPage(s.slug), s.title, encounterHtml(s), { level: 1, sort: s.number * 1000, show: false }, {
     [MODULE_ID]: { site: s.number, hex: s.hex, ...(icon ? { icon } : {}) },
   });
 }

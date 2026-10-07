@@ -10,7 +10,7 @@
         "value": 17
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A large construct disguised as an orrery: nested brass rings, glass lenses and a central sphere of pale light, mounted on a squat tripod base. Faint lines of light trace the seams.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> The warden in its Orrery disguise. Swap to the Active actor when anyone enters the scorched ring or touches the hatch. It powers down if the hatch opens.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{The Lightwardens}.</strong> The warden in its Orrery disguise. Swap to the Active actor when anyone enters the scorched ring or touches the hatch. It powers down if the hatch opens.</p>"
     },
     "traits": {
       "size": {

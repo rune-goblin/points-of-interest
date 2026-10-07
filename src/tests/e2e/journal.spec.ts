@@ -45,11 +45,49 @@ test.describe('journal banner actions', () => {
     }, { journalId, sceneId, previousScene });
   });
 
-  test('expands the establishing image and returns to the journal on Escape', async ({ gmPage }) => {
-    await gmPage.locator('.poi-scene-art img').first().click();
+  test('ignores clicks on the establishing image', async ({ gmPage }) => {
+    await gmPage.locator('.poi-scene-art').first().click();
+    await gmPage.waitForTimeout(500);
+    await expect(gmPage.locator('.points-of-interest-lightbox, .image-popout')).toHaveCount(0);
+  });
+
+  test('shows the establishing image to the GM and shares it untitled with every player', async ({ gmPage }) => {
+    await gmPage.evaluate(() => {
+      const w = window as any;
+      const emit = game.socket.emit;
+      w.__poiShared = [];
+      w.__poiEmit = emit;
+      game.socket.emit = function (this: unknown, event: string, ...args: unknown[]) {
+        if (event === 'shareImage') w.__poiShared.push(args[0]);
+        return emit.call(this, event, ...args);
+      } as typeof emit;
+    });
+    try {
+      await gmPage.getByRole('button', { name: 'Show to players: The Shadowless Lodge', exact: true }).click();
+      const popout = gmPage.locator('.image-popout');
+      await expect(popout).toBeVisible();
+      await expect(popout.locator('img')).toHaveAttribute('src', /assets\/establishing\/01-shadowless-lodge.webp$/);
+      await expect(popout.locator('.window-title')).toHaveText('');
+      const shared = await gmPage.evaluate(() => (window as any).__poiShared);
+      expect(shared).toEqual([expect.objectContaining({
+        image: expect.stringMatching(/assets\/establishing\/01-shadowless-lodge.webp$/),
+        showTitle: false,
+      })]);
+    } finally {
+      await gmPage.evaluate(async () => {
+        const w = window as any;
+        game.socket.emit = w.__poiEmit;
+        for (const app of foundry.applications.instances.values()) {
+          if (app instanceof foundry.applications.apps.ImagePopout) await app.close();
+        }
+      });
+    }
+  });
+
+  test('expands the tactical map to the viewport and returns to the journal on Escape', async ({ gmPage }) => {
+    await gmPage.getByRole('button', { name: 'Show map: The Shadowless Lodge', exact: true }).click();
     const dialog = gmPage.locator('.points-of-interest-lightbox dialog');
     await expect(dialog).toBeVisible();
-    await expect(dialog.locator('img')).toHaveAttribute('src', /assets\/establishing\/01-shadowless-lodge.webp$/);
     const dimensions = await dialog.boundingBox();
     expect(dimensions?.width).toBe(gmPage.viewportSize()!.width);
     expect(dimensions?.height).toBe(gmPage.viewportSize()!.height);

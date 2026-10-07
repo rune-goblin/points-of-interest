@@ -6,7 +6,7 @@
   "img": "icons/containers/kitchenware/goblet-engraved-grey.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-aqcR0cgU0AyLFgXl\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> The ruined banquet table from the King's visit.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-aqcR0cgU0AyLFgXl\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{The Moody Brood}.</strong> The ruined banquet table from the King's visit.</p>\n</section>",
       "level": {
         "value": 0
       }

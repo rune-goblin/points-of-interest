@@ -6,7 +6,7 @@
   "img": "icons/commodities/bones/bones-dragon-grey.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-kNL38kfn8VcAx5Pd\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tGPRvXMxFYVlVVee]{19. Shadow on the Peaks}.</strong> Her old cache on the ledge near the top of the spire (DC 38 Athletics to climb). The PCs find it at the sighting, before Chapter 10.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-kNL38kfn8VcAx5Pd\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tGPRvXMxFYVlVVee]{Shadow on the Peaks}.</strong> Her old cache on the ledge near the top of the spire (DC 38 Athletics to climb). The PCs find it at the sighting, before Chapter 10.</p>\n</section>",
       "level": {
         "value": 0
       }

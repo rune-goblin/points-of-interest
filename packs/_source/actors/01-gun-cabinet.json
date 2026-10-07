@@ -6,7 +6,7 @@
   "img": "icons/containers/chest/chest-reinforced-steel-walnut-brown.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-ioNqvKj5w2BxackQ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The baron's locked gun cabinet in the great hall.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-ioNqvKj5w2BxackQ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{The Shadowless Lodge}.</strong> The baron's locked gun cabinet in the great hall.</p>\n</section>",
       "level": {
         "value": 0
       }

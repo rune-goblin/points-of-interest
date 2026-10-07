@@ -10,7 +10,7 @@
         "value": 17
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A slender dragon of the same size, scaled in dusk colours of violet, indigo and smoky grey. Half-lidded eyes and a sly smile. A thin wisp of magenta mist curls from her nostrils.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> Dusk-coloured whimwyrm. Loves dark jokes and hates being touched; a Strike, touch spell or uninvited Interact sets her Mood to 0.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{The Moody Brood}.</strong> Dusk-coloured whimwyrm. Loves dark jokes and hates being touched; a Strike, touch spell or uninvited Interact sets her Mood to 0.</p>"
     },
     "traits": {
       "size": {

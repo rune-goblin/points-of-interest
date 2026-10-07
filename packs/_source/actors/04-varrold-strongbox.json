@@ -6,7 +6,7 @@
   "img": "icons/containers/chest/chest-simple-steel-brown.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-XYWH7VGHrmTwYB1b\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{04. The Gardeners}.</strong> The Varrold family's strongbox, hidden in the ruined manor with the family silver.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-XYWH7VGHrmTwYB1b\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{The Gardeners}.</strong> The Varrold family's strongbox, hidden in the ruined manor with the family silver.</p>\n</section>",
       "level": {
         "value": 0
       }

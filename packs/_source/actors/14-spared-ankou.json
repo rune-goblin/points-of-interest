@@ -10,7 +10,7 @@
         "value": 17
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>An ankou with a missing claw and a pale stripe across one wing where the PCs' attack struck it.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{14. The Shadow Court}.</strong> The ankou from the Shadowless Lodge (#1), present only if it escaped. It remembers the PCs by name. Showing a token taken from it lowers the Influence DCs by 2.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{The Shadow Court}.</strong> The ankou from the Shadowless Lodge (#1), present only if it escaped. It remembers the PCs by name. Showing a token taken from it lowers the Influence DCs by 2.</p>"
     },
     "traits": {
       "size": {

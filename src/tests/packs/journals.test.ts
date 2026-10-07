@@ -19,7 +19,7 @@ interface Page {
   src?: string;
   category?: string | null;
   sort: number;
-  title: { level: number };
+  title: { show: boolean; level: number };
   ownership: { default: number };
   text?: { content: string };
   flags: Record<string, { site?: number; hex?: string; icon?: string }>;
@@ -63,6 +63,14 @@ describe('journals pack source', () => {
   it('files the journal in one Points of Interest folder', () => {
     expect(folders.map((f) => [f.name, f.type, f.folder])).toEqual([['Points of Interest', 'JournalEntry', null]]);
     expect(journal.folder).toBe(folders[0]._id);
+  });
+
+  it('leaves each site title to its masthead and its number to the sidebar', () => {
+    for (const site of sites) {
+      expect(site.title.show, site.name).toBe(false);
+      expect(site.name).not.toMatch(/^\d/);
+      expect(pages.indexOf(site), site.name).toBe(site.flags[MODULE_ID].site);
+    }
   });
 
   it('keeps every site on one text page', () => {
@@ -176,6 +184,25 @@ describe('journals pack source', () => {
     }
   });
 
+  it('ships three distinct manuscript illustrations for every encounter', () => {
+    const all = new Set<string>();
+    for (const site of sites) {
+      const html = site.text!.content;
+      const images = [...html.matchAll(/<img class="(poi-(?:margin|location)-study[^\"]*)" src="([^\"]+)"([^>]+)>/g)];
+      expect(images, site.name).toHaveLength(3);
+      const prefix = `${SERVED}assets/journal/encounters/${String(site.flags[MODULE_ID].site).padStart(2, '0')}-`;
+      for (const [, classes, src, attributes] of images) {
+        expect(src.startsWith(prefix), site.name).toBe(true);
+        expect(existsSync(servedFile(src)), src).toBe(true);
+        expect(attributes).toContain('aria-hidden="true"');
+        expect(classes).toContain('nopopout');
+        expect(all.has(src), `${site.name}: duplicated illustration`).toBe(false);
+        all.add(src);
+      }
+    }
+    expect(all.size).toBe(63);
+  });
+
   it('pairs every banner with its own establishing art, player share, tactical map, and scene action', () => {
     for (const site of sites) {
       const html = site.text!.content;
@@ -188,7 +215,8 @@ describe('journals pack source', () => {
         const map = banner.match(/data-map="([^"]+)"/)?.[1];
         expect(art, site.name).toBe(map?.replace('/assets/maps/', '/assets/establishing/'));
         expect(existsSync(servedFile(art!)), art).toBe(true);
-        expect(banner).toContain(`href="${art}"`);
+        expect(banner).toContain(`<div class="poi-scene-art"><img class="nopopout" src="${art}"`);
+        expect(banner).not.toContain('href=');
         expect(banner).toContain(`class="poi-show-players" data-image="${art}"`);
         expect(banner).toContain('class="poi-show-map"');
         expect(banner).toContain('class="poi-open-scene"');

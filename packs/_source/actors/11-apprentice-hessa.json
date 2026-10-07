@@ -10,7 +10,7 @@
         "value": 1
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A stocky young woman with soot-black braids and goggles pushed up on her forehead. She grips a heavy wrench and looks frightened.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.3KX3D2bQDpvDQSDH]{11. The Unmaker}.</strong> One of Vane's apprentices tending the sigils on the scaffold; noncombatant. NPC Core Mechanic.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.3KX3D2bQDpvDQSDH]{The Unmaker}.</strong> One of Vane's apprentices tending the sigils on the scaffold; noncombatant. NPC Core Mechanic.</p>"
     },
     "traits": {
       "size": {

@@ -10,7 +10,7 @@
         "value": 18
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A house-sized hauler on two wide tracks, plated in dark grey adamantine scarred by ages of travel. Steam vents and laser emitters line its flanks. Two jointed manipulator arms fold against its front. A dorsal hatch sits on its back, and faded skyfall delivery glyphs cover its prow.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Q5JKNbcFMBLTwObn]{09. The Iron Juggernaut}.</strong> Elite adamantine golem reflavoured as a tracked hauler. Inexorable March on the trench, Vent as cutting lasers, fists against boarders; Repair Mode at 0 HP.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Q5JKNbcFMBLTwObn]{The Iron Juggernaut}.</strong> Elite adamantine golem reflavoured as a tracked hauler. Inexorable March on the trench, Vent as cutting lasers, fists against boarders; Repair Mode at 0 HP.</p>"
     },
     "traits": {
       "size": {

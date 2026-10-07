@@ -6,7 +6,7 @@
   "img": "icons/equipment/back/cloak-layered-green.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-EalKJT18wTnng7CJ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{14. The Shadow Court}.</strong> One of the empty ankou cloaks in the branches bears the badge of a royal scout. A waxed packet hides in its lining.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-EalKJT18wTnng7CJ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Re1E5HNvjVn5pPMC]{The Shadow Court}.</strong> One of the empty ankou cloaks in the branches bears the badge of a royal scout. A waxed packet hides in its lining.</p>\n</section>",
       "level": {
         "value": 0
       }

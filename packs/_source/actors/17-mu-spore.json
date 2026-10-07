@@ -10,7 +10,7 @@
         "value": 21
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A colossal flying mass of fungus and flesh, ridged and pale grey, with dozens of long tentacles trailing beneath. A huge maw opens in its underside, ringed with teeth. Clouds of spores vent from gill-like slits along its sides. Below it, tiny trees give a sense of its size.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.edGXn37wYpivMJIH]{17. Spore-Dawn}.</strong> Omen of catastrophe anchored above the sinkhole. Opens with Enormous Inhalation; sonic damage stops its regeneration. While three or more corrupted trees stand, its Spores DC rises by 1 and it regains 10 more HP each round.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.edGXn37wYpivMJIH]{Spore-Dawn}.</strong> Omen of catastrophe anchored above the sinkhole. Opens with Enormous Inhalation; sonic damage stops its regeneration. While three or more corrupted trees stand, its Spores DC rises by 1 and it regains 10 more HP each round.</p>"
     },
     "traits": {
       "size": {

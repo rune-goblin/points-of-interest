@@ -56,7 +56,7 @@
   container: poi-page / inline-size;
   box-sizing: border-box;
   width: 100%;
-  max-inline-size: 60rem;
+  max-inline-size: 68rem;
   margin-inline: auto;
   padding: 0;
   border: 1px solid var(--poi-rule);
@@ -71,7 +71,7 @@
   margin-inline: auto;
 }
 
-.journal-entry-page:has(.poi-masthead) > .journal-page-header {
+.journal-entry-page:has(.poi-masthead) .journal-page-header {
   display: none;
 }
 
@@ -376,6 +376,43 @@
   transform: scaleX(var(--poi-margin-lower-end-flip));
 }
 
+/* Narrative marginalia use shared anchors; the drawings retain their own silhouettes. */
+.poi-margin-study {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 8rem;
+  height: 20rem;
+  margin: 0;
+  border: none;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.poi-margin-study--creature {
+  left: -9.5rem;
+}
+
+.poi-margin-study--detail {
+  right: -9.5rem;
+}
+
+.poi-sec--running-the-encounter,
+.poi-sec--rewards {
+  position: relative;
+}
+
+.poi-location-study {
+  display: block;
+  width: min(28rem, 100%);
+  height: auto;
+  max-height: 12rem;
+  margin: var(--poi-space-section) auto;
+  border: none;
+  object-fit: contain;
+  pointer-events: none;
+}
+
 .poi-scene-block {
   min-width: 0;
 }
@@ -408,7 +445,6 @@
 .poi-scene-art {
   display: block;
   overflow: hidden;
-  cursor: zoom-in;
 }
 
 .poi-scene-art img {
@@ -453,11 +489,6 @@
   border-color: #f0d59f;
   background: #453317;
   color: #fff8e8;
-}
-
-.poi-scene-art:focus-visible {
-  outline: 3px solid #f0d59f;
-  outline-offset: -3px;
 }
 
 .poi-scene-actions button:focus-visible,
@@ -1054,14 +1085,15 @@ strong.poi-term {
     padding-inline: 7rem;
   }
 
-  .poi-body[data-illumination] {
-    padding-inline: 7rem;
+  .poi-body[data-illustrated] {
+    padding-inline: 10rem;
   }
 
   .poi-site[data-illumination]::before,
   .poi-site[data-illumination]::after,
   .poi-body[data-illumination] .poi-sec--outcomes::before,
-  .poi-body[data-illumination] .poi-sec--outcomes::after {
+  .poi-body[data-illumination] .poi-sec--outcomes::after,
+  .poi-margin-study {
     display: block;
   }
 }

@@ -6,7 +6,7 @@
   "img": "modules/points-of-interest/assets/portraits/01-felgo.webp",
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A young man in royal green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> The dead royal scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A young man in royal green leathers, sunburned, a scout's bow over his shoulder, a sprig of heather pinned to his collar. His expression is that of someone hearing his own name whispered.</p>\n<section class=\"secret\" id=\"secret-o7JvQGKTWXc7GJj5\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{The Shadowless Lodge}.</strong> The dead royal scout on the threshold, shadowless, two days dead with no wounds. DC 35 Medicine shows the heart simply stopped.</p>\n</section>",
       "level": {
         "value": 0
       }

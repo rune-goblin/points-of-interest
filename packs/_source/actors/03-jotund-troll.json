@@ -10,7 +10,7 @@
         "value": 15
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A towering, hunched troll with mossy green-grey hide and nine heads on long, sinewy necks sprouting from its shoulders. The heads all argue at once. One head wears a neatly oiled moustache and a courtier's gold earring, mimicking a gentleman. Three hang drooling and hungry; three snarl with scarred brows; two are grey, wrinkled and half-asleep.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{03. Nine Mouths, One Belly}.</strong> The nine-headed troll. It negotiates by head-vote and fights only if insulted twice, the vote fails, or the PCs attack; it flees into the moor at 120 HP.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.wdlbFe4qIZDYqrwL]{Nine Mouths, One Belly}.</strong> The nine-headed troll. It negotiates by head-vote and fights only if insulted twice, the vote fails, or the PCs attack; it flees into the moor at 120 HP.</p>"
     },
     "traits": {
       "size": {

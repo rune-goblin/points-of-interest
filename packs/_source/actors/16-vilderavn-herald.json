@@ -10,7 +10,7 @@
         "value": 19
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A knight in black full plate with a helm shaped like a raven's skull, the beak curving down over the face. Black feathers sprout from the pauldrons and gorget. One gauntleted hand rests on a greatsword planted point-down; the other gestures toward the viewer. Behind the eye slits, two glints of cold light. A second view shows its true form: a human-sized raven with a scarred beak and eyes like polished jet.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.d5zY0mPkcFChKYhl]{16. The Trickster's Emissary}.</strong> The Trickster Lord's emissary, posing as the Fey Queen's warden. Run as Influence over 4 rounds; in a fight it pulls its punches and withdraws with Forest Step below 100 HP. Its greatsword's greater brilliant and greater fearsome runes add 1d4 fire, and a critical hit leaves the target frightened 2 and risks blinding it (DC 41 Fortitude).</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.d5zY0mPkcFChKYhl]{The Trickster's Emissary}.</strong> The Trickster Lord's emissary, posing as the Fey Queen's warden. Run as Influence over 4 rounds; in a fight it pulls its punches and withdraws with Forest Step below 100 HP. Its greatsword's greater brilliant and greater fearsome runes add 1d4 fire, and a critical hit leaves the target frightened 2 and risks blinding it (DC 41 Fortitude).</p>"
     },
     "traits": {
       "size": {

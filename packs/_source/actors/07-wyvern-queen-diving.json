@@ -10,7 +10,7 @@
         "value": 19
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>The same wyvern in a steep dive, talons forward and wings folded back, jaws open.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.ehfB89bZocdpzaAr]{07. The Wyvern Queen's Hunting Ground}.</strong> The same wyvern with diving art, for Powerful Dive out of the sun. Same statistics as the Wyvern Queen; swap the token rather than placing both.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.ehfB89bZocdpzaAr]{The Wyvern Queen's Hunting Ground}.</strong> The same wyvern with diving art, for Powerful Dive out of the sun. Same statistics as the Wyvern Queen; swap the token rather than placing both.</p>"
     },
     "traits": {
       "size": {

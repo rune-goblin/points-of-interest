@@ -6,7 +6,7 @@
   "img": "modules/points-of-interest/assets/portraits/18-fallen-royal-soldier.webp",
   "system": {
     "details": {
-      "description": "<h2>Appearance</h2>\n<p>A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.</p>\n<section class=\"secret\" id=\"secret-crC75wpC8zwG8jWh\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.2bl199Js092nPA7G]{18. The Linnorm's Pass}.</strong> One of fifty-two royal soldiers in the pass. Their regimental insignia and the King's orders are evidence of royal aggression; their gear yields 800 gp.</p>\n</section>",
+      "description": "<h2>Appearance</h2>\n<p>A skeleton in rusted mail and a green-and-gold tabard, a broken spear across its lap, its helm tipped over its eyes.</p>\n<section class=\"secret\" id=\"secret-crC75wpC8zwG8jWh\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.2bl199Js092nPA7G]{The Linnorm's Pass}.</strong> One of fifty-two royal soldiers in the pass. Their regimental insignia and the King's orders are evidence of royal aggression; their gear yields 800 gp.</p>\n</section>",
       "level": {
         "value": 0
       }

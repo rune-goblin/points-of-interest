@@ -26,7 +26,7 @@
       }
     },
     "details": {
-      "description": "<p>Thousands of skulls scream their old grievances in unison.</p>\n<section class=\"secret\" id=\"secret-8YWZo7u3FFTZ6M49\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{05. The Ossuary Wall}.</strong> Level 15 complex haunt that joins the skulltaker fight. Drop it for a Moderate threat (80 XP); at party level 18 raise it to level 17 (DCs +3).</p>\n</section>",
+      "description": "<p>Thousands of skulls scream their old grievances in unison.</p>\n<section class=\"secret\" id=\"secret-8YWZo7u3FFTZ6M49\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.94wLkbfz0zc6czXz]{The Ossuary Wall}.</strong> Level 15 complex haunt that joins the skulltaker fight. Drop it for a Moderate threat (80 XP); at party level 18 raise it to level 17 (DCs +3).</p>\n</section>",
       "disable": "<p>@Check[religion|dc:36] to recite the funeral rites of the hill-clan dead (three successes required), or @Check[diplomacy|dc:39] or Hill-Clan Lore to promise the bones their chieftain will be honoured (two successes). Destroying the skulltaker also ends the haunt.</p>",
       "isComplex": true,
       "level": {

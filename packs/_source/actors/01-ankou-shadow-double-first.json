@@ -10,7 +10,7 @@
         "value": 17
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>The ankou's silhouette rendered in smoke, edges fraying into wisps, its wings slightly mismatched as if poorly copied.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{01. The Shadowless Lodge}.</strong> A double from the ankou's Shadow Doubles (110 HP, Strikes +27, no innate spells). It vanishes when the ankou leaves or dies.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.F9q63x7NzRmmeBGq]{The Shadowless Lodge}.</strong> A double from the ankou's Shadow Doubles (110 HP, Strikes +27, no innate spells). It vanishes when the ankou leaves or dies.</p>"
     },
     "traits": {
       "size": {

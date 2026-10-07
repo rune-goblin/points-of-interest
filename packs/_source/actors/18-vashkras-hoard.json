@@ -6,7 +6,7 @@
   "img": "icons/containers/chest/chest-small-gold-cherry.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-hH5wLDmkaBAvh3bZ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.2bl199Js092nPA7G]{18. The Linnorm's Pass}.</strong> Reached through the magma vent: fire resistance or a DC 40 Athletics check to swim through it.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-hH5wLDmkaBAvh3bZ\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.2bl199Js092nPA7G]{The Linnorm's Pass}.</strong> Reached through the magma vent: fire resistance or a DC 40 Athletics check to swim through it.</p>\n</section>",
       "level": {
         "value": 0
       }

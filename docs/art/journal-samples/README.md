@@ -24,6 +24,18 @@ Oxblood headings, numbered features, outcome rows, and restrained heraldic corne
 
 ## Implementation output
 
+### Encounter manuscript drawings
+
+The [63-image index](encounters/README.md) collects a creature drawing, a location sketch, and a story detail for each encounter. The drawings imitate a monk's playful manuscript marginalia. The generic ornaments remain beside the banner and Outcomes. Creature drawings sit left of Running the encounter, and clue drawings sit right of Rewards; location sketches separate Features from Running the encounter.
+
+[Light page](output-light-encounter-illustrations.png) · [Dark page](output-dark-encounter-illustrations.png) · [Narrow page](output-narrow-encounter-illustrations.png)
+
+[Artwork 01–07](output-encounter-art-01-07.png) · [Artwork 08–14](output-encounter-art-08-14.png) · [Artwork 15–21](output-encounter-art-15-21.png) · [Full gallery](encounters/index.html)
+
+[The illustration guide](../journal-illustrations.md) describes the layout and exports. [The prompt record](../journal-illustrations.json) preserves the built-in image generator's inputs and source paths.
+
+[Shadowless feather decoration concept](shadowless-feather-decoration-concept.png) records an early exploration for the encounter-specific illustration set. The final direction uses drawings of creatures, locations, and story objects.
+
 These full-page screenshots capture the HTML/CSS preview on 7 October 2026 at a viewport width of 1200 pixels. They use the generated journal content, Establishing artwork, and Foundry/PF2e styles. The preview renders check and document links for display.
 
 ### Aligned ornament pairs
@@ -242,7 +254,7 @@ The dark theme pairs saturated vermilion headings with charcoal, ivory text, ant
 
 ## Decoration assets
 
-The built-in imagegen tool produced these transparent graphics. The module uses the current filigree and simpler frame elements. The `retired/` folder preserves six graphics from earlier revisions outside the runtime assets. Earlier revisions overlaid live numbers on the illustrated medallion; the current badges use CSS circles.
+The built-in imagegen tool produced these transparent graphics. The module uses the current filigree and simpler frame elements. The `retired/` folder preserves six graphics from earlier revisions and backup copies of the five active margin ornaments. The active ornaments remain in `assets/journal/marginalia/`. Earlier revisions overlaid live numbers on the illustrated medallion; the current badges use CSS circles.
 
 | Decoration | Asset | Generation prompt |
 |---|---|---|

@@ -11,10 +11,12 @@ compendium packs from `packs/_source/`).
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
   One journal, "Points of Interest", holds the overview, then one text page per site in encounter order
-  (no categories). Each encounter page opens with a dark title banner, panoramic establishing artwork,
+  (no categories). Site pages hide Foundry's own title (`title.show: false`) and carry no number in
+  their names, since Foundry's sidebar numbers them from the Overview's 0; map pins, scene book
+  notes and the encounter links in actor GM notes take the same unnumbered name. Each encounter page opens with a dark title banner, panoramic establishing artwork,
   and a cast row. Each scene keeps its own cast beneath its image. The title uses one font and color.
   `encounterParts()` returns Background separately from the remaining body sections. The builder places
-  it after the reference inside `.poi-body`. Reading columns stay within 68ch on a page up to 60rem wide.
+  it after the reference inside `.poi-body`. Reading columns stay within 68ch on a page up to 68rem wide.
   The expandable reference beneath them holds the King's note (the white-ink redraw, captioned with
   the "**The King's map note.**" paragraph) and encounter facts; a GM clicks the note and presses Show Players in the popout to share it.
   `scripts/journal-html.ts` structures the rest, so keep the markdown patterns it reads: a run-in label
@@ -33,12 +35,19 @@ compendium packs from `packs/_source/`).
   `PAGE_RULE` draws continuous double gold rules with a transparent central knot. It sits at the top of the
   masthead and flips vertically at the bottom of `.poi-body`. Keep H1 first in the masthead to avoid
   Foundry's extra margin on headings that follow another element.
-  `data-illumination` selects a stable night, grove, or relic arrangement for each encounter.
-  At widths of 52rem and above, two different botanical or animal ornaments flank the banner;
-  two smaller sprigs flank Outcomes. Each pair shares its size and vertical anchor. Dedicated 7rem gutters
-  keep artwork clear of the image, controls, and reading column. Narrow pages omit these ornaments.
-  CSS flips individual motifs horizontally. Margin pairs use different artwork; frame corners use mirrored artwork.
-  The library and placement rules live in `docs/art/journal-marginalia.md`.
+  Preserve the generic margin library in `assets/journal/marginalia/` alongside encounter illustrations.
+  `illumination()` selects night, grove, or relic arrangements. `data-illumination` anchors paired
+  ornaments beside the banner and Outcomes. Wide banners reserve 7rem gutters; narrow pages hide ornaments.
+  Each encounter has three manuscript illustrations: a creature, a location, and a story object or clue.
+  `docs/art/journal-illustrations.json` records their subjects, built-in imagegen prompts, and file paths.
+  At widths of 52rem and above, creature drawings sit left of Running the encounter and detail drawings sit right of Rewards in 8rem by 20rem areas.
+  Dedicated 10rem prose gutters keep artwork clear of the image, controls, and reading column.
+  Narrow pages hide these two margin drawings. The wide location sketch remains between Features and
+  Running the encounter and scales with the reading column. Drawings have true alpha and no frames.
+  The art imitates a monk's playful manuscript sketches: recognisable subjects, uneven ink lines,
+  spare lapis and vermilion washes, and gold-ochre contours. Frame corners remain mirrored.
+  `scripts/export-journal-illustration.ts` preserves originals in docs and crops/resizes runtime WebPs.
+  The illustration guide lives in `docs/art/journal-illustrations.md`.
   Each Background opens with a transparent gold-and-indigo illuminated initial from `assets/journal/initials/`.
   The five capitals A, H, M, O, and T cover the current encounter text. `illuminateBackground()` keeps
   the original letter as visually hidden text for copying and screen readers, and floats its image
@@ -65,13 +74,13 @@ compendium packs from `packs/_source/`).
   `flags['points-of-interest'].encounter`; `build-journal.ts` reads it to head each encounter page
   with its scenes (a banner per scene) and each scene's tokens, so `build-scenes.ts` runs before
   it in `npm run build`. Each banner uses the matching filename from `assets/establishing/`, falling
-  back to a tactical-map preview when artwork is absent. Clicking `a.poi-scene-art[data-image]`
-  expands that artwork; among the bottom-right buttons, `button.poi-show-players[data-image]` shares it
-  with every player through Foundry's `ImagePopout` (title hidden, since scene names reveal foes),
+  back to a tactical-map preview when artwork is absent. The banner image ignores clicks; among its
+  bottom-right buttons, `button.poi-show-players[data-image]` opens the artwork
+  in Foundry's `ImagePopout` for the GM and every player (title hidden, since scene names reveal foes),
   `button.poi-show-map[data-map]` expands the tactical map, and `button.poi-open-scene[data-scene]`
   views the scene, importing it and its actors when necessary.
   `src/scene-links.ts` retains the legacy scene-card and zoom handlers for older world journals.
-  Both images use `src/ui/MapLightbox.ts`, a modal `<dialog>` that keeps Escape from Foundry,
+  The tactical map uses `src/ui/MapLightbox.ts`, a modal `<dialog>` that keeps Escape from Foundry,
   whose dismiss key closes every framed window. Tokens are core content links (`data-link`) to world actors once the
   Adventure build rewrites them; `src/actors/runtime.ts` imports a linked actor the world lacks before
   opening or dropping it. Previews live in `assets/maps/previews/` (800 px, made by cwebp
@@ -268,7 +277,8 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   symlinks into the repo). The stolen-lands world already holds the journal folder and the 21 notes;
   enable the module there after a Foundry restart to get the hook and the API.
   A new world journal gives players Limited ownership: they see each pin and its name but can't read
-  a page. Share the King's note by clicking it on its encounter page and pressing Show Players. Keep the
+  a page, and the journal stays out of their sidebar (Foundry lists a journal from Observer up). The
+  `activateNote` hook stops a player's double-click on a site pin, which would open an empty journal. Share the King's note by clicking it on its encounter page and pressing Show Players. Keep the
   journal free of image pages: Foundry lets Limited players open an image page straight from its pin.
 - Next: check the actor sheets, scene grids and token placement in a live world, trace walls and lights.
 - Assumptions: party of 4 PCs at level 16. The annihilator robot (#21) is a custom PF2e conversion;

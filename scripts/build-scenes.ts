@@ -315,7 +315,7 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
   const name = `${pad(encounter.number)}. ${encounter.title}${meta.label ? `: ${meta.label}` : ''}`;
   const fixedLight = meta.darkness !== undefined;
   const pageId = ids.encounterPage(slugify(`${encounter.number}. ${encounter.title}`));
-  const note = journalNote(id, slug, pageId, `${pad(encounter.number)}. ${encounter.title}`, size, meta.grid, kept('notes'));
+  const note = journalNote(id, slug, pageId, encounter.title, size, meta.grid, kept('notes'));
   const reveal = revealTile(id, slug, size, meta.grid);
   return {
     _id: id,

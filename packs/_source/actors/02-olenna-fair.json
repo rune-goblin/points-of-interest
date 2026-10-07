@@ -10,7 +10,7 @@
         "value": 3
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A neat, bespectacled woman whose court dress has been carefully mended, writing music in tiny precise notation across blank staves that show nothing at all.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.U8ZFHQbadEPnC1T2]{02. The Perfect Song}.</strong> Composer and copyist; noncombatant. NPC Core Troubadour.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.U8ZFHQbadEPnC1T2]{The Perfect Song}.</strong> Composer and copyist; noncombatant. NPC Core Troubadour.</p>"
     },
     "traits": {
       "size": {

@@ -6,7 +6,7 @@
   "img": "icons/equipment/shield/heater-steel-worn.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-huG2mGI4qdyPG32d\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.ehfB89bZocdpzaAr]{07. The Wyvern Queen's Hunting Ground}.</strong> Buried in the shale near the cliff. The Wyvern Queen's own treasure lies in her lair at BR3.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-huG2mGI4qdyPG32d\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.ehfB89bZocdpzaAr]{The Wyvern Queen's Hunting Ground}.</strong> Buried in the shale near the cliff. The Wyvern Queen's own treasure lies in her lair at BR3.</p>\n</section>",
       "level": {
         "value": 0
       }

@@ -10,7 +10,7 @@
         "value": 17
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A slender, sleek dragon no longer than a person, scaled in dawn colours of rose, gold and pale pink. Large, bright eyes and a grin full of tiny needle teeth. A frill of feathery spines runs down its neck.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{15. The Moody Brood}.</strong> Dawn-coloured whimwyrm. Loves flattery and hates being ignored (+2 DC if a PC addresses Gloamsy first). Mood starts at 5.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tWk8K2xbGexPMOa4]{The Moody Brood}.</strong> Dawn-coloured whimwyrm. Loves flattery and hates being ignored (+2 DC if a PC addresses Gloamsy first). Mood starts at 5.</p>"
     },
     "traits": {
       "size": {

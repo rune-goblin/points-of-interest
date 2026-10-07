@@ -30,23 +30,26 @@ async function viewScene(id: string): Promise<void> {
   else ui.notifications.error(t('Missing'));
 }
 
-// Scene names such as "The Unmaker" give the foe away, so players see the art without its title.
+// Scene names such as "The Unmaker" give the foe away, so the popout hides its title. The GM's copy
+// matches, so sharing again from its Show Players control reveals nothing more.
 function showPlayers(src: string, title: string): void {
-  new foundry.applications.apps.ImagePopout({ src, window: { title }, showTitle: false }).shareImage();
+  const popout = new foundry.applications.apps.ImagePopout({ src, window: { title }, showTitle: false });
+  void popout.render({ force: true });
+  popout.shareImage();
 }
 
 /**
- * Banners expand the establishing art. Show to players shares it in Foundry's image popout. Show map
- * expands the tactical map. Open scene views the scene, importing it and its actors when necessary.
- * Legacy cards retain their original actions.
+ * Show to players shares the establishing art in Foundry's image popout. Show map expands the tactical
+ * map. Open scene views the scene, importing it and its actors when necessary. Legacy cards retain their
+ * original actions.
  */
 export function registerSceneLinks(): void {
   document.body.addEventListener('click', (event) => {
     const target = event.target as Element | null;
-    const art = target?.closest<HTMLElement>('.poi-scene-art[data-image]');
-    if (art) {
+    // World journals refreshed before the banner went inert still link it to its art, which would
+    // navigate away from the game.
+    if (target?.closest('a.poi-scene-art')) {
       event.preventDefault();
-      MapLightbox.open(art.dataset.image!, art.dataset.caption ?? '');
       return;
     }
     const share = target?.closest<HTMLElement>('.poi-show-players[data-image]');

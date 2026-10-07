@@ -10,7 +10,7 @@
         "value": 6
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A thin, balding man in his fifties with burn scars on both hands and a magnifying lens strapped over one eye. He wears a stained leather apron over a once-fine court doublet. His expression mixes pride and desperation.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.3KX3D2bQDpvDQSDH]{11. The Unmaker}.</strong> The disgraced salvage-town technician waking the Colossus, and the Influence target. The encounter treats him as level 8; this NPC Core Gadgeteer is level 6 and fits the role better than any level 8 stat block.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.3KX3D2bQDpvDQSDH]{The Unmaker}.</strong> The disgraced salvage-town technician waking the Colossus, and the Influence target. The encounter treats him as level 8; this NPC Core Gadgeteer is level 6 and fits the role better than any level 8 stat block.</p>"
     },
     "traits": {
       "size": {

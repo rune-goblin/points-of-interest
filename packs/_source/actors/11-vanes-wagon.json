@@ -6,7 +6,7 @@
   "img": "icons/containers/boxes/crate-wooden-brown.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-JsZ0iTildPWo6Brb\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.3KX3D2bQDpvDQSDH]{11. The Unmaker}.</strong> Vane's covered wagon at the crater's rim, holding his notes, tools and the last of the King's gold.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-JsZ0iTildPWo6Brb\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.3KX3D2bQDpvDQSDH]{The Unmaker}.</strong> Vane's covered wagon at the crater's rim, holding his notes, tools and the last of the King's gold.</p>\n</section>",
       "level": {
         "value": 0
       }

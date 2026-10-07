@@ -10,7 +10,7 @@
         "value": 0
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A burly farmer with sunburned arms and a straw hat, limp and grey-lipped.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{04. The Gardeners}.</strong> Victim on a plinth: enfeebled 3 and unable to act. NPC Core Farmer.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.Yw6GRD852RLVDyt0]{The Gardeners}.</strong> Victim on a plinth: enfeebled 3 and unable to act. NPC Core Farmer.</p>"
     },
     "traits": {
       "size": {

@@ -6,7 +6,7 @@
   "img": "icons/containers/chest/chest-tech-silver.webp",
   "system": {
     "details": {
-      "description": "<section class=\"secret\" id=\"secret-73Ot6ELPpNJyhGMF\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{08. The Lightwardens}.</strong> Inside the hull, behind the hatch: DC 38 Thievery or Crafting, or open once all three pylons are disabled.</p>\n</section>",
+      "description": "<section class=\"secret\" id=\"secret-73Ot6ELPpNJyhGMF\">\n<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.tHD1LQofggP4spzC]{The Lightwardens}.</strong> Inside the hull, behind the hatch: DC 38 Thievery or Crafting, or open once all three pylons are disabled.</p>\n</section>",
       "level": {
         "value": 0
       }

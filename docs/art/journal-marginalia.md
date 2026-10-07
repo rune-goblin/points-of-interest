@@ -2,6 +2,8 @@
 
 Five organic margin ornaments give the journal varied silhouettes. Four new illustrations join the existing blue-flower sprig. Each has a transparent background and remains separate from the text. The built-in image generator produced the artwork; [the prompt record](journal-marginalia.json) contains its inputs. [The sample index](journal-samples/README.md) holds the originals and previews.
 
+The encounter-specific manuscript illustrations extend this library. Both sets remain in use: ornaments flank the banner and Outcomes, while creature drawings sit left of Running the encounter and detail drawings sit right of Rewards.
+
 ## Margin elements
 
 | Element | Asset | Suggested placement |
@@ -19,7 +21,7 @@ Flip individual ornaments horizontally with `scaleX(-1)`. Keep birds, moons, and
 - Use at most four margin ornaments on an encounter page: a pair beside the banner and a pair beside Outcomes.
 - Pair different elements at the same height and size, with equal offsets from the content. Anchor both ornaments to the same section. Keep at least 24px between a body ornament and the reading column.
 - Banner ornaments occupy 6rem by 20rem areas. Outcomes ornaments occupy 5rem by 15rem areas, capped at the section's height. These areas preserve each illustration's proportions while giving both sides equal visual height.
-- Reserve 7rem on each side of wide banners and prose. Below a 52rem page width, hide the margin ornaments and return that space to content.
+- Reserve 7rem on each side of wide banners and 10rem beside prose with story drawings. Below a 52rem page width, hide the margin ornaments and return that space to content.
 - Keep the title, artwork buttons, numbered labels, and prose clear of decoration.
 - Use detailed foliage only at larger sizes. Small border graphics use broad loops and open shapes.
 

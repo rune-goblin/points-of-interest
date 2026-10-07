@@ -10,7 +10,7 @@
         "value": 2
       },
       "publicNotes": "<h2>Appearance</h2>\n<p>A boy of about seventeen, skeletal, collarbones sharp under a too-large shirt, a cracked lute in his lap. He smiles beatifically, unaware he is dying.</p>",
-      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.U8ZFHQbadEPnC1T2]{02. The Perfect Song}.</strong> The youngest composer, starving. He dies when the song stops unless a PC succeeds at a DC 36 Medicine check within 10 minutes. NPC Core Street Musician.</p>"
+      "privateNotes": "<p><strong>@UUID[Compendium.points-of-interest.journals.JournalEntry.jxn9bB1XhZTRpF65.JournalEntryPage.U8ZFHQbadEPnC1T2]{The Perfect Song}.</strong> The youngest composer, starving. He dies when the song stops unless a PC succeeds at a DC 36 Medicine check within 10 minutes. NPC Core Street Musician.</p>"
     },
     "traits": {
       "size": {

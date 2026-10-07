@@ -188,4 +188,9 @@ export function registerMapNoteHooks(): void {
     // show them the pin; the page itself needs Observer, so the pin would open an empty journal.
     if (note.document.getFlag(MODULE_ID, 'scene') && !game.user.isGM) note.visible = false;
   });
+  // A journal sheet opens for anyone, so a player's double-click on a site pin would show an empty journal.
+  Hooks.on('activateNote', (note: DrawnNote) => {
+    if (note.document.getFlag(MODULE_ID, 'site') === undefined) return;
+    if (!note.document.page?.testUserPermission(game.user, 'OBSERVER')) return false;
+  });
 }
