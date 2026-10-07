@@ -11,7 +11,8 @@ compendium packs from `packs/_source/`).
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
   One journal, "Points of Interest", holds the overview, then one text page per site in encounter order
-  (no categories). Site pages hide Foundry's own title (`title.show: false`) and carry no number in
+  (no categories). The Overview opens like a site page: a masthead, the Adventure banner from `module.json`
+  framed in the dark band between night ornaments, and an illuminated initial on its intro. Site pages hide Foundry's own title (`title.show: false`) and carry no number in
   their names, since Foundry's sidebar numbers them from the Overview's 0; map pins, scene book
   notes and the encounter links in actor GM notes take the same unnumbered name. Each encounter page opens with a dark title banner, panoramic establishing artwork,
   and a cast row. Each scene keeps its own cast beneath its image. The title uses one font and color.
@@ -49,7 +50,7 @@ compendium packs from `packs/_source/`).
   `scripts/export-journal-illustration.ts` preserves originals in docs and crops/resizes runtime WebPs.
   The illustration guide lives in `docs/art/journal-illustrations.md`.
   Each Background opens with a transparent gold-and-indigo illuminated initial from `assets/journal/initials/`.
-  The five capitals A, H, M, O, and T cover the current encounter text. `illuminateBackground()` keeps
+  The five capitals A, H, M, O, and T cover the current encounter text. `illuminate()` keeps
   the original letter as visually hidden text for copying and screen readers, and floats its image
   across three lines of prose. New opening letters fall back to plain text until their art exists.
   The initial replaces the earlier botanical sprig. `.poi-read-aloud` wraps each blockquote;
@@ -156,7 +157,7 @@ compendium packs from `packs/_source/`).
   lightened, square). Regenerate with `npm run build:icons` (needs ImageMagick 7)
   after changing that art; the icons are committed, not built.
 - `assets/adventure-banner.webp` — the Adventure's banner (module.json `banner`, shown by the importer
-  and the compendium sidebar): #07's white-ink sketch on generated dark parchment. `npm run build:banner`
+  and the compendium sidebar): #01's white-ink sketch on generated dark parchment. `npm run build:banner`
   redraws it (needs ImageMagick 7; `NOTE` in the script picks the sketch); committed, not built.
 
 **The Foundry/PF2e API, compendium packs, Svelte-in-ApplicationV2, the Vite build, and

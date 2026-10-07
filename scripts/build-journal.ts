@@ -24,6 +24,10 @@ const source = readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8');
 const firstZone = source.search(/^## Zone /m);
 const overviewMd = source.slice(0, firstZone).replace(/^# .*\n/, '').replace(/\n---\s*$/, '');
 
+// The importer's banner also heads the overview, so both open on the same art.
+const BANNER = (JSON.parse(readFileSync(join(ROOT, 'module.json'), 'utf8')) as { packs: { type: string; banner?: string }[] })
+  .packs.find((p) => p.type === 'Adventure')?.banner;
+
 const sections: Section[] = [];
 const headingRe = /^### (\d+)\. (.+)$/gm;
 const headings = [...source.matchAll(headingRe)];
@@ -223,6 +227,17 @@ function encounterHtml(s: Section): string {
   return `${head}${siteHeader(s.number)}<div class="poi-body" data-illustrated data-illumination="${illumination(s.number)}">${reference}${background}${illustratedBody}${PAGE_RULE}</div>`;
 }
 
+// The overview opens like a site page: a masthead, then its art in the dark band.
+function overviewPage(): string {
+  const metadata = `<span>${sections.length} sites</span><span>Party level 16 and up</span>`;
+  const head = `<header class="poi-masthead"><h1 data-no-toc>Points of Interest</h1><p class="poi-metadata">${metadata}</p>${PAGE_RULE}</header>`;
+  const art = BANNER
+    ? `<section class="poi-site" data-illumination="night"><div class="poi-scene-block"><figure class="poi-scene-card">` +
+      `<div class="poi-scene-art"><img class="nopopout" src="${BANNER}" alt=""></div></figure></div></section>`
+    : '';
+  return `${head}${art}${overviewHtml(overviewMd, renderers)}`;
+}
+
 function sitePage(s: Section) {
   const icon = artPath('map-icons', s.number);
   // The masthead H1 carries the title, and the journal sidebar already numbers each page.
@@ -240,7 +255,7 @@ const journal = {
   _key: `!journal!${journalId}`,
   name: "Points of Interest",
   pages: [
-    textPage(stableId('page:overview'), 'Overview', overviewHtml(overviewMd, renderers), { level: 1, sort: 0 }),
+    textPage(stableId('page:overview'), 'Overview', overviewPage(), { level: 1, sort: 0, show: false }),
     ...sections.map(sitePage),
   ],
   categories: [],

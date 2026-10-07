@@ -9,7 +9,7 @@ import { join } from 'node:path';
 const ROOT = process.cwd();
 const NOTES = join(ROOT, 'assets', 'map-notes', 'white-ink');
 const OUT = join(ROOT, 'assets', 'adventure-banner.webp');
-const NOTE = '07-';
+const NOTE = '01-';
 // Foundry's importer shows the banner about 888 x 300 px, cropped to fill; this is twice that.
 const WIDTH = 1776;
 const HEIGHT = 600;

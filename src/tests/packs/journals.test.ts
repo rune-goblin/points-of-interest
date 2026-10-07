@@ -65,6 +65,17 @@ describe('journals pack source', () => {
     expect(journal.folder).toBe(folders[0]._id);
   });
 
+  it('heads the overview like a site page, with the Adventure banner and an illuminated initial', () => {
+    const overview = pages[0];
+    const html = overview.text!.content;
+    expect(overview.title.show).toBe(false);
+    expect(html).toMatch(/^<header class="poi-masthead"><h1 /);
+    const banner = html.match(/<div class="poi-scene-art"><img class="nopopout" src="([^"]+)"/)?.[1];
+    expect(banner).toBe(JSON.parse(readFileSync(join(ROOT, 'module.json'), 'utf8')).packs[0].banner);
+    expect(existsSync(servedFile(banner!))).toBe(true);
+    expect(html).toContain('<section class="poi-sec poi-sec--intro"><div class="poi-sec-body"><p><span class="poi-initial">');
+  });
+
   it('leaves each site title to its masthead and its number to the sidebar', () => {
     for (const site of sites) {
       expect(site.title.show, site.name).toBe(false);

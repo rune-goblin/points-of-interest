@@ -219,6 +219,12 @@
   text-align: left;
 }
 
+/* The page breaks words anywhere; keep site numbers whole. */
+.poi-sec--sites :is(th, td):first-child {
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
 .poi-body table :is(thead, tr:nth-child(even)) {
   background: var(--poi-gold-wash);
 }
@@ -428,6 +434,10 @@
   margin: 0 1rem;
   border: 1px solid #a58140;
   box-shadow: 0 0 0 3px var(--poi-banner), 0 0 0 4px #56492e;
+}
+
+.poi-scene-block > .poi-scene-card:last-child {
+  margin-bottom: var(--poi-space-group);
 }
 
 .poi-scene-card > figcaption {
@@ -662,7 +672,7 @@
   transform: rotate(45deg);
 }
 
-.poi-sec--background .poi-sec-body {
+:is(.poi-sec--background, .poi-sec--intro) .poi-sec-body {
   display: flow-root;
 }
 

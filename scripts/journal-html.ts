@@ -148,7 +148,7 @@ function outcomeList(items: Tokens.ListItem[], render: Renderers['block']): stri
   return `<ol class="poi-outcomes">${items.map((item) => `<li>${render(item.text)}</li>`).join('')}</ol>`;
 }
 
-function illuminateBackground(html: string): string {
+function illuminate(html: string): string {
   return html.replace(/^<p>([AHMOT])/, (_, letter: string) =>
     `<p><span class="poi-initial"><span class="poi-initial-letter">${letter}</span>` +
     `<img class="nopopout" src="modules/${MODULE_ID}/assets/journal/initials/${letter.toLowerCase()}.webp" alt="" aria-hidden="true" width="256" height="256"></span>`,
@@ -166,7 +166,7 @@ function sectionHtml(section: Section, render: Renderers['block']): string {
   const heading = section.label
     ? `<h2 class="poi-h" data-no-toc><i class="fa-solid ${ICONS[kind] ?? 'fa-bookmark'}" aria-hidden="true"></i><span>${escapeHtml(section.label)}</span></h2>`
     : '';
-  return `<section class="poi-sec poi-sec--${kind}">${heading}<div class="poi-sec-body">${kind === 'background' ? illuminateBackground(content) : content}</div></section>`;
+  return `<section class="poi-sec poi-sec--${kind}">${heading}<div class="poi-sec-body">${kind === 'background' || kind === 'intro' ? illuminate(content) : content}</div></section>`;
 }
 
 /**
