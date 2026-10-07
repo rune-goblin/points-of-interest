@@ -8,6 +8,8 @@ const REGION_HEX_SIZE = 275;
 const ICON_SIZE = Math.round((REGION_HEX_SIZE * 2) / Math.sqrt(3));
 const FONT_SIZE = 30;
 const FALLBACK_ICON = 'icons/svg/book.svg';
+// World Explorer's fog ranks at most 650 short of its "front" position; tokens rank 700.
+const SITE_TILE_SORT_LAYER = 675;
 // Releases up to 0.2.0 kept each site in its own entry beside this overview entry.
 const LEGACY_OVERVIEW_ID = '9snGUfaEyJ38MwSg';
 // Earlier releases gave each site's map note an image page; the encounter page shows it now.
@@ -27,6 +29,11 @@ interface DrawnNote {
   controlled: boolean;
   isPreview: boolean;
   layer: { highlightObjects: boolean };
+}
+
+interface DrawnTile {
+  document: TileDocument<Scene | null>;
+  mesh: { sortLayer: number } | null;
 }
 
 const t = (key: string, data?: Record<string, string>): string =>
@@ -89,7 +96,7 @@ export async function importJournal(): Promise<JournalEntry> {
 }
 
 const isSceneNote = (note: NoteDocument<Scene | null>): boolean => !!note.getFlag(MODULE_ID, 'scene');
-const isSiteNote = (note: NoteDocument<Scene | null>): boolean => note.getFlag(MODULE_ID, 'site') !== undefined;
+const isSite = (doc: NoteDocument<Scene | null> | TileDocument<Scene | null>): boolean => doc.getFlag(MODULE_ID, 'site') !== undefined;
 
 /**
  * Give each world copy of a module scene the journal note its Adventure version carries, and refresh the
@@ -196,7 +203,7 @@ export async function tileSitePins(): Promise<void> {
   const journal = game.journal.find((entry) => entry.pages.some((page) => siteFlags(page)?.site !== undefined));
   if (journal?.ownership.default !== LIMITED) return;
   await journal.update({ 'ownership.default': NONE });
-  for (const scene of game.scenes.filter((s) => s.notes.some(isSiteNote))) {
+  for (const scene of game.scenes.filter((s) => s.notes.some(isSite))) {
     await placeSites(scene, journal);
     ui.notifications.info(t('Tiled', { scene: scene.name }));
   }
@@ -211,6 +218,11 @@ function refreshSiteNote(note: DrawnNote): void {
 
 export function registerMapNoteHooks(): void {
   Hooks.on('refreshNote', (note: DrawnNote) => {
-    if (isSiteNote(note.document)) refreshSiteNote(note);
+    if (isSite(note.document)) refreshSiteNote(note);
+  });
+  // Every refresh resets a tile to the tiles' rank, beneath World Explorer's fog. A site the King marked
+  // shows through unexplored land, so rank its tile between the fog and tokens.
+  Hooks.on('refreshTile', (tile: DrawnTile) => {
+    if (tile.mesh && isSite(tile.document)) tile.mesh.sortLayer = SITE_TILE_SORT_LAYER;
   });
 }

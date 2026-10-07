@@ -269,7 +269,8 @@ Code style: global `~/.claude/CLAUDE.md` — comment only the non-obvious *why*.
   one hex tall (318 px), showing the site's map icon and flagged `site`. Players see the tile. The pin links the
   GM to the site's encounter page, and Foundry hides it from players because they hold no access to the journal.
   Re-run it after journal edits. The module hides Foundry's dark backing square and idle border on the pins
-  (`refreshNote` hook). `tileSitePins()` runs on load for the active GM: when the journal still grants players
+  (`refreshNote` hook) and ranks the tiles 675, between World Explorer's 650 and tokens' 700 (`refreshTile` hook), above World Explorer's fog
+  in every position but "front". `tileSitePins()` runs on load for the active GM: when the journal still grants players
   Limited, as releases before the tiles did, it drops that to None and lays tiles under the pins already placed.
 - Fresh start: with the world closed, `npm run remove-module` asks for a world, then deletes from its
   LevelDB everything the Adventure imports or the module flagged, the site pins and tiles, the module's world
