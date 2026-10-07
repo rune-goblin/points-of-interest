@@ -1,5 +1,5 @@
 import { marked, type Token, type Tokens } from 'marked';
-import { slugify } from './stable-id.ts';
+import { MODULE_ID, slugify } from './stable-id.ts';
 
 export interface Renderers {
   block: (md: string) => string;
@@ -9,8 +9,11 @@ export interface Renderers {
 export interface EncounterParts {
   facts: string;
   caption?: string;
+  background: string;
   body: string;
 }
+
+export const PAGE_RULE = '<div class="poi-page-rule" aria-hidden="true"><span></span></div>';
 
 const NOTE_LABEL = "The King's map note";
 const SECTION = /^\*\*([^*\n]+?)\.\*\*[ \t]*/;
@@ -85,7 +88,7 @@ const GLYPHS: [RegExp, string][] = [
 const actionGlyphs = (html: string): string =>
   GLYPHS.reduce((out, [re, glyph]) => out.replace(re, `<span class="action-glyph">${glyph}</span>`), html);
 
-const markLeads = (html: string): string => html.replace(/<li><strong>/g, '<li><strong class="poi-term">');
+const markLeads = (html: string): string => html.replace(/(<li>(?:<p>)?)<strong>/g, '$1<strong class="poi-term">');
 
 const blocks = (md: string): Token[] => marked.lexer(md).filter((t) => t.type !== 'space');
 
@@ -141,25 +144,29 @@ function rewardLedger(md: string, inline: Renderers['inline']): string | undefin
 
 interface Section { label?: string; raws: string[]; html: string[] }
 
-// Outcome labels form the first column; render each description as Markdown to preserve links and lists.
-function outcomeLedger(items: Tokens.ListItem[], { block, inline }: Renderers): string | undefined {
-  const rows = items.map((item) => item.text.match(/^\*\*([^*\n]+)\*\*\s+([\s\S]+)$/));
-  if (rows.some((row) => !row)) return undefined;
-  return `<dl class="poi-outcomes">${rows.map((row) =>
-    `<div><dt>${inline(row![1])}</dt><dd>${block(row![2])}</dd></div>`,
-  ).join('')}</dl>`;
+function outcomeList(items: Tokens.ListItem[], render: Renderers['block']): string {
+  return `<ol class="poi-outcomes">${items.map((item) => `<li>${render(item.text)}</li>`).join('')}</ol>`;
+}
+
+function illuminateBackground(html: string): string {
+  return html.replace(/^<p>([AHMOT])/, (_, letter: string) =>
+    `<p><span class="poi-initial"><span class="poi-initial-letter">${letter}</span>` +
+    `<img class="nopopout" src="modules/${MODULE_ID}/assets/journal/initials/${letter.toLowerCase()}.webp" alt="" aria-hidden="true" width="256" height="256"></span>`,
+  );
 }
 
 function sectionHtml(section: Section, render: Renderers['block']): string {
   const flush = section.raws.length ? render(section.raws.join('\n\n')) : '';
-  const content = actionGlyphs(markLeads(section.html.join('') + flush));
+  const content = actionGlyphs(markLeads(section.html.join('') + flush))
+    .replace(/<blockquote>/g, '<div class="poi-read-aloud"><span class="poi-read-aloud-ornament" aria-hidden="true"></span><blockquote>')
+    .replace(/<\/blockquote>/g, '</blockquote></div>');
   if (!content.trim() && !section.label) return '';
   const slug = section.label ? slugify(section.label) : 'intro';
   const kind = slug.startsWith('arrival') ? 'arrival' : slug;
   const heading = section.label
     ? `<h2 class="poi-h" data-no-toc><i class="fa-solid ${ICONS[kind] ?? 'fa-bookmark'}" aria-hidden="true"></i><span>${escapeHtml(section.label)}</span></h2>`
     : '';
-  return `<section class="poi-sec poi-sec--${kind}">${heading}<div class="poi-sec-body">${content}</div></section>`;
+  return `<section class="poi-sec poi-sec--${kind}">${heading}<div class="poi-sec-body">${kind === 'background' ? illuminateBackground(content) : content}</div></section>`;
 }
 
 /**
@@ -167,7 +174,7 @@ function sectionHtml(section: Section, render: Renderers['block']): string {
  * Rendered HTML collects in `html`; markdown still waiting to render collects in `raws`, so
  * consecutive plain blocks render together and keep their list and paragraph spacing.
  */
-function sections(tokens: Token[], { block: render, inline }: Renderers): string {
+function sections(tokens: Token[], { block: render, inline }: Renderers): { label?: string; html: string }[] {
   const out: Section[] = [{ raws: [], html: [] }];
   const current = () => out.at(-1)!;
   const flush = () => {
@@ -182,12 +189,9 @@ function sections(tokens: Token[], { block: render, inline }: Renderers): string
       continue;
     }
     if (token.type === 'list' && current().label === 'Outcomes') {
-      const ledger = outcomeLedger(token.items, { block: render, inline });
-      if (ledger) {
-        flush();
-        current().html.push(ledger);
-        continue;
-      }
+      flush();
+      current().html.push(outcomeList(token.items, render));
+      continue;
     }
     if (token.type !== 'paragraph') {
       current().raws.push(raw);
@@ -231,7 +235,7 @@ function sections(tokens: Token[], { block: render, inline }: Renderers): string
     }
     current().raws.push(raw);
   }
-  return out.map((s) => sectionHtml(s, render)).join('\n');
+  return out.map((s) => ({ label: s.label, html: sectionHtml(s, render) }));
 }
 
 export function encounterParts(md: string, renderers: Renderers): EncounterParts {
@@ -245,9 +249,15 @@ export function encounterParts(md: string, renderers: Renderers): EncounterParts
     caption = renderers.inline(rest[noteAt].raw.trim().replace(SECTION, ''));
     rest.splice(noteAt, 1);
   }
-  return { facts, caption, body: `<div class="poi-body">${sections(rest, renderers)}</div>` };
+  const content = sections(rest, renderers);
+  return {
+    facts,
+    caption,
+    background: content.filter((s) => s.label === 'Background').map((s) => s.html).join('\n'),
+    body: content.filter((s) => s.label !== 'Background').map((s) => s.html).join('\n'),
+  };
 }
 
 export function overviewHtml(md: string, renderers: Renderers): string {
-  return `<div class="poi-body">${sections(blocks(md), renderers)}</div>`;
+  return `<div class="poi-body">${sections(blocks(md), renderers).map((s) => s.html).join('\n')}${PAGE_RULE}</div>`;
 }

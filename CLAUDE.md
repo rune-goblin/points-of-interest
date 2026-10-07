@@ -11,7 +11,10 @@ compendium packs from `packs/_source/`).
   pack sources from it (`scripts/build-journal.ts`); never hand-edit `packs/_source/journals/`.
   Page ids hash from the heading slug, so renaming an encounter heading changes its page id.
   One journal, "Points of Interest", holds the overview, then one text page per site in encounter order
-  (no categories). Each encounter page opens with its title, establishing artwork, and creature tokens.
+  (no categories). Each encounter page opens with a dark title banner, panoramic establishing artwork,
+  and a cast row. Each scene keeps its own cast beneath its image. The title uses one font and color.
+  `encounterParts()` returns Background separately from the remaining body sections. The builder places
+  it after the reference inside `.poi-body`. Reading columns stay within 68ch on a page up to 60rem wide.
   The expandable reference beneath them holds the King's note (the white-ink redraw, captioned with
   the "**The King's map note.**" paragraph) and encounter facts; a GM clicks the note and presses Show Players in the popout to share it.
   `scripts/journal-html.ts` structures the rest, so keep the markdown patterns it reads: a run-in label
@@ -21,7 +24,34 @@ compendium packs from `packs/_source/`).
   card; the Rewards line splits into XP, Treasure and Kingdom rows at sentences opening "Treasure" or
   "Kingdom". Write checks as "DC 36 Religion", "DC 35 basic Reflex" or "Society or Crafting, DC 36": the
   build makes each a PF2e `@Check` a GM can roll or post to chat (read-aloud text excepted). `src/styles.css`
-  styles the pages for both themes with `light-dark()`: 16 px text, mixed-case headings, no all-caps labels.
+  styles the pages for both themes with `light-dark()`. Shared variables use a 1.5 perfect-fifth type scale:
+  18/27 px prose, 27/32.4 px H3, 40.5/48.6 px H2, and 60.75/72.9 px H1 (54/64.8 px on narrow pages).
+  H1 and H2 use the bundled IM Fell English font at its native 400 weight; H3 uses bold Gelasio.
+  All H2s share their size and weight; color and ornament distinguish sections. Headings use mixed case.
+  Paragraph, group, and section gaps use 12, 24, and 36 px; explicit margins prevent duplicate spacing.
+  Gold-leaf `assets/journal/page-corner-filigree.webp` ornaments mark the upper-right and lower-left page corners.
+  `PAGE_RULE` draws continuous double gold rules with a transparent central knot. It sits at the top of the
+  masthead and flips vertically at the bottom of `.poi-body`. Keep H1 first in the masthead to avoid
+  Foundry's extra margin on headings that follow another element.
+  `data-illumination` selects a stable night, grove, or relic arrangement for each encounter.
+  At widths of 52rem and above, two different botanical or animal ornaments flank the banner;
+  two smaller sprigs sit beside Features and Outcomes at unequal heights. Dedicated 5rem gutters
+  keep artwork clear of the image, controls, and reading column. Narrow pages omit these ornaments.
+  CSS flips individual motifs horizontally; it never pairs an image with its mirror on one page.
+  The library and placement rules live in `docs/art/journal-marginalia.md`.
+  Each Background opens with a transparent gold-and-indigo illuminated initial from `assets/journal/initials/`.
+  The five capitals A, H, M, O, and T cover the current encounter text. `illuminateBackground()` keeps
+  the original letter as visually hidden text for copying and screen readers, and floats its image
+  across three lines of prose. New opening letters fall back to plain text until their art exists.
+  The initial replaces the earlier botanical sprig. `.poi-read-aloud` wraps each blockquote;
+  `read-aloud-corner-simple.webp` decorates its four corners while CSS draws the flexible double gold border.
+  Arrival's heading sits above the frame with the standard heading gap. A small `rule-knot-simple.webp`
+  ornament overlaps the center of the continuous top border with alpha transparency and no background patch.
+  The text has 48px horizontal padding, or 28px on narrow pages, beyond the 32px or 20px corner graphics.
+  Spoken text aligns left at every width. Features uses 26 px indigo circles with thin gold borders;
+  CSS centers each number and aligns the badge with the first text line. Outcomes uses a semantic
+  numbered list with bold run-in labels. All journal text has `text-shadow: none`.
+  Prompts and visual comparisons live in `docs/art/journal-samples/README.md`.
 - Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the
   `pf2e-kingmaker` region map (the key its hex HUD shows). The build copies it into the
   site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.

@@ -89,7 +89,7 @@ describe('journals pack source', () => {
     const required = ['background', 'arrival', 'features', 'outcomes', 'rewards', 'scaling'];
     for (const page of pages) {
       const html = page.text!.content;
-      const body = html.slice(html.indexOf('<div class="poi-body">'));
+      const body = html.slice(html.indexOf('<div class="poi-body"'));
       expect(body.length, page.name).toBeGreaterThan(0);
       for (const [heading] of body.matchAll(/<h[1-6][^>]*>/g)) expect(heading, page.name).toContain('data-no-toc');
       expect(body.match(/<p><(strong|em)>[^<]+\.<\/\1>/g) ?? [], page.name).toEqual([]);
@@ -104,6 +104,20 @@ describe('journals pack source', () => {
       const rows = [...site.text!.content.matchAll(/<div><dt>(\w+)<\/dt><dd>/g)].map((m) => m[1]);
       expect(rows[0], site.name).toBe('XP');
       expect(rows.slice(1).every((r) => r === 'Treasure' || r === 'Kingdom'), site.name).toBe(true);
+    }
+  });
+
+  it('illuminates every Background while preserving its complete text', () => {
+    const backgrounds = [...readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8').matchAll(/^\*\*Background\.\*\* (.+)$/gm)];
+    expect(backgrounds).toHaveLength(sites.length);
+    for (const [index, site] of sites.entries()) {
+      const paragraph = site.text!.content.match(/poi-sec--background[\s\S]+?<p>([\s\S]*?)<\/p>/)?.[1];
+      const expected = marked.parseInline(linkChecks(backgrounds[index][1]), { async: false }) as string;
+      expect(paragraph?.replace(/<[^>]*>/g, ''), site.name).toBe(expected.replace(/<[^>]*>/g, ''));
+      const image = paragraph?.match(/<img class="nopopout" src="([^"]+)" alt="" aria-hidden="true"/);
+      expect(image, site.name).not.toBeNull();
+      expect(image![1]).toContain(`/initials/${backgrounds[index][1][0].toLowerCase()}.webp`);
+      expect(existsSync(servedFile(image![1])), site.name).toBe(true);
     }
   });
 
@@ -221,7 +235,7 @@ describe('linkChecks', () => {
   });
 });
 
-describe('outcome rows', () => {
+describe('numbered outcomes', () => {
   const renderers = {
     block: (md: string) => marked.parse(md, { async: false }) as string,
     inline: (md: string) => marked.parseInline(md, { async: false }) as string,
@@ -229,17 +243,18 @@ describe('outcome rows', () => {
 
   it('preserves emphasis, checks, and links in outcome descriptions', () => {
     const { body } = encounterParts('**Outcomes.**\n- **Released.** A DC 36 Religion check grants *peace*. See [the court](#court).\n- **Escaped.** The ankou reports to the queen.', renderers);
-    expect(body).toContain('<dt>Released.</dt>');
+    expect(body).toContain('<ol class="poi-outcomes">');
+    expect(body).toContain('<strong class="poi-term">Released.</strong>');
     expect(body).toContain('@Check[religion|dc:36]');
     expect(body).toContain('<em>peace</em>');
     expect(body).toContain('<a href="#court">the court</a>');
-    expect(body).toContain('<dt>Escaped.</dt><dd><p>The ankou reports to the queen.</p>');
+    expect(body).toContain('<strong class="poi-term">Escaped.</strong> The ankou reports to the queen.</p>');
   });
 
-  it('keeps an ordinary list when outcome labels are absent', () => {
+  it('numbers outcomes when labels are absent', () => {
     const { body } = encounterParts('**Outcomes.**\n- The scouts rest.\n- The court waits.', renderers);
-    expect(body).toContain('<ul>');
-    expect(body).toContain('<li>The scouts rest.</li>');
-    expect(body).not.toContain('poi-outcomes');
+    expect(body).toContain('<ol class="poi-outcomes">');
+    expect(body).toContain('<li><p>The scouts rest.</p>');
+    expect(body).toContain('<li><p>The court waits.</p>');
   });
 });

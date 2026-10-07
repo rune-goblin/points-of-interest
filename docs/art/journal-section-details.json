@@ -1,0 +1,15 @@
+{
+  "tool": "Built-in image_gen",
+  "reference": "docs/art/journal-samples/01-night-scriptorium.png",
+  "assets": [
+    {
+      "asset": "assets/journal/read-aloud-corner.webp",
+      "prompt": "Use case: background-extraction. Reference image: an illuminated manuscript page. Create ONE isolated TOP-LEFT corner ornament closely matching the curving Celtic gold knotwork on the Arrival read-aloud box in the reference. Deliver only this small ornamental component, not a page or complete frame. Portrait composition, about 2:3 width-to-height. Double thin gold rules form the outer top-left right angle with a small deep-indigo leaf-shaped inset. The interior edge is shaped by flowing interlaced golden ribbons and curving leaf tips, with generous transparent spaces between strands. Gold-leaf ink, subtly hand-painted edges, restrained fine detail that remains legible at 60 CSS pixels wide. The golden ribbons curve down along the left edge and extend a little across the top edge. Use warm antique gold, ivory highlights, tiny deep blue accents. No text, letters, numbers, background, parchment, black fill, drop shadow or bevel. Everything outside the ornament must be transparent. Keep complete ornament in frame with a minimal transparent safety margin. This is a responsive CSS corner image, which will be mirrored into four corners around live text."
+    },
+    {
+      "asset": "assets/journal/background-sprig.webp",
+      "prompt": "Use case: background-extraction. Reference image: illuminated manuscript page. Create one isolated slender vertical botanical ornament closely matching the little gold-stemmed blue-flowered sprig at the lower left of the reference page. Only the botanical sprig, no page, border or text. Portrait composition, narrow and tall. A delicate sinuous antique-gold stem curves upward from a loose curling base, with a few pointed gold leaves, one small five-petal deep lapis-blue flower near the middle and a second small blue bud. Two tiny gold star glints along the stem. Draw with elegant organic curves, plenty of open transparent negative space. Restrained medieval manuscript gold-leaf painting, fine but readable at 50 CSS pixels wide. Flat hand-painted gilding with subtle ink texture. No vase, frame, straight bar, background, parchment, black fill, bevel or cast shadow. Complete sprig within image with minimal transparent safety margin. Deliver true transparency."
+    }
+  ],
+  "processing": "Resize to 256 pixels wide with cwebp, quality 90, alpha quality 100; preserve generated transparency. CSS mirrors the knotwork corner around read-aloud text and uses the botanical sprig only in Background."
+}

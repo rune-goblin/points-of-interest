@@ -9,7 +9,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { marked } from 'marked';
-import { encounterParts, overviewHtml, type Renderers } from './journal-html.ts';
+import { encounterParts, overviewHtml, PAGE_RULE, type Renderers } from './journal-html.ts';
 import { MODULE_ID, ids, pad, rootFolder, slugify, stableId } from './stable-id.ts';
 
 const ROOT = process.cwd();
@@ -135,6 +135,12 @@ function sceneCard(scene: SceneDoc, showName: boolean): string {
 const TYPE_ORDER = ['npc', 'hazard', 'loot'];
 const KIND_LABEL: Record<string, string> = { hazard: 'Hazard', remains: 'Remains', cache: 'Treasure' };
 
+function illumination(number: number): 'night' | 'grove' | 'relic' {
+  if ([2, 4, 6, 12, 15, 17].includes(number)) return 'grove';
+  if ([8, 9, 11, 20, 21].includes(number)) return 'relic';
+  return 'night';
+}
+
 function tokenLink(actor: ActorDoc, count: number): string {
   const label = KIND_LABEL[String(actor.flags?.[MODULE_ID]?.kind)];
   return (
@@ -166,7 +172,7 @@ function siteHeader(number: number): string {
   if (offMap.length) {
     blocks.push(`<div class="poi-scene-block"><p class="poi-label">Not on the map</p>${cast(offMap, new Map())}</div>`);
   }
-  return blocks.length ? `<section class="poi-site">${blocks.join('\n')}</section>\n` : '';
+  return blocks.length ? `<section class="poi-site" data-illumination="${illumination(number)}">${blocks.join('\n')}</section>\n` : '';
 }
 
 // The encounter header tables are key/value pairs with a blank header row; drop it.
@@ -186,15 +192,15 @@ function kingsNote(s: Section, caption?: string): string {
   return `<figure class="poi-note"><img src="${note}" title="The King's Note" alt="${alt}">${text}</figure>\n`;
 }
 
-// Keep the artwork and cast together; the GM can expand the note and complete reference table.
+// The establishing image and cast share the dark banner; prose follows at its own reading measure.
 function encounterHtml(s: Section): string {
-  const { facts, caption, body } = encounterParts(s.body, renderers);
+  const { facts, caption, background, body } = encounterParts(s.body, renderers);
   const metadata = [...s.body.matchAll(/^\| \*\*(?:Type|Threat)\*\* \| (.+?) \|$/gm)]
     .map((match) => `<span>${renderers.inline(match[1])}</span>`).join('');
-  const head = `<header class="poi-masthead"><h1 data-no-toc>${escapeHtml(s.title)}</h1><p class="poi-metadata">${metadata}</p></header>`;
+  const head = `<header class="poi-masthead"><h1 data-no-toc>${escapeHtml(s.title)}</h1><p class="poi-metadata">${metadata}</p>${PAGE_RULE}</header>`;
   const reference = `<details class="poi-reference"><summary>The King's note &amp; encounter details</summary>` +
     `<div class="poi-reference-body">${kingsNote(s, caption)}${facts}</div></details>`;
-  return `${head}${siteHeader(s.number)}${reference}${body}`;
+  return `${head}${siteHeader(s.number)}<div class="poi-body" data-illumination="${illumination(s.number)}">${reference}${background}${body}${PAGE_RULE}</div>`;
 }
 
 function sitePage(s: Section) {

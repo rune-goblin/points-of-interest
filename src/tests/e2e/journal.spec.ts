@@ -77,13 +77,13 @@ test.describe('journal banner actions', () => {
     await expect(gmPage.locator('.points-of-interest-lightbox')).toHaveCount(0);
   });
 
-  test('keeps the note, facts, and outcome rows inside a narrow journal pane', async ({ gmPage }) => {
+  test('keeps the note, facts, and numbered outcomes inside a narrow journal pane', async ({ gmPage }) => {
     const page = gmPage.locator('.journal-page-content:has(.poi-masthead)');
     await page.evaluate((el) => { (el as HTMLElement).style.width = '300px'; });
     await page.locator('.poi-reference > summary').click();
     await expect(page.locator('.poi-note img')).toBeVisible();
     await expect(page.locator('.poi-facts')).toBeVisible();
-    await expect(page.locator('.poi-outcomes dt')).toHaveCount(4);
+    await expect(page.locator('ol.poi-outcomes > li')).toHaveCount(4);
     expect(await page.evaluate((el) => el.scrollWidth <= el.clientWidth + 1)).toBe(true);
   });
 });
