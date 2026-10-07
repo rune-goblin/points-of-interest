@@ -26,6 +26,20 @@ Oxblood headings, numbered features, outcome rows, and restrained heraldic corne
 
 These full-page screenshots capture the HTML/CSS preview on 7 October 2026 at a viewport width of 1200 pixels. They use the generated journal content, Establishing artwork, and Foundry/PF2e styles. The preview renders check and document links for display.
 
+### Aligned ornament pairs
+
+Larger margin illustrations now form aligned pairs. Each pair shares a top edge, height, and equal offsets from the content. Different motifs flank the banner and Outcomes; the lower pair anchors to one section. Wide pages reserve 7rem gutters, and pages below 52rem hide the margin artwork.
+
+Both ends of the masthead and footer now use mirrored filigree corners. Read-aloud frames retain their four mirrored corners, transparent center knot, and clear text padding.
+
+![Banner with aligned raven and moon ornaments and mirrored frame corners](output-banner-aligned.png)
+
+![Outcomes with aligned botanical ornaments](output-outcomes-aligned.png)
+
+[Full light page](output-light-aligned-margins.png) · [Full dark page](output-dark-aligned-margins.png) · [Mirrored footer](output-footer-mirrored.png) · [Grove arrangement](output-grove-aligned.png) · [Relic arrangement](output-relic-aligned.png)
+
+The [library guide](../journal-marginalia.md) records the current placement rules. Earlier iterations follow for comparison.
+
 ### Asymmetric margin ornaments
 
 The journal uses a five-element library: raven, crescent moon, berries, oak leaves, and blue flowers. Different motifs flank the banner at unequal heights and sizes. Smaller sprigs sit outside Features and Outcomes. Three stable arrangements vary their use across encounters, with horizontal flips where needed. The outer page retains an upper-right and lower-left filigree corner.
@@ -228,16 +242,17 @@ The dark theme pairs saturated vermilion headings with charcoal, ivory text, ant
 
 ## Decoration assets
 
-The built-in imagegen tool produced these transparent graphics. CSS mirrors the corners. Earlier revisions overlaid live numbers on the illustrated medallion; the current badges use CSS circles.
+The built-in imagegen tool produced these transparent graphics. The module uses the current filigree and simpler frame elements. The `retired/` folder preserves six graphics from earlier revisions outside the runtime assets. Earlier revisions overlaid live numbers on the illustrated medallion; the current badges use CSS circles.
 
 | Decoration | Asset | Generation prompt |
 |---|---|---|
-| Read-aloud box corner | [Curved gold knotwork](../../../assets/journal/read-aloud-corner.webp) | [Section detail prompts](../journal-section-details.json) |
-| Earlier Background sprig | [Gold leaves and blue flowers](../../../assets/journal/background-sprig.webp) | [Section detail prompts](../journal-section-details.json) |
+| Earlier read-aloud box corner | [Curved gold knotwork](retired/read-aloud-corner.webp) | [Section detail prompts](../journal-section-details.json) |
+| Earlier Background sprig | [Gold leaves and blue flowers](retired/background-sprig.webp) | [Section detail prompts](../journal-section-details.json) |
 | Outer page filigree | [Gold leaves and indigo ribbons](../../../assets/journal/page-corner-filigree.webp) | [Filigree edit prompt](../journal-page-filigree.json) |
-| Earlier angular page corner | [Indigo and gold](../../../assets/journal/page-corner.webp) | [Page corner prompt](../journal-page-corner.json) |
-| Arrival section corner | [Oxblood and gold](../../../assets/journal/manuscript-corner.webp) | [Section corner prompt](../journal-corner.json) |
-| Earlier feature medallion | [Indigo and gold](../../../assets/journal/feature-medallion.webp) | [Medallion prompt](../journal-medallion.json) |
+| Earlier angular page corner | [Indigo and gold](retired/page-corner.webp) | [Page corner prompt](../journal-page-corner.json) |
+| Earlier Arrival section corner | [Oxblood and gold](retired/manuscript-corner.webp) | [Section corner prompt](../journal-corner.json) |
+| Earlier feature medallion | [Indigo and gold](retired/feature-medallion.webp) | [Medallion prompt](../journal-medallion.json) |
+| Earlier border knot | [Gold and vermilion knotwork](retired/knotwork.webp) | [Ornament prompt](../journal-ornament.json) |
 
 ## Supplied references
 

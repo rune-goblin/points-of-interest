@@ -7,30 +7,31 @@ Five organic margin ornaments give the journal varied silhouettes. Four new illu
 | Element | Asset | Suggested placement |
 |---|---|---|
 | Raven on a branch | [Raven](../../assets/journal/marginalia/raven-branch.webp) | Larger banner margin, facing inward |
-| Moon above a vine | [Moon](../../assets/journal/marginalia/moon-vine.webp) | Higher, shorter counterpoint to the raven |
+| Moon above a vine | [Moon](../../assets/journal/marginalia/moon-vine.webp) | Aligned counterpoint to the raven |
 | Berry sprig | [Berries](../../assets/journal/marginalia/berry-sprig.webp) | Quiet section margin |
 | Oak leaves and acorns | [Oak](../../assets/journal/marginalia/oak-sprig.webp) | Botanical banner or section margin |
-| Blue-flower sprig | [Blue flowers](../../assets/journal/marginalia/blue-flower-sprig.webp) | Small section margin |
+| Blue-flower sprig | [Blue flowers](../../assets/journal/marginalia/blue-flower-sprig.webp) | Banner or section margin |
 
 Flip individual ornaments horizontally with `scaleX(-1)`. Keep birds, moons, and plants upright. Preserve each asset's aspect ratio with `background-size: contain`.
 
 ## Placement rules
 
-- Use at most four margin ornaments on an encounter page: two by the banner, one by Features, and one by Outcomes.
-- Pair different elements, and vary their height and scale. Keep at least 24px between a body ornament and the reading column.
-- Reserve 5rem on each side of wide banners and prose. Below a 52rem page width, hide the margin ornaments and return that space to content.
+- Use at most four margin ornaments on an encounter page: a pair beside the banner and a pair beside Outcomes.
+- Pair different elements at the same height and size, with equal offsets from the content. Anchor both ornaments to the same section. Keep at least 24px between a body ornament and the reading column.
+- Banner ornaments occupy 6rem by 20rem areas. Outcomes ornaments occupy 5rem by 15rem areas, capped at the section's height. These areas preserve each illustration's proportions while giving both sides equal visual height.
+- Reserve 7rem on each side of wide banners and prose. Below a 52rem page width, hide the margin ornaments and return that space to content.
 - Keep the title, artwork buttons, numbered labels, and prose clear of decoration.
 - Use detailed foliage only at larger sizes. Small border graphics use broad loops and open shapes.
 
 `illumination()` in `scripts/build-journal.ts` selects a stable arrangement for each encounter. Both the banner and body receive the same `data-illumination` value. CSS controls placement and flipping.
 
-| Arrangement | Banner left | Banner right | Features left | Outcomes right |
+| Arrangement | Banner left | Banner right | Outcomes left | Outcomes right |
 |---|---|---|---|---|
 | Night | Raven | Moon | Berries | Blue flowers |
 | Grove | Oak | Blue flowers | Berries | Moon |
 | Relic | Moon | Berries | Oak | Blue flowers |
 
-The upper-right and lower-left outer page corners retain the larger gold filigree. The opposite ends use simple gold rules.
+Frame corners form mirrored pairs. Both ends of the masthead and footer use the larger gold filigree; the footer flips the full band vertically. Read-aloud boxes mirror the simpler corner artwork across all four corners. This symmetry gives frames a consistent structure while margin illustrations retain distinct silhouettes.
 
 ## Small frame elements
 

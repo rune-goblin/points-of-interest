@@ -91,7 +91,7 @@
     }
   ],
   "reusedAsset": {
-    "source": "assets/journal/background-sprig.webp",
+    "source": "docs/art/journal-samples/retired/background-sprig.webp",
     "asset": "assets/journal/marginalia/blue-flower-sprig.webp",
     "promptRecord": "docs/art/journal-section-details.json",
     "exportBounds": {

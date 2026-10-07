@@ -29,15 +29,15 @@ compendium packs from `packs/_source/`).
   H1 and H2 use the bundled IM Fell English font at its native 400 weight; H3 uses bold Gelasio.
   All H2s share their size and weight; color and ornament distinguish sections. Headings use mixed case.
   Paragraph, group, and section gaps use 12, 24, and 36 px; explicit margins prevent duplicate spacing.
-  Gold-leaf `assets/journal/page-corner-filigree.webp` ornaments mark the upper-right and lower-left page corners.
+  Gold-leaf `assets/journal/page-corner-filigree.webp` ornaments mirror each other at both ends of each page band.
   `PAGE_RULE` draws continuous double gold rules with a transparent central knot. It sits at the top of the
   masthead and flips vertically at the bottom of `.poi-body`. Keep H1 first in the masthead to avoid
   Foundry's extra margin on headings that follow another element.
   `data-illumination` selects a stable night, grove, or relic arrangement for each encounter.
   At widths of 52rem and above, two different botanical or animal ornaments flank the banner;
-  two smaller sprigs sit beside Features and Outcomes at unequal heights. Dedicated 5rem gutters
+  two smaller sprigs flank Outcomes. Each pair shares its size and vertical anchor. Dedicated 7rem gutters
   keep artwork clear of the image, controls, and reading column. Narrow pages omit these ornaments.
-  CSS flips individual motifs horizontally; it never pairs an image with its mirror on one page.
+  CSS flips individual motifs horizontally. Margin pairs use different artwork; frame corners use mirrored artwork.
   The library and placement rules live in `docs/art/journal-marginalia.md`.
   Each Background opens with a transparent gold-and-indigo illuminated initial from `assets/journal/initials/`.
   The five capitals A, H, M, O, and T cover the current encounter text. `illuminateBackground()` keeps
@@ -52,6 +52,8 @@ compendium packs from `packs/_source/`).
   CSS centers each number and aligns the badge with the first text line. Outcomes uses a semantic
   numbered list with bold run-in labels. All journal text has `text-shadow: none`.
   Prompts and visual comparisons live in `docs/art/journal-samples/README.md`.
+  Keep screenshots and concept art under `docs/art/`. Retired journal graphics live in
+  `docs/art/journal-samples/retired/`; `assets/journal/` holds only the graphics the module uses.
 - Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the
   `pf2e-kingmaker` region map (the key its hex HUD shows). The build copies it into the
   site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the map note from it.
@@ -64,8 +66,10 @@ compendium packs from `packs/_source/`).
   with its scenes (a banner per scene) and each scene's tokens, so `build-scenes.ts` runs before
   it in `npm run build`. Each banner uses the matching filename from `assets/establishing/`, falling
   back to a tactical-map preview when artwork is absent. Clicking `a.poi-scene-art[data-image]`
-  expands that artwork; the bottom-right `button.poi-show-map[data-map]` expands the tactical map,
-  and `button.poi-open-scene[data-scene]` views the scene, importing it and its actors when necessary.
+  expands that artwork; among the bottom-right buttons, `button.poi-show-players[data-image]` shares it
+  with every player through Foundry's `ImagePopout` (title hidden, since scene names reveal foes),
+  `button.poi-show-map[data-map]` expands the tactical map, and `button.poi-open-scene[data-scene]`
+  views the scene, importing it and its actors when necessary.
   `src/scene-links.ts` retains the legacy scene-card and zoom handlers for older world journals.
   Both images use `src/ui/MapLightbox.ts`, a modal `<dialog>` that keeps Escape from Foundry,
   whose dismiss key closes every framed window. Tokens are core content links (`data-link`) to world actors once the

@@ -50,7 +50,7 @@ npm run build:actors -- --system "<Foundry data>/systems/pf2e"   # or $PF2E_SYST
 
 It reads only the PF2e system's own compendia, never the premium `pf2e-kingmaker` module, and writes recipes rather than copies. `npm test` also runs `actors.hydrated.test.ts` against an installed PF2e system; run it after each PF2e update.
 
-Git LFS stores art in `assets/` and the PNG samples in `docs/art/journal-samples/`. Install it once (`brew install git-lfs`, then `git lfs install`) before cloning. Convert new tactical maps to lossy WebP at quality 75 before adding them:
+Git LFS stores runtime art in `assets/` and design samples and retired graphics in `docs/art/journal-samples/`. Install it once (`brew install git-lfs`, then `git lfs install`) before cloning. Convert new tactical maps to lossy WebP at quality 75 before adding them:
 
 ```bash
 cwebp -q 75 -m 6 input.png -o assets/maps/NN-name.webp

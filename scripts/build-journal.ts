@@ -118,7 +118,7 @@ function scenePreview(scene: SceneDoc): string {
 }
 
 // Match the exact scene filename: the Juggernaut's exterior and cargo hold have separate artwork.
-// The banner opens the establishing image; the two buttons open the tactical map or the scene.
+// The banner opens the establishing image; the buttons share it with players, or open the tactical map or the scene.
 function sceneCard(scene: SceneDoc, showName: boolean): string {
   const name = escapeHtml(scene.name.replace(/^\d+\. /, ''));
   const map = scene.levels[0].background.src;
@@ -127,6 +127,7 @@ function sceneCard(scene: SceneDoc, showName: boolean): string {
   const image = `<a class="poi-scene-art" href="${art}" data-image="${art}" data-caption="${name}" aria-label="Expand ${name}">` +
     `<img class="nopopout" src="${art}" alt="${name}" loading="lazy"></a>`;
   const buttons = `<div class="poi-scene-actions">` +
+    `<button type="button" class="poi-show-players" data-image="${art}" data-caption="${name}" aria-label="Show to players: ${name}"><i class="fa-solid fa-eye" aria-hidden="true"></i>Show to players</button>` +
     `<button type="button" class="poi-show-map" data-map="${map}" data-caption="${name}" aria-label="Show map: ${name}"><i class="fa-solid fa-map" aria-hidden="true"></i>Show map</button>` +
     `<button type="button" class="poi-open-scene" data-scene="${scene._id}" aria-label="Open scene: ${name}"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Open scene</button></div>`;
   return `<figure class="poi-scene-card">${image}${buttons}${showName ? `<figcaption>${name}</figcaption>` : ''}</figure>`;

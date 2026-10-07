@@ -30,9 +30,15 @@ async function viewScene(id: string): Promise<void> {
   else ui.notifications.error(t('Missing'));
 }
 
+// Scene names such as "The Unmaker" give the foe away, so players see the art without its title.
+function showPlayers(src: string, title: string): void {
+  new foundry.applications.apps.ImagePopout({ src, window: { title }, showTitle: false }).shareImage();
+}
+
 /**
- * Banners expand the establishing art. Show map expands the tactical map. Open scene views the
- * scene, importing it and its actors when necessary. Legacy cards retain their original actions.
+ * Banners expand the establishing art. Show to players shares it in Foundry's image popout. Show map
+ * expands the tactical map. Open scene views the scene, importing it and its actors when necessary.
+ * Legacy cards retain their original actions.
  */
 export function registerSceneLinks(): void {
   document.body.addEventListener('click', (event) => {
@@ -41,6 +47,12 @@ export function registerSceneLinks(): void {
     if (art) {
       event.preventDefault();
       MapLightbox.open(art.dataset.image!, art.dataset.caption ?? '');
+      return;
+    }
+    const share = target?.closest<HTMLElement>('.poi-show-players[data-image]');
+    if (share) {
+      event.preventDefault();
+      if (game.user.isGM) showPlayers(share.dataset.image!, share.dataset.caption ?? '');
       return;
     }
     const zoom = target?.closest<HTMLElement>('.poi-show-map[data-map], .poi-zoom[data-map]');

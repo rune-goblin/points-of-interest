@@ -1,6 +1,6 @@
 {
   "tool": "Built-in image_gen",
   "prompt": "Use case: stylized-concept\nAsset type: a transparent reusable top-left corner ornament for a readable medieval fantasy journal interface, inspired by illuminated manuscripts and Book of Kells detailing.\nCreate ONE small elegant L-shaped corner ornament only, oriented as the UPPER LEFT corner of a page: a short horizontal arm extends right from the upper left; a longer vertical arm extends down. An oxblood-red stepped corner panel with thin antique gold outlines, fine gold foliate interlace on the red, a little deep indigo and moss green, and one delicate tapered gold leaf flourish descending below. Flat hand-painted ink and gouache, subtle pigment texture, crisp dark outlines, restrained detail legible when only 40 pixels wide and 75 pixels tall. Keep the entire lower-right area and all space outside the ornament genuinely transparent. No text, no letters, no digits, no background, no parchment, no full border, no other ornaments, no drop shadow, no glow, no photoreal metal. Overall artwork proportion about 2:3. Leave clean transparent padding around it. The silhouette must allow prose to sit to the right without overlap.",
-  "asset": "assets/journal/manuscript-corner.webp",
+  "asset": "docs/art/journal-samples/retired/manuscript-corner.webp",
   "processing": "Crop transparent margins to (64, 80, 760, 1152); resize to 200 pixels wide; encode WebP at quality 90 and alpha quality 100."
 }

@@ -176,7 +176,7 @@ describe('journals pack source', () => {
     }
   });
 
-  it('pairs every banner with its own establishing art, tactical map, and scene action', () => {
+  it('pairs every banner with its own establishing art, player share, tactical map, and scene action', () => {
     for (const site of sites) {
       const html = site.text!.content;
       expect(html.indexOf('poi-site'), site.name).toBeLessThan(html.indexOf('poi-reference'));
@@ -189,6 +189,7 @@ describe('journals pack source', () => {
         expect(art, site.name).toBe(map?.replace('/assets/maps/', '/assets/establishing/'));
         expect(existsSync(servedFile(art!)), art).toBe(true);
         expect(banner).toContain(`href="${art}"`);
+        expect(banner).toContain(`class="poi-show-players" data-image="${art}"`);
         expect(banner).toContain('class="poi-show-map"');
         expect(banner).toContain('class="poi-open-scene"');
         const sceneId = banner.match(/data-scene="([^"]+)"/)?.[1];

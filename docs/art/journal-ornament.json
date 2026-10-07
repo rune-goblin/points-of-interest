@@ -1,6 +1,6 @@
 {
   "tool": "Built-in image_gen",
   "prompt": "Use case: stylized-concept\nAsset type: transparent decorative image for a medieval fantasy journal read-aloud frame.\nPrimary request: one restrained horizontal illuminated-manuscript knotwork ornament inspired by the Book of Kells. An elongated, symmetrical interlaced Celtic ribbon with a small central lozenge, tapering into two delicate curled terminals. Warm antique ochre gold, muted vermilion and a little deep moss green, fine dark ink outlines, flat hand-painted gouache with subtle natural pigment texture. Elegant, legible at about 220 pixels wide. Overall silhouette about 5:1 width to height, centered with generous transparent space around it. All gaps between the interlacing must be truly transparent. Isolated ornament only, no page, no parchment, no text, no letters, no mockup, no shadow, no glow, no photoreal metal, no surrounding frame. Keep the embellishment sparse and balanced.",
-  "asset": "assets/journal/knotwork.webp",
+  "asset": "docs/art/journal-samples/retired/knotwork.webp",
   "processing": "Crop the transparent margin to (68, 194, 1850, 406), resize to 740 pixels wide, and encode WebP at quality 90 with alpha quality 100."
 }

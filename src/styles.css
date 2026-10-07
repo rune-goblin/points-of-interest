@@ -89,14 +89,12 @@
   --poi-band-corner: 6rem;
   --poi-band-line: calc(var(--poi-band-corner) * 0.1);
   --poi-band-start: calc(var(--poi-band-corner) * 0.8);
-  --poi-band-start-left: var(--poi-band-start);
-  --poi-band-start-right: var(--poi-band-start);
   --poi-band-gold: var(--poi-gold);
   --poi-band-strokes: linear-gradient(to bottom, var(--poi-band-gold) 0 1px, transparent 1px 3px, var(--poi-band-gold) 3px 4px);
   position: absolute;
   inset-inline: 0.75rem;
   height: calc(var(--poi-band-corner) * 341 / 256);
-  background: var(--poi-band-strokes) left var(--poi-band-start-left) top var(--poi-band-line) / calc(100% - var(--poi-band-start-left) - var(--poi-band-start-right)) 4px no-repeat;
+  background: var(--poi-band-strokes) left var(--poi-band-start) top var(--poi-band-line) / calc(100% - 2 * var(--poi-band-start)) 4px no-repeat;
   pointer-events: none;
 }
 
@@ -131,17 +129,10 @@
 
 .poi-masthead > .poi-page-rule {
   --poi-band-gold: #c5a253;
-  --poi-band-start-left: 1rem;
   top: 0.75rem;
 }
 
-.poi-masthead > .poi-page-rule::before,
-.poi-body > .poi-page-rule::after {
-  display: none;
-}
-
 .poi-body > .poi-page-rule {
-  --poi-band-start-right: 1rem;
   bottom: 0.75rem;
   transform: scaleY(-1);
 }
@@ -311,29 +302,29 @@
 :is(.poi-site, .poi-body)[data-illumination] {
   --poi-margin-start: url("/modules/points-of-interest/assets/journal/marginalia/raven-branch.webp");
   --poi-margin-end: url("/modules/points-of-interest/assets/journal/marginalia/moon-vine.webp");
-  --poi-margin-features: url("/modules/points-of-interest/assets/journal/marginalia/berry-sprig.webp");
-  --poi-margin-outcomes: url("/modules/points-of-interest/assets/journal/marginalia/blue-flower-sprig.webp");
-  --poi-margin-feature-flip: 1;
-  --poi-margin-outcome-flip: -1;
+  --poi-margin-lower-start: url("/modules/points-of-interest/assets/journal/marginalia/berry-sprig.webp");
+  --poi-margin-lower-end: url("/modules/points-of-interest/assets/journal/marginalia/blue-flower-sprig.webp");
+  --poi-margin-lower-start-flip: 1;
+  --poi-margin-lower-end-flip: -1;
 }
 
 :is(.poi-site, .poi-body)[data-illumination="grove"] {
   --poi-margin-start: url("/modules/points-of-interest/assets/journal/marginalia/oak-sprig.webp");
   --poi-margin-end: url("/modules/points-of-interest/assets/journal/marginalia/blue-flower-sprig.webp");
-  --poi-margin-outcomes: url("/modules/points-of-interest/assets/journal/marginalia/moon-vine.webp");
-  --poi-margin-feature-flip: -1;
-  --poi-margin-outcome-flip: 1;
+  --poi-margin-lower-end: url("/modules/points-of-interest/assets/journal/marginalia/moon-vine.webp");
+  --poi-margin-lower-start-flip: -1;
+  --poi-margin-lower-end-flip: 1;
 }
 
 :is(.poi-site, .poi-body)[data-illumination="relic"] {
   --poi-margin-start: url("/modules/points-of-interest/assets/journal/marginalia/moon-vine.webp");
   --poi-margin-end: url("/modules/points-of-interest/assets/journal/marginalia/berry-sprig.webp");
-  --poi-margin-features: url("/modules/points-of-interest/assets/journal/marginalia/oak-sprig.webp");
+  --poi-margin-lower-start: url("/modules/points-of-interest/assets/journal/marginalia/oak-sprig.webp");
 }
 
 .poi-site[data-illumination]::before,
 .poi-site[data-illumination]::after,
-.poi-body[data-illumination] .poi-sec--features::before,
+.poi-body[data-illumination] .poi-sec--outcomes::before,
 .poi-body[data-illumination] .poi-sec--outcomes::after {
   content: "";
   display: none;
@@ -344,43 +335,45 @@
   pointer-events: none;
 }
 
+.poi-site[data-illumination]::before,
+.poi-site[data-illumination]::after {
+  top: 0.5rem;
+  width: 6rem;
+  height: 20rem;
+}
+
 .poi-site[data-illumination]::before {
-  top: 2.75rem;
   left: 0.5rem;
-  width: 4rem;
-  height: 17rem;
   background-image: var(--poi-margin-start);
 }
 
 .poi-site[data-illumination]::after {
-  top: 0.25rem;
-  right: 0.75rem;
-  width: 3.5rem;
-  height: 13rem;
+  right: 0.5rem;
   background-image: var(--poi-margin-end);
   transform: scaleX(-1);
 }
 
-.poi-body[data-illumination] :is(.poi-sec--features, .poi-sec--outcomes) {
+.poi-body[data-illumination] .poi-sec--outcomes {
   position: relative;
 }
 
-.poi-body[data-illumination] .poi-sec--features::before {
-  top: 5.5rem;
-  left: -4.25rem;
-  width: 2.75rem;
-  height: 10rem;
-  background-image: var(--poi-margin-features);
-  transform: scaleX(var(--poi-margin-feature-flip));
+.poi-body[data-illumination] .poi-sec--outcomes::before,
+.poi-body[data-illumination] .poi-sec--outcomes::after {
+  top: 0;
+  width: 5rem;
+  height: min(15rem, 100%);
+}
+
+.poi-body[data-illumination] .poi-sec--outcomes::before {
+  left: -6.5rem;
+  background-image: var(--poi-margin-lower-start);
+  transform: scaleX(var(--poi-margin-lower-start-flip));
 }
 
 .poi-body[data-illumination] .poi-sec--outcomes::after {
-  top: 1.5rem;
-  right: -4.25rem;
-  width: 2.5rem;
-  height: 8rem;
-  background-image: var(--poi-margin-outcomes);
-  transform: scaleX(var(--poi-margin-outcome-flip));
+  right: -6.5rem;
+  background-image: var(--poi-margin-lower-end);
+  transform: scaleX(var(--poi-margin-lower-end-flip));
 }
 
 .poi-scene-block {
@@ -433,7 +426,10 @@
   right: 0.75rem;
   bottom: 0.75rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.5rem;
+  max-width: calc(100% - 1.5rem);
 }
 
 .poi-scene-actions button {
@@ -1051,20 +1047,20 @@ strong.poi-term {
 
 @container poi-page (width >= 52rem) {
   .poi-site[data-illumination] .poi-scene-card {
-    margin-inline: 5rem;
+    margin-inline: 7rem;
   }
 
   .poi-site[data-illumination] .poi-cast {
-    padding-inline: 5rem;
+    padding-inline: 7rem;
   }
 
   .poi-body[data-illumination] {
-    padding-inline: 5rem;
+    padding-inline: 7rem;
   }
 
   .poi-site[data-illumination]::before,
   .poi-site[data-illumination]::after,
-  .poi-body[data-illumination] .poi-sec--features::before,
+  .poi-body[data-illumination] .poi-sec--outcomes::before,
   .poi-body[data-illumination] .poi-sec--outcomes::after {
     display: block;
   }
@@ -1117,6 +1113,7 @@ strong.poi-term {
   .poi-scene-actions {
     right: 0.5rem;
     bottom: 0.5rem;
+    max-width: calc(100% - 1rem);
   }
 
   .poi-scene-actions button {
