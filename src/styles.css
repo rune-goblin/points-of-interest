@@ -1244,3 +1244,23 @@ strong.poi-term {
     display: contents;
   }
 }
+
+/* The Influence tracker is frameless too, so it draws its own box. */
+.points-of-interest-influence {
+  --poi-tracker-gold: light-dark(#846021, #c5a253);
+  --poi-tracker-accent: light-dark(#790f1b, #dc5a3b);
+  --poi-tracker-rule: light-dark(rgb(132 96 33 / 35%), rgb(197 162 83 / 30%));
+  --poi-tracker-wash: light-dark(rgb(166 122 34 / 10%), rgb(197 162 83 / 10%));
+  --poi-tracker-display: "POI Fell English", Georgia, serif;
+  --poi-tracker-serif: Gelasio, Georgia, serif;
+  position: absolute;
+  z-index: var(--z-index-window);
+  padding: 0.5rem;
+  border: 1px solid light-dark(rgb(30 39 56 / 25%), rgb(236 230 216 / 20%));
+  border-radius: 6px;
+  background: light-dark(rgb(244 240 230 / 96%), rgb(22 24 30 / 94%));
+  color: light-dark(#1e2738, #ece6d8);
+  font-size: 1rem;
+  text-shadow: none;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 45%);
+}

@@ -5,6 +5,7 @@ import { checkWorldActors, hydrateActors, rebuildActors, registerActorHooks } fr
 import { importJournal, placeMapNotes, registerMapNoteHooks, tileSitePins } from './map-notes';
 import { registerRevealHooks } from './reveals';
 import { registerSceneLinks } from './scene-links';
+import { registerInfluencePanel } from './ui/InfluencePanel';
 import { registerRevealPanel } from './ui/RevealPanel';
 
 interface ModuleApi {
@@ -21,6 +22,7 @@ Hooks.once('init', () => {
   registerActorHooks();
   registerRevealHooks();
   registerRevealPanel();
+  registerInfluencePanel();
   console.log(`${MODULE_ID} | init`);
 });
 

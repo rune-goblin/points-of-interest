@@ -106,15 +106,17 @@ Twenty-one sites the King marked on his map of the western borderlands, written 
 
 *The clock.* The song lasts 6 rounds of social interaction before full dark. If the PCs have not reached 6 Influence with Maestra Rova by then, a cauthooj uses Staccato Strike to make a confused composer attack a PC, and the birds close in.
 
-**Maestra Ilsabet Rova** (human composer, leader)
+*Influence: Maestra Ilsabet Rova* (human composer and leader, level 11)
 - **Perception** +18; **Will** +16
 - **Discovery** DC 32 Perception, DC 30 Performance, DC 30 Academia Lore
 - **Influence Skills** DC 32 Performance (finishing a phrase alongside her), DC 34 Diplomacy, DC 34 Medicine (showing her the hand in the grass and her own wasting body), DC 36 Deception
-- **Influence 2:** Rova lets the PCs speak to the others and admits she has not eaten in "some days."
-- **Influence 4:** Rova agrees that the work could be finished "in a proper hall." She stops writing.
-- **Influence 6:** Rova orders the others to gather the scores and leave with the PCs.
-- **Resistances** Threats harden her; Intimidation checks take a –2 penalty and on a failure she shields her pages with her body. Any mention of the King's deadline makes her redouble her work.
-- **Weaknesses** She craves recognition. Praise of the composition backed by an actual musical demonstration grants a +2 circumstance bonus to the next Influence check. She fears the youngest composer, Pell, is dying; tending to Pell grants an extra Influence point.
+- **Influence 2** Rova lets the PCs speak to the others and admits she has not eaten in "some days."
+- **Influence 4** Rova agrees that the work could be finished "in a proper hall." She stops writing.
+- **Influence 6** Rova orders the others to gather the scores and leave with the PCs.
+- **Resistances** Threats harden her (+2 DC on Intimidation; on a failure she shields her pages with her body). Any mention of the King's deadline makes her redouble her work (+2 DC on the next check).
+- **Weaknesses** Praise of the composition backed by a musical demonstration feeds her craving for recognition (–2 DC on the next check). Tending to Pell, the youngest composer, eases her fear that he is dying (1 extra Influence point).
+- **Penalty** A critical failure costs the PCs 1 round of the song.
+- **Rounds** 6, until full dark.
 
 *Removing the singers.* Once the composers are clear of the meadow, the birds are trivial. The PCs can fight them, scare them off with a show of force, or leave them. If the PCs fight while the composers are still present, the cauthoojes use Hop-Dodge to redirect strikes into the confused composers.
 
@@ -153,22 +155,23 @@ Twenty-one sites the King marked on his map of the western borderlands, written 
 - **The stake.** Halward's head and his envoy's satchel, which holds the King's letter of offer (see Rewards).
 - **Moor outside.** Peat bog patches act as difficult terrain; a creature that critically fails an Athletics check while running through them is immobilised until it Escapes (DC 30).
 
-**Running the encounter.** The troll will not fight unless a head is insulted twice, the vote fails, or the PCs attack. The PCs negotiate with a council of nine heads. Five votes in favour wins the troll's agreement; five against ends the parley and starts a fight.
+**Running the encounter.** The troll will not fight unless a head is insulted twice, the vote fails, or the PCs attack. The PCs negotiate with a council of nine heads. Run it as an Influence encounter in which each Influence point is one head's vote. A success wins one head of the bloc the PC addresses, and a critical success wins two; a bloc gives no more votes than it has heads. Five votes in favour win the troll's agreement; five against end the parley and start a fight.
 
-*The heads.* Group them so the scene stays playable. Each group votes as a bloc unless a PC wins over an individual head.
+*The heads.* Group them in four blocs so the scene stays playable. Each Influence skill below names the bloc it sways.
 - **The Envoy** (1 head). Speaks as Halward. Vain, courtly, wants to be addressed as "Ser" and treated as a diplomat. Votes for any deal that flatters it.
 - **The Bellies** (3 heads). Want food: a cow per week, a stocked hunting ground, or a meal right now. Votes with whoever feeds them.
 - **The Grudges** (3 heads). Want revenge on the King for tricking them with "a meal that talked too much." They vote for any deal that hurts the King.
 - **The Old Heads** (2 heads). Ancient, slow and afraid. They want the barrow left alone; it holds their mother's bones. They vote against any deal that brings humans to the moor.
 
-**Influence (per bloc).**
-- **Discovery** DC 34 Perception or Society to separate the blocs and learn each one's want.
-- **Envoy:** DC 31 Diplomacy, DC 31 Society (court etiquette). Weakness: honorific titles (+2 to the check).
-- **Bellies:** DC 33 Nature (offering animal husbandry or hunting rights), DC 31 Diplomacy if food is offered on the spot.
-- **Grudges:** DC 34 Intimidation, DC 33 Deception or Diplomacy if the PCs share news of the King's defeat or offer them a chance to strike the King.
-- **Old Heads:** DC 36 Diplomacy, DC 33 Religion (honouring the mother's bones).
-- **Resistances** Any PC who speaks to only one head offends the others: –2 to the next check against a different bloc. Fire or electricity in sight (a torch, a spell) imposes a –2 penalty on all checks; trolls fear both.
-- **Penalty** A critical failure flips one head of that bloc to "against."
+*Influence: The Jotund Troll* (nine heads in four blocs, level 15)
+- **Perception** +26; **Will** +23
+- **Discovery** DC 34 Perception or Society (separates the blocs and learns each one's want)
+- **Influence Skills** DC 31 Diplomacy (the Envoy), DC 31 Society (the Envoy, court etiquette), DC 33 Nature (the Bellies, offering animal husbandry or hunting rights), DC 31 Diplomacy (the Bellies, with food offered on the spot), DC 34 Intimidation (the Grudges), DC 33 Deception or Diplomacy (the Grudges, with news of the King's defeat or a chance to strike him), DC 36 Diplomacy (the Old Heads), DC 33 Religion (the Old Heads, honouring their mother's bones)
+- **Influence 5** Five heads vote for the deal, and the troll agrees to it.
+- **Resistances** Any PC who speaks to only one head offends the others (+2 DC on the next check against a different bloc). Fire or electricity in sight, such as a torch or a spell, frightens every head (+2 DC on all checks).
+- **Weaknesses** The Envoy loves honorific titles (–2 DC on checks to sway the Envoy).
+- **Penalty** A critical failure turns one head of that bloc against the deal. Five heads against end the parley, and the troll fights.
+- **Rounds** No limit; the vote ends the parley.
 
 *The deal.* Possible agreements: the troll guards the moor road for the kingdom in exchange for a cow a week; it joins the PCs' army as a mercenary against the King; it simply surrenders the satchel and lets the PCs leave in peace.
 
@@ -525,14 +528,16 @@ Complex, Electricity, Fire, Mechanical, Trap
 
 *Awake (clock 6).* The guthallath tears free, smashes the scaffold, and fights at full strength. It opens with Annihilation Beams down the longest line of PCs, then wades in with Trample and Fist. It uses Improved Push to shove PCs into the remaining capacitor drums. Vane screams that he can still control it; he can't. The guthallath kills the engineers first if the PCs give it nobody better to fight.
 
-*Influence: Odalric Vane* (level 8 human engineer)
-- **Discovery** DC 26 Perception or Society; DC 24 Crafting
+*Influence: Odalric Vane* (human engineer, level 6)
+- **Perception** +14; **Will** +14
+- **Discovery** DC 26 Perception or Society, DC 24 Crafting
 - **Influence Skills** DC 28 Crafting (talking shop and pointing out the sigils' flaw), DC 26 Diplomacy, DC 30 Intimidation (he fears the PCs less than he fears poverty), DC 26 Society (offering a post in the PCs' kingdom)
 - **Influence 2** Vane admits the sigils fail once the Colossus wakes. He orders one apprentice off the scaffold; the clock advances only every other round.
 - **Influence 4** Vane stops work. The apprentices climb down, and the clock stops. He offers to help shut the construct down: with his help, scrubbing the sigils takes DC 34.
-- **Resistances** Mention of the King's defeat hardens him (+2 DC on the next check) unless the PC also offers him a future.
-- **Weaknesses** Praise for his craft or an offer of employment (–2 DC).
-- **Penalty** On a critical failure, Vane triggers the final sigil out of spite; the clock jumps by 2.
+- **Resistances** Mention of the King's defeat hardens him unless the PC also offers him a future (+2 DC on the next check).
+- **Weaknesses** Praise for his craft or an offer of employment softens him (–2 DC on the next check).
+- **Penalty** On a critical failure, Vane triggers the final sigil out of spite, and the Waking Clock jumps by 2.
+- **Rounds** No limit; the Waking Clock sets the pace.
 
 **Outcomes.**
 - **Guthallath never wakes.** The PCs win without a full fight, but the Colossus remains a dormant hazard. Kingdom engineers can study it for generations.
@@ -665,7 +670,7 @@ A PC who succeeds at the Trophy Walls check learns that the bandersnatch has wea
 
 **Running the encounter.**
 
-*Structure.* The audience runs as an exchange. The Speaker asks a question; a PC answers; then the PCs may ask one question in return. The Court runs for five exchanges. Track the Court's **Regard** with the Influence block below. The ankous speak only through Telepathy.
+*Structure.* The audience runs as an exchange. The Speaker asks a question; a PC answers; then the PCs may ask one question in return. The Court runs for five exchanges. Track the PCs' Influence with the Speaker's block below. The ankous speak only through Telepathy.
 
 *The Court's questions.* Pick or adapt:
 1. "What would you burn to keep your crown?"
@@ -674,17 +679,19 @@ A PC who succeeds at the Trophy Walls check learns that the bandersnatch has wea
 4. "Which of you is the ruler, truly?"
 5. "What do you dream of on the longest night?"
 
-Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 Deception check; the Court admires skilled liars. Every answer, true or false, reaches the Fey Queen. Record what the PCs say: you can use it in Chapters 10 and 11.
+An honest answer earns 1 Influence point. A lie earns it too if the liar succeeds at a DC 39 Deception check; the Court admires skilled liars. Every answer, true or false, reaches the Fey Queen. Record what the PCs say: you can use it in Chapters 10 and 11.
 
-*Influence: the Speaker* (ankou assassin, level 17)
-- **Discovery** DC 36 Perception; DC 34 Occultism or Nature (fey lore)
+*Influence: The Speaker* (ankou assassin, level 17)
+- **Perception** +30; **Will** +29
+- **Discovery** DC 36 Perception, DC 34 Occultism or Nature (fey lore)
 - **Influence Skills** DC 38 Deception, DC 38 Diplomacy, DC 41 Intimidation, DC 36 Performance (the Court enjoys a well-told story), DC 36 Nature or Occultism (proper courtly etiquette of the fey realm)
-- **Influence 3** The Court answers one question about the Fey Queen truthfully: her name, that she rules from the House at the Edge of Time, or that she was once one of the elder fey's favourites.
+- **Influence 3** The Court answers one question about the Fey Queen truthfully: her name, that she rules from her house beyond time, or that she was once one of the elder fey's favourites.
 - **Influence 5** The Speaker reveals that the Fey Queen intends to absorb the PCs' kingdom into the fey realm once it is grand enough.
 - **Influence 7** The Speaker gives the PCs a black feather. Showing it once to any ankou prevents that ankou from attacking for one encounter.
 - **Resistances** Threats provoke contempt (+2 DC on Intimidation). Mentioning the Trickster Lord makes the Speaker cold (+5 DC on the next check).
-- **Weaknesses** Answering a question with a story or a song (–2 DC on Performance). Showing a cloak or token taken from a spared ankou (–2 DC on all checks).
+- **Weaknesses** Answering a question with a story or a song delights the Court (–2 DC on Performance). Showing a cloak or token taken from a spared ankou earns its respect (–2 DC on all checks).
 - **Penalty** Attacking an ankou, refusing to answer twice, or failing two checks by 10 or more ends the audience. The Court attacks.
+- **Rounds** 5 exchanges.
 
 *If it becomes a fight.* The Speaker uses Shadow Doubles for three actions at once, flooding the grove with duplicates. The four ankous fly in pairs, flanking for Sneak Attack. They fight to drive the PCs from the grove and withdraw if the Speaker dies.
 
@@ -775,16 +782,17 @@ Honest answers raise Regard. Lies raise it too if the liar succeeds at a DC 39 D
 
 **Running the encounter.** The herald opens with a demand and keeps the conversation on its terms. Run it as an Influence encounter. The PCs have 4 rounds of conversation before the herald loses patience and orders them to leave. If they refuse at that point, it attacks.
 
-**Vilderavn herald (Influence)**
-- **Perception** DC 39 (Sense Motive against its lies)
-- **Discovery** DC 37 Fey Lore or Occultism; DC 39 Perception, Nature or Society
+*Influence: The Vilderavn Herald* (vilderavn, level 19)
+- **Perception** +35; **Will** +33
+- **Discovery** DC 37 Fey Lore or Occultism, DC 39 Perception, Nature or Society
 - **Influence Skills** DC 39 Deception (playing along with the lie), DC 39 Diplomacy, DC 41 Intimidation, DC 37 Performance (it admires a well-turned courtly phrase), DC 36 Fey Lore or Lore about the elder fey
-- **Influence 2:** The herald concedes that the PCs may pass along the forest's edge unharmed. It lets slip that it "serves a crown older than any queen."
-- **Influence 4:** The herald admits it serves the Trickster Lord. It hints that the Trickster Lord wants the PCs' kingdom strong and that "a gift grown fat is a gift worth giving." Perceptive PCs (DC 39 Perception or Sense Motive) realise the Fey Queen means to take their kingdom.
-- **Influence 6:** The herald, amused, offers a token: a black raven feather. Once, a creature holding it may ask the Trickster Lord's court a single question in Chapter 11, or it may serve as safe passage past one fey guardian loyal to the Trickster Lord (GM's choice). It then departs.
-- **Resistances** Threats over the PCs' kingdom's strength amuse the herald (+2 DC to Intimidation). It hates being called the Fey Queen's servant once its cover breaks (+2 DC to Diplomacy that round).
-- **Weaknesses** Courtly etiquette and flattery of the Trickster Lord (–2 DC to Diplomacy and Performance). Mentioning the King's flight lets the herald sneer at him at length, and it reveals one discovery for free.
+- **Influence 2** The herald concedes that the PCs may pass along the forest's edge unharmed. It lets slip that it "serves a crown older than any queen."
+- **Influence 4** The herald admits it serves the Trickster Lord. It hints that the Trickster Lord wants the PCs' kingdom strong and that "a gift grown fat is a gift worth giving." Perceptive PCs (DC 39 Perception or Sense Motive) realise the Fey Queen means to take their kingdom.
+- **Influence 6** The herald, amused, offers a token: a black raven feather. Once, a creature holding it may ask the Trickster Lord's court a single question in Chapter 11, or it may serve as safe passage past one fey guardian loyal to the Trickster Lord (GM's choice). It then departs.
+- **Resistances** Threats over the PCs' kingdom's strength amuse the herald (+2 DC on Intimidation). Once its cover breaks, calling it the Fey Queen's servant offends it (+2 DC on Diplomacy that round).
+- **Weaknesses** Courtly etiquette and flattery of the Trickster Lord charm it (–2 DC on Diplomacy and Performance). Mentioning the King's flight lets the herald sneer at him at length (it reveals one discovery for free).
 - **Penalty** Each failure on an Influence check costs the PCs 1 round. Critical failures with Intimidation trigger combat.
+- **Rounds** 4, before the herald loses patience.
 
 **Combat.** If combat begins, the herald fights to drive the PCs out and avoids killing them. It uses Aura of Disquietude to break the party's cohesion and its greatsword for nonlethal attacks once a PC drops below a quarter of their HP. The greatsword carries greater brilliant and greater fearsome runes: each hit deals an extra 1d4 fire, and a critical hit leaves the target frightened 2 and blinded for 1 round unless it succeeds at a DC 41 Fortitude save. The zomok uses Entombing Breath on clustered PCs and Swallow Whole on the strongest melee combatant. It spits the creature out at the forest edge when the fight ends. Both withdraw with Forest Step if either drops below 100 HP, and the herald calls out: "Go home. Grow strong. Someone is counting on you."
 
@@ -864,16 +872,17 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 
 **Running the encounter.** Vashkra opens with conversation. She knows the PCs did not come from the King's city and is curious. Run an Influence encounter over 5 rounds. She has no patience for threats, and the curse makes any fight costly even if the PCs win.
 
-**Vashkra the tor linnorm (Influence)**
-- **Perception** DC 42
-- **Discovery** DC 40 Nature or Arcana; DC 42 Society
+*Influence: Vashkra* (tor linnorm, level 21)
+- **Perception** +37; **Will** +33
+- **Discovery** DC 40 Nature or Arcana, DC 42 Society
 - **Influence Skills** DC 42 Diplomacy, DC 44 Deception, DC 47 Intimidation, DC 40 Performance (she loves sagas of battle), DC 38 Lore about the river realms or the northern kingdom (news of the world)
-- **Influence 2:** Vashkra agrees to let the PCs themselves pass.
-- **Influence 4:** Vashkra names her tribute: a magic item of level 17 or higher, or an equivalent hoard (12,000 gp in metals and gems), delivered every year on midwinter. In return she lets caravans bearing the PCs' banner use the pass.
-- **Influence 6:** Vashkra accepts a smaller tribute (6,000 gp per year) and promises to burn any royal or Wild Hunt force that enters the pass. She tells the PCs that "riders without tracks" have tested her pass twice this season.
-- **Resistances** Mentions of the King or his city (+2 DC to all checks that round). Any threat to kill her (+5 DC Intimidation; she reminds them of the curse).
-- **Weaknesses** Tales of great battles, especially the PCs' own war against the King (–2 DC Performance). Offering tribute up front (–2 DC Diplomacy).
+- **Influence 2** Vashkra agrees to let the PCs themselves pass.
+- **Influence 4** Vashkra names her tribute: a magic item of level 17 or higher, or an equivalent hoard (12,000 gp in metals and gems), delivered every year on midwinter. In return she lets caravans bearing the PCs' banner use the pass.
+- **Influence 6** Vashkra accepts a smaller tribute (6,000 gp per year) and promises to burn any royal or Wild Hunt force that enters the pass. She tells the PCs that "riders without tracks" have tested her pass twice this season.
+- **Resistances** Mentions of the King or his city sour her (+2 DC on all checks that round). Any threat to kill her earns a reminder of the curse (+5 DC on Intimidation).
+- **Weaknesses** Tales of great battles, especially the PCs' own war against the King, delight her (–2 DC on Performance). Tribute offered up front pleases her (–2 DC on Diplomacy).
 - **Penalty** Two critical failures provoke her: she uses Pyroclastic Breath once as a warning and gives the PCs one more round to leave.
+- **Rounds** 5.
 
 **Combat.** At party level 18 or higher, the PCs may choose to fight. Vashkra opens with Pyroclastic Breath, then uses Slashing Claws against multiple targets. She retreats into the magma vent to regenerate, which forces PCs to fight her near the fire. She keeps up Regeneration 20 until cold iron hits her. Whoever lands the killing blow must save against the Curse of Boiling Blood (DC 48 Will).
 

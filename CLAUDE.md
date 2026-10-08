@@ -23,7 +23,7 @@ compendium packs from `packs/_source/`).
   `scripts/journal-html.ts` structures the rest, so keep the markdown patterns it reads: a run-in label
   (`**Background.** …`) opens a section under a large heading, and an italic one (`*The heads.* …`) a
   sub-section; `**NAME** — HAZARD 15` (or `CREATURE`) starts a stat block that runs while paragraphs open
-  with a bold term; `**Name** (aside)` or `*Influence: Name* (aside)` followed by a list makes an Influence
+  with a bold term; `*Influence: Name* (descriptor, level N)` followed by a list makes an Influence
   card; the Rewards line splits into XP, Treasure and Kingdom rows at sentences opening "Treasure" or
   "Kingdom". Write checks as "DC 36 Religion", "DC 35 basic Reflex" or "Society or Crafting, DC 36": the
   build makes each a PF2e `@Check` a GM can roll or post to chat (read-aloud text excepted). `src/styles.css`
@@ -103,6 +103,20 @@ compendium packs from `packs/_source/`).
   A GM viewing such a scene also gets a frameless, draggable panel (`src/ui/RevealPanel.ts`) with a
   "Show the pit"/"Hide the pit" button per tile (the tile's name). Double-clicking its grip folds it to
   the grip alone and back; it reopens where and as the GM left it.
+- Influence blocks share one format, and the build rejects a block that breaks it
+  (`scripts/influence.ts`): `*Influence: Name* (descriptor, level N)`, then list lines labelled
+  Perception (with Will), Discovery, Influence Skills (entries each opening "DC N"), ascending
+  `Influence N` thresholds, Resistances and Weaknesses (one sentence per entry, its effect in
+  parentheses at the end), Penalty, and Rounds (a number, or "No limit; …"). One block per encounter.
+  The name must match an actor of the encounter, whole or as the end of its name ("Odalric Vane" finds
+  "Master Engineer Odalric Vane"). The build copies the parsed block, with that actor's portrait, into
+  the encounter page's `flags['points-of-interest'].influence` (`src/influence/model.ts` holds the
+  types). A GM viewing that encounter's scene gets a frameless Influence tracker
+  (`src/ui/InfluencePanel.ts`), which reads the block from the Adventure, so it follows module updates
+  without a re-import. The GM raises and lowers Influence and the round, reveals entries one at a time,
+  and presses Show players. State lives in the scene's `influence` flag (`src/influence/runtime.ts`);
+  each write also stores the view players get, so threshold text, the penalty and unrevealed entries
+  never reach a player's client. Players see the tracker on that scene while the GM shows it.
   Only #11 has one: the pit the guthallath leaves.
 - `scripts/build-actors.ts` → `packs/_source/actors/` (**committed, not part of `npm run build`**: it
   needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`, or

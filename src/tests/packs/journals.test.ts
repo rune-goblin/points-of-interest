@@ -2,12 +2,16 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { marked } from 'marked';
+import type { InfluenceData } from '../../influence/model';
 
 const ROOT = process.cwd();
 // Loaded at runtime: tsconfig.json's rootDir is src/, so a static import of scripts/ fails `npm run check`.
 const { linkChecks, encounterParts } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'journal-html.ts'))) as {
   linkChecks(md: string): string;
   encounterParts(md: string, renderers: { block(md: string): string; inline(md: string): string }): { body: string };
+};
+const { influenceBlocks } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'influence.ts'))) as {
+  influenceBlocks(md: string): Omit<InfluenceData, 'img'>[];
 };
 const MODULE_ID = 'points-of-interest';
 const SERVED = `modules/${MODULE_ID}/`;
@@ -22,7 +26,7 @@ interface Page {
   title: { show: boolean; level: number };
   ownership: { default: number };
   text?: { content: string };
-  flags: Record<string, { site?: number; hex?: string; icon?: string }>;
+  flags: Record<string, { site?: number; hex?: string; icon?: string; influence?: InfluenceData }>;
 }
 interface Journal {
   _id: string;
@@ -41,7 +45,8 @@ const journal = sources.find((d) => d._key.startsWith('!journal!')) as unknown a
 const folders = sources.filter((d) => d._key.startsWith('!folders!')) as unknown as { _id: string; name: string; type: string; folder: string | null }[];
 const pages = [...journal.pages].sort((a, b) => a.sort - b.sort);
 const sites = pages.filter((p) => p.flags[MODULE_ID]?.site !== undefined);
-const headings = [...readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8').matchAll(/^### (\d+)\. /gm)];
+const encountersMd = readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8');
+const headings = [...encountersMd.matchAll(/^### (\d+)\. /gm)];
 const servedFile = (path: string): string => join(ROOT, path.slice(SERVED.length));
 
 function packDocs(pack: string, collection: string): PackDoc[] {
@@ -195,6 +200,25 @@ describe('journals pack source', () => {
     }
   });
 
+  it('gives each Influence block a tracker showing the portrait of the actor it names', () => {
+    const withBlocks = encountersMd
+      .split(/^(?=### \d+\. )/m)
+      .filter((section) => /^\*Influence: /m.test(section))
+      .map((section) => Number(section.match(/^### (\d+)\./)![1]));
+    const tracked = sites.filter((p) => p.flags[MODULE_ID].influence);
+    expect(tracked.map((p) => p.flags[MODULE_ID].site)).toEqual(withBlocks);
+    for (const page of tracked) {
+      const data = page.flags[MODULE_ID].influence!;
+      const number = page.flags[MODULE_ID].site;
+      expect(data.img, page.name).toMatch(new RegExp(`^${SERVED}assets/portraits/${String(number).padStart(2, '0')}-`));
+      expect(existsSync(servedFile(data.img)), data.img).toBe(true);
+      expect(data.aside, page.name).toMatch(/, level \d+$/);
+      expect(data.skills.every((skill) => /^DC \d+ /.test(skill)), page.name).toBe(true);
+      for (const entry of [...data.resistances, ...data.weaknesses]) expect(entry, page.name).toMatch(/\)\.$/);
+      expect(page.text!.content, page.name).toContain(`<section class="poi-card poi-influence"><header class="poi-card-head"><h3 data-no-toc>${data.name}</h3>`);
+    }
+  });
+
   it('ships three distinct manuscript illustrations for every encounter', () => {
     const all = new Set<string>();
     for (const site of sites) {
@@ -296,5 +320,43 @@ describe('numbered outcomes', () => {
     expect(body).toContain('<ol class="poi-outcomes">');
     expect(body).toContain('<li><p>The scouts rest.</p>');
     expect(body).toContain('<li><p>The court waits.</p>');
+  });
+});
+
+describe('influenceBlocks', () => {
+  const block = (lines: string[]) => ['*Influence: The Herald* (vilderavn, level 19)', ...lines].join('\n');
+  const complete = [
+    '- **Perception** +35; **Will** +33',
+    '- **Discovery** DC 37 Occultism, DC 39 Perception, Nature or Society',
+    '- **Influence Skills** DC 39 Deception (playing along, with care), DC 39 Diplomacy',
+    '- **Influence 2** It lets the PCs pass.',
+    '- **Influence 4** It names its *master*.',
+    '- **Resistances** Threats amuse it (+2 DC on Intimidation). Its cover matters (+2 DC that round).',
+    '- **Weaknesses** Flattery charms it (–2 DC on Diplomacy).',
+    '- **Penalty** Each failure costs 1 round.',
+    '- **Rounds** 4, before it loses patience.',
+  ];
+
+  it('reads thresholds, one entry per skill and one per sentence of resistances and weaknesses', () => {
+    const [data] = influenceBlocks(block(complete));
+    expect(data.name).toBe('The Herald');
+    expect(data.aside).toBe('vilderavn, level 19');
+    expect(data.skills).toEqual(['DC 39 Deception (playing along, with care)', 'DC 39 Diplomacy']);
+    expect(data.thresholds).toEqual([{ points: 2, text: 'It lets the PCs pass.' }, { points: 4, text: 'It names its master.' }]);
+    expect(data.resistances).toEqual(['Threats amuse it (+2 DC on Intimidation).', 'Its cover matters (+2 DC that round).']);
+    expect(data.rounds).toBe(4);
+  });
+
+  it('reads an encounter with no round limit', () => {
+    const [data] = influenceBlocks(block(complete.map((line) => (line.startsWith('- **Rounds**') ? '- **Rounds** No limit; the vote ends it.' : line))));
+    expect(data.rounds).toBeNull();
+  });
+
+  it('rejects a block that misses a field or lists its thresholds out of order', () => {
+    expect(() => influenceBlocks(block(complete.filter((line) => !line.startsWith('- **Penalty**'))))).toThrow(/lacks Penalty/);
+    expect(() => influenceBlocks(block(complete.filter((line) => !line.startsWith('- **Influence ') || line.includes('Skills'))))).toThrow(/no Influence thresholds/);
+    const swapped = [...complete];
+    [swapped[3], swapped[4]] = [swapped[4], swapped[3]];
+    expect(() => influenceBlocks(block(swapped))).toThrow(/out of order/);
   });
 });

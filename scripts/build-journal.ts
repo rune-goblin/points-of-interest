@@ -9,6 +9,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { marked } from 'marked';
+import { influenceBlocks } from './influence.ts';
 import { encounterParts, overviewHtml, PAGE_RULE, type Renderers } from './journal-html.ts';
 import { MODULE_ID, ids, pad, rootFolder, slugify, stableId } from './stable-id.ts';
 
@@ -89,7 +90,7 @@ function textPage(pageId: string, name: string, html: string, { level, sort, sho
 
 interface PackDoc { _id: string; _key: string; name: string; sort?: number; flags?: Record<string, Record<string, unknown>> }
 interface SceneDoc extends PackDoc { levels: { background: { src: string } }[]; tokens: { actorId: string }[] }
-interface ActorDoc extends PackDoc { type: string; prototypeToken: { texture: { src: string } } }
+interface ActorDoc extends PackDoc { type: string; img: string; prototypeToken: { texture: { src: string } } }
 
 // Scenes and actors carry their encounter number in a module flag, so each page can show its own.
 function byEncounter<T extends PackDoc>(pack: string, collection: string): Map<number, T[]> {
@@ -238,11 +239,27 @@ function overviewPage(): string {
   return `${head}${art}${overviewHtml(overviewMd, renderers)}`;
 }
 
+// The tracker shows the portrait of the actor its block names: "Odalric Vane" finds "Master Engineer Odalric Vane".
+function influence(s: Section) {
+  const blocks = influenceBlocks(s.body, `Encounter ${s.number}`);
+  if (blocks.length > 1) throw new Error(`Encounter ${s.number}: the Influence tracker supports one Influence block per encounter`);
+  const [block] = blocks;
+  if (!block) return undefined;
+  const name = block.name.toLowerCase();
+  const actor = (actorsByEncounter.get(s.number) ?? []).find((a) => {
+    const actorName = a.name.toLowerCase();
+    return a.type === 'npc' && (actorName === name || actorName.endsWith(` ${name}`));
+  });
+  if (!actor) throw new Error(`Encounter ${s.number}: no actor matches the Influence block "${block.name}"`);
+  return { ...block, img: actor.img };
+}
+
 function sitePage(s: Section) {
   const icon = artPath('map-icons', s.number);
+  const tracker = influence(s);
   // The masthead H1 carries the title, and the journal sidebar already numbers each page.
   return textPage(ids.encounterPage(s.slug), s.title, encounterHtml(s), { level: 1, sort: s.number * 1000, show: false }, {
-    [MODULE_ID]: { site: s.number, hex: s.hex, ...(icon ? { icon } : {}) },
+    [MODULE_ID]: { site: s.number, hex: s.hex, ...(icon ? { icon } : {}), ...(tracker ? { influence: tracker } : {}) },
   });
 }
 

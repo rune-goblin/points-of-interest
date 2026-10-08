@@ -16,6 +16,31 @@
       "Hide": "Hide {name}",
       "Grip": "Drag to move the panel; double-click to fold it"
     },
+    "Influence": {
+      "Grip": "Drag to move the tracker; double-click to fold it",
+      "Show": "Show players",
+      "Hide": "Hide from players",
+      "Points": "Influence",
+      "Raise": "Raise Influence",
+      "Lower": "Lower Influence",
+      "Meter": "Influence {points} of {goal}",
+      "Round": "Round {round} of {rounds}",
+      "NextRound": "Next round",
+      "PreviousRound": "Previous round",
+      "Thresholds": "Thresholds",
+      "Reveal": "Reveal to players",
+      "Groups": {
+        "discovery": "Discovery",
+        "skills": "Influence skills",
+        "resistances": "Resistances",
+        "weaknesses": "Weaknesses"
+      },
+      "Penalty": "Penalty",
+      "Nothing": "Nothing discovered yet.",
+      "Reset": "Reset the tracker",
+      "ResetTitle": "Reset the Influence Tracker",
+      "ResetPrompt": "Reset the Influence tracker for {name}? Influence, the round and every revealed entry return to the start, and players stop seeing it."
+    },
     "SceneLinks": {
       "Missing": "This scene is missing from the Points of Interest Adventure. Run npm run build."
     },
