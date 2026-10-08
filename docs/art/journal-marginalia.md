@@ -1,6 +1,6 @@
 # Journal ornament library
 
-Five organic margin ornaments give the journal varied silhouettes. Four new illustrations join the existing blue-flower sprig. Each has a transparent background and remains separate from the text. The built-in image generator produced the artwork; [the prompt record](journal-marginalia.json) contains its inputs. [The sample index](journal-samples/README.md) holds the originals and previews.
+Five organic margin ornaments give the journal varied silhouettes. Four new illustrations join the existing blue-flower sprig. Each has a transparent background and remains separate from the text. The built-in image generator produced the artwork; [the prompt record](journal-marginalia.json) contains its inputs. [The source index](journal-sources/README.md) holds the originals.
 
 The encounter-specific manuscript illustrations extend this library. Both sets remain in use: ornaments flank the banner and Outcomes, while creature drawings sit left of Running the encounter and detail drawings sit right of Rewards.
 

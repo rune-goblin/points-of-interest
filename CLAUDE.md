@@ -61,9 +61,10 @@ compendium packs from `packs/_source/`).
   Spoken text aligns left at every width. Features uses 26 px indigo circles with thin gold borders;
   CSS centers each number and aligns the badge with the first text line. Outcomes uses a semantic
   numbered list with bold run-in labels. All journal text has `text-shadow: none`.
-  Prompts and visual comparisons live in `docs/art/journal-samples/README.md`.
-  Keep screenshots and concept art under `docs/art/`. Retired journal graphics live in
-  `docs/art/journal-samples/retired/`; `assets/journal/` holds only the graphics the module uses.
+  `docs/art/journal-sources/` keeps the full-size originals of shipped journal art and the images
+  the generator used as references; the `docs/art/journal-*.json` records point there.
+  `assets/journal/` holds only the graphics the module uses. Screenshots, abandoned concepts and
+  retired graphics stay out of the repository; take screenshots in the scratchpad.
 - Each encounter's header table has a `| **Hex** | row.col |` row: the site's hex on the
   `pf2e-kingmaker` region map (the key its hex HUD shows). The build copies it into the
   site's encounter page `flags['points-of-interest'].hex`, and `src/map-notes.ts` places the site's tile and pin from it.

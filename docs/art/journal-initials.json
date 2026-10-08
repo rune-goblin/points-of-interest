@@ -12,11 +12,11 @@
         20,
         21
       ],
-      "original": "docs/art/journal-samples/illuminated-a.png",
+      "original": "docs/art/journal-sources/illuminated-a.png",
       "asset": "assets/journal/initials/a.webp",
       "generatedSource": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-d178be82-9da4-4d00-b377-e1e3612bcdf2.png",
       "prompt": "Use case: stylized-concept.\nAsset type: transparent illuminated initial for a medieval manuscript journal, displayed at about 80 CSS pixels tall next to 18px prose.\nPrimary request: ONE unmistakable uppercase Latin letter \"A\" as a freestanding illuminated manuscript initial. The letter itself is broad, elegant, a readable medieval Roman serif capital, with antique gold-leaf strokes, muted ivory-gold highlights and restrained deep lapis-indigo enamel inlays. A few curling gold acanthus leaves and fine interlaced tendrils grow organically from the letter and thread through its strokes. Strong clear silhouette and generous open negative space. Hand-painted Book of Kells-inspired manuscript illumination, subtle gold ink grain, flat artwork with delicate dark ink edges for legibility on both ivory parchment and charcoal.\nComposition: square transparent canvas, complete letter and foliage centered, closely fitted with a small even transparent safety margin. Letter occupies most of height and remains legible when reduced to 80 pixels. Foliage follows curved contours of letter, restrained enough for reading, not a dense tangle.\nText (verbatim): \"A\". Exactly one letter, no other text.\nConstraints: NO enclosing box, rectangular border, tile, medallion, surrounding frame, background field, paper texture, scenery, shadow, glow, bevel, 3D extrusion, or watermark. True alpha transparency outside and inside openings of the letter and between leaves.\nReference image 1 is the capital T from the same alphabet. Create a NEW letter asset, not an edit of the T. Match its stroke weight, gold-leaf grain, indigo inlay, fine dark contour, restrained curved foliage, flat illumination, and overall visual height. Adapt the letterform and tendrils naturally to the requested letter; keep the single capital unmistakable.",
-      "reference": "docs/art/journal-samples/illuminated-t.png"
+      "reference": "docs/art/journal-sources/illuminated-t.png"
     },
     {
       "letter": "H",
@@ -24,33 +24,33 @@
         2,
         4
       ],
-      "original": "docs/art/journal-samples/illuminated-h.png",
+      "original": "docs/art/journal-sources/illuminated-h.png",
       "asset": "assets/journal/initials/h.webp",
       "generatedSource": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-e5b39fc1-670b-425b-b18f-01011fcecdaf.png",
       "prompt": "Use case: stylized-concept.\nAsset type: transparent illuminated initial for a medieval manuscript journal, displayed at about 80 CSS pixels tall next to 18px prose.\nPrimary request: ONE unmistakable uppercase Latin letter \"H\" as a freestanding illuminated manuscript initial. The letter itself is broad, elegant, a readable medieval Roman serif capital, with antique gold-leaf strokes, muted ivory-gold highlights and restrained deep lapis-indigo enamel inlays. A few curling gold acanthus leaves and fine interlaced tendrils grow organically from the letter and thread through its strokes. Strong clear silhouette and generous open negative space. Hand-painted Book of Kells-inspired manuscript illumination, subtle gold ink grain, flat artwork with delicate dark ink edges for legibility on both ivory parchment and charcoal.\nComposition: square transparent canvas, complete letter and foliage centered, closely fitted with a small even transparent safety margin. Letter occupies most of height and remains legible when reduced to 80 pixels. Foliage follows curved contours of letter, restrained enough for reading, not a dense tangle.\nText (verbatim): \"H\". Exactly one letter, no other text.\nConstraints: NO enclosing box, rectangular border, tile, medallion, surrounding frame, background field, paper texture, scenery, shadow, glow, bevel, 3D extrusion, or watermark. True alpha transparency outside and inside openings of the letter and between leaves.\nReference image 1 is the capital T from the same alphabet. Create a NEW letter asset, not an edit of the T. Match its stroke weight, gold-leaf grain, indigo inlay, fine dark contour, restrained curved foliage, flat illumination, and overall visual height. Adapt the letterform and tendrils naturally to the requested letter; keep the single capital unmistakable.",
-      "reference": "docs/art/journal-samples/illuminated-t.png"
+      "reference": "docs/art/journal-sources/illuminated-t.png"
     },
     {
       "letter": "M",
       "sites": [
         17
       ],
-      "original": "docs/art/journal-samples/illuminated-m.png",
+      "original": "docs/art/journal-sources/illuminated-m.png",
       "asset": "assets/journal/initials/m.webp",
       "generatedSource": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-6da32266-ea40-4df2-b1bc-46d52d7da508.png",
       "prompt": "Use case: stylized-concept.\nAsset type: transparent illuminated initial for a medieval manuscript journal, displayed at about 80 CSS pixels tall next to 18px prose.\nPrimary request: ONE unmistakable uppercase Latin letter \"M\" as a freestanding illuminated manuscript initial. The letter itself is broad, elegant, a readable medieval Roman serif capital, with antique gold-leaf strokes, muted ivory-gold highlights and restrained deep lapis-indigo enamel inlays. A few curling gold acanthus leaves and fine interlaced tendrils grow organically from the letter and thread through its strokes. Strong clear silhouette and generous open negative space. Hand-painted Book of Kells-inspired manuscript illumination, subtle gold ink grain, flat artwork with delicate dark ink edges for legibility on both ivory parchment and charcoal.\nComposition: square transparent canvas, complete letter and foliage centered, closely fitted with a small even transparent safety margin. Letter occupies most of height and remains legible when reduced to 80 pixels. Foliage follows curved contours of letter, restrained enough for reading, not a dense tangle.\nText (verbatim): \"M\". Exactly one letter, no other text.\nConstraints: NO enclosing box, rectangular border, tile, medallion, surrounding frame, background field, paper texture, scenery, shadow, glow, bevel, 3D extrusion, or watermark. True alpha transparency outside and inside openings of the letter and between leaves.\nReference image 1 is the capital T from the same alphabet. Create a NEW letter asset, not an edit of the T. Match its stroke weight, gold-leaf grain, indigo inlay, fine dark contour, restrained curved foliage, flat illumination, and overall visual height. Adapt the letterform and tendrils naturally to the requested letter; keep the single capital unmistakable.",
-      "reference": "docs/art/journal-samples/illuminated-t.png"
+      "reference": "docs/art/journal-sources/illuminated-t.png"
     },
     {
       "letter": "O",
       "sites": [
         12
       ],
-      "original": "docs/art/journal-samples/illuminated-o.png",
+      "original": "docs/art/journal-sources/illuminated-o.png",
       "asset": "assets/journal/initials/o.webp",
       "generatedSource": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-09c5fa4c-5136-4bee-ada6-aead4567684b.png",
       "prompt": "Use case: stylized-concept.\nAsset type: transparent illuminated initial for a medieval manuscript journal, displayed at about 80 CSS pixels tall next to 18px prose.\nPrimary request: ONE unmistakable uppercase Latin letter \"O\" as a freestanding illuminated manuscript initial. The letter itself is broad, elegant, a readable medieval Roman serif capital, with antique gold-leaf strokes, muted ivory-gold highlights and restrained deep lapis-indigo enamel inlays. A few curling gold acanthus leaves and fine interlaced tendrils grow organically from the letter and thread through its strokes. Strong clear silhouette and generous open negative space. Hand-painted Book of Kells-inspired manuscript illumination, subtle gold ink grain, flat artwork with delicate dark ink edges for legibility on both ivory parchment and charcoal.\nComposition: square transparent canvas, complete letter and foliage centered, closely fitted with a small even transparent safety margin. Letter occupies most of height and remains legible when reduced to 80 pixels. Foliage follows curved contours of letter, restrained enough for reading, not a dense tangle.\nText (verbatim): \"O\". Exactly one letter, no other text.\nConstraints: NO enclosing box, rectangular border, tile, medallion, surrounding frame, background field, paper texture, scenery, shadow, glow, bevel, 3D extrusion, or watermark. True alpha transparency outside and inside openings of the letter and between leaves.\nReference image 1 is the capital T from the same alphabet. Create a NEW letter asset, not an edit of the T. Match its stroke weight, gold-leaf grain, indigo inlay, fine dark contour, restrained curved foliage, flat illumination, and overall visual height. Adapt the letterform and tendrils naturally to the requested letter; keep the single capital unmistakable.",
-      "reference": "docs/art/journal-samples/illuminated-t.png"
+      "reference": "docs/art/journal-sources/illuminated-t.png"
     },
     {
       "letter": "T",
@@ -68,7 +68,7 @@
         18,
         19
       ],
-      "original": "docs/art/journal-samples/illuminated-t.png",
+      "original": "docs/art/journal-sources/illuminated-t.png",
       "asset": "assets/journal/initials/t.webp",
       "generatedSource": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-aa6f6b3c-59fe-4ad6-873f-32f9fc321e40.png",
       "prompt": "Use case: stylized-concept.\nAsset type: transparent illuminated initial for a medieval manuscript journal, displayed at about 80 CSS pixels tall next to 18px prose.\nPrimary request: ONE unmistakable uppercase Latin letter \"T\" as a freestanding illuminated manuscript initial. The letter itself is broad, elegant, a readable medieval Roman serif capital, with antique gold-leaf strokes, muted ivory-gold highlights and restrained deep lapis-indigo enamel inlays. A few curling gold acanthus leaves and fine interlaced tendrils grow organically from the letter and thread through its strokes. Strong clear silhouette and generous open negative space. Hand-painted Book of Kells-inspired manuscript illumination, subtle gold ink grain, flat artwork with delicate dark ink edges for legibility on both ivory parchment and charcoal.\nComposition: square transparent canvas, complete letter and foliage centered, closely fitted with a small even transparent safety margin. Letter occupies most of height and remains legible when reduced to 80 pixels. Foliage follows curved contours of letter, restrained enough for reading, not a dense tangle.\nText (verbatim): \"T\". Exactly one letter, no other text.\nConstraints: NO enclosing box, rectangular border, tile, medallion, surrounding frame, background field, paper texture, scenery, shadow, glow, bevel, 3D extrusion, or watermark. True alpha transparency outside and inside openings of the letter and between leaves."

@@ -5,10 +5,10 @@
     {
       "name": "raven-branch",
       "asset": "assets/journal/marginalia/raven-branch.webp",
-      "original": "docs/art/journal-samples/raven-branch.png",
+      "original": "docs/art/journal-sources/raven-branch.png",
       "source": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-71d40701-9541-431e-bb37-f4a1363e3ea3.png",
       "prompt": "Use case: stylized-concept.\nAsset type: reusable transparent margin ornament for a medieval manuscript journal.\nReference image 1 is a STYLE reference for the delicate botanical marginalia along the left and right edges. Deliver one isolated ornament only, not a page.\nStyle: sparse hand-painted illuminated manuscript linework. Slender warm antique-gold stems and fine gold-leaf edging, restrained deep lapis blue and muted vermilion accents. Natural organic curves, gentle asymmetry, large open transparent spaces, flat pigment with light ink texture. Fine but clearly readable when displayed 50 to 70 pixels wide and 150 to 260 pixels tall. Gold contours must remain visible on both dark charcoal and ivory paper. Avoid the heavy jewelry-like relief of a crest.\nComposition: narrow upright silhouette, about 1:3 width to height, centered and closely fitted on a portrait transparent canvas with a small safety margin. Entire ornament in frame. Freestanding organic shape that can be flipped horizontally in CSS.\nConstraints: true alpha transparency around every leaf and within all open spaces. No page, text, letters, number, straight rule, corner frame, rectangular box, solid background, parchment, glow, shadow, 3D bevel, watermark, or matching mirrored companion. One ornament.\nSubject: A small naturalistic charcoal-black raven in profile faces right, perched on a slender curling gold stem in the upper third. Its long folded wing has a few slate-blue feather highlights and a very fine gold contour. The stem trails well below the bird with a few narrow gold leaves, a single tiny blue flower, and two muted red berries. A small airy gold bud rises above and behind the raven. The bird is the focal point; the lower foliage is quiet and sparse. Uneven spacing, varied leaf sizes, no bilateral symmetry.",
-      "reference": "docs/art/journal-samples/01-night-scriptorium.png",
+      "reference": "docs/art/journal-sources/references/night-scriptorium.png",
       "alphaEdit": "Use case: background-extraction.\nInput image 1 is the EDIT TARGET.\nKeep the exact drawn subject, shape, colors, gold strokes, dark bird or indigo fills, and composition. Remove the entire dark background AND every soft amber/gold/blue halo or haze surrounding the artwork. Replace those pixels with true alpha=0 transparency, including the open gaps between stems and leaves and inside loops. Preserve only the crisp painted subject with clean antialiased edges. No aura, glow, shadow, gradient field, or semitransparent tinted backdrop. This is a cutout asset that must composite cleanly on WHITE paper as well as black. Fit the complete cutout closely in the output canvas, with only a thin even transparent safety margin. Do not redraw or add anything.",
       "exportBounds": {
         "x": 339,
@@ -20,10 +20,10 @@
     {
       "name": "moon-vine",
       "asset": "assets/journal/marginalia/moon-vine.webp",
-      "original": "docs/art/journal-samples/moon-vine.png",
+      "original": "docs/art/journal-sources/moon-vine.png",
       "source": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-de7e173d-dc72-499f-a956-f7598310a6cc.png",
       "prompt": "Use case: stylized-concept.\nAsset type: reusable transparent margin ornament for a medieval manuscript journal.\nReference image 1 is a STYLE reference for the delicate botanical marginalia along the left and right edges. Deliver one isolated ornament only, not a page.\nStyle: sparse hand-painted illuminated manuscript linework. Slender warm antique-gold stems and fine gold-leaf edging, restrained deep lapis blue and muted vermilion accents. Natural organic curves, gentle asymmetry, large open transparent spaces, flat pigment with light ink texture. Fine but clearly readable when displayed 50 to 70 pixels wide and 150 to 260 pixels tall. Gold contours must remain visible on both dark charcoal and ivory paper. Avoid the heavy jewelry-like relief of a crest.\nComposition: narrow upright silhouette, about 1:3 width to height, centered and closely fitted on a portrait transparent canvas with a small safety margin. Entire ornament in frame. Freestanding organic shape that can be flipped horizontally in CSS.\nConstraints: true alpha transparency around every leaf and within all open spaces. No page, text, letters, number, straight rule, corner frame, rectangular box, solid background, parchment, glow, shadow, 3D bevel, watermark, or matching mirrored companion. One ornament.\nSubject: A small antique-gold waxing crescent moon floats above an airy, slender flowering branch. Crescent is near the upper left of the branch and opens right. Below, an irregular gold stem rises from a loose curling base; a few slender leaves, two tiny lapis-blue flowers placed at different heights, one fine gold four-point star. The upper moon is separated from the branch by open transparency. Quieter and shorter visual rhythm than the raven ornament, with lots of negative space. No bird.",
-      "reference": "docs/art/journal-samples/01-night-scriptorium.png",
+      "reference": "docs/art/journal-sources/references/night-scriptorium.png",
       "exportBounds": {
         "x": 204,
         "y": 98,
@@ -34,10 +34,10 @@
     {
       "name": "berry-sprig",
       "asset": "assets/journal/marginalia/berry-sprig.webp",
-      "original": "docs/art/journal-samples/berry-sprig.png",
+      "original": "docs/art/journal-sources/berry-sprig.png",
       "source": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-bd572a71-a3e3-4549-9de2-d4f9acb30076.png",
       "prompt": "Use case: stylized-concept.\nAsset type: reusable transparent margin ornament for a medieval manuscript journal.\nReference image 1 is a STYLE reference for the delicate botanical marginalia along the left and right edges. Deliver one isolated ornament only, not a page.\nStyle: sparse hand-painted illuminated manuscript linework. Slender warm antique-gold stems and fine gold-leaf edging, restrained deep lapis blue and muted vermilion accents. Natural organic curves, gentle asymmetry, large open transparent spaces, flat pigment with light ink texture. Fine but clearly readable when displayed 50 to 70 pixels wide and 150 to 260 pixels tall. Gold contours must remain visible on both dark charcoal and ivory paper. Avoid the heavy jewelry-like relief of a crest.\nComposition: narrow upright silhouette, about 1:3 width to height, centered and closely fitted on a portrait transparent canvas with a small safety margin. Entire ornament in frame. Freestanding organic shape that can be flipped horizontally in CSS.\nConstraints: true alpha transparency around every leaf and within all open spaces. No page, text, letters, number, straight rule, corner frame, rectangular box, solid background, parchment, glow, shadow, 3D bevel, watermark, or matching mirrored companion. One ornament.\nSubject: A graceful loose S-shaped gold stem with five to seven narrow pointed leaves and two tiny clusters of three muted vermilion berries at unequal heights. A single small lapis-blue curled leaf near the base. The branch grows diagonally within a tall narrow silhouette, tapering to an open bud, with a relaxed curling lower terminal. Organic asymmetry and plentiful open space. No bird, moon, star, large flower, or enclosing frame.",
-      "reference": "docs/art/journal-samples/01-night-scriptorium.png",
+      "reference": "docs/art/journal-sources/references/night-scriptorium.png",
       "exportBounds": {
         "x": 122,
         "y": 30,
@@ -48,10 +48,10 @@
     {
       "name": "oak-sprig",
       "asset": "assets/journal/marginalia/oak-sprig.webp",
-      "original": "docs/art/journal-samples/oak-sprig.png",
+      "original": "docs/art/journal-sources/oak-sprig.png",
       "source": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-9aada8ee-8e15-4076-980c-0500eadfb8d3.png",
       "prompt": "Use case: stylized-concept.\nAsset type: reusable transparent margin ornament for a medieval manuscript journal.\nReference image 1 is a STYLE reference for the delicate botanical marginalia along the left and right edges. Deliver one isolated ornament only, not a page.\nStyle: sparse hand-painted illuminated manuscript linework. Slender warm antique-gold stems and fine gold-leaf edging, restrained deep lapis blue and muted vermilion accents. Natural organic curves, gentle asymmetry, large open transparent spaces, flat pigment with light ink texture. Fine but clearly readable when displayed 50 to 70 pixels wide and 150 to 260 pixels tall. Gold contours must remain visible on both dark charcoal and ivory paper. Avoid the heavy jewelry-like relief of a crest.\nComposition: narrow upright silhouette, about 1:3 width to height, centered and closely fitted on a portrait transparent canvas with a small safety margin. Entire ornament in frame. Freestanding organic shape that can be flipped horizontally in CSS.\nConstraints: true alpha transparency around every leaf and within all open spaces. No page, text, letters, number, straight rule, corner frame, rectangular box, solid background, parchment, glow, shadow, 3D bevel, watermark, or matching mirrored companion. One ornament.\nSubject: A narrow curving gold oak twig with three small lobed oak leaves at unequal heights and two tiny acorns, one hanging toward the right near the upper third. A restrained deep lapis-blue inset on one lower leaf. The twig trails into a simple open curl at the foot. Sparse botanical illumination with a distinct broken rhythm and open silhouette; no mirror symmetry. No bird, moon, flower, berries, or enclosing frame.",
-      "reference": "docs/art/journal-samples/01-night-scriptorium.png",
+      "reference": "docs/art/journal-sources/references/night-scriptorium.png",
       "alphaEdit": "Use case: background-extraction.\nInput image 1 is the EDIT TARGET.\nKeep the exact drawn subject, shape, colors, gold strokes, dark bird or indigo fills, and composition. Remove the entire dark background AND every soft amber/gold/blue halo or haze surrounding the artwork. Replace those pixels with true alpha=0 transparency, including the open gaps between stems and leaves and inside loops. Preserve only the crisp painted subject with clean antialiased edges. No aura, glow, shadow, gradient field, or semitransparent tinted backdrop. This is a cutout asset that must composite cleanly on WHITE paper as well as black. Fit the complete cutout closely in the output canvas, with only a thin even transparent safety margin. Do not redraw or add anything.",
       "exportBounds": {
         "x": 320,
@@ -63,10 +63,10 @@
     {
       "name": "read-aloud-corner-simple",
       "asset": "assets/journal/read-aloud-corner-simple.webp",
-      "original": "docs/art/journal-samples/read-aloud-corner-simple.png",
+      "original": "docs/art/journal-sources/read-aloud-corner-simple.png",
       "source": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-e37fb5af-ca74-4310-8a07-8e4cf56d0f2a.png",
       "prompt": "Use case: stylized-concept. Asset type: tiny transparent TOP-LEFT corner ornament for a read-aloud box in a medieval journal.\nReference image 1 is a STYLE reference for the Arrival gold frame. Create a NEW simplified corner for display at only 28 to 36 CSS pixels, not a crop of the reference.\nA single smooth antique-gold ribbon makes two broad interlaced loops around an open curved inner corner. A very small solid lapis-blue leaf-shaped inset fills one turn. A fine gold outer L-shaped stroke connects to horizontal and vertical CSS borders. Use only a few bold, smooth, clearly separated strokes, broad transparent openings, softly curving leaf-like contour, and plain gold pigment. The tiny ornament must remain readable at 28px. Vertical 2:3 composition, full ornament close to canvas bounds.\nNo intricate filigree, fine hatching, microtexture, individual leaf veins, clusters of small leaves, flowers, stars, shadow, embossing, page, text, numbers, solid backdrop, or enclosing panel. The empty center and surrounding space must be TRUE alpha transparency. One top-left corner only, to be mirrored by CSS.",
-      "reference": "docs/art/journal-samples/01-night-scriptorium.png",
+      "reference": "docs/art/journal-sources/references/night-scriptorium.png",
       "alphaEdit": "Use case: background-extraction.\nInput image 1 is the EDIT TARGET.\nKeep the exact drawn subject, shape, colors, gold strokes, dark bird or indigo fills, and composition. Remove the entire dark background AND every soft amber/gold/blue halo or haze surrounding the artwork. Replace those pixels with true alpha=0 transparency, including the open gaps between stems and leaves and inside loops. Preserve only the crisp painted subject with clean antialiased edges. No aura, glow, shadow, gradient field, or semitransparent tinted backdrop. This is a cutout asset that must composite cleanly on WHITE paper as well as black. Fit the complete cutout closely in the output canvas, with only a thin even transparent safety margin. Do not redraw or add anything.",
       "exportBounds": {
         "x": 30,
@@ -78,10 +78,10 @@
     {
       "name": "rule-knot-simple",
       "asset": "assets/journal/rule-knot-simple.webp",
-      "original": "docs/art/journal-samples/rule-knot-simple.png",
+      "original": "docs/art/journal-sources/rule-knot-simple.png",
       "source": "/Users/mark/.codex/generated_images/01a11010-a97a-79a0-96af-fbca5ef6f964/exec-2f4c08ae-aa54-4565-823b-56f0e152b11a.png",
       "prompt": "Use case: stylized-concept. Asset type: small transparent gold knot placed across a horizontal line in a medieval journal.\nReference image 1 is a STYLE reference for the tiny center ornament on the Arrival frame. Create ONE simplified compact Celtic knot: four open smoothly curving interlaced gold ribbon loops arranged around a tiny central open diamond. Horizontal proportion roughly 2:1. Bold clear shape, broad transparent openings, flat antique-gold ink, fine dark outline only where needed. Designed to remain legible at 40 CSS pixels wide and 20 pixels tall. Clean smooth gold strokes, generous negative space, minimal detail.\nDeliver the knot ALONE. Do not draw the horizontal border line; CSS will put a continuous line behind the transparent graphic. No rectangular patch, paper, black field, frame, leaf sprays, stars, microscopic detail, shadow, glow, texture outside the gold strokes, or text. Actual alpha transparency through every loop and around the entire knot. Full compact symbol within the canvas with only a small safety margin.",
-      "reference": "docs/art/journal-samples/01-night-scriptorium.png",
+      "reference": "docs/art/journal-sources/references/night-scriptorium.png",
       "exportBounds": {
         "x": 508,
         "y": 211,
@@ -91,7 +91,7 @@
     }
   ],
   "reusedAsset": {
-    "source": "docs/art/journal-samples/retired/background-sprig.webp",
+    "source": "docs/art/journal-sources/references/background-sprig.webp",
     "asset": "assets/journal/marginalia/blue-flower-sprig.webp",
     "promptRecord": "docs/art/journal-section-details.json",
     "exportBounds": {

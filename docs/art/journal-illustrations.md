@@ -4,7 +4,7 @@ Each of the 21 encounters has three drawings: a creature or antagonist, a locati
 
 The drawings imitate a medieval monk's marginal sketches. Uneven ink contours, slightly exaggerated poses, sparse lapis and vermilion washes, and warm gold-ochre lines give them character. A curious shadow peers over its jar, the troll's heads argue, and a mechanical orrery peers through its own rings. Story content carries the illustration; the subjects remain free of ornamental frames and filler foliage.
 
-The built-in image generator produced the images. [The prompt record](journal-illustrations.json) contains every prompt, reference, source file, original PNG, runtime WebP, and export crop. [The image index](journal-samples/encounters/README.md) links all 63 drawings.
+The built-in image generator produced the images. [The prompt record](journal-illustrations.json) contains every prompt, reference, source file, original PNG, runtime WebP, and export crop. [The image index](journal-sources/encounters/README.md) links all 63 drawings.
 
 ## Placement
 
@@ -18,7 +18,7 @@ The built-in image generator produced the images. [The prompt record](journal-il
 
 ## Asset storage
 
-Runtime images live in `assets/journal/encounters/NN-encounter/{creature,location,detail}.webp`. Original PNGs live under the matching directory in `docs/art/journal-samples/encounters/`. Git LFS stores both formats. Screenshots and retired concepts stay in docs.
+Runtime images live in `assets/journal/encounters/NN-encounter/{creature,location,detail}.webp`. Original PNGs live under the matching directory in `docs/art/journal-sources/encounters/`. Git LFS stores both formats.
 
 `scripts/export-journal-illustration.ts` checks the generated alpha, preserves the original PNG, and crops the runtime copy to the 1% alpha visibility bounds with 2px safety padding. It keeps the original alpha inside the crop. Creature and detail exports have a width of 384px; location exports have a width of 1024px.
 

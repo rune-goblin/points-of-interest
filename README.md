@@ -18,7 +18,7 @@ The module ships one compendium entry, the **Points of Interest** Adventure. It 
 |---|---|
 | `docs/encounters.md` | Canonical encounter text; the journal builds from it |
 | `docs/art/` | Art briefs per encounter, plus `by-type/` views |
-| [`docs/art/journal-samples/`](docs/art/journal-samples/README.md) | Original journal concepts, generation prompts, and light/dark implementation screenshots |
+| [`docs/art/journal-sources/`](docs/art/journal-sources/README.md) | Full-size originals and generation references for the journal graphics |
 | `docs/pitches.md` | Original encounter pitches |
 | `assets/map-notes/white-ink/` | The King's map notes |
 | `assets/maps/` | Tactical maps |
@@ -51,7 +51,7 @@ npm run build:actors -- --system "<Foundry data>/systems/pf2e"   # or $PF2E_SYST
 
 It reads only the PF2e system's own compendia, never the premium `pf2e-kingmaker` module, and writes recipes rather than copies. `npm test` also runs `actors.hydrated.test.ts` against an installed PF2e system; run it after each PF2e update.
 
-Git LFS stores runtime art in `assets/` and design samples and retired graphics in `docs/art/journal-samples/`. Install it once (`brew install git-lfs`, then `git lfs install`) before cloning. Convert new tactical maps to lossy WebP at quality 75 before adding them:
+Git LFS stores runtime art in `assets/` and its full-size originals in `docs/art/journal-sources/`. Install it once (`brew install git-lfs`, then `git lfs install`) before cloning. Convert new tactical maps to lossy WebP at quality 75 before adding them:
 
 ```bash
 cwebp -q 75 -m 6 input.png -o assets/maps/NN-name.webp
