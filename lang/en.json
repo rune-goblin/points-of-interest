@@ -27,8 +27,22 @@
       "Round": "Round {round} of {rounds}",
       "NextRound": "Next round",
       "PreviousRound": "Previous round",
-      "Thresholds": "Thresholds",
-      "Reveal": "Reveal to players",
+      "Views": "Tracker view",
+      "GMView": "GM view",
+      "PlayerView": "Player view",
+      "StatBlock": "Influence stat block",
+      "Perception": "Perception",
+      "Will": "Will",
+      "Threshold": "Influence {points}",
+      "RevealEntry": "Reveal this entry to players",
+      "HideEntry": "Hide this entry from players",
+      "PostCheck": "Post the check to chat",
+      "Apply": "Apply this modifier to the Influence checks it covers",
+      "Shifted": "DC changed by {by} from the modifiers in force",
+      "Post": {
+        "discovery": "Roll to Discover",
+        "skills": "Roll to Influence"
+      },
       "Groups": {
         "discovery": "Discovery",
         "skills": "Influence skills",
@@ -42,7 +56,8 @@
       "ResetPrompt": "Reset the Influence tracker for {name}? Influence, the round and every revealed entry return to the start, and players stop seeing it."
     },
     "SceneLinks": {
-      "Missing": "This scene is missing from the Points of Interest Adventure. Run npm run build."
+      "Missing": "This scene is missing from the Points of Interest Adventure. Run npm run build.",
+      "WholeMaps": "Players now see the whole map on {count} of the Points of Interest scenes: token vision is off, and {hidden} creature and hazard tokens are hidden."
     },
     "Lightbox": {
       "Close": "Close the image"

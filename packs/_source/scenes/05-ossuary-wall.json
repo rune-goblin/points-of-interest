@@ -28,7 +28,7 @@
     "distance": 5,
     "units": "ft"
   },
-  "tokenVision": true,
+  "tokenVision": false,
   "fog": {
     "mode": 1,
     "colors": {
@@ -166,7 +166,7 @@
       "y": 792,
       "elevation": 0,
       "level": "defaultLevel0000",
-      "hidden": false,
+      "hidden": true,
       "locked": false,
       "sort": 2
     },
@@ -324,7 +324,8 @@
       ]
     },
     "points-of-interest": {
-      "encounter": 5
+      "encounter": 5,
+      "tokenVision": false
     }
   },
   "_stats": {

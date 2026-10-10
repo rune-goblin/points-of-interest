@@ -89,11 +89,18 @@ compendium packs from `packs/_source/`).
   on build only when missing, committed like the thumbnails).
 - `scripts/build-scenes.ts` → `packs/_source/scenes/` (generated on build). One scene per map, native
   v14 (one level holds the background). Grid sizes are judged per map and recorded in its table.
+  Every scene ships with token vision off, so players see the whole map, and with
+  `flags['points-of-interest'].tokenVision: false` marking that as applied. Creature and hazard tokens
+  (`FOE_KINDS` in `src/constants.ts`) and caches start hidden; NPCs and remains show. The build hides
+  creature and hazard tokens again on every run, so an unpacked reveal does not survive. `showWholeMaps()`
+  in `src/scene-links.ts` runs on load for the active GM: once on each world copy that lacks the flag, it
+  hides the creature and hazard tokens and turns token vision off. A scene with a started combat keeps its
+  tokens as they are, and a GM's later changes stay.
   It seeds each scene's actors as tokens; placeables edited in Foundry and unpacked over
   `packs/_source/scenes/` survive regeneration (a scene reseeds only when it has no tokens). A scene
   that has tokens gains one for each cast member it lacks, in a row along the map's top edge, so a
   token deleted in Foundry comes back on the next build; drop an actor from a scene with `SCENE_CAST`.
-  It reads each actor's slug and kind from `flags['points-of-interest']` and seeds caches hidden.
+  It reads each actor's slug and kind from `flags['points-of-interest']` to decide which tokens start hidden.
   Every scene also gets a book note (flagged `scene`) in the map's top-left square, linked to its
   encounter page; the build regenerates it each run and keeps only an unpacked move. Players hold no
   access to the journal, so Foundry hides the note from them.
@@ -104,21 +111,35 @@ compendium packs from `packs/_source/`).
   A GM viewing such a scene also gets a frameless, draggable panel (`src/ui/RevealPanel.ts`) with a
   "Show the pit"/"Hide the pit" button per tile (the tile's name). Double-clicking its grip folds it to
   the grip alone and back; it reopens where and as the GM left it.
+  Only #11 has one: the pit the guthallath leaves.
 - Influence blocks share one format, and the build rejects a block that breaks it
   (`scripts/influence.ts`): `*Influence: Name* (descriptor, level N)`, then list lines labelled
-  Perception (with Will), Discovery, Influence Skills (entries each opening "DC N"), ascending
-  `Influence N` thresholds, Resistances and Weaknesses (one sentence per entry, its effect in
-  parentheses at the end), Penalty, and Rounds (a number, or "No limit; …"). One block per encounter.
+  Perception (with Will), Discovery, Influence Skills (entries each opening "DC N"), the thresholds
+  `Influence 4`, `Influence 6` and `Influence 8` in that order, Resistances and Weaknesses (one
+  sentence per entry, its effect in parentheses at the end), Penalty, and Rounds (a number from 1
+  to 3). One block per encounter.
   The name must match an actor of the encounter, whole or as the end of its name ("Odalric Vane" finds
   "Master Engineer Odalric Vane"). The build copies the parsed block, with that actor's portrait, into
   the encounter page's `flags['points-of-interest'].influence` (`src/influence/model.ts` holds the
   types). A GM viewing that encounter's scene gets a frameless Influence tracker
   (`src/ui/InfluencePanel.ts`), which reads the block from the Adventure, so it follows module updates
-  without a re-import. The GM raises and lowers Influence and the round, reveals entries one at a time,
-  and presses Show players. State lives in the scene's `influence` flag (`src/influence/runtime.ts`);
-  each write also stores the view players get, so threshold text, the penalty and unrevealed entries
-  never reach a player's client. Players see the tracker on that scene while the GM shows it.
-  Only #11 has one: the pit the guthallath leaves.
+  without a re-import. The GM view (`InfluenceStatBlock.svelte`) shows the meter and the full stat block
+  in GM Core's order: Perception and Will, Discovery, Influence skills, thresholds, resistances,
+  weaknesses and penalty. The build splits Discovery and Influence Skills into one check per skill
+  (`singleChecks()` in `src/checks.ts`, which also links checks for the journal). The GM raises and
+  lowers Influence and the round, reveals any single check, resistance or weakness to players, posts
+  a check to chat, and presses Show players; a Player view tab previews what players see. A resistance
+  or weakness whose effect reads "±N DC on …" has a checkbox: while ticked, `modifierOf()` and
+  `dcShift()` in `src/influence/model.ts` shift the Influence skill DCs it covers (the skills it
+  names, else the checks whose note names its "to sway X" target, else all) in the stat block, the
+  player view and the posts. Discovery DCs never shift. A post carries the check, without its note, as
+  a PF2e `@Check` with `showDC:all` and the traits of PF2e's Discover (secret, so player rolls go
+  blind) or Influence action. State lives in
+  the scene's `influence` flag (`src/influence/runtime.ts`); each write also stores the view players
+  get, so threshold text, the penalty, Perception, Will and unrevealed entries never reach a player's
+  client. Players see the meter, the round and the revealed entries on that scene while the GM shows
+  the tracker.
+  Six encounters have one: #2, #3, #11, #14, #16 and #18.
 - `scripts/build-actors.ts` → `packs/_source/actors/` (**committed, not part of `npm run build`**: it
   needs an installed PF2e system; `npm run build:actors -- --system <Data/systems/pf2e>`, or
   `$PF2E_SYSTEM`, or the default install path). The mapping table at its top names each actor's

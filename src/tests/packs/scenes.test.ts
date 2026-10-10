@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { FOE_KINDS } from '../../constants';
 
 const ROOT = process.cwd();
 
@@ -16,7 +17,7 @@ const SERVED = `modules/${MODULE_ID}/`;
 
 interface Level { _id: string; _key: string; background: { src: string } }
 interface Note { _id: string; _key: string; entryId: string; pageId: string; x: number; y: number; iconSize: number; flags: Record<string, { scene?: boolean }> }
-interface Token { _id: string; _key: string; actorId: string; level: string; x: number; y: number; width: number; height: number }
+interface Token { _id: string; _key: string; actorId: string; level: string; x: number; y: number; width: number; height: number; hidden: boolean }
 interface Tile { _id: string; _key: string; texture: { src: string; anchorX: number; anchorY: number }; x: number; y: number; width: number; height: number; hidden: boolean; flags: Record<string, { reveal?: string }> }
 interface SceneSource {
   _id: string;
@@ -35,7 +36,8 @@ interface SceneSource {
   journal: string;
   journalEntryPage: string;
   folder: string | null;
-  flags: Record<string, { encounter?: number }>;
+  tokenVision: boolean;
+  flags: Record<string, { encounter?: number; tokenVision?: boolean }>;
 }
 interface FolderSource { _id: string; _key: string; type: string; name: string; folder: string | null }
 
@@ -47,9 +49,10 @@ const servedFile = (path: string) => join(ROOT, path.slice(SERVED.length));
 
 const ACTORS = join(ROOT, 'packs', '_source', 'actors');
 const actors = readdirSync(ACTORS)
-  .map((f) => JSON.parse(readFileSync(join(ACTORS, f), 'utf8')) as { _id: string; _key: string; name: string; type: string; flags: Record<string, { encounter?: number }> })
+  .map((f) => JSON.parse(readFileSync(join(ACTORS, f), 'utf8')) as { _id: string; _key: string; name: string; type: string; flags: Record<string, { encounter?: number; kind?: string }> })
   .filter((d) => d._key.startsWith('!actors!'));
 const actorIds = new Set(actors.map((d) => d._id));
+const kinds = new Map(actors.map((d) => [d._id, d.flags[MODULE_ID]?.kind ?? '']));
 
 const headings = new Map(
   [...readFileSync(join(ROOT, 'docs', 'encounters.md'), 'utf8').matchAll(/^### (\d+)\. (.+)$/gm)].map((m) => [Number(m[1]), `${m[1]}. ${m[2].trim()}`]),
@@ -86,6 +89,20 @@ describe('scenes pack source', () => {
         expect(existsSync(servedFile(path)), path).toBe(true);
       }
     }
+  });
+
+  it('shows players the whole map, with token vision off and marked as applied', () => {
+    for (const s of scenes) {
+      expect(s.tokenVision, s.name).toBe(false);
+      expect(s.flags[MODULE_ID]?.tokenVision, s.name).toBe(false);
+    }
+  });
+
+  it('starts every creature, hazard and cache token hidden from players', () => {
+    const tokens = scenes.flatMap((s) => s.tokens.map((t) => ({ label: `${s.name}: ${t._id}`, kind: kinds.get(t.actorId) ?? '', hidden: t.hidden })));
+    const concealed = tokens.filter((t) => FOE_KINDS.has(t.kind) || t.kind === 'cache');
+    expect(concealed.length).toBeGreaterThan(0);
+    expect(concealed.filter((t) => !t.hidden).map((t) => t.label)).toEqual([]);
   });
 
   it('places tokens of packed actors on the map, on the scene\'s level', () => {

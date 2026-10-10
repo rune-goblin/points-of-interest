@@ -28,7 +28,7 @@
     "distance": 5,
     "units": "ft"
   },
-  "tokenVision": true,
+  "tokenVision": false,
   "fog": {
     "mode": 1,
     "colors": {
@@ -260,7 +260,8 @@
       "environmentTypes": []
     },
     "points-of-interest": {
-      "encounter": 9
+      "encounter": 9,
+      "tokenVision": false
     }
   },
   "_stats": {

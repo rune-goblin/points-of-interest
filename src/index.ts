@@ -4,7 +4,7 @@ import { promptAdventureImport } from './adventure';
 import { checkWorldActors, hydrateActors, rebuildActors, registerActorHooks } from './actors/runtime';
 import { importJournal, placeMapNotes, registerMapNoteHooks, tileSitePins } from './map-notes';
 import { registerRevealHooks } from './reveals';
-import { registerSceneLinks } from './scene-links';
+import { registerSceneLinks, showWholeMaps } from './scene-links';
 import { registerInfluencePanel } from './ui/InfluencePanel';
 import { registerRevealPanel } from './ui/RevealPanel';
 
@@ -36,4 +36,5 @@ Hooks.once('ready', () => {
   void promptAdventureImport();
   void checkWorldActors();
   void tileSitePins();
+  void showWholeMaps();
 });

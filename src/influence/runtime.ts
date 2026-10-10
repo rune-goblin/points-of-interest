@@ -9,7 +9,7 @@ import type {
 } from 'foundry-pf2e/foundry/common/data/fields.mjs';
 import { adventureContent } from '../adventure';
 import { MODULE_ID } from '../constants';
-import { GROUPS, playerView, type InfluenceData, type InfluenceState } from './model';
+import { GROUPS, playerView, postedCheck, type CheckGroup, type InfluenceData, type InfluenceState } from './model';
 
 const FLAG = 'influence';
 
@@ -28,6 +28,7 @@ type StateSchema = {
   points: Count;
   round: Count;
   revealed: ArrayField<Text>;
+  active: ArrayField<Text>;
   view: SchemaField<ViewSchema, SourceFromSchema<ViewSchema>, ModelPropsFromSchema<ViewSchema>, true, true, true>;
 };
 
@@ -42,6 +43,7 @@ class InfluenceStateModel extends foundry.abstract.DataModel<null, StateSchema> 
       points: count(0),
       round: count(1),
       revealed: new fields.ArrayField(text()),
+      active: new fields.ArrayField(text()),
       view: new fields.SchemaField(
         {
           name: text(),
@@ -78,7 +80,7 @@ export function writeState(scene: Scene, data: InfluenceData, change: (state: In
   writes = writes.catch(() => undefined).then(() => {
     const current = readState(scene);
     const next = { ...current, ...change(current) };
-    return scene.setFlag(MODULE_ID, FLAG, { ...next, view: playerView(data, next.revealed) });
+    return scene.setFlag(MODULE_ID, FLAG, { ...next, view: playerView(data, next.revealed, next.active) });
   });
   return writes;
 }
@@ -90,6 +92,16 @@ export async function resetState(scene: Scene, data: InfluenceData): Promise<voi
     content: `<p>${t('ResetPrompt')}</p>`,
   });
   if (reset) await scene.unsetFlag(MODULE_ID, FLAG);
+}
+
+// Each client enriches the @Check source as it renders the message, so players get their own roll buttons.
+export async function postCheck(data: InfluenceData, group: CheckGroup, entry: string): Promise<void> {
+  const { escapeHTML } = foundry.utils;
+  await ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ alias: data.name }),
+    flavor: escapeHTML(game.i18n.localize(`${MODULE_ID}.Influence.Post.${group}`)),
+    content: `<p>${postedCheck(escapeHTML(entry), group)}</p>`,
+  });
 }
 
 export const changesInfluence = (changed: { flags?: Record<string, Record<string, unknown>> }): boolean =>

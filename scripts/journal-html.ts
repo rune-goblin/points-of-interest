@@ -1,4 +1,5 @@
 import { marked, type Token, type Tokens } from 'marked';
+import { linkChecks } from '../src/checks.ts';
 import { MODULE_ID, slugify } from './stable-id.ts';
 
 export interface Renderers {
@@ -20,37 +21,6 @@ const SECTION = /^\*\*([^*\n]+?)\.\*\*[ \t]*/;
 const SUBSECTION = /^\*([^*\n]+?)\.\*[ \t]*/;
 const STAT_HEAD = /^\*\*([^*\n]+)\*\* — (HAZARD|CREATURE) (\d+)\s*$/;
 const CARD_HEAD = /^(\*\*?)([^*\n]+?)\1(?: \(([^)\n]*)\))?\s*$/;
-
-const SKILLS = 'Acrobatics|Arcana|Athletics|Crafting|Deception|Diplomacy|Intimidation|Medicine|Nature|Occultism|Performance|Religion|Society|Stealth|Survival|Thievery|Perception';
-const STATISTIC = String.raw`(?:${SKILLS}|Fortitude|Reflex|Will|(?:[A-Z][a-z]+(?:-[A-Z][a-z]+)* )+Lore)`;
-const STATISTICS = String.raw`${STATISTIC}(?:(?:,? or |, )${STATISTIC})*`;
-const DC_FIRST = new RegExp(String.raw`\bDC (\d+) (basic )?(${STATISTICS})`, 'g');
-const DC_LAST = new RegExp(String.raw`\b(${STATISTICS}),? DC (\d+)\b`, 'g');
-
-// Inside a markdown table row a bare pipe would split the cell.
-function checkLinks(names: string, dc: string, basic: boolean, pipe: string): string {
-  return names
-    .split(/(,? or |, )/)
-    .map((part, i) => (i % 2 ? part : `@Check[${slugify(part)}${pipe}dc:${dc}${basic ? `${pipe}basic` : ''}]`))
-    .join('');
-}
-
-/**
- * Turns "DC 36 Religion", "DC 35 basic Reflex" and "Society or Crafting, DC 36" into PF2e inline
- * checks, which a GM can roll or post to chat. Read-aloud lines stay as written.
- */
-export function linkChecks(md: string): string {
-  return md
-    .split('\n')
-    .map((line) => {
-      if (line.startsWith('>')) return line;
-      const pipe = line.startsWith('|') ? '\\|' : '|';
-      return line
-        .replace(DC_FIRST, (_, dc: string, basic: string | undefined, names: string) => checkLinks(names, dc, !!basic, pipe))
-        .replace(DC_LAST, (_, names: string, dc: string) => checkLinks(names, dc, false, pipe));
-    })
-    .join('\n');
-}
 
 const ICONS: Record<string, string> = {
   sites: 'fa-route',

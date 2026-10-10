@@ -2,12 +2,12 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { marked } from 'marked';
+import { linkChecks } from '../../checks';
 import type { InfluenceData } from '../../influence/model';
 
 const ROOT = process.cwd();
 // Loaded at runtime: tsconfig.json's rootDir is src/, so a static import of scripts/ fails `npm run check`.
-const { linkChecks, encounterParts } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'journal-html.ts'))) as {
-  linkChecks(md: string): string;
+const { encounterParts } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'journal-html.ts'))) as {
   encounterParts(md: string, renderers: { block(md: string): string; inline(md: string): string }): { body: string };
 };
 const { influenceBlocks } = (await import(/* @vite-ignore */ join(ROOT, 'scripts', 'influence.ts'))) as {
@@ -329,34 +329,43 @@ describe('influenceBlocks', () => {
     '- **Perception** +35; **Will** +33',
     '- **Discovery** DC 37 Occultism, DC 39 Perception, Nature or Society',
     '- **Influence Skills** DC 39 Deception (playing along, with care), DC 39 Diplomacy',
-    '- **Influence 2** It lets the PCs pass.',
-    '- **Influence 4** It names its *master*.',
+    '- **Influence 4** It lets the PCs pass.',
+    '- **Influence 6** It names its *master*.',
+    '- **Influence 8** It gives the PCs a feather.',
     '- **Resistances** Threats amuse it (+2 DC on Intimidation). Its cover matters (+2 DC that round).',
     '- **Weaknesses** Flattery charms it (–2 DC on Diplomacy).',
     '- **Penalty** Each failure costs 1 round.',
-    '- **Rounds** 4, before it loses patience.',
+    '- **Rounds** 3, before it loses patience.',
   ];
 
   it('reads thresholds, one entry per skill and one per sentence of resistances and weaknesses', () => {
     const [data] = influenceBlocks(block(complete));
     expect(data.name).toBe('The Herald');
     expect(data.aside).toBe('vilderavn, level 19');
+    expect([data.perception, data.will]).toEqual(['+35', '+33']);
+    expect(data.discovery).toEqual(['DC 37 Occultism', 'DC 39 Perception', 'DC 39 Nature', 'DC 39 Society']);
     expect(data.skills).toEqual(['DC 39 Deception (playing along, with care)', 'DC 39 Diplomacy']);
-    expect(data.thresholds).toEqual([{ points: 2, text: 'It lets the PCs pass.' }, { points: 4, text: 'It names its master.' }]);
+    expect(data.thresholds).toEqual([
+      { points: 4, text: 'It lets the PCs pass.' },
+      { points: 6, text: 'It names its master.' },
+      { points: 8, text: 'It gives the PCs a feather.' },
+    ]);
     expect(data.resistances).toEqual(['Threats amuse it (+2 DC on Intimidation).', 'Its cover matters (+2 DC that round).']);
-    expect(data.rounds).toBe(4);
+    expect(data.rounds).toBe(3);
   });
 
-  it('reads an encounter with no round limit', () => {
-    const [data] = influenceBlocks(block(complete.map((line) => (line.startsWith('- **Rounds**') ? '- **Rounds** No limit; the vote ends it.' : line))));
-    expect(data.rounds).toBeNull();
+  it('rejects more than 3 rounds or no round limit', () => {
+    const withRounds = (rounds: string) => block(complete.map((line) => (line.startsWith('- **Rounds**') ? `- **Rounds** ${rounds}` : line)));
+    expect(() => influenceBlocks(withRounds('4, before it loses patience.'))).toThrow(/1 to 3 rounds/);
+    expect(() => influenceBlocks(withRounds('No limit; the vote ends it.'))).toThrow(/1 to 3 rounds/);
   });
 
-  it('rejects a block that misses a field or lists its thresholds out of order', () => {
+  it('rejects a block that misses a field or strays from thresholds 4, 6 and 8', () => {
     expect(() => influenceBlocks(block(complete.filter((line) => !line.startsWith('- **Penalty**'))))).toThrow(/lacks Penalty/);
     expect(() => influenceBlocks(block(complete.filter((line) => !line.startsWith('- **Influence ') || line.includes('Skills'))))).toThrow(/no Influence thresholds/);
     const swapped = [...complete];
     [swapped[3], swapped[4]] = [swapped[4], swapped[3]];
-    expect(() => influenceBlocks(block(swapped))).toThrow(/out of order/);
+    expect(() => influenceBlocks(block(swapped))).toThrow(/thresholds 4, 6, 8 in order/);
+    expect(() => influenceBlocks(block(complete.filter((line) => !line.startsWith('- **Influence 8**'))))).toThrow(/thresholds 4, 6, 8 in order/);
   });
 });

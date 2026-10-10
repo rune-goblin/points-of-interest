@@ -1,12 +1,13 @@
 import { adventureContent, importFolders } from './adventure';
-import { MODULE_ID } from './constants';
+import { FOE_KINDS, MODULE_ID } from './constants';
 import { importActors } from './actors/runtime';
 import { importJournal } from './map-notes';
 import { MapLightbox } from './ui/MapLightbox';
 
 type Source = Record<string, any>;
 
-const t = (key: string): string => game.i18n.localize(`${MODULE_ID}.SceneLinks.${key}`);
+const t = (key: string, data?: Record<string, string>): string =>
+  data ? game.i18n.format(`${MODULE_ID}.SceneLinks.${key}`, data) : game.i18n.localize(`${MODULE_ID}.SceneLinks.${key}`);
 
 // Tokens name their actors by id, so a scene imported on its own brings its actors in under the same ids,
 // and the journal its note opens, and the scene keeps its folder.
@@ -28,6 +29,34 @@ async function viewScene(id: string): Promise<void> {
   const scene = game.scenes.get(id) ?? (await importScene(id));
   if (scene) await scene.view();
   else ui.notifications.error(t('Missing'));
+}
+
+const isFoe = (token: TokenDocument<Scene | null>): boolean =>
+  FOE_KINDS.has((game.actors.get(token.actorId ?? '')?.getFlag(MODULE_ID, 'kind') as string | undefined) ?? '');
+
+/**
+ * Scenes imported from earlier releases have token vision on, which hides the map from a player without
+ * a token on it, and their creatures and hazards in view. Hide those tokens, then turn token vision off,
+ * once per scene; the flag keeps a GM's later choices. A scene with a fight under way keeps its tokens
+ * as the GM has them.
+ */
+export async function showWholeMaps(): Promise<void> {
+  if (game.users.activeGM?.id !== game.user.id) return;
+  const scenes = game.scenes.filter(
+    (scene) => scene.getFlag(MODULE_ID, 'encounter') !== undefined && scene.getFlag(MODULE_ID, 'tokenVision') === undefined,
+  );
+  if (!scenes.length) return;
+  const opened = scenes.filter((scene) => scene.tokenVision).length;
+  const fighting = new Set(game.combats.filter((combat) => combat.started).map((combat) => combat.scene?.id));
+  let hidden = 0;
+  for (const scene of scenes) {
+    if (fighting.has(scene.id)) continue;
+    const foes = scene.tokens.filter((token) => !token.hidden && isFoe(token));
+    if (foes.length) await scene.updateEmbeddedDocuments('Token', foes.map((token) => ({ _id: token.id, hidden: true })));
+    hidden += foes.length;
+  }
+  await Scene.updateDocuments(scenes.map((scene) => ({ _id: scene.id, tokenVision: false, [`flags.${MODULE_ID}.tokenVision`]: false })));
+  if (opened || hidden) ui.notifications.info(t('WholeMaps', { count: String(scenes.length), hidden: String(hidden) }));
 }
 
 // Scene names such as "The Unmaker" give the foe away, so the popout hides its title. The GM's copy

@@ -28,7 +28,7 @@
     "distance": 5,
     "units": "ft"
   },
-  "tokenVision": true,
+  "tokenVision": false,
   "fog": {
     "mode": 1,
     "colors": {
@@ -104,7 +104,7 @@
       "y": 1200,
       "elevation": 0,
       "level": "defaultLevel0000",
-      "hidden": false,
+      "hidden": true,
       "locked": false,
       "sort": 0
     },
@@ -135,7 +135,7 @@
       "y": 1920,
       "elevation": 0,
       "level": "defaultLevel0000",
-      "hidden": false,
+      "hidden": true,
       "locked": false,
       "sort": 1
     },
@@ -166,7 +166,7 @@
       "y": 1800,
       "elevation": 0,
       "level": "defaultLevel0000",
-      "hidden": false,
+      "hidden": true,
       "locked": false,
       "sort": 2
     },
@@ -228,7 +228,7 @@
       "y": 2160,
       "elevation": 0,
       "level": "defaultLevel0000",
-      "hidden": false,
+      "hidden": true,
       "locked": false,
       "sort": 0
     },
@@ -355,7 +355,8 @@
       ]
     },
     "points-of-interest": {
-      "encounter": 8
+      "encounter": 8,
+      "tokenVision": false
     }
   },
   "_stats": {

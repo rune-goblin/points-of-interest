@@ -104,19 +104,19 @@ Twenty-one sites the King marked on his map of the western borderlands, written 
 
 **Running the encounter.** The real obstacle is the composers. They refuse to leave and will defend their work, and if the PCs kill the birds before persuading them, all four collapse. The song is the only thing keeping their starving bodies going; a DC 35 Medicine check reveals that its sudden end will kill at least one of them within the hour.
 
-*The clock.* The song lasts 6 rounds of social interaction before full dark. If the PCs have not reached 6 Influence with Maestra Rova by then, a cauthooj uses Staccato Strike to make a confused composer attack a PC, and the birds close in.
+*The clock.* The song lasts 3 rounds of social interaction before full dark. If the PCs have not reached 8 Influence with Maestra Rova by then, a cauthooj uses Staccato Strike to make a confused composer attack a PC, and the birds close in.
 
 *Influence: Maestra Ilsabet Rova* (human composer and leader, level 11)
 - **Perception** +18; **Will** +16
 - **Discovery** DC 32 Perception, DC 30 Performance, DC 30 Academia Lore
 - **Influence Skills** DC 32 Performance (finishing a phrase alongside her), DC 34 Diplomacy, DC 34 Medicine (showing her the hand in the grass and her own wasting body), DC 36 Deception
-- **Influence 2** Rova lets the PCs speak to the others and admits she has not eaten in "some days."
-- **Influence 4** Rova agrees that the work could be finished "in a proper hall." She stops writing.
-- **Influence 6** Rova orders the others to gather the scores and leave with the PCs.
+- **Influence 4** Rova lets the PCs speak to the others and admits she has not eaten in "some days."
+- **Influence 6** Rova agrees that the work could be finished "in a proper hall." She stops writing.
+- **Influence 8** Rova orders the others to gather the scores and leave with the PCs.
 - **Resistances** Threats harden her (+2 DC on Intimidation; on a failure she shields her pages with her body). Any mention of the King's deadline makes her redouble her work (+2 DC on the next check).
 - **Weaknesses** Praise of the composition backed by a musical demonstration feeds her craving for recognition (–2 DC on the next check). Tending to Pell, the youngest composer, eases her fear that he is dying (1 extra Influence point).
 - **Penalty** A critical failure costs the PCs 1 round of the song.
-- **Rounds** 6, until full dark.
+- **Rounds** 3, until full dark.
 
 *Removing the singers.* Once the composers are clear of the meadow, the birds are trivial. The PCs can fight them, scare them off with a show of force, or leave them. If the PCs fight while the composers are still present, the cauthoojes use Hop-Dodge to redirect strikes into the confused composers.
 
@@ -125,9 +125,9 @@ Twenty-one sites the King marked on his map of the western borderlands, written 
 - **Birds killed first.** The song stops; Pell dies unless a PC succeeds at a DC 36 Medicine check within 10 minutes, and the others resent the PCs.
 - **PCs leave.** The composers die within days. Their scores find their way to the Academy, and the tune turns up later in a city tavern.
 
-**Rewards.** 60 XP for reaching Influence 6 with Rova; 30 XP for the cauthoojes if fought. Treasure: the composers carry Academy stipends and court jewellery worth 900 gp, and Rova's own violin, a *moderate maestro's instrument*, which she offers in thanks. Kingdom: if the composers join the PCs' capital, they complete *The Meadow Nocturne*, a masterwork that counts as a Create a Masterpiece success for the kingdom.
+**Rewards.** 60 XP for reaching Influence 8 with Rova; 30 XP for the cauthoojes if fought. Treasure: the composers carry Academy stipends and court jewellery worth 900 gp, and Rova's own violin, a *moderate maestro's instrument*, which she offers in thanks. Kingdom: if the composers join the PCs' capital, they complete *The Meadow Nocturne*, a masterwork that counts as a Create a Masterpiece success for the kingdom.
 
-**Scaling.** At party level 18, add a fourth cauthooj and raise all DCs by 3. For a shorter scene, reduce the clock to 4 rounds.
+**Scaling.** At party level 18, add a fourth cauthooj and raise all DCs by 3.
 
 ---
 
@@ -155,7 +155,7 @@ Twenty-one sites the King marked on his map of the western borderlands, written 
 - **The stake.** Halward's head and his envoy's satchel, which holds the King's letter of offer (see Rewards).
 - **Moor outside.** Peat bog patches act as difficult terrain; a creature that critically fails an Athletics check while running through them is immobilised until it Escapes (DC 30).
 
-**Running the encounter.** The troll will not fight unless a head is insulted twice, the vote fails, or the PCs attack. The PCs negotiate with a council of nine heads. Run it as an Influence encounter in which each Influence point is one head's vote. A success wins one head of the bloc the PC addresses, and a critical success wins two; a bloc gives no more votes than it has heads. Five votes in favour win the troll's agreement; five against end the parley and start a fight.
+**Running the encounter.** The troll will not fight unless a head is insulted twice, the vote fails, or the PCs attack. The PCs negotiate with a council of nine heads. Run it as an Influence encounter in which each Influence point is one head's vote. A success wins one head of the bloc the PC addresses, and a critical success wins two; a bloc gives no more votes than it has heads. The heads vote at the end of round 3. Four votes in favour win the troll's agreement, and each threshold below names a larger bargain; five against end the parley at once and start a fight.
 
 *The heads.* Group them in four blocs so the scene stays playable. Each Influence skill below names the bloc it sways.
 - **The Envoy** (1 head). Speaks as Halward. Vain, courtly, wants to be addressed as "Ser" and treated as a diplomat. Votes for any deal that flatters it.
@@ -167,18 +167,20 @@ Twenty-one sites the King marked on his map of the western borderlands, written 
 - **Perception** +26; **Will** +23
 - **Discovery** DC 34 Perception or Society (separates the blocs and learns each one's want)
 - **Influence Skills** DC 31 Diplomacy (the Envoy), DC 31 Society (the Envoy, court etiquette), DC 33 Nature (the Bellies, offering animal husbandry or hunting rights), DC 31 Diplomacy (the Bellies, with food offered on the spot), DC 34 Intimidation (the Grudges), DC 33 Deception or Diplomacy (the Grudges, with news of the King's defeat or a chance to strike him), DC 36 Diplomacy (the Old Heads), DC 33 Religion (the Old Heads, honouring their mother's bones)
-- **Influence 5** Five heads vote for the deal, and the troll agrees to it.
+- **Influence 4** Four heads vote for the deal. The troll surrenders the envoy's satchel and lets the PCs leave in peace.
+- **Influence 6** Six heads vote for the deal. The troll agrees to guard the moor road for the kingdom in exchange for a cow a week.
+- **Influence 8** Eight heads vote for the deal. The PCs may enlist the troll as a mercenary against the King in place of the road guard.
 - **Resistances** Any PC who speaks to only one head offends the others (+2 DC on the next check against a different bloc). Fire or electricity in sight, such as a torch or a spell, frightens every head (+2 DC on all checks).
 - **Weaknesses** The Envoy loves honorific titles (–2 DC on checks to sway the Envoy).
 - **Penalty** A critical failure turns one head of that bloc against the deal. Five heads against end the parley, and the troll fights.
-- **Rounds** No limit; the vote ends the parley.
+- **Rounds** 3; the heads vote at the end of the third round.
 
-*The deal.* Possible agreements: the troll guards the moor road for the kingdom in exchange for a cow a week; it joins the PCs' army as a mercenary against the King; it simply surrenders the satchel and lets the PCs leave in peace.
+*The deal.* Each threshold names the largest bargain its votes allow; the PCs may accept a smaller one.
 
 *If it fights.* The troll uses Cacophonous Roar first, then Ravenous Jaws against the nearest cluster. It flees into the moor at 120 HP, and the Old Heads berate the others as it goes.
 
 **Outcomes.**
-- **Deal struck (5+ votes).** The troll becomes a moor guardian or mercenary. It keeps its word as long as it is fed.
+- **Deal struck (4+ votes).** The troll hands over the satchel. With 6 votes it becomes a moor guardian, and with 8 it can march as a mercenary instead. It keeps its word as long as it is fed.
 - **Deal fails.** Combat. The troll fights briefly, then flees.
 - **Halward's head.** Returning it to his widow in the King's city reveals the King's habit of sending envoys to monsters, useful evidence in post-war politics.
 
@@ -532,12 +534,13 @@ Complex, Electricity, Fire, Mechanical, Trap
 - **Perception** +14; **Will** +14
 - **Discovery** DC 26 Perception or Society, DC 24 Crafting
 - **Influence Skills** DC 28 Crafting (talking shop and pointing out the sigils' flaw), DC 26 Diplomacy, DC 30 Intimidation (he fears the PCs less than he fears poverty), DC 26 Society (offering a post in the PCs' kingdom)
-- **Influence 2** Vane admits the sigils fail once the Colossus wakes. He orders one apprentice off the scaffold; the clock advances only every other round.
-- **Influence 4** Vane stops work. The apprentices climb down, and the clock stops. He offers to help shut the construct down: with his help, scrubbing the sigils takes DC 34.
+- **Influence 4** Vane admits the sigils fail once the Colossus wakes. He orders one apprentice off the scaffold; the clock advances only every other round.
+- **Influence 6** Vane stops work. The apprentices climb down, and the clock stops.
+- **Influence 8** Vane offers to help shut the construct down: with his help, scrubbing the sigils takes DC 34.
 - **Resistances** Mention of the King's defeat hardens him unless the PC also offers him a future (+2 DC on the next check).
 - **Weaknesses** Praise for his craft or an offer of employment softens him (–2 DC on the next check).
 - **Penalty** On a critical failure, Vane triggers the final sigil out of spite, and the Waking Clock jumps by 2.
-- **Rounds** No limit; the Waking Clock sets the pace.
+- **Rounds** 3; after the third round Vane hears no more argument.
 
 **Outcomes.**
 - **Guthallath never wakes.** The PCs win without a full fight, but the Colossus remains a dormant hazard. Kingdom engineers can study it for generations.
@@ -670,9 +673,9 @@ A PC who succeeds at the Trophy Walls check learns that the bandersnatch has wea
 
 **Running the encounter.**
 
-*Structure.* The audience runs as an exchange. The Speaker asks a question; a PC answers; then the PCs may ask one question in return. The Court runs for five exchanges. Track the PCs' Influence with the Speaker's block below. The ankous speak only through Telepathy.
+*Structure.* The audience runs as an exchange. The Speaker asks a question; a PC answers; then the PCs may ask one question in return. The Court runs for three exchanges. Track the PCs' Influence with the Speaker's block below. The ankous speak only through Telepathy.
 
-*The Court's questions.* Pick or adapt:
+*The Court's questions.* Pick three, or adapt:
 1. "What would you burn to keep your crown?"
 2. "Name the person in your realm you trust least."
 3. "If the forest asked for your kingdom, what would you ask in return?"
@@ -685,13 +688,13 @@ An honest answer earns 1 Influence point. A lie earns it too if the liar succeed
 - **Perception** +30; **Will** +29
 - **Discovery** DC 36 Perception, DC 34 Occultism or Nature (fey lore)
 - **Influence Skills** DC 38 Deception, DC 38 Diplomacy, DC 41 Intimidation, DC 36 Performance (the Court enjoys a well-told story), DC 36 Nature or Occultism (proper courtly etiquette of the fey realm)
-- **Influence 3** The Court answers one question about the Fey Queen truthfully: her name, that she rules from her house beyond time, or that she was once one of the elder fey's favourites.
-- **Influence 5** The Speaker reveals that the Fey Queen intends to absorb the PCs' kingdom into the fey realm once it is grand enough.
-- **Influence 7** The Speaker gives the PCs a black feather. Showing it once to any ankou prevents that ankou from attacking for one encounter.
+- **Influence 4** The Court answers one question about the Fey Queen truthfully: her name, that she rules from her house beyond time, or that she was once one of the elder fey's favourites.
+- **Influence 6** The Speaker reveals that the Fey Queen intends to absorb the PCs' kingdom into the fey realm once it is grand enough.
+- **Influence 8** The Speaker gives the PCs a black feather. Showing it once to any ankou prevents that ankou from attacking for one encounter.
 - **Resistances** Threats provoke contempt (+2 DC on Intimidation). Mentioning the Trickster Lord makes the Speaker cold (+5 DC on the next check).
 - **Weaknesses** Answering a question with a story or a song delights the Court (–2 DC on Performance). Showing a cloak or token taken from a spared ankou earns its respect (–2 DC on all checks).
 - **Penalty** Attacking an ankou, refusing to answer twice, or failing two checks by 10 or more ends the audience. The Court attacks.
-- **Rounds** 5 exchanges.
+- **Rounds** 3 exchanges.
 
 *If it becomes a fight.* The Speaker uses Shadow Doubles for three actions at once, flooding the grove with duplicates. The four ankous fly in pairs, flanking for Sneak Attack. They fight to drive the PCs from the grove and withdraw if the Speaker dies.
 
@@ -700,7 +703,7 @@ An honest answer earns 1 Influence point. A lie earns it too if the liar succeed
 - **Feather earned.** One ankou encounter later in the campaign becomes a parley.
 - **Fight.** The Court scatters. The Fey Queen's agents treat the PCs as enemies from then on; raise the DC of later fey social checks by 2.
 
-**Rewards.** 140 XP for a full audience (Influence 5 or higher) or a fight; 80 XP for a partial one. Treasure: the royal scout's cloak hides a waxed packet holding 1,200 gp in gems and a *scroll of regenerate*; the black feather (above). Kingdom: none, but the knowledge prepares the PCs for Chapter 10.
+**Rewards.** 140 XP for a full audience (Influence 6 or higher) or a fight; 80 XP for a partial one. Treasure: the royal scout's cloak hides a waxed packet holding 1,200 gp in gems and a *scroll of regenerate*; the black feather (above). Kingdom: none, but the knowledge prepares the PCs for Chapter 10.
 
 **Scaling.** For a weaker party, drop two ankous. At party level 18, add a second ankou assassin as the Speaker's second.
 
@@ -780,32 +783,32 @@ An honest answer earns 1 Influence point. A lie earns it too if the liar succeed
 - **Leaf litter.** The clearing floor is soft but even. Beyond the stones, roots make the ground difficult terrain.
 - **The ninth stone.** A fallen stone lies outside the ring. Carved faces on it (Society or Occultism DC 36 to Recall Knowledge) show a lantern-bearing figure the old hill clans called the Trickster Lord. The carving lets the PCs name the herald's real master.
 
-**Running the encounter.** The herald opens with a demand and keeps the conversation on its terms. Run it as an Influence encounter. The PCs have 4 rounds of conversation before the herald loses patience and orders them to leave. If they refuse at that point, it attacks.
+**Running the encounter.** The herald opens with a demand and keeps the conversation on its terms. Run it as an Influence encounter. The PCs have 3 rounds of conversation before the herald loses patience and orders them to leave. If they refuse at that point, it attacks.
 
 *Influence: The Vilderavn Herald* (vilderavn, level 19)
 - **Perception** +35; **Will** +33
 - **Discovery** DC 37 Fey Lore or Occultism, DC 39 Perception, Nature or Society
 - **Influence Skills** DC 39 Deception (playing along with the lie), DC 39 Diplomacy, DC 41 Intimidation, DC 37 Performance (it admires a well-turned courtly phrase), DC 36 Fey Lore or Lore about the elder fey
-- **Influence 2** The herald concedes that the PCs may pass along the forest's edge unharmed. It lets slip that it "serves a crown older than any queen."
-- **Influence 4** The herald admits it serves the Trickster Lord. It hints that the Trickster Lord wants the PCs' kingdom strong and that "a gift grown fat is a gift worth giving." Perceptive PCs (DC 39 Perception or Sense Motive) realise the Fey Queen means to take their kingdom.
-- **Influence 6** The herald, amused, offers a token: a black raven feather. Once, a creature holding it may ask the Trickster Lord's court a single question in Chapter 11, or it may serve as safe passage past one fey guardian loyal to the Trickster Lord (GM's choice). It then departs.
+- **Influence 4** The herald concedes that the PCs may pass along the forest's edge unharmed. It lets slip that it "serves a crown older than any queen."
+- **Influence 6** The herald admits it serves the Trickster Lord. It hints that the Trickster Lord wants the PCs' kingdom strong and that "a gift grown fat is a gift worth giving." Perceptive PCs (DC 39 Perception or Sense Motive) realise the Fey Queen means to take their kingdom.
+- **Influence 8** The herald, amused, offers a token: a black raven feather. Once, a creature holding it may ask the Trickster Lord's court a single question in Chapter 11, or it may serve as safe passage past one fey guardian loyal to the Trickster Lord (GM's choice). It then departs.
 - **Resistances** Threats over the PCs' kingdom's strength amuse the herald (+2 DC on Intimidation). Once its cover breaks, calling it the Fey Queen's servant offends it (+2 DC on Diplomacy that round).
 - **Weaknesses** Courtly etiquette and flattery of the Trickster Lord charm it (–2 DC on Diplomacy and Performance). Mentioning the King's flight lets the herald sneer at him at length (it reveals one discovery for free).
-- **Penalty** Each failure on an Influence check costs the PCs 1 round. Critical failures with Intimidation trigger combat.
-- **Rounds** 4, before the herald loses patience.
+- **Penalty** Each critical failure on an Influence check costs the PCs 1 round. Critical failures with Intimidation trigger combat.
+- **Rounds** 3, before the herald loses patience.
 
 **Combat.** If combat begins, the herald fights to drive the PCs out and avoids killing them. It uses Aura of Disquietude to break the party's cohesion and its greatsword for nonlethal attacks once a PC drops below a quarter of their HP. The greatsword carries greater brilliant and greater fearsome runes: each hit deals an extra 1d4 fire, and a critical hit leaves the target frightened 2 and blinded for 1 round unless it succeeds at a DC 41 Fortitude save. The zomok uses Entombing Breath on clustered PCs and Swallow Whole on the strongest melee combatant. It spits the creature out at the forest edge when the fight ends. Both withdraw with Forest Step if either drops below 100 HP, and the herald calls out: "Go home. Grow strong. Someone is counting on you."
 
 **Outcomes.**
-- **Influence 6 or more.** The PCs learn that the Trickster Lord backs their kingdom's growth for his own ends and gain the raven feather.
-- **Influence 2–5.** The PCs learn some of the truth and may pass.
-- **Influence 0–1 and the PCs leave.** The herald watches them go. They may return later.
+- **Influence 8 or more.** The PCs learn that the Trickster Lord backs their kingdom's growth for his own ends and gain the raven feather.
+- **Influence 4–7.** The PCs learn some of the truth and may pass.
+- **Influence 0–3 and the PCs leave.** The herald watches them go. They may return later.
 - **Combat.** The emissary withdraws and never appears again in Zone 18. The PCs keep the clue from the ninth stone only.
 - **Herald slain.** A rare outcome. The Trickster Lord notices. In Chapter 11, the court treats the PCs with hostility from the first scene (+2 DC to social checks with Trickster Lord loyalists).
 
-**Rewards.** 160 XP for an Influence 6 resolution or for driving the pair off. Treasure: the raven feather (unique, story item). The herald's plate holds no coin. If the herald dies, its black full plate is *+2 greater resilient full plate* (level 14) and the zomok's heartwood is a 3,000 gp crafting reagent for a primal item.
+**Rewards.** 160 XP for an Influence 8 resolution or for driving the pair off. Treasure: the raven feather (unique, story item). The herald's plate holds no coin. If the herald dies, its black full plate is *+2 greater resilient full plate* (level 14) and the zomok's heartwood is a 3,000 gp crafting reagent for a primal item.
 
-**Scaling.** For a weaker party, raise the patience to 6 rounds and lower DCs by 2. For a stronger party, have the herald dismount and send the zomok after anyone who wanders off.
+**Scaling.** For a weaker party, lower DCs by 2. For a stronger party, have the herald dismount and send the zomok after anyone who wanders off.
 
 ### 17. Spore-Dawn
 
@@ -870,19 +873,19 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 - **Soldiers' bones.** Fifty-two royal soldiers lie here. Searching them yields their regimental insignia and the King's original orders, both useful as evidence of royal aggression.
 - **Narrow ledges.** The pass narrows to 15 feet in two places. Gargantuan Vashkra can't enter these without squeezing.
 
-**Running the encounter.** Vashkra opens with conversation. She knows the PCs did not come from the King's city and is curious. Run an Influence encounter over 5 rounds. She has no patience for threats, and the curse makes any fight costly even if the PCs win.
+**Running the encounter.** Vashkra opens with conversation. She knows the PCs did not come from the King's city and is curious. Run an Influence encounter over 3 rounds. She has no patience for threats, and the curse makes any fight costly even if the PCs win.
 
 *Influence: Vashkra* (tor linnorm, level 21)
 - **Perception** +37; **Will** +33
 - **Discovery** DC 40 Nature or Arcana, DC 42 Society
 - **Influence Skills** DC 42 Diplomacy, DC 44 Deception, DC 47 Intimidation, DC 40 Performance (she loves sagas of battle), DC 38 Lore about the river realms or the northern kingdom (news of the world)
-- **Influence 2** Vashkra agrees to let the PCs themselves pass.
-- **Influence 4** Vashkra names her tribute: a magic item of level 17 or higher, or an equivalent hoard (12,000 gp in metals and gems), delivered every year on midwinter. In return she lets caravans bearing the PCs' banner use the pass.
-- **Influence 6** Vashkra accepts a smaller tribute (6,000 gp per year) and promises to burn any royal or Wild Hunt force that enters the pass. She tells the PCs that "riders without tracks" have tested her pass twice this season.
+- **Influence 4** Vashkra agrees to let the PCs themselves pass.
+- **Influence 6** Vashkra names her tribute: a magic item of level 17 or higher, or an equivalent hoard (12,000 gp in metals and gems), delivered every year on midwinter. In return she lets caravans bearing the PCs' banner use the pass.
+- **Influence 8** Vashkra accepts a smaller tribute (6,000 gp per year) and promises to burn any royal or Wild Hunt force that enters the pass. She tells the PCs that "riders without tracks" have tested her pass twice this season.
 - **Resistances** Mentions of the King or his city sour her (+2 DC on all checks that round). Any threat to kill her earns a reminder of the curse (+5 DC on Intimidation).
 - **Weaknesses** Tales of great battles, especially the PCs' own war against the King, delight her (–2 DC on Performance). Tribute offered up front pleases her (–2 DC on Diplomacy).
 - **Penalty** Two critical failures provoke her: she uses Pyroclastic Breath once as a warning and gives the PCs one more round to leave.
-- **Rounds** 5.
+- **Rounds** 3.
 
 **Combat.** At party level 18 or higher, the PCs may choose to fight. Vashkra opens with Pyroclastic Breath, then uses Slashing Claws against multiple targets. She retreats into the magma vent to regenerate, which forces PCs to fight her near the fire. She keeps up Regeneration 20 until cold iron hits her. Whoever lands the killing blow must save against the Curse of Boiling Blood (DC 48 Will).
 
@@ -891,9 +894,9 @@ Tactics: the mu spore opens with Enormous Inhalation to pull the party into its 
 - **Vashkra slain.** The pass opens permanently. The killer carries the curse until a 9th-rank *cleanse affliction* or an equivalent ritual removes it.
 - **PCs leave.** Vashkra remains. The PCs may return with tribute.
 
-**Rewards.** 120 XP for any resolution at Influence 4 or more, or for a victory at party level 18. Treasure: the soldiers' gear yields 800 gp. Vashkra's hoard, reached through the magma vent (fire resistance or a DC 40 Athletics check to swim through it), holds 9,000 gp in obsidian, silver and gems, plus *major obsidian goggles*.
+**Rewards.** 120 XP for any resolution at Influence 6 or more, or for a victory at party level 18. Treasure: the soldiers' gear yields 800 gp. Vashkra's hoard, reached through the magma vent (fire resistance or a DC 40 Athletics check to swim through it), holds 9,000 gp in obsidian, silver and gems, plus *major obsidian goggles*.
 
-**Scaling.** At party level 19, add two magma elemental servants or raise the curse DC by 2. For a gentler table, Vashkra lets any party that reaches Influence 2 pass with no tribute.
+**Scaling.** At party level 19, add two magma elemental servants or raise the curse DC by 2. For a gentler table, Vashkra lets any party that reaches Influence 4 pass with no tribute.
 
 ### 19. Shadow on the Peaks
 

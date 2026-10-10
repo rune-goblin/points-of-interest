@@ -5,10 +5,12 @@
 // Thumbnails are committed art; cwebp runs only to make a missing one, so CI never needs it.
 // Placeables (tokens, walls, lights, …) edited in Foundry and unpacked over packs/_source/scenes
 // survive regeneration. A scene with no tokens yet gets the seeded layout below; a scene that has
-// tokens gains one only for a cast member it lacks, in a row along the map's top edge.
+// tokens gains one only for a cast member it lacks, in a row along the map's top edge. Creature and
+// hazard tokens are hidden again on every run.
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { FOE_KINDS } from '../src/constants.ts';
 import { MODULE_ID, ids, pad, rootFolder, slugify, stableId } from './stable-id.ts';
 
 const ROOT = process.cwd();
@@ -95,11 +97,6 @@ function ensureThumb(mapFile: string, slug: string, size: { width: number; heigh
 const ACTORS_DIR = join(ROOT, 'packs', '_source', 'actors');
 
 // Keyed by actor slug (the shared portrait/token file name).
-/** Tokens for later states, optional extras and unnoticed hazards start hidden from players, as do treasure caches. */
-const HIDDEN = new Set([
-  '01-ankou-shadow-double-first', '01-ankou-shadow-double-second', '05-skeletal-champion', '05-lament-of-the-wall',
-  '07-wyvern-queen-diving', '08-radiant-warden-active', '14-spared-ankou', '19-black-dragon-ambush',
-]);
 const COPIES: Record<string, number> = { '08-defence-pylon': 3 };
 /** Scenes that hold only part of their encounter's cast; every other scene takes the whole encounter. */
 const SCENE_CAST: Record<string, string[]> = {
@@ -132,6 +129,8 @@ interface ActorSource {
   prototypeToken: Record<string, unknown> & { width: number; height: number };
 }
 interface CastMember { slug: string; actor: ActorSource }
+
+const isFoe = (actor: ActorSource): boolean => FOE_KINDS.has(actor.flags[MODULE_ID]?.kind ?? '');
 
 function readCast(): Map<number, CastMember[]> {
   const cast = new Map<number, CastMember[]>();
@@ -188,7 +187,7 @@ function seedTokens(sceneId: string, slug: string, members: CastMember[], size: 
         y: padY + Math.round(top * grid),
         elevation: 0,
         level: LEVEL_ID,
-        hidden: HIDDEN.has(piece.slug) || piece.actor.flags[MODULE_ID]?.kind === 'cache',
+        hidden: isFoe(piece.actor) || piece.actor.flags[MODULE_ID]?.kind === 'cache',
         locked: false,
         sort: i,
       };
@@ -201,10 +200,13 @@ function seedTokens(sceneId: string, slug: string, members: CastMember[], size: 
 }
 
 // Keeps a scene's placed tokens and adds one for each cast member it lacks, so a new actor reaches a placed scene.
+// Players see the whole map, so a creature or hazard unpacked in view goes back into hiding.
 function placeTokens(sceneId: string, slug: string, members: CastMember[], size: { width: number; height: number }, grid: number, previous: { actorId?: string }[]) {
   if (!previous.length) return seedTokens(sceneId, slug, members, size, grid);
+  const foes = new Set(members.filter((m) => isFoe(m.actor)).map((m) => m.actor._id));
   const missing = members.filter((m) => !previous.some((t) => t.actorId === m.actor._id));
-  return [...previous, ...seedTokens(sceneId, slug, missing, size, grid, true)];
+  const kept = previous.map((t) => (t.actorId && foes.has(t.actorId) ? { ...t, hidden: true } : t));
+  return [...kept, ...seedTokens(sceneId, slug, missing, size, grid, true)];
 }
 
 const NOTE_ICON = 'icons/svg/book.svg';
@@ -334,7 +336,7 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
     initial: { x: null, y: null, scale: null },
     initialLevel: LEVEL_ID,
     grid: { type: 1, size: meta.grid, style: 'solidLines', thickness: 1, color: '#000000', alpha: 0.2, distance: 5, units: 'ft' },
-    tokenVision: true,
+    tokenVision: false,
     fog: { mode: 1, colors: { explored: null, unexplored: null } },
     environment: {
       darknessLevel: meta.darkness ?? 0,
@@ -390,7 +392,8 @@ function scene(slug: string, meta: MapMeta, encounter: Encounter, folder: string
     flags: {
       // A fixed light level must not follow the world clock.
       pf2e: { hearingRange: null, rulesBasedVision: null, syncDarkness: fixedLight ? 'disabled' : 'default', environmentTypes: meta.environments },
-      [MODULE_ID]: { encounter: encounter.number },
+      // `tokenVision` marks the setting as applied, so the load sweep leaves a GM's later choice alone.
+      [MODULE_ID]: { encounter: encounter.number, tokenVision: false },
     },
     // A current coreVersion stops Foundry's v13→v14 migration from replacing the levels on import.
     _stats: {
